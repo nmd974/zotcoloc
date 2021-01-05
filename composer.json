@@ -1,0 +1,13 @@
+{
+    "name": "jhapa/zotcoloc",
+    "description": "Application de gestion de colocation",
+    "require": {
+        "php": "^7.4"
+    },
+    "authors": [
+        {
+            "name": "nmd974",
+            "email": "jha.payet@gmail.com"
+        }
+    ]
+}
