@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Places | Directory Template </title>
+    <title>ZotColoc 974</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/places/1-1-2/vendor/owl.carousel/assets/owl.theme.default.min.css">
     <!-- theme stylesheet-->
     <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/places/1-1-2/css/style.default.css" id="theme-stylesheet">
+    <!-- style Main page-->
+    <link rel="stylesheet" href="../../src/style/main.css">
     <!-- Fancy Box-->
     <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/places/1-1-2/vendor/@fancyapps/fancybox/jquery.fancybox.css">
     <!-- Custom stylesheet - for your changes-->
@@ -40,7 +42,7 @@
       <!-- Main Navbar-->
       <nav class="navbar navbar-expand-lg">
 
-        <div class="container">
+        <div class="container-fluid">
           <!-- Navbar Brand -->
           <a href="index.html" class="navbar-brand"><img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/logo.png" alt="..."></a>
           
@@ -66,91 +68,64 @@
 
     <!-- Hero Section-->
     <section style="background: url('https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/hero-bg.jpg') no-repeat;" class="hero d-flex align-items-center">
+
       <div class="container">
         <p class="small-text-hero"><i class="icon-localizer text-primary mr-1"></i>Trouver une colocation à la <span class="text-primary">Réunion</span> Rapidement</p>
         <h1>Zot<span class="text-primary">Coloc</span> Réunion</h1>
         <p class="text-hero">Service de colocation entre particulier, Agence et propriétaire</p>
+        
+        <!--Barre de recherche-->
         <div class="search-bar">
           <form action="#">
-            <div class="row pt-2">
-              <!-- <div class="form-group col-lg-4">
-                <input type="search" name="search" placeholder="What are you searching for?">
-              </div> -->
-              <div class="form-group col-lg-5">
-                <input type="text" name="location" placeholder="Location" id="location">
+            <div class="row pt-2" id="bar-search">
+              
+              <div class="form-group col-lg-3">
+                <input type="text" name="location" placeholder="Lieux" id="lieux">
                 <label for="location" class="location"><i class="fa fa-dot-circle-o"></i></label>
               </div>
-              <div class="form-group col-lg-5">
-                <select title="Categories &lt;i class=&quot;fa fa-angle-down&quot;&gt;&lt;/i&gt;" class="listing-categories">
-                  <option value="small">Appartement</option>
-                  <option value="medium">Maison</option>
-                  <option value="large">Villa</option>
-                  <!-- <option value="x-large">Garages</option> -->
+              
+              <div class="form-group col-lg-3">
+                <input type="search" name="prix" placeholder="Prix" id="prix">
+              </div>
+             
+              <div class="form-group col-lg-3">
+                <select title="Categories &lt;i class=&quot;fa fa-angle-down&quot;&gt;&lt;/i&gt;" class="listing-categories" id="categorie">
+                  <option value="appartement">Appartement</option>
+                  <option value="maison">Maison</option>
+                  <option value="villa">Villa</option>
                 </select>
               </div>
-              <div class="form-group col-lg-2">
-                <input type="submit" value="Search" class="submit">
+              
+              <div class="form-group col-lg-3"  >
+                <input type="submit" value="rechercher" class="submit" id="btn_envoyer">
               </div>
+
             </div>
           </form>
         </div>
-      </div>
-    </section>
-    <!-- Features Section-->
-    <section class="features bg-gray">
-      <div class="container text-center">
-        <div class="row">
-
-          <div class="col-sm-3">
-            <!-- <div class="icon"><i class="icon-antique-pavilion"></i></div> -->
-            <h4 class="h5">nbr Annonces: 1200</h4>
-          </div>
-
-          <div class="col-sm-3">
-            <!-- <div class="icon"><i class="icon-calendar"></i></div> -->
-            <h4 class="h5">nbr inscrit: 230</h4>
-          </div>
-
-          <div class="col-sm-3">
-            <!-- <div class="icon"><i class="icon-gallery"></i></div> -->
-            <h4 class="h5">nbr de LOREM: 403</h4>
-          </div>
-
-          <div class="col-sm-3">
-            <!-- <div class="icon"><i class="icon-list"></i></div> -->
-            <h4 class="h5">nbr LOREM: 2341</h4>
-          </div>
-
-        </div>
-      </div>
+       
     </section>
     <!-- Top Cities Section-->
     <section class="top-listings">
       <div class="container">
         <header>
-          <h2 class="has-lines"><small>Nouvelle annonces</small> Retrouver <span class="text-primary">nos Nouvelles Annonces</span> par région</h2>
+          <h2 class="has-lines"><small>Top Ville</small> Retrouver <span class="text-primary">nos meilleur Colocation</span> de la Réunion</h2>
           <!-- <p class="lead">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p> -->
         </header>
         <div class="row d-flex align-items-stretch">
+
           <!-- Item Big-->
           <div class="col-lg-6"><a href="category.html">
               <div class="item item-big">
                 <div class="image"><img src="https://www.cartedelareunion.fr/wp-content/uploads/2019/03/Ile-de-La-Reunion-Saint-Denis.jpg" alt="..." class="img-fluid"></div>
                 <div class="info d-flex align-items-end">
                   <div class="content">
-                    <h3>ALL News</h3>
-                    <!-- <p>Lorem ipsum dolor</p> -->
-                    <!-- <ul class="rate list-inline">
-                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                    </ul> -->
+                    <h3>St-Denis</h3>
                   </div>
                 </div>
                 <!-- <div class="badge">featured</div> -->
               </div></a></div>
+
           <!-- Item-->
           <div class="col-lg-6">
             <div class="row">
@@ -160,14 +135,7 @@
                     <div class="image"><img src="https://www.cartedelareunion.fr/wp-content/uploads/2016/03/Barachois-Saint-Denis-Ile-de-La-Reunion.jpg" alt="..." class="img-fluid"></div>
                     <div class="info d-flex align-items-end">
                       <div class="content">
-                        <h3>NORD</h3>
-                        <!-- <ul class="rate list-inline">
-                          <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                          <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                          <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                          <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                          <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                        </ul> -->
+                        <h3>St-Pierre</h3>
                       </div>
                     </div>
                   </div></a>
@@ -179,50 +147,31 @@
                     <div class="image"><img src="https://www.cartedelareunion.fr/wp-content/uploads/2019/05/Terre-Sainte-plage-lagon-La-Reunion.jpg" alt="..." class="img-fluid"></div>
                     <div class="info d-flex align-items-end">
                       <div class="content">
-                        <h3>SUD</h3>
-                        <!-- <ul class="rate list-inline">
-                          <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                          <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                          <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                          <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                          <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                        </ul> -->
+                        <h3>St-Gilles</h3>
                       </div>
                     </div>
                   </div></a>
               </div>
+
               <!-- Item                    -->
               <div class="col col-md-6"><a href="category.html">
                   <div class="item">
                     <div class="image"><img src="https://www.cartedelareunion.fr/wp-content/uploads/2016/08/Parc-du-Colosse.jpg" alt="..." class="img-fluid"></div>
                     <div class="info d-flex align-items-end">
                       <div class="content">
-                        <h3>EST</h3>
-                        <!-- <ul class="rate list-inline">
-                          <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                          <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                          <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                          <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                          <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                        </ul> -->
+                        <h3>St-Paul</h3>
                       </div>
                     </div>
                   </div></a>
               </div>
+
               <!-- Item-->
               <div class="col-md-6"><a href="category.html">
                   <div class="item">
                     <div class="image"><img src="https://www.cartedelareunion.fr/wp-content/uploads/2016/07/Plage-de-lErmitage-filaos-cartedelareunion.fr-%C2%A9-Serge-Gelabert-1102x800.jpg" alt="..." class="img-fluid"></div>
                     <div class="info d-flex align-items-end">
                       <div class="content">
-                        <h3>OUEST</h3>
-                        <!-- <ul class="rate list-inline">
-                          <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                          <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                          <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                          <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                          <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                        </ul> -->
+                        <h3>Tampon</h3>
                       </div>
                     </div>
                   </div></a>
@@ -230,112 +179,56 @@
             </div>
           </div>
         </div>
-        <!-- <div class="row"> 
+        
+        <div class="row"> 
           <div class="col-md-3"><a href="category.html">
               <div class="item">
                 <div class="image"><img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-1.jpg" alt="..." class="img-fluid"></div>
                 <div class="info d-flex align-items-end">
                   <div class="content">
-                    <h3>Barcelona</h3>
-                    <ul class="rate list-inline">
-                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                    </ul>
+                    <h3>St-Marie</h3>
                   </div>
                 </div>
-              </div></a></div> -->
+              </div></a></div>
+
           <!-- Item-->
-          <!-- <div class="col-md-3"><a href="category.html">
+          <div class="col-md-3"><a href="category.html">
               <div class="item">
                 <div class="image"><img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-2.jpg" alt="..." class="img-fluid"></div>
                 <div class="info d-flex align-items-end">
                   <div class="content">
-                    <h3>Hong Kong</h3>
-                    <ul class="rate list-inline">
-                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                    </ul>
-                  </div>
-                </div>
-              </div></a></div> -->
-          <!-- Item                    -->
-          <!-- <div class="col-md-3"><a href="category.html">
-              <div class="item">
-                <div class="image"><img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-3.jpg" alt="..." class="img-fluid"></div>
-                <div class="info d-flex align-items-end">
-                  <div class="content">
-                    <h3>New York</h3>
-                    <ul class="rate list-inline">
-                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                    </ul>
-                  </div>
-                </div>
-              </div></a></div> -->
-          <!-- Item                    -->
-          <!-- <div class="col-md-3"><a href="category.html">
-              <div class="item">
-                <div class="image"><img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-3.jpg" alt="..." class="img-fluid"></div>
-                <div class="info d-flex align-items-end">
-                  <div class="content">
-                    <h3>New York</h3>
-                    <ul class="rate list-inline">
-                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                    </ul>
+                    <h3>st-leu</h3>
                   </div>
                 </div>
               </div></a></div>
-        </div><a href="#" class="btn btn-primary has-shadow has-wide-padding">View More    </a>
-      </div>
-    </section> -->
-    <!-- Latest Places Section-->
-   
-    <!-- Partners Section-->
-    <!-- <section class="partners bg-gray">
-      <div class="container text-center">
-        <header>
-          <h2> Our partners</h2>
-        </header>
-        <div class="row d-flex align-items-center">
-          <div class="item col-lg-2 col-md-4 col-6"><img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/brand-1.png" alt="..." class="img-fluid"></div>
-          <div class="item col-lg-2 col-md-4 col-6"><img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/brand-2.png" alt="..." class="img-fluid"></div>
-          <div class="item col-lg-2 col-md-4 col-6"><img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/brand-3.png" alt="..." class="img-fluid"></div>
-          <div class="item col-lg-2 col-md-4 col-6"><img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/brand-4.png" alt="..." class="img-fluid"></div>
-          <div class="item col-lg-2 col-md-4 col-6"><img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/brand-5.png" alt="..." class="img-fluid"></div>
-          <div class="item col-lg-2 col-md-4 col-6"><img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/brand-6.png" alt="..." class="img-fluid"></div>
-        </div>
-      </div>
+
+          <!-- Item                    -->
+          <div class="col-md-3"><a href="category.html">
+              <div class="item">
+                <div class="image"><img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-3.jpg" alt="..." class="img-fluid"></div>
+                <div class="info d-flex align-items-end">
+                  <div class="content">
+                    <h3>St-Louis</h3>
+                  </div>
+                </div>
+              </div></a></div>
+
+          <!-- Item                    -->
+          <div class="col-md-3"><a href="category.html">
+              <div class="item">
+                <div class="image"><img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-3.jpg" alt="..." class="img-fluid"></div>
+                <div class="info d-flex align-items-end">
+                  <div class="content">
+                    <h3>Le Port</h3>
+                  </div>
+                </div>
+              </div></a></div>
+        
     </section>
-    <button type="button" data-toggle="collapse" data-target="#style-switch" id="style-switch-button" class="btn btn-primary btn-sm d-none d-lg-block"><i class="fa fa-cog fa-2x"></i></button>
-    <div id="style-switch" class="collapse">
-      <h4 class="mb-3">Select theme colour</h4>
-      <form class="mb-3">
-        <select name="colour" id="colour" class="form-control style-switch-select">
-          <option value="">select colour variant</option>
-          <option value="default">green</option>
-          <option value="pink">pink</option>
-          <option value="violet">violet</option>
-          <option value="red">red</option>
-          <option value="sea">sea</option>
-          <option value="blue">blue</option>
-        </select>
-      </form>
-      <p><img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/template-mac.png" alt="" class="img-fluid"></p>
-      <p class="text-muted text-small">Stylesheet switching is done via JavaScript and can cause a blink while page loads. This will not happen in your production code.</p>
-    </div> -->
+    
+    <!--Nos annonce par région-->
+
+    
     <!-- Page Footer-->
     <footer class="main-footer">
       <div class="container">
