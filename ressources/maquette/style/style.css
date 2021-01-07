@@ -1,0 +1,12 @@
+/*card */
+.avatar {
+    position: absolute;
+    z-index: 1;
+}
+.heart{
+    position: absolute;
+    z-index: 1; 
+}
+/* .carousel-relative{
+    position: relative;
+} */
