@@ -15,6 +15,9 @@
 .card-relative {
     position: relative;
 }
+.input-description {
+    height: 100px;
+}
 /* .carousel-relative{
     position: relative;
 } */
