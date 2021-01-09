@@ -7,18 +7,16 @@ body{
 }
 .vidaloka{
     font-family: 'Vidaloka', sans-serif;
-
+}
+.subtitle{
+    margin-top: 100px!important;
 }
 /*titre h2*/
 .border-one{
-    border-left: 2px solid green;
-  
+    border-left: 2px solid green; 
 }
 .border-two{
-    border-left: 4px solid green;
-    
-    
-    
+    border-left: 4px solid green;   
 }
 /*navbar*/
 .active:hover {
@@ -30,6 +28,30 @@ body{
     background-size: 100%;
     height: 560px;
 }
+.btn-radius{
+    border-radius: 25px!important;
+}
+.input-border{
+    padding: 5px;
+    border-radius: 25px!important;
+}
+.price-border{
+    border-top: none;
+    border-bottom: none;
+}
+.category-border{
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+}
+.location-border{
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    border-top-left-radius: 25px!important;
+    border-bottom-left-radius: 25px!important;
+}
+
 .text-green{
     color: green!important;
 }
@@ -56,10 +78,16 @@ body{
     grid-gap: 20px;
     grid-auto-rows: minmax(200px,auto);
     grid-auto-columns: minmax(auto,200px);
+    background: 100%;
 }
 .image-one{
 grid-column: 1/3;
 grid-row: 1/3;
+background: cover;
+}
+.img-cover{
+    width: 100%!important;
+    height: 100%!important;
 }
 /*par region*/
 

@@ -78,22 +78,25 @@
                     <h1 class="display-3 text-white vidaloka">Zot<span class="text-green">Coloc</span> Réunion</h1>
                     <p class="text-white h5 mb-5">Service de colocation entre particulier, Agence et propriétaire</p>
                     <!-- barre de recherche -->
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control w-25" placeholder="Lieux" aria-label="location"
+                    <div class="input-border bg-light">
+                    <form action="" method="post" class="form-group">
+                        <div class="input-group">
+                        <input type="text" class="form-control w-25 location-border" placeholder="Lieux" aria-label="location"
                             aria-describedby="button-addon2">
-                        <input type="text" class="form-control w-25" placeholder="Lieux" aria-label="location"
+                        <input type="text" class="form-control w-25 price-border" placeholder="Prix" aria-label="location"
                             aria-describedby="button-addon2">
-                        <button class="btn btn-outline-secondary dropdown-toggle bg-light w-25" type="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">Catégorie</button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Appartement</a></li>
-                            <li><a class="dropdown-item" href="#">Maison</a></li>
-                            <li><a class="dropdown-item" href="#">Villa</a></li>
 
-                        </ul>
-                        <button class="btn btn-outline-secondary w-25 bg-success text-white" type="button"
+                        <select class="form-select w-25 category-border" aria-label="Default select example">
+                            <option selected>Catégorie</option>
+                            <option value="1">Appartement</option>
+                            <option value="2">Maison</option>
+                            <option value="3">Villa</option>
+                          </select>
+                        <button class="btn btn-outline-secondary w-25 bg-success text-white btn-radius" type="submit"
                             id="button-addon2">Recherche</button>
-                    </div>
+                        </div>
+                </form>
+            </div>
                 </div>
 
             </div>
@@ -117,8 +120,8 @@
     </section>
     <!-- top ville -->
     <section class="container">
-        <div class="row mb-5">
-            <div class="border-one ps-1">
+        <div class="row mb-5 subtitle">
+            <div class="border-one ps-1 ms-3">
                 <div class="border-two ps-3">
                     <p class="text-secondary m-0 poppins h5">TOP VILLE</p>
                     <h2 class="vidaloka m-0 h1">Retrouver<span class="text-success"> nos meilleurs Colocation</span> de
@@ -130,48 +133,49 @@
         <div class="wrapper">
             <div class="image-one">
                 <img src="https://www.cartedelareunion.fr/wp-content/uploads/2019/03/Ile-de-La-Reunion-Saint-Denis.jpg"
-                    alt="top-city" class="img-fluid">
+                    alt="top-city" class="img-fluid img-cover">
 
             </div>
             <div class="image-two">
                 <img src="https://www.cartedelareunion.fr/wp-content/uploads/2016/03/Barachois-Saint-Denis-Ile-de-La-Reunion.jpg"
-                    alt="top-city" class="img-fluid">
+                    alt="top-city" class="img-fluid img-cover">
             </div>
             <div class="image-three">
                 <img src="https://www.cartedelareunion.fr/wp-content/uploads/2019/05/Terre-Sainte-plage-lagon-La-Reunion.jpg"
-                    alt="top-city" class="img-fluid">
+                    alt="top-city" class="img-fluid img-cover">
             </div>
             <div class="image-four">
                 <img src="https://www.cartedelareunion.fr/wp-content/uploads/2016/08/Parc-du-Colosse.jpg" alt="top-city"
-                    class="img-fluid">
+                    class="img-fluid img-cover">
             </div>
             <div class="image-five">
                 <img src="https://www.cartedelareunion.fr/wp-content/uploads/2016/07/Plage-de-lErmitage-filaos-cartedelareunion.fr-%C2%A9-Serge-Gelabert-1102x800.jpg"
-                    alt="top-city" class="img-fluid">
+                    alt="top-city" class="img-fluid img-cover">
             </div>
             <div class="image-six"><img
                     src="https://www.cartedelareunion.fr/wp-content/uploads/2016/07/Plage-de-lErmitage-filaos-cartedelareunion.fr-%C2%A9-Serge-Gelabert-1102x800.jpg"
-                    alt="top-city" class="img-fluid"></div>
+                    alt="top-city" class="img-fluid img-cover">
+                </div>
             <div class="image-seven">
                 <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-2.jpg" alt="top-city"
-                    class="img-fluid">
+                    class="img-fluid img-cover">
             </div>
             <div class="image-eigth">
                 <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-3.jpg" alt="top-city"
-                    class="img-fluid">
+                    class="img-fluid img-cover">
             </div>
             <div class="image-nine">
                 <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-3.jpg" alt="top-city"
-                    class="img-fluid">
+                    class="img-fluid img-cover">
             </div>
 
         </div>
     </section>
 
     <!-- par région -->
-    <section class="container">
-        <div class="row mb-5">
-            <div class="border-one ps-1">
+    <section class="container mt-5 mb-5">
+        <div class="row mb-5 subtitle">
+            <div class="border-one ps-1 ms-3">
                 <div class="border-two ps-3">
                     <p class="text-secondary m-0 poppins h5">PAR REGION</p>
                     <h2 class="vidaloka m-0 h1">Par région<span class="text-success"> nos Colocations</span> de
@@ -228,8 +232,8 @@
     </section>
 
     <section class="container">
-        <div class="row mb-5">
-            <div class="col border-one ps-1 pe-0">
+        <div class="row mb-5 subtitle">
+            <div class="col border-one ps-1 ms-3">
                 <div class="border-two ps-3">
                     <p class="text-secondary m-0 poppins h5">INFORMATION</p>
                     <h2 class="vidaloka m-0 h1">Une chambre ou un appartement à <span class="text-success">
@@ -243,7 +247,8 @@
             <!-- Item-->
             <div class="col-md-4">
                 <div class="">
-                    <div class=""><img src="https://whoomies.com/img/publications/1.jpg" alt="..." class="img-fluid">
+                    <div class="">
+                        <img src="https://whoomies.com/img/publications/1.jpg" alt="information" class="img-fluid">
                     </div>
                     <div class=" d-flex align-items-end">
                         <div class="">
@@ -259,7 +264,7 @@
             <!-- Item-->
             <div class="col-md-4">
                 <div class="">
-                    <div class=""><img src="https://whoomies.com/img/publications/2.jpg" alt="..." class="img-fluid">
+                    <div class=""><img src="https://whoomies.com/img/publications/2.jpg" alt="information" class="img-fluid">
                     </div>
                     <div class=" d-flex align-items-end">
                         <div class="">
@@ -275,7 +280,7 @@
             <!-- Item                    -->
             <div class="col-md-4">
                 <div class="">
-                    <div class=""><img src="https://whoomies.com/img/publications/3.jpg" alt="..." class="img-fluid">
+                    <div class=""><img src="https://whoomies.com/img/publications/3.jpg" alt="information" class="img-fluid">
                     </div>
                     <div class=" d-flex align-items-end">
                         <div class="">
