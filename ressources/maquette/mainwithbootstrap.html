@@ -16,12 +16,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Vidaloka&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
+    
     <title>ZotColoc 974</title>
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-md navbar-light bg-light shadow sticky-top fixed-top">
+        <nav class="navbar navbar-expand-md navbar-light  shadow sticky-top">
             <div class="container-fluid">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                     class="bi bi-house-fill ms-4 text-green" viewBox="0 0 16 16">
@@ -67,8 +68,9 @@
     <section class="main">
         <div class="row align-items-center h-100">
             <div class="offset-2 col-8 ">
-                <div>
-                    <p class="text-white h"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                <div class="main-center">
+                    <p class="text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                             fill="currentColor" class="bi bi-geo-alt text-green" viewBox="0 0 16 16">
                             <path
                                 d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
@@ -79,24 +81,24 @@
                     <p class="text-white h5 mb-5">Service de colocation entre particulier, Agence et propriétaire</p>
                     <!-- barre de recherche -->
                     <div class="input-border bg-light">
-                    <form action="" method="post" class="form-group">
-                        <div class="input-group">
-                        <input type="text" class="form-control w-25 location-border" placeholder="Lieux" aria-label="location"
-                            aria-describedby="button-addon2">
-                        <input type="text" class="form-control w-25 price-border" placeholder="Prix" aria-label="location"
-                            aria-describedby="button-addon2">
+                        <form action="" method="post" class="form-group">
+                            <div class="input-group" id="input-group">
+                                <input type="text" class="form-control w-25 location-border" placeholder="Lieux"
+                                    aria-label="location" aria-describedby="button-addon2">
+                                <input type="text" class="form-control w-25 price-border" placeholder="Prix"
+                                    aria-label="location" aria-describedby="button-addon2">
 
-                        <select class="form-select w-25 category-border" aria-label="Default select example">
-                            <option selected>Catégorie</option>
-                            <option value="1">Appartement</option>
-                            <option value="2">Maison</option>
-                            <option value="3">Villa</option>
-                          </select>
-                        <button class="btn btn-outline-secondary w-25 bg-success text-white btn-radius" type="submit"
-                            id="button-addon2">Recherche</button>
-                        </div>
-                </form>
-            </div>
+                                <select class="form-select w-25 category-border" aria-label="Default select example">
+                                    <option selected>Catégorie</option>
+                                    <option value="1">Appartement</option>
+                                    <option value="2">Maison</option>
+                                    <option value="3">Villa</option>
+                                </select>
+                                <button class="btn btn-outline-secondary w-25 bg-success text-white btn-radius"
+                                    type="submit" id="button-addon2">Recherche</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
 
             </div>
@@ -109,7 +111,7 @@
     <section class="number-stat mb-5">
         <div class="container">
             <div class="row text-center">
-                <div class=" d-flex justify-content-around align-items-center number-stat-inblock">
+                <div class=" d-flex justify-content-around align-items-center flex-wrap mt-3 mb-3">
                     <p class="h6"> <span class="stat text-success fw-bold vidaloka">1200</span><br>nbr Annonces </p>
                     <p class="h6"><span class="stat text-success fw-bold vidaloka">230</span><br>nbr inscrit</p>
                     <p class="h6"><span class="stat text-success fw-bold vidaloka">403</span><br>nbr de LOREM</p>
@@ -121,7 +123,7 @@
     <!-- top ville -->
     <section class="container">
         <div class="row mb-5 subtitle">
-            <div class="border-one ps-1 ms-3">
+            <div class="border-one ps-1">
                 <div class="border-two ps-3">
                     <p class="text-secondary m-0 poppins h5">TOP VILLE</p>
                     <h2 class="vidaloka m-0 h1">Retrouver<span class="text-success"> nos meilleurs Colocation</span> de
@@ -131,42 +133,50 @@
 
         </div>
         <div class="wrapper">
-            <div class="image-one">
+            <div class="image-one position-relative">
                 <img src="https://www.cartedelareunion.fr/wp-content/uploads/2019/03/Ile-de-La-Reunion-Saint-Denis.jpg"
                     alt="top-city" class="img-fluid img-cover">
-
+                <p class="text-light vidaloka display-4 position-absolute top-50 start-50 translate-middle text-center">St denis</p>
             </div>
-            <div class="image-two">
+            <div class="image-two position-relative">
                 <img src="https://www.cartedelareunion.fr/wp-content/uploads/2016/03/Barachois-Saint-Denis-Ile-de-La-Reunion.jpg"
                     alt="top-city" class="img-fluid img-cover">
+                    <p class="text-light vidaloka h2 position-absolute top-50 start-50 translate-middle text-center">St Paul</p>
             </div>
-            <div class="image-three">
+            <div class="image-three position-relative">
                 <img src="https://www.cartedelareunion.fr/wp-content/uploads/2019/05/Terre-Sainte-plage-lagon-La-Reunion.jpg"
                     alt="top-city" class="img-fluid img-cover">
+                    <p class="text-light vidaloka h2 position-absolute top-50 start-50 translate-middle text-center">St Pierre</p>
             </div>
-            <div class="image-four">
+            <div class="image-four position-relative">
                 <img src="https://www.cartedelareunion.fr/wp-content/uploads/2016/08/Parc-du-Colosse.jpg" alt="top-city"
                     class="img-fluid img-cover">
+                    <p class="text-light vidaloka h2 position-absolute top-50 start-50 translate-middle text-center">St Gilles</p>
             </div>
-            <div class="image-five">
+            <div class="image-five position-relative">
                 <img src="https://www.cartedelareunion.fr/wp-content/uploads/2016/07/Plage-de-lErmitage-filaos-cartedelareunion.fr-%C2%A9-Serge-Gelabert-1102x800.jpg"
                     alt="top-city" class="img-fluid img-cover">
+                    <p class="text-light vidaloka h2 position-absolute top-50 start-50 translate-middle text-center">St Louis</p>
             </div>
-            <div class="image-six"><img
-                    src="https://www.cartedelareunion.fr/wp-content/uploads/2016/07/Plage-de-lErmitage-filaos-cartedelareunion.fr-%C2%A9-Serge-Gelabert-1102x800.jpg"
+            <div class="image-six position-relative">
+                <img src="https://www.cartedelareunion.fr/wp-content/uploads/2016/07/Plage-de-lErmitage-filaos-cartedelareunion.fr-%C2%A9-Serge-Gelabert-1102x800.jpg"
                     alt="top-city" class="img-fluid img-cover">
-                </div>
-            <div class="image-seven">
+                    <p class="text-light vidaloka h2 position-absolute top-50 start-50 translate-middle text-center">Ste Marie</p>
+            </div>
+            <div class="image-seven position-relative">
                 <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-2.jpg" alt="top-city"
                     class="img-fluid img-cover">
+                    <p class="text-light vidaloka h2 position-absolute top-50 start-50 translate-middle text-center">Ste Suzanne</p>
             </div>
-            <div class="image-eigth">
+            <div class="image-eigth position-relative">
                 <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-3.jpg" alt="top-city"
                     class="img-fluid img-cover">
+                    <p class="text-light vidaloka h2 position-absolute top-50 start-50 translate-middle text-center">La possession</p>
             </div>
-            <div class="image-nine">
+            <div class="image-nine position-relative">
                 <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-3.jpg" alt="top-city"
                     class="img-fluid img-cover">
+                    <p class="text-light vidaloka h2 position-absolute top-50 start-50 translate-middle text-center">Le port</p>
             </div>
 
         </div>
@@ -175,7 +185,7 @@
     <!-- par région -->
     <section class="container mt-5 mb-5">
         <div class="row mb-5 subtitle">
-            <div class="border-one ps-1 ms-3">
+            <div class="border-one ps-1">
                 <div class="border-two ps-3">
                     <p class="text-secondary m-0 poppins h5">PAR REGION</p>
                     <h2 class="vidaloka m-0 h1">Par région<span class="text-success"> nos Colocations</span> de
@@ -233,7 +243,7 @@
 
     <section class="container">
         <div class="row mb-5 subtitle">
-            <div class="col border-one ps-1 ms-3">
+            <div class="col border-one ps-1">
                 <div class="border-two ps-3">
                     <p class="text-secondary m-0 poppins h5">INFORMATION</p>
                     <h2 class="vidaloka m-0 h1">Une chambre ou un appartement à <span class="text-success">
@@ -264,7 +274,8 @@
             <!-- Item-->
             <div class="col-md-4">
                 <div class="">
-                    <div class=""><img src="https://whoomies.com/img/publications/2.jpg" alt="information" class="img-fluid">
+                    <div class=""><img src="https://whoomies.com/img/publications/2.jpg" alt="information"
+                            class="img-fluid">
                     </div>
                     <div class=" d-flex align-items-end">
                         <div class="">
@@ -280,7 +291,8 @@
             <!-- Item                    -->
             <div class="col-md-4">
                 <div class="">
-                    <div class=""><img src="https://whoomies.com/img/publications/3.jpg" alt="information" class="img-fluid">
+                    <div class=""><img src="https://whoomies.com/img/publications/3.jpg" alt="information"
+                            class="img-fluid">
                     </div>
                     <div class=" d-flex align-items-end">
                         <div class="">
@@ -298,13 +310,53 @@
 
     </section>
 
+    <footer class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-light footer-center">
+                    <div class="mb-3 mt-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                            class="bi bi-house-fill  text-green" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                            <path fill-rule="evenodd"
+                                d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+                        </svg>
+                    </div>
+                    <p>ZotColoc service de relation entre particulier et loueur pour de la colocation à la Réunion.</p>
+                </div>
+
+                <div class="offset-md-4 col-md-4 text-light footer-center">
+                    <h3 class="vidaloka mt-5">Contact us</h3>
+                    <div class="">
+                        <p>Mr DIALLO Saint Denis</p>
+                        <p>Phone: (020) 123 456 789</p>
+                        <p>Email: <a class="text-success" href="mailto:zotcoloc@company.com">zotcoloc@Company.com</a>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="copyrights text-center text-light bg-dark">
+            <p>&copy; 2021 <span class="text-success">ZotColoc.</span> All Rights Reserved.</p>
+        </div>
+        
+
+    </footer>
 
 
-
+    <!-- script bootstrap -->
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
+        <!-- script jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <script src="js/media.js"></script>
+        
 </body>
 
 </html>
