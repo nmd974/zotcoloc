@@ -57,11 +57,17 @@ body{
 .active:hover {
     color: #4dcb44!important;
 }
+.navbar-light{
+    background-color: white!important;
+}
 /*main*/
 .main{
     background: linear-gradient(to bottom, rgba(39, 39, 38, 0.8) 0%, rgba(39, 39, 38, 0.8) 100%), url("https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/SaintPaul_Reunion.JPG/1200px-SaintPaul_Reunion.JPG") no-repeat;
     background-size: cover;
     height: 80vh;
+}
+.row {
+    margin: 0px!important;
 }
 .btn-radius{
     border-radius: 25px!important;
