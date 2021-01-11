@@ -56,6 +56,9 @@
                                 <a class="nav-link active" aria-current="page" href="#">Contact</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Déposer une Annonce</a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="#" class="nav-link active" aria-current="page" href="#">Se connecter</a>
                             </li>
                             <li class="nav-item">
