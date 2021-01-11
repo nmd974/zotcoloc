@@ -62,9 +62,60 @@
     </header>
     
     <!-- inscription-->
-    <section>
+    
 
-    </section>
+        <div class="container">
+            <p id="description" class="lead">
+            <h1 class="text-center display-3" id="title">Formulaie inscription Particulier </h1>
+        </div>
+
+   
+
+    <div class="container">
+        <form method="POST" enctype="multipart/form-data">
+            
+            <!-- Nom -->
+            <div class="mb-3">
+                <label for="nom" class="form-label">Nom</label>
+                <input type="text" class="form-control" id="nom" aria-describedby="Nom">
+            </div>
+
+            <!-- Prénom -->
+            <div class="mb-3">
+                <label for="prenom" class="form-label">Prenom</label>
+                <input type="text" class="form-control" id="prenom" aria-describedby="prenom">
+            </div>
+
+            
+            <!-- Anniversaire-->
+            <div class="mb-3">
+                <label for="anniversaire" class="form-label">Date anniversaire</label><br>
+                <input type="date" name="timestamp" class="form-control" step="1">
+            </div>
+
+            <!-- Emmenagement-->
+            <div class="mb-3">
+                <label for="anniversaire" class="form-label">Date d'emmenagement</label><br>
+                <input type="date" name="timestamp" class="form-control" step="1">
+            </div>
+
+            
+            <!-- CheckBox -->
+            <p> <input name="AgreeCheckbox" id="agree" type="checkbox"
+                   value="AGREE"> I agree the information entered above is correct. It might not be though. This is just for fun.
+            </p>
+
+            <!-- BUTTON: SUBMIT -->
+            <button class="btn btn-primary mb-5" id="submit" type="submit">
+                Submit
+            </button>
+        </form>
+        </div>
+
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <footer class="">
         <div class="container">
@@ -110,6 +161,7 @@
     <!-- script jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/media.js"></script>
+
 
 
 </body>
