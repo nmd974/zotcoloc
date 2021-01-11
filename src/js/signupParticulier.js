@@ -49,6 +49,7 @@ btnStepEl2.addEventListener("click", (e)=>{
         dotNext.innerHTML = `<i class="fa fa-hourglass-start" aria-hidden="true"></i>`;
         titleStep.innerHTML = `Etape 2/5:<span class="text-green"> Informations générales</span>`;
         timeLineEl.style.width = `25%`;
+        window.scrollTo(0,0);
     }
     
 })
@@ -78,6 +79,7 @@ btnStepEl3.addEventListener("click", (e)=>{
         dotNext.innerHTML = `<i class="fa fa-hourglass-start" aria-hidden="true"></i>`;
         titleStep.innerHTML = `Etape 3/5:<span class="text-green"> Mes intérêts</span>`;
         timeLineEl.style.width = `50%`;
+        window.scrollTo(0,0);
     }
     
 })
@@ -107,6 +109,7 @@ btnStepEl4.addEventListener("click", (e)=>{
         dotNext.innerHTML = `<i class="fa fa-hourglass-start" aria-hidden="true"></i>`;
         titleStep.innerHTML = `Etape 4/5:<span class="text-green"> Ma ville de recherche</span>`;
         timeLineEl.style.width = `75%`;
+        window.scrollTo(0,0);
     }
     
 })
@@ -136,6 +139,7 @@ btnStepEl5.addEventListener("click", (e)=>{
         dotNext.innerHTML = `<i class="fa fa-hourglass-start" aria-hidden="true"></i>`;
         titleStep.innerHTML = `Etape 5/5:<span class="text-green"> Récapitulatif</span>`;
         timeLineEl.style.width = `100%`;
+        window.scrollTo(0,0);
     }
     
 })
