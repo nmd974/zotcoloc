@@ -74,43 +74,72 @@
     <div class="container">
         <form method="POST" enctype="multipart/form-data">
             
-            <!-- Nom -->
-            <div class="mb-3">
-                <label for="nom" class="form-label">Nom</label>
-                <input type="text" class="form-control" id="nom" aria-describedby="Nom">
+            <div class="col-md-12">
+                <label for="name" class="form-label">Nom*</label>
+                <input type="text" class="form-control" name="nomUser" id="name" 
+                value="<?php if(isset($_POST['nomUser'])){
+                    echo $_POST['nomUser'];
+                }?>">
             </div>
 
-            <!-- Prénom -->
-            <div class="mb-3">
-                <label for="prenom" class="form-label">Prenom</label>
-                <input type="text" class="form-control" id="prenom" aria-describedby="prenom">
+            <div class="col-md-12">
+                <label for="prenom" class="form-label">Prénoms*</label>
+                <input type="text" class="form-control" name="prenomUser" id="prenom" 
+                value="<?php if(isset($_POST['prenomUser'])){
+                    echo $_POST['prenomUser'];
+                }?>">
             </div>
 
-            
-            <!-- Anniversaire-->
-            <div class="mb-3">
-                <label for="anniversaire" class="form-label">Date anniversaire</label><br>
+            <div class="col-md-12">
+                <label for="inputEmail4" class="form-label">Email*</label>
+                <input type="email" class="form-control" id="inputEmail4" name="emailUser" 
+                value="<?php if(isset($_POST['emailUser'])){
+                    echo $_POST['emailUser'];
+                }?>">
+            </div>
+
+            <!-- date naissance-->
+            <div class="col-md-12">
+                <label for="anniversaire" class="form-label">Date naissance*</label><br>
                 <input type="date" name="timestamp" class="form-control" step="1">
             </div>
 
             <!-- Emmenagement-->
-            <div class="mb-3">
-                <label for="anniversaire" class="form-label">Date d'emmenagement</label><br>
+            <div class="col-md-12">
+                <label for="emmenagement" class="form-label">Date d'emmenagement*</label><br>
                 <input type="date" name="timestamp" class="form-control" step="1">
             </div>
 
-            
-            <!-- CheckBox -->
-            <p> <input name="AgreeCheckbox" id="agree" type="checkbox"
-                   value="AGREE"> I agree the information entered above is correct. It might not be though. This is just for fun.
-            </p>
 
-            <!-- BUTTON: SUBMIT -->
-            <button class="btn btn-primary mb-5" id="submit" type="submit">
-                Submit
-            </button>
+            <div class="col-md-12">
+                <label for="confirmPassword" class="form-label">Mot de passe*</label>
+                <input type="password" class="form-control" id="confirmPassword" name="passwordUser">
+            </div>
+
+            <div class="col-md-12">
+                <label for="inputPassword4" class="form-label">Retaper Mot de passe*</label>
+                <input type="password" class="form-control" id="inputPassword4" name="repass">
+            </div>
+
+            <!-- CheckBox -->
+            <div class="col-md-12">
+                <p> <input name="AgreeCheckbox" id="agree" type="checkbox"
+                    value="AGREE"> I agree the information entered above is correct. It might not be though. This is just for fun.
+                </p>
+            </div>
+
+            <div class="col-md-12 mt-4">
+                *Champs obligatoires
+            </div>
+            <!--button validation inscription-->
+            <div class="col-12 text-end my-4">
+                
+                <button type="submit" class="btn btn-primary mr-5" name="signUp" formmethod="post">M'inscrire</button>
+                        
+            </div>
+
         </form>
-        </div>
+    </div>
 
 
 
