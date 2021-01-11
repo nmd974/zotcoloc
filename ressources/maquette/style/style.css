@@ -36,6 +36,7 @@
 /*main*/
 body{
     font-family: 'Poppins', sans-serif;
+    margin-top: 56px;
 }
 .poppins{
     font-family: 'Poppins', sans-serif;
@@ -141,37 +142,4 @@ footer{
 }
 .copyright{
     margin-bottom: 0px;
-}
-
-
-
-
-/*card */
-.avatar {
-    top: 160px;
-    left: 200px;
-    
-    position: absolute;
-    z-index: 1;
-}
-.heart{
-    position: absolute;
-    z-index: 1; 
-    left: 250px;
-    top: 20px;
-}
-.card-relative {
-    position: relative;
-}
-
-/* .carousel-relative{
-    position: relative;
-} */
-/*search bootstrap*/
-
-
-
-
-#map{
-    height: 100vh;
 }

@@ -15,6 +15,7 @@
         integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
         crossorigin="" />
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/listmap.css">
 
 
 
@@ -23,7 +24,7 @@
 
 <body>
     <header class="">
-        <nav class="navbar navbar-expand-md navbar-light shadow">
+        <nav class="navbar navbar-expand-md navbar-light shadow fixed-top">
             <div class="container">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                     class="bi bi-house-fill text-green" viewBox="0 0 16 16">
@@ -63,13 +64,14 @@
     </header>
     <!-- Top Cities Section-->
 
-    <section class="container">
-        <div class="col">
+    <section class="container-fluid">
+        <div class="row">
+        <div class="col-6">
                  <!-- barre de recherche -->
-                 <div class="input-border bg-light" id="input-border">
+                 <div class="input-border bg-light mb-3 input-filter">
                     <form action="" method="post" class="form-group">
-                        <div class="input-group" id="input-group">
-                            <input type="text" class="form-control w-25 location-border" placeholder="Lieux" id="location"
+                        <div class="input-group">
+                            <input type="text" class="form-control location-border2" placeholder="Lieux"
                                 aria-label="location" aria-describedby="button-addon1">
                             <button class="btn btn-outline-secondary w-25 bg-green text-white btn-radius"
                                 type="submit" id="button-addon2">Recherche</button>
@@ -77,6 +79,7 @@
                     </form>
                 </div>
         </div>
+    </div>
       
 
         <div class="row">
