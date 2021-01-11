@@ -63,6 +63,9 @@ body{
     background-size: cover;
     height: 80vh;
 }
+.row {
+    margin: 0px!important;
+}
 .btn-radius{
     border-radius: 25px!important;
     border: none;
