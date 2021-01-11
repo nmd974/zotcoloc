@@ -256,3 +256,4 @@
 
 
 <?php require_once(dirname(__DIR__).'/includes/Layout/footer.php');?>
+<?php require_once(dirname(__DIR__).'/includes/Layout/finbalise.php');?>

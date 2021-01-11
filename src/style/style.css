@@ -150,11 +150,38 @@ footer{
 #sidebar-wrapper {
     margin-left: 0;
     min-height: 100vh;
+    background-color: #6c757d !important;
     position: fixed;
     -webkit-transition: margin .25s ease-out;
     -moz-transition: margin .25s ease-out;
     -o-transition: margin .25s ease-out;
     transition: margin .25s ease-out;
+}
+#sidebar_content{
+    padding-top: 100px;
+}
+.nav_title_profil{
+    margin-top: 17px;
+}
+.arobase_pseudo{
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+}
+.contact_zotcoloc{
+    margin-top: 45px;  
+}
+.sidebar_item{
+    background-color:#6c757d !important;
+    color: white;
+}
+.dashboard_items{
+    margin-top: 45px;
+}
+.list-group-flush>.list-group-item {
+    border-width: 1px 0 1px;
+}
+.icone_sidebar{
+    margin-right: 10px;
 }
 #wrapper{
     min-height: 100vh;
@@ -163,39 +190,53 @@ footer{
     padding: 0.875rem 1.25rem;
     font-size: 1.2rem;
 }
-
 #sidebar-wrapper .list-group {
     width: 15rem;
 }
-
 #page-content-wrapper {
     min-width: 0;
     width: 100%;
 }
-
 #wrapper.toggled #sidebar-wrapper {
     margin-left: -15rem;
 }
 #wrapper-content{
-    padding: 60px 0px 0px 250px;
+    padding: 0px 0px 0px 250px;
     margin-top: 0px;
-    height: 100% !important;
+    /* height: 100% !important; a remettre si footer*/
 }
 #menu-toggle{
+    display: none;
     height: 44px;
     width: 44px;
-    color: white;
+    color: #4dcb44 !important;
     position: fixed;
     bottom: 0;
     right: 0;
-    z-index: 100000;
     border: none;
     outline: none;
-    color: white;
     cursor: pointer;
     border-radius: 100%;
 }
-
+.profile-img{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+}
+.footer_sidebar{
+    background-color:#6c757d !important;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    font-size: 12px;
+    width: 100%;
+}
+.icone_photo{
+    position: absolute;
+    top: 25%;
+    left: 65%;
+    z-index: 1000;
+}
 /*INSCRIPTION PARTICULIER*/
 /*---------------------------------------------*/
 ul{

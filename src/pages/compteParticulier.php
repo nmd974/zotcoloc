@@ -1,70 +1,81 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
 <!-- Sidebar -->
-<div class="bg-light border-right shadow" id="sidebar-wrapper">
-    <div class="sidebar-heading">Start Bootstrap </div>
-    <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Shortcuts</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
+<div class="border-right shadow" id="sidebar-wrapper">
+    <!-- <div class="sidebar-heading">///</div> -->
+    <div class="list-group list-group-flush" id="sidebar_content">
+    <div class="d-flex flex-column justify-content-center align-items-center">
+            <a href="#">
+                <img src="../images/profile.jpg" alt="" class="profile-img">
+                <i class="fa fa-camera fa-2x icone_photo" aria-hidden="true"></i>
+            </a>
+            <p class="nav_title_profil">Mirella</p>
+            <p class="arobase_pseudo">@Mirellax</p>
+            </div>
+        <a href="#" class="list-group-item list-group-item-action sidebar_item">
+            <i class="fa fa-cogs icone_sidebar" aria-hidden="true"></i>
+            Gérer mon profil
+        </a>
+        
+        <div class="dashboard_items">
+            <a href="#" class="list-group-item list-group-item-action sidebar_item">
+                <i class="fa fa-tachometer icone_sidebar" aria-hidden="true"></i>
+                Mon tableau de bord
+            </a>
+            <a href="#" class="list-group-item list-group-item-action sidebar_item">
+                <i class="fa fa-heart icone_sidebar" aria-hidden="true"></i>
+                Mes favoris
+                <span class="badge bg-danger">0</span>
+            </a>
+            
+            <a href="#" class="list-group-item list-group-item-action sidebar_item">
+                <i class="fa fa-id-badge icone_sidebar" aria-hidden="true"></i>    
+                Mes candidatures
+                <span class="badge bg-danger">1</span>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action sidebar_item">
+                <i class="fa fa-plus-circle icone_sidebar" aria-hidden="true"></i>
+                Mes annonces
+                <span class="badge bg-danger">0</span>
+            </a>
+        </div>
+        <div class="contact_zotcoloc">
+        <a href="#" class="list-group-item list-group-item-action sidebar_item">
+            <i class="fa fa-info-circle icone_sidebar" aria-hidden="true"></i>
+            Informations zotcoloc
+        </a>
+            
+        </div>
+        
+        <div class="footer_sidebar text-center">
+            <p>&copy; 2021 <span class="text-green">ZotColoc.</span> All Rights Reserved.</p>
+        </div>
     </div>
 </div>
 <!-- /#sidebar-wrapper -->
-<div class="container-fluid" id="wrapper-content">
-    <!-- inscription-->
-    <div class="container">
-        <p id="description" class="lead">
-        <h1 class="text-center" id="title">Formulaie inscription Particulier </h1>
-    </div>
-    <div class="container mt-5">
-        <!-- <div class="timeline"> -->
-        <ul class="d-flex justify-content-around">
-            <li class="step">inscription</li>
 
-        </ul>
-        <div class="d-flex justify-content-center align-items-center">
-            <div class="line_time position-relative">
-                <div class="line_time_progress position-relative"></div>
+
+<div class="container-fluid" id="wrapper-content">
+    <!--TITRE A CHANGER SELON LE INCLUDE AFFICHE-->
+    <div class="container">
+        <div class="mb-5 subtitle">
+            <div class="border-one ps-1">
+                <div class="border-two ps-3">
+                    <p class="text-secondary m-0 poppins h5">MON PROFIL</p>
+                    <h2 class="vidaloka m-0 h1" id="title_step">Gérer mon:<span class="text-green"> profil</span></h2>
+                </div>
             </div>
         </div>
-        <ul class="d-flex justify-content-around">
-            <li class="dots"></li>
-            <li class="dots"></li>
-            <li class="dots"></li>
-            <li class="dots"></li>
-            <li class="dots"></li>
-        </ul>
-        <!-- </div> -->
     </div>
+    <!--METTRE LE CONTENU ICI-->
     <div class="container">
-        <form method="POST" enctype="multipart/form-data">
-            <div class="col-md-12">
-                <label for="inputEmail4" class="form-label">Email*</label>
-                <input type="email" class="form-control" id="inputEmail4" name="emailUser" value="<?php if(isset($_POST['emailUser'])){
-                    echo $_POST['emailUser'];
-                }?>">
-            </div>
-            <div class="col-md-12">
-                <label for="confirmPassword" class="form-label">Mot de passe*</label>
-                <input type="password" class="form-control" id="confirmPassword" name="passwordUser">
-            </div>
-            <div class="col-md-12">
-                <label for="inputPassword4" class="form-label">Retaper Mot de passe*</label>
-                <input type="password" class="form-control" id="inputPassword4" name="repass">
-            </div>
-            <div class="col-md-12 mt-4">
-                *Champs obligatoires
-            </div>
-            <!--button validation inscription-->
-            <div class="col-12 text-end my-4">
-                <button type="submit" class="btn btn-primary mr-5" name="inscription_01"
-                    formmethod="post">suivant</button>
-            </div>
-        </form>
+        <?php require_once(dirname(__DIR__).'/includes/compteParticulier/gererProfil.php');?>
     </div>
-    <i class="fa fa-user fa-2x" id="menu-toggle" style="color: black;" aria-hidden="true"></i>
+
+    <!--BOUTON DE SWITCH SIDEBAR EN MOBILE-->
+    <i class="fa fa-user fa-2x" id="menu-toggle" aria-hidden="true"></i>
 </div>
 
-<?php require_once(dirname(__DIR__).'/includes/Layout/footer.php');?>
+<?php //require_once(dirname(__DIR__).'/includes/Layout/footer.php');?>
+<?php require_once(dirname(__DIR__).'/includes/Layout/scriptsSrc.php');?>
+<script src="../js/sidebar.js"></script>
+<?php require_once(dirname(__DIR__).'/includes/Layout/finbalise.php');?>
