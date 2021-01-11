@@ -46,13 +46,9 @@
     crossorigin="anonymous"></script>
 <!-- script jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="js/media.js"></script>
-<script>
-    $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-    });
-  </script>
+<script src="../js/media.js"></script>
+<script src="../js/signupParticulier.js"></script>
+<script src="../js/sidebar.js"></script>
 
 </body>
 

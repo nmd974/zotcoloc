@@ -56,7 +56,7 @@
                                 <a class="nav-link active" aria-current="page" href="#">Contact</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link active" aria-current="page" href="#">Se connecter</a>
+                                <a href="./inscriptionParticulier.php" class="nav-link active" aria-current="page" href="#">Se connecter</a>
                             </li>
                             <li class="nav-item">
                                 <a href="./compteParticulier.php" class="nav-link active" aria-current="page" href="#">Mon compte</a>
