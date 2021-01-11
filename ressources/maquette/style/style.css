@@ -32,11 +32,7 @@
     .main-center{
         text-align: center;
     }
-
 }
-
-
-
 /*main*/
 body{
     font-family: 'Poppins', sans-serif;
@@ -52,16 +48,14 @@ body{
 }
 /*titre h2*/
 .border-one{
-    border-left: 2px solid green; 
+    border-left: 2px solid #4dcb44; 
 }
 .border-two{
-    border-left: 4px solid green;   
+    border-left: 4px solid #4dcb44;   
 }
 /*navbar*/
-
-
 .active:hover {
-    color: green!important;
+    color: #4dcb44!important;
 }
 /*main*/
 .main{
@@ -71,6 +65,7 @@ body{
 }
 .btn-radius{
     border-radius: 25px!important;
+    border: none;
 }
 .input-border{
     padding: 5px;
@@ -99,14 +94,14 @@ body{
     color: black;
 }
 .text-green{
-    color: green!important;
+    color: #4dcb44!important;
 }
 .bg-green{
-    background: green!important;
+    background: #4dcb44!important;
 }
 /*statistique*/
 .number-stat{
-    background: linear-gradient(to bottom, rgba(22, 22, 22, 0.8) 0%, rgba(22, 22, 22, 0.8) 100%);
+    background: linear-gradient(to bottom, rgba(224, 224, 224, 0.8) 0%, rgba(224, 224, 224, 0.8) 100%);
     
     color: white;
     font-size: 1.4rem;;
@@ -162,9 +157,7 @@ footer{
 .card-relative {
     position: relative;
 }
-.input-description {
-    height: 100px;
-}
+
 /* .carousel-relative{
     position: relative;
 } */
@@ -172,36 +165,7 @@ footer{
 
 
 
-/*//////map + liste////*/
-.search-bar{
-    height: 40px;
-    width: 650px;
-    
-}
-#btn-send{
-    width: 100px;
-    height: 35px;
-    
-  
-}
-.form-search{
-    height: 35px;
-    padding-bottom: 0px!important;
-}
 
-#location-filter {
-    padding-top: 0px;
-    padding-bottom: 0px;
-   
-}
 #map{
     height: 100vh;
-}
-.btn-value {
-    padding-top: 0px!important;
-    padding-bottom: 0px!important;
-   font-size: 1rem!important;
-}
-.btn-green{
-    padding-bottom: 5px!important;
 }
