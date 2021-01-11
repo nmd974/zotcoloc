@@ -18,6 +18,46 @@
 </head>
 
 <body>
+
+<style>
+    ul{
+    list-style: none;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+.step{
+    transform: rotate(-45deg);
+    margin: 0px 0px 30px 50px;
+}
+.line_time{
+    background-color: black;
+    width: 80%;
+    height: 5px;
+}
+.line_time_progress{
+    background-color: rgb(158, 158, 158);
+    width: 0px;
+    height: 10px;
+    margin-top: -2.5px;
+    -webkit-transition: width .50s ease-out;
+    -moz-transition: width .50s ease-out;
+    -o-transition: width .50s ease-out;
+    transition: width .50s ease-out;
+}
+
+.dots{
+    content: '';
+    background-color:  #4dcb44;
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+    position: relative;
+    z-index: 99;
+    margin-top: -15px;
+}
+</style>
+
     <header>
         <!-- barre de navigation -->
         <nav class="navbar navbar-expand-md navbar-light shadow">
@@ -69,68 +109,75 @@
             <h1 class="text-center display-3" id="title">Formulaie inscription Particulier </h1>
         </div>
 
+        <div class="container mt-5">
+            <!-- <div class="timeline"> -->
+                <ul class="d-flex justify-content-around">
+                    <li class="step">inscription</li>
+                    <li class="step">information général</li>
+                    <li class="step">Mes intérêt</li>
+                    <li class="step">ma ville de recherche</li>
+                    <li class="step">récaputilatif des inforamtions</li>
+                </ul>
+                <div class="d-flex justify-content-center align-items-center">
+                    <div class="line_time position-relative">
+                        <div class="line_time_progress position-relative"></div>
+                    </div>
+                </div>
+
+                
+                <ul class="d-flex justify-content-around">
+                    <li class="dots"></li>
+                    <li class="dots"></li>
+                    <li class="dots"></li>
+                    <li class="dots"></li>
+                    <li class="dots"></li>
+                </ul>
+            <!-- </div> -->
+        </div>
+
    
 
     <div class="container">
         <form method="POST" enctype="multipart/form-data">
             
-            <div class="col-md-12">
-                <label for="name" class="form-label">Nom*</label>
-                <input type="text" class="form-control" name="nomUser" id="name" 
-                value="<?php if(isset($_POST['nomUser'])){
-                    echo $_POST['nomUser'];
-                }?>">
-            </div>
+            <!--ville recherche-->
+            <h3>Mes villes de recherche: </h3>
+            
+            <div class="btn" role="group" aria-label="Basic checkbox toggle button group">
+                <input type="checkbox" class="btn-check" id="btncheck31" autocomplete="off">
+                <label class="btn btn-outline-success" for="btncheck31">Checkbox 1</label>
+              
+                <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                <label class="btn btn-outline-success" for="btncheck32">Checkbox 2</label>
+              
+                <input type="checkbox" class="btn-check" id="btncheck33" autocomplete="off">
+                <label class="btn btn-outline-success" for="btncheck33">Checkbox 3</label>
 
-            <div class="col-md-12">
-                <label for="prenom" class="form-label">Prénoms*</label>
-                <input type="text" class="form-control" name="prenomUser" id="prenom" 
-                value="<?php if(isset($_POST['prenomUser'])){
-                    echo $_POST['prenomUser'];
-                }?>">
-            </div>
+                <input type="checkbox" class="btn-check" id="btncheck33" autocomplete="off">
+                <label class="btn btn-outline-success" for="btncheck33">Checkbox 1</label>
+              
+                <input type="checkbox" class="btn-check" id="btncheck34" autocomplete="off">
+                <label class="btn btn-outline-success" for="btncheck34">Checkbox 2</label>
+              
+                <input type="checkbox" class="btn-check" id="btncheck35" autocomplete="off">
+                <label class="btn btn-outline-success" for="btncheck35">Checkbox 3</label>
 
-            <div class="col-md-12">
-                <label for="inputEmail4" class="form-label">Email*</label>
-                <input type="email" class="form-control" id="inputEmail4" name="emailUser" 
-                value="<?php if(isset($_POST['emailUser'])){
-                    echo $_POST['emailUser'];
-                }?>">
-            </div>
+                <input type="checkbox" class="btn-check" id="btncheck36" autocomplete="off">
+                <label class="btn btn-outline-success" for="btncheck36">Checkbox 1</label>
+              
+                <input type="checkbox" class="btn-check" id="btncheck37" autocomplete="off">
+                <label class="btn btn-outline-success" for="btncheck37">Checkbox 2</label>
+              
+                <input type="checkbox" class="btn-check" id="btncheck38" autocomplete="off">
+                <label class="btn btn-outline-success" for="btncheck38">Checkbox 3</label>
 
-            <!-- date naissance-->
-            <div class="col-md-12">
-                <label for="anniversaire" class="form-label">Date naissance*</label><br>
-                <input type="date" name="timestamp" class="form-control" step="1">
-            </div>
-
-            <!-- Emmenagement-->
-            <div class="col-md-12">
-                <label for="emmenagement" class="form-label">Date d'emmenagement*</label><br>
-                <input type="date" name="timestamp" class="form-control" step="1">
-            </div>
-
-
-            <div class="col-md-12">
-                <label for="confirmPassword" class="form-label">Mot de passe*</label>
-                <input type="password" class="form-control" id="confirmPassword" name="passwordUser">
-            </div>
-
-            <div class="col-md-12">
-                <label for="inputPassword4" class="form-label">Retaper Mot de passe*</label>
-                <input type="password" class="form-control" id="inputPassword4" name="repass">
-            </div>
-
-            <!-- CheckBox -->
-            <div class="col-md-12">
-                <p> <input name="AgreeCheckbox" id="agree" type="checkbox"
-                    value="AGREE"> J'accepte que les informations saisies ci-dessus soient correctes. Ce n'est peut-être pas le cas. C'est juste pour s'amuser.
-                </p>
-            </div>
-
-            <div class="col-md-12 mt-4">
-                *Champs obligatoires
-            </div>
+                <input type="checkbox" class="btn-check" id="btncheck39" autocomplete="off">
+                <label class="btn btn-outline-success" for="btncheck39">Checkbox 1</label>
+              
+                <input type="checkbox" class="btn-check" id="btncheck40" autocomplete="off">
+                <label class="btn btn-outline-success" for="btncheck40">Checkbox 2</label>
+              </div>
+            
             <!--button validation inscription-->
             <div class="col-12 text-end my-4">
                 
@@ -191,7 +238,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/media.js"></script>
 
-
+    <script>
+        $(document).ready(() =>{
+    let taille = $('.line_time').css('width');
+    taille = Math.round(parseInt(taille)) / 4;
+    $('.btn').on('click', () => {
+        let width_actuelle = $('.line_time_progress').css('width');
+        width_actuelle = parseInt(width_actuelle) + taille;
+        if(parseInt(width_actuelle) + 3 <= taille * 4){
+            $('.line_time_progress').css('width', width_actuelle + 'px');
+        }
+    })
+})
+    </script>
 
 </body>
 

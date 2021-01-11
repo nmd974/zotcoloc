@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;1,200&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vidaloka&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+
+
+
+    <title>ZotColoc 974</title>
+</head>
+
+<body>
+
+<style>
+    ul{
+    list-style: none;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+.step{
+    transform: rotate(-45deg);
+    margin: 0px 0px 30px 50px;
+}
+.line_time{
+    background-color: black;
+    width: 80%;
+    height: 5px;
+}
+.line_time_progress{
+    background-color: rgb(158, 158, 158);
+    width: 0px;
+    height: 10px;
+    margin-top: -2.5px;
+    -webkit-transition: width .50s ease-out;
+    -moz-transition: width .50s ease-out;
+    -o-transition: width .50s ease-out;
+    transition: width .50s ease-out;
+}
+
+.dots{
+    content: '';
+    background-color:  #4dcb44;
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+    position: relative;
+    z-index: 99;
+    margin-top: -15px;
+}
+</style>
+
+    <header>
+        <!-- barre de navigation -->
+        <nav class="navbar navbar-expand-md navbar-light shadow">
+            <div class="container-fluid">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                    class="bi bi-house-fill text-green" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                    <path fill-rule="evenodd"
+                        d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+                </svg>
+                <div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active fw-bold" aria-current="page" href="#">Accueil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Recherche</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Inscription</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">login</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+    </header>
+    
+    <!-- inscription-->
+    
+
+        <div class="container">
+            <p id="description" class="lead">
+            <h1 class="text-center display-3" id="title">Formulaie inscription Particulier </h1>
+        </div>
+
+        <div class="container mt-5">
+            <!-- <div class="timeline"> -->
+                <ul class="d-flex justify-content-around">
+                    <li class="step">inscription</li>
+                    <li class="step">information général</li>
+                    <li class="step">Mes intérêt</li>
+                    <li class="step">ma ville de recherche</li>
+                    <li class="step">récaputilatif des inforamtions</li>
+                </ul>
+                <div class="d-flex justify-content-center align-items-center">
+                    <div class="line_time position-relative">
+                        <div class="line_time_progress position-relative"></div>
+                    </div>
+                </div>
+
+                
+                <ul class="d-flex justify-content-around">
+                    <li class="dots"></li>
+                    <li class="dots"></li>
+                    <li class="dots"></li>
+                    <li class="dots"></li>
+                    <li class="dots"></li>
+                </ul>
+            <!-- </div> -->
+        </div>
+
+   
+
+    <div class="container">
+        <form method="POST" enctype="multipart/form-data">
+            
+            <div class="col-md-12">
+                <label for="name" class="form-label">Nom*</label>
+                <input type="text" class="form-control" name="nomUser" id="name" 
+                value="<?php if(isset($_POST['nomUser'])){
+                    echo $_POST['nomUser'];
+                }?>">
+            </div>
+
+            <div class="col-md-12">
+                <label for="prenom" class="form-label">Prénoms*</label>
+                <input type="text" class="form-control" name="prenomUser" id="prenom" 
+                value="<?php if(isset($_POST['prenomUser'])){
+                    echo $_POST['prenomUser'];
+                }?>">
+            </div>
+
+            <div class="col-md-12">
+                <label for="inputEmail4" class="form-label">Email*</label>
+                <input type="email" class="form-control" id="inputEmail4" name="emailUser" 
+                value="<?php if(isset($_POST['emailUser'])){
+                    echo $_POST['emailUser'];
+                }?>">
+            </div>
+
+            <!-- date naissance-->
+            <div class="col-md-12">
+                <label for="anniversaire" class="form-label">Date naissance*</label><br>
+                <input type="date" name="timestamp" class="form-control" step="1">
+            </div>
+
+            <!-- Emmenagement-->
+            <div class="col-md-12">
+                <label for="emmenagement" class="form-label">Date d'emmenagement*</label><br>
+                <input type="date" name="timestamp" class="form-control" step="1">
+            </div>
+
+           
+
+             <!--Alimentaires-->
+
+             <div class="mt-4">
+                <div class="col border-one ps-1">
+                    <div class="border-two ps-3">
+                        <h2 class="vidaloka m-0 h1">Mes habitudes <span class="text-green">
+                            alimenatries</span> :</h2>
+                    </div>
+                </div>
+            
+             <div class="btn" role="group" aria-label="Basic checkbox toggle button group">
+                 <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" checked>
+                 <label class="btn btn-outline-success" for="btncheck1">Checkbox 1</label>
+               
+                 <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off" checked>
+                 <label class="btn btn-outline-success" for="btncheck2">Checkbox 2</label>
+               
+                 
+               </div>
+ 
+             <!--centres intérêts-->
+             <div class="mt-4">
+                <div class="col border-one ps-1">
+                    <div class="border-two ps-3">
+                        <h2 class="vidaloka m-0 h1">Mes centres <span class="text-green">
+                            intérêts</span> :</h2>
+                    </div>
+                </div>
+             
+             <div class="btn" role="group" aria-label="Basic checkbox toggle button group">
+                 <input type="checkbox" class="btn-check" id="btncheck11" autocomplete="off" checked>
+                 <label class="btn btn-outline-success" for="btncheck11">Checkbox 1</label>
+               
+                 <input type="checkbox" class="btn-check" id="btncheck22" autocomplete="off" checked>
+                 <label class="btn btn-outline-success" for="btncheck22">Checkbox 2</label>
+               
+                
+             </div>
+ 
+             <!--Pêrsonnalites-->
+             <div class="mt-4">
+                <div class="col border-one ps-1">
+                    <div class="border-two ps-3">
+                        <h2 class="vidaloka m-0 h1">Ma <span class="text-green">
+                            personnalite</span> :</h2>
+                    </div>
+                </div>
+             
+             <div class="btn" role="group" aria-label="Basic checkbox toggle button group">
+                 <input type="checkbox" class="btn-check" id="btncheck31" autocomplete="off" checked>
+                 <label class="btn btn-outline-success" for="btncheck31">Checkbox 1</label>
+               
+                 <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off" checked>
+                 <label class="btn btn-outline-success" for="btncheck32">Checkbox 2</label>
+               
+               
+               </div>
+ 
+               <!--Style de vie-->
+               <div class="mt-4">
+                <div class="col border-one ps-1">
+                    <div class="border-two ps-3">
+                        <h2 class="vidaloka m-0 h1">Styl de  <span class="text-green">
+                            vie</span> :</h2>
+                    </div>
+                </div>
+             
+             <div class="btn" role="group" aria-label="Basic checkbox toggle button group">
+                 <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" checked>
+                 <label class="btn btn-outline-success" for="btncheck1">Checkbox 1</label>
+               
+                 <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off" checked>
+                 <label class="btn btn-outline-success" for="btncheck2">Checkbox 2</label>
+               
+                
+               </div>
+
+            <div class="col-md-12 mt-4">
+                *Champs obligatoires
+            </div>
+            <!--button validation inscription-->
+            <div class="col-12 text-end my-4">
+                
+                <button type="submit" class="btn btn-primary mr-5" name="inscription_01" formmethod="post">suivant</button>
+                        
+            </div>
+
+             <!-- CheckBox -->
+             <div class="col-md-12">
+                <p> <input name="AgreeCheckbox" id="agree" type="checkbox"
+                    value="AGREE"> J'accepte que les informations saisies ci-dessus soient correctes. Ce n'est peut-être pas le cas. C'est juste pour s'amuser.
+                </p>
+            </div>
+
+        </form>
+    </div>
+
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <footer class="">
+        <div class="container">
+            <div class="d-flex justify-content-between flex-wrap" id="footer-center">
+                <div class="text-light footer-center">
+                    <div class="mb-3 mt-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                            class="bi bi-house-fill  text-green" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                            <path fill-rule="evenodd"
+                                d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+                        </svg>
+                    </div>
+                    <p>ZotColoc service de relation entre particulier <br> et loueur pour de la colocation à la Réunion.
+                    </p>
+                </div>
+
+                <div class="text-light footer-center">
+                    <h3 class="vidaloka mt-5">Contact us</h3>
+                    <div class="">
+                        <p>Mr DIALLO Saint Denis</p>
+                        <p>Phone: (020) 123 456 789</p>
+                        <p>Email: <a class="text-green" href="mailto:zotcoloc@company.com">zotcoloc@Company.com</a>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="text-center text-light bg-dark">
+            <p class="copyright">&copy; 2021 <span class="text-green">ZotColoc.</span> All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- script bootstrap -->
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <!-- script jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/media.js"></script>
+
+    <script>
+        $(document).ready(() =>{
+    let taille = $('.line_time').css('width');
+    taille = Math.round(parseInt(taille)) / 4;
+    $('.btn').on('click', () => {
+        let width_actuelle = $('.line_time_progress').css('width');
+        width_actuelle = parseInt(width_actuelle) + taille;
+        if(parseInt(width_actuelle) + 3 <= taille * 4){
+            $('.line_time_progress').css('width', width_actuelle + 'px');
+        }
+    })
+})
+    </script>
+
+</body>
+
+</html>
