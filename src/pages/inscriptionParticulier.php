@@ -25,3 +25,5 @@
 </div>
 
 <?php require_once(dirname(__DIR__).'/includes/Layout/footer.php');?>
+<script src="../js/signupParticulier.js"></script>
+<?php require_once(dirname(__DIR__).'/includes/Layout/finbalise.php');?>
