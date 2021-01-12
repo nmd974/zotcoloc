@@ -1,18 +1,32 @@
 <!--STEP 1-->
+
 <div id="bloc_step_1" class="show_step">
+<h4>Dites-en plus sur votre logement:</h4>
+    <!--Titre-->
     <div class="col-md-12">
-        <label for="inputEmail4" class="form-label">Email*</label>
-        <input type="email" class="form-control" id="inputEmail4" name="emailUser" value="<?php if(isset($_POST['emailUser'])){
-            echo $_POST['emailUser'];
+        <label for="titre_logement" class="form-label">Titre*</label>
+        <input type="text" class="form-control" id="titre_logement" name="titre_logement" value="<?php if(isset($_POST['titre_logement'])){
+            echo $_POST['titre_logement'];
         }?>">
     </div>
+    <!--Description-->
     <div class="col-md-12">
-        <label for="confirmPassword" class="form-label">Mot de passe*</label>
-        <input type="password" class="form-control" id="confirmPassword" name="passwordUser">
+        <label for="description_logement" class="form-label">Desciption du logement*</label>
+        <textarea class="form-control" id="description_logement" name="description_logement" rows="3"></textarea>
     </div>
+    <!--Type-->
     <div class="col-md-12">
-        <label for="inputPassword4" class="form-label">Retaper Mot de passe*</label>
-        <input type="password" class="form-control" id="inputPassword4" name="repass">
+    <label for="type_logement">Type de logement</label>
+    <select class="form-control" id="type_logement">
+      <option value="villa">villa</option>
+      <option value="appartement">appartement</option>
+      <option value="maison">Maison</option>
+    </select>
+    </div>
+    <!--Surface-->
+    <div class="col-md-12">
+        <label for="surface_logement" class="form-label">Surface Totale</label>
+        <input type="number" class="form-control" id="surface_logement" name="surface_logement">
     </div>
     <div class="col-md-12 mt-4">
         *Champs obligatoires

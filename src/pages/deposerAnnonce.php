@@ -20,7 +20,7 @@
                   <button type="button" class="btn btn-primary btn-lg rounded-pill">Colocataire</button>
                 </a>
                 
-                <a href="./inscriptionProprietaire.php">
+                <a href="./creationannonce.php">
                   <button type="button" class="btn btn-primary btn-lg rounded-pill">Résidence</button>
                 </a>
                 

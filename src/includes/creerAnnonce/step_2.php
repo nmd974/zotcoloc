@@ -1,26 +1,22 @@
 <!--STEP_2-->
 <div id="bloc_step_2" class="unshow_step">
-    <!--Nom-->
+    <h4>Renseignez l'adresse excte de votre logement:</h4>
+    <!--ville-->
     <div class="col-md-12">
-        <label for="nom" class="form-label">Nom*</label><br>
-        <input type="text" name="nom" class="form-control" id="nom" step="1">
+        <label for="id_ville" class="form-label">Ville*</label><br>
+        <input type="text" name="id_ville" class="form-control" id="id_ville" step="1">
     </div>
-    <!--Prenom-->
-    <div class="col-md-12">
-        <label for="penom" class="form-label">Prénom*</label><br>
-        <input type="text" name="prenom" class="form-control" id="prenom" step="1">
+    <!--Photo-->
+    <h4 class="mt-4">Photo des parties communes :</h4> <br>
+    <div class="col-md-12 mt-2">
+        <label for="photo_logement">ajoutez au moins une photo des parties communes</label>
+        <input type="file" class="form-control-file" id="photo_logement" class="photo_logement">
     </div>
-    <!--Date de naissance-->
-    <div class="col-md-12">
-        <label for="anniversaire" class="form-label">Date naissance*</label><br>
-        <input type="date" name="timestamp" class="form-control" step="1">
-    </div>
-    <!--Date d'emmenagement-->
-    <div class="col-md-12">
-        <label for="emmenagement" class="form-label">Date d'emmenagement*</label><br>
-        <input type="date" name="timestamp" class="form-control" step="1">
-    </div>
-    <div class="col-md-12 mt-4">
+
+    
+    
+    
+    <div class="col-md-12 mt-5">
         *Champs obligatoires
     </div>
     <!--button validation inscription-->

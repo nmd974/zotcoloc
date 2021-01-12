@@ -1,6 +1,6 @@
     <div class="d-flex justify-content-center align-items-center">
         <div class="line_time position-relative" id="line_time">
-            <div class="line_time_progress position-relative" id="line_time_progress"></div>
+            <div class="line_time_progress position-relative" id="line_time_progress2"></div>
         </div>
     </div>
     <ul class="d-flex justify-content-between">
