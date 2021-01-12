@@ -312,19 +312,19 @@ ul{
     }
     .location-border{
         border: 1px solid rgb(223, 223, 223)!important;
-        border-radius: 25px;
+        border-radius: 25px !important;
         width: 100%!important;
         margin-bottom: 4px;
     }
     .price-border{
         border: 1px solid rgb(223, 223, 223)!important;
-        border-radius: 25px;
+        border-radius: 25px !important;
         width: 100%!important;
         margin-bottom: 4px;
     }
     .category-border{
         border: 1px solid rgb(223, 223, 223)!important;
-        border-radius: 25px;
+        border-radius: 25px !important;
         width: 100%!important;
         margin-bottom: 4px;
     }
