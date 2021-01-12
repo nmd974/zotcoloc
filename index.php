@@ -1,1 +1,1 @@
-<?php header('Location: ./src/pages/compteParticulier.php');?>
+<?php header('Location: ./src/pages/home.php');?>
