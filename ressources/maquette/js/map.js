@@ -25,11 +25,12 @@ var marker = L.marker([villes[ville].lat, villes[ville].lon]).addTo(macarte);
     marker.bindPopup(ville);
    
 }  
-
-  
-
 }
+
 window.onload = function(){
 // Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
-initMap(); 
+initMap();
+
 };
+
+
