@@ -54,7 +54,7 @@
                                 <a href="./home.php" class="nav-link active fw-bold" aria-current="page">Accueil</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page">Recherche</a>
+                                <a href="./roommateSearch.php" class="nav-link active" aria-current="page">Recherche</a>
                             </li>
                             <li class="nav-item">
                                 <a href="./inscriptionParticulier.php" class="nav-link active" aria-current="page">Signup Particulier</a>
