@@ -22,15 +22,12 @@ function initMap() {
      for (ville in villes) {
 var marker = L.marker([villes[ville].lat, villes[ville].lon]).addTo(macarte);
 // Nous ajoutons la popup. A noter que son contenu (ici la variable ville) peut être du HTML
-    marker.bindPopup(ville);
-   
+    marker.bindPopup(ville);   
 }  
 }
-
 window.onload = function(){
 // Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
 initMap();
-
 };
 
 
