@@ -1,0 +1,45 @@
+*{
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+.step{
+    transform: rotate(-45deg);
+    margin: 0px 0px 30px 50px;
+}
+.line_time{
+    background-color: black;
+    width: 80%;
+    height: 5px;
+}
+.line_time_progress{
+    background-color: rgb(158, 158, 158);
+    width: 0px;
+    height: 10px;
+    margin-top: -2.5px;
+    -webkit-transition: width .50s ease-out;
+    -moz-transition: width .50s ease-out;
+    -o-transition: width .50s ease-out;
+    transition: width .50s ease-out;
+}
+
+.dots{
+    content: '';
+    background-color: green;
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+    position: relative;
+    z-index: 99;
+    margin-top: -15px;
+}
