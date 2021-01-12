@@ -195,7 +195,7 @@
             </div>
             <div class="col-md-12 col-lg-4 position-relative">
                 <!-- card avec le bouton pour louer -->
-                <div class="card text-center mt-4 sticky_md-top mb-4">
+                <div class="card text-center mt-4 sticky-md-top mb-4">
                     <div class="card-header">
                     <p class="m-0">Dispo. <span class="fw-bold">immédiatement</span></p>  
                     </div>

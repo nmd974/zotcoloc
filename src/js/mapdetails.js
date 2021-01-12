@@ -3,8 +3,7 @@ var lat = -20.89342005859303;
 var lon = 55.45163310991814;
 var macarte = null;
 var villes = {
-"Saint-Denis": { "lat": -20.890447, "lon": 55.454915 },
-"Sainte-Marie": { "lat": -20.899306, "lon": 55.526923 }
+"Saint-Denis": { "lat": -20.890447, "lon": 55.454915 }
 };
 // Fonction d'initialisation de la carte
 function initMap() {
