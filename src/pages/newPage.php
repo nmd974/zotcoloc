@@ -9,7 +9,7 @@
         </div>
     </div>
 </div>
-<div class="container" id="wrapper_inscription_timeline">
+<div class="container" id="wrapper_page_content">
 
    
 </div>
