@@ -57,6 +57,7 @@
                 <p class="h6 mt-3">
                     Le logement est localisé dans le quartier Hôtel de Ville - Presqu'île, en plein centre de Lyon. De nombreux commerces, restaurants, transports publics sont aux environs. La colocation est à l'étage 4 avec ascenseur. Elle est entièrement meublée et propose une cuisine 100% équipée avec réfrigérateur, micro-ondes, poêles, casseroles, ustensiles, bouilloire, grille-pain, vaisselle… Ainsi que planche à repasser, tancarville, fer à repasser, lave-linge. Tout le matériel pour le ménage est sur place dans cette colocation : aspirateur, balai, seau et serpillère, balai-brosse… Chaque colocation meublée Chez Nestor inclut toutes les charges : assurance habitation, taxe sur les ordures, charges de copropriété, électricité, wifi illimité, eau.”
                 </p>
+                <!-- avatar -->
                 <div class="d-flex align-items-center mt-3 mb-4">
                 <div class="bg-light shadow" style="width:60px; height: 60px; border-radius: 50%;">
                     <img src="../images/profile.jpg" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px;height: 60px; border-radius: 50%;">
@@ -75,21 +76,103 @@
                         </div>
                     </div>
                 </div>
-                <p class="text-green h4 mb-4">Chambre</p>
-                <div class="equipment-room border-secondary border shadow mb-2 d-flex align-items-center justify-content-center">
+                <h4 class="text-green h4 mb-4">Chambre</h4>
+                <div class="d-flex">
+                <!-- un équipement -->
+                <div class="equipment-room border-secondary border shadow mb-2 d-flex align-items-center justify-content-center m-1">
                     <div class="d-flex">
-                        <div class="ms-2">
-                        <i class="fa fa-file-image-o text-dark" aria-hidden="true" style=""></i> <!--à enlever par la suite -->
+                        <div class="ms-2 d-flex align-items-center">
+                        <i class="fa fa-file-image-o text-dark" aria-hidden="true" style="width: 15px;"></i> <!--à enlever par la suite -->
                         <!-- <img src="" alt="name">  on rajoute ensuite-->
                         </div>
-                        <div>
+                        <div class="d-flex align-items-center">
+                            <p class="mb-0">Equipement du logement eeeeeeeeeeeeeeeeeeeee</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- un équipement -->
+                <div class="equipment-room border-secondary border shadow mb-2 d-flex align-items-center justify-content-center m-1">
+                    <div class="d-flex">
+                        <div class="ms-2 d-flex align-items-center">
+                        <i class="fa fa-file-image-o text-dark" aria-hidden="true" style="width: 15px;"></i> <!--à enlever par la suite -->
+                        <!-- <img src="" alt="name">  on rajoute ensuite-->
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <p class="mb-0">Equipement du logement eeeeeeeeeeeeeeeeeeeee</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <h4 class="text-green h4 mb-4 mt-3">Logement</h4>
+                <div class="d-flex">
+                <!-- un équipement -->
+                <div class="equipment-room border-secondary border shadow mb-2 d-flex align-items-center justify-content-center m-1">
+                    <div class="d-flex">
+                        <div class="ms-2 d-flex align-items-center">
+                        <i class="fa fa-file-image-o text-dark" aria-hidden="true" style="width: 15px;"></i> <!--à enlever par la suite -->
+                        <!-- <img src="" alt="name">  on rajoute ensuite-->
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <p class="mb-0">Equipement du logement eeeeeeeeeeeeeeeeeeeee</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- un équipement -->
+                <div class="equipment-room border-secondary border shadow mb-2 d-flex align-items-center justify-content-center m-1">
+                    <div class="d-flex">
+                        <div class="ms-2 d-flex align-items-center">
+                        <i class="fa fa-file-image-o text-dark" aria-hidden="true" style="width: 15px;"></i> <!--à enlever par la suite -->
+                        <!-- <img src="" alt="name">  on rajoute ensuite-->
+                        </div>
+                        <div class="d-flex align-items-center">
                             <p class="mb-0">Equipement du logement</p>
                         </div>
                     </div>
-                
+                </div>
+                </div> 
+                <hr>
+                <h4 class="text-green h4 mb-4 mt-3">Colocataires</h4>
+                <div class="d-flex justify-content-center">
+                <div class="d-flex flex-column align-items-center ms-4 me-4">
+                <p class="mb-0">Chambre 1</p>
+                <div class="bg-light shadow" style="width:60px; height: 60px; border-radius: 50%;">
+                    <img src="../images/profile.jpg" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px;height: 60px; border-radius: 50%;">
+                </div>
+                <p class="text-uppercase mb-0">isabelle</p>
+                <p class="text-green">21 ans</p>
                 </div>
 
-                    
+                <div class="d-flex flex-column align-items-center ms-4 me-4">
+                <p class="mb-0">Chambre 2</p>
+                <div class="bg-light shadow" style="width:60px; height: 60px; border-radius: 50%;">
+                    <img src="../images/profile.jpg" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px;height: 60px; border-radius: 50%;">
+                </div>
+                <p class="text-uppercase mb-0">isabelle</p>
+                <p class="text-green">21 ans</p>
+                </div>
+
+                <div class="d-flex flex-column align-items-center ms-4 me-4">
+                <p class="mb-0">Chambre 3</p>
+                <div class="bg-light shadow" style="width:60px; height: 60px; border-radius: 50%;">
+                    <img src="../images/profile.jpg" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px;height: 60px; border-radius: 50%;">
+                </div>
+                <p class="text-uppercase mb-0"></p>
+                <p class="text-green">Disponible</p>
+                </div>
+
+                <div class="d-flex flex-column align-items-center ms-4 me-4">
+                <p class="mb-0">Chambre 4</p>
+                <div class="bg-light shadow" style="width:60px; height: 60px; border-radius: 50%;">
+                    <img src="../images/profile.jpg" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px;height: 60px; border-radius: 50%;">
+                </div>
+                <p class="text-uppercase mb-0"></p>
+                <p class="text-green">Disponible</p>
+                <button type="button" class="btn btn-outline-success">Visiter</button>
+                </div>
+
+                </div>
+
+
             </div>
             <div class="col-4"></div>
         </div>
