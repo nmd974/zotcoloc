@@ -67,6 +67,7 @@
                 <p class="mb-0">Property Manager</p>
                 </div>
                 </div>
+               
                            <!-- titre -->
                 <div class="mb-5 mt-3">
                     <div class="border-one ps-1">
@@ -81,56 +82,58 @@
                 <!-- un équipement -->
                 <div class="equipment-room border-secondary border shadow mb-2 d-flex align-items-center justify-content-center m-1">
                     <div class="d-flex">
-                        <div class="ms-2 d-flex align-items-center">
-                        <i class="fa fa-file-image-o text-dark" aria-hidden="true" style="width: 15px;"></i> <!--à enlever par la suite -->
+                        <div class="d-flex align-items-center">
+                        <i class="fa fa-file-image-o fa-3x text-dark ms-3" aria-hidden="true"></i> <!--à enlever par la suite -->
                         <!-- <img src="" alt="name">  on rajoute ensuite-->
                         </div>
-                        <div class="d-flex align-items-center">
-                            <p class="mb-0">Equipement du logement eeeeeeeeeeeeeeeeeeeee</p>
+                        <div class="d-flex align-items-center ms-2">
+                            <p class="mb-0">Equipement du logement</p>
                         </div>
                     </div>
                 </div>
                 <!-- un équipement -->
                 <div class="equipment-room border-secondary border shadow mb-2 d-flex align-items-center justify-content-center m-1">
                     <div class="d-flex">
-                        <div class="ms-2 d-flex align-items-center">
-                        <i class="fa fa-file-image-o text-dark" aria-hidden="true" style="width: 15px;"></i> <!--à enlever par la suite -->
+                        <div class="d-flex align-items-center">
+                        <i class="fa fa-file-image-o fa-3x text-dark ms-3" aria-hidden="true"></i> <!--à enlever par la suite -->
                         <!-- <img src="" alt="name">  on rajoute ensuite-->
                         </div>
-                        <div class="d-flex align-items-center">
-                            <p class="mb-0">Equipement du logement eeeeeeeeeeeeeeeeeeeee</p>
+                        <div class="d-flex align-items-center ms-2">
+                            <p class="mb-0">Equipement du logement</p>
                         </div>
                     </div>
                 </div>
                 </div>
+                <hr>
                 <h4 class="text-green h4 mb-4 mt-3">Logement</h4>
                 <div class="d-flex">
                 <!-- un équipement -->
                 <div class="equipment-room border-secondary border shadow mb-2 d-flex align-items-center justify-content-center m-1">
                     <div class="d-flex">
-                        <div class="ms-2 d-flex align-items-center">
-                        <i class="fa fa-file-image-o text-dark" aria-hidden="true" style="width: 15px;"></i> <!--à enlever par la suite -->
+                        <div class="d-flex align-items-center">
+                        <i class="fa fa-file-image-o fa-3x text-dark ms-3" aria-hidden="true"></i> <!--à enlever par la suite -->
                         <!-- <img src="" alt="name">  on rajoute ensuite-->
                         </div>
-                        <div class="d-flex align-items-center">
-                            <p class="mb-0">Equipement du logement eeeeeeeeeeeeeeeeeeeee</p>
+                        <div class="d-flex align-items-center ms-2">
+                            <p class="mb-0">Equipement du logement</p>
                         </div>
                     </div>
                 </div>
                 <!-- un équipement -->
                 <div class="equipment-room border-secondary border shadow mb-2 d-flex align-items-center justify-content-center m-1">
                     <div class="d-flex">
-                        <div class="ms-2 d-flex align-items-center">
-                        <i class="fa fa-file-image-o text-dark" aria-hidden="true" style="width: 15px;"></i> <!--à enlever par la suite -->
+                        <div class="d-flex align-items-center">
+                        <i class="fa fa-file-image-o fa-3x text-dark ms-3" aria-hidden="true"></i> <!--à enlever par la suite -->
                         <!-- <img src="" alt="name">  on rajoute ensuite-->
                         </div>
-                        <div class="d-flex align-items-center">
+                        <div class="d-flex align-items-center ms-2">
                             <p class="mb-0">Equipement du logement</p>
                         </div>
                     </div>
                 </div>
                 </div> 
                 <hr>
+                <!-- section colocataire du logement -->
                 <h4 class="text-green h4 mb-4 mt-3">Colocataires</h4>
                 <div class="d-flex justify-content-center">
                 <div class="d-flex flex-column align-items-center ms-4 me-4">
@@ -167,12 +170,18 @@
                 </div>
                 <p class="text-uppercase mb-0"></p>
                 <p class="text-green">Disponible</p>
-                <button type="button" class="btn btn-outline-success">Visiter</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm">Visiter</button>
                 </div>
-
+                
                 </div>
-
-
+                <hr>
+                <h4 class="text-green h4 mb-4 mt-3">Quartier</h4>
+                <!-- map -->
+                <div id="mapdetails">
+                </div>
+                <hr>
+                <h4 class="text-green h4 mb-4 mt-3">Explorer ce logement</h4>
+               
             </div>
             <div class="col-4"></div>
         </div>
@@ -185,5 +194,5 @@
 <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
 integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
 crossorigin=""></script>
-<script src="../js/map.js"></script>
+<script src="../js/mapdetails.js"></script>
 <?php require_once(dirname(__DIR__).'/includes/Layout/finbalise.php');?>
