@@ -142,7 +142,7 @@
                     </div>
                 </div>
                 <div class=" d-flex justify-content-center">
-                    <!-- carte d'une annonce///////// -->
+                    <!-- ////////////////////carte d'une annonce///////// -->
                     <div class="ms-2 me-2">
                         <div class="card card-relative shadow-lg border " style="width: 18rem;">
                             <!-- icon coeur en position absolute-->
@@ -154,8 +154,8 @@
                                 </svg>
                             </div>
                             <!-- avatar en position absolute -->
-                            <div class="avatar bg-danger d-flex justify-content-center align-items-center">
-                                <img src="../images/profile.jpg" class="rounded-circle" alt="avatar" style="width:60px; height: 60px; border-radius: 50%;">
+                            <div class="avatar d-flex justify-content-center align-items-center bg-light shadow" style="width:60px; height: 60px; border-radius: 50%;">
+                                <img src="../images/profile.jpg" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px; height: 60px; border-radius: 50%;">
                             </div>
                             <!-- caroussel -->
                             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -199,8 +199,8 @@
                                 </svg>
                             </div>
                             <!-- avatar en position absolute -->
-                            <div class="avatar d-flex justify-content-center align-items-center">
-                                <img src="../images/profile.jpg" class="rounded-circle" alt="avatar" style="width:60px; height: 60px; border-radius: 50%;">
+                            <div class="avatar d-flex justify-content-center align-items-center bg-light shadow" style="width:60px; height: 60px; border-radius: 50%;">
+                                <img src="../images/profile.jpg" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px; height: 60px; border-radius: 50%;">
                             </div>
                             <!-- caroussel -->
                             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -242,6 +242,9 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/footer.php');?>
 <?php require_once(dirname(__DIR__).'/includes/Layout/scriptsSrc.php');?>
 <!-- ON MET ICI DES SCRIPTS ASSOCIES A LA PAGE -->
+<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
+integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
+crossorigin=""></script>
 <script src="../js/map.js"></script>
 <script src="../js/range.js"></script>
 <?php require_once(dirname(__DIR__).'/includes/Layout/finbalise.php');?>

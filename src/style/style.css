@@ -173,7 +173,17 @@ footer{
         width:60px;
     }
 /*---------------------------------------------*/
-
+/*Page de détail d'une colocation*/
+.carousel-format{
+    width: 800px;
+    }
+.equipment-room{
+   width: 160px!important;
+   height: 50px!important;
+   border-radius: 5px;
+   font-size: 0.6rem;
+}
+/*---------------------------------------------*/
 /*LAYOUT SIDEBAR MON COMPTE*/
 /*---------------------------------------------*/
 #sidebar-wrapper {
