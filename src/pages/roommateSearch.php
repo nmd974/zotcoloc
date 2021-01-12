@@ -242,4 +242,6 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/footer.php');?>
 <?php require_once(dirname(__DIR__).'/includes/Layout/scriptsSrc.php');?>
 <!-- ON MET ICI DES SCRIPTS ASSOCIES A LA PAGE -->
+<script src="../js/map.js"></script>
+<script src="../js/range.js"></script>
 <?php require_once(dirname(__DIR__).'/includes/Layout/finbalise.php');?>
