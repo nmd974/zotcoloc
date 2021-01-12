@@ -37,9 +37,9 @@
     </section> 
     <section class="container">
         <div class="row">
-            <div class="col-8">
+            <div class="col-lg-8 col-md-12">
                 <!-- titre -->
-                <div class="mb-5 mt-3">
+                <div class="mb-5 mt-4">
                     <div class="border-one ps-1">
                         <div class="border-two ps-3">
                             <p class="text-secondary m-0 poppins h5">DETAILS</p>
@@ -48,11 +48,11 @@
                     </div>
                 </div>
                 <p class="h3">12 République A -Chambre 3</p>
-                <div class="d-flex ">
-                <p class="h6"> <span class="fw-bold">5</span> colocataires</p>
-                <p class="h6 ms-3"> Logement - <span class="fw-bold">146m<sup>2</sup></span></p>
-                <p class="h6 ms-3"> Chambre - <span class="fw-bold">15m<sup>2</sup></span></p>
-                <p class="h6 ms-3"> Catégorie - <span class="fw-bold">Maison</span></p>
+                <div class="d-flex flex-wrap justify-content-around">
+                <p class="h6"> <span class="fw-bold">5</span>- colocataires</p>
+                <p class="h6"> Logement - <span class="fw-bold">146m<sup>2</sup></span></p>
+                <p class="h6"> Chambre - <span class="fw-bold">15m<sup>2</sup></span></p>
+                <p class="h6 "> Catégorie - <span class="fw-bold">Maison</span></p>
                 </div>
                 <p class="h6 mt-3">
                     Le logement est localisé dans le quartier Hôtel de Ville - Presqu'île, en plein centre de Lyon. De nombreux commerces, restaurants, transports publics sont aux environs. La colocation est à l'étage 4 avec ascenseur. Elle est entièrement meublée et propose une cuisine 100% équipée avec réfrigérateur, micro-ondes, poêles, casseroles, ustensiles, bouilloire, grille-pain, vaisselle… Ainsi que planche à repasser, tancarville, fer à repasser, lave-linge. Tout le matériel pour le ménage est sur place dans cette colocation : aspirateur, balai, seau et serpillère, balai-brosse… Chaque colocation meublée Chez Nestor inclut toutes les charges : assurance habitation, taxe sur les ordures, charges de copropriété, électricité, wifi illimité, eau.”
@@ -135,7 +135,7 @@
                 <hr>
                 <!-- section colocataire du logement -->
                 <h4 class="text-green h4 mb-4 mt-3">Colocataires</h4>
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center flex-wrap">
                 <div class="d-flex flex-column align-items-center ms-4 me-4">
                 <p class="mb-0">Chambre 1</p>
                 <div class="bg-light shadow" style="width:60px; height: 60px; border-radius: 50%;">
@@ -181,9 +181,49 @@
                 </div>
                 <hr>
                 <h4 class="text-green h4 mb-4 mt-3">Explorer ce logement</h4>
-               
+                <div class="img-wrapper mb-4">
+                <div class="img-one"><img src="../images/bright-hotel-room-bed.jpg" alt="image" class="img-fluid img-cover"></div>
+                <div class="img-two"><img src="../images/bright-hotel-room-bed.jpg" alt="image" class="img-fluid img-cover"></div>
+                <div class="img-three"><img src="../images/bright-hotel-room-bed.jpg" alt="image" class="img-fluid img-cover"></div>
+                <div class="img-four"><img src="../images/bright-hotel-room-bed.jpg" alt="image" class="img-fluid img-cover"></div>
+                <div class="img-five"><img src="../images/bright-hotel-room-bed.jpg" alt="image" class="img-fluid img-cover"></div>
+                <div class="img-six"><img src="../images/bright-hotel-room-bed.jpg" alt="image" class="img-fluid img-cover"></div>
+                <div class="img-six"><img src="../images/bright-hotel-room-bed.jpg" alt="image" class="img-fluid img-cover"></div>
+                <div class="img-six"><img src="../images/bright-hotel-room-bed.jpg" alt="image" class="img-fluid img-cover"></div>
+                
+                </div>
             </div>
-            <div class="col-4"></div>
+            <div class="col-md-12 col-lg-4 position-relative">
+                <!-- card avec le bouton pour louer -->
+                <div class="card text-center mt-4 sticky_md-top mb-4">
+                    <div class="card-header">
+                    <p class="m-0">Dispo. <span class="fw-bold">immédiatement</span></p>  
+                    </div>
+                    <div class="card-body p-5">
+                    
+                    
+                    <p class="fw-bold text-start">Chambre 15m<sup>2</sup></p>
+                    <hr>
+                    <div class="d-flex justify-content-between align-items-center">
+                    <p class="">Disponibilité</p>
+                    <p class="fw-bold">12/01/2021</p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                    <p class="m-0">Durée</p>
+                    <p class="fw-bold">1 - 6 mois</p>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between align-items-center">
+                    <p class="m-0">Loyer et frais</p>
+                    <p class="fw-bold h3 m-0">738 €</p>
+                    </div>
+                    <a href="#" class="btn bg-green text-light fw-bold letter-space mt-5">LOUER CETTE CHAMBRE</a>
+                </div>
+                <div class="card-footer text-muted">
+                Petit mot ici si nécessaire
+                </div>
+                </div>
+            </div>
         </div>
     </section>  
 </div>

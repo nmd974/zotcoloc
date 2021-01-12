@@ -186,6 +186,17 @@ footer{
 #mapdetails{ 
     height: 350px;
 }
+.img-wrapper{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(80px,auto);
+}
+/*card avec le bouton louer*/
+.letter-space{
+    letter-spacing: 0.1rem;
+}
+
 
 /*---------------------------------------------*/
 /*LAYOUT SIDEBAR MON COMPTE*/
@@ -397,6 +408,11 @@ ul{
     #wrapper-content{
         padding: 0;
         margin-top: 56px;
+    }
+    /*---------------------------------------------*/
+    /*details d'une annonce*/
+    .img-wrapper{
+        grid: none!important; 
     }
     /*---------------------------------------------*/
 
