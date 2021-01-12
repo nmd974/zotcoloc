@@ -47,22 +47,22 @@
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a href="./home.php" class="nav-link active fw-bold" aria-current="page" href="#">Accueil</a>
+                                <a href="./home.php" class="nav-link active fw-bold" aria-current="page">Accueil</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Recherche</a>
+                                <a class="nav-link active" aria-current="page">Recherche</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./inscriptionParticulier.php" class="nav-link active" aria-current="page" href="#">Signup Particulier</a>
+                                <a href="./inscriptionParticulier.php" class="nav-link active" aria-current="page">Signup Particulier</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Déposer une Annonce</a>
+                                <a href="./deposerAnnonce.php" class="nav-link active" aria-current="page">Déposer une Annonce</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link active" aria-current="page" href="#">Se connecter</a>
+                                <a href="#" class="nav-link active" aria-current="page">Se connecter</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./compteParticulier.php" class="nav-link active" aria-current="page" href="#">Mon compte</a>
+                                <a href="./compteParticulier.php" class="nav-link active" aria-current="page">Mon compte</a>
                             </li>
                         </ul>
                     </div>
