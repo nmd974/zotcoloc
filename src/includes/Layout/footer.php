@@ -1,6 +1,6 @@
     <footer>
         <div class="container">
-            <div class="d-flex justify-content-between flex-wrap" id="footer-center">
+            <div class="d-flex flex-wrap" id="footer-center">
                 <div class="text-light footer-center">
                     <div class="mb-3 mt-5">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
