@@ -9,7 +9,7 @@
         </div>
     </div>
 </div>
-<div class="container" id="wrapper_inscription_timeline">
+<div class="container" id="wrapper_page_content">
 
     <?php require_once(dirname(__DIR__).'/includes/signupFormParticulier/timeline.php')?>
 
