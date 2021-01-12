@@ -1,6 +1,9 @@
 <?php
     session_start();
     define('__ROOT__', dirname(dirname(dirname(__DIR__))));
+    if(!$_SESSION['liste_interets']){
+        $_SESSION['liste_interets'] = [];
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
