@@ -15,10 +15,19 @@
             </div>
 
             <div class="d-flex justify-content-evenly mt-5">
-                <button type="button" class="btn btn-primary btn-lg rounded-pill">Colocataire</button>
-                <button type="button" class="btn btn-primary btn-lg rounded-pill">Propriétaire</button>
-                <button type="button" class="btn btn-primary btn-lg rounded-pill">Résidence</button>
-                <button type="button" class="btn btn-primary btn-lg rounded-pill">Agence</button>
+                
+                <a href="./inscriptionProprietaire.php">
+                  <button type="button" class="btn btn-primary btn-lg rounded-pill">Colocataire</button>
+                </a>
+                
+                <a href="./inscriptionProprietaire.php">
+                  <button type="button" class="btn btn-primary btn-lg rounded-pill">Résidence</button>
+                </a>
+                
+                <a href="./inscriptionProprietaire.php">
+                  <button type="button" class="btn btn-primary btn-lg rounded-pill">Agence</button>
+                </a>
+
             </div>
         </div>
         
@@ -35,7 +44,7 @@
             <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
 
                 <div class="col">
-                  <div class="card h-100">
+                  <div class="card h-100 border border-3">
 
                     <div class="d-flex justify-content-center">
                     <i class="fa fa-thumbs-up text-dark fa-3x m-3" aria-hidden="true"></i>
@@ -49,7 +58,7 @@
                 </div>
 
                 <div class="col">
-                  <div class="card h-100">
+                  <div class="card h-100 border border-3">
                     
                     <div class="d-flex justify-content-center">
                         <i class="fa fa-bullhorn text-dark fa-3x m-3" aria-hidden="true"></i>
@@ -63,7 +72,7 @@
                 </div>
 
                 <div class="col">
-                  <div class="card h-100">
+                  <div class="card h-100 border border-3">
 
                     <div class="d-flex justify-content-center">
                         <i class="fa fa-handshake-o text-dark fa-3x m-3" aria-hidden="true"></i>
