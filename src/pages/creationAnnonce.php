@@ -1,4 +1,13 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
+<?php require_once(dirname(__DIR__).'/controllers/validAnnonce.php');?>
+<?php
+    if(isset($_POST['ajouter'])){
+        $validationInscription = validation($_POST);
+        if($validationInscription[0]){
+            header('Location: ./home.php');
+        }
+    }
+?>
 <div class="container">
     <div class="mb-5 subtitle">
         <div class="border-one ps-1">
