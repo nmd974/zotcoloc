@@ -101,15 +101,56 @@
                     </button>
                     <div class="dropdown-menu p-4 dropdown-filter">
                         <form action="" method="get">
-                            <p class="h5">Equipement</p>
-                            
+
+                            <p class="h5 mb-3">Equipement</p>
+                            <div class="d-flex flex-wrap">
+
+                            <!-- items -->
+                           <div class="text-center ms-2 me-2">
+                            <div>
                             <input type="checkbox" class="btn-check" id="btn-check1" autocomplete="off">
-                            <label class="btn btn-outline-primary" for="btn-check1"><img src="../images/icones/four.png" alt="icon" class="btn-icon"></label>
-                            
-                            <hr class="dropdown-divider">
-                            <p class="h5">Règles</p>
+                            <label class="btn btn-outline-success rounded-circle shadow  bouton-check border-light d-flex align-items-center justify-content-center" for="btn-check1"><div><img src="../images/icones/png/9e23c86.png" alt="icon" class="btn-icon"></div></label>
+                            </div> 
+                            <p>salon</p>
+                            </div>
+
+                            <!-- items -->
+                            <div class="text-center ms-2 me-2">
+                            <div>
                             <input type="checkbox" class="btn-check" id="btn-check2" autocomplete="off">
-                            <label class="btn btn-outline-primary" for="btn-check2">Checkbox 2</label>
+                            <label class="btn btn-outline-success rounded-circle shadow  bouton-check border-light d-flex align-items-center justify-content-center" for="btn-check2"><div><img src="../images/icones/png/9e23c86.png" alt="icon" class="btn-icon"></div></label>
+                            </div> 
+                            <p>salon</p>
+                            </div>
+
+                            </div>
+
+                            <hr class="dropdown-divider">
+                            <p class="h5 mb-3">Règles</p>
+
+                            <div class="d-flex flex-wrap">
+
+                            <!-- items -->
+                            <div class="text-center ms-2 me-2">
+                            <div>
+                            <input type="checkbox" class="btn-check" id="btn-check3" autocomplete="off">
+                            <label class="btn btn-outline-success rounded-circle shadow  bouton-check border-light d-flex align-items-center justify-content-center" for="btn-check3"><div><img src="../images/icones/png/9e23c86.png" alt="icon" class="btn-icon"></div></label>
+                            </div> 
+                            <p>salon</p>
+                            </div>
+
+                            <!-- items -->
+                            <div class="text-center ms-2 me-2">
+                            <div>
+                            <input type="checkbox" class="btn-check" id="btn-check4" autocomplete="off">
+                            <label class="btn btn-outline-success rounded-circle shadow  bouton-check border-light d-flex align-items-center justify-content-center" for="btn-check4"><div><img src="../images/icones/png/9e23c86.png" alt="icon" class="btn-icon"></div></label>
+                            </div> 
+                            <p>salon</p>
+                            </div>
+                            
+                            </div>
+
+                           
                             <hr class="dropdown-divider">
                             <div class="d-flex justify-content-between">
                             <p class="h5">Chambres disponibles</p>
@@ -139,19 +180,19 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title fw-bold" id="exampleModalLabel1">Loyer</h5>
+                        <h5 class="modal-title fw-bold" id="exampleModalLabel">Loyer</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                     <form action="" method="get">
                                             <p>Budget/mois</p>
                                             <div class="d-flex justify-content-between">
-                                                <p class="mb-0"><span id="price-value"></span> €</p>
+                                                <p class="mb-0"><span id="price-value2"></span> €</p>
                                                 <p>2000+ €</p>
                                             </div>
-                                            <label for="price-range" class="form-label"></label>
+                                            <label for="price-range2" class="form-label"></label>
                                             <input type="range" class="form-range" min="0" max="2000" step="50" value="0"
-                                                id="price-range">           
+                                                id="price-range2">           
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -176,12 +217,12 @@
                            <input type="date" name="date" id="" class="form-control mb-4">
                             <p class="h5">Durée</p>
                             <div class="d-flex justify-content-between">
-                                <p class="mb-0"><span id="availability-value"></span> Mois</p>
+                                <p class="mb-0"><span id="availability-value2"></span> Mois</p>
                                 <p>24+ Mois€</p>
                             </div>
-                            <label for="availability-range" class="form-label"></label>
+                            <label for="availability-range2" class="form-label"></label>
                             <input type="range" class="form-range" min="1" max="24" step="1" value="1"
-                                id="availability-range">
+                                id="availability-range2">
                                 <hr>
                             <!-- type -->
                             <p class="h5 mb-4">Type d'annonceur</p>
@@ -197,12 +238,54 @@
                             <hr>
                             <!-- equipement -->
                             <p class="h5">Equipement</p>
+
+                            <div class="d-flex flex-wrap">
+
+                            <!-- items -->
+                            <div class="text-center ms-2 me-2">
+                            <div>
                             <input type="checkbox" class="btn-check" id="btn-check1" autocomplete="off">
-                            <label class="btn btn-outline-primary" for="btn-check1">Checkbox 1</label>
+                            <label class="btn btn-outline-success rounded-circle shadow  bouton-check border-light d-flex align-items-center justify-content-center" for="btn-check1"><div><img src="../images/icones/png/9e23c86.png" alt="icon" class="btn-icon"></div></label>
+                            </div> 
+                            <p>salon</p>
+                            </div>
+
+                            <!-- items -->
+                            <div class="text-center ms-2 me-2">
+                            <div>
+                            <input type="checkbox" class="btn-check" id="btn-check2" autocomplete="off">
+                            <label class="btn btn-outline-success rounded-circle shadow  bouton-check border-light d-flex align-items-center justify-content-center" for="btn-check2"><div><img src="../images/icones/png/9e23c86.png" alt="icon" class="btn-icon"></div></label>
+                            </div> 
+                            <p>salon</p>
+                            </div>
+
+                            </div>
+                            
                             <hr class="dropdown-divider">
                             <p class="h5">Règles</p>
-                            <input type="checkbox" class="btn-check" id="btn-check2" autocomplete="off">
-                            <label class="btn btn-outline-primary" for="btn-check2">Checkbox 2</label>
+
+                            <div class="d-flex flex-wrap">
+
+                            <!-- items -->
+                            <div class="text-center ms-2 me-2">
+                            <div>
+                            <input type="checkbox" class="btn-check" id="btn-check3" autocomplete="off">
+                            <label class="btn btn-outline-success rounded-circle shadow  bouton-check border-light d-flex align-items-center justify-content-center" for="btn-check3"><div><img src="../images/icones/png/9e23c86.png" alt="icon" class="btn-icon"></div></label>
+                            </div> 
+                            <p>salon</p>
+                            </div>
+
+                            <!-- items -->
+                            <div class="text-center ms-2 me-2">
+                            <div>
+                            <input type="checkbox" class="btn-check" id="btn-check4" autocomplete="off">
+                            <label class="btn btn-outline-success rounded-circle shadow  bouton-check border-light d-flex align-items-center justify-content-center" for="btn-check4"><div><img src="../images/icones/png/9e23c86.png" alt="icon" class="btn-icon"></div></label>
+                            </div> 
+                            <p>salon</p>
+                            </div>
+
+                            </div>
+
                             <hr class="dropdown-divider">
                             <div class="d-flex justify-content-between">
                             <p class="h5">Chambres disponibles</p>
@@ -212,15 +295,15 @@
                     </div>
 
                 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-      </form>
-    </div>
-  </div>
-</div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                    </form>
+                    </div>
+                </div>
+                </div>
 
             </div>
 
@@ -228,10 +311,11 @@
 
 
         <div class="row">
-            <div class="col-lg-6 col-md-12 order mt-3">
+            <!-- la map -->
+            <div class="col-lg-6 col-md-12 map-order mt-3">
                 <div id="map"></div>
             </div>
-            <div class="col-lg-6 col-md-12 order mt-3 overlay">
+            <div class="col-lg-6 col-md-12 card-order mt-3">
                 <!-- titre -->
                 <div class="mb-5">
                     <div class="border-one ps-1">
