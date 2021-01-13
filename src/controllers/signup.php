@@ -1,4 +1,5 @@
 <?php
+//NE SERT PLUS
     //Gestion de la superglobale session pour enregistrer les interets de l'utilisateur
     session_start();
     if(isset($_GET['q'])){

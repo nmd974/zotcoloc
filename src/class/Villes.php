@@ -29,8 +29,7 @@ class Villes {
             $query = $pdo->query("INSERT INTO `ville_particulier`(`particulier_id`, `ville_id`) 
                 VALUES ('$id', '$id_ville')
             ");
-            $data = $query->fetchAll(PDO::FETCH_OBJ);
-            return array(true, $data);
+            return array(true, $query);
         }catch(PDOException $e){
             $error = $e->getMessage();
             return array(false, $error);

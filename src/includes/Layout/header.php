@@ -1,12 +1,16 @@
 <?php
     session_start();
     define('__ROOT__', dirname(dirname(dirname(__DIR__))));
-    // if(!$_SESSION['liste_interets']){
-    //     $_SESSION['liste_interets'] = [];
-    // }
-    // if(!$_SESSION['liste_ville']){
-    //     $_SESSION['liste_ville'] = [];
-    // }
+    //Ici on détermine les superglobales pour la gestion de la session log ou pas
+    if(!isset($_SESSION['isLoggedIn'])){
+        $_SESSION['isLoggedIn'] = false;
+    }
+    if(!isset($_SESSION['role'])){
+        $_SESSION['isLoggedIn'] = false;
+    }
+    if(!isset($_SESSION['id_utilisateur'])){
+        $_SESSION['isLoggedIn'] = false;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +43,7 @@
 <div id="page-content-wrapper">
     <header>
         <!-- barre de navigation -->
-        <nav class="navbar navbar-expand-md navbar-light shadow sticky-top">
+        <nav class="navbar navbar-expand-md navbar-light shadow fixed-top">
             <div class="container-fluid">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                     class="bi bi-house-fill text-green" viewBox="0 0 16 16">

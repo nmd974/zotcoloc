@@ -1,4 +1,5 @@
 <!--STEP 3-->
+
 <?php require_once(__ROOT__.'/src/class/Interets.php');?>
 <div id="bloc_step_3" class="
     <?php if(isset($validationInscription) && !$validationInscription[0] && $validationInscription[2] == 3){

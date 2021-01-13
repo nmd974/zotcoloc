@@ -1,4 +1,10 @@
 <?php
+/*
+    Amelioration : pour que ce soit plus clean il faudra faire la securité des inputs et la validation puis si tout est ok
+    on appelle une fonction qui va se charger de faire toutes les requetes et recuperer les erreurs s'il y en a
+
+*/
+
     require_once(dirname(__DIR__).'/class/Inscription.php');
     require_once(dirname(__DIR__).'/class/Interets.php');
     require_once(dirname(__DIR__).'/class/Villes.php');
@@ -82,7 +88,7 @@
             $prenom = htmlentities($data['prenom_particulier'], ENT_QUOTES);
             $date_disponibilite = htmlentities($data['date_disponibilite'], ENT_QUOTES);
             $date_naissance = htmlentities($data['date_naissance'], ENT_QUOTES);
-            $id_utilisateur = md5(uniqid(rand(), true));
+            $id_utilisateur = $data['id_utilisateur'];
             
         
             //On ajoute dans la base utilisateur
@@ -94,7 +100,7 @@
                 return array(false, $message, $step);
                 exit();
             }else{
-                $id = md5(uniqid(rand(), true));
+                $id = $data['id_particulier'];
                 $pseudo = $nom.$prenom;
                 //Si tout est ok pour la table utilisateur alors on lance la requete vers la table particulier
                 $validationInscription = Inscription::ajoutTableParticulier($id, $id_utilisateur, $nom, $prenom, $pseudo);
@@ -109,7 +115,6 @@
                         var_dump($data['villes']);
                         foreach($data['villes'] as $value){
                             $validationInscription = Villes::ajoutVilleParticulier($id, $value);
-                            var_dump($validationInscription[1]);
                         }
                     }
                 }

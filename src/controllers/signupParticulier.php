@@ -1,5 +1,6 @@
 <?php
     //Gestion de la superglobale session pour enregistrer les interets de l'utilisateur
+    //NE SERT PLUS A RIEN
     session_start();
     if(isset($_GET['interet'])){
         if(!$_SESSION['liste_interets']){
