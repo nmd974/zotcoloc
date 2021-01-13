@@ -1,0 +1,431 @@
+/*main*/
+
+html{
+    min-height: 100%;
+}
+body{
+    margin:0;
+    padding:0;
+    font-family: 'Poppins', sans-serif;
+    overscroll-behavior: smooth;
+}
+.poppins{
+    font-family: 'Poppins', sans-serif;
+}
+.vidaloka{
+    font-family: 'Vidaloka', sans-serif;
+}
+.subtitle{
+    margin-top: 100px!important;
+}
+/*titre h2*/
+.border-one{
+    border-left: 2px solid #4dcb44; 
+}
+.border-two{
+    border-left: 4px solid #4dcb44;   
+}
+/*navbar*/
+.active:hover {
+    color: #4dcb44!important;
+}
+.navbar-light{
+    background-color: white!important;
+}
+/*main*/
+.main{
+    background: linear-gradient(to bottom, rgba(39, 39, 38, 0.8) 0%, rgba(39, 39, 38, 0.8) 100%), url("https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/SaintPaul_Reunion.JPG/1200px-SaintPaul_Reunion.JPG") no-repeat;
+    background-size: cover;
+    height: 80vh;
+}
+.row {
+    margin: 0px!important;
+}
+.btn-radius{
+    border-radius: 25px!important;
+    border: none;
+}
+.input-border{
+    padding: 5px;
+    border-radius: 25px!important;
+}
+.price-border{
+    border-top: none;
+    border-bottom: none;
+}
+.category-border{
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+}
+.location-border{
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    border-top-left-radius: 25px!important;
+    border-bottom-left-radius: 25px;
+}
+#location::placeholder{
+    color: black;
+}
+#price::placeholder{
+    color: black;
+}
+.text-green{
+    color: #4dcb44!important;
+}
+.bg-green{
+    background: #4dcb44!important;
+}
+/*statistique*/
+.number-stat{
+    background: linear-gradient(to bottom, rgba(224, 224, 224, 0.8) 0%, rgba(224, 224, 224, 0.8) 100%);
+    
+    color: white;
+    font-size: 1.4rem;;
+}
+.stat{
+    font-size: 1.8rem;
+}
+/*top city section*/
+.bg-grad{
+    background: linear-gradient(to bottom, rgba(22, 22, 22, 0.8) 0%, rgba(22, 22, 22, 0.8) 100%)!important;   
+}
+.wrapper-photo{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 20px;
+    grid-auto-rows: minmax(150px,auto);
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+}
+/* .image-one{
+grid-column: 1/3;
+grid-row: 1/3;
+} */
+.img-cover{
+    width: 100%!important;
+    height: 100%!important;
+}
+/*footer*/
+footer{
+    width: 100%;
+    margin-top: 50px;
+    background: linear-gradient(to bottom, rgba(22, 22, 22, 0.8) 0%, rgba(22, 22, 22, 0.8) 100%);
+}
+#footer-center{
+    justify-content: space-between;
+}
+
+.copyright{
+    margin-bottom: 0px;
+}
+
+/*card */
+.avatar {
+    top: 160px;
+    left: 200px;
+    
+    position: absolute;
+    z-index: 1;
+}
+.heart{
+    position: absolute;
+    z-index: 1; 
+    left: 250px;
+    top: 20px;
+}
+.card-relative {
+    position: relative;
+}
+/*page de recherche de colocation avec filtre*/
+#map{
+    height: 100vh;
+}
+/*barre de recherche*/
+.margin-search{
+    margin-top: 60px!important;
+}
+.input-filter{
+    margin-top: 0px!important;
+}
+.location-border2{
+    border: none;
+    border-radius: 25px!important;
+}
+.btn-filter{
+   border-radius: 25px;
+}
+/*filtre*/
+.dropdown-rent, .dropdown-type, .dropdown-availability {
+    width: 350px;
+    height: auto;
+    border-radius: 25px!important;
+    border: none;
+    background-color: rgb(250, 250, 250);
+}
+.dropdown-filter{
+    width: 450px;
+    height: auto;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(250, 250, 250); 
+}
+.number-room{
+    width:60px;
+}
+/*---------------------------------------------*/
+/*Page de détail d'une colocation*/
+.carousel-format{
+    width: 800px;
+}
+
+.equipment-room{
+   width: 160px!important;
+   height: 50px!important;
+   border-radius: 5px;
+   font-size: 0.7rem;
+}
+#mapdetails{ 
+    height: 350px;
+}
+.img-wrapper{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(80px,auto);
+}
+/*card avec le bouton louer*/
+.letter-space{
+    letter-spacing: 0.1rem;
+}
+
+
+/*---------------------------------------------*/
+/*LAYOUT SIDEBAR MON COMPTE*/
+/*---------------------------------------------*/
+#sidebar-wrapper {
+    margin-left: 0;
+    min-height: 100vh;
+    background-color: #6c757d !important;
+    position: fixed;
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out;
+}
+#sidebar_content{
+    padding-top: 100px;
+}
+.nav_title_profil{
+    margin-top: 17px;
+}
+.arobase_pseudo{
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+}
+.contact_zotcoloc{
+    margin-top: 45px;  
+}
+.sidebar_item{
+    background-color:#6c757d !important;
+    color: white;
+}
+.dashboard_items{
+    margin-top: 45px;
+}
+.list-group-flush>.list-group-item {
+    border-width: 1px 0 1px;
+}
+.icone_sidebar{
+    margin-right: 10px;
+}
+#wrapper{
+    min-height: 100vh;
+}
+#sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+}
+#sidebar-wrapper .list-group {
+    width: 15rem;
+}
+#page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+}
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+}
+#wrapper-content{
+    padding: 0px 0px 0px 250px;
+    margin-top: 0px;
+    /* height: 100% !important; a remettre si footer*/
+}
+#menu-toggle{
+    display: none;
+    height: 44px;
+    width: 44px;
+    color: #4dcb44 !important;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 100%;
+}
+.profile-img{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+}
+.footer_sidebar{
+    background-color:#6c757d !important;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    font-size: 12px;
+    width: 100%;
+}
+.icone_photo{
+    position: absolute;
+    top: 25%;
+    left: 65%;
+    z-index: 1000;
+}
+/*INSCRIPTION PARTICULIER*/
+/*---------------------------------------------*/
+ul{
+    list-style: none;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+.line_time{
+    background-color: #6c757d;
+    width: 100%;
+    height: 10px;
+}
+.line_time_progress{
+    background-color: #4dcb44;
+    width: 0%;
+    height: 15px;
+    margin-top: -2.5px;
+    -webkit-transition: width .50s ease-out;
+    -moz-transition: width .50s ease-out;
+    -o-transition: width .50s ease-out;
+    transition: width .50s ease-out;
+}
+.dots{
+    content: '';
+    border-radius: 50%;
+    height: 44px;
+    width: 44px;
+    position: relative;
+    z-index: 99;
+    margin-top: -27px;
+    -webkit-transition: width .50s ease-out;
+    -moz-transition: width .50s ease-out;
+    -o-transition: width .50s ease-out;
+    transition: width .50s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.unvalid_step{
+    background-color:  #6c757d;
+}
+#wrapper_page_content{
+    min-height: 70vh;
+    margin-top: 50px;
+}
+#formulaire_inscription{
+    margin-top: 50px;
+}
+.show_step{
+    display: initial;
+    min-height: 70vh;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.unshow_step{
+    display: none;
+}
+.valid_step{
+    background-color:  #4dcb44;
+}
+.fa{
+    color: white;
+}
+.arrow_return{
+    cursor: pointer;
+}
+/*---------------------------------------------*/
+
+/*MEDIAQUERIES*/
+/*---------------------------------------------*/
+@media screen and (max-width: 426px){
+    #footer-center{
+        justify-content: center;
+    }
+    .location-border{
+        border: 1px solid rgb(223, 223, 223)!important;
+        border-radius: 25px !important;
+        width: 100%!important;
+        margin-bottom: 4px;
+    }
+    .price-border{
+        border: 1px solid rgb(223, 223, 223)!important;
+        border-radius: 25px !important;
+        width: 100%!important;
+        margin-bottom: 4px;
+    }
+    .category-border{
+        border: 1px solid rgb(223, 223, 223)!important;
+        border-radius: 25px !important;
+        width: 100%!important;
+        margin-bottom: 4px;
+    }
+    .btn-radius{
+        width: 100%!important;
+    }
+    .wrapper-photo{
+        grid: none!important;
+        grid-gap: 5px!important;
+        /* flex-direction: column; */
+    }
+    .footer-center{
+        text-align: center;
+    }
+    .main-center{
+        text-align: center;
+    }
+    /*SIDEBAR DASH*/
+    /*---------------------------------------------*/
+    #sidebar-wrapper {
+        margin-left: -15rem;
+    }
+    
+    #page-content-wrapper {
+        min-width: 100vw;
+    }
+    
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: 0;
+    }
+    #wrapper-content{
+        padding: 0;
+        margin-top: 56px;
+    }
+    /*---------------------------------------------*/
+    /*details d'une annonce*/
+    .img-wrapper{
+        grid: none!important; 
+    }
+    /*---------------------------------------------*/
+
+}
+/*---------------------------------------------*/
