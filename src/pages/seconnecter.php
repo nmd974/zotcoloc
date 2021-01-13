@@ -17,7 +17,7 @@
           <label for="Password" class="form-label col-md-3">Mot passe</label>
           <input type="password" class="form-control" id="Password" onkeyup="check()" required
             pattern=" ^ (? =. * [az] ) (? =. * [AZ]) (? =. * \ D) (? =. * [@ $!% *? &]) [A-Za-z \ d @ $!% *? &] { 8,} $" 
-            value=" <?php if(isset($_POST['PasswordUser'])){echo $_POST['PasswordUser'];}?>">
+            value="<?php if(isset($_POST['PasswordUser'])){echo $_POST['PasswordUser'];}?>">
         </div>
 
         <div class="form-group d-flex justify-content-end"> <button type="submit"
