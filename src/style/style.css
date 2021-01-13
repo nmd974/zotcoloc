@@ -111,11 +111,9 @@ footer{
 #footer-center{
     justify-content: space-between;
 }
-
 .copyright{
     margin-bottom: 0px;
 }
-
 /*card */
 .avatar {
     top: 160px;
@@ -175,8 +173,15 @@ footer{
     display: none;
 }
 .btn-icon{
-    width: 15px!important;
+    width: 30px!important;
 }
+/*dropdown*/
+.bouton-check{
+    width: 60px!important;
+    height: 60px!important;
+}
+/**/
+
 /*---------------------------------------------*/
 /*Page de détail d'une colocation*/
 /*swiper*/
@@ -460,6 +465,12 @@ ul{
      }
      .location-border2{
          margin-bottom: 5px;
+     }
+     .map-order{
+        order: 2!important;
+     }
+     .card-order{
+         order: 1!important;
      }
     /*---------------------------------------------*/
 }
