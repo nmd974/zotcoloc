@@ -1,136 +1,89 @@
 <!--STEP 3-->
+<?php require_once(__ROOT__.'/src/class/Interets.php');?>
 <div id="bloc_step_3" class="unshow_step">
+    <div class="arrow_return d-flex align-items-center mb-5" id="back_step2">
+        <i class="fa fa-arrow-left fa-2x text-dark" aria-hidden="true"></i>
+        <p class="text-secondary m-0 poppins h5 ms-4">Précédent</p>
+    </div>
     <!--Alimentaires-->
-    <h3>Mes habitudes alimenatries: </h3>
-    <div class="btn" role="group" aria-label="Basic checkbox toggle button group">
-        <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck1">Checkbox 1</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck2">Checkbox 2</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck3">Checkbox 3</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck1">Checkbox 1</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck2">Checkbox 2</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck6">Checkbox 3</label>
+    <div class="mt-4 mb-4 bg-light">
+        <div class="col border-one ps-1">
+            <div class="border-two ps-3">
+            <p class="text-secondary m-0 poppins h5">Mes habitudes alimentaires</p>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex flex-wrap interets_ajax" role="group" aria-label="Basic checkbox toggle button group" id="habitudes_alimentaires">
+        <?php $interets = Interets::habitudes_alimentaires()?>
+        <?php if(!$interets[0]):?>
+            <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
+        <?php else :?>
+            <?php foreach($interets[1] as $interet):?>
+                <input type="checkbox" name="alimentaire_recap" class="btn-check" id="<?= $interet->id_interet ?>">
+                <label class="btn btn-outline-success me-2 mb-2" for="<?= $interet->id_interet ?>">#<?= $interet->libelle_interet ?></label>
+            <?php endforeach; ?>
+        <?php endif;?>
     </div>
 
     <!--centres intérêts-->
-    <h3>Mes centres intérêts: </h3>
-    <div class="btn" role="group" aria-label="Basic checkbox toggle button group">
-        <input type="checkbox" class="btn-check" id="btncheck11" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck11">Checkbox 1</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck22" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck22">Checkbox 2</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck23" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck23">Checkbox 3</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck24" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck24">Checkbox 4</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck25" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck25">Checkbox 5</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck26" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck26">Checkbox 6</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck27" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck27">Checkbox 7</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck28" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck28">Checkbox 8</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck29" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck29">Checkbox 9</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck30" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck30">Checkbox 10</label>
+    <div class="mt-4 mb-4 bg-light">
+        <div class="col border-one ps-1">
+            <div class="border-two ps-3">
+            <p class="text-secondary m-0 poppins h5">Mes centres intérêts</p>
+            </div>
+        </div>
     </div>
-    <!--Pêrsonnalites-->
-    <h3>Ma personnalité: </h3>
-    <div class="btn" role="group" aria-label="Basic checkbox toggle button group">
-        <input type="checkbox" class="btn-check" id="btncheck31" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck31">Checkbox 1</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck32">Checkbox 2</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck33" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck33">Checkbox 3</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck33" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck33">Checkbox 1</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck34" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck34">Checkbox 2</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck35" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck35">Checkbox 3</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck36" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck36">Checkbox 1</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck37" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck37">Checkbox 2</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck38" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck38">Checkbox 3</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck39" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck39">Checkbox 1</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck40" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck40">Checkbox 2</label>
+    <div class="d-flex flex-wrap interets_ajax" role="group" aria-label="Basic checkbox toggle button group" id="centres_interets">
+        <?php $interets = Interets::centres_interets()?>
+        <?php if(!$interets[0]):?>
+            <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu ! <?= $interets[1]?></div>
+        <?php else :?>
+            <?php foreach($interets[1] as $interet):?>
+                <input type="checkbox" name="centre_interet_recap" class="btn-check" id="<?= $interet->id_interet ?>">
+                <label class="btn btn-outline-success me-2 mb-2" for="<?= $interet->id_interet ?>">#<?= $interet->libelle_interet ?></label>
+            <?php endforeach; ?>
+        <?php endif;?>
+    </div>
+    <!--Personnalites-->
+    <div class="mt-4 mb-4 bg-light">
+        <div class="col border-one ps-1">
+            <div class="border-two ps-3">
+            <p class="text-secondary m-0 poppins h5">Ma personnalité</p>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex flex-wrap interets_ajax" role="group" aria-label="Basic checkbox toggle button group" id="personnalite">
+        <?php $interets = Interets::personnalite()?>
+        <?php if(!$interets[0]):?>
+            <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
+        <?php else :?>
+            <?php foreach($interets[1] as $interet):?>
+                <input type="checkbox" name="personnalite_recap" class="btn-check" id="<?= $interet->id_interet ?>">
+                <label class="btn btn-outline-success me-2 mb-2" for="<?= $interet->id_interet ?>">#<?= $interet->libelle_interet ?></label>
+            <?php endforeach; ?>
+        <?php endif;?>
     </div>
 
     <!--Style de vie-->
-    <h3>Style de vie: </h3>
-    <div class="btn" role="group" aria-label="Basic checkbox toggle button group">
-        <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck1">Checkbox 1</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck2">Checkbox 2</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck3">Checkbox 3</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck1">Checkbox 1</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck2">Checkbox 2</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck3">Checkbox 3</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck1">Checkbox 1</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck2">Checkbox 2</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck3">Checkbox 3</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck1">Checkbox 1</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck2">Checkbox 2</label>
-
-        <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-        <label class="btn btn-outline-success" for="btncheck3">Checkbox 3</label>
+    <div class="mt-4 mb-4 bg-light">
+        <div class="col border-one ps-1">
+            <div class="border-two ps-3">
+            <p class="text-secondary m-0 poppins h5">Style de vie</p>
+            </div>
+        </div>
     </div>
+    <div class="d-flex flex-wrap interets_ajax" role="group" aria-label="Basic checkbox toggle button group" id="style_vie">
+        <?php $interets = Interets::style_vie()?>
+        <?php if(!$interets[0]):?>
+            <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
+        <?php else :?>
+            <?php foreach($interets[1] as $interet):?>
+                <input type="checkbox" name="style_vie_recap" class="btn-check" id="<?= $interet->id_interet ?>">
+                <label class="btn btn-outline-success me-2 mb-2" for="<?= $interet->id_interet ?>">#<?= $interet->libelle_interet ?></label>
+            <?php endforeach; ?>
+        <?php endif;?>
+    </div>
+
     <!--button validation inscription-->
     <div class="col-12 text-end my-4">
         <button type="button" class="btn w-25 bg-green text-white mr-5" id="step_4">Suivant</button>
