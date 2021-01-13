@@ -1,5 +1,4 @@
-
-
+<?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
 
 <section class="container-fluid d-flex" style="height: 60vh;">
     <div class="container mt-2 d-flex justify-content-center">
@@ -34,7 +33,10 @@
 
 
       </form>
-
-
     </div>
-  </section>
+</section>
+
+<?php //require_once(dirname(__DIR__).'/includes/Layout/footer.php');?>
+<?php require_once(dirname(__DIR__).'/includes/Layout/scriptsSrc.php');?>
+<script src="../js/sidebar.js"></script>
+<?php require_once(dirname(__DIR__).'/includes/Layout/finbalise.php');?>
