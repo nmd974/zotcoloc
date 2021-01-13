@@ -297,6 +297,12 @@ footer{
 }
 /*INSCRIPTION PARTICULIER*/
 /*---------------------------------------------*/
+.invalid{
+    border: 2px solid red;
+  }
+  .valid{
+    border: 2px solid green;
+  }
 ul{
     list-style: none;
     text-align: left;

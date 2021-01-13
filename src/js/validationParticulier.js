@@ -42,34 +42,43 @@ btnStepEl2.addEventListener("click", (e)=>{
     //Verification des champs de formulaire
     let validationFormulaire = true;
 
-    //Si on rencontre un probleme alors on passe en false et on n'accède pas à la suite
-    if(validationFormulaire){
-        //On gère l'affichage du bouton
-        let dot = document.getElementById('dot_1');
-        dot.innerHTML = `<i class="fa fa-check" aria-hidden="true"></i>`;
-        dot.classList.remove('unvalid_step');
-        dot.classList.add('valid_step');
-        //On gère l'affichage du bloc de step avec les classes
-        blockStepEl1.classList.remove('show_step');
-        blockStepEl1.classList.add('unshow_step');
-        blockStepEl2.classList.remove('unshow_step');
-        blockStepEl2.classList.add('show_step');
-        //On redefini le dot vers le point suivant
-        let dotNext = document.getElementById('dot_2');
-        dotNext.innerHTML = `<i class="fa fa-hourglass-start" aria-hidden="true"></i>`;
-        titleStep.innerHTML = `Etape 2/5:<span class="text-green"> Informations générales</span>`;
-        timeLineEl.style.width = `25%`;
-        window.scrollTo(0,0);
+    // const resultat_query = addUser();
+    const email_ajax = document.querySelector('#bloc_step_1 input[name="email"]').value;
+    const pass_ajax = document.querySelector('#bloc_step_1 input[name="password"]').value;
+    const url = `../controllers/signupParticulier.php?e=${email_ajax}&p=${pass_ajax}`;
+    // xmlhttp.open("GET",`../controllers/signupParticulier.php?e=${email_ajax}&p=${pass_ajax}`,true);
+    // console.log(resultat_query);
+    const res = axios.get(url)
+        .then(response => {
+        if(response.data === "bool(false)"){
+            //On gère l'affichage du bouton
+            let dot = document.getElementById('dot_1');
+            dot.innerHTML = `<i class="fa fa-check" aria-hidden="true"></i>`;
+            dot.classList.remove('unvalid_step');
+            dot.classList.add('valid_step');
+            //On gère l'affichage du bloc de step avec les classes
+            blockStepEl1.classList.remove('show_step');
+            blockStepEl1.classList.add('unshow_step');
+            blockStepEl2.classList.remove('unshow_step');
+            blockStepEl2.classList.add('show_step');
+            //On redefini le dot vers le point suivant
+            let dotNext = document.getElementById('dot_2');
+            dotNext.innerHTML = `<i class="fa fa-hourglass-start" aria-hidden="true"></i>`;
+            titleStep.innerHTML = `Etape 2/5:<span class="text-green"> Informations générales</span>`;
+            timeLineEl.style.width = `25%`;
+            window.scrollTo(0,0);
 
-        //Gestion de l'ajout dans le recap des donnees saisies
-        let el = document.querySelector('input[name="email"]');
-        let recapEl = document.getElementById(`email_recap`);
-        let content = document.createElement('p');
-        content.innerHTML = `${el.value}`;
-        recapEl.append(content);
-    }
-    
-})
+            //Gestion de l'ajout dans le recap des donnees saisies
+            let el = document.querySelector('input[name="email"]');
+            let recapEl = document.getElementById(`email_recap`);
+            let content = document.createElement('p');
+            content.innerHTML = `${el.value}`;
+            recapEl.append(content);
+        }else{
+            btnStepEl2.disabled = true;
+        }
+        })
+    })
 
 //Gestion du clic vers step 3
 btnStepEl3.addEventListener("click", (e)=>{
@@ -339,5 +348,20 @@ btn1.forEach(element => {
 })
 
 })
+
+// const addUser = () => {
+//     //Fonction d'ajout lors du 1er step de l'inscription utilisateur particulier
+//     var xmlhttp = new XMLHttpRequest();
+//     xmlhttp.onreadystatechange = function() {
+//         console.log(this);
+//         // if (this.readyState == 4 && this.status == 200) {
+//         //     console.log(this);
+//         // }
+//     };
+//     const email_ajax = document.querySelector('#bloc_step_1 input[name="email"]').value;
+//     const pass_ajax = document.querySelector('#bloc_step_1 input[name="password"]').value;
+//     xmlhttp.open("GET",`../controllers/signupParticulier.php?e=${email_ajax}&p=${pass_ajax}`,true);
+//     xmlhttp.send();
+// }
 
 

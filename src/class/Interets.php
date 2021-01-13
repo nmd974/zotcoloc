@@ -84,4 +84,21 @@ class Interets {
         }
     }
 
+    public static function ajoutInteretsParticulier($id_particulier, $id_interet)
+    {
+        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $error = null;
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        try{
+            $query = $pdo->query("INSERT INTO `interet_particulier`(`id_particulier`, `id_interet`) 
+                VALUES ('$id_particulier','$id_interet')
+            ");
+            $data = $query->fetchAll(PDO::FETCH_OBJ);
+            return array(true, $data);
+        }catch(PDOException $e){
+            $error = $e->getMessage();
+            return array(false, $error);
+        }
+    }
+
 }

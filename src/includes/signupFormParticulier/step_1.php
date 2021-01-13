@@ -1,11 +1,28 @@
+<?php
+    // if(isset($_POST['submit_step1'])){
+    //     $ajoutUser = addUser();
+    // }
+?>
+
 <!--STEP 1-->
 
 <div id="bloc_step_1" class="show_step">
+<!--Verification si erreur-->
+<?php if(isset($validationInscription) && !$validationInscription[0] && $validationInscription[2] == 1):?>
+    <div class="alert alert-danger mb-2"><?=  $validationInscription[1] ?></div>
+<?php endif;?>
+
     <div class="col-md-12">
         <label for="email" class="form-label">Email*</label>
-        <input type="email" class="form-control" id="email" name="email" value="<?php if(isset($_POST['email'])){
-            echo $_POST['email'];
-        }?>">
+        <input 
+            type="email" 
+            class="form-control"
+            id="email" 
+            name="email" 
+            value="<?php if(isset($_POST['email'])){
+                echo $_POST['email'];
+            }?>"
+        >
     </div>
     <div class="col-md-12">
         <label for="password" class="form-label">Mot de passe*</label>
@@ -22,6 +39,6 @@
     </div>
     <!--button validation inscription-->
     <div class="col-12 text-end my-4">
-        <button type="button" class="btn w-25 bg-green text-white mr-5" id="step_2">Suivant</button>
+        <button type="submit" class="btn w-25 bg-green text-white mr-5" name="submit_step1" id="step_2">Suivant</button>
     </div>
 </div>
