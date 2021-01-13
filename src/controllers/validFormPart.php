@@ -1,6 +1,7 @@
 <?php
     require_once(dirname(__DIR__).'/class/Inscription.php');
-    require_once(dirname(__DIR__).'/class/Inscription.php');
+    require_once(dirname(__DIR__).'/class/Interets.php');
+    require_once(dirname(__DIR__).'/class/Villes.php');
     session_start();
     function validation ($data){
         $validationInscription = true;
@@ -86,6 +87,19 @@
                 $id = md5(uniqid(rand(), true));
                 $pseudo = $nom.$prenom;
                 $validationInscription = Inscription::ajoutTableParticulier($id, $utilisateur_id, $nom, $prenom, $pseudo);
+                if($validationInscription){
+                    if(isset($_SESSION['liste_interets'])){
+                        foreach($_SESSION['liste_interets'] as $value){
+                            Interets::ajoutInteretsParticulier($id, $value);
+                        }
+                    }
+                    if(isset($_SESSION['liste_ville'])){
+                        foreach($_SESSION['liste_ville'] as $value){
+                            Villes::ajoutVilleParticulier($id, $value);
+                        }
+                    }
+
+                }
             }
         }
         

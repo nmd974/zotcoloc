@@ -334,7 +334,22 @@ btn1.forEach(element => {
                 console.log('');
             }
         };
-        xmlhttp.open("GET","../controllers/signupParticulier.php?q="+e.path[0].id,true);
+        xmlhttp.open("GET","../controllers/signupParticulier.php?interet="+e.path[0].id,true);
+        xmlhttp.send();
+})
+
+})
+// Gestion de l'enregistrement des villes en session
+let btn2 = document.querySelectorAll('div.ville_ajax');
+btn2.forEach(element => {
+    element.addEventListener("change", (e) => {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log('');
+            }
+        };
+        xmlhttp.open("GET","../controllers/signupParticulier.php?ville="+e.path[0].id,true);
         xmlhttp.send();
 })
 
