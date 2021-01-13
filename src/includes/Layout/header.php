@@ -39,7 +39,7 @@
 <div id="page-content-wrapper">
     <header>
         <!-- barre de navigation -->
-        <nav class="navbar navbar-expand-md navbar-light shadow fixed-top">
+        <nav class="navbar navbar-expand-md navbar-light shadow sticky-top">
             <div class="container-fluid">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                     class="bi bi-house-fill text-green" viewBox="0 0 16 16">

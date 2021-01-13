@@ -100,11 +100,14 @@ btnStepEl3.addEventListener("click", (e)=>{
 
         
         //Gestion de l'ajout dans le recap des donnees saisies
-        let  inputList = ["nom_particulier", "penom_particulier", "date_naissance", "date_disponibilite"];
+        let  inputList = ["nom_particulier", "prenom_particulier", "date_naissance", "date_disponibilite"];
+        console.log(inputList);
         inputList.forEach(element => {
+            console.log(element);
             let el = document.querySelector(`input[name="${element}"]`);
             let recapEl = document.getElementById(`${element + '_recap'}`);
             let content = document.createElement('p');
+            console.log(content);
             content.innerHTML = `${el.value}`;
             recapEl.append(content);
         })
@@ -141,10 +144,10 @@ btnStepEl4.addEventListener("click", (e)=>{
         window.scrollTo(0,0);
 
         //Creation du recap selon les checkboxes checked par categorie
-        let categories = ["alimentaire_recap", "centre_interet_recap", "personnalite_recap", "style_vie_recap"];
-        categories.forEach(element => {
-            let checkboxes = document.querySelectorAll(`input[name="${element}"]:checked`);
-            let recapEl = document.getElementById(`${element}`);
+        // let categories = ["alimentaire_recap", "centre_interet_recap", "personnalite_recap", "style_vie_recap"];
+        // categories.forEach(element => {
+            let checkboxes = document.querySelectorAll(`input[name="interets"]:checked`);
+            let recapEl = document.getElementById(`alimentaire_recap`);
             let id_interets = [];
             let libelle_interet = [];
             checkboxes.forEach((checkbox) => {
@@ -155,7 +158,7 @@ btnStepEl4.addEventListener("click", (e)=>{
                 content.innerHTML = `${checkbox.labels[0].textContent}`;
                 recapEl.append(content);
             })
-        });
+        // });
     }
     
 })
@@ -187,7 +190,7 @@ btnStepEl5.addEventListener("click", (e)=>{
         timeLineEl.style.width = `100%`;
         window.scrollTo(0,0);
         //Recuperer pour recap
-        let checkboxes = document.querySelectorAll(`input[name="ville"]:checked`);
+        let checkboxes = document.querySelectorAll(`input[name="villes"]:checked`);
         let recapEl = document.getElementById(`ville_recap`);
         let id_interets = [];
         let libelle_interet = [];
@@ -325,34 +328,36 @@ backStep4.addEventListener("click", (e)=>{
 })
 
 // Gestion de l'enregistrement des interets
-let btn1 = document.querySelectorAll('div.interets_ajax');
-btn1.forEach(element => {
-    element.addEventListener("change", (e) => {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                console.log('');
-            }
-        };
-        xmlhttp.open("GET","../controllers/signupParticulier.php?interet="+e.path[0].id,true);
-        xmlhttp.send();
-})
+// let btn1 = document.querySelectorAll('div.interets_ajax label');
+// btn1.forEach(element => {
+//     element.addEventListener("click", (e) => {
+//         console.log(e.path[0].control.id);
+//         var xmlhttp = new XMLHttpRequest();
+//         xmlhttp.onreadystatechange = function() {
+//             if (this.readyState == 4 && this.status == 200) {
+//                 console.log('');
+//             }
+//         };
+//         xmlhttp.open("GET","../controllers/signupParticulier.php?interet="+e.path[0].id,true);
+//         xmlhttp.send();
+// })
 
-})
-// Gestion de l'enregistrement des villes en session
-let btn2 = document.querySelectorAll('div.ville_ajax');
-btn2.forEach(element => {
-    element.addEventListener("change", (e) => {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                console.log('');
-            }
-        };
-        xmlhttp.open("GET","../controllers/signupParticulier.php?ville="+e.path[0].id,true);
-        xmlhttp.send();
-})
+// })
+// // Gestion de l'enregistrement des villes en session
+// let btn2 = document.querySelectorAll('div.ville_ajax label');
+// btn2.forEach(element => {
+//     element.addEventListener("click", (e) => {
+//         console.log(e.path[0].control.id);
+//         var xmlhttp = new XMLHttpRequest();
+//         xmlhttp.onreadystatechange = function() {
+//             if (this.readyState == 4 && this.status == 200) {
+//                 console.log('');
+//             }
+//         };
+//         xmlhttp.open("GET","../controllers/signupParticulier.php?ville="+e.path[0].id,true);
+//         xmlhttp.send();
+// })
 
-})
+// })
 
 

@@ -1,14 +1,8 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
 <?php //require_once(dirname(__DIR__).'/controllers/signupParticulier.php');?>
 <?php require_once(dirname(__DIR__).'/controllers/validFormPart.php');?>
-<?php
-    if(isset($_POST['ajouter'])){
-        $validationInscription = validation($_POST);
-        if($validationInscription[0]){
-            header('Location: ./home.php');
-        }
-    }
-?>
+
+
 
 <div class="container">
     <div class="mb-5 subtitle">
@@ -20,9 +14,18 @@
         </div>
     </div>
 </div>
+
 <div class="container" id="wrapper_page_content">
 
     <?php require_once(dirname(__DIR__).'/includes/signupFormParticulier/timeline.php')?>
+    <?php
+    if(isset($_POST['ajouter'])){
+        $validationInscription = validation($_POST);
+        if($validationInscription[0]){
+            header('Location: ./home.php');
+        }
+    }
+?>
     <!--Verification si erreur-->
     <?php if(isset($validationInscription) && !$validationInscription[0] && $validationInscription[2] == 0):?>
         <div class="alert alert-danger mb-2"><?=  $validationInscription[1] ?></div>
@@ -41,5 +44,5 @@
 
 <?php require_once(dirname(__DIR__).'/includes/Layout/footer.php');?>
 <script src="../js/signupParticulier.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0-0/axios.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0-0/axios.min.js"></script> -->
 <?php require_once(dirname(__DIR__).'/includes/Layout/finbalise.php');?>

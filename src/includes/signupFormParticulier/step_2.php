@@ -1,12 +1,17 @@
 <!--STEP_2-->
 
-<div id="bloc_step_2" class="unshow_step">
+<div id="bloc_step_2" class="
+    <?php if(isset($validationInscription) && !$validationInscription[0] && $validationInscription[2] == 2){
+        echo 'show_step';
+    }else{
+        echo 'unshow_step';
+    }?>
+">
 <!--Retour button-->
     <div class="arrow_return d-flex align-items-center mb-5" id="back_step1">
         <i class="fa fa-arrow-left fa-2x text-dark" aria-hidden="true"></i>
         <p class="text-secondary m-0 poppins h5 ms-4">Précédent</p>
     </div>
-    <div id="bloc_step_1" class="show_step">
     <!--Verification si erreur-->
     <?php if(isset($validationInscription) && !$validationInscription[0] && $validationInscription[2] == 2):?>
         <div class="alert alert-danger mb-2"><?=  $validationInscription[1] ?></div>
@@ -20,9 +25,9 @@
     </div>
     <!--Prenom-->
     <div class="col-md-12">
-        <label for="penom_particulier" class="form-label">Prénom*</label><br>
-        <input type="text" name="penom_particulier" class="form-control" id="penom_particulier"
-            value="<?php if(isset($_POST['penom_particulier'])){echo $_POST['penom_particulier'];}?>"
+        <label for="prenom_particulier" class="form-label">Prénom*</label><br>
+        <input type="text" name="prenom_particulier" class="form-control" id="prenom_particulier"
+            value="<?php if(isset($_POST['prenom_particulier'])){echo $_POST['prenom_particulier'];}?>"
         >
     </div>
     <!--Date de naissance-->

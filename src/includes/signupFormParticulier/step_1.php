@@ -1,16 +1,15 @@
-<?php
-    // if(isset($_POST['submit_step1'])){
-    //     $ajoutUser = addUser();
-    // }
-?>
-
 <!--STEP 1-->
-
-<div id="bloc_step_1" class="show_step">
-<!--Verification si erreur-->
-<?php if(isset($validationInscription) && !$validationInscription[0] && $validationInscription[2] == 1):?>
-    <div class="alert alert-danger mb-2"><?=  $validationInscription[1] ?></div>
-<?php endif;?>
+<div id="bloc_step_1" class="    
+    <?php if((isset($validationInscription) && !$validationInscription[0] && ($validationInscription[2] == 1 || $validationInscription[2] == 0)) || !isset($validationInscription)){
+            echo 'show_step';
+        }else{
+            echo 'unshow_step';
+    }?>"
+>
+    <!--Verification si erreur-->
+    <?php if(isset($validationInscription) && !$validationInscription[0] && $validationInscription[2] == 1):?>
+        <div class="alert alert-danger mb-2"><?=  $validationInscription[1] ?></div>
+    <?php endif;?>
 
     <div class="col-md-12">
         <label for="email" class="form-label">Email*</label>

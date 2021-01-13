@@ -1,6 +1,12 @@
 <!--STEP 3-->
 <?php require_once(__ROOT__.'/src/class/Interets.php');?>
-<div id="bloc_step_3" class="unshow_step">
+<div id="bloc_step_3" class="
+    <?php if(isset($validationInscription) && !$validationInscription[0] && $validationInscription[2] == 3){
+            echo 'show_step';
+        }else{
+            echo 'unshow_step';
+    }?>
+">
     <div class="arrow_return d-flex align-items-center mb-5" id="back_step2">
         <i class="fa fa-arrow-left fa-2x text-dark" aria-hidden="true"></i>
         <p class="text-secondary m-0 poppins h5 ms-4">Précédent</p>
@@ -19,7 +25,14 @@
             <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
         <?php else :?>
             <?php foreach($interets[1] as $interet):?>
-                <input type="checkbox" name="alimentaire_recap" class="btn-check" id="<?= $interet->id_interet ?>">
+                <input 
+                    type="checkbox" 
+                    name="interets[]" 
+                    class="btn-check" 
+                    id="<?= $interet->id_interet ?>" 
+                    value="<?= $interet->id_interet ?>"
+                    <?php if(isset($_POST['interets'])){if(in_array($interet->id_interet, $_POST['interets'])){echo 'checked';}}?>
+                >
                 <label class="btn btn-outline-success me-2 mb-2" for="<?= $interet->id_interet ?>">#<?= $interet->libelle_interet ?></label>
             <?php endforeach; ?>
         <?php endif;?>
@@ -39,7 +52,14 @@
             <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu ! <?= $interets[1]?></div>
         <?php else :?>
             <?php foreach($interets[1] as $interet):?>
-                <input type="checkbox" name="centre_interet_recap" class="btn-check" id="<?= $interet->id_interet ?>">
+                <input 
+                    type="checkbox" 
+                    name="interets[]" 
+                    class="btn-check" 
+                    id="<?= $interet->id_interet ?>" 
+                    value="<?= $interet->id_interet ?>"
+                    <?php if(isset($_POST['interets'])){if(in_array($interet->id_interet, $_POST['interets'])){echo 'checked';}}?>
+                >
                 <label class="btn btn-outline-success me-2 mb-2" for="<?= $interet->id_interet ?>">#<?= $interet->libelle_interet ?></label>
             <?php endforeach; ?>
         <?php endif;?>
@@ -58,7 +78,14 @@
             <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
         <?php else :?>
             <?php foreach($interets[1] as $interet):?>
-                <input type="checkbox" name="personnalite_recap" class="btn-check" id="<?= $interet->id_interet ?>">
+                <input 
+                    type="checkbox" 
+                    name="interets[]" 
+                    class="btn-check" 
+                    id="<?= $interet->id_interet ?>" 
+                    value="<?= $interet->id_interet ?>"
+                    <?php if(isset($_POST['interets'])){if(in_array($interet->id_interet, $_POST['interets'])){echo 'checked';}}?>
+                >
                 <label class="btn btn-outline-success me-2 mb-2" for="<?= $interet->id_interet ?>">#<?= $interet->libelle_interet ?></label>
             <?php endforeach; ?>
         <?php endif;?>
@@ -78,7 +105,14 @@
             <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
         <?php else :?>
             <?php foreach($interets[1] as $interet):?>
-                <input type="checkbox" name="style_vie_recap" class="btn-check" id="<?= $interet->id_interet ?>">
+                <input 
+                    type="checkbox" 
+                    name="interets[]" 
+                    class="btn-check" 
+                    id="<?= $interet->id_interet ?>" 
+                    value="<?= $interet->id_interet ?>"
+                    <?php if(isset($_POST['interets'])){if(in_array($interet->id_interet, $_POST['interets'])){echo 'checked';}}?>
+                >
                 <label class="btn btn-outline-success me-2 mb-2" for="<?= $interet->id_interet ?>">#<?= $interet->libelle_interet ?></label>
             <?php endforeach; ?>
         <?php endif;?>

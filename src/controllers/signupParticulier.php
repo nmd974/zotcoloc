@@ -15,16 +15,17 @@
             }
         }
     }
+    var_dump($_SESSION);
     if(isset($_GET['ville'])){
         if(!$_SESSION['liste_ville']){
             $_SESSION['liste_ville'] = [];
-            array_push($_SESSION['liste_ville'],$_GET['ville']);
+            array_push($_SESSION['liste_ville'],substr(strrchr($_GET['ville'], '_'), 1));
         }else{
 
-            if(!in_array($_GET['ville'], $_SESSION['liste_ville'])){
-                array_push($_SESSION['liste_ville'],$_GET['ville']);
+            if(!in_array(substr(strrchr($_GET['ville'], '_'), 1), $_SESSION['liste_ville'])){
+                array_push($_SESSION['liste_ville'],substr(strrchr($_GET['ville'], '_'), 1));
             }else{
-                $elementIndice = array_search($_GET['ville'], $_SESSION['liste_ville']);//Supression de l'id dans la session en cours en recherchant l'emplacement de l'id dans les differents tableaux
+                $elementIndice = array_search(strtolower(substr(strrchr($_GET['ville'], '_'), 1)), $_SESSION['liste_ville']);//Supression de l'id dans la session en cours en recherchant l'emplacement de l'id dans les differents tableaux
                 unset($_SESSION['liste_ville'][$elementIndice]);
             }
         }
