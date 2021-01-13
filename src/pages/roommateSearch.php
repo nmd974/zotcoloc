@@ -102,8 +102,10 @@
                     <div class="dropdown-menu p-4 dropdown-filter">
                         <form action="" method="get">
                             <p class="h5">Equipement</p>
+                            
                             <input type="checkbox" class="btn-check" id="btn-check1" autocomplete="off">
-                            <label class="btn btn-outline-primary" for="btn-check1">Checkbox 1</label>
+                            <label class="btn btn-outline-primary" for="btn-check1"><img src="../images/icones/four.png" alt="icon" class="btn-icon"></label>
+                            
                             <hr class="dropdown-divider">
                             <p class="h5">Règles</p>
                             <input type="checkbox" class="btn-check" id="btn-check2" autocomplete="off">
