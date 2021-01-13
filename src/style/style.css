@@ -222,6 +222,12 @@ footer{
     -o-transition: margin .25s ease-out;
     transition: margin .25s ease-out;
 }
+#photo_profil_pc{
+    display: initial;
+}
+#photo_profil_mobile{
+    display: none !important;
+}
 #sidebar_content{
     padding-top: 100px;
 }
@@ -283,7 +289,15 @@ footer{
     cursor: pointer;
     border-radius: 100%;
 }
-.profile-img{
+/* .profile-img{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+} */
+.photo_profil{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     width: 150px;
     height: 150px;
     border-radius: 100%;
@@ -297,10 +311,16 @@ footer{
     width: 100%;
 }
 .icone_photo{
-    position: absolute;
+    /* position: absolute;
     top: 25%;
     left: 65%;
-    z-index: 1000;
+    z-index: 98; */
+    margin: 0;
+    text-decoration: none !important;
+}
+.img_moncompte{
+    width: 60%;
+    height: auto;
 }
 /*INSCRIPTION PARTICULIER*/
 /*---------------------------------------------*/
@@ -355,14 +375,14 @@ ul{
     display: initial;
 }
 .unshow_step{
-    display: none;
+    display: none !important;
 }
 .valid_step{
     background-color:  #4dcb44;
 }
-.fa{
+/* .fa{
     color: white;
-}
+} */
 /*---------------------------------------------*/
 
 /*MEDIAQUERIES*/
@@ -407,12 +427,17 @@ ul{
     /*---------------------------------------------*/
     #sidebar-wrapper {
         margin-left: -15rem;
+        z-index: 99;
     }
-    
+    #photo_profil_pc{
+        display: none !important;
+    }
+    #photo_profil_mobile{
+        display: flex !important;
+    }
     #page-content-wrapper {
         min-width: 100vw;
     }
-    
     #wrapper.toggled #sidebar-wrapper {
         margin-left: 0;
     }

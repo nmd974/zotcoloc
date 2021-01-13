@@ -4,7 +4,7 @@
         </div>
     </div>
     <ul class="d-flex justify-content-between">
-        <li class="dots unvalid_step" id="dot_1"><i class="fa fa-hourglass-start" aria-hidden="true"></i></li>
+        <li class="dots unvalid_step" id="dot_1"><i class="fa fa-hourglass-start text-white" aria-hidden="true"></i></li>
         <li class="dots unvalid_step" id="dot_2"></li>
         <li class="dots unvalid_step" id="dot_3"></li>
         <li class="dots unvalid_step" id="dot_4"></li>

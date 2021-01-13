@@ -46,7 +46,7 @@ btnStepEl2.addEventListener("click", (e)=>{
     if(validationFormulaire){
         //On gère l'affichage du bouton
         let dot = document.getElementById('dot_1');
-        dot.innerHTML = `<i class="fa fa-check" aria-hidden="true"></i>`;
+        dot.innerHTML = `<i class="fa fa-check text-white" aria-hidden="true"></i>`;
         dot.classList.remove('unvalid_step');
         dot.classList.add('valid_step');
         //On gère l'affichage du bloc de step avec les classes
@@ -56,7 +56,7 @@ btnStepEl2.addEventListener("click", (e)=>{
         blockStepEl2.classList.add('show_step');
         //On redefini le dot vers le point suivant
         let dotNext = document.getElementById('dot_2');
-        dotNext.innerHTML = `<i class="fa fa-hourglass-start" aria-hidden="true"></i>`;
+        dotNext.innerHTML = `<i class="fa fa-hourglass-start text-white" aria-hidden="true"></i>`;
         titleStep.innerHTML = `Etape 2/5:<span class="text-green"> Informations générales</span>`;
         timeLineEl.style.width = `25%`;
         window.scrollTo(0,0);
@@ -83,7 +83,7 @@ btnStepEl3.addEventListener("click", (e)=>{
     if(validationFormulaire){
         //On gère l'affichage du bouton
         let dot = document.getElementById('dot_2');
-        dot.innerHTML = `<i class="fa fa-check" aria-hidden="true"></i>`;
+        dot.innerHTML = `<i class="fa fa-check text-white" aria-hidden="true"></i>`;
         dot.classList.remove('unvalid_step');
         dot.classList.add('valid_step');
         //On gère l'affichage du bloc de step avec les classes
@@ -93,7 +93,7 @@ btnStepEl3.addEventListener("click", (e)=>{
         blockStepEl3.classList.add('show_step');
         //On redefini le dot vers le point suivant
         let dotNext = document.getElementById('dot_3');
-        dotNext.innerHTML = `<i class="fa fa-hourglass-start" aria-hidden="true"></i>`;
+        dotNext.innerHTML = `<i class="fa fa-hourglass-start text-white" aria-hidden="true"></i>`;
         titleStep.innerHTML = `Etape 3/5:<span class="text-green"> Mes intérêts</span>`;
         timeLineEl.style.width = `50%`;
         window.scrollTo(0,0);
@@ -128,7 +128,7 @@ btnStepEl4.addEventListener("click", (e)=>{
     if(validationFormulaire){
         //On gère l'affichage du bouton
         let dot = document.getElementById('dot_3');
-        dot.innerHTML = `<i class="fa fa-check" aria-hidden="true"></i>`;
+        dot.innerHTML = `<i class="fa fa-check text-white" aria-hidden="true"></i>`;
         dot.classList.remove('unvalid_step');
         dot.classList.add('valid_step');
         //On gère l'affichage du bloc de step avec les classes
@@ -138,7 +138,7 @@ btnStepEl4.addEventListener("click", (e)=>{
         blockStepEl4.classList.add('show_step');
         //On redefini le dot vers le point suivant
         let dotNext = document.getElementById('dot_4');
-        dotNext.innerHTML = `<i class="fa fa-hourglass-start" aria-hidden="true"></i>`;
+        dotNext.innerHTML = `<i class="fa fa-hourglass-start text-white" aria-hidden="true"></i>`;
         titleStep.innerHTML = `Etape 4/5:<span class="text-green"> Ma ville de recherche</span>`;
         timeLineEl.style.width = `75%`;
         window.scrollTo(0,0);
@@ -175,7 +175,7 @@ btnStepEl5.addEventListener("click", (e)=>{
     if(validationFormulaire){
         //On gère l'affichage du bouton
         let dot = document.getElementById('dot_4');
-        dot.innerHTML = `<i class="fa fa-check" aria-hidden="true"></i>`;
+        dot.innerHTML = `<i class="fa fa-check text-white" aria-hidden="true"></i>`;
         dot.classList.remove('unvalid_step');
         dot.classList.add('valid_step');
         //On gère l'affichage du bloc de step avec les classes
@@ -185,7 +185,7 @@ btnStepEl5.addEventListener("click", (e)=>{
         blockStepEl5.classList.add('show_step');
         //On redefini le dot vers le point suivant
         let dotNext = document.getElementById('dot_5');
-        dotNext.innerHTML = `<i class="fa fa-hourglass-start" aria-hidden="true"></i>`;
+        dotNext.innerHTML = `<i class="fa fa-hourglass-start text-white" aria-hidden="true"></i>`;
         titleStep.innerHTML = `Etape 5/5:<span class="text-green"> Récapitulatif</span>`;
         timeLineEl.style.width = `100%`;
         window.scrollTo(0,0);
@@ -219,7 +219,7 @@ backStep1.addEventListener("click", (e)=>{
     if(validationFormulaire){
         //On gère l'affichage du bouton
         let dot = document.getElementById('dot_1');
-        dot.innerHTML = `<i class="fa fa-pencil" aria-hidden="true"></i>`;
+        dot.innerHTML = `<i class="fa fa-pencil text-white" aria-hidden="true"></i>`;
         dot.classList.remove('valid_step');
         dot.classList.add('unvalid_step');
         //On gère l'affichage du bloc de step avec les classes
@@ -229,7 +229,7 @@ backStep1.addEventListener("click", (e)=>{
         blockStepEl1.classList.add('show_step');
         //On redefini le dot vers le point suivant
         let dotNext = document.getElementById('dot_1');
-        dotNext.innerHTML = `<i class="fa fa-pencil" aria-hidden="true"></i>`;
+        dotNext.innerHTML = `<i class="fa fa-pencil text-white" aria-hidden="true"></i>`;
         titleStep.innerHTML = `Etape 1/5:<span class="text-green"> Inscription</span>`;
         timeLineEl.style.width = `0%`;
         window.scrollTo(0,0);
@@ -249,7 +249,7 @@ backStep2.addEventListener("click", (e)=>{
     if(validationFormulaire){
         //On gère l'affichage du bouton
         let dot = document.getElementById('dot_2');
-        dot.innerHTML = `<i class="fa fa-pencil" aria-hidden="true"></i>`;
+        dot.innerHTML = `<i class="fa fa-pencil text-white" aria-hidden="true"></i>`;
         dot.classList.remove('valid_step');
         dot.classList.add('unvalid_step');
         //On gère l'affichage du bloc de step avec les classes
@@ -259,7 +259,7 @@ backStep2.addEventListener("click", (e)=>{
         blockStepEl2.classList.add('show_step');
         //On redefini le dot vers le point suivant
         let dotNext = document.getElementById('dot_2');
-        dotNext.innerHTML = `<i class="fa fa-pencil" aria-hidden="true"></i>`;
+        dotNext.innerHTML = `<i class="fa fa-pencil text-white" aria-hidden="true"></i>`;
         titleStep.innerHTML = `Etape 2/5:<span class="text-green"> Informations générales</span>`;
         timeLineEl.style.width = `25%`;
         window.scrollTo(0,0);
@@ -279,7 +279,7 @@ backStep3.addEventListener("click", (e)=>{
     if(validationFormulaire){
         //On gère l'affichage du bouton
         let dot = document.getElementById('dot_3');
-        dot.innerHTML = `<i class="fa fa-pencil" aria-hidden="true"></i>`;
+        dot.innerHTML = `<i class="fa fa-pencil text-white" aria-hidden="true"></i>`;
         dot.classList.remove('valid_step');
         dot.classList.add('unvalid_step');
         //On gère l'affichage du bloc de step avec les classes
@@ -289,7 +289,7 @@ backStep3.addEventListener("click", (e)=>{
         blockStepEl3.classList.add('show_step');
         //On redefini le dot vers le point suivant
         let dotNext = document.getElementById('dot_3');
-        dotNext.innerHTML = `<i class="fa fa-pencil" aria-hidden="true"></i>`;
+        dotNext.innerHTML = `<i class="fa fa-pencil text-white" aria-hidden="true"></i>`;
         titleStep.innerHTML = `Etape 3/5:<span class="text-green"> Mes intérêts</span>`;
         timeLineEl.style.width = `50%`;
         window.scrollTo(0,0);
@@ -309,7 +309,7 @@ backStep4.addEventListener("click", (e)=>{
     if(validationFormulaire){
         //On gère l'affichage du bouton
         let dot = document.getElementById('dot_4');
-        dot.innerHTML = `<i class="fa fa-pencil" aria-hidden="true"></i>`;
+        dot.innerHTML = `<i class="fa fa-pencil text-white" aria-hidden="true"></i>`;
         dot.classList.remove('valid_step');
         dot.classList.add('unvalid_step');
         //On gère l'affichage du bloc de step avec les classes
@@ -319,7 +319,7 @@ backStep4.addEventListener("click", (e)=>{
         blockStepEl4.classList.add('show_step');
         //On redefini le dot vers le point suivant
         let dotNext = document.getElementById('dot_4');
-        dotNext.innerHTML = `<i class="fa fa-pencil" aria-hidden="true"></i>`;
+        dotNext.innerHTML = `<i class="fa fa-pencil text-white" aria-hidden="true"></i>`;
         titleStep.innerHTML = `Etape 3/5:<span class="text-green"> Ma ville de recherche</span>`;
         timeLineEl.style.width = `75%`;
         window.scrollTo(0,0);
