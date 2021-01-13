@@ -1,4 +1,5 @@
 <!--STEP_2-->
+<form action="" method="POST">
 <div id="bloc_step_2" class="unshow_step">
     <h4>Renseignez l'adresse excte de votre logement:</h4>
     <!--ville-->
@@ -24,3 +25,4 @@
         <button type="button" class="btn w-25 bg-green text-white mr-5" id="step_3">Suivant</button>
     </div>
 </div>
+</form>
