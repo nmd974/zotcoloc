@@ -93,25 +93,19 @@ body{
 }
 .wrapper-photo{
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(4,1fr);
     grid-gap: 20px;
     grid-auto-rows: minmax(150px,auto);
-    /* display: flex;
-    justify-content: space-between;
-    align-items: center; */
 }
-/* .image-one{
+.image-one{
 grid-column: 1/3;
 grid-row: 1/3;
-} */
-.img-cover{
-    width: 100%!important;
-    height: 100%!important;
 }
+
 /*footer*/
 footer{
     width: 100%;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     background: linear-gradient(to bottom, rgba(22, 22, 22, 0.8) 0%, rgba(22, 22, 22, 0.8) 100%);
 }
 #footer-center{
@@ -175,10 +169,23 @@ footer{
 .number-room{
     width:60px;
 }
+/*modal*/
+.modal-btn{
+    height: 40px;
+    display: none;
+}
+.btn-icon{
+    width: 15px!important;
+}
 /*---------------------------------------------*/
 /*Page de détail d'une colocation*/
-.carousel-format{
-    width: 800px;
+/*swiper*/
+
+/*//////////*/
+.carousel-style{
+    width: 100%!important;
+    height: 100%;
+    
 }
 
 .equipment-room{
@@ -297,12 +304,6 @@ footer{
 }
 /*INSCRIPTION PARTICULIER*/
 /*---------------------------------------------*/
-.invalid{
-    border: 2px solid red;
-  }
-  .valid{
-    border: 2px solid green;
-  }
 ul{
     list-style: none;
     text-align: left;
@@ -344,7 +345,7 @@ ul{
     background-color:  #6c757d;
 }
 #wrapper_page_content{
-    min-height: 70vh;
+    min-height: 52vh;
     margin-top: 50px;
 }
 #formulaire_inscription{
@@ -352,10 +353,6 @@ ul{
 }
 .show_step{
     display: initial;
-    min-height: 70vh;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
 }
 .unshow_step{
     display: none;
@@ -365,9 +362,6 @@ ul{
 }
 .fa{
     color: white;
-}
-.arrow_return{
-    cursor: pointer;
 }
 /*---------------------------------------------*/
 
@@ -401,7 +395,7 @@ ul{
     .wrapper-photo{
         grid: none!important;
         grid-gap: 5px!important;
-        /* flex-direction: column; */
+        
     }
     .footer-center{
         text-align: center;
@@ -432,6 +426,16 @@ ul{
         grid: none!important; 
     }
     /*---------------------------------------------*/
-
+     /*recherche d'une annonce*/
+     .modal-btn{
+         display: initial;
+     }
+     .btn-hidden{
+         display: none;
+     }
+     .location-border2{
+         margin-bottom: 5px;
+     }
+    /*---------------------------------------------*/
 }
 /*---------------------------------------------*/

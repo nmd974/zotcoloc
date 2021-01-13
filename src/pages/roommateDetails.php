@@ -1,9 +1,10 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?> 
 
 <div id="wrapper_page_content">
-<section class="container-fluid">
+<section class="container">
+
         <div class="d-flex justify-content-center align-items-center">
-        <div class="carousel-format ">
+        <div class="carousel-style ">
             <div id="carouselExampleIndicators" class="carousel mt-1 slide" data-bs-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
@@ -182,20 +183,20 @@
                 <hr>
                 <h4 class="text-green h4 mb-4 mt-3">Explorer ce logement</h4>
                 <div class="img-wrapper mb-4">
-                <div class="img-one"><img src="../images/bright-hotel-room-bed.jpg" alt="image" class="img-fluid img-cover"></div>
-                <div class="img-two"><img src="../images/bright-hotel-room-bed.jpg" alt="image" class="img-fluid img-cover"></div>
-                <div class="img-three"><img src="../images/bright-hotel-room-bed.jpg" alt="image" class="img-fluid img-cover"></div>
-                <div class="img-four"><img src="../images/bright-hotel-room-bed.jpg" alt="image" class="img-fluid img-cover"></div>
-                <div class="img-five"><img src="../images/bright-hotel-room-bed.jpg" alt="image" class="img-fluid img-cover"></div>
-                <div class="img-six"><img src="../images/bright-hotel-room-bed.jpg" alt="image" class="img-fluid img-cover"></div>
-                <div class="img-six"><img src="../images/bright-hotel-room-bed.jpg" alt="image" class="img-fluid img-cover"></div>
-                <div class="img-six"><img src="../images/bright-hotel-room-bed.jpg" alt="image" class="img-fluid img-cover"></div>
+                <div class="img-one"><img src="../images/bright-hotel-room-bed.jpg" alt="image" class="img-fluid"></div>
+                <div class="img-two"><img src="../images/bright-hotel-room-bed.jpg" alt="image" class="img-fluid"></div>
+                <div class="img-three"><img src="../images/bright-hotel-room-bed.jpg" alt="image" class="img-fluid"></div>
+                <div class="img-four"><img src="../images/bright-hotel-room-bed.jpg" alt="image" class="img-fluid"></div>
+                <div class="img-five"><img src="../images/bright-hotel-room-bed.jpg" alt="image" class="img-fluid"></div>
+                <div class="img-six"><img src="../images/bright-hotel-room-bed.jpg" alt="image" class="img-fluid"></div>
+                <div class="img-six"><img src="../images/bright-hotel-room-bed.jpg" alt="image" class="img-fluid"></div>
+                <div class="img-six"><img src="../images/bright-hotel-room-bed.jpg" alt="image" class="img-fluid"></div>
                 
                 </div>
             </div>
             <div class="col-md-12 col-lg-4 position-relative">
                 <!-- card avec le bouton pour louer -->
-                <div class="card text-center mt-4 sticky-md-top mb-4">
+                <div class="card text-center mt-4 sticky-md-top mb-4 shadow">
                     <div class="card-header">
                     <p class="m-0">Dispo. <span class="fw-bold">immédiatement</span></p>  
                     </div>
@@ -210,7 +211,7 @@
                     </div>
                     <div class="d-flex justify-content-between align-items-center">
                     <p class="m-0">Durée</p>
-                    <p class="fw-bold">1 - 6 mois</p>
+                    <p class="fw-bold m-0">1 - 6 mois</p>
                     </div>
                     <hr>
                     <div class="d-flex justify-content-between align-items-center">
@@ -235,4 +236,5 @@
 integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
 crossorigin=""></script>
 <script src="../js/mapdetails.js"></script>
+<script src="../js/swiper.js"></script>
 <?php require_once(dirname(__DIR__).'/includes/Layout/finbalise.php');?>
