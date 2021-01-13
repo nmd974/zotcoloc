@@ -1,4 +1,5 @@
 <!--STEP 3-->
+<form action="" method="POST">
 <div id="bloc_step_3" class="unshow_step">
     <h4 class="mt-3">Dites-nous en plus sur le logement :</h4>
 
@@ -34,6 +35,7 @@
 
     <div>
         <h4>Détails du logement:</h4>
+        <!--Régle de vie-->
         <div class="col-md-12">
             <p>Règles:</p>
             <div class="btn" role="group" aria-label="Basic checkbox toggle button group">
@@ -47,6 +49,7 @@
                 <label class="btn btn-outline-primary" for="btncheck3">Checkbox 3</label>
             </div>
 
+            <!--Equipement logement-->
             <p>equipements et services:</p>
             <div class="btn" role="group" aria-label="Basic checkbox toggle button group">
                 <input type="checkbox" class="btn-check" id="btncheck11" autocomplete="off">
@@ -69,5 +72,6 @@
     </div>
 
 </div>
+</form>
 
 
