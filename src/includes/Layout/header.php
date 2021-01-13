@@ -63,7 +63,7 @@
                                 <a href="./roommateSearch.php" class="nav-link active" aria-current="page">Recherche</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./inscriptionParticulier.php" class="nav-link active" aria-current="page">Signup Particulier</a>
+                                <a href="./inscriptionParticulier.php" class="nav-link active" aria-current="page">Inscription Particulier</a>
                             </li>
                             <li class="nav-item">
                                 <a href="./deposerAnnonce.php" class="nav-link active" aria-current="page">Déposer une Annonce</a>
