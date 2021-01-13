@@ -6,6 +6,11 @@
         <i class="fa fa-arrow-left fa-2x text-dark" aria-hidden="true"></i>
         <p class="text-secondary m-0 poppins h5 ms-4">Précédent</p>
     </div>
+    <div id="bloc_step_1" class="show_step">
+    <!--Verification si erreur-->
+    <?php if(isset($validationInscription) && !$validationInscription[0] && $validationInscription[2] == 2):?>
+        <div class="alert alert-danger mb-2"><?=  $validationInscription[1] ?></div>
+    <?php endif;?>
     <!--Nom-->
     <div class="col-md-12">
         <label for="nom_particulier" class="form-label">Nom*</label><br>

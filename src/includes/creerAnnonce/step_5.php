@@ -1,5 +1,11 @@
 <!--STEP 5-->
 
+<?php 
+    // session_start();
+    // var_dump($_SESSION['liste_interets']);
+    // var_dump($_POST);
+?>
+
 <div id="bloc_step_5" class="unshow_step">
     <div class="col-md-12">
         <label for="name" class="form-label">Nom*</label>

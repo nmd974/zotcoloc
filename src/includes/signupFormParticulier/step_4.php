@@ -7,7 +7,7 @@
     </div>
     <!--ville recherche-->
 
-    <div class="d-flex flex-wrap interets_particulier align-items-stretch" role="group" aria-label="Basic checkbox toggle button group">
+    <div class="d-flex flex-wrap ville_ajax align-items-stretch" role="group" aria-label="Basic checkbox toggle button group">
         <?php $villes = Villes::villesAll()?>
         <?php if(!$villes[0]):?>
             <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
