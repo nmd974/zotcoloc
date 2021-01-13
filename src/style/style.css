@@ -102,7 +102,7 @@ grid-column: 1/3;
 grid-row: 1/3;
 }
 .img-cover{
-    width: 100%!important;
+    
     height: 100%!important;
 }
 /*footer*/
@@ -172,10 +172,20 @@ footer{
 .number-room{
     width:60px;
 }
+/*modal*/
+.modal-btn{
+    height: 40px;
+    display: none;
+}
 /*---------------------------------------------*/
 /*Page de détail d'une colocation*/
-.carousel-format{
-    width: 800px;
+/*swiper*/
+
+/*//////////*/
+.carousel-style{
+    width: 100%!important;
+    height: 100%;
+    
 }
 
 .equipment-room{
@@ -416,6 +426,16 @@ ul{
         grid: none!important; 
     }
     /*---------------------------------------------*/
-
+     /*recherche d'une annonce*/
+     .modal-btn{
+         display: initial;
+     }
+     .btn-hidden{
+         display: none;
+     }
+     .location-border2{
+         margin-bottom: 5px;
+     }
+    /*---------------------------------------------*/
 }
 /*---------------------------------------------*/

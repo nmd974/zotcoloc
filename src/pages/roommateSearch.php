@@ -4,7 +4,7 @@
 
 <section class="container-fluid margin-search">
         <div class="row">
-            <div class="col-6">
+            <div class="col-lg-6 col-md-12">
                 <!-- barre de recherche -->
                 <div class="input-border bg-light mb-3 input-filter">
                     <form action="" method="post" class="form-group">
@@ -17,19 +17,17 @@
                     </form>
                 </div>
             </div>
-            <div class="col-3 p-0 mt-1 d-flex justify-content-around">
+            <div class="col-md-12 col-lg-6  p-0 mt-1 d-flex flex-wrap text-start">
                 <!-- bouton filtre du loyer -->
-
-
-                <div class="dropdown">
-                    <button class="btn btn-light " type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
+                <!-- barre de recherche -->
+                <div class="dropdown ms-1 me-1">
+                    <button class="btn btn-light btn-hidden" type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         Loyer
                     </button>
-
                     <div class="dropdown-menu p-4 dropdown-rent">
                         <form action="" method="get">
-                            <p><span class="h5">Budget</span> /mois</p>
+                            <p>Budget/mois</p>
                             <div class="d-flex justify-content-between">
                                 <p class="mb-0"><span id="price-value"></span> €</p>
                                 <p>2000+ €</p>
@@ -44,8 +42,9 @@
                         </form>
                     </div>
                 </div>
-                <div class="dropdown">
-                    <button class="btn btn-light" type="button" id="dropdownMenu3" data-bs-toggle="dropdown"
+                <!-- bouton type -->
+                <div class="dropdown ms-1 me-1">
+                    <button class="btn btn-light btn-hidden" type="button" id="dropdownMenu3" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         Type
                     </button>
@@ -67,8 +66,9 @@
                         </form>
                     </div>
                 </div>
-                <div class="dropdown">
-                    <button class="btn btn-light " type="button" id="dropdownMenu4" data-bs-toggle="dropdown"
+                <!-- bouton disponibilité -->
+                <div class="dropdown ms-1 me-1">
+                    <button class="btn btn-light btn-hidden" type="button" id="dropdownMenu4" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         Disponibilité
                     </button>
@@ -93,21 +93,21 @@
                         </form>
                     </div>
                 </div>
-                <div class="dropdown">
-                    <button class="btn btn-light " type="button" id="dropdownMenu5" data-bs-toggle="dropdown"
+                <!-- bouton plus de filtre -->
+                <div class="dropdown ms-1 me-1">
+                    <button class="btn btn-light btn-hidden" type="button" id="dropdownMenu5" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         Plus de filtres
                     </button>
-
                     <div class="dropdown-menu p-4 dropdown-filter">
                         <form action="" method="get">
                             <p class="h5">Equipement</p>
                             <input type="checkbox" class="btn-check" id="btn-check1" autocomplete="off">
-            <label class="btn btn-outline-primary" for="btn-check1">Checkbox 1</label>
+                            <label class="btn btn-outline-primary" for="btn-check1">Checkbox 1</label>
                             <hr class="dropdown-divider">
                             <p class="h5">Règles</p>
                             <input type="checkbox" class="btn-check" id="btn-check2" autocomplete="off">
-            <label class="btn btn-outline-primary" for="btn-check2">Checkbox 2</label>
+                            <label class="btn btn-outline-primary" for="btn-check2">Checkbox 2</label>
                             <hr class="dropdown-divider">
                             <div class="d-flex justify-content-between">
                             <p class="h5">Chambres disponibles</p>
@@ -120,6 +120,105 @@
                         </form>
                     </div>
                 </div>
+                
+                    <!-- bouton modal loyer  version mobile -->
+                <!-- Button trigger modal -->
+                <button class="btn btn-light modal-btn ms-1 me-1" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Loyer
+                </button>
+                <!-- bouton modal plus de filtre  version mobile -->
+                <button class="btn btn-light  modal-btn ms-1 me-1" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                    Plus de filtres
+                </button>
+                
+                
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold" id="exampleModalLabel1">Loyer</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    <form action="" method="get">
+                                            <p>Budget/mois</p>
+                                            <div class="d-flex justify-content-between">
+                                                <p class="mb-0"><span id="price-value"></span> €</p>
+                                                <p>2000+ €</p>
+                                            </div>
+                                            <label for="price-range" class="form-label"></label>
+                                            <input type="range" class="form-range" min="0" max="2000" step="50" value="0"
+                                                id="price-range">           
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                    </form>
+                    </div>
+                </div>
+                </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title fw-bold" id="exampleModalLabel2">Plus de filtres</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <!-- disponibilité -->
+                        <div class="modal-body">
+                        <form action="" method="get"> 
+                           <input type="date" name="date" id="" class="form-control mb-4">
+                            <p class="h5">Durée</p>
+                            <div class="d-flex justify-content-between">
+                                <p class="mb-0"><span id="availability-value"></span> Mois</p>
+                                <p>24+ Mois€</p>
+                            </div>
+                            <label for="availability-range" class="form-label"></label>
+                            <input type="range" class="form-range" min="1" max="24" step="1" value="1"
+                                id="availability-range">
+                                <hr>
+                            <!-- type -->
+                            <p class="h5 mb-4">Type d'annonceur</p>
+                            <select class="form-select mb-4" aria-label="Default select">
+                                <option value="1">Tout</option>
+                                <option value="2">Propriétaire</option>
+                                <option value="3">Résidence</option>
+                                <option value="4">Colocataire</option>
+                                <option value="4">Agence</option>
+                                <option value="4">Coliving</option>
+                            </select>
+                        
+                            <hr>
+                            <!-- equipement -->
+                            <p class="h5">Equipement</p>
+                            <input type="checkbox" class="btn-check" id="btn-check1" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="btn-check1">Checkbox 1</label>
+                            <hr class="dropdown-divider">
+                            <p class="h5">Règles</p>
+                            <input type="checkbox" class="btn-check" id="btn-check2" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="btn-check2">Checkbox 2</label>
+                            <hr class="dropdown-divider">
+                            <div class="d-flex justify-content-between">
+                            <p class="h5">Chambres disponibles</p>
+                            <input type="number" min="1" max="10" value="1" class="form-control number-room">
+
+                        
+                    </div>
+
+                
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
 
             </div>
 
@@ -127,10 +226,10 @@
 
 
         <div class="row">
-            <div class="col-6">
+            <div class="col-lg-6 col-md-12 order mt-3">
                 <div id="map"></div>
             </div>
-            <div class="col-6 overlay">
+            <div class="col-lg-6 col-md-12 order mt-3 overlay">
                 <!-- titre -->
                 <div class="mb-5">
                     <div class="border-one ps-1">
@@ -141,9 +240,9 @@
                         </div>
                     </div>
                 </div>
-                <div class=" d-flex justify-content-center">
+                <div class=" d-flex justify-content-center flex-wrap">
                     <!-- ////////////////////carte d'une annonce///////// -->
-                    <div class="ms-2 me-2">
+                    <div class="m-2">
                         <div class="card card-relative shadow-lg border " style="width: 18rem;">
                             <!-- icon coeur en position absolute-->
                             <div>
@@ -180,7 +279,7 @@
                             </div>
                             <!-- descriptif de l'annonce -->
                             <div class="card-body">
-                                <span class="badge bg-primary mb-1">Propriétaire</span>
+                                <span class="badge bg-primary mb-1 letter-space">Propriétaire</span>
                                 <h5 class="card-title">title (adresse)</h5>
                                 <p class="card-text">Chambre: 1</p>
                                 <p class="card-text">Dispo. immédiatement</p>
@@ -188,7 +287,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="ms-2 me-2">
+                    <div class="m-2">
                         <div class="card card-relative shadow-lg border " style="width: 18rem;">
                             <!-- icon coeur en position absolute-->
                             <div>
@@ -225,7 +324,7 @@
                             </div>
                             <!-- descriptif de l'annonce -->
                             <div class="card-body">
-                                <span class="badge bg-primary mb-1">Propriétaire</span>
+                                <span class="badge bg-primary mb-1 letter-space">Propriétaire</span>
                                 <h5 class="card-title">title (adresse)</h5>
                                 <p class="card-text">Chambre: 1</p>
                                 <p class="card-text">Dispo. immédiatement</p>
