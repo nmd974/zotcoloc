@@ -84,19 +84,19 @@
             </div> -->
             <div class="image-three position-relative overlay">
                 <img src="https://www.cartedelareunion.fr/wp-content/uploads/2019/05/Terre-Sainte-plage-lagon-La-Reunion.jpg"
-                    alt="top-city" class="img-fluid img-cover">
+                    alt="top-city" class="img-fluid">
                 <p class="text-light vidaloka h2 position-absolute top-50 start-50 translate-middle text-center">St
                     Pierre</p>
             </div>
             <div class="image-four position-relative">
                 <img src="https://www.cartedelareunion.fr/wp-content/uploads/2016/08/Parc-du-Colosse.jpg" alt="top-city"
-                    class="img-fluid img-cover">
+                    class="img-fluid">
                 <p class="text-light vidaloka h2 position-absolute top-50 start-50 translate-middle text-center">St
                     Gilles</p>
             </div>
             <div class="image-five position-relative">
                 <img src="https://www.cartedelareunion.fr/wp-content/uploads/2016/07/Plage-de-lErmitage-filaos-cartedelareunion.fr-%C2%A9-Serge-Gelabert-1102x800.jpg"
-                    alt="top-city" class="img-fluid img-cover">
+                    alt="top-city" class="img-fluid">
                 <p class="text-light vidaloka h2 position-absolute top-50 start-50 translate-middle text-center">St
                     Louis</p>
             </div>
