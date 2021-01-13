@@ -18,7 +18,7 @@
            
         </div>
         <div class="form-group row row-cols-md-2 row-cols-1">
-          <label for="Password" class="form-label col-md-3">Password</label>
+          <label for="Password" class="form-label col-md-3">Mot passe</label>
           <input type="password" class="form-control" id="Password" onkeyup="check()" required
             pattern=" ^ (? =. * [az] ) (? =. * [AZ]) (? =. * \ D) (? =. * [@ $!% *? &]) [A-Za-z \ d @ $!% *? &] { 8,} $" 
             value=" <?php if(isset($_POST['PasswordUser'])){
@@ -29,7 +29,7 @@
 
         </div>
         <div class="form-group d-flex justify-content-end"> <button type="submit"
-            class="btn btn-primary mt-5">Connecte</button>
+            class="btn btn-primary mt-5">se connecter</button>
         </div>
 
 
