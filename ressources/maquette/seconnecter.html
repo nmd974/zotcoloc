@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;1,200&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Vidaloka&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/style.css">
+
+
+
+  <title>ZotColoc 974</title>
+</head>
+
+
+<body>
+  <header class="header">
+
+    <!-- Main Navbar-->
+    <nav class="navbar navbar-expand-lg">
+
+      <div class="container-fluid">
+        <!-- Navbar Brand -->
+        <a href="index.html" class="navbar-brand"><img
+            src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/logo.png" alt="..."></a>
+
+        <!-- Toggle Button-->
+        <button type="button" data-toggle="collapse" data-target="#navbarcollapse" aria-controls="navbarcollapse"
+          aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span>Menu</span><i
+            class="fa fa-bars"></i></button>
+
+        <!-- Navbar Menu -->
+        <div id="navbarcollapse" class="collapse navbar-collapse d-flex justify-content-end">
+
+          <ul class="navbar-nav ml-auto ">
+            <!-- Search-->
+            <li class="nav-item"><a href="index.html" class="nav-link active">Accueil</a></li>
+            <li class="nav-item"><a href="category.html" class="nav-link">Recherche</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Inscription</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">login</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+  <section class="container-fluid d-flex" style="height: 60vh;">
+    <div class="container mt-2 d-flex justify-content-center">
+      <form method="POST">
+        <h2 class=" mt-3 mb-5 text-center"> Je me Connecte </h2>
+
+        <div class=" form-group row row-cols-md-2 row-cols-1 pb-4">
+          <label for="Email" class="form-label col-sm-2 ">Email address</label>
+          <input type="text" name="Email" class="form-control" aria-describedby="emailHelp" required
+            pattern=" [a-z0-9 ._% + -] + @ [a- z0-9 .-] + \. [az] {2,} $ "  
+            value="<?php if(isset($_POST['emailUser'])){
+                    echo $_POST['emailUser'];
+                }?>"> 
+
+
+           
+        </div>
+        <div class="form-group row row-cols-md-2 row-cols-1">
+          <label for="Password" class="form-label col-md-3">Password</label>
+          <input type="password" class="form-control" id="Password" onkeyup="check()" required
+            pattern=" ^ (? =. * [az] ) (? =. * [AZ]) (? =. * \ D) (? =. * [@ $!% *? &]) [A-Za-z \ d @ $!% *? &] { 8,} $"
+            value="<?php if(isset($_POST['PasswordUser'])){
+              echo $_POST['PasswordUser'];
+          }?>">
+             
+
+        </div>
+        <div class="form-group d-flex justify-content-end"> <button type="submit"
+            class="btn btn-primary mt-5">Connecte</button>
+        </div>
+
+
+      </form>
+
+
+    </div>
+  </section>
+
+
+
+  
+
+  <!-- Page Footer-->
+  <footer class="">
+    <div class="container">
+      <div class="d-flex justify-content-between flex-wrap" id="footer-center">
+        <div class="text-light footer-center">
+          <div class="mb-3 mt-5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+              class="bi bi-house-fill  text-green" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+              <path fill-rule="evenodd"
+                d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+            </svg>
+          </div>
+          <p>ZotColoc service de relation entre particulier <br> et loueur pour de la colocation à la Réunion.
+          </p>
+        </div>
+
+        <div class="text-light footer-center">
+          <h3 class="vidaloka mt-5">Contact us</h3>
+          <div class="">
+            <p>Mr DIALLO Saint Denis</p>
+            <p>Phone: (020) 123 456 789</p>
+            <p>Email: <a class="text-green" href="mailto:zotcoloc@company.com">zotcoloc@Company.com</a>
+            </p>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="text-center text-light bg-dark">
+      <p class="copyright">&copy; 2021 <span class="text-green">ZotColoc.</span> All Rights Reserved.</p>
+    </div>
+  </footer>
+  <!-- JavaScript files-->
+  <!-- script bootstrap -->
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+  <!-- script jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/media.js"></script>
+
+</body>
+
+</html>
