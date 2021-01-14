@@ -1,6 +1,6 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
 <?php //require_once(dirname(__DIR__).'/controllers/signupParticulier.php');?>
-<?php require_once(dirname(__DIR__).'/controllers/validFormPart.php');?>
+<?php require_once(dirname(__DIR__).'/controllers/signupParticulier.php');?>
 
 
 <?php
@@ -60,6 +60,8 @@
 </div>
 
 <?php require_once(dirname(__DIR__).'/includes/Layout/footer.php');?>
+<?php require_once(dirname(__DIR__).'/includes/Layout/scriptsSrc.php');?>
+<!-- ON MET ICI DES SCRIPTS ASSOCIES A LA PAGE -->
 <script src="../js/signupParticulier.js"></script>
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0-0/axios.min.js"></script> -->
 <?php require_once(dirname(__DIR__).'/includes/Layout/finbalise.php');?>

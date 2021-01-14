@@ -6,10 +6,10 @@
         $_SESSION['isLoggedIn'] = false;
     }
     if(!isset($_SESSION['role'])){
-        $_SESSION['isLoggedIn'] = false;
+        $_SESSION['role'] = false;
     }
     if(!isset($_SESSION['id_utilisateur'])){
-        $_SESSION['isLoggedIn'] = false;
+        $_SESSION['id_utilisateur'] = false;
     }
 ?>
 <!DOCTYPE html>
@@ -42,6 +42,7 @@
 <!-- Page Content -->
 <div id="page-content-wrapper">
     <header>
+    
         <!-- barre de navigation -->
         <nav class="navbar navbar-expand-md navbar-light shadow fixed-top">
             <div class="container-fluid">
@@ -71,6 +72,9 @@
                             </li>
                             <li class="nav-item">
                                 <a href="./deposerAnnonce.php" class="nav-link active" aria-current="page">Déposer une Annonce</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./creationAnnonce.php" class="nav-link active" aria-current="page">Créer une Annonce</a>
                             </li>
                             <li class="nav-item">
                                 <a href="./seconnecter.php" class="nav-link active" aria-current="page">Se connecter</a>
