@@ -13,7 +13,7 @@ class TopVilles {
             $query = $pdo->query("SELECT `libelle_ville`, COUNT(*)
                 FROM `logements` 
                 INNER JOIN `villes` 
-                WHERE `logements.id_ville` = `villes.id` AND `statut` = `Publiee` 
+                WHERE logements.id_ville = villes.id AND statut = 'Publiee'  
                 GROUP BY `libelle_ville` 
                 ORDER BY COUNT(*) DESC LIMIT 3
             ");
