@@ -82,7 +82,25 @@
                 <p class="text-light vidaloka h2 position-absolute top-50 start-50 translate-middle text-center">St Paul
                 </p>
             </div> -->
-            <div class="image-three position-relative overlay">
+            <?php require_once(__ROOT__.'/src/class/Top_villes.php');?>
+
+            <?php $topVilles = TopVilles::top_ville()?>
+            <?php if(!$topVilles[0]):?>
+            <?php var_dump($topVilles) ?>
+                <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
+            <?php else :?>
+                <?php foreach($topVilles[1] as $topVille):?>
+                    <p>
+                        
+                        <?= $topville->libelle_ville ?>
+                        
+                    </p>
+                    
+                <?php endforeach; ?>
+            <?php endif;?>
+
+
+            <div class="image-three position-relative">
                 <img src="https://www.cartedelareunion.fr/wp-content/uploads/2019/05/Terre-Sainte-plage-lagon-La-Reunion.jpg"
                     alt="top-city" class="img-fluid">
                 <p class="text-light vidaloka h2 position-absolute top-50 start-50 translate-middle text-center">St
@@ -91,8 +109,10 @@
             <div class="image-four position-relative">
                 <img src="https://www.cartedelareunion.fr/wp-content/uploads/2016/08/Parc-du-Colosse.jpg" alt="top-city"
                     class="img-fluid">
-                <p class="text-light vidaloka h2 position-absolute top-50 start-50 translate-middle text-center">St
+                    <p class="text-light vidaloka h2 position-absolute top-50 start-50 translate-middle text-center">St
                     Gilles</p>
+                    
+                
             </div>
             <div class="image-five position-relative">
                 <img src="https://www.cartedelareunion.fr/wp-content/uploads/2016/07/Plage-de-lErmitage-filaos-cartedelareunion.fr-%C2%A9-Serge-Gelabert-1102x800.jpg"
