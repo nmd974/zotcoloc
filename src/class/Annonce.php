@@ -10,10 +10,7 @@ class Annonces {
         $error = null;
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
-            $query = $pdo->query("
-               SELECT COUNT(*)
-               SELECT * FROM logements 
-
+            $query = $pdo->query("SELECT COUNT(*) FROM logements 
             ");
             $data = $query->fetchAll(PDO::FETCH_OBJ);
             return array(true, $data);

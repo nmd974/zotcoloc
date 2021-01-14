@@ -56,7 +56,7 @@
                      <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                     <?php else :?>
 
-                     <?php foreach($annonces[1] as $annonce):?>
+                     <?php foreach($nbrAnnonces[1] as $annonce):?>
 
             
                     <?php endforeach; ?>
