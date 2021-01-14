@@ -55,10 +55,9 @@
                     <?php if(!$nbrAnnonces[0]):?>
                      <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                     <?php else :?>
-
                      <?php foreach($nbrAnnonces[1] as $annonce):?>
                         <p class="h6"> <span class="stat text-green fw-bold vidaloka">
-                        <?=$annonce?>
+                        <?=$nbrAnnonce?>
                         </span><br>nbr Annonces </p>
                         
                     <?php endforeach; ?>
