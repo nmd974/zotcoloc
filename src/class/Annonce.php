@@ -12,10 +12,9 @@ class Annonces {
         try{
             $query = $pdo->query("
                SELECT COUNT(*)
-               SELECT * FROM logements 
-
+                FROM logements 
             ");
-            $data = $query->fetchAll(PDO::FETCH_OBJ);
+            $data = $query->fetchAll(PDO::FETCH_ASSOC);
             return array(true, $data);
         }catch(PDOException $e){
             $error = $e->getMessage();

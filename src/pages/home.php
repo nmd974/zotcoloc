@@ -1,6 +1,7 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
 <?php require_once(__ROOT__.'/src/class/Villes.php');?>
 <?php require_once(__ROOT__.'/src/class/Annonce.php');?>
+<?php require_once(__ROOT__.'/src/class/Inscription.php');?>
 
 <!-- titre + barre de recherche -->
 <section class="main">
@@ -55,14 +56,16 @@
                     <?php if(!$nbrAnnonces[0]):?>
                      <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                     <?php else :?>
-
-                     <?php foreach($annonces[1] as $annonce):?>
-
-            
-                    <?php endforeach; ?>
+                    <?php echo $nbrAnnonces[1][0]["COUNT(*)"];?>
                     <?php endif; ?>
                     </span><br>nbr Annonces </p>
-                    <p class="h6"><span class="stat text-green fw-bold vidaloka">230</span><br>nbr inscrit</p>
+                    <p class="h6"><span class="stat text-green fw-bold vidaloka">
+                    <?php $nbrInscription = Inscription::inscription_total()?>
+                    <?php if(!$nbrInscription[0]):?>
+                     <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
+                    <?php else :?>
+                    <?php echo $nbrInscription[1][0]["COUNT(*)"];?>
+                    <?php endif; ?></span><br>nbr inscrit</p>
                     <!-- <p class="h6"><span class="stat text-green fw-bold vidaloka">403</span><br>nbr de LOREM</p>
                     <p class="h6"><span class="stat text-green fw-bold vidaloka">1241</span><br>nbr LOREM</p> -->
                 </div>
