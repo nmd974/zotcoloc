@@ -36,7 +36,7 @@ class Villes {
         }
     }
 
-    public static $top_villes =[];
+   
 
     public static function top_ville()
     {
