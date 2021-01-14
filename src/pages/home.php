@@ -1,5 +1,5 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
-<?php require_once(__ROOT__.'/src/class/Top_villes.php');?>
+<?php require_once(__ROOT__.'/src/class/Villes.php');?>
 <!-- titre + barre de recherche -->
 <section class="main">
         <div class="row align-items-center h-100">
@@ -84,7 +84,7 @@
             </div> -->
             
             
-            <?php $topVilles = TopVilles::top_ville()?>
+            <?php $topVilles = Villes::top_ville()?>
             <?php if(!$topVilles[0]):?>
             <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
             <?php else :?>
