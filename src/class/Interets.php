@@ -93,8 +93,8 @@ class Interets {
             $query = $pdo->query("INSERT INTO `interet_particulier`(`id_particulier`, `id_interet`) 
                 VALUES ('$id_particulier','$id_interet')
             ");
-            $data = $query->fetchAll(PDO::FETCH_OBJ);
-            return array(true, $data);
+            // $data = $query->fetchAll(PDO::FETCH_OBJ);
+            return array(true, '');
         }catch(PDOException $e){
             $error = $e->getMessage();
             return array(false, $error);

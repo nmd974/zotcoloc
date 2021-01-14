@@ -16,4 +16,32 @@ class Equipements {
             return array(false, $error);
         }
     }
+
+    public static function equipementLogement($id_logement, $id_equipement)
+    {
+        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $error = null;
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        try{
+            $query = $pdo->query("INSERT INTO `equipement_logement`(`id_logement`, `id_equipement`, `selectionne`) VALUES ('$id_logement','$id_equipement',1)");
+            return array(true, '');
+        }catch(PDOException $e){
+            $error = $e->getMessage();
+            return array(false, $error);
+        }
+    }
+
+    public static function equipementChambre($id_chambre, $id_equipement)
+    {
+        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $error = null;
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        try{
+            $query = $pdo->query("INSERT INTO `equipement_chambre`(`id_chambre`, `id_equipement`, `selectionne`) VALUES ('$id_chambre','$id_equipement',1)");
+            return array(true, '');
+        }catch(PDOException $e){
+            $error = $e->getMessage();
+            return array(false, $error);
+        }
+    }
 }

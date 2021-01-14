@@ -1,7 +1,5 @@
 <!--STEP_2-->
 <?php require_once(dirname(dirname(__DIR__)).'/class/Villes.php');?>
-
-<!-- <form action="" method="POST"> -->
 <div id="bloc_step_2" class="unshow_step">
 <!--Retour button-->
 <div class="arrow_return d-flex align-items-center mb-5" id="back_step1">
@@ -13,10 +11,7 @@
 
     <!--ville-->
     <!-- Amelioration : Faire avec ajax une generation des adresses selon ce qui saisie en lien avec api region reunion https://data.regionreunion.com/explore/dataset/ban-lareunion/api/-->
-    <!-- <div class="col-md-12">
-        <label for="id_ville" class="form-label">Ville*</label><br>
-        <input type="text" name="id_ville" class="form-control" id="id_ville" step="1" value="<?php //if(isset($_POST['id_ville'])){echo $_POST['id_ville'];}?>">
-    </div> -->
+
     <div class="d-flex flex-wrap ville_ajax align-items-stretch" role="group" aria-label="Basic checkbox toggle button group">
         <?php $villes = Villes::villesAll()?>
         <?php if(!$villes[0]):?>
@@ -42,9 +37,13 @@
     <!--Photo-->
     <h4 class="mt-4">Photo des parties communes :</h4> <br>
     <!--Mettre les photos ajoutées en miniatures-->
+    <i class="fa fa-plus-square" aria-hidden="true" id="addPhoto"></i>
     <div class="col-md-12 mt-2">
-        <label for="photo_logement">Ajoutez au moins une photo des parties communes</label>
-        <input type="file" name="photos[]" class="form-control-file" id="photo_logement" class="photo_logement" value="<?php if(isset($_POST['photo_logement'])){echo $_POST['photo_logement'];}?>">
+        <label>Ajoutez au moins une photo des parties communes</label>
+        <!-- <input type="file" name="photos_logement[]" class="form-control-file" id="photo_logement"> -->
+        <div class="mb-3" id="zone_photo_logement">
+            <input class="form-control" type="file" name="photos_logement[]">
+        </div>
     </div>
     
     <div class="col-md-12 mt-5">

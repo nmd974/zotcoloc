@@ -8,12 +8,12 @@
     <div class="col-md-12">
         <div class="d-flex align-items-center"> 
             <p>Est-il meublé ?</p>
-            <input type="radio" name="meuble" class="btn-check" id="meuble_oui">
+            <input type="radio" name="meuble" class="btn-check" id="meuble_oui" value="1">
                     <label class="btn btn-outline-success me-2 mb-2" for="meuble_oui">
                     <i class="fa fa-check" aria-hidden="true"></i>
                         Oui
                 </label>
-                <input type="radio" name="meuble" class="btn-check" id="meuble_non">
+                <input type="radio" name="meuble" class="btn-check" id="meuble_non" value="0">
                     <label class="btn btn-outline-success me-2 mb-2" for="meuble_non">
                     <i class="fa fa-times" aria-hidden="true"></i>
                         Non
@@ -25,13 +25,13 @@
     <div class="col-md-12">
         <div class="d-flex"> 
             <p>Eligible aides au logements ?</p>
-            <input type="radio" name="aides_logement" class="btn-check" id="meuble_oui">
-                    <label class="btn btn-outline-success me-2 mb-2" for="meuble_oui">
+            <input type="radio" name="aides_logement" class="btn-check" id="aides_logement_oui" value="1">
+                    <label class="btn btn-outline-success me-2 mb-2" for="aides_logement_oui">
                     <i class="fa fa-check" aria-hidden="true"></i>
                         Oui
                 </label>
-                <input type="radio" name="aides_logement" class="btn-check" id="meuble_non">
-                    <label class="btn btn-outline-success me-2 mb-2" for="meuble_non">
+                <input type="radio" name="aides_logement" class="btn-check" id="aides_logement_non" value="0">
+                    <label class="btn btn-outline-success me-2 mb-2" for="aides_logement_non">
                     <i class="fa fa-times" aria-hidden="true"></i>
                         Non
                 </label>
@@ -49,7 +49,7 @@
                 <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
             <?php else :?>
                 <?php foreach($regles[1] as $regle):?>
-                    <input type="checkbox" name="regles[]" class="btn-check" id="<?= 'regles_'.$regle->id ?>">
+                    <input type="checkbox" name="regles[]" class="btn-check" value="<?= $regle->id?>" id="<?= 'regles_'.$regle->id ?>">
                     <label class="btn btn-outline-success me-2 mb-2" for="<?= 'regles_'.$regle->id ?>">
                         <i class="fa fa-plus-circle" aria-hidden="true"></i>
                         <?= $regle->libelle_regle ?>
@@ -66,7 +66,7 @@
                     <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                 <?php else :?>
                     <?php foreach($equipements[1] as $equipement):?>
-                        <input type="checkbox" name="equipements_logement[]" class="btn-check" id="<?= 'equipement_'.$equipement->id ?>">
+                        <input type="checkbox" name="equipements_logement[]" class="btn-check" value="<?= $equipement->id?> "id="<?= 'equipement_'.$equipement->id ?>">
                         <label class="btn btn-outline-success me-2 mb-2" for="<?= 'equipement_'.$equipement->id ?>">
                             <i class="fa fa-plus-circle" aria-hidden="true"></i>
                             <?= $equipement->libelle_equipement ?>
