@@ -2,9 +2,10 @@
 <?php require_once(dirname(__DIR__).'/controllers/createAnnonce.php');?>
 
 <?php
-    if(isset($_POST['ajouter'])){
-        $validationInscription = validation($_POST);
-        if($validationInscription[0]){
+    if(isset($_POST['enregistrer_annonce'])){
+        if(!isset($_POST['id_logement']) && !isset($_POST['id_logement']))
+        $validationCreation = creationAnnonce($_POST);
+        if($validationCreation[0]){
             header('Location: ./home.php');
         }
     }
@@ -37,5 +38,5 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/footer.php');?>
 <?php require_once(dirname(__DIR__).'/includes/Layout/scriptsSrc.php');?>
 <!-- ON MET ICI DES SCRIPTS ASSOCIES A LA PAGE -->
-<script src="../js/signupAnnonce.js"></script>
+<script src="../js/createAnnonce.js"></script>
 <?php require_once(dirname(__DIR__).'/includes/Layout/finbalise.php');?>

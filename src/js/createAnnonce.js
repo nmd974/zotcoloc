@@ -145,6 +145,128 @@ btnStepEl5.addEventListener("click", (e)=>{
 })
 
 
+//Gestion des retour en arriere
+//Retour vers step 1
+backStep1.addEventListener("click", (e)=>{
+
+    e.preventDefault();
+
+    //Verification des champs de formulaire
+    let validationFormulaire = true;
+
+    //Si on rencontre un probleme alors on passe en false et on n'accède pas à la suite
+    if(validationFormulaire){
+        //On gère l'affichage du bouton
+        let dot = document.getElementById('dot_1');
+        dot.innerHTML = `<i class="fa fa-pencil text-white" aria-hidden="true"></i>`;
+        dot.classList.remove('valid_step');
+        dot.classList.add('unvalid_step');
+        //On gère l'affichage du bloc de step avec les classes
+        blockStepEl2.classList.remove('show_step');
+        blockStepEl2.classList.add('unshow_step');
+        blockStepEl1.classList.remove('unshow_step');
+        blockStepEl1.classList.add('show_step');
+        //On redefini le dot vers le point suivant
+        let dotNext = document.getElementById('dot_1');
+        dotNext.innerHTML = `<i class="fa fa-pencil text-white" aria-hidden="true"></i>`;
+        titleStep.innerHTML = `Etape 1/4:<span class="text-green"> Description</span>`;
+        timeLineEl.style.width = `0%`;
+        window.scrollTo(0,0);
+    }
+    
+})
+
+//Retour vers step 2
+backStep2.addEventListener("click", (e)=>{
+
+    e.preventDefault();
+
+    //Verification des champs de formulaire
+    let validationFormulaire = true;
+
+    //Si on rencontre un probleme alors on passe en false et on n'accède pas à la suite
+    if(validationFormulaire){
+        //On gère l'affichage du bouton
+        let dot = document.getElementById('dot_2');
+        dot.innerHTML = `<i class="fa fa-pencil text-white" aria-hidden="true"></i>`;
+        dot.classList.remove('valid_step');
+        dot.classList.add('unvalid_step');
+        //On gère l'affichage du bloc de step avec les classes
+        blockStepEl3.classList.remove('show_step');
+        blockStepEl3.classList.add('unshow_step');
+        blockStepEl2.classList.remove('unshow_step');
+        blockStepEl2.classList.add('show_step');
+        //On redefini le dot vers le point suivant
+        let dotNext = document.getElementById('dot_2');
+        dotNext.innerHTML = `<i class="fa fa-pencil text-white" aria-hidden="true"></i>`;
+        titleStep.innerHTML = `Etape 2/5:<span class="text-green">Localisation et photos</span>`;
+        timeLineEl.style.width = `25%`;
+        window.scrollTo(0,0);
+    }
+    
+})
+
+//Retour vers step 3
+backStep3.addEventListener("click", (e)=>{
+
+    e.preventDefault();
+
+    //Verification des champs de formulaire
+    let validationFormulaire = true;
+
+    //Si on rencontre un probleme alors on passe en false et on n'accède pas à la suite
+    if(validationFormulaire){
+        //On gère l'affichage du bouton
+        let dot = document.getElementById('dot_3');
+        dot.innerHTML = `<i class="fa fa-pencil text-white" aria-hidden="true"></i>`;
+        dot.classList.remove('valid_step');
+        dot.classList.add('unvalid_step');
+        //On gère l'affichage du bloc de step avec les classes
+        blockStepEl4.classList.remove('show_step');
+        blockStepEl4.classList.add('unshow_step');
+        blockStepEl3.classList.remove('unshow_step');
+        blockStepEl3.classList.add('show_step');
+        //On redefini le dot vers le point suivant
+        let dotNext = document.getElementById('dot_3');
+        dotNext.innerHTML = `<i class="fa fa-pencil text-white" aria-hidden="true"></i>`;
+        titleStep.innerHTML = `Etape 3/5:<span class="text-green"> Information générales</span>`;
+        timeLineEl.style.width = `50%`;
+        window.scrollTo(0,0);
+    }
+    
+})
+
+//Retour vers step 4
+backStep4.addEventListener("click", (e)=>{
+
+    e.preventDefault();
+
+    //Verification des champs de formulaire
+    let validationFormulaire = true;
+
+    //Si on rencontre un probleme alors on passe en false et on n'accède pas à la suite
+    if(validationFormulaire){
+        //On gère l'affichage du bouton
+        let dot = document.getElementById('dot_4');
+        dot.innerHTML = `<i class="fa fa-pencil text-white" aria-hidden="true"></i>`;
+        dot.classList.remove('valid_step');
+        dot.classList.add('unvalid_step');
+        //On gère l'affichage du bloc de step avec les classes
+        blockStepEl5.classList.remove('show_step');
+        blockStepEl5.classList.add('unshow_step');
+        blockStepEl4.classList.remove('unshow_step');
+        blockStepEl4.classList.add('show_step');
+        //On redefini le dot vers le point suivant
+        let dotNext = document.getElementById('dot_4');
+        dotNext.innerHTML = `<i class="fa fa-pencil text-white" aria-hidden="true"></i>`;
+        titleStep.innerHTML = `Etape 4/5:<span class="text-green"> Profils idéal et chambre</span>`;
+        timeLineEl.style.width = `75%`;
+        window.scrollTo(0,0);
+    }
+    
+})
+
+
 
 
 

@@ -61,6 +61,7 @@
             }
         }
         
+        
         //Contrôle de la date => On recupere les morceaux et on converti en int
         if(strlen($data['date_disponibilite']) < 10 || substr($data['date_disponibilite'],4,1) !== "-" || substr($data['date_disponibilite'],7,1) !== "-" ||strlen($data['date_naissance']) > 10){
             $message = "Le format de la date de disponibilité est incorrecte !";

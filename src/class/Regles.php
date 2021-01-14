@@ -1,21 +1,15 @@
 <?php
 
-class regles {
+class Regles {
 
-    public static $list_regles =[];
 
-    public static function regle_vie()
+    public static function reglesAll()
     {
         $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
         $error = null;
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
-            $query = $pdo->query("SELECT * 
-                FROM `regles` 
-                INNER JOIN `categorie_interet` ON interets.id_categorie = categorie_interet.id 
-                WHERE `libelle_categorie` = 'habitudes alimentaires' 
-                ORDER BY `interets`.`id_interet` ASC
-            ");
+            $query = $pdo->query("SELECT * FROM `regles` ORDER BY `regles`.`libelle_regle` ASC");
             $data = $query->fetchAll(PDO::FETCH_OBJ);
             return array(true, $data);
         }catch(PDOException $e){

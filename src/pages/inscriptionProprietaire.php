@@ -1,4 +1,11 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
+<!-- Redirection de l'utilisateur logged -->
+<?php
+    if($_SESSION['isLoggedIn']){
+        header_remove('Location');
+        header('Location: ./home.php');
+    }
+?>
 <!-- Gestion de l'inscription -->
 <?php
     //On défini les id pour le traitement
