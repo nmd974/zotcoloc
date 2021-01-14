@@ -64,6 +64,9 @@
                                 <a href="./home.php" class="nav-link active fw-bold" aria-current="page">Accueil</a>
                             </li>
                             <li class="nav-item">
+                                <a href="./creationAnnonce.php" class="nav-link active fw-bold" aria-current="page">créer annonce</a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="./roommateSearch.php" class="nav-link active" aria-current="page">Recherche</a>
                             </li>
                             <li class="nav-item">
