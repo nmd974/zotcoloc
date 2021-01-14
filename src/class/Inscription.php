@@ -65,5 +65,22 @@ class Inscription {
             return array(false, $error);
         }
     }
+    public static function inscription_total()
+    {
+        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $error = null;
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        try{
+            $query = $pdo->query("
+               SELECT COUNT(*)
+                FROM particulier 
+            ");
+            $data = $query->fetchAll(PDO::FETCH_ASSOC);
+            return array(true, $data);
+        }catch(PDOException $e){
+            $error = $e->getMessage();
+            return array(false, $error);
+        }
+    }
 
 }
