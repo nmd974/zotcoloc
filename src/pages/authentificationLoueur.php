@@ -1,23 +1,47 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
+<?php require_once(dirname(__DIR__).'/controllers/signupProprietaire.php');?>
+<!-- Gestion de l'inscription -->
+<?php
+
+    //On declare le declenchement du traitement
+    if(isset($_POST['ajouter_proprietaire'])){
+        
+        //On défini les id pour le traitement
+        if(!isset($_POST['id_utilisateur']) && !isset($_POST['id_proprietaire'])){
+            $_POST['id_utilisateur'] = md5(uniqid(rand(), true));
+            $_POST['id_proprietaire'] = md5(uniqid(rand(), true));
+        }
+
+        //On lance la fonction associée
+        $inscriptionValide = ajoutProprietaire($_POST);
+        if($inscriptionValide[0]){
+            //Donc on se logged et retour vers creer annonce
+            $_SESSION['isLoggedIn'] = true;
+            $_SESSION['role'] = 'proprietaire';
+            $_SESSION['id_utilisateur'] = $_POST['id_utilisateur'];
+            header_remove('Location');
+            header('Location: ./creationAnnonce.php');
+        }
+
+    }
+?>
 <div class="container">
     <div class="mb-5 subtitle">
         <div class="border-one ps-1">
             <div class="border-two ps-3">
-                <p class="text-secondary m-0 poppins h5">Authetification</p>
-                <h2 class="vidaloka m-0 h1" id="title_step">Etape 1/1:<span class="text-green"> Inscription </span>ou<span class="text-green"> Connecter</span</h2>
+                <p class="text-secondary m-0 poppins h5">Etape</p>
+                <h2 class="vidaloka m-0 h1" id="title_step">Authentification</h2>
             </div>
         </div>
     </div>
 </div>
-<div class="container" id="wrapper_page_content">
+<div class="container d-flex" id="wrapper_page_content">
 
 <div class="form-modal">
-    
     <div class="form-toggle">
         <button id="login-toggle" onclick="toggleLogin()">Se connecter</button>
         <button id="signup-toggle" onclick="toggleSignup()">S'inscrire</button>
     </div>
-
     <div id="login-form">
         <form>
             <!-- <input type="text" placeholder="Enter email or username"/> -->
@@ -26,52 +50,31 @@
             placeholder="entrer adresse email"
             value="<?php if(isset($_POST['emailUser'])){echo $_POST['emailUser'];}?>">
 
-
             <!-- <input type="password" placeholder="Enter password"/> -->
             <input type="password" class="form-control" id="Password" onkeyup="check()" required
             pattern=" ^ (? =. * [az] ) (? =. * [AZ]) (? =. * \ D) (? =. * [@ $!% *? &]) [A-Za-z \ d @ $!% *? &] { 8,} $"
             placeholder="entrer votre mot passe" 
             value="<?php if(isset($_POST['PasswordUser'])){echo $_POST['PasswordUser'];}?>">
-
-
-
-
             <button type="button" class="btn login">connecter</button>
-            <!-- <p><a href="javascript:void(0)">Forgot password</a> </p>
-          <p><a href="javascript:void(0)" onclick="toggleSignup()">Register Account</a> </p> -->
-          
         </form>
     </div>
 
-    <div id="signup-form" class="mb-5">
-        <!-- <form>
-            <input type="email" placeholder="Enter your email"/>
-            <input type="text" placeholder="Choose username"/>
-            <input type="password" placeholder="Create password"/>
-            <button type="button" class="btn signup"><i class="fa fa-spinner fa-pulse"></i> create account
-          </button> 
-        </form> -->
-
-        <form method="POST" enctype="multipart/form-data" id="formulaire_inscription">
-             <?php require_once(dirname(__DIR__).'/includes/signupFormProprietaire/step_1.php');?>
-        </form>
-
-    </div>
 
 </div>
+<div class="form-modal">
+<div id="signup-form" class="mb-5">
 
+<?php if(isset($inscriptionValide) && !$inscriptionValide[0]):?>
+    <div class="alert alert-danger mb-2"><?=  $inscriptionValide[1] ?></div>
+<?php endif;?>
+
+<form method="POST" enctype="multipart/form-data" id="formulaire_inscription">
+     <?php require_once(dirname(__DIR__).'/includes/signupFormProprietaire/step_1.php');?>
+</form>
+
+</div>
+</div>
 <style>
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Quicksand');
-
-*{
-    font-family: 'quicksand',Arial, Helvetica, sans-serif;
-    box-sizing: border-box;
-}
-
-body{
-    background:#fff;
-}
-
 .form-modal{
     position:relative;
     width:450px;
@@ -159,15 +162,15 @@ body{
 }
 
 #login-form , #signup-form{
-    position:relative;
+    /* position:relative;
     width:100%;
     height:auto;
-    padding-bottom:1em;
+    padding-bottom:1em; */
 }
-
+/* 
 #signup-form{
     display: none;
-}
+} */
 
 
 #login-form button , #signup-form button{
@@ -253,23 +256,23 @@ body{
 </style>
 
 <script>
-function toggleSignup(){
-   document.getElementById("login-toggle").style.backgroundColor="#fff";
-    document.getElementById("login-toggle").style.color="#222";
-    document.getElementById("signup-toggle").style.backgroundColor="#57b846";
-    document.getElementById("signup-toggle").style.color="#fff";
-    document.getElementById("login-form").style.display="none";
-    document.getElementById("signup-form").style.display="block";
-}
+// function toggleSignup(){
+//    document.getElementById("login-toggle").style.backgroundColor="#fff";
+//     document.getElementById("login-toggle").style.color="#222";
+//     document.getElementById("signup-toggle").style.backgroundColor="#57b846";
+//     document.getElementById("signup-toggle").style.color="#fff";
+//     document.getElementById("login-form").style.display="none";
+//     document.getElementById("signup-form").style.display="block";
+// }
 
-function toggleLogin(){
-    document.getElementById("login-toggle").style.backgroundColor="#57B846";
-    document.getElementById("login-toggle").style.color="#fff";
-    document.getElementById("signup-toggle").style.backgroundColor="#fff";
-    document.getElementById("signup-toggle").style.color="#222";
-    document.getElementById("signup-form").style.display="none";
-    document.getElementById("login-form").style.display="block";
-}
+// function toggleLogin(){
+//     document.getElementById("login-toggle").style.backgroundColor="#57B846";
+//     document.getElementById("login-toggle").style.color="#fff";
+//     document.getElementById("signup-toggle").style.backgroundColor="#fff";
+//     document.getElementById("signup-toggle").style.color="#222";
+//     document.getElementById("signup-form").style.display="none";
+//     document.getElementById("login-form").style.display="block";
+// }
 
 </script>
 
