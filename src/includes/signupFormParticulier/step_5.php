@@ -1,10 +1,4 @@
 <!--STEP 5-->
-<?php 
-    // session_start();
-    // var_dump($_SESSION['liste_interets']);
-    // var_dump($_POST);
-?>
-
 
 <div id="bloc_step_5" class="unshow_step mb-3">
     <div class="arrow_return d-flex align-items-center mb-5" id="back_step4">

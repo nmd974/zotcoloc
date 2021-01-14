@@ -6,7 +6,7 @@
         <!--Titre-->
         <div class="col-md-12">
             <label for="titre_logement" class="form-label">Titre*</label>
-            <input type="text" class="form-control" id="titre_logement" name="titre_logement" value="<?php if(isset($_POST['titre_logement'])){
+            <input type="text" class="form-control" max="100" id="titre_logement" name="titre_logement" value="<?php if(isset($_POST['titre_logement'])){
                 echo $_POST['titre_logement'];
             }?>">
         </div>
@@ -19,12 +19,13 @@
         </div>
 
         <!--Type-->
+        <!-- Amelioration : Faire un chargement de requete des types en cas de changement par admin pour avoir les dernieres nouveautes-->
         <div class="col-md-12">
             <label for="type_logement">Type de logement</label>
-            <select class="form-control" id="type_logement" value="<?php if(isset($_POST['type_logement'])){echo $_POST['type_logement'];}?>">
-                <option value="villa">villa</option>
-                <option value="appartement">appartement</option>
-                <option value="maison">Maison</option>
+            <select class="form-control" name="type_logement" id="type_logement" value="<?php if(isset($_POST['type_logement'])){echo $_POST['type_logement'];}?>">
+                <option value="1">Villa</option>
+                <option value="2">Appartement</option>
+                <option value="3">Maison</option>
             </select>
         </div>
 

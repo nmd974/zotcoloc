@@ -36,7 +36,7 @@
     </div>
     <!--confirmer mot passe-->
     <div class="col-md-12">
-        <label for="confirm_password" class="form-label">Retaper Mot de passe*</label>
+        <label for="confirm_password" class="form-label">Confirmer le mot de passe*</label>
         <input type="password" class="form-control" id="confirm_password" name="confirm_password">
     </div>
     <div class="col-md-12 mt-4">

@@ -1,5 +1,5 @@
 <!--STEP 4-->
-<?php require_once(__ROOT__.'/src/class/Equipement_prive.php');?>
+<?php require_once(__ROOT__.'/src/class/Equipements.php');?>
 <div id="bloc_step_4" class="unshow_step">
 
     <!--profil colocataire recherché-->
@@ -137,15 +137,18 @@
 
         <!--equipement chambre-->
         <div class="col-md-12 mt-3">
-            <p>equipements privés:</p>
+            <p>Equipements privés:</p>
             <div class="d-flex flex-wrap interets_ajax" role="group" aria-label="Basic checkbox toggle button group" id="equipement_prive">
-        <?php $equipements = Equipements2::equipement_prive()?>
+        <?php $equipements = Equipements::equipementAll()?>
         <?php if(!$equipements[0]):?>
             <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
         <?php else :?>
             <?php foreach($equipements[1] as $equipement):?>
-                <input type="checkbox" name="alimentaire_recap" class="btn-check" id="<?= $equipement->id_equipement ?>">
-                <label class="btn btn-outline-success me-2 mb-2" for="<?= $equipement->id_equipement ?>">#<?= $equipement->libelle_eqipement ?></label>
+                <input type="checkbox" name="equipements_chambre_1[]" class="btn-check" id="<?= $equipement->id ?>">
+                <label class="btn btn-outline-success me-2 mb-2" for="<?= $equipement->id ?>">
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    <?= $equipement->libelle_equipement ?>
+                </label>
             <?php endforeach; ?>
         <?php endif;?>
     </div>

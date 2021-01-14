@@ -336,6 +336,9 @@ ul{
     margin: 0;
     padding: 0;
 }
+.arrow_return{
+    cursor: pointer;
+}
 .line_time{
     background-color: #6c757d;
     width: 100%;
