@@ -51,7 +51,7 @@
         <div class="container">
             <div class="row text-center">
                 <div class=" d-flex justify-content-around align-items-center flex-wrap mt-3 mb-3">
-                    
+                    <p class="h6"><span class="stat text-green fw-bold vidaloka">
                     <?php $nbrAnnonces = Annonces::annonce_total()?>
                     <?php if(!$nbrAnnonces[0]):?>
                      <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
