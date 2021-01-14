@@ -10,7 +10,6 @@ margin-top: 0px!important;
     border-radius: 25px;
 }
 /*filtre*/
-
 .dropdown-rent, .dropdown-type, .dropdown-availability {
     width: 350px;
     height: auto;
@@ -28,7 +27,6 @@ margin-top: 0px!important;
 .number-room{
     width:60px;
 }
-
 /*card */
 .avatar {
     top: 160px;
@@ -46,13 +44,7 @@ margin-top: 0px!important;
 .card-relative {
     position: relative;
 }
-
-/* .carousel-relative{
-    position: relative;
-} */
-/*search bootstrap*/
-
-
+/*map*/
 #map{
     height: 100vh;
 }

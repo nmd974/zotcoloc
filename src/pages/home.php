@@ -50,8 +50,8 @@
                 <div class=" d-flex justify-content-around align-items-center flex-wrap mt-3 mb-3">
                     <p class="h6"> <span class="stat text-green fw-bold vidaloka">1200</span><br>nbr Annonces </p>
                     <p class="h6"><span class="stat text-green fw-bold vidaloka">230</span><br>nbr inscrit</p>
-                    <p class="h6"><span class="stat text-green fw-bold vidaloka">403</span><br>nbr de LOREM</p>
-                    <p class="h6"><span class="stat text-green fw-bold vidaloka">1241</span><br>nbr LOREM</p>
+                    <!-- <p class="h6"><span class="stat text-green fw-bold vidaloka">403</span><br>nbr de LOREM</p>
+                    <p class="h6"><span class="stat text-green fw-bold vidaloka">1241</span><br>nbr LOREM</p> -->
                 </div>
             </div>
         </div>
@@ -70,7 +70,7 @@
         </div>
         <!-- gallerie d'images -->
         <div class="wrapper-photo">
-            <div class="image-one position-relative">
+            <!-- <div class="image-one position-relative">
                 <img src="https://www.cartedelareunion.fr/wp-content/uploads/2019/03/Ile-de-La-Reunion-Saint-Denis.jpg"
                     alt="top-city" class="img-fluid img-cover">
                 <p class="text-light vidaloka display-4 position-absolute top-50 start-50 translate-middle text-center">
@@ -81,32 +81,52 @@
                     alt="top-city" class="img-fluid img-cover">
                 <p class="text-light vidaloka h2 position-absolute top-50 start-50 translate-middle text-center">St Paul
                 </p>
-            </div>
+            </div> -->
+            <?php require_once(__ROOT__.'/src/class/Top_villes.php');?>
+
+            <?php $topVilles = TopVilles::top_ville()?>
+            <?php if(!$topVilles[0]):?>
+            <?php var_dump($topVilles) ?>
+                <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
+            <?php else :?>
+                <?php foreach($topVilles[1] as $topVille):?>
+                    <p>
+                        
+                        <?= $topville->libelle_ville ?>
+                        
+                    </p>
+                    
+                <?php endforeach; ?>
+            <?php endif;?>
+
+
             <div class="image-three position-relative">
                 <img src="https://www.cartedelareunion.fr/wp-content/uploads/2019/05/Terre-Sainte-plage-lagon-La-Reunion.jpg"
-                    alt="top-city" class="img-fluid img-cover">
+                    alt="top-city" class="img-fluid">
                 <p class="text-light vidaloka h2 position-absolute top-50 start-50 translate-middle text-center">St
                     Pierre</p>
             </div>
             <div class="image-four position-relative">
                 <img src="https://www.cartedelareunion.fr/wp-content/uploads/2016/08/Parc-du-Colosse.jpg" alt="top-city"
-                    class="img-fluid img-cover">
-                <p class="text-light vidaloka h2 position-absolute top-50 start-50 translate-middle text-center">St
+                    class="img-fluid">
+                    <p class="text-light vidaloka h2 position-absolute top-50 start-50 translate-middle text-center">St
                     Gilles</p>
+                    
+                
             </div>
             <div class="image-five position-relative">
                 <img src="https://www.cartedelareunion.fr/wp-content/uploads/2016/07/Plage-de-lErmitage-filaos-cartedelareunion.fr-%C2%A9-Serge-Gelabert-1102x800.jpg"
-                    alt="top-city" class="img-fluid img-cover">
+                    alt="top-city" class="img-fluid">
                 <p class="text-light vidaloka h2 position-absolute top-50 start-50 translate-middle text-center">St
                     Louis</p>
             </div>
-            <div class="image-six position-relative">
+            <!-- <div class="image-six position-relative">
                 <img src="https://www.cartedelareunion.fr/wp-content/uploads/2016/07/Plage-de-lErmitage-filaos-cartedelareunion.fr-%C2%A9-Serge-Gelabert-1102x800.jpg"
                     alt="top-city" class="img-fluid img-cover">
                 <p class="text-light vidaloka h2 position-absolute top-50 start-50 translate-middle text-center">Ste
                     Marie</p>
-            </div>
-            <div class="image-seven position-relative">
+            </div> -->
+            <!-- <div class="image-seven position-relative">
                 <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-2.jpg" alt="top-city"
                     class="img-fluid img-cover">
                 <p class="text-light vidaloka h2 position-absolute top-50 start-50 translate-middle text-center">Ste
@@ -123,7 +143,7 @@
                     class="img-fluid img-cover">
                 <p class="text-light vidaloka h2 position-absolute top-50 start-50 translate-middle text-center">Le port
                 </p>
-            </div>
+            </div> -->
 
         </div>
     </section>

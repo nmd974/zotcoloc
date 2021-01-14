@@ -1,6 +1,16 @@
 <?php
     session_start();
     define('__ROOT__', dirname(dirname(dirname(__DIR__))));
+    //Ici on détermine les superglobales pour la gestion de la session log ou pas
+    if(!isset($_SESSION['isLoggedIn'])){
+        $_SESSION['isLoggedIn'] = false;
+    }
+    if(!isset($_SESSION['role'])){
+        $_SESSION['role'] = false;
+    }
+    if(!isset($_SESSION['id_utilisateur'])){
+        $_SESSION['id_utilisateur'] = false;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,6 +24,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;1,200&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Vidaloka&display=swap" rel="stylesheet">
+    <!-- link pour la map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
+    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+    crossorigin="" />
     <link rel="stylesheet" href="../style/style.css">
     <!--Font awesome-->
 <script src="https://use.fontawesome.com/c18e5332f2.js"></script>
@@ -28,6 +42,7 @@
 <!-- Page Content -->
 <div id="page-content-wrapper">
     <header>
+    
         <!-- barre de navigation -->
         <nav class="navbar navbar-expand-md navbar-light shadow fixed-top">
             <div class="container-fluid">
@@ -47,22 +62,28 @@
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a href="./home.php" class="nav-link active fw-bold" aria-current="page" href="#">Accueil</a>
+                                <a href="./home.php" class="nav-link active fw-bold" aria-current="page">Accueil</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Recherche</a>
+                                <a href="./creationAnnonce.php" class="nav-link active fw-bold" aria-current="page">créer annonce</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./inscriptionParticulier.php" class="nav-link active" aria-current="page" href="#">Signup Particulier</a>
+                                <a href="./roommateSearch.php" class="nav-link active" aria-current="page">Recherche</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Déposer une Annonce</a>
+                                <a href="./inscriptionParticulier.php" class="nav-link active" aria-current="page">Inscription Particulier</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link active" aria-current="page" href="#">Se connecter</a>
+                                <a href="./deposerAnnonce.php" class="nav-link active" aria-current="page">Déposer une Annonce</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./compteParticulier.php" class="nav-link active" aria-current="page" href="#">Mon compte</a>
+                                <a href="./creationAnnonce.php" class="nav-link active" aria-current="page">Créer une Annonce</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./seconnecter.php" class="nav-link active" aria-current="page">Se connecter</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./compteParticulier.php" class="nav-link active" aria-current="page">Mon compte</a>
                             </li>
                         </ul>
                     </div>
