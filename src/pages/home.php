@@ -1,6 +1,6 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
 <?php require_once(__ROOT__.'/src/class/Villes.php');?>
-<?php require_once(__ROOT__.'/src/class/Annonces.php');?>
+<?php require_once(__ROOT__.'/src/class/Annonce.php');?>
 <?php require_once(__ROOT__.'/src/class/Inscription.php');?>
 
 <!-- titre + barre de recherche -->
