@@ -1,7 +1,6 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
-<?php require_once(__ROOT__.'/src/class/Villes.php');?>
-<?php require_once(__ROOT__.'/src/class/Annonce.php');?>
-<?php require_once(__ROOT__.'/src/class/Inscription.php');?>
+<?php require_once(__ROOT__.'/src/class/Statistiques.php');?>
+
 
 <!-- titre + barre de recherche -->
 <section class="main">
@@ -52,7 +51,7 @@
             <div class="row text-center">
                 <div class=" d-flex justify-content-around align-items-center flex-wrap mt-3 mb-3">
                     <p class="h6"><span class="stat text-green fw-bold vidaloka">
-                    <?php $nbrAnnonces = Annonces::annonce_total()?>
+                    <?php $nbrAnnonces = Statistiques::annonce_total()?>
                     <?php if(!$nbrAnnonces[0]):?>
                      <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                     <?php else :?>
@@ -60,7 +59,7 @@
                     <?php endif; ?>
                     </span><br>nbr Annonces </p>
                     <p class="h6"><span class="stat text-green fw-bold vidaloka">
-                    <?php $nbrInscription = Inscription::inscription_total()?>
+                    <?php $nbrInscription = Statistiques::inscription_total()?>
                     <?php if(!$nbrInscription[0]):?>
                      <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                     <?php else :?>
@@ -101,7 +100,7 @@
             </div> -->
             
             
-            <?php $topVilles = Villes::top_ville()?>
+            <?php $topVilles = Statistiques::top_ville()?>
             <?php if(!$topVilles[0]):?>
             <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
             <?php else :?>
@@ -159,13 +158,31 @@
         <div class="row mb-5 vidaloka">
             <div class="col-md-3"><a href="category.html" class="text-dark">
                     <div>
+                    
                         <div>
                             <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-1.jpg" alt="nord"
                                 class="img-fluid">
                         </div>
-                        <h3 class="text-center">NORD</h3>
+                        <h3 class="text-center">NORD: 
+                            <!--stat pour région NORD-->
+                            <?php $topVilles = Statistiques::stat_region()?>
+                            <?php if(!$topVilles[0]):?>
+                                <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
+                            <?php else :?>
+                                <?php foreach($topVilles[1] as $topVille):?>
+
+                                    <?php if($topVille->libelle_zone=="nord"):?>
+                                    <?= $topVille->nb ?>
+                                   <?php endif; ?>
+                                    
+            
+                                <?php endforeach; ?>
+                             <?php endif; ?>
+                        </h3>
                     </div>
+                    
                 </a></div>
+
 
             <!-- Item-->
             <div class="col-md-3"><a href="category.html" class="text-green">
@@ -174,7 +191,22 @@
                             <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-2.jpg" alt="sud"
                                 class="img-fluid">
                         </div>
-                        <h3 class="text-center">SUD</h3>
+                        <h3 class="text-center">SUD: 
+                            <!--stat pour région SUD-->
+                            <?php $topVilles = Statistiques::stat_region()?>
+                            <?php if(!$topVilles[0]):?>
+                                <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
+                            <?php else :?>
+                                <?php foreach($topVilles[1] as $topVille):?>
+
+                                    <?php if($topVille->libelle_zone=="sud"):?>
+                                    <?= $topVille->nb ?>
+                                   <?php endif; ?>
+                                    
+            
+                                <?php endforeach; ?>
+                             <?php endif; ?>
+                        </h3>
                     </div>
                 </a></div>
 
@@ -185,7 +217,22 @@
                             <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-3.jpg" alt="est"
                                 class="img-fluid">
                         </div>
-                        <h3 class="text-center">EST</h3>
+                        <h3 class="text-center">EST: 
+                            <!--stat région EST-->
+                            <?php $topVilles = Statistiques::stat_region()?>
+                            <?php if(!$topVilles[0]):?>
+                                <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
+                            <?php else :?>
+                                <?php foreach($topVilles[1] as $topVille):?>
+
+                                    <?php if($topVille->libelle_zone=="est"):?>
+                                    <?= $topVille->nb ?>
+                                   <?php endif; ?>
+                                    
+            
+                                <?php endforeach; ?>
+                             <?php endif; ?>
+                        </h3>
                     </div>
                 </a></div>
 
@@ -196,7 +243,22 @@
                             <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-3.jpg"
                                 alt="ouest" class="img-fluid">
                         </div>
-                        <h3 class="text-center">OUEST</h3>
+                        <h3 class="text-center">OUEST: 
+                            <!--stat région OUEST-->
+                            <?php $topVilles = Statistiques::stat_region()?>
+                            <?php if(!$topVilles[0]):?>
+                                <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
+                            <?php else :?>
+                                <?php foreach($topVilles[1] as $topVille):?>
+
+                                    <?php if($topVille->libelle_zone=="ouest"):?>
+                                    <?= $topVille->nb ?>
+                                   <?php endif; ?>
+                                    
+            
+                                <?php endforeach; ?>
+                             <?php endif; ?>
+                        </h3>
                     </div>
                 </a></div>
 
