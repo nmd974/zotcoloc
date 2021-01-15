@@ -164,7 +164,16 @@
                         </div>
                         <h3 class="text-center">NORD: 
                             <!--stat pour région NORD-->
+                            <?php $topVilles = Statistiques::stat_region()?>
+                            <?php if(!$topVilles[0]):?>
+                                <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
+                            <?php else :?>
+                                <?php foreach($topVilles[1] as $topVille):?>
 
+                                    <? $topVilles->libelle_zone ?>
+            
+                                <?php endforeach; ?>
+                             <?php endif; ?>
                         </h3>
                     </div>
                 </a></div>
