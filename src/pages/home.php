@@ -158,6 +158,7 @@
         <div class="row mb-5 vidaloka">
             <div class="col-md-3"><a href="category.html" class="text-dark">
                     <div>
+                    
                         <div>
                             <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-1.jpg" alt="nord"
                                 class="img-fluid">
@@ -170,13 +171,18 @@
                             <?php else :?>
                                 <?php foreach($topVilles[1] as $topVille):?>
 
-                                    <? $topVilles->libelle_zone ?>
+                                    <?php if($topVille->libelle_zone=="nord"):?>
+                                    <?= $topVille->nb ?>
+                                   <?php endif; ?>
+                                    
             
                                 <?php endforeach; ?>
                              <?php endif; ?>
                         </h3>
                     </div>
+                    
                 </a></div>
+
 
             <!-- Item-->
             <div class="col-md-3"><a href="category.html" class="text-green">
@@ -187,7 +193,19 @@
                         </div>
                         <h3 class="text-center">SUD: 
                             <!--stat pour région SUD-->
+                            <?php $topVilles = Statistiques::stat_region()?>
+                            <?php if(!$topVilles[0]):?>
+                                <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
+                            <?php else :?>
+                                <?php foreach($topVilles[1] as $topVille):?>
 
+                                    <?php if($topVille->libelle_zone=="sud"):?>
+                                    <?= $topVille->nb ?>
+                                   <?php endif; ?>
+                                    
+            
+                                <?php endforeach; ?>
+                             <?php endif; ?>
                         </h3>
                     </div>
                 </a></div>
@@ -201,7 +219,19 @@
                         </div>
                         <h3 class="text-center">EST: 
                             <!--stat région EST-->
+                            <?php $topVilles = Statistiques::stat_region()?>
+                            <?php if(!$topVilles[0]):?>
+                                <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
+                            <?php else :?>
+                                <?php foreach($topVilles[1] as $topVille):?>
 
+                                    <?php if($topVille->libelle_zone=="est"):?>
+                                    <?= $topVille->nb ?>
+                                   <?php endif; ?>
+                                    
+            
+                                <?php endforeach; ?>
+                             <?php endif; ?>
                         </h3>
                     </div>
                 </a></div>
@@ -215,7 +245,19 @@
                         </div>
                         <h3 class="text-center">OUEST: 
                             <!--stat région OUEST-->
+                            <?php $topVilles = Statistiques::stat_region()?>
+                            <?php if(!$topVilles[0]):?>
+                                <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
+                            <?php else :?>
+                                <?php foreach($topVilles[1] as $topVille):?>
 
+                                    <?php if($topVille->libelle_zone=="ouest"):?>
+                                    <?= $topVille->nb ?>
+                                   <?php endif; ?>
+                                    
+            
+                                <?php endforeach; ?>
+                             <?php endif; ?>
                         </h3>
                     </div>
                 </a></div>

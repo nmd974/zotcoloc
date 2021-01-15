@@ -74,7 +74,7 @@ class Statistiques {
         $error = null;
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
-            $query = $pdo->query("SELECT `libelle_zone`, COUNT(*) 
+            $query = $pdo->query("SELECT `libelle_zone`, COUNT(*) AS 'nb'
             FROM `logements` 
             INNER JOIN `villes` 
             ON logements.id_ville = villes.id 
