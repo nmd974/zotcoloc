@@ -1,5 +1,4 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
-<?php require_once(__ROOT__.'/src/class/Villes.php');?>
 <?php require_once(__ROOT__.'/src/class/Statistiques.php');?>
 
 
@@ -101,7 +100,7 @@
             </div> -->
             
             
-            <?php $topVilles = Villes::top_ville()?>
+            <?php $topVilles = Statistiques::top_ville()?>
             <?php if(!$topVilles[0]):?>
             <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
             <?php else :?>
@@ -163,7 +162,10 @@
                             <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-1.jpg" alt="nord"
                                 class="img-fluid">
                         </div>
-                        <h3 class="text-center">NORD</h3>
+                        <h3 class="text-center">NORD: 
+                            <!--stat pour région NORD-->
+
+                        </h3>
                     </div>
                 </a></div>
 
@@ -174,7 +176,10 @@
                             <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-2.jpg" alt="sud"
                                 class="img-fluid">
                         </div>
-                        <h3 class="text-center">SUD</h3>
+                        <h3 class="text-center">SUD: 
+                            <!--stat pour région SUD-->
+
+                        </h3>
                     </div>
                 </a></div>
 
@@ -185,7 +190,10 @@
                             <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-3.jpg" alt="est"
                                 class="img-fluid">
                         </div>
-                        <h3 class="text-center">EST</h3>
+                        <h3 class="text-center">EST: 
+                            <!--stat région EST-->
+
+                        </h3>
                     </div>
                 </a></div>
 
@@ -196,7 +204,10 @@
                             <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-3.jpg"
                                 alt="ouest" class="img-fluid">
                         </div>
-                        <h3 class="text-center">OUEST</h3>
+                        <h3 class="text-center">OUEST: 
+                            <!--stat région OUEST-->
+
+                        </h3>
                     </div>
                 </a></div>
 
