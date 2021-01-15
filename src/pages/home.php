@@ -1,7 +1,7 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
 <?php require_once(__ROOT__.'/src/class/Villes.php');?>
-<?php require_once(__ROOT__.'/src/class/Annonce.php');?>
-<?php require_once(__ROOT__.'/src/class/Inscription.php');?>
+<?php require_once(__ROOT__.'/src/class/Statistiques.php');?>
+
 
 <!-- titre + barre de recherche -->
 <section class="main">
@@ -52,7 +52,7 @@
             <div class="row text-center">
                 <div class=" d-flex justify-content-around align-items-center flex-wrap mt-3 mb-3">
                     <p class="h6"><span class="stat text-green fw-bold vidaloka">
-                    <?php $nbrAnnonces = Annonces::annonce_total()?>
+                    <?php $nbrAnnonces = Statistiques::annonce_total()?>
                     <?php if(!$nbrAnnonces[0]):?>
                      <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                     <?php else :?>
@@ -60,7 +60,7 @@
                     <?php endif; ?>
                     </span><br>nbr Annonces </p>
                     <p class="h6"><span class="stat text-green fw-bold vidaloka">
-                    <?php $nbrInscription = Inscription::inscription_total()?>
+                    <?php $nbrInscription = Statistiques::inscription_total()?>
                     <?php if(!$nbrInscription[0]):?>
                      <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                     <?php else :?>
