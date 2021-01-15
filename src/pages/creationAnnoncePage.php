@@ -18,19 +18,23 @@
     <?php
     if(isset($_POST['enregistrer_annonce'])){
         // if(!isset($_POST['id_logement'])){
-        //     $_POST['id_logement'] = md5(uniqid(rand(), true));
+            $_POST['id_logement'] = substr(md5(uniqid(rand(), true)),0,32);
         // }
-        // $validationCreation = creationAnnonce($_POST, $_FILES, $_SESSION['id_utilisateur']);
+        $validationCreation = creationAnnonce($_POST, $_FILES, $_SESSION['id_utilisateur']);
         // print_r($_POST);
         // print_r($_FILES);
-        // if($validationCreation[0]){
-        //     header('Location: ./home.php');
-        // }
+        print_r($validationCreation);
+        if($validationCreation[0]){
+            header('Location: ./home.php');
+        }
     }
 ?>
 <pre>
-    <?php         print_r($_POST);
-        print_r($_FILES);?>
+    <?php         
+        print_r($_POST);
+        print_r($_FILES);
+        print_r($validationCreation);
+    ?>
 </pre>
     <!--On fait afficher la page selon l'id des step de chaque bloc en jqurey-->
     <form method="POST" enctype="multipart/form-data" id="formulaire_inscription">
@@ -72,7 +76,7 @@ $('#addChambre').on('click', () => {
         <!--Surface de la chambre-->
         <div class="col-md-12 input-group mt-3">
             <label for="surface_chambre" class="input-group-text mb-1">Surface Totale</label>
-            <input type="number" class="form-control me-5 mb-1" id="surface_chambre" name="surface_chambre[]" value="<?php if(isset($_POST['surface_chambre'])){echo $_POST['surface_chambre'];}?>">
+            <input type="number" class="form-control me-5 mb-1" id="surface_chambre" name="surface_chambre_${cptChambre}" value="0">
 
             <!--Type de chambre-->
             <div class="col-md-12">
@@ -95,7 +99,7 @@ $('#addChambre').on('click', () => {
         <!--Photo de la chambre-->
         <div class="col-md-12 mt-3">
             <label for="photo_chambre">ajoutez au moins une photo de la chambre</label>
-            <input type="file" class="form-control-file" name="photo_chambre_${cptChambre}[]">
+            <input type="file" class="form-control-file" name="photos_chambre_${cptChambre}[]">
         </div>
 
         <div class="col-md-12">
@@ -161,7 +165,7 @@ $('#addChambre').on('click', () => {
             <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
         <?php else :?>
             <?php foreach($equipements[1] as $equipement):?>
-                <input type="checkbox" name="equipements_chambre_${cptChambre}" class="btn-check" value="<?= $equipement->id ?>" id="chambre_${cptChambre}_<?= $equipement->id ?>">
+                <input type="checkbox" name="equipements_chambre_${cptChambre}[]" class="btn-check" value="<?= $equipement->id ?>" id="chambre_${cptChambre}_<?= $equipement->id ?>">
                 <label class="btn btn-outline-success me-2 mb-2" for="chambre_${cptChambre}_<?= $equipement->id ?>">
                     <i class="fa fa-plus-circle" aria-hidden="true"></i>
                     <?= $equipement->libelle_equipement ?>

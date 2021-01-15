@@ -34,14 +34,14 @@ class Inscription {
         }
     }
     
-    public static function ajoutTableParticulier($id, $utilisateur_id, $nom, $prenom, $pseudo)
+    public static function ajoutTableParticulier($id, $utilisateur_id, $nom, $prenom, $pseudo, $date_naissance)
     {
         $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
         $error = null;
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
-            $query = $pdo->query("INSERT INTO `particulier`(`id`, `id_utilisateur`, `nom`, `prenom`, `pseudo`) 
-                VALUES ('$id', '$utilisateur_id','$nom','$prenom','$pseudo')
+            $query = $pdo->query("INSERT INTO `particulier`(`id`, `id_utilisateur`, `nom`, `prenom`, `pseudo`, `date_naissance`) 
+                VALUES ('$id', '$utilisateur_id','$nom','$prenom','$pseudo', '$date_naissance')
             ");
             return array(true, $query);
         }catch(PDOException $e){

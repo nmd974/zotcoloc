@@ -1,6 +1,6 @@
 <?php
 //array(1) { ["photos_logement"]=> array(5) { ["name"]=> array(2) { [0]=> string(36) "icons8-team-seDjj4dmC9s-unsplash.jpg" [1]=> string(48) "benjaminrobyn-jespersen-Ai9_QJaZfMc-unsplash.jpg" } ["type"]=> array(2) { [0]=> string(10) "image/jpeg" [1]=> string(10) "image/jpeg" } ["tmp_name"]=> array(2) { [0]=> string(45) "C:\Users\jhapa\AppData\Local\Temp\phpA4D5.tmp" [1]=> string(45) "C:\Users\jhapa\AppData\Local\Temp\phpA4D6.tmp" } ["error"]=> array(2) { [0]=> int(0) [1]=> int(0) } ["size"]=> array(2) { [0]=> int(32033) [1]=> int(1970394) } } }
-    function controleImage($image_upload, $indiceArray, $indiceZone)//On renvoie dans un tableau l'erreur et le message d'erreur ou l'erreur et le nom de l'image
+    function controleImage($image_upload, $indiceArray)//On renvoie dans un tableau l'erreur et le message d'erreur ou l'erreur et le nom de l'image
     {
         $error = false;
         $fileName = $image_upload['name'][$indiceArray]; //On met dans une variable le nom de l'image pour vérifier si l'utilisateur a ajouté une
@@ -30,7 +30,7 @@
             //Arrive ici cela veut dire que nos vérifications on été validées alors on peut procéder à l'envoie de l'image dans son bon dossier
             $tmpName = $image_upload['tmp_name'][$indiceArray]; //On recupère le nom temporaire ajouté par le serveur pour la gestion de l'image
             $idName = md5(uniqid(rand(), true)); //On attribue un id unique à l'image via la fonction md5 uniqid et random
-            $fileDir = __ROOT__."/images/" . $idName . "." . $fileExt; //On spécifie la direction d'enregistrement de l'image
+            $fileDir = __ROOT__."/src/images/" . $idName . "." . $fileExt; //On spécifie la direction d'enregistrement de l'image
             $image_upload[$indiceArray] = $idName . "." . $fileExt; //On attribue dans la superglobale $_POST le nom de l'image qui ira dans le tableau
             $resultat = move_uploaded_file($tmpName, $fileDir);
             if($resultat){

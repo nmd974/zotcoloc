@@ -75,7 +75,7 @@
         <!--Surface de la chambre-->
         <div class="col-md-12 input-group mt-3">
             <label for="surface_chambre" class="input-group-text mb-1">Surface Totale</label>
-            <input type="number" class="form-control me-5 mb-1" id="surface_chambre" name="surface_chambre" value="<?php if(isset($_POST['surface_chambre'])){echo $_POST['surface_chambre'];}?>">
+            <input type="number" class="form-control me-5 mb-1" id="surface_chambre" name="surface_chambre_1" value="0">
 
                 <!--Type de chambre-->
             <div class="col-md-12">
@@ -98,7 +98,7 @@
         <!--Photo de la chambre-->
         <div class="col-md-12 mt-3">
             <label for="photo_chambre">ajoutez au moins une photo de la chambre</label>
-            <input type="file" class="form-control-file" name="photo_chambre_1[]">
+            <input type="file" class="form-control-file" name="photos_chambre_1[]">
         </div>
 
 
@@ -122,7 +122,7 @@
         <!--Date disponibilité-->
         <div class="col-md-12 mt-3">
             <label for="date_disponibilite" class="form-label">Date de idsponibilité</label><br>
-            <input type="date" name="date_disponibilite" class="form-control" id="date_disponibilite"
+            <input type="date" name="date_disponibilite[]" class="form-control" id="date_disponibilite"
                 value="<?php if(isset($_POST['date_disponibilite'])){echo $_POST['date_disponibilite'];}?>"
             >
         </div>
