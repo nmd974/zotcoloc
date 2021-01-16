@@ -1,4 +1,10 @@
  <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?> 
+ <?php require_once(dirname(__DIR__).'/class/Recherches.php');?>
+ <?php if(isset($_GET["btn-search"])){
+    $annonces = Recherches::recherche_annonce($_GET["search-room"]);
+    
+ } 
+  ?>
 
 <div id="wrapper_page_content">
 
@@ -7,12 +13,14 @@
             <div class="col-lg-6 col-md-12">
                 <!-- barre de recherche -->
                 <div class="input-border bg-light mb-3 input-filter">
-                    <form action="" method="post" class="form-group">
+                    <form method="get" class="form-group">
                         <div class="input-group">
-                            <input type="text" class="form-control location-border2" placeholder="Lieux"
-                                aria-label="location" aria-describedby="button-addon1">
+                            <input type="text" name="search-room" class="form-control location-border2" placeholder="Lieux"
+                                aria-label="location" aria-describedby="button-addon1" id="search">
+                                <div class="result" id="result-search"></div>
+                                
                             <button class="btn btn-outline-secondary w-25 bg-green text-white btn-radius" type="submit"
-                                id="button-addon2">Recherche</button>
+                                id="button-addon2" name="btn-search">Recherche</button>
                         </div>
                     </form>
                 </div>
@@ -327,7 +335,12 @@
                     </div>
                 </div>
                 <div class=" d-flex justify-content-center flex-wrap">
-                    <!-- ////////////////////carte d'une annonce///////// -->
+                    <!-- ////////////////////////carte d'une annonce///////////////////// -->
+              <?php if(isset($_GET["btn-search"])):?>     
+            <?php if(!$annonces[0]):?>
+            <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
+            <?php else :?>
+                <?php foreach($annonces[1] as $annonce):?>
                     <div class="m-2">
                         <div class="card card-relative shadow-lg border " style="width: 18rem;">
                             <!-- icon coeur en position absolute-->
@@ -365,14 +378,18 @@
                             </div>
                             <!-- descriptif de l'annonce -->
                             <div class="card-body">
-                                <span class="badge bg-primary mb-1 letter-space">Propriétaire</span>
-                                <h5 class="card-title">title (adresse)</h5>
+                                <span class="badge bg-primary mb-1 letter-space"><?= $annonce->libelle_role ?></span>
+                                <h5 class="card-title"><?= $annonce->titre_chambre ?></h5>
                                 <p class="card-text">Chambre: 1</p>
                                 <p class="card-text">Dispo. immédiatement</p>
-                                <p class="card-text"><span class="fw-bold h4">500 €</span> par mois</p>
+                                <p class="card-text"><span class="fw-bold h4"><?= $annonce->loyer ?></span> par mois</p>
                             </div>
                         </div>
                     </div>
+                    <?php endforeach; ?>
+                    <?php endif; ?>
+                    <?php endif; ?>
+                        <!-- fin d'une carte -->
                     <div class="m-2">
                         <div class="card card-relative shadow-lg border " style="width: 18rem;">
                             <!-- icon coeur en position absolute-->
@@ -432,4 +449,5 @@ integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgB
 crossorigin=""></script>
 <script src="../js/map.js"></script>
 <script src="../js/range.js"></script>
+<script src="../js/search.js"></script>
 <?php require_once(dirname(__DIR__).'/includes/Layout/finbalise.php');?>

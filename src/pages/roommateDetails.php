@@ -1,5 +1,6 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?> 
 
+
 <div id="wrapper_page_content">
 <section class="container">
 
