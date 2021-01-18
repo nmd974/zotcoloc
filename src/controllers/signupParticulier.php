@@ -104,7 +104,7 @@
                 $id = $data['id_particulier'];
                 $pseudo = $nom.$prenom;
                 //Si tout est ok pour la table utilisateur alors on lance la requete vers la table particulier
-                $validationInscription = Inscription::ajoutTableParticulier($id, $id_utilisateur, $nom, $prenom, $pseudo);
+                $validationInscription = Inscription::ajoutTableParticulier($id, $id_utilisateur, $nom, $prenom, $pseudo, $date_naissance, $date_disponibilite);
                 //Si tout est ok pour la table particulier alors on lance la requete vers la table d'association des interets du particulier
                 if($validationInscription[0]){
                     if(isset($data['interets'])){

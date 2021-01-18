@@ -7,7 +7,9 @@
       <div id="habitudes_alimentaires" class="accordion-collapse collapse" aria-labelledby="habitude-alimentaires" data-bs-parent="#accordion">
         <div class="accordion-body">
             <div class="d-flex justify-content-end mt-4">
-                <i class="fa fa-pencil" aria-hidden="true"></i>
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editInterets">
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+            </button>
             </div>
             <!-- Habitudes alimentaires-->
             <div class="mt-4 mb-4 bg-light">

@@ -119,4 +119,19 @@ class Interets {
         }
     }
 
+    public static function deleteInterets($id_particulier, $id_interet)
+    {
+        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $error = null;
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        try{
+            $query = $pdo->query("DELETE FROM `interet_particulier` WHERE `id_particulier` = '$id_particulier' AND `id_interet` = $id_interet
+            ");
+            return array(true, '');
+        }catch(PDOException $e){
+            $error = $e->getMessage();
+            return array(false, $error);
+        }
+    }
+
 }

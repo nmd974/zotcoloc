@@ -1,5 +1,5 @@
 <div class="accordion-item">
-    <h2 class="accordion-header" id="flush-infosPerso">
+    <h2 class="accordion-header" id="flush_infosPerso">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#flush-infosPerso" aria-expanded="false" aria-controls="flush-infosPerso">
             Mes informations personnelles
@@ -9,7 +9,9 @@
         data-bs-parent="#accordion">
         <div class="accordion-body">
             <div class="d-flex justify-content-end mt-4">
-                <i class="fa fa-pencil" aria-hidden="true"></i>
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editInfosPerso">
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+            </button>
             </div>
 
             <!--nom-->

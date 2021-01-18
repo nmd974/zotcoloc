@@ -31,8 +31,35 @@
       <?php endif; ?>
 <?php endif; ?>
 
+<?php 
+    if(isset($_POST['save_edit_info_coloc'])){
+        $update = editInfosColoc($_POST, $mon_id_particulier[1][0]->id);
+        $mon_id_particulier = Utilisateurs::monCompteParticulier($_SESSION['id_utilisateur']);
+    }
+?>
+
+<?php 
+    if(isset($_POST['save_edit_info_perso'])){
+        $update = editInfosPerso($_POST, $mon_id_particulier[1][0]->id);
+        $mon_id_particulier = Utilisateurs::monCompteParticulier($_SESSION['id_utilisateur']);
+    }
+?>
+
+<?php 
+    if(isset($_POST['save_edit_interets'])){
+        $update = editInterets($_POST, $mon_id_particulier[1][0]->id, $mes_interet_list);
+        $mes_interets = Interets::interetsByParticulierId($mon_id_particulier[1][0]->id);
+        $mes_interet_list = [];
+        foreach($mes_interets[1] as $interet){
+            array_push($mes_interet_list, $interet->id_interet);
+        }
+    }
+?>
+
 <?php require_once(dirname(__DIR__).'/includes/compteParticulier/modals/photoUser.php');?>
 <?php require_once(dirname(__DIR__).'/includes/compteParticulier/modals/infosColoc.php');?>
+<?php require_once(dirname(__DIR__).'/includes/compteParticulier/modals/infosPerso.php');?>
+<?php require_once(dirname(__DIR__).'/includes/compteParticulier/modals/interets.php');?>
 <?php require_once(dirname(__DIR__).'/includes/sidebar.php');?>
 
 <div class="container-fluid" id="wrapper-content">
@@ -49,6 +76,10 @@
     </div>
     <!--METTRE LE CONTENU ICI-->
     <div class="container">
+    <?php if(isset($update)){
+        var_dump($update);
+    }
+    ?>
         <?php require_once(dirname(__DIR__).'/includes/compteParticulier/gererProfil.php');?>
         <?php require_once(dirname(__DIR__).'/includes/compteParticulier/annonces.php');?>
         <?php require_once(dirname(__DIR__).'/includes/compteParticulier/candidatures.php');?>
