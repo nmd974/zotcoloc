@@ -1,5 +1,6 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
 <?php require_once(__ROOT__.'/src/class/Statistiques.php');?>
+<?php require_once(dirname(__DIR__).'/class/Recherches.php');?>
 
 
 <!-- titre + barre de recherche -->
@@ -20,7 +21,7 @@
                     <p class="text-white h5 mb-5">Service de colocation entre particulier, Agence et propriétaire</p>
                     <!-- barre de recherche -->
                     <div class="input-border bg-light" id="input-border">
-                        <form action="" method="post" class="form-group">
+                        <form action="roommateSearch.php" method="get" class="form-group">
                             <div class="input-group" id="input-group">
                                 <input type="text" class="form-control w-25 location-border" placeholder="Lieux" id="location"
                                     aria-label="location" aria-describedby="button-addon1">
