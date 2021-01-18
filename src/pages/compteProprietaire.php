@@ -9,15 +9,15 @@
         header('Location: ./home.php');
     }else{
         //Chargement des données correspondantes à l'id lors de l'arrivée sur page
-        $mon_id_particulier = Utilisateurs::monCompteParticulier($_SESSION['id_utilisateur']);
+        $mon_compte = Utilisateurs::moncompteProprietaire($_SESSION['id_utilisateur']);
         $ma_photo = Photos::photosByIdUser($_SESSION['id_utilisateur']);
-        $mes_interets = Interets::interetsByParticulierId($mon_id_particulier[1][0]->id);
+        $mes_interets = Interets::interetsByParticulierId($mon_compte[1][0]->id);
         $mes_interet_list = [];
         foreach($mes_interets[1] as $interet){
             array_push($mes_interet_list, $interet->id_interet);
         }
-        $mes_favoris = Utilisateurs::favorisParticulier($mon_id_particulier[1][0]->id);
-        $mes_candidatures = Utilisateurs::candidaturesParticulier($mon_id_particulier[1][0]->id);
+        $mes_favoris = Utilisateurs::favorisParticulier($mon_compte[1][0]->id);
+        $mes_candidatures = Utilisateurs::candidaturesParticulier($mon_compte[1][0]->id);
         $mes_annonces = Utilisateurs::annoncesParticulier($_SESSION['id_utilisateur']);
     }
 ?>
@@ -33,23 +33,23 @@
 
 <?php 
     if(isset($_POST['save_edit_info_coloc'])){
-        $update = editInfosColoc($_POST, $mon_id_particulier[1][0]->id);
+        $update = editInfosColoc($_POST, $mon_compte[1][0]->id);
         unset($_POST);
-        $mon_id_particulier = Utilisateurs::monCompteParticulier($_SESSION['id_utilisateur']);
+        $mon_compte = Utilisateurs::moncompteProprietaire($_SESSION['id_utilisateur']);
     }
 ?>
 
 <?php 
     if(isset($_POST['save_edit_info_perso'])){
-        $update = editInfosPerso($_POST, $mon_id_particulier[1][0]->id);
-        $mon_id_particulier = Utilisateurs::monCompteParticulier($_SESSION['id_utilisateur']);
+        $update = editInfosPerso($_POST, $mon_compte[1][0]->id);
+        $mon_compte = Utilisateurs::moncompteProprietaire($_SESSION['id_utilisateur']);
     }
 ?>
 
 <?php 
     if(isset($_POST['save_edit_interets'])){
-        $update = editInterets($_POST, $mon_id_particulier[1][0]->id, $mes_interet_list);
-        $mes_interets = Interets::interetsByParticulierId($mon_id_particulier[1][0]->id);
+        $update = editInterets($_POST, $mon_compte[1][0]->id, $mes_interet_list);
+        $mes_interets = Interets::interetsByParticulierId($mon_compte[1][0]->id);
         $mes_interet_list = [];
         foreach($mes_interets[1] as $interet){
             array_push($mes_interet_list, $interet->id_interet);
@@ -57,10 +57,10 @@
     }
 ?>
 
-<?php require_once(dirname(__DIR__).'/includes/compteParticulier/modals/photoUser.php');?>
-<?php require_once(dirname(__DIR__).'/includes/compteParticulier/modals/infosColoc.php');?>
-<?php require_once(dirname(__DIR__).'/includes/compteParticulier/modals/infosPerso.php');?>
-<?php require_once(dirname(__DIR__).'/includes/compteParticulier/modals/interets.php');?>
+<?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/photoUser.php');?>
+<?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/infosColoc.php');?>
+<?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/infosPerso.php');?>
+<?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/interets.php');?>
 <?php require_once(dirname(__DIR__).'/includes/sidebar.php');?>
 
 <div class="container-fluid" id="wrapper-content">
@@ -81,11 +81,11 @@
         var_dump($update);
     }
     ?>
-        <?php require_once(dirname(__DIR__).'/includes/compteParticulier/gererProfil.php');?>
-        <?php require_once(dirname(__DIR__).'/includes/compteParticulier/annonces.php');?>
-        <?php require_once(dirname(__DIR__).'/includes/compteParticulier/candidatures.php');?>
-        <?php require_once(dirname(__DIR__).'/includes/compteParticulier/dashboard.php');?>
-        <?php require_once(dirname(__DIR__).'/includes/compteParticulier/favoris.php');?>
+        <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/gererProfil.php');?>
+        <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/annonces.php');?>
+        <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/candidatures.php');?>
+        <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/dashboard.php');?>
+        <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/favoris.php');?>
     </div>
 
     <!--BOUTON DE SWITCH SIDEBAR EN MOBILE-->

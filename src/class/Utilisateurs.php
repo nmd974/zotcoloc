@@ -20,6 +20,24 @@ class Utilisateurs {
         }
     }
 
+    public static function monCompteProprietaire($id)
+    {
+        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $error = null;
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        try{
+            $query = $pdo->query("SELECT * FROM `utilisateurs` 
+            INNER JOIN `proprietaire` ON proprietaire.id_utilisateur = utilisateurs.id
+            WHERE utilisateurs.id = '$id'
+            ");
+            $data = $query->fetchAll(PDO::FETCH_OBJ);
+            return array(true, $data);
+        }catch(PDOException $e){
+            $error = $e->getMessage();
+            return array(false, $error);
+        }
+    }
+
     public static function mesFavoris($id)
     {
         $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');

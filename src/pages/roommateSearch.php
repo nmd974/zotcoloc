@@ -3,7 +3,6 @@
  <?php if(isset($_GET["btn-search"])){
     $annonces = Recherches::recherche_annonce($_GET["search-room"]);
     $nombres = Recherches::nombre_annonce($_GET["search-room"]);
-    
  } 
   ?>
 
@@ -377,7 +376,7 @@
                                 <?php else :?>
                                     <?php foreach($images[1] as $image):?>
                                     <div class="carousel-item active">
-                                        <img src="../images/<?= $image->id_photo ?>" class="d-block w-100" alt="room">
+                                        <img src="../images/<?= $image->libelle_photo ?>" class="d-block w-100" alt="room">
                                     </div>
                                     <?php endforeach; ?>
                                     <?php endif; ?>

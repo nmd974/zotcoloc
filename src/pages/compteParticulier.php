@@ -61,7 +61,7 @@
 <?php require_once(dirname(__DIR__).'/includes/compteParticulier/modals/infosColoc.php');?>
 <?php require_once(dirname(__DIR__).'/includes/compteParticulier/modals/infosPerso.php');?>
 <?php require_once(dirname(__DIR__).'/includes/compteParticulier/modals/interets.php');?>
-<?php require_once(dirname(__DIR__).'/includes/sidebar.php');?>
+<?php require_once(dirname(__DIR__).'/includes/compteParticulier/sidebar.php');?>
 
 <div class="container-fluid" id="wrapper-content">
     <!--TITRE A CHANGER SELON LE INCLUDE AFFICHE-->
