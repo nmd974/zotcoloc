@@ -1,4 +1,5 @@
-<?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?> 
+<?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
+<?php require_once(dirname(__DIR__).'/class/Recherches.php');?>
 
 
 <div id="wrapper_page_content">
@@ -39,6 +40,14 @@
     </section> 
     <section class="container">
         <div class="row">
+        <?php $annonces = Recherches::annonce_details()?>
+                <?php if(!$annonces[0]):?>
+                <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
+                <?php else :?>
+
+                <?php foreach($annonces[1] as $annonce):?>
+                <?php $id = $annonce->id_chambre ?>
+                    <?php if($_GET["id"] == $id)?>
             <div class="col-lg-8 col-md-12">
                 <!-- titre -->
                 <div class="mb-5 mt-4">
@@ -49,15 +58,17 @@
                         </div>
                     </div>
                 </div>
-                <p class="h3">12 République A -Chambre 3</p>
+                
+                <p class="h3"><?= $annonce->titre_chambre ?></p>
                 <div class="d-flex flex-wrap justify-content-around">
-                <p class="h6"> <span class="fw-bold">5</span>- colocataires</p>
-                <p class="h6"> Logement - <span class="fw-bold">146m<sup>2</sup></span></p>
-                <p class="h6"> Chambre - <span class="fw-bold">15m<sup>2</sup></span></p>
-                <p class="h6 "> Catégorie - <span class="fw-bold">Maison</span></p>
+                <p class="h6"> <span class="fw-bold text-danger">5</span>- colocataires</p>
+                <p class="h6"> Logement - <span class="fw-bold"><?= $annonce->surface_logement ?>m<sup>2</sup></span></p>
+                <p class="h6"> Chambre - <span class="fw-bold"><?= $annonce->surface_chambre ?>m<sup>2</sup></span></p>
+                <p class="h6 "> Catégorie - <span class="fw-bold text-danger">Maison</span></p>
                 </div>
                 <p class="h6 mt-3">
-                    Le logement est localisé dans le quartier Hôtel de Ville - Presqu'île, en plein centre de Lyon. De nombreux commerces, restaurants, transports publics sont aux environs. La colocation est à l'étage 4 avec ascenseur. Elle est entièrement meublée et propose une cuisine 100% équipée avec réfrigérateur, micro-ondes, poêles, casseroles, ustensiles, bouilloire, grille-pain, vaisselle… Ainsi que planche à repasser, tancarville, fer à repasser, lave-linge. Tout le matériel pour le ménage est sur place dans cette colocation : aspirateur, balai, seau et serpillère, balai-brosse… Chaque colocation meublée Chez Nestor inclut toutes les charges : assurance habitation, taxe sur les ordures, charges de copropriété, électricité, wifi illimité, eau.”
+                <?= $annonce->description_logement ?>
+                    <!-- Le logement est localisé dans le quartier Hôtel de Ville - Presqu'île, en plein centre de Lyon. De nombreux commerces, restaurants, transports publics sont aux environs. La colocation est à l'étage 4 avec ascenseur. Elle est entièrement meublée et propose une cuisine 100% équipée avec réfrigérateur, micro-ondes, poêles, casseroles, ustensiles, bouilloire, grille-pain, vaisselle… Ainsi que planche à repasser, tancarville, fer à repasser, lave-linge. Tout le matériel pour le ménage est sur place dans cette colocation : aspirateur, balai, seau et serpillère, balai-brosse… Chaque colocation meublée Chez Nestor inclut toutes les charges : assurance habitation, taxe sur les ordures, charges de copropriété, électricité, wifi illimité, eau.” -->
                 </p>
                 <!-- avatar -->
                 <div class="d-flex align-items-center mt-3 mb-4">
@@ -65,8 +76,8 @@
                     <img src="../images/profile.jpg" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px;height: 60px; border-radius: 50%;">
                 </div>
                 <div class="ms-3">
-                <p class="fw-bold mb-0">Charlotte</p>
-                <p class="mb-0">Property Manager</p>
+                <p class="fw-bold mb-0 text-danger">Charlotte</p>
+                <p class="mb-0"><?= $annonce->libelle_role ?></p>
                 </div>
                 </div>
                
@@ -204,7 +215,7 @@
                     <div class="card-body p-5">
                     
                     
-                    <p class="fw-bold text-start">Chambre 15m<sup>2</sup></p>
+                    <p class="fw-bold text-start">Chambre <?= $annonce->surface_chambre ?>m<sup>2</sup></p>
                     <hr>
                     <div class="d-flex justify-content-between align-items-center">
                     <p class="">Disponibilité</p>
@@ -217,7 +228,7 @@
                     <hr>
                     <div class="d-flex justify-content-between align-items-center">
                     <p class="m-0">Loyer et frais</p>
-                    <p class="fw-bold h3 m-0">738 €</p>
+                    <p class="fw-bold h3 m-0"><?= $annonce->loyer ?> €</p>
                     </div>
                     <a href="#" class="btn bg-green text-light fw-bold letter-space mt-5">LOUER CETTE CHAMBRE</a>
                 </div>
@@ -226,6 +237,8 @@
                 </div>
                 </div>
             </div>
+            <?php endforeach; ?>
+            <?php endif; ?>
         </div>
     </section>  
 </div>
