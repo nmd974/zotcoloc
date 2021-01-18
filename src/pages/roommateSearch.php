@@ -371,6 +371,7 @@
                                 </ol>
                                 <div class="carousel-inner">
                                <?php $images = Recherches::photo_annonce($annonce->id_chambre)?>
+                               
                                 <?php if(!$images[0]):?>
                                 <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                                 <?php else :?>
@@ -380,13 +381,7 @@
                                     </div>
                                     <?php endforeach; ?>
                                     <?php endif; ?>
-                                    <div class="carousel-item">
-                                        <img src="../images/brightly-lit-room-with-piano.jpg" class="d-block w-100"
-                                            alt="room">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="../images/hotel-room-bed.jpg" class="d-block w-100" alt="room">
-                                    </div>
+                                  
                                 </div>
                             </div>
                             <!-- descriptif de l'annonce -->

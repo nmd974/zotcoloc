@@ -109,11 +109,11 @@ class Recherches {
         $error = null;
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
-            $query = $pdo->query("SELECT *
-            FROM `photo_chambre` 
-            INNER JOIN photos on photo_chambre.id_chambre = photos.id
-            WHERE `id_chambre` = '$idChambre'
-            
+            $query = $pdo->query("SELECT libelle_photo 
+            FROM photo_chambre
+            INNER JOIN photos ON photos.id = photo_chambre.id_photo
+            INNER JOIN chambres ON chambres.id_chambre = photo_chambre.id_chambre
+            WHERE photo_chambre.id_chambre = '$idChambre'
             
  
             ");
