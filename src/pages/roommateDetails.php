@@ -41,10 +41,7 @@
     <section class="container">
         <div class="row">
         <?php $annonces = Recherches::annonce_details($_GET["id"])?>
-<<<<<<< HEAD
-=======
         
->>>>>>> 5c9ec71eb223d974b4676a87201f691a269fb5fa
                 <?php if(!$annonces[0]):?>
                 <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                 <?php else :?>

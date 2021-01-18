@@ -62,13 +62,8 @@ class Recherches {
             
             INNER JOIN `utilisateurs` ON logements.id_utilisateur = utilisateurs.id
             INNER JOIN `roles` ON utilisateurs.id_role = roles.id
-<<<<<<< HEAD
-            
-            WHERE chambres.id_chambre = '$id'
-=======
             WHERE chambres.id_chambre = $id
             
->>>>>>> 5c9ec71eb223d974b4676a87201f691a269fb5fa
             
             
  
