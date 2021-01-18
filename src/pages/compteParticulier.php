@@ -16,9 +16,9 @@
         foreach($mes_interets[1] as $interet){
             array_push($mes_interet_list, $interet->id_interet);
         }
-        $mes_favoris;
-        $mes_candidatures;
-        $mes_annonces;
+        $mes_favoris = Utilisateurs::favorisParticulier($mon_id_particulier[1][0]->id);
+        $mes_candidatures = Utilisateurs::candidaturesParticulier($mon_id_particulier[1][0]->id);
+        $mes_annonces = Utilisateurs::annoncesParticulier($_SESSION['id_utilisateur']);
     }
 ?>
 <?php if(isset($_POST['save_photo_user'])):?>
@@ -34,6 +34,7 @@
 <?php 
     if(isset($_POST['save_edit_info_coloc'])){
         $update = editInfosColoc($_POST, $mon_id_particulier[1][0]->id);
+        unset($_POST);
         $mon_id_particulier = Utilisateurs::monCompteParticulier($_SESSION['id_utilisateur']);
     }
 ?>
