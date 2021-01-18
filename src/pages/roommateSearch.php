@@ -2,7 +2,7 @@
  <?php require_once(dirname(__DIR__).'/class/Recherches.php');?>
  <?php if(isset($_GET["btn-search"])){
     $annonces = Recherches::recherche_annonce($_GET["search-room"]);
-    
+   
  } 
   ?>
 
@@ -336,11 +336,13 @@
                 </div>
                 <div class=" d-flex justify-content-center flex-wrap">
                     <!-- ////////////////////////carte d'une annonce///////////////////// -->
-              <?php if(isset($_GET["btn-search"])):?>     
+              <?php if(isset($_GET["btn-search"])):?>  
+               <?php var_dump($annonces);?>   
             <?php if(!$annonces[0]):?>
             <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
             <?php else :?>
                 <?php foreach($annonces[1] as $annonce):?>
+                
                     <div class="m-2">
                         <div class="card card-relative shadow-lg border " style="width: 18rem;">
                             <!-- icon coeur en position absolute-->
@@ -378,11 +380,17 @@
                             </div>
                             <!-- descriptif de l'annonce -->
                             <div class="card-body">
+                            <a href="roommateDetails.php?id=<?= $annonce->id_chambre ?>">
+                            <!-- role -->
                                 <span class="badge bg-primary mb-1 letter-space"><?= $annonce->libelle_role ?></span>
+                                <!-- titre de l'annonce -->
                                 <h5 class="card-title"><?= $annonce->titre_chambre ?></h5>
-                                <p class="card-text">Chambre: 1</p>
-                                <p class="card-text">Dispo. immédiatement</p>
-                                <p class="card-text"><span class="fw-bold h4"><?= $annonce->loyer ?></span> par mois</p>
+                                <p class="card-text"><?= $annonce->libelle_ville ?></p>
+                                <!-- <p class="card-text">Chambre: 1</p> -->
+                                <p class="card-text">D<?= $annonce->date_disponibilite ?></p>
+                                <p class="card-text"><span class="fw-bold h4"><?= $annonce->loyer ?> €</span> par mois</p>
+                                <input type="text" name="room" value="" hidden>
+                                </a>
                             </div>
                         </div>
                     </div>
