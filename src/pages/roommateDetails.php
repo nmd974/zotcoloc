@@ -40,7 +40,7 @@
     </section> 
     <section class="container">
         <div class="row">
-        <?php $annonces = Recherches::annonce_details()?>
+        <?php $annonces = Recherches::annonce_details($_GET["id"])?>
                 <?php if(!$annonces[0]):?>
                 <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                 <?php else :?>

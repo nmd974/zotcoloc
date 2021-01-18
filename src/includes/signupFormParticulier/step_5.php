@@ -107,12 +107,4 @@
         <button type="submit" class="btn w-25 bg-green text-white mr-5" name="ajouter" id="step_5">Je m'inscris</button>
     </div>
 
-    <!-- CheckBox
-    <div class="col-md-12">
-        <p> 
-            <input name="AgreeCheckbox" id="agree" type="checkbox" value="AGREE"> 
-            J'accepte que les informations saisies ci-dessus soient correctes. Ce n'est peut-être pas le cas. C'est juste pour s'amuser.
-        </p>
-    </div> -->
-
 </div>
