@@ -19,7 +19,7 @@
                                 aria-label="location" aria-describedby="button-addon1" id="search">
                                 <div class="result" id="result-search"></div>
                                 
-                            <button class="btn btn-outline-secondary w-25 bg-green text-white btn-radius" type="submit"
+                            <button class="btn btn-outline-secondary w-25 bg-green text-white btn-radius ms-1" type="submit"
                                 id="button-addon2" name="btn-search">Recherche</button>
                         </div>
                     </form>
@@ -325,6 +325,7 @@
             </div> -->
             <div class="col-lg-12 col-md-12 card-order mt-3">
                 <!-- titre -->
+                <?php if(isset($_GET["btn-search"])):?>
                 <div class="mb-5">
                     <div class="border-one ps-1">
                         <div class="border-two ps-3">
@@ -334,6 +335,7 @@
                         </div>
                     </div>
                 </div>
+                <?php endif;?>
                 </div>
                 <div class="offset-3 col-6 d-flex justify-content-center flex-wrap view-details">
                     <!-- ////////////////////////carte d'une annonce///////////////////// -->

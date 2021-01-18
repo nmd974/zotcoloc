@@ -45,7 +45,7 @@
                                     <option value="3">Villa</option>
                                 </select>
                                 <button class="btn btn-outline-secondary w-25 bg-green text-white btn-radius"
-                                    type="submit" id="button-addon2">Recherche</button>
+                                    type="submit" id="button-addon2" name="btn-search">Recherche</button>
                             </div>
                         </form>
                     </div>
