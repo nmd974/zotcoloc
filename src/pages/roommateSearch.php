@@ -3,7 +3,7 @@
  <?php if(isset($_GET["btn-search"])){
     $annonces = Recherches::recherche_annonce($_GET["search-room"]);
     $nombres = Recherches::nombre_annonce($_GET["search-room"]);
-   
+    
  } 
   ?>
 
@@ -362,15 +362,24 @@
                             <!-- caroussel -->
                             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                                 <ol class="carousel-indicators">
+                                
                                     <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active">
                                     </li>
+                                    
                                     <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
                                     <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
                                 </ol>
                                 <div class="carousel-inner">
+                               <?php $images = Recherches::photo_annonce($annonce->id_chambre)?>
+                                <?php if(!$images[0]):?>
+                                <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
+                                <?php else :?>
+                                    <?php foreach($images[1] as $image):?>
                                     <div class="carousel-item active">
-                                        <img src="../images/bright-hotel-room-bed.jpg" class="d-block w-100" alt="room">
+                                        <img src="../images/<?= $image->id_photo ?>" class="d-block w-100" alt="room">
                                     </div>
+                                    <?php endforeach; ?>
+                                    <?php endif; ?>
                                     <div class="carousel-item">
                                         <img src="../images/brightly-lit-room-with-piano.jpg" class="d-block w-100"
                                             alt="room">
@@ -382,14 +391,14 @@
                             </div>
                             <!-- descriptif de l'annonce -->
                             <div class="card-body">
-                            <a href="roommateDetails.php?id=<?= $annonce->id_chambre ?>">
+                            <a href="roommateDetails.php?id=<?= $annonce->id_chambre ?>" class="mode-link">
                             <!-- role -->
                                 <span class="badge bg-primary mb-1 letter-space"><?= $annonce->libelle_role ?></span>
                                 <!-- titre de l'annonce -->
-                                <h5 class="card-title card-link"><?= $annonce->titre_chambre ?></h5>
+                                <h5 class="card-title"><?= $annonce->titre_chambre ?></h5>
                                 <p class="card-text"><?= $annonce->libelle_ville ?></p>
                                 <!-- <p class="card-text">Chambre: 1</p> -->
-                                <p class="card-text">D<?= $annonce->date_disponibilite ?></p>
+                                <p class="card-text"><?= $annonce->date_disponibilite ?></p>
                                 <p class="card-text"><span class="fw-bold h4"><?= $annonce->loyer ?> €</span> par mois</p>
                                 <input type="text" name="room" value="" hidden>
                                 </a>

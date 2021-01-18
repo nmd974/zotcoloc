@@ -103,4 +103,25 @@ class Recherches {
         }
     }
 
+    public static function photo_annonce($idChambre)
+    {
+        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $error = null;
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        try{
+            $query = $pdo->query("SELECT *
+            FROM `photo_chambre` 
+            INNER JOIN photos on photo_chambre.id_chambre = photos.id
+            WHERE `id_chambre` = '$idChambre'
+            
+            
+ 
+            ");
+            $data = $query->fetchAll(PDO::FETCH_OBJ);
+            return array(true, $data);
+        }catch(PDOException $e){
+            $error = $e->getMessage();
+            return array(false, $error);
+        }
+    }
 }

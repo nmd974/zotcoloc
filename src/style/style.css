@@ -132,8 +132,8 @@ footer{
 .card-relative {
     position: relative;
 }
-.card-link{
-    text-decoration-line: none!important;
+.mode-link{
+    text-decoration: none!important;
     color: black!important;
 }
 /*page de recherche de colocation avec filtre*/
