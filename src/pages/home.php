@@ -1,6 +1,11 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
 <?php require_once(__ROOT__.'/src/class/Statistiques.php');?>
 <?php require_once(dirname(__DIR__).'/class/Recherches.php');?>
+<?php if(isset($_GET["btn-search"])){
+    $annonces = Recherches::recherche_annonce($_GET["search-room"]);
+   
+ } 
+  ?>
 
 
 <!-- titre + barre de recherche -->
@@ -23,8 +28,14 @@
                     <div class="input-border bg-light" id="input-border">
                         <form action="roommateSearch.php" method="get" class="form-group">
                             <div class="input-group" id="input-group">
-                                <input type="text" class="form-control w-25 location-border" placeholder="Lieux" id="location"
-                                    aria-label="location" aria-describedby="button-addon1">
+                                <input 
+                                    type="text" 
+                                    class="form-control w-25 location-border" name="search-room" 
+                                    placeholder="Lieux" 
+                                    id="search"
+                                    aria-label="location" 
+                                    aria-describedby="button-addon1"
+                                >
                                 <input type="text" class="form-control w-25 price-border" placeholder="Prix" id="price"
                                     aria-label="price" aria-describedby="button-addon2">
                                 <select class="form-select w-25 category-border" aria-label="Default select example">
