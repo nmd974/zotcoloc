@@ -50,7 +50,6 @@
             $year = intval(substr($data['date_naissance'],0,4));
             $month = intval(substr($data['date_naissance'],5,2));
             $day = intval(substr($data['date_naissance'],8,2));
-            $data['date_naissance'] = mktime(0, 0, 0, $month, $day, $year);
             //On verifie que la date n'est pas inférieure à la date actuelle
             if(time() < $data['date_naissance']){
                 $message = "Le format de la date de naissance est dans le futur !";
@@ -69,14 +68,7 @@
             $validationInscription = false;
             return array(false, $message, $step);
             exit();
-        }else{
-            //Apres la verification des heures et minutes on peut modifier la valeur du $data en secondes
-            $year = intval(substr($data['date_disponibilite'],0,4));
-            $month = intval(substr($data['date_disponibilite'],5,2));
-            $day = intval(substr($data['date_disponibilite'],8,2));
-            $data['date_disponibilite'] = mktime(0, 0, 0, $month, $day, $year);
         }
-        
 
         //Si les verification sont ok alors on traite pour l'envoie des données
         if($validationInscription){
