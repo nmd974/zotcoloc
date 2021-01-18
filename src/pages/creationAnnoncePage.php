@@ -52,7 +52,7 @@
 <!-- ON MET ICI DES SCRIPTS ASSOCIES A LA PAGE -->
 <script src="../js/createAnnonce.js"></script>
 <script>
-//Ici on gere l'ajout d'une nouvelle chambre
+//Ici on gere l'ajout d'une nouvelle chambre sur le formulaire de creation d'une annonce
 let cptChambre = 2;
 let newArray = '[]';
 $('#addChambre').on('click', () => {
