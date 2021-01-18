@@ -48,26 +48,27 @@ class Recherches {
         }
     }
      
-    public static function annonce_details()
+    public static function annonce_details($id)
     {
         $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
         $error = null;
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT * 
-            FROM `logements` 
+            FROM `chambres` 
+            INNER JOIN `logements` ON logements.id_logement = chambres.id_logement
             INNER JOIN `villes` ON logements.id_ville = villes.id 
             INNER JOIN `communes` ON villes.id_commune = communes.id
-            INNER JOIN `chambres` ON logements.id_logement = chambres.id_logement
+            
             INNER JOIN `utilisateurs` ON logements.id_utilisateur = utilisateurs.id
             INNER JOIN `roles` ON utilisateurs.id_role = roles.id
-            
+            WHERE chambres.id_chambre = $id
             
             
             
  
             ");
-            $data = $query->fetchAll(PDO::FETCH_OBJ);
+            $data = $query->fetch(PDO::FETCH_OBJ);
             return array(true, $data);
         }catch(PDOException $e){
             $error = $e->getMessage();
