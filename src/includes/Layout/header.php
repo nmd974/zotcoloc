@@ -1,16 +1,21 @@
 <?php
     session_start();
     define('__ROOT__', dirname(dirname(dirname(__DIR__))));
+    // header_remove('Location');
+    //Pour la prod
+    $_SESSION['isLoggedIn'] = true;
+    $_SESSION['role'] = 'particulier';
+    $_SESSION['id_utilisateur'] = '8ca1f9f32e74073a02ab49bbfcdc1dc5';
     //Ici on détermine les superglobales pour la gestion de la session log ou pas
-    if(!isset($_SESSION['isLoggedIn'])){
-        $_SESSION['isLoggedIn'] = false;
-    }
-    if(!isset($_SESSION['role'])){
-        $_SESSION['role'] = false;
-    }
-    if(!isset($_SESSION['id_utilisateur'])){
-        $_SESSION['id_utilisateur'] = false;
-    }
+    // if(!isset($_SESSION['isLoggedIn'])){
+    //     $_SESSION['isLoggedIn'] = false;
+    // }
+    // if(!isset($_SESSION['role'])){
+    //     $_SESSION['role'] = false;
+    // }
+    // if(!isset($_SESSION['id_utilisateur'])){
+    //     $_SESSION['id_utilisateur'] = false;
+    // }
 ?>
 <!DOCTYPE html>
 <html lang="en">

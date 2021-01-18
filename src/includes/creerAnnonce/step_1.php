@@ -1,5 +1,5 @@
 <!--STEP 1-->
-
+<!-- Charger les infos du profil (photos, favoris, candidature, publications)-->
 <div id="bloc_step_1" class="show_step">
     <h4>Dites-en plus sur votre logement:</h4>
 

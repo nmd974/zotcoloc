@@ -385,7 +385,8 @@ ul{
     margin-top: 50px;
 }
 .show_step{
-    display: initial;
+    display: flex;
+    flex-direction: column;
 }
 .unshow_step{
     display: none !important;
@@ -397,7 +398,12 @@ ul{
     color: white;
 } */
 /*---------------------------------------------*/
-
+.title_champ{
+    font-weight: 700;
+}
+.champ_content{
+    border-bottom: 1px solid black;
+}
 /*MEDIAQUERIES*/
 /*---------------------------------------------*/
 @media screen and (max-width: 426px){
@@ -457,6 +463,9 @@ ul{
     #wrapper-content{
         padding: 0;
         margin-top: 56px;
+    }
+    .fileUpload{
+        border-radius: 100%;
     }
     /*---------------------------------------------*/
     /*details d'une annonce*/

@@ -10,6 +10,7 @@
     require_once(dirname(__DIR__).'/class/Regles.php');
     require_once(dirname(__DIR__).'/controllers/imageControl.php');
     date_default_timezone_set("Indian/Reunion");//On definie la timezone à la reunion
+
     function creationAnnonce($data, $image, $id_utilisateur){
         //Verifier les inputs
         // $inputList = ['titre_logement', 'description_logement', 'type_logement', 'ville', 'photos', 'meuble', 'aides_logement' 'regles']
@@ -97,7 +98,7 @@
             //Si ok on ajoute les photos puis on ajoute dans les tables d'associations pour chambre et logement
             $indice_nb_photo = count($image['photos_logement']['name']);
             for ($i=0; $i < $indice_nb_photo; $i++) { 
-                $ajoutImage = controleImage($image['photos_logement'], $i);
+                $ajoutImage = controleImageArray($image['photos_logement'], $i);
                 if($ajoutImage[0]){ //La fonction retourne false si erreur
                     $message = "Erreur lors de l'ajout de la photo";
                     $validationFormulaire = false;
@@ -129,7 +130,7 @@
                     $indice = $i + 1;
                 $indice_nb_photo = count($image['photos_chambre_'.$indice]['name']);
                 for ($i=0; $i < $indice_nb_photo; $i++) { 
-                    $ajoutImage = controleImage($image['photos_chambre_'.$indice], $i);
+                    $ajoutImage = controleImageArray($image['photos_chambre_'.$indice], $i);
                     if($ajoutImage[0]){ //La fonction retourne false si erreur
                         $message = "Erreur lors de l'ajout de la photo";
                         $validationFormulaire = false;
@@ -213,7 +214,7 @@
 
                 // foreach($image['photos_logement'] as $image){
             //     return $indice_nb_photo;
-                // $ajoutImage = controleImage($image, $cpt);
+                // $ajoutImage = controleImageArray($image, $cpt);
                 // if(!$ajoutImage[0]){
                 //     $message = "Erreur lors de l'ajout de la photo";
                 //     $validationFormulaire = false;
@@ -232,7 +233,7 @@
                 // }
 
                                 // foreach($image['photos_chambre_'.$indice] as $image){
-                //     $ajoutImage = controleImage($image, $cpt);
+                //     $ajoutImage = controleImageArray($image, $cpt);
                 //     if(!$ajoutImage[0]){
                 //         $message = "Erreur lors de l'ajout de la photo";
                 //         $validationFormulaire = false;
