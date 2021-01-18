@@ -55,19 +55,25 @@ class Recherches {
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT * 
-            FROM `logements` 
+            FROM `chambres` 
+            INNER JOIN `logements` ON logements.id_logement = chambres.id_logement
             INNER JOIN `villes` ON logements.id_ville = villes.id 
             INNER JOIN `communes` ON villes.id_commune = communes.id
-            INNER JOIN `chambres` ON logements.id_logement = chambres.id_logement
+            
             INNER JOIN `utilisateurs` ON logements.id_utilisateur = utilisateurs.id
             INNER JOIN `roles` ON utilisateurs.id_role = roles.id
+<<<<<<< HEAD
             
             WHERE chambres.id_chambre = '$id'
+=======
+            WHERE chambres.id_chambre = $id
+            
+>>>>>>> 5c9ec71eb223d974b4676a87201f691a269fb5fa
             
             
  
             ");
-            $data = $query->fetchAll(PDO::FETCH_OBJ);
+            $data = $query->fetch(PDO::FETCH_OBJ);
             return array(true, $data);
         }catch(PDOException $e){
             $error = $e->getMessage();

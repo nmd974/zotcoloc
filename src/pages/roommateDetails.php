@@ -41,13 +41,15 @@
     <section class="container">
         <div class="row">
         <?php $annonces = Recherches::annonce_details($_GET["id"])?>
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 5c9ec71eb223d974b4676a87201f691a269fb5fa
                 <?php if(!$annonces[0]):?>
                 <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                 <?php else :?>
-
-                <?php foreach($annonces[1] as $annonce):?>
-                <?php $id = $annonce->id_chambre ?>
-                    <?php if($_GET["id"] == $id)?>
+                
+                
             <div class="col-lg-8 col-md-12">
                 <!-- titre -->
                 <div class="mb-5 mt-4">
@@ -59,15 +61,14 @@
                     </div>
                 </div>
                 
-                <p class="h3"><?= $annonce->titre_chambre ?></p>
+                <p class="h3"><?= $annonces[1]->titre_chambre ?></p>
                 <div class="d-flex flex-wrap justify-content-around">
-                <p class="h6"> <span class="fw-bold text-danger">5</span>- colocataires</p>
-                <p class="h6"> Logement - <span class="fw-bold"><?= $annonce->surface_logement ?>m<sup>2</sup></span></p>
-                <p class="h6"> Chambre - <span class="fw-bold"><?= $annonce->surface_chambre ?>m<sup>2</sup></span></p>
-                <p class="h6 "> Catégorie - <span class="fw-bold text-danger">Maison</span></p>
+                
+                <p class="h6"> Chambre - <span class="fw-bold"><?= $annonces[1]->surface_chambre ?>m<sup>2</sup></span></p>
+                
                 </div>
                 <p class="h6 mt-3">
-                <?= $annonce->description_logement ?>
+                <?= $annonces[1]->description_chambre ?>
                     <!-- Le logement est localisé dans le quartier Hôtel de Ville - Presqu'île, en plein centre de Lyon. De nombreux commerces, restaurants, transports publics sont aux environs. La colocation est à l'étage 4 avec ascenseur. Elle est entièrement meublée et propose une cuisine 100% équipée avec réfrigérateur, micro-ondes, poêles, casseroles, ustensiles, bouilloire, grille-pain, vaisselle… Ainsi que planche à repasser, tancarville, fer à repasser, lave-linge. Tout le matériel pour le ménage est sur place dans cette colocation : aspirateur, balai, seau et serpillère, balai-brosse… Chaque colocation meublée Chez Nestor inclut toutes les charges : assurance habitation, taxe sur les ordures, charges de copropriété, électricité, wifi illimité, eau.” -->
                 </p>
                 <!-- avatar -->
@@ -76,8 +77,8 @@
                     <img src="../images/profile.jpg" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px;height: 60px; border-radius: 50%;">
                 </div>
                 <div class="ms-3">
-                <p class="fw-bold mb-0 text-danger">Charlotte</p>
-                <p class="mb-0"><?= $annonce->libelle_role ?></p>
+                <p class="fw-bold mb-0 text-danger">prenom</p>
+                <p class="mb-0"><?= $annonces[1]->libelle_role ?></p>
                 </div>
                 </div>
                
@@ -118,6 +119,35 @@
                 </div>
                 </div>
                 <hr>
+                <!-- titre logement-->
+                <div class="mb-5 mt-4">
+                    <div class="border-one ps-1">
+                        <div class="border-two ps-3">
+                            <p class="text-secondary m-0 poppins h5">DETAILS</p>
+                            <h2 class="vidaloka m-0 h1">Détails<span class="text-green"> du logement</span></h2>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="h3"><?= $annonces[1]->titre_logement ?></p>
+                <div class="d-flex flex-wrap justify-content-around">
+                <p class="h6"> <span class="fw-bold text-danger">5</span>- colocataires</p>
+                <p class="h6"> Logement - <span class="fw-bold"><?= $annonces[1]->surface_logement ?>m<sup>2</sup></span></p>
+                
+                <p class="h6 "> Catégorie - <span class="fw-bold text-danger">Maison</span></p>
+                </div>
+                <p class="h6 mt-3"><?= $annonces[1]->description_logement ?></p>
+
+                <!-- titre -->
+                <div class="mb-5 mt-4">
+                    <div class="border-one ps-1">
+                        <div class="border-two ps-3">
+                            <p class="text-secondary m-0 poppins h5">EQUIPEMENTS</p>
+                            <h2 class="vidaloka m-0 h1">Equipements<span class="text-green"> de la chambre</span></h2>
+                        </div>
+                    </div>
+                </div>
+
                 <h4 class="text-green h4 mb-4 mt-3">Logement</h4>
                 <div class="d-flex">
                 <!-- un équipement -->
@@ -215,20 +245,24 @@
                     <div class="card-body p-5">
                     
                     
-                    <p class="fw-bold text-start">Chambre <?= $annonce->surface_chambre ?>m<sup>2</sup></p>
+                    <p class="fw-bold text-start">Chambre <?= $annonces[1]->surface_chambre ?>m<sup>2</sup></p>
                     <hr>
                     <div class="d-flex justify-content-between align-items-center">
                     <p class="">Disponibilité</p>
-                    <p class="fw-bold">12/01/2021</p>
+                    <p class="fw-bold"><?= $annonces[1]->date_disponibilite ?></p>
                     </div>
                     <div class="d-flex justify-content-between align-items-center">
                     <p class="m-0">Durée</p>
-                    <p class="fw-bold m-0">1 - 6 mois</p>
+                    <p class="fw-bold m-0"><?= $annonces[1]->duree_bail ?> mois</p>
                     </div>
                     <hr>
                     <div class="d-flex justify-content-between align-items-center">
-                    <p class="m-0">Loyer et frais</p>
-                    <p class="fw-bold h3 m-0"><?= $annonce->loyer ?> €</p>
+                    <p class="">Charges</p>
+                    <p class="fw-bold"><?= $annonces[1]->charges ?></p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                    <p class="m-0">Loyer</p>
+                    <p class="fw-bold h3 m-0"><?= $annonces[1]->loyer ?> €</p>
                     </div>
                     <a href="#" class="btn bg-green text-light fw-bold letter-space mt-5">LOUER CETTE CHAMBRE</a>
                 </div>
@@ -237,7 +271,7 @@
                 </div>
                 </div>
             </div>
-            <?php endforeach; ?>
+            
             <?php endif; ?>
         </div>
     </section>  
