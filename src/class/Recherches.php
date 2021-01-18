@@ -75,4 +75,32 @@ class Recherches {
             return array(false, $error);
         }
     } 
+
+    public static function nombre_annonce($search)
+    {
+        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $error = null;
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        try{
+            $query = $pdo->query("SELECT COUNT(*)
+            FROM `logements` 
+            INNER JOIN `villes` ON logements.id_ville = villes.id 
+            INNER JOIN `communes` ON villes.id_commune = communes.id
+            INNER JOIN `chambres` ON logements.id_logement = chambres.id_logement
+            INNER JOIN `utilisateurs` ON logements.id_utilisateur = utilisateurs.id
+            INNER JOIN `roles` ON utilisateurs.id_role = roles.id
+            WHERE `statut` = 'Publiee'
+            AND `a_louer` = 1 
+            AND `libelle_ville`LIKE '%$search%'
+            
+ 
+            ");
+            $data = $query->fetchAll(PDO::FETCH_ASSOC);
+            return array(true, $data);
+        }catch(PDOException $e){
+            $error = $e->getMessage();
+            return array(false, $error);
+        }
+    }
+
 }
