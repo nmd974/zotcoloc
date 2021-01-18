@@ -2,11 +2,15 @@
     session_start();
     define('__ROOT__', dirname(dirname(dirname(__DIR__))));
     // header_remove('Location');
-    //Pour la prod
+    //Pour la prod particulier
+    // $_SESSION['isLoggedIn'] = true;
+    // $_SESSION['role'] = 'particulier';
+    // $_SESSION['id_utilisateur'] = '8ca1f9f32e74073a02ab49bbfcdc1dc5';
+        //Pour la prod proprietaire
     $_SESSION['isLoggedIn'] = true;
-    $_SESSION['role'] = 'particulier';
-    $_SESSION['id_utilisateur'] = '8ca1f9f32e74073a02ab49bbfcdc1dc5';
-    //Ici on détermine les superglobales pour la gestion de la session log ou pas
+    $_SESSION['role'] = 'proprietaire';
+    $_SESSION['id_utilisateur'] = '5092c5cd6abf0d900fcc1a9a05c2ae8c';
+    // Ici on détermine les superglobales pour la gestion de la session log ou pas
     // if(!isset($_SESSION['isLoggedIn'])){
     //     $_SESSION['isLoggedIn'] = false;
     // }
@@ -73,20 +77,35 @@
                                 <a href="./roommateSearch.php" class="nav-link active" aria-current="page">Recherche</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./inscriptionParticulier.php" class="nav-link active" aria-current="page">Inscription Particulier</a>
+                                <a href="./inscriptionParticulier.php" class="nav-link active" aria-current="page">Je cherche une colocation</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./deposerAnnonce.php" class="nav-link active" aria-current="page">Déposer une Annonce</a>
+                                <a href="./deposerAnnonce.php" class="nav-link active" aria-current="page">Je cherche un colocataire</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="./creationAnnoncePage.php" class="nav-link active" aria-current="page">Créer une Annonce</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="./seconnecter.php" class="nav-link active" aria-current="page">Se connecter</a>
-                            </li>
+                            <?php if($_SESSION['isLoggedIn'] && $_SESSION['role'] == "proprietaire"):?>
+                                <li class="nav-item">
+                                    <a href="./creationAnnoncePage.php" class="nav-link active" aria-current="page">Créer une Annonce</a>
+                                </li>
+                            <?php endif; ?>
+                            <?php if($_SESSION['isLoggedIn'] && $_SESSION['role'] == "particulier"):?>
                             <li class="nav-item">
                                 <a href="./compteParticulier.php" class="nav-link active" aria-current="page">Mon compte</a>
                             </li>
+                            <?php endif; ?>
+                            <?php if($_SESSION['isLoggedIn'] && $_SESSION['role'] == "proprietaire"):?>
+                            <li class="nav-item">
+                                <a href="./compteProprietaire.php" class="nav-link active" aria-current="page">Mon compte</a>
+                            </li>
+                            <?php endif; ?>
+                            <?php if(!$_SESSION['isLoggedIn']):?>
+                            <li class="nav-item">
+                                <a href="./seconnecter.php" class="nav-link active" aria-current="page">Se connecter</a>
+                            </li>
+                            <?php else:?>
+                            <li class="nav-item">
+                                <a href="./logout.php" class="nav-link active" aria-current="page"><i class="fa fa-power-off" aria-hidden="true"></i></a>
+                            </li>
+                            <?php endif;?>
                         </ul>
                     </div>
                 </div>

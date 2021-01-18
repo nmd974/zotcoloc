@@ -398,12 +398,7 @@ ul{
     color: white;
 } */
 /*---------------------------------------------*/
-.title_champ{
-    font-weight: 700;
-}
-.champ_content{
-    border-bottom: 1px solid black;
-}
+
 /*MEDIAQUERIES*/
 /*---------------------------------------------*/
 @media screen and (max-width: 426px){

@@ -17,23 +17,26 @@
     <?php require_once(dirname(__DIR__).'/includes/creerAnnonce/timeline.php')?>
     <?php
     if(isset($_POST['enregistrer_annonce'])){
-        // if(!isset($_POST['id_logement'])){
+        if(!isset($_POST['id_logement'])){
             $_POST['id_logement'] = substr(md5(uniqid(rand(), true)),0,32);
-        // }
+        }
         $validationCreation = creationAnnonce($_POST, $_FILES, $_SESSION['id_utilisateur']);
         // print_r($_POST);
         // print_r($_FILES);
         print_r($validationCreation);
-        if($validationCreation[0]){
-            header('Location: ./home.php');
-        }
+        // if($validationCreation[0]){
+        //     header('Location: ./home.php');
+        // }
     }
 ?>
 <pre>
     <?php         
         print_r($_POST);
         print_r($_FILES);
-        print_r($validationCreation);
+        if(isset($validationCreation))
+        {
+            print_r($validationCreation);
+        };
     ?>
 </pre>
     <!--On fait afficher la page selon l'id des step de chaque bloc en jqurey-->

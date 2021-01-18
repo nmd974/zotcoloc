@@ -145,7 +145,7 @@
                             return array(false, $message);
                             exit();
                         }else{
-                            $ajoutPhotoChambre = Photos::photoChambre($list_id_chambre[$i], $ajoutImage[1]);
+                            $ajoutPhotoChambre = Photos::photoChambre($list_id_chambre[$i], $id_photo);
                             if(!$ajoutPhotoChambre[0]){
                                 $message = "Erreur serveur Table chambre photo: ". $ajoutPhotoChambre[1];
                                 $validationFormulaire = false;
@@ -209,45 +209,3 @@
         }
 
     }
-    
-
-
-                // foreach($image['photos_logement'] as $image){
-            //     return $indice_nb_photo;
-                // $ajoutImage = controleImageArray($image, $cpt);
-                // if(!$ajoutImage[0]){
-                //     $message = "Erreur lors de l'ajout de la photo";
-                //     $validationFormulaire = false;
-                //     return array(false, $message);
-                //     exit();
-                // }else{
-                //     $ajoutPhotoLogement = Photos::photoLogement($data['id_logement'], $ajoutImage[1]);
-                //     if(!$ajoutPhotoLogement[0]){
-                //         $message = "Erreur serveur : ". $ajoutPhotoLogement[1];
-                //         $validationFormulaire = false;
-                //         return array(false, $message);
-                //         exit();
-                //     }else{
-                //         $cpt++;
-                //     }
-                // }
-
-                                // foreach($image['photos_chambre_'.$indice] as $image){
-                //     $ajoutImage = controleImageArray($image, $cpt);
-                //     if(!$ajoutImage[0]){
-                //         $message = "Erreur lors de l'ajout de la photo";
-                //         $validationFormulaire = false;
-                //         return array(false, $message);
-                //         exit();
-                //     }else{
-                //         $ajoutPhotoChambre = Photos::photoChambre($list_id_chambre[$id], $ajoutImage[1]);
-                //         if(!$ajoutPhotoChambre[0]){
-                //             $message = "Erreur serveur : ". $ajoutPhotoChambre[1];
-                //             $validationFormulaire = false;
-                //             return array(false, $message);
-                //             exit();
-                //         }else{
-                //             $cpt++;
-                //         }
-                //     }
-                // }

@@ -26,6 +26,7 @@
             <i class="fa fa-cogs icone_sidebar" aria-hidden="true"></i>
             Gérer mon profil
         </a>
+
         <div class="dashboard_items">
             <a role="button" class="list-group-item list-group-item-action sidebar_item" id="dashboardNav">
                 <i class="fa fa-tachometer icone_sidebar" aria-hidden="true"></i>
@@ -34,18 +35,18 @@
             <a role="button" class="list-group-item list-group-item-action sidebar_item" id="favorisNav">
                 <i class="fa fa-heart icone_sidebar" aria-hidden="true"></i>
                 Mes favoris
-                <span class="badge bg-danger">0</span>
+                <span class="badge bg-danger"><?= count($mes_favoris[1])?></span>
             </a>
             
             <a role="button" class="list-group-item list-group-item-action sidebar_item" id="candidatureNav">
                 <i class="fa fa-id-badge icone_sidebar" aria-hidden="true"></i>    
                 Mes candidatures
-                <span class="badge bg-danger">1</span>
+                <span class="badge bg-danger"><?= count($mes_candidatures[1])?></span>
             </a>
             <a role="button" class="list-group-item list-group-item-action sidebar_item" id="annonceNav">
                 <i class="fa fa-plus-circle icone_sidebar" aria-hidden="true"></i>
                 Mes annonces
-                <span class="badge bg-danger">0</span>
+                <span class="badge bg-danger"><?= count($mes_annonces[1])?></span>
             </a>
         </div>
         <div class="contact_zotcoloc">
