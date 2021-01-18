@@ -1,6 +1,10 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
 <?php require_once(dirname(__DIR__).'/class/Recherches.php');?>
-
+<?php $annonces = Recherches::annonce_details($_GET["id"])?>
+        
+                <?php if(!$annonces[0]):?>
+                <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
+                <?php else :?>
 
 <div id="wrapper_page_content">
 <section class="container">
@@ -14,15 +18,18 @@
                     <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
                 </ol>
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="../images/bright-hotel-room-bed.jpg" class="d-block w-100" alt="image">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../images/brightly-lit-room-with-piano.jpg" class="d-block w-100" alt="image">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../images/hotel-room-bed.jpg" class="d-block w-100" alt="image">
-                    </div>
+                <?php $images = Recherches::photo_annonce($annonces[1]->id_chambre)?>
+                                <?php if(!$images[0]):?>
+                                <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
+                                <?php else :?>
+                                    <?php foreach($images[1] as $image):?>
+                                    <div class="carousel-item active">
+                                        <img src="../images/<?= $image->libelle_photo ?>" class="d-block w-100" alt="room">
+                                    </div>
+                                    <?php endforeach; ?>
+                                    <?php endif; ?>
+                    
+                    
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -40,11 +47,7 @@
     </section> 
     <section class="container">
         <div class="row">
-        <?php $annonces = Recherches::annonce_details($_GET["id"])?>
         
-                <?php if(!$annonces[0]):?>
-                <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
-                <?php else :?>
                 
                 
             <div class="col-lg-8 col-md-12">
