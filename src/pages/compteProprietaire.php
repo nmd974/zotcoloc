@@ -2,7 +2,7 @@
 <?php require_once(dirname(__DIR__).'/class/Interets.php');?>
 <?php require_once(dirname(__DIR__).'/class/Utilisateurs.php');?>
 <?php require_once(dirname(__DIR__).'/class/Photos.php');?>
-<?php require_once(dirname(__DIR__).'/controllers/editProfilParticulier.php');?>
+<?php require_once(dirname(__DIR__).'/controllers/editProfilProprietaire.php');?>
 
 <?php
     if(!$_SESSION['isLoggedIn']){
@@ -11,11 +11,6 @@
         //Chargement des données correspondantes à l'id lors de l'arrivée sur page
         $mon_compte = Utilisateurs::moncompteProprietaire($_SESSION['id_utilisateur']);
         $ma_photo = Photos::photosByIdUser($_SESSION['id_utilisateur']);
-        $mes_interets = Interets::interetsByParticulierId($mon_compte[1][0]->id);
-        $mes_interet_list = [];
-        foreach($mes_interets[1] as $interet){
-            array_push($mes_interet_list, $interet->id_interet);
-        }
         $mes_favoris = Utilisateurs::favorisParticulier($mon_compte[1][0]->id);
         $mes_candidatures = Utilisateurs::candidaturesParticulier($mon_compte[1][0]->id);
         $mes_annonces = Utilisateurs::annoncesParticulier($_SESSION['id_utilisateur']);
@@ -41,27 +36,19 @@
 
 <?php 
     if(isset($_POST['save_edit_info_perso'])){
+        var_dump($_POST);
         $update = editInfosPerso($_POST, $mon_compte[1][0]->id);
+        // unset($_POST);
         $mon_compte = Utilisateurs::moncompteProprietaire($_SESSION['id_utilisateur']);
     }
 ?>
 
-<?php 
-    if(isset($_POST['save_edit_interets'])){
-        $update = editInterets($_POST, $mon_compte[1][0]->id, $mes_interet_list);
-        $mes_interets = Interets::interetsByParticulierId($mon_compte[1][0]->id);
-        $mes_interet_list = [];
-        foreach($mes_interets[1] as $interet){
-            array_push($mes_interet_list, $interet->id_interet);
-        }
-    }
-?>
 
 <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/photoUser.php');?>
 <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/infosColoc.php');?>
 <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/infosPerso.php');?>
 <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/interets.php');?>
-<?php require_once(dirname(__DIR__).'/includes/sidebar.php');?>
+<?php require_once(dirname(__DIR__).'/includes/compteProprietaire/sidebar.php');?>
 
 <div class="container-fluid" id="wrapper-content">
     <!--TITRE A CHANGER SELON LE INCLUDE AFFICHE-->

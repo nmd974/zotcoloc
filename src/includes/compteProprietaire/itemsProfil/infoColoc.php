@@ -2,7 +2,7 @@
     <h2 class="accordion-header" id="flush_infosColoc">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#flush-infosColoc" aria-expanded="false" aria-controls="flush-infosColoc">
-            Mes informations personnelles
+            Mes informations pro
         </button>
     </h2>
     <div id="flush-infosColoc" class="accordion-collapse collapse" aria-labelledby="flush-infosColoc"
@@ -17,35 +17,26 @@
             <!--pseudo-->
             <div class="d-flex flex-column mb-2">
                 <div class="fw-bold mb-2">
-                    Nom
+                    Site web
                 </div>
                 <div class="border-bottom-0 border-dark bg-light">
-                    <?= htmlentities($mon_compte[1][0]->nom, ENT_QUOTES)?>
+                    <?php if($mon_compte[1][0]->site_web == ''):?>
+                    Non renseigné
+                    <?php else:?>
+                    <?= htmlentities($mon_compte[1][0]->site_web, ENT_QUOTES)?>
+                    <?php endif;?>
                 </div>
             </div>
             <!--description-->
             <div class="d-flex flex-column mb-2">
                 <div class="fw-bold mb-2">
-                    Prenom
+                    Description
                 </div>
                 <div class="border-bottom-0 border-dark bg-light">
-                    <?php if($mon_compte[1][0]->prenom == ''):?>
+                    <?php if($mon_compte[1][0]->description == ''):?>
                     Non renseigné
                     <?php else:?>
-                    <?= htmlentities($mon_compte[1][0]->prenom, ENT_QUOTES)?>
-                    <?php endif;?>
-                </div>
-            </div>
-            <!--ecole-->
-            <div class="d-flex flex-column mb-2">
-                <div class="fw-bold mb-2">
-                    Telephone
-                </div>
-                <div class="border-bottom-0 border-dark bg-light">
-                    <?php if($mon_compte[1][0]->telephone == ''):?>
-                    Non renseigné
-                    <?php else:?>
-                    <?= htmlentities($mon_compte[1][0]->telephone, ENT_QUOTES)?>
+                    <?= htmlentities($mon_compte[1][0]->description, ENT_QUOTES)?>
                     <?php endif;?>
                 </div>
             </div>

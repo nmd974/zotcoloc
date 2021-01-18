@@ -19,28 +19,29 @@
                     </button>
                 <?php endif; ?>                
             <!-- <form> -->
-            <p class="nav_title_profil"><?= $mon_id_particulier[1][0]->prenom ?></p>
-            <p class="arobase_pseudo">@<?= $mon_id_particulier[1][0]->pseudo ?></p>
+            <p class="nav_title_profil"><?= $mon_compte[1][0]->prenom ?></p>
         </div>
         <a role="button" class="list-group-item list-group-item-action sidebar_item" id="profilNav">
             <i class="fa fa-cogs icone_sidebar" aria-hidden="true"></i>
             Gérer mon profil
         </a>
-
         <div class="dashboard_items">
             <a role="button" class="list-group-item list-group-item-action sidebar_item" id="dashboardNav">
                 <i class="fa fa-tachometer icone_sidebar" aria-hidden="true"></i>
                 Mon tableau de bord
             </a>
             <a role="button" class="list-group-item list-group-item-action sidebar_item" id="favorisNav">
-                <i class="fa fa-heart icone_sidebar" aria-hidden="true"></i>
-                Mes favoris
+        
+                <i class="fa fa-pause icone_sidebar" aria-hidden="true"></i>
+
+                Attente validation
                 <span class="badge bg-danger"><?= count($mes_favoris[1])?></span>
+
             </a>
             
             <a role="button" class="list-group-item list-group-item-action sidebar_item" id="candidatureNav">
                 <i class="fa fa-id-badge icone_sidebar" aria-hidden="true"></i>    
-                Mes candidatures
+                Les candidatures
                 <span class="badge bg-danger"><?= count($mes_candidatures[1])?></span>
             </a>
             <a role="button" class="list-group-item list-group-item-action sidebar_item" id="annonceNav">

@@ -10,42 +10,20 @@
             <div class="col-md-12">
                 <label for="nom" class="form-label">Nom</label><br>
                 <input type="text" name="nom" class="form-control" id="nom"
-                    value="<?= htmlentities($mon_id_particulier[1][0]->nom, ENT_QUOTES)?>"
+                    value="<?= htmlentities($mon_compte[1][0]->nom, ENT_QUOTES)?>"
                 >
             </div>
             <div class="col-md-12">
                 <label for="prenom" class="form-label">Prenom</label><br>
                 <input type="text" name="prenom" class="form-control" id="prenom"
-                    value="<?= htmlentities($mon_id_particulier[1][0]->prenom, ENT_QUOTES)?>"
+                    value="<?= htmlentities($mon_compte[1][0]->prenom, ENT_QUOTES)?>"
                 >
             </div>
             <div class="col-md-12">
                 <label for="telephone" class="form-label">Telephone</label><br>
                 <input type="number" name="telephone" class="form-control" id="telephone"
-                    value="<?= htmlentities($mon_id_particulier[1][0]->telephone, ENT_QUOTES)?>"
+                    value="<?= htmlentities($mon_compte[1][0]->telephone, ENT_QUOTES)?>"
                 >
-            </div>
-            <div class="col-md-12">
-            Genre :
-                <div class="btn" role="group" aria-label="Basic radio toggle button group">
-                        <input 
-                            type="radio" 
-                            name="genre" 
-                            id="homme" 
-                            value="homme" 
-                            class="btn-check <?php if($mon_id_particulier[1][0]->genre == "homme"){echo 'checked';}?>"
-                        >
-                        <label class="btn btn-outline-success border-0" for="homme">
-                        <i class="fa fa-male text-dark" aria-hidden="true"></i>
-                        Homme</label>
-
-                        <input type="radio" name="genre" value="femme" id="femme" 
-                            class="btn-check <?php if($mon_id_particulier[1][0]->genre == "femme"){echo 'checked';}?>"
-                        >
-                        <label class="btn btn-outline-success border-0" for="femme">
-                        <i class="fa fa-female text-dark" aria-hidden="true"></i>
-                        Femme</label>
-                </div>
             </div>
         </div>
         <div class="modal-footer">

@@ -140,5 +140,41 @@ class Utilisateurs {
         }
     }
 
+    public static function updateInfosPro($id_proprietaire, $site_web, $description)
+    {
+        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $error = null;
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        try{
+            $query = $pdo->query("UPDATE `proprietaire` 
+            SET `site_web`='$site_web',`description`='$description'
+            WHERE `id` = '$id_proprietaire'
+            ");
+            $data = $query->fetchAll(PDO::FETCH_OBJ);
+            return array(true, $data);
+        }catch(PDOException $e){
+            $error = $e->getMessage();
+            return array(false, $error);
+        }
+    }
+
+    public static function updatePersoProprio($id, $nom, $prenom, $telephone)
+    {
+        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $error = null;
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        try{
+            $query = $pdo->query("UPDATE `proprietaire` 
+            SET `nom`='$nom',`prenom`='$prenom',`telephone`='$telephone'
+            WHERE `id` = '$id'
+            ");
+            return array(true, '');
+        }catch(PDOException $e){
+            $error = $e->getMessage();
+            return array(false, $error);
+        }
+    }
+
+    
 
 }
