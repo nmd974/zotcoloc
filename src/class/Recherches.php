@@ -63,8 +63,8 @@ class Recherches {
             INNER JOIN `utilisateurs` ON logements.id_utilisateur = utilisateurs.id
             INNER JOIN `roles` ON utilisateurs.id_role = roles.id
             WHERE chambres.id_chambre = '$id'
-                        
- 
+            
+
             ");
             $data = $query->fetch(PDO::FETCH_OBJ);
             return array(true, $data);
@@ -129,7 +129,8 @@ class Recherches {
         $error = null;
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
-            $query = $pdo->query("SELECT * FROM photo_utilisateur 
+            $query = $pdo->query("SELECT * 
+            FROM photo_utilisateur 
             INNER JOIN photos ON photos.id = photo_utilisateur.id_photo
             WHERE photo_utilisateur.id_utilisateur = '$id'
            
