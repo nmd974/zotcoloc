@@ -356,7 +356,14 @@
                             </div>
                             <!-- avatar en position absolute -->
                             <div class="avatar d-flex justify-content-center align-items-center bg-light shadow" style="width:60px; height: 60px; border-radius: 50%;">
-                                <img src="../images/profile.jpg" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px; height: 60px; border-radius: 50%;">
+                            <?php $utilisateurs = Recherches::photo_utilisateur($annonce->id_utilisateur)?>
+                                <?php if(!$utilisateurs[0]):?>
+                                <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
+                                <?php else :?>
+                                    <?php foreach($utilisateurs[1] as $utilisateur):?>
+                                <img src="../images/<?= $utilisateur->libelle_photo ?>" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px; height: 60px; border-radius: 50%;">
+                                <?php endforeach; ?>
+                                    <?php endif; ?>
                             </div>
                             <!-- caroussel -->
                             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -369,8 +376,8 @@
                                     <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
                                 </ol>
                                 <div class="carousel-inner">
+
                                <?php $images = Recherches::photo_annonce($annonce->id_chambre)?>
-                               
                                 <?php if(!$images[0]):?>
                                 <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                                 <?php else :?>

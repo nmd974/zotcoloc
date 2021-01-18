@@ -124,4 +124,25 @@ class Recherches {
             return array(false, $error);
         }
     }
+
+    public static function photo_utilisateur($id)
+    {
+        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $error = null;
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        try{
+            $query = $pdo->query("SELECT * FROM photo_utilisateur 
+            INNER JOIN photos ON photos.id = photo_utilisateur.id_photo
+            WHERE photo_utilisateur.id_utilisateur = '$id'
+           
+            
+ 
+            ");
+            $data = $query->fetchAll(PDO::FETCH_OBJ);
+            return array(true, $data);
+        }catch(PDOException $e){
+            $error = $e->getMessage();
+            return array(false, $error);
+        }
+    }
 }
