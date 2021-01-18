@@ -2,6 +2,7 @@
  <?php require_once(dirname(__DIR__).'/class/Recherches.php');?>
  <?php if(isset($_GET["btn-search"])){
     $annonces = Recherches::recherche_annonce($_GET["search-room"]);
+    $nombres = Recherches::nombre_annonce($_GET["search-room"]);
    
  } 
   ?>
@@ -329,12 +330,13 @@
                     <div class="border-one ps-1">
                         <div class="border-two ps-3">
                             <p class="text-secondary m-0 poppins h5">RESULTATS</p>
-                            <h2 class="vidaloka m-0 h2">2<span class="text-green"> résultats</span> pour votre recherche
+                            <h2 class="vidaloka m-0 h2"><?php echo $nombres[1][0]["COUNT(*)"];?><span class="text-green"> résultats</span> pour votre recherche
                             </h2>
                         </div>
                     </div>
                 </div>
-                <div class=" d-flex justify-content-center flex-wrap">
+                </div>
+                <div class="offset-3 col-6 d-flex justify-content-center flex-wrap view-details">
                     <!-- ////////////////////////carte d'une annonce///////////////////// -->
               <?php if(isset($_GET["btn-search"])):?>  
              
@@ -384,7 +386,7 @@
                             <!-- role -->
                                 <span class="badge bg-primary mb-1 letter-space"><?= $annonce->libelle_role ?></span>
                                 <!-- titre de l'annonce -->
-                                <h5 class="card-title"><?= $annonce->titre_chambre ?></h5>
+                                <h5 class="card-title card-link"><?= $annonce->titre_chambre ?></h5>
                                 <p class="card-text"><?= $annonce->libelle_ville ?></p>
                                 <!-- <p class="card-text">Chambre: 1</p> -->
                                 <p class="card-text">D<?= $annonce->date_disponibilite ?></p>

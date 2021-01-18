@@ -132,6 +132,10 @@ footer{
 .card-relative {
     position: relative;
 }
+.card-link{
+    text-decoration-line: none!important;
+    color: black!important;
+}
 /*page de recherche de colocation avec filtre*/
 #map{
     height: 100vh;
