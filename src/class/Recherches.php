@@ -62,7 +62,7 @@ class Recherches {
             
             INNER JOIN `utilisateurs` ON logements.id_utilisateur = utilisateurs.id
             INNER JOIN `roles` ON utilisateurs.id_role = roles.id
-            WHERE chambres.id_chambre = $id
+            WHERE chambres.id_chambre = '$id'
             
 
             ");
