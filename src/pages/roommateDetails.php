@@ -1,5 +1,9 @@
+<?php if(empty($_GET["id"])){
+    header('Location: roommateSearch.php');
+    }?>
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
 <?php require_once(dirname(__DIR__).'/class/Recherches.php');?>
+
 <?php $annonces = Recherches::annonce_details(htmlEntities($_GET["id"]))?>
         
 <?php if(!$annonces[0]):?>
@@ -8,7 +12,7 @@
 
 <div id="wrapper_page_content">
 <section class="container">
-
+            <!-- carousel -->
         <div class="d-flex justify-content-center align-items-center">
         <div class="carousel-style ">
             <div id="carouselExampleIndicators" class="carousel mt-1 slide" data-bs-ride="carousel">
@@ -81,7 +85,6 @@
                                 <?php endforeach; ?>
                                     <?php endif; ?>
                             
-                    <!-- <img src="../images/profile.jpg" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px;height: 60px; border-radius: 50%;"> -->
                 </div>
                 <div class="ms-3">
                 <p class="fw-bold mb-0 text-danger">prenom</p>
@@ -274,11 +277,13 @@
                 <!-- -------------------------------------------------------------- -->
                 <h4 class="text-green h4 mb-4 mt-3">Explorer ce logement</h4>
                 <?php $photo_logements = Recherches::photoLogementById(htmlEntities($annonces[1]->id_logement))?>
+                
                                 <?php if(!$photo_logements[0]):?>
                                 <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                                 <?php else :?>
                                     <?php foreach($photo_logements[1] as $photo_logement):?>
                                     <div>
+                                    
                                 <img src="../images/<?= htmlEntities($photo_logement->libelle_photo) ?>" class="" alt="" style="width:60px; height: 60px;">
                                 </div>
                                 <?php endforeach; ?>
