@@ -31,19 +31,19 @@
                                 <input 
                                     type="text" 
                                     class="form-control w-25 location-border" name="search-room" 
-                                    placeholder="Lieux" 
+                                    placeholder="ville recherchée" 
                                     id="search"
                                     aria-label="location" 
                                     aria-describedby="button-addon1"
                                 >
-                                <input type="text" class="form-control w-25 price-border" placeholder="Prix" id="price"
+                                <!-- <input type="text" class="form-control w-25 price-border" placeholder="Prix" id="price"
                                     aria-label="price" aria-describedby="button-addon2">
                                 <select class="form-select w-25 category-border" aria-label="Default select example">
                                     <option selected>Catégorie</option>
                                     <option value="1">Appartement</option>
                                     <option value="2">Maison</option>
                                     <option value="3">Villa</option>
-                                </select>
+                                </select> -->
                                 <button class="btn btn-outline-secondary w-25 bg-green text-white btn-radius"
                                     type="submit" id="button-addon2" name="btn-search">Recherche</button>
                             </div>
