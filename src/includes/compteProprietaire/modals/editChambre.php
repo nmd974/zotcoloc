@@ -1,58 +1,38 @@
-<!--STEP 4-->
+<?php require_once(__ROOT__.'/src/class/Regles.php');?>
 <?php require_once(__ROOT__.'/src/class/Equipements.php');?>
-<div id="bloc_step_4" class="unshow_step">
+<?php require_once(__ROOT__.'/src/class/Villes.php');?>
+<?php require_once(__ROOT__.'/src/class/Logements.php');?>
 
-    <!--profil colocataire recherché-->
-    <div class="col-md-12">
-
-        <h4>Quel est le profil idéal pour cette colocation ? :</h4>
-            
-            <p >Informez les candidatures sur le type de profil que vous recherchez.</p>
-            
-            <div class="d-flex align-items-end mb-3">
-                <p>Plutôt:</p>
-                
-                <div class="btn" role="group" aria-label="Basic radio toggle button group">
-                    <input 
-                        type="radio" 
-                        name="profil" 
-                        id="homme" 
-                        value="c4ca4238a0b923820dcc509a6f75849b" 
-                        class="btn-check <?php if(isset($_POST['profil']) && $_POST['profil'] == "c4ca4238a0b923820dcc509a6f75849b"){echo 'checked';}?>"
-                    >
-                    <label class="btn btn-outline-primary border-0" for="homme">
-                    <i class="fa fa-male text-dark" aria-hidden="true"></i>
-                    Homme</label>
-
-                    <input type="radio" name="profil" value="c81e728d9d4c2f636f067f89cc14862c" id="femme" 
-                        class="btn-check <?php if(isset($_POST['profil']) && $_POST['profil'] == "c81e728d9d4c2f636f067f89cc14862c"){echo 'checked';}?>"
-                    >
-                    <label class="btn btn-outline-primary border-0" for="femme">
-                    <i class="fa fa-female text-dark" aria-hidden="true"></i>
-                    Femme</label>
-
-                    <input type="radio" name="profil" value="eccbc87e4b5ce2fe28308fd9f2a7baf3" id="indifferent" 
-                        class="btn-check <?php if(isset($_POST['profil']) && $_POST['profil'] == "eccbc87e4b5ce2fe28308fd9f2a7baf3"){echo 'checked';}?>"
-                        >
-                    <label class="btn btn-outline-primary border-0" for="indifferent">
-                    <i class="fa fa-users text-dark" aria-hidden="true"></i>
-                    indifférent</label>
-                </div>
+<?php 
+    if(isset($_GET['id'])){
+        $logement_id = Logements::idLogementByIdChambre($_GET['id']);
+        $logement_infos = Logements::logementByIdLogement($logement_id[1][0]->id_logement);
+        $logement_regles = Regles::reglesByIdLogement($logement_id[1][0]->id_logement);
+        $logement_regles_array = [];
+        foreach($logement_regles[1] as $regle){
+            array_push($logement_regles_array, $regle->id);
+        }
+        $logement_equipements = Regles::reglesByIdLogement($logement_id[1][0]->id_logement);
+        $logement_equipements_array = [];
+        foreach($logement_equipements[1] as $equipement){
+            array_push($logement_equipements_array, $equipement->id);
+        }
+    }
+?>
+<div class="modal fade" id="editLogement" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="editLogementLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editLogementLabel">Modifier mes informations pro</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-
-            <div>
-                <p>Tranche d'âge:</p>
-                <div class="input-group mb-3">
-                    <div class="input-group">
-                        <span class="input-group-text mb-1">Age minimum</span>
-                        <input type="number" name="age_min" id="age_min" class="form-control me-5 mb-1" value="<?php if(isset($_POST['age_min'])){echo $_POST['age_min'];}?>">
-                        <span class="input-group-text mb-1">Age maximum</span>
-                        <input type="number" class="form-control me-5 mb-1" name="age_max" id="age_max"  value="<?php if(isset($_POST['age_max'])){echo $_POST['age_max'];}?>">
-                    </div>
+            <?php if(!$logement_infos[0]):?>
+                <div class="modal-body">
+                    <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                 </div>
-            </div>
-        </div>
-    
+            <?php else:?>
+            <form method="post" enctype="multipart/form-data">
+                <div class="modal-body">
     <!--description de la chambre-->
     <div class="col-md-12" id="zoneChambre">
 
@@ -174,18 +154,15 @@
             <?php endforeach; ?>
         <?php endif;?>
     </div>
+                </div>
+            </form>
+            <?php endif;?>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
+                <button type="button" id="save_edit_logement" class="btn btn-success" name="save_edit_logement">Save changes</button>
+            </div>
         </div>
-        
-
     </div>
-
-
-    
-    
-
-
-    <!--button validation inscription-->
-    <div class="col-12 text-end my-4">
-        <button type="button" class="btn w-25 bg-green text-white mr-5" id="step_5">Suivant</button>
-    </div>
+</div>
+</div>
 </div>
