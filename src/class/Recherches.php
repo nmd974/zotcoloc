@@ -30,7 +30,7 @@ class Recherches {
         }
     }
 
-    public static function all_annonce($search)
+    public static function all_annonce()
     {
         $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
         $error = null;
