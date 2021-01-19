@@ -121,8 +121,8 @@
 
             <div class="image-three position-relative">
                 <img src="https://www.cartedelareunion.fr/wp-content/uploads/2019/05/Terre-Sainte-plage-lagon-La-Reunion.jpg"
-                    alt="top-city" class="img-fluid">
-                <p class="text-light vidaloka h2 position-absolute top-50 start-50 translate-middle text-center"><?= $topVille->libelle_ville ?></p>
+                    alt="top-city" class="img-fluid rounded" style="filter: grayscale(30%);">
+                <p class="vidaloka h2 position-absolute top-50 start-50 translate-middle text-center"><?= $topVille->libelle_ville ?></p>
             </div>
             
             <?php endforeach; ?>
@@ -168,14 +168,17 @@
 
         </div>
         <div class="row mb-5 vidaloka">
-            <div class="col-md-3"><a href="category.html" class="text-dark">
-                    <div>
+
+            <!--item-->
+            <div class="col-md-3">
+                    <div class="image-three position-relative">
                     
-                        <div>
+                       
+                        <a href="category.html" class="text-white">
                             <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-1.jpg" alt="nord"
-                                class="img-fluid">
-                        </div>
-                        <h3 class="text-center">NORD: 
+                                class="img-fluid rounded" style="filter: grayscale(30%)">
+                            
+                                <h3 class="vidaloka h2 position-absolute top-50 start-50 translate-middle text-center">NORD
                             <!--stat pour région NORD-->
                             <?php $topVilles = Statistiques::stat_region()?>
                             <?php if(!$topVilles[0]):?>
@@ -190,20 +193,26 @@
             
                                 <?php endforeach; ?>
                              <?php endif; ?>
-                        </h3>
+                        </h3>    
+                        </a>
+                                
+                       
+                       
                     </div>
                     
-                </a></div>
+                </div>
 
 
             <!-- Item-->
-            <div class="col-md-3"><a href="category.html" class="text-green">
-                    <div>
-                        <div>
+            <div class="col-md-3">
+                    <div class="image-three position-relative">
+                        
+                        <a href="category.html" class="text-white">
                             <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-2.jpg" alt="sud"
-                                class="img-fluid">
-                        </div>
-                        <h3 class="text-center">SUD: 
+                                class="img-fluid rounded" style="filter: grayscale(30%)">
+                               
+                        
+                        <h3 class="vidaloka h2 position-absolute top-50 start-50 translate-middle text-center">SUD
                             <!--stat pour région SUD-->
                             <?php $topVilles = Statistiques::stat_region()?>
                             <?php if(!$topVilles[0]):?>
@@ -219,18 +228,21 @@
                                 <?php endforeach; ?>
                              <?php endif; ?>
                         </h3>
+                        </a>
                     </div>
-                </a></div>
+                </div>
 
             <!-- Item                    -->
-            <div class="col-md-3"><a href="category.html" class="text-dark">
-                    <div>
-                        <div>
-                            <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-3.jpg" alt="est"
-                                class="img-fluid">
-                        </div>
-                        <h3 class="text-center">EST: 
-                            <!--stat région EST-->
+             <div class="col-md-3">
+                    <div class="image-three position-relative">
+                    
+                       
+                        <a href="category.html" class="text-white">
+                            <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-1.jpg" alt="nord"
+                                class="img-fluid rounded" style="filter: grayscale(30%)">
+                            
+                                <h3 class="vidaloka h2 position-absolute top-50 start-50 translate-middle text-center">EST
+                            <!--stat pour région NORD-->
                             <?php $topVilles = Statistiques::stat_region()?>
                             <?php if(!$topVilles[0]):?>
                                 <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
@@ -244,19 +256,26 @@
             
                                 <?php endforeach; ?>
                              <?php endif; ?>
-                        </h3>
+                        </h3>    
+                        </a>
+                                
+                       
+                       
                     </div>
-                </a></div>
+                    
+                </div>
 
             <!-- Item                    -->
-            <div class="col-md-3"><a href="category.html" class="text-green">
-                    <div>
-                        <div>
-                            <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-3.jpg"
-                                alt="ouest" class="img-fluid">
-                        </div>
-                        <h3 class="text-center">OUEST: 
-                            <!--stat région OUEST-->
+            <div class="col-md-3">
+                    <div class="image-three position-relative">
+                        
+                        <a href="category.html" class="text-white">
+                            <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-2.jpg" alt="sud"
+                                class="img-fluid rounded" style="filter: grayscale(30%)">
+                               
+                        
+                        <h3 class="vidaloka h2 position-absolute top-50 start-50 translate-middle text-center">OUEST
+                            <!--stat pour région SUD-->
                             <?php $topVilles = Statistiques::stat_region()?>
                             <?php if(!$topVilles[0]):?>
                                 <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
@@ -271,10 +290,9 @@
                                 <?php endforeach; ?>
                              <?php endif; ?>
                         </h3>
+                        </a>
                     </div>
-                </a></div>
-
-        </div>
+                </div>
     </section>
 
     <section class="container mb-5">

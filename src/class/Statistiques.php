@@ -12,7 +12,8 @@ class Statistiques {
         try{
             $query = $pdo->query("
                SELECT COUNT(*)
-                FROM logements 
+                FROM chambres
+                WHERE a_louer = 1
             ");
             $data = $query->fetchAll(PDO::FETCH_ASSOC);
             return array(true, $data);
