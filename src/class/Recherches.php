@@ -55,6 +55,31 @@ class Recherches {
         }
     }
 
+    public static function count_annonce()
+    {
+        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $error = null;
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        try{
+            $query = $pdo->query("SELECT COUNT(*)
+            FROM `logements` 
+
+            INNER JOIN `chambres` ON logements.id_logement = chambres.id_logement
+            INNER JOIN `utilisateurs` ON logements.id_utilisateur = utilisateurs.id
+           
+            WHERE `statut` = 'Publiee'
+            
+            
+ 
+            ");
+            $data = $query->fetchAll(PDO::FETCH_ASSOC);
+            return array(true, $data);
+        }catch(PDOException $e){
+            $error = $e->getMessage();
+            return array(false, $error);
+        }
+    }
+
     public static function image_room()
     {
         $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
