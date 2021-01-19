@@ -6,6 +6,7 @@
                 <?php if(!$annonces[0]):?>
                 <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                 <?php else :?>
+                    
 
 <div id="wrapper_page_content">
 <section class="container">
@@ -276,7 +277,12 @@
               Modifier le logement <i class="fa fa-pencil mx-2" aria-hidden="true"></i>
             </button>
             </div>
-                    <a href="#" class="btn bg-green text-light fw-bold letter-space mt-5">LOUER CETTE CHAMBRE</a>
+            <div class="d-flex justify-content-center mt-4">
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editChambre">
+              Modifier la chambre <i class="fa fa-pencil mx-2" aria-hidden="true"></i>
+            </button>
+            </div>
+                    <!-- <a href="#" class="btn bg-green text-light fw-bold letter-space mt-5">LOUER CETTE CHAMBRE</a> -->
                 </div>
                 <div class="card-footer text-muted">
                 Petit mot ici si nécessaire

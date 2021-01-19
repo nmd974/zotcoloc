@@ -387,6 +387,9 @@ ul{
 #formulaire_inscription{
     margin-top: 50px;
 }
+label{
+    font-weight: 700;
+}
 .show_step{
     display: flex;
     flex-direction: column;
