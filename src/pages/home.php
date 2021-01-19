@@ -312,7 +312,7 @@
             <div class="col-md-4">
                 <div>
                     <div>
-                        <img src="https://whoomies.com/img/publications/1.jpg" alt="information" class="img-fluid">
+                        <img src="https://whoomies.com/img/publications/1.jpg" alt="information" class="img-fluid rounded">
                     </div>
                     <div class=" d-flex align-items-end">
                         <div>
@@ -328,7 +328,7 @@
             <!-- Item-->
             <div class="col-md-4">
                 <div>
-                    <div><img src="https://whoomies.com/img/publications/2.jpg" alt="information"
+                    <div><img src="https://whoomies.com/img/publications/2.jpg" alt="information rounded"
                             class="img-fluid">
                     </div>
                     <div class=" d-flex align-items-end">
@@ -345,7 +345,7 @@
             <!-- Item                    -->
             <div class="col-md-4">
                 <div>
-                    <div><img src="https://whoomies.com/img/publications/3.jpg" alt="information"
+                    <div><img src="https://whoomies.com/img/publications/3.jpg" alt="information rounded"
                             class="img-fluid">
                     </div>
                     <div class=" d-flex align-items-end">
