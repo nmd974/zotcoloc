@@ -162,8 +162,8 @@
         <div class="mb-5 subtitle">
             <div class="border-one ps-1">
                 <div class="border-two ps-3">
-                    <p class="text-secondary m-0 poppins h5">PAR REGION</p>
-                    <h2 class="vidaloka m-0 h1">Par région<span class="text-green"> nos Colocations</span> de
+                    <p class="text-secondary m-0 poppins h5">PAR SECTEUR</p>
+                    <h2 class="vidaloka m-0 h1">Par secteur<span class="text-green"> nos Colocations</span> de
                         la Réunion</h2>
                 </div>
             </div>
