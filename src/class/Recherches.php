@@ -208,4 +208,44 @@ class Recherches {
             return array(false, $error);
         }
     }
+
+    public static function equipementChambre($id)
+    {
+        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $error = null;
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        try{
+            $query = $pdo->query("SELECT libelle_equipement 
+            FROM equipements
+            INNER JOIN equipement_chambre ON equipement_chambre.id_equipement = equipements.id
+            WHERE equipement_chambre.id_chambre = '$id'
+            
+            ");
+            $data = $query->fetchAll(PDO::FETCH_OBJ);
+            return array(true, $data);
+        }catch(PDOException $e){
+            $error = $e->getMessage();
+            return array(false, $error);
+        }
+    }
+
+    public static function photoLogementById($id)
+    {
+        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $error = null;
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        try{
+            $query = $pdo->query("SELECT libelle_photo 
+            FROM photos
+            INNER JOIN photo_logement ON photo_logement.id_photo = photos.id
+            WHERE photo_logement.id_logement = '$id'
+            
+            ");
+            $data = $query->fetchAll(PDO::FETCH_OBJ);
+            return array(true, $data);
+        }catch(PDOException $e){
+            $error = $e->getMessage();
+            return array(false, $error);
+        }
+    }
 }
