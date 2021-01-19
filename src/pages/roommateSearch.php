@@ -16,7 +16,14 @@
                     <form method="get" class="form-group">
                         <div class="input-group">
                             <input type="text" name="search-room" class="form-control location-border2" placeholder="Lieux"
-                                aria-label="location" aria-describedby="button-addon1" id="search">
+                                aria-label="location" aria-describedby="button-addon1" id="search" list="datalistOptions">
+                                <datalist id="datalistOptions">
+                                <option value="San Francisco">
+                                <option value="New York">
+                                <option value="Seattle">
+                                <option value="Los Angeles">
+                                <option value="Chicago">
+                                </datalist>
                                 <div class="result" id="result-search"></div>
                                 
                             <button class="btn btn-outline-secondary w-25 bg-green text-white btn-radius ms-1" type="submit"

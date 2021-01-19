@@ -62,19 +62,26 @@
                 </div>
                 
                 <p class="h3"><?= htmlEntities($annonces[1]->titre_chambre) ?></p>
-                <div class="d-flex flex-wrap justify-content-around">
+                <div class="d-flex">
                 
-                <p class="h6"> Chambre - <span class="fw-bold"><?= htmlEntities($annonces[1]->surface_chambre) ?>m<sup>2</sup></span></p>
+                <p class="h6 mt-3"> Chambre - <span class="fw-bold"><?= htmlEntities($annonces[1]->surface_chambre) ?>m<sup>2</sup></span></p>
                 
                 </div>
-                <p class="h6 mt-3">
-                <?= htmlEntities($annonces[1]->description_chambre) ?>
-                    <!-- Le logement est localisé dans le quartier Hôtel de Ville - Presqu'île, en plein centre de Lyon. De nombreux commerces, restaurants, transports publics sont aux environs. La colocation est à l'étage 4 avec ascenseur. Elle est entièrement meublée et propose une cuisine 100% équipée avec réfrigérateur, micro-ondes, poêles, casseroles, ustensiles, bouilloire, grille-pain, vaisselle… Ainsi que planche à repasser, tancarville, fer à repasser, lave-linge. Tout le matériel pour le ménage est sur place dans cette colocation : aspirateur, balai, seau et serpillère, balai-brosse… Chaque colocation meublée Chez Nestor inclut toutes les charges : assurance habitation, taxe sur les ordures, charges de copropriété, électricité, wifi illimité, eau.” -->
+                <p class="h6 mt-3"><?= htmlEntities($annonces[1]->description_chambre) ?>
                 </p>
                 <!-- avatar -->
                 <div class="d-flex align-items-center mt-3 mb-4">
                 <div class="bg-light shadow" style="width:60px; height: 60px; border-radius: 50%;">
-                    <img src="../images/profile.jpg" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px;height: 60px; border-radius: 50%;">
+                <?php $utilisateurs = Recherches::photo_utilisateur(htmlEntities($annonces[1]->id_utilisateur))?>
+                                <?php if(!$utilisateurs[0]):?>
+                                <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
+                                <?php else :?>
+                                    <?php foreach($utilisateurs[1] as $utilisateur):?>
+                                <img src="../images/<?= htmlEntities($utilisateur->libelle_photo) ?>" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px; height: 60px; border-radius: 50%;">
+                                <?php endforeach; ?>
+                                    <?php endif; ?>
+                            
+                    <!-- <img src="../images/profile.jpg" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px;height: 60px; border-radius: 50%;"> -->
                 </div>
                 <div class="ms-3">
                 <p class="fw-bold mb-0 text-danger">prenom</p>
@@ -92,32 +99,43 @@
                     </div>
                 </div>
                 <h4 class="text-green h4 mb-4">Chambre</h4>
-                <div class="d-flex">
-                <!-- un équipement -->
+                <?php $equipements = Recherches::equipementChambre(htmlEntities($annonces[1]->id_chambre))?>
+                                <?php if(!$equipements[0]):?>
+                                <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
+                                <?php else :?>
+                                    <div class="d-flex flex-wrap">
+                                    <?php foreach($equipements[1] as $equipement):?>
+                                    
+                                      <p class="me-2"><span class="text-green">#</span><?= htmlEntities($equipement->libelle_equipement)?></p>
+                                    
+                                    <?php endforeach; ?>
+                                    </div>
+                                    <?php endif;?>
+
+                <!-- <div class="d-flex">
+               
                 <div class="equipment-room border-secondary border shadow mb-2 d-flex align-items-center justify-content-center m-1">
                     <div class="d-flex">
                         <div class="d-flex align-items-center">
-                        <i class="fa fa-file-image-o fa-3x text-dark ms-3" aria-hidden="true"></i> <!--à enlever par la suite -->
-                        <!-- <img src="" alt="name">  on rajoute ensuite-->
+                        <i class="fa fa-file-image-o fa-3x text-dark ms-3" aria-hidden="true"></i> 
                         </div>
                         <div class="d-flex align-items-center ms-2">
                             <p class="mb-0">Equipement du logement</p>
                         </div>
                     </div>
                 </div>
-                <!-- un équipement -->
+               
                 <div class="equipment-room border-secondary border shadow mb-2 d-flex align-items-center justify-content-center m-1">
                     <div class="d-flex">
                         <div class="d-flex align-items-center">
-                        <i class="fa fa-file-image-o fa-3x text-dark ms-3" aria-hidden="true"></i> <!--à enlever par la suite -->
-                        <!-- <img src="" alt="name">  on rajoute ensuite-->
+                        <i class="fa fa-file-image-o fa-3x text-dark ms-3" aria-hidden="true"></i> 
                         </div>
                         <div class="d-flex align-items-center ms-2">
                             <p class="mb-0">Equipement du logement</p>
                         </div>
                     </div>
                 </div>
-                </div>
+                </div> -->
                 <hr>
                 <!-- titre logement-->
                 <div class="mb-5 mt-4">
@@ -129,10 +147,10 @@
                     </div>
                 </div>
 
-                <p class="h3"><?= htmlEntities($annonces[1]->titre_logement) ?></p>
-                <div class="d-flex flex-wrap justify-content-around">
-                <p class="h6"> <span class="fw-bold text-danger">5</span>- colocataires</p>
-                <p class="h6"> Logement - <span class="fw-bold"><?= htmlEntities($annonces[1]->surface_logement)?>m<sup>2</sup></span></p>
+                <p class="h3 mb-3"><?= htmlEntities($annonces[1]->titre_logement) ?></p>
+                <div class="d-flex ">
+                <!-- <p class="h6"> <span class="fw-bold text-danger">5</span>- colocataires</p> -->
+                <p class="h6 me-5"> Logement - <span class="fw-bold"><?= htmlEntities($annonces[1]->surface_logement)?>m<sup>2</sup></span></p>
                 
                 <p class="h6 "> Catégorie - <span class="fw-bold"><?= htmlEntities($annonces[1]->type_logement)?></span></p>
                 </div>
@@ -255,6 +273,16 @@
                 <hr> -->
                 <!-- -------------------------------------------------------------- -->
                 <h4 class="text-green h4 mb-4 mt-3">Explorer ce logement</h4>
+                <?php $photo_logements = Recherches::photoLogementById(htmlEntities($annonces[1]->id_logement))?>
+                                <?php if(!$photo_logements[0]):?>
+                                <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
+                                <?php else :?>
+                                    <?php foreach($photo_logements[1] as $photo_logement):?>
+                                    <div>
+                                <img src="../images/<?= htmlEntities($photo_logement->libelle_photo) ?>" class="" alt="" style="width:60px; height: 60px;">
+                                </div>
+                                <?php endforeach; ?>
+                                <?php endif; ?>
                 <div class="img-wrapper mb-4">
                 <div class="img-one"><img src="../images/bright-hotel-room-bed.jpg" alt="image" class="img-fluid"></div>
                 <div class="img-two"><img src="../images/bright-hotel-room-bed.jpg" alt="image" class="img-fluid"></div>
@@ -289,6 +317,14 @@
                     <p class="fw-bold m-0"><?= htmlEntities($annonces[1]->duree_bail) ?> mois</p>
                     </div>
                     <hr>
+                    <div class="d-flex justify-content-between align-items-center">
+                    <p class="">Caution</p>
+                    <p class="fw-bold"><?= htmlEntities($annonces[1]->caution) ?> €</p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                    <p class="">Frais de dossier</p>
+                    <p class="fw-bold"><?= htmlEntities($annonces[1]->frais_dossier) ?> €</p>
+                    </div>
                     <div class="d-flex justify-content-between align-items-center">
                     <p class="">Charges</p>
                     <p class="fw-bold"><?= htmlEntities($annonces[1]->charges) ?> €</p>
