@@ -12,7 +12,7 @@
         foreach($logement_regles[1] as $regle){
             array_push($logement_regles_array, $regle->id);
         }
-        $logement_equipements = Regles::reglesByIdLogement($logement_id[1][0]->id_logement);
+        $logement_equipements = Equipements::equipementsByIdLogement($logement_id[1][0]->id_logement);
         $logement_equipements_array = [];
         foreach($logement_equipements[1] as $equipement){
             array_push($logement_equipements_array, $equipement->id);
@@ -23,7 +23,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="editLogementLabel">Modifier mes informations pro</h5>
+                <h5 class="modal-title" id="editLogementLabel">Modifier les informations du logement</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <?php if(!$logement_infos[0]):?>
@@ -208,21 +208,21 @@
                                 name="profil" 
                                 id="homme" 
                                 value="c4ca4238a0b923820dcc509a6f75849b" 
-                                class="btn-check <?php if(htmlentities($logement_infos[1][0]->id_profil, ENT_QUOTES)== "c4ca4238a0b923820dcc509a6f75849b"){echo 'checked';}?>"
+                                class="btn-check" <?php if(htmlentities($logement_infos[1][0]->id_profil, ENT_QUOTES) == "c4ca4238a0b923820dcc509a6f75849b"){echo 'checked';}?>
                             >
                             <label class="btn btn-outline-success border-0" for="homme">
                             <i class="fa fa-male text-dark" aria-hidden="true"></i>
                             Homme</label>
 
                             <input type="radio" name="profil" value="c81e728d9d4c2f636f067f89cc14862c" id="femme" 
-                                class="btn-check <?php if(htmlentities($logement_infos[1][0]->id_profil, ENT_QUOTES) == "c81e728d9d4c2f636f067f89cc14862c"){echo 'checked';}?>"
+                                class="btn-check" <?php if(htmlentities($logement_infos[1][0]->id_profil, ENT_QUOTES) == "c81e728d9d4c2f636f067f89cc14862c"){echo 'checked';}?>
                             >
                             <label class="btn btn-outline-success border-0" for="femme">
                             <i class="fa fa-female text-dark" aria-hidden="true"></i>
                             Femme</label>
 
                             <input type="radio" name="profil" value="eccbc87e4b5ce2fe28308fd9f2a7baf3" id="indifferent" 
-                                class="btn-check <?php if(htmlentities($logement_infos[1][0]->id_profil, ENT_QUOTES) == "eccbc87e4b5ce2fe28308fd9f2a7baf3"){echo 'checked';}?>"
+                                class="btn-check" <?php if(htmlentities($logement_infos[1][0]->id_profil, ENT_QUOTES) == "eccbc87e4b5ce2fe28308fd9f2a7baf3"){echo 'checked';}?>
                                 >
                             <label class="btn btn-outline-success border-0" for="indifferent">
                             <i class="fa fa-users text-dark" aria-hidden="true"></i>
