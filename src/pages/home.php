@@ -30,8 +30,8 @@
                             <div class="input-group" id="input-group">
                                 <input 
                                     type="text" 
-                                    class="form-control w-25 location-border" name="search-room" 
-                                    placeholder="ville recherchée" 
+                                    class="form-control w-25 location-border border-end-0" name="search-room" 
+                                    placeholder="Ville recherchée" 
                                     id="search"
                                     aria-label="location" 
                                     aria-describedby="button-addon1"
