@@ -20,16 +20,14 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-12 d-flex">
+        <div class="col-md-12 d-flex" id="titre_logement_recap">
             <p class="me-3">Titre :</p>
                 <?php if(isset($_POST['titre_logement'])):?>
                     <p> <?= $_POST['titre_logement']?> </p>
-                    <?php else: ?>
-                    <p> Non renseigné </p>
                 <?php endif; ?>
         </div>
         <div class="col-md-12 d-flex">
-            <p class="me-3">Titre :</p>
+            <p class="me-3">Description :</p>
                 <?php if(isset($_POST['description_logement'])):?>
                     <p> <?= $_POST['description_logement']?> </p>
                     <?php else: ?>
@@ -112,12 +110,12 @@
         </div>
              <!-- Equipements logement -->
              <div class="mt-4 mb-4 bg-light">
-            <div class="col border-one ps-1">
-                <div class="border-two ps-3">
-                <p class="text-secondary m-0 poppins h5">Equipements du logement</p>
+                <div class="col border-one ps-1">
+                    <div class="border-two ps-3">
+                        <p class="text-secondary m-0 poppins h5">Equipements du logement</p>
+                    </div>
                 </div>
             </div>
-        </div>
         <div class="col-md-12 d-flex">
             <p class="me-3">Equipements :</p>
                 <?php if(isset($_POST['equipements_logement'])):?>

@@ -30,8 +30,6 @@
                 <div class="modal-body">
                     <!--description de la chambre-->
                     <div class="col-md-12" id="zoneChambre">
-
-                        <h4 class="mb-2">Ajoutez au moins 1 chambre</h4>
                         <!--Titre de la chambre-->
                         <div class="col-md-12">
                             <label for="titre_chambre" class="form-label">Titre de la chambre</label>

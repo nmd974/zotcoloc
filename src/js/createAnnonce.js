@@ -24,6 +24,9 @@ let blockStepEl5 = document.getElementById('bloc_step_5');
 //Declaration du titre d'etape à changer
 let titleStep = document.getElementById('title_step');
 
+//Patterns REGEX
+const pattern_general = new RegExp(/<(.*)>/);
+
 //Gestion du clic vers step 2
 btnStepEl2.addEventListener("click", (e)=>{
 
@@ -31,7 +34,41 @@ btnStepEl2.addEventListener("click", (e)=>{
 
     //Verification des champs de formulaire
     let validationFormulaire = true;
+    let input_text_list = ['titre_logement', 'description_logement'];
+    let input_list = ['titre_logement', 'description_logement', 'type_logement', 'surface_logement'];
+    let input_number_list = ['surface_logement'];
 
+    //Par défaut les input type number seront = 0 si rien
+    input_number_list.forEach(element => {
+        if(document.getElementById(`${element}`).value === ""){
+            document.getElementById(`${element}`).value = 0;
+            document.getElementById(`${element}`).classList.remove('is-invalid');
+            document.getElementById(`${element}`).classList.add('is-valid');
+        }
+    })
+    input_text_list.forEach(element => {
+        if(document.getElementById(`${element}`).value === ""){
+            document.getElementById(`${element}`).classList.remove('is-valid');
+            document.getElementById(`${element}`).classList.add('is-invalid');
+            validationFormulaire = false;
+        }
+    })
+    input_number_list.forEach(element => {
+        if(document.getElementById(`${element}`).value === "" && (document.getElementById(`${element}`).value < 0 || document.getElementById(`${element}`).value > 10000)){
+            console.log(document.getElementById(`${element}`).value);
+            document.getElementById(`${element}`).classList.remove('is-valid');
+            document.getElementById(`${element}`).classList.add('is-invalid');
+            validationFormulaire = false;
+        }
+    })
+    input_list.forEach(element => {
+        if(pattern_general.test(document.getElementById(`${element}`).value)){
+            document.getElementById(`${element}`).classList.remove('is-valid');
+            document.getElementById(`${element}`).classList.add('is-invalid');
+            validationFormulaire = false;
+        }
+    })
+    
     //Si on rencontre un probleme alors on passe en false et on n'accède pas à la suite
     if(validationFormulaire){
         //On gère l'affichage du bouton
@@ -44,6 +81,11 @@ btnStepEl2.addEventListener("click", (e)=>{
         blockStepEl1.classList.add('unshow_step');
         blockStepEl2.classList.remove('unshow_step');
         blockStepEl2.classList.add('show_step');
+        //On gere ici l'ajout dans le recap
+        input_list.forEach(element => {
+            $(`#${element}_recap`).append(`<p>${document.getElementById(`${element}`).value}</p>`);
+        })
+        
         //On redefini le dot vers le point suivant
         let dotNext = document.getElementById('dot_2');
         dotNext.innerHTML = `<i class="fa fa-hourglass-start" aria-hidden="true"></i>`;
@@ -61,7 +103,8 @@ btnStepEl3.addEventListener("click", (e)=>{
 
     //Verification des champs de formulaire
     let validationFormulaire = true;
-
+    let input_number = document.querySelectorAll('#bloc_step_1 input[type=number]');
+    console.log(input_number);
     //Si on rencontre un probleme alors on passe en false et on n'accède pas à la suite
     if(validationFormulaire){
         //On gère l'affichage du bouton
@@ -91,6 +134,8 @@ btnStepEl4.addEventListener("click", (e)=>{
 
     //Verification des champs de formulaire
     let validationFormulaire = true;
+    let input_number = document.querySelectorAll('input[type=number]');
+    console.log(input_number);
 
     //Si on rencontre un probleme alors on passe en false et on n'accède pas à la suite
     if(validationFormulaire){

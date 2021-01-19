@@ -31,13 +31,13 @@
 ?>
 <pre>
     <?php         
-        print_r($_POST);
-        print_r($_FILES);
-        if(isset($validationCreation))
-        {
-            print_r($validationCreation);
-        };
-    ?>
+    //     print_r($_POST);
+    //     print_r($_FILES);
+    //     if(isset($validationCreation))
+    //     {
+    //         print_r($validationCreation);
+    //     };
+    // ?>
 </pre>
     <!--On fait afficher la page selon l'id des step de chaque bloc en jqurey-->
     <form method="POST" enctype="multipart/form-data" id="formulaire_inscription">
@@ -54,6 +54,7 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/scriptsSrc.php');?>
 <!-- ON MET ICI DES SCRIPTS ASSOCIES A LA PAGE -->
 <script src="../js/createAnnonce.js"></script>
+<script src="../js/validationFormLogement.js"></script>
 <script>
 //Ici on gere l'ajout d'une nouvelle chambre sur le formulaire de creation d'une annonce
 let cptChambre = 2;
