@@ -405,6 +405,18 @@ label{
 } */
 /*---------------------------------------------*/
 
+/*Modal photo*/
+#cadre_photo{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+}
+.fa-trash{
+    cursor: pointer;
+}
+/*---------------------------------------------*/
 /*MEDIAQUERIES*/
 /*---------------------------------------------*/
 @media screen and (max-width: 426px){

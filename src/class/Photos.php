@@ -79,6 +79,7 @@ class Photos {
             return array(false, $error);
         }
     }
+
     public static function deletePhotosByIdUser($id)
     {
         $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
@@ -103,6 +104,42 @@ class Photos {
             $query = $pdo->query("DELETE FROM `photos` WHERE `libelle_photo` = '$libelle'
             ");
             return array(true, '');
+        }catch(PDOException $e){
+            $error = $e->getMessage();
+            return array(false, $error);
+        }
+    }
+
+    public static function photosByIdLogement($id)
+    {
+        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $error = null;
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        try{
+            $query = $pdo->query("SELECT * FROM `photo_logement`, `photos` 
+            WHERE photos.id = photo_logement.id_photo
+            AND photo_logement.id_logement = '$id'
+            ");
+            $data = $query->fetchAll(PDO::FETCH_OBJ);
+            return array(true, $data);
+        }catch(PDOException $e){
+            $error = $e->getMessage();
+            return array(false, $error);
+        }
+    }
+
+    public static function photosByIdChambre($id)
+    {
+        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $error = null;
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        try{
+            $query = $pdo->query("SELECT * FROM `photo_chambre`, `photos` 
+            WHERE photos.id = photo_chambre.id_photo
+            AND photo_chambre.id_chambre = '$id'
+            ");
+            $data = $query->fetchAll(PDO::FETCH_OBJ);
+            return array(true, $data);
         }catch(PDOException $e){
             $error = $e->getMessage();
             return array(false, $error);

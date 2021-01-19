@@ -130,7 +130,10 @@ class Utilisateurs {
         $error = null;
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
-            $query = $pdo->query("SELECT * FROM `logements` WHERE `id_utilisateur` = '$id_utilisateur'
+            $query = $pdo->query("SELECT * FROM `logements` 
+            INNER JOIN `chambres` ON chambres.id_logement = logements.id_logement
+            WHERE `id_utilisateur` = '$id_utilisateur'
+            AND chambres.a_louer = 1
             ");
             $data = $query->fetchAll(PDO::FETCH_OBJ);
             return array(true, $data);
