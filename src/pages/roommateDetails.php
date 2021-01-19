@@ -1,10 +1,10 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
 <?php require_once(dirname(__DIR__).'/class/Recherches.php');?>
-<?php $annonces = Recherches::annonce_details($_GET["id"])?>
+<?php $annonces = Recherches::annonce_details(htmlEntities($_GET["id"]))?>
         
-                <?php if(!$annonces[0]):?>
-                <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
-                <?php else :?>
+<?php if(!$annonces[0]):?>
+<div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
+<?php else :?>
 
 <div id="wrapper_page_content">
 <section class="container">
@@ -18,13 +18,13 @@
                     <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
                 </ol>
                 <div class="carousel-inner">
-                <?php $images = Recherches::photo_annonce($annonces[1]->id_chambre)?>
+                <?php $images = Recherches::photo_annonce(htmlEntities($annonces[1]->id_chambre))?>
                                 <?php if(!$images[0]):?>
                                 <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                                 <?php else :?>
                                     <?php foreach($images[1] as $image):?>
                                     <div class="carousel-item active">
-                                        <img src="../images/<?= $image->libelle_photo ?>" class="d-block w-100" alt="room">
+                                        <img src="../images/<?= htmlEntities($image->libelle_photo) ?>" class="d-block w-100" alt="room">
                                     </div>
                                     <?php endforeach; ?>
                                     <?php endif; ?>
@@ -61,14 +61,14 @@
                     </div>
                 </div>
                 
-                <p class="h3"><?= $annonces[1]->titre_chambre ?></p>
+                <p class="h3"><?= htmlEntities($annonces[1]->titre_chambre) ?></p>
                 <div class="d-flex flex-wrap justify-content-around">
                 
-                <p class="h6"> Chambre - <span class="fw-bold"><?= $annonces[1]->surface_chambre ?>m<sup>2</sup></span></p>
+                <p class="h6"> Chambre - <span class="fw-bold"><?= htmlEntities($annonces[1]->surface_chambre) ?>m<sup>2</sup></span></p>
                 
                 </div>
                 <p class="h6 mt-3">
-                <?= $annonces[1]->description_chambre ?>
+                <?= htmlEntities($annonces[1]->description_chambre) ?>
                     <!-- Le logement est localisé dans le quartier Hôtel de Ville - Presqu'île, en plein centre de Lyon. De nombreux commerces, restaurants, transports publics sont aux environs. La colocation est à l'étage 4 avec ascenseur. Elle est entièrement meublée et propose une cuisine 100% équipée avec réfrigérateur, micro-ondes, poêles, casseroles, ustensiles, bouilloire, grille-pain, vaisselle… Ainsi que planche à repasser, tancarville, fer à repasser, lave-linge. Tout le matériel pour le ménage est sur place dans cette colocation : aspirateur, balai, seau et serpillère, balai-brosse… Chaque colocation meublée Chez Nestor inclut toutes les charges : assurance habitation, taxe sur les ordures, charges de copropriété, électricité, wifi illimité, eau.” -->
                 </p>
                 <!-- avatar -->
@@ -78,7 +78,7 @@
                 </div>
                 <div class="ms-3">
                 <p class="fw-bold mb-0 text-danger">prenom</p>
-                <p class="mb-0"><?= $annonces[1]->libelle_role ?></p>
+                <p class="mb-0"><?= htmlEntities($annonces[1]->libelle_role) ?></p>
                 </div>
                 </div>
                
@@ -129,25 +129,41 @@
                     </div>
                 </div>
 
-                <p class="h3"><?= $annonces[1]->titre_logement ?></p>
+                <p class="h3"><?= htmlEntities($annonces[1]->titre_logement) ?></p>
                 <div class="d-flex flex-wrap justify-content-around">
                 <p class="h6"> <span class="fw-bold text-danger">5</span>- colocataires</p>
-                <p class="h6"> Logement - <span class="fw-bold"><?= $annonces[1]->surface_logement ?>m<sup>2</sup></span></p>
+                <p class="h6"> Logement - <span class="fw-bold"><?= htmlEntities($annonces[1]->surface_logement) ?>m<sup>2</sup></span></p>
                 
                 <p class="h6 "> Catégorie - <span class="fw-bold text-danger">Maison</span></p>
                 </div>
-                <p class="h6 mt-3"><?= $annonces[1]->description_logement ?></p>
+                <p class="h6 mt-3"><?= htmlEntities($annonces[1]->description_logement) ?></p>
 
                 <!-- titre -->
                 <div class="mb-5 mt-4">
                     <div class="border-one ps-1">
                         <div class="border-two ps-3">
                             <p class="text-secondary m-0 poppins h5">EQUIPEMENTS</p>
-                            <h2 class="vidaloka m-0 h1">Equipements<span class="text-green"> de la chambre</span></h2>
+                            <h2 class="vidaloka m-0 h1">Equipements<span class="text-green"> du logement</span></h2>
                         </div>
                     </div>
                 </div>
-
+                <h4 class="text-green h4 mb-4 mt-3">Règles</h4>
+                
+                <?php $regles = Recherches::regleByRoomId(htmlEntities($annonces[1]->id_chambre))?>
+                                <?php if(!$regles[0]):?>
+                                <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
+                                <?php else :?>
+                                    <?php foreach($regles[1] as $regle):?>
+                                    <div class="d-flex">
+                                      <p>#<?= $regle->libelle_regle?></p>
+                                    </div>
+                                    <?php endforeach; ?>
+                                    <?php endif; ?>
+                                    
+                                    
+                
+                <hr>
+                <!-- ------------------------------------------------------- -->
                 <h4 class="text-green h4 mb-4 mt-3">Logement</h4>
                 <div class="d-flex">
                 <!-- un équipement -->
@@ -176,8 +192,9 @@
                 </div>
                 </div> 
                 <hr>
+                <!-- ---------------------------------------------------------- -->
                 <!-- section colocataire du logement -->
-                <h4 class="text-green h4 mb-4 mt-3">Colocataires</h4>
+                <!-- <h4 class="text-green h4 mb-4 mt-3">Colocataires</h4>
                 <div class="d-flex justify-content-center flex-wrap">
                 <div class="d-flex flex-column align-items-center ms-4 me-4">
                 <p class="mb-0">Chambre 1</p>
@@ -217,12 +234,13 @@
                 </div>
                 
                 </div>
-                <hr>
-                <h4 class="text-green h4 mb-4 mt-3">Quartier</h4>
+                <hr> -->
+                <!-- <h4 class="text-green h4 mb-4 mt-3">Quartier</h4> -->
                 <!-- map -->
-                <div id="mapdetails">
+                <!-- <div id="mapdetails">
                 </div>
-                <hr>
+                <hr> -->
+                <!-- -------------------------------------------------------------- -->
                 <h4 class="text-green h4 mb-4 mt-3">Explorer ce logement</h4>
                 <div class="img-wrapper mb-4">
                 <div class="img-one"><img src="../images/bright-hotel-room-bed.jpg" alt="image" class="img-fluid"></div>
@@ -236,6 +254,7 @@
                 
                 </div>
             </div>
+            <!-- ---------------------------------------------------------- -->
             <div class="col-md-12 col-lg-4 position-relative">
                 <!-- card avec le bouton pour louer -->
                 <div class="pt-5 sticky-md-top mb-4">
@@ -246,24 +265,24 @@
                     <div class="card-body p-5">
                     
                     
-                    <p class="fw-bold text-start">Chambre <?= $annonces[1]->surface_chambre ?>m<sup>2</sup></p>
+                    <p class="fw-bold text-start">Chambre <?= htmlEntities($annonces[1]->surface_chambre) ?>m<sup>2</sup></p>
                     <hr>
                     <div class="d-flex justify-content-between align-items-center">
                     <p class="">Disponibilité</p>
-                    <p class="fw-bold"><?= $annonces[1]->date_disponibilite ?></p>
+                    <p class="fw-bold"><?= htmlEntities($annonces[1]->date_disponibilite) ?></p>
                     </div>
                     <div class="d-flex justify-content-between align-items-center">
                     <p class="m-0">Durée</p>
-                    <p class="fw-bold m-0"><?= $annonces[1]->duree_bail ?> mois</p>
+                    <p class="fw-bold m-0"><?= htmlEntities($annonces[1]->duree_bail) ?> mois</p>
                     </div>
                     <hr>
                     <div class="d-flex justify-content-between align-items-center">
                     <p class="">Charges</p>
-                    <p class="fw-bold"><?= $annonces[1]->charges ?> €</p>
+                    <p class="fw-bold"><?= htmlEntities($annonces[1]->charges) ?> €</p>
                     </div>
                     <div class="d-flex justify-content-between align-items-center">
                     <p class="m-0">Loyer</p>
-                    <p class="fw-bold h3 m-0"><?= $annonces[1]->loyer ?> €</p>
+                    <p class="fw-bold h3 m-0"><?= htmlEntities($annonces[1]->loyer) ?> €</p>
                     </div>
                     <a href="#" class="btn bg-green text-light fw-bold letter-space mt-5">LOUER CETTE CHAMBRE</a>
                 </div>

@@ -1,8 +1,8 @@
  <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?> 
  <?php require_once(dirname(__DIR__).'/class/Recherches.php');?>
  <?php if(isset($_GET["btn-search"])){
-    $annonces = Recherches::recherche_annonce($_GET["search-room"]);
-    $nombres = Recherches::nombre_annonce($_GET["search-room"]);
+    $annonces = Recherches::recherche_annonce(htmlEntities($_GET["search-room"]));
+    $nombres = Recherches::nombre_annonce(htmlEntities($_GET["search-room"]));
  } 
   ?>
 
@@ -318,7 +318,7 @@
         </div>
 
 
-        <div class="row">
+        <div class="row bg-height">
             <!-- la map -->
             <!-- <div class="col-lg-6 col-md-12 map-order mt-3">
                 <div id="map"></div>
@@ -330,7 +330,7 @@
                     <div class="border-one ps-1">
                         <div class="border-two ps-3">
                             <p class="text-secondary m-0 poppins h5">RESULTATS</p>
-                            <h2 class="vidaloka m-0 h2"><?php echo $nombres[1][0]["COUNT(*)"];?><span class="text-green"> résultats</span> pour votre recherche
+                            <h2 class="vidaloka m-0 h2"><?php echo htmlEntities($nombres[1][0]["COUNT(*)"]);?><span class="text-green"> résultats</span> pour votre recherche
                             </h2>
                         </div>
                     </div>
@@ -358,12 +358,12 @@
                             </div>
                             <!-- avatar en position absolute -->
                             <div class="avatar d-flex justify-content-center align-items-center bg-light shadow" style="width:60px; height: 60px; border-radius: 50%;">
-                            <?php $utilisateurs = Recherches::photo_utilisateur($annonce->id_utilisateur)?>
+                            <?php $utilisateurs = Recherches::photo_utilisateur(htmlEntities($annonce->id_utilisateur))?>
                                 <?php if(!$utilisateurs[0]):?>
                                 <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                                 <?php else :?>
                                     <?php foreach($utilisateurs[1] as $utilisateur):?>
-                                <img src="../images/<?= $utilisateur->libelle_photo ?>" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px; height: 60px; border-radius: 50%;">
+                                <img src="../images/<?= htmlEntities($utilisateur->libelle_photo) ?>" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px; height: 60px; border-radius: 50%;">
                                 <?php endforeach; ?>
                                     <?php endif; ?>
                             </div>
@@ -379,13 +379,13 @@
                                 </ol>
                                 <div class="carousel-inner">
 
-                               <?php $images = Recherches::photo_annonce($annonce->id_chambre)?>
+                               <?php $images = Recherches::photo_annonce(htmlEntities($annonce->id_chambre))?>
                                 <?php if(!$images[0]):?>
                                 <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                                 <?php else :?>
                                     <?php foreach($images[1] as $image):?>
                                     <div class="carousel-item active">
-                                        <img src="../images/<?= $image->libelle_photo ?>" class="d-block w-100" alt="room">
+                                        <img src="../images/<?= htmlEntities($image->libelle_photo) ?>" class="d-block w-100" alt="room">
                                     </div>
                                     <?php endforeach; ?>
                                     <?php endif; ?>
@@ -394,15 +394,15 @@
                             </div>
                             <!-- descriptif de l'annonce -->
                             <div class="card-body">
-                            <a href="roommateDetails.php?id=<?= $annonce->id_chambre ?>" class="mode-link">
+                            <a href="roommateDetails.php?id=<?= htmlEntities($annonce->id_chambre) ?>" class="mode-link">
                             <!-- role -->
-                                <span class="badge bg-primary mb-1 letter-space"><?= $annonce->libelle_role ?></span>
+                                <span class="badge bg-primary mb-1 letter-space"><?= htmlEntities($annonce->libelle_role) ?></span>
                                 <!-- titre de l'annonce -->
-                                <h5 class="card-title"><?= $annonce->titre_chambre ?></h5>
-                                <p class="card-text"><?= $annonce->libelle_ville ?></p>
+                                <h5 class="card-title"><?= htmlEntities($annonce->titre_chambre) ?></h5>
+                                <p class="card-text"><?= htmlEntities($annonce->libelle_ville) ?></p>
                                 <!-- <p class="card-text">Chambre: 1</p> -->
-                                <p class="card-text"><?= $annonce->date_disponibilite ?></p>
-                                <p class="card-text"><span class="fw-bold h4"><?= $annonce->loyer ?> €</span> par mois</p>
+                                <p class="card-text"><?= htmlEntities($annonce->date_disponibilite) ?></p>
+                                <p class="card-text"><span class="fw-bold h4"><?= htmlEntities($annonce->loyer) ?> €</span> par mois</p>
                                 <input type="text" name="room" value="" hidden>
                                 </a>
                             </div>

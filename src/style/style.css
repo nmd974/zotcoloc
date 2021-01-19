@@ -137,6 +137,9 @@ footer{
     color: black!important;
 }
 /*page de recherche de colocation avec filtre*/
+.bg-height{
+    min-height: 500px!important;
+}
 #map{
     height: 100vh;
 }
@@ -378,7 +381,7 @@ ul{
     background-color:  #6c757d;
 }
 #wrapper_page_content{
-    min-height: 52vh;
+    /* min-height: 52vh; */
     margin-top: 50px;
 }
 #formulaire_inscription{
