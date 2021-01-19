@@ -31,7 +31,7 @@ class Statistiques {
         try{
             $query = $pdo->query("
                SELECT COUNT(*)
-                FROM particulier 
+                FROM utilisateurs 
             ");
             $data = $query->fetchAll(PDO::FETCH_ASSOC);
             return array(true, $data);

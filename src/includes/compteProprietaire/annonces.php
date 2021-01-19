@@ -63,7 +63,7 @@
                             </div>
                             <!-- descriptif de l'annonce -->
                             <div class="card-body">
-                            <a href="roommateDetails.php?id=<?= $annonce->id_chambre ?>" class="mode-link">
+                            <a href="editAnnoncePage.php?id=<?= $annonce->id_chambre ?>" class="mode-link">
                             <!-- role -->
                                 <span class="badge bg-primary mb-1 letter-space"><?= $annonce->libelle_role ?></span>
                                 <!-- titre de l'annonce -->

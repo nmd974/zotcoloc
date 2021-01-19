@@ -1,12 +1,18 @@
 <?php require_once(__ROOT__.'/src/class/Regles.php');?>
 <?php require_once(__ROOT__.'/src/class/Equipements.php');?>
 <?php require_once(__ROOT__.'/src/class/Villes.php');?>
+<?php require_once(__ROOT__.'/src/class/Logements.php');?>
 
-<div class="modal fade" id="editInfosColoc" tabindex="-1" aria-labelledby="editInfosColocLabel" aria-hidden="true">
+<?php if(isset($_GET['id'])){
+    $logement_infos = Logements::
+
+}
+?>
+<div class="modal fade" id="editLogement" tabindex="-1" aria-labelledby="editLogementLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="editInfosColocLabel">Modifier mes informations pro</h5>
+                <h5 class="modal-title" id="editLogementLabel">Modifier mes informations pro</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form method="post" enctype="multipart/form-data">
@@ -162,7 +168,7 @@
             </form>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" id="save_edit_info_coloc" class="btn btn-success" name="save_edit_info_coloc">Save changes</button>
+                <button type="submit" id="save_edit_logement" class="btn btn-success" name="save_edit_logement">Save changes</button>
             </div>
         </div>
     </div>
