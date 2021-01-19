@@ -37,11 +37,12 @@
             $surface_logement = htmlentities($data['surface_logement'], ENT_QUOTES);
             $age_max = htmlentities($data['age_max'], ENT_QUOTES);
             $age_min = htmlentities($data['age_min'], ENT_QUOTES);
+            $type_logement = htmlentities($data['type_logement'], ENT_QUOTES);
             if(!isset($data['aides_logement'])){
                 $data['aides_logement'] = 0;
             }
             
-            $ajoutLogement = Logements::createLogement($data['id_logement'], $data['profil'], $data['ville'], $id_utilisateur, $titre_logement, $description_logement, $surface_logement, $data['meuble'], $data['aides_logement'], 0, $age_max, $age_min);
+            $ajoutLogement = Logements::createLogement($data['id_logement'], $data['profil'], $data['ville'], $id_utilisateur, $titre_logement, $description_logement, $surface_logement, $data['meuble'], $data['aides_logement'], 0, $age_max, $age_min, $type_logement);
             if(!$ajoutLogement[0]){
                 $message = "Erreur serveur : ". $ajoutLogement[1];
                 $validationFormulaire = false;
