@@ -165,32 +165,45 @@
                 <hr>
                 <!-- ------------------------------------------------------- -->
                 <h4 class="text-green h4 mb-4 mt-3">Logement</h4>
-                <div class="d-flex">
-                <!-- un équipement -->
+                <?php $equipements = Recherches::equipementLogement(htmlEntities($annonces[1]->id_logement))?>
+                                <?php if(!$equipements[0]):?>
+                                <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
+                                <?php else :?>
+                                    <div class="d-flex flex-wrap">
+                                    <?php foreach($equipements[1] as $equipement):?>
+                                    
+                                      <p class="me-2"><span class="text-green">#</span><?= htmlEntities($equipement->libelle_equipement)?></p>
+                                    
+                                    <?php endforeach; ?>
+                                    </div>
+                                    <?php endif;?>
+
+                <!-- <div class="d-flex">
+                
                 <div class="equipment-room border-secondary border shadow mb-2 d-flex align-items-center justify-content-center m-1">
                     <div class="d-flex">
                         <div class="d-flex align-items-center">
-                        <i class="fa fa-file-image-o fa-3x text-dark ms-3" aria-hidden="true"></i> <!--à enlever par la suite -->
-                        <!-- <img src="" alt="name">  on rajoute ensuite-->
+                        <i class="fa fa-file-image-o fa-3x text-dark ms-3" aria-hidden="true"></i>
+                        
                         </div>
                         <div class="d-flex align-items-center ms-2">
                             <p class="mb-0">Equipement du logement</p>
                         </div>
                     </div>
                 </div>
-                <!-- un équipement -->
+                
                 <div class="equipment-room border-secondary border shadow mb-2 d-flex align-items-center justify-content-center m-1">
                     <div class="d-flex">
                         <div class="d-flex align-items-center">
-                        <i class="fa fa-file-image-o fa-3x text-dark ms-3" aria-hidden="true"></i> <!--à enlever par la suite -->
-                        <!-- <img src="" alt="name">  on rajoute ensuite-->
+                        <i class="fa fa-file-image-o fa-3x text-dark ms-3" aria-hidden="true"></i>
+                        
                         </div>
                         <div class="d-flex align-items-center ms-2">
                             <p class="mb-0">Equipement du logement</p>
                         </div>
                     </div>
                 </div>
-                </div> 
+                </div>  -->
                 <hr>
                 <!-- ---------------------------------------------------------- -->
                 <!-- section colocataire du logement -->
