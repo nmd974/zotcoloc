@@ -132,9 +132,9 @@
                 <p class="h3"><?= htmlEntities($annonces[1]->titre_logement) ?></p>
                 <div class="d-flex flex-wrap justify-content-around">
                 <p class="h6"> <span class="fw-bold text-danger">5</span>- colocataires</p>
-                <p class="h6"> Logement - <span class="fw-bold"><?= htmlEntities($annonces[1]->surface_logement) ?>m<sup>2</sup></span></p>
+                <p class="h6"> Logement - <span class="fw-bold"><?= htmlEntities($annonces[1]->surface_logement)?>m<sup>2</sup></span></p>
                 
-                <p class="h6 "> Catégorie - <span class="fw-bold text-danger">Maison</span></p>
+                <p class="h6 "> Catégorie - <span class="fw-bold"><?= htmlEntities($annonces[1]->type_logement)?></span></p>
                 </div>
                 <p class="h6 mt-3"><?= htmlEntities($annonces[1]->description_logement) ?></p>
 
@@ -149,19 +149,19 @@
                 </div>
                 <h4 class="text-green h4 mb-4 mt-3">Règles</h4>
                 
-                <?php $regles = Recherches::regleByRoomId(htmlEntities($annonces[1]->id_chambre))?>
+                <?php $regles = Recherches::regleByRoomId(htmlEntities($annonces[1]->id_logement))?>
                                 <?php if(!$regles[0]):?>
                                 <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                                 <?php else :?>
+                                    <div class="d-flex flex-wrap">
                                     <?php foreach($regles[1] as $regle):?>
-                                    <div class="d-flex">
-                                      <p>#<?= $regle->libelle_regle?></p>
-                                    </div>
+                                    
+                                      <p class="me-2"><span class="text-green">#</span><?= htmlEntities($regle->libelle_regle)?></p>
+                                    
                                     <?php endforeach; ?>
+                                    </div>
                                     <?php endif; ?>
-                                    
-                                    
-                
+
                 <hr>
                 <!-- ------------------------------------------------------- -->
                 <h4 class="text-green h4 mb-4 mt-3">Logement</h4>
