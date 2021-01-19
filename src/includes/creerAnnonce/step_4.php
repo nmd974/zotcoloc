@@ -1,16 +1,22 @@
 <!--STEP 4-->
 <?php require_once(__ROOT__.'/src/class/Equipements.php');?>
 <div id="bloc_step_4" class="unshow_step">
-
+<div class="arrow_return d-flex align-items-center mb-5" id="back_step4">
+        <i class="fa fa-arrow-left fa-2x text-dark" aria-hidden="true"></i>
+        <p class="text-secondary m-0 poppins h5 ms-4">Précédent</p>
+    </div>
     <!--profil colocataire recherché-->
+    <div class="mt-4 mb-4 bg-light">
+            <div class="col border-one ps-1">
+                <div class="border-two ps-3">
+                    <p class="text-secondary m-0 poppins h5">Profil idéal pour cette colocation</p>
+                </div>
+            </div>
+        </div>
     <div class="col-md-12">
-
-        <h4>Quel est le profil idéal pour cette colocation ? :</h4>
-            
-            <p >Informez les candidatures sur le type de profil que vous recherchez.</p>
-            
-            <div class="d-flex align-items-end mb-3">
-                <p>Plutôt:</p>
+             
+            <div class="d-flex align-items-center mb-3">
+                <div>Plutôt:</div>
                 
                 <div class="btn" role="group" aria-label="Basic radio toggle button group">
                     <input 
@@ -18,23 +24,23 @@
                         name="profil" 
                         id="homme" 
                         value="c4ca4238a0b923820dcc509a6f75849b" 
-                        class="btn-check <?php if(isset($_POST['profil']) && $_POST['profil'] == "c4ca4238a0b923820dcc509a6f75849b"){echo 'checked';}?>"
+                        class="btn-check" <?php if(isset($_POST['profil']) && $_POST['profil'] == "c4ca4238a0b923820dcc509a6f75849b"){echo 'checked';}?>
                     >
-                    <label class="btn btn-outline-primary border-0" for="homme">
+                    <label class="btn btn-outline-success border-0" for="homme">
                     <i class="fa fa-male text-dark" aria-hidden="true"></i>
                     Homme</label>
 
                     <input type="radio" name="profil" value="c81e728d9d4c2f636f067f89cc14862c" id="femme" 
-                        class="btn-check <?php if(isset($_POST['profil']) && $_POST['profil'] == "c81e728d9d4c2f636f067f89cc14862c"){echo 'checked';}?>"
+                        class="btn-check" <?php if(isset($_POST['profil']) && $_POST['profil'] == "c81e728d9d4c2f636f067f89cc14862c"){echo 'checked';}?>
                     >
-                    <label class="btn btn-outline-primary border-0" for="femme">
+                    <label class="btn btn-outline-success border-0" for="femme">
                     <i class="fa fa-female text-dark" aria-hidden="true"></i>
                     Femme</label>
 
                     <input type="radio" name="profil" value="eccbc87e4b5ce2fe28308fd9f2a7baf3" id="indifferent" 
-                        class="btn-check <?php if(isset($_POST['profil']) && $_POST['profil'] == "eccbc87e4b5ce2fe28308fd9f2a7baf3"){echo 'checked';}?>"
+                        class="btn-check" <?php if(isset($_POST['profil']) && $_POST['profil'] == "eccbc87e4b5ce2fe28308fd9f2a7baf3"){echo 'checked';}?>
                         >
-                    <label class="btn btn-outline-primary border-0" for="indifferent">
+                    <label class="btn btn-outline-success border-0" for="indifferent">
                     <i class="fa fa-users text-dark" aria-hidden="true"></i>
                     indifférent</label>
                 </div>
@@ -83,12 +89,12 @@
                     <p>Type de chambre : </p>
                     <input type="radio" name="type_chambre_1" class="btn-check" id="type_chambre_1_oui" value="Chambre principale">
                             <label class="btn btn-outline-success me-2 mb-2" for="type_chambre_1_oui">
-                            <i class="fa fa-check" aria-hidden="true"></i>
+                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
                             Chambre principale
                         </label>
                         <input type="radio" name="type_chambre_1" class="btn-check" id="type_chambre_1_non" value="Chambre secondaire">
                             <label class="btn btn-outline-success me-2 mb-2" for="type_chambre_1_non">
-                            <i class="fa fa-times" aria-hidden="true"></i>
+                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
                             Chambre secondaire
                         </label>
                 </div>  

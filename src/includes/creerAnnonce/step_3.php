@@ -2,12 +2,22 @@
 <?php require_once(__ROOT__.'/src/class/Regles.php');?>
 <?php require_once(__ROOT__.'/src/class/Equipements.php');?>
 <div id="bloc_step_3" class="unshow_step">
-    <h4 class="mt-3">Dites-nous en plus sur le logement :</h4>
+<div class="arrow_return d-flex align-items-center mb-5" id="back_step2">
+        <i class="fa fa-arrow-left fa-2x text-dark" aria-hidden="true"></i>
+        <p class="text-secondary m-0 poppins h5 ms-4">Précédent</p>
+    </div>
+    <div class="mt-4 mb-4 bg-light">
+            <div class="col border-one ps-1">
+                <div class="border-two ps-3">
+                    <p class="text-secondary m-0 poppins h5">Dites-nous en plus sur le logement</p>
+                </div>
+            </div>
+        </div>
 
     <!--Meublé ??-->
     <div class="col-md-12">
         <div class="d-flex align-items-center"> 
-            <p>Est-il meublé ?</p>
+            <div class="me-4">Est-il meublé ?</div>
             <input type="radio" name="meuble" class="btn-check" id="meuble_oui" value="1">
                     <label class="btn btn-outline-success me-2 mb-2" for="meuble_oui">
                     <i class="fa fa-check" aria-hidden="true"></i>
@@ -23,8 +33,8 @@
 
     <!--Eligible ??-->
     <div class="col-md-12">
-        <div class="d-flex"> 
-            <p>Eligible aides au logements ?</p>
+        <div class="d-flex align-items-center"> 
+            <div class="me-4">Eligible aides au logements ?</div>
             <input type="radio" name="aides_logement" class="btn-check" id="aides_logement_oui" value="1">
                     <label class="btn btn-outline-success me-2 mb-2" for="aides_logement_oui">
                     <i class="fa fa-check" aria-hidden="true"></i>
@@ -39,10 +49,15 @@
     </div>
 
     <div>
-        <h4>Détails du logement:</h4>
+    <div class="mt-4 mb-4 bg-light">
+            <div class="col border-one ps-1">
+                <div class="border-two ps-3">
+                    <p class="text-secondary m-0 poppins h5">Règles du logement</p>
+                </div>
+            </div>
+        </div>
         <!--Régle de vie-->
         <div class="col-md-12">
-            <p>Règles:</p>
             <div class="d-flex flex-wrap interets_ajax" role="group" aria-label="Basic checkbox toggle button group" id="regle_vie">
             <?php $regles = Regles::reglesAll()?>
             <?php if(!$regles[0]):?>
@@ -59,7 +74,13 @@
         </div>
 
             <!--Equipement logement-->
-            <p>Equipements et services:</p>
+            <div class="mt-4 mb-4 bg-light">
+            <div class="col border-one ps-1">
+                <div class="border-two ps-3">
+                    <p class="text-secondary m-0 poppins h5">Equipements et services du logement</p>
+                </div>
+            </div>
+        </div>
             <div class="d-flex flex-wrap interets_ajax" role="group" aria-label="Basic checkbox toggle button group" id="equipement_logement">
                 <?php $equipements = Equipements::equipementAll()?>
                 <?php if(!$equipements[0]):?>
