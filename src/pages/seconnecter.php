@@ -3,21 +3,16 @@
     <div class="mb-5 subtitle">
         <div class="border-one ps-1">
             <div class="border-two ps-3">
-                <p class="text-secondary m-0 poppins h5">Authetification</p>
-                <h2 class="vidaloka m-0 h1" id="title_step">Etape 1/1:<span class="text-green"> Connection</span</h2>
+                <p class="text-secondary m-0 poppins h5">Authentification</p>
+                <h2 class="vidaloka m-0 h1" id="title_step">Se <span class="text-green"> connecter</span></h2>
             </div>
         </div>
     </div>
 </div>
-<div class="container" id="wrapper_page_content">
+<div class="container h-100" id="wrapper_page_content">
 
 <div class="form-modal">
-    
-    <div class="form-toggle">
-        <button id="login-toggle" onclick="toggleLogin()">Se connecter</button>
-        
-    </div>
-
+<a href="./authentificationLoueur.php">Je n'ai pas de compte</a>
     <div id="login-form">
         <form>
             <!-- <input type="text" placeholder="Enter email or username"/> -->
@@ -36,7 +31,7 @@
 
 
 
-            <button type="button" class="btn login">connecter</button>
+            <button type="button" class="btn login">Je me connecte</button>
             <!-- <p><a href="javascript:void(0)">Forgot password</a> </p>
           <p><a href="javascript:void(0)" onclick="toggleSignup()">Register Account</a> </p> -->
           

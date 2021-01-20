@@ -7,19 +7,19 @@
     // $_SESSION['role'] = 'particulier';
     // $_SESSION['id_utilisateur'] = '80b571b5a9e3a9d0324f930fd9a7c7f0';
         //Pour la prod proprietaire
-    $_SESSION['isLoggedIn'] = true;
-    $_SESSION['role'] = 'proprietaire';
-    $_SESSION['id_utilisateur'] = '33a0eb73790689cf911e4560a2cb46c6';
+    // $_SESSION['isLoggedIn'] = true;
+    // $_SESSION['role'] = 'proprietaire';
+    // $_SESSION['id_utilisateur'] = '33a0eb73790689cf911e4560a2cb46c6';
     // Ici on détermine les superglobales pour la gestion de la session log ou pas
-    // if(!isset($_SESSION['isLoggedIn'])){
-    //     $_SESSION['isLoggedIn'] = false;
-    // }
-    // if(!isset($_SESSION['role'])){
-    //     $_SESSION['role'] = false;
-    // }
-    // if(!isset($_SESSION['id_utilisateur'])){
-    //     $_SESSION['id_utilisateur'] = false;
-    // }
+    if(!isset($_SESSION['isLoggedIn'])){
+        $_SESSION['isLoggedIn'] = false;
+    }
+    if(!isset($_SESSION['role'])){
+        $_SESSION['role'] = false;
+    }
+    if(!isset($_SESSION['id_utilisateur'])){
+        $_SESSION['id_utilisateur'] = false;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,10 +77,10 @@
                                 <a href="./roommateSearch.php" class="nav-link active" aria-current="page">Recherche</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./inscriptionParticulier.php" class="nav-link active" aria-current="page">Je cherche une colocation</a>
+                                <a href="./inscriptionParticulier.php" class="nav-link active" aria-current="page">Créer un compte</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./deposerAnnonce.php" class="nav-link active" aria-current="page">Je cherche un colocataire</a>
+                                <a href="./deposerAnnonce.php" class="nav-link active" aria-current="page">Désposer une annonce</a>
                             </li>
                             <?php if($_SESSION['isLoggedIn'] && $_SESSION['role'] == "proprietaire"):?>
                                 <li class="nav-item">
@@ -103,7 +103,7 @@
                             </li>
                             <?php else:?>
                             <li class="nav-item">
-                                <a href="./logout.php" class="nav-link active" aria-current="page"><i class="fa fa-power-off" aria-hidden="true"></i></a>
+                                <a href="../controllers/logout.php" class="nav-link active" aria-current="page"><i class="fa fa-power-off" aria-hidden="true"></i></a>
                             </li>
                             <?php endif;?>
                         </ul>

@@ -17,19 +17,19 @@
             <div class="d-flex justify-content-evenly mt-5">
                 
                 <a href="./authentificationLoueur.php">
-                  <button type="button" class="btn btn-primary btn-lg rounded-pill">Colocataire</button>
+                  <button type="button" class="btn btn-success btn-lg rounded-pill">Colocataire</button>
                 </a>
                 
                 <a href="./authentificationLoueur.php">
-                  <button type="button" class="btn btn-primary btn-lg rounded-pill">Résidence</button>
+                  <button type="button" class="btn btn-success btn-lg rounded-pill">Résidence</button>
                 </a>
                 
                 <a href="./authentificationLoueur.php">
-                  <button type="button" class="btn btn-primary btn-lg rounded-pill">Propriétaire</button>
+                  <button type="button" class="btn btn-success btn-lg rounded-pill">Propriétaire</button>
                 </a>
 
                 <a href="./authentificationLoueur.php">
-                  <button type="button" class="btn btn-primary btn-lg rounded-pill">Agence</button>
+                  <button type="button" class="btn btn-success btn-lg rounded-pill">Agence</button>
                 </a>
 
             </div>

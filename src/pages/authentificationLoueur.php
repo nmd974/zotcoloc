@@ -29,8 +29,8 @@
     <div class="mb-5 subtitle">
         <div class="border-one ps-1">
             <div class="border-two ps-3">
-                <p class="text-secondary m-0 poppins h5">Etape</p>
-                <h2 class="vidaloka m-0 h1" id="title_step">Authentification</h2>
+                <p class="text-secondary m-0 poppins h5">Authentification</p>
+                <h2 class="vidaloka m-0 h1" id="title_step">Création de<span class="text-green"> compte</span></h2>
             </div>
         </div>
     </div>
@@ -38,32 +38,8 @@
 <div class="container d-flex" id="wrapper_page_content">
 
 <div class="form-modal">
-    <div class="form-toggle">
-        <button id="login-toggle" onclick="toggleLogin()">Se connecter</button>
-        <button id="signup-toggle" onclick="toggleSignup()">S'inscrire</button>
-    </div>
-    <div id="login-form">
-        <form>
-            <!-- <input type="text" placeholder="Enter email or username"/> -->
-            <input type="text" name="Email" class="form-control" aria-describedby="emailHelp" required
-            pattern=" [a-z0-9 ._% + -] + @ [a- z0-9 .-] + \. [az] {2,} $ " 
-            placeholder="entrer adresse email"
-            value="<?php if(isset($_POST['emailUser'])){echo $_POST['emailUser'];}?>">
-
-            <!-- <input type="password" placeholder="Enter password"/> -->
-            <input type="password" class="form-control" id="Password" onkeyup="check()" required
-            pattern=" ^ (? =. * [az] ) (? =. * [AZ]) (? =. * \ D) (? =. * [@ $!% *? &]) [A-Za-z \ d @ $!% *? &] { 8,} $"
-            placeholder="entrer votre mot passe" 
-            value="<?php if(isset($_POST['PasswordUser'])){echo $_POST['PasswordUser'];}?>">
-            <button type="button" class="btn login">connecter</button>
-        </form>
-    </div>
-
-
-</div>
-<div class="form-modal">
 <div id="signup-form" class="mb-5">
-
+<a href="./seconnecter.php" class="mt-4 mx-3">J'ai déjà un compte</a>
 <?php if(isset($inscriptionValide) && !$inscriptionValide[0]):?>
     <div class="alert alert-danger mb-2"><?=  $inscriptionValide[1] ?></div>
 <?php endif;?>
@@ -73,10 +49,11 @@
 </form>
 
 </div>
+
 </div>
 <style>
 .form-modal{
-    position:relative;
+position: relative;
     width:450px;
     height:auto;
     margin-top:4em;

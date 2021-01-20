@@ -44,6 +44,6 @@
     </div>
     <!--button validation inscription-->
     <div class="col-12 text-end my-4">
-        <button type="submit" class="btn w-25 bg-green text-white mr-5" name="ajouter_proprietaire">Valider</button>
+        <button type="submit" class="btn w-55 bg-green text-white mr-5" name="ajouter_proprietaire">Je m'inscris</button>
     </div>
 </div>

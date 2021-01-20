@@ -382,7 +382,7 @@ ul{
     background-color:  #6c757d;
 }
 #wrapper_page_content{
-    /* min-height: 52vh; */
+    min-height: 52vh;
     margin-top: 50px;
 }
 #formulaire_inscription{
