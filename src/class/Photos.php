@@ -4,7 +4,7 @@ class Photos {
 
     public static function photoLogement($id_photo, $id_logement)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = new PDO('mysql:host=lebondzotcoloc.mysql.db;dbname=lebondzotcoloc;charset=utf8', 'lebondzotcoloc', 'Satanus1234');
         $error = null;
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
@@ -19,7 +19,7 @@ class Photos {
 
     public static function photoTableGenerale($id_photo, $libelle_photo)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = new PDO('mysql:host=lebondzotcoloc.mysql.db;dbname=lebondzotcoloc;charset=utf8', 'lebondzotcoloc', 'Satanus1234');
         $error = null;
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
@@ -34,7 +34,7 @@ class Photos {
 
     public static function photoChambre($id_chambre, $id_photo)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = new PDO('mysql:host=lebondzotcoloc.mysql.db;dbname=lebondzotcoloc;charset=utf8', 'lebondzotcoloc', 'Satanus1234');
         $error = null;
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
@@ -49,7 +49,7 @@ class Photos {
 
     public static function createPhotoUser($id_utilisateur, $id_photo)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = new PDO('mysql:host=lebondzotcoloc.mysql.db;dbname=lebondzotcoloc;charset=utf8', 'lebondzotcoloc', 'Satanus1234');
         $error = null;
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
@@ -64,7 +64,7 @@ class Photos {
 
     public static function photosByIdUser($id)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = new PDO('mysql:host=lebondzotcoloc.mysql.db;dbname=lebondzotcoloc;charset=utf8', 'lebondzotcoloc', 'Satanus1234');
         $error = null;
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
@@ -82,7 +82,7 @@ class Photos {
 
     public static function deletePhotosByIdUser($id)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = new PDO('mysql:host=lebondzotcoloc.mysql.db;dbname=lebondzotcoloc;charset=utf8', 'lebondzotcoloc', 'Satanus1234');
         $error = null;
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
@@ -97,7 +97,7 @@ class Photos {
 
     public static function deletePhotosByLibelle($libelle)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = new PDO('mysql:host=lebondzotcoloc.mysql.db;dbname=lebondzotcoloc;charset=utf8', 'lebondzotcoloc', 'Satanus1234');
         $error = null;
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
@@ -112,7 +112,7 @@ class Photos {
 
     public static function photosByIdLogement($id)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = new PDO('mysql:host=lebondzotcoloc.mysql.db;dbname=lebondzotcoloc;charset=utf8', 'lebondzotcoloc', 'Satanus1234');
         $error = null;
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
@@ -130,7 +130,7 @@ class Photos {
 
     public static function photosByIdChambre($id)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = new PDO('mysql:host=lebondzotcoloc.mysql.db;dbname=lebondzotcoloc;charset=utf8', 'lebondzotcoloc', 'Satanus1234');
         $error = null;
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{

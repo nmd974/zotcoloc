@@ -4,7 +4,7 @@ class Logements {
 
     public static function createLogement($id_logement, $id_profil, $id_ville, $id_utilisateur, $titre_logement, $description_logement, $surface_logement, $meuble, $eligible_aides, $candidature_facile, $age_max, $age_min, $type_logement)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = new PDO('mysql:host=lebondzotcoloc.mysql.db;dbname=lebondzotcoloc;charset=utf8', 'lebondzotcoloc', 'Satanus1234');
         $error = null;
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
@@ -34,7 +34,7 @@ class Logements {
 
     public static function idLogementByIdChambre($id)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = new PDO('mysql:host=lebondzotcoloc.mysql.db;dbname=lebondzotcoloc;charset=utf8', 'lebondzotcoloc', 'Satanus1234');
         $error = null;
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
@@ -52,7 +52,7 @@ class Logements {
     
     public static function logementByIdLogement($id)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = new PDO('mysql:host=lebondzotcoloc.mysql.db;dbname=lebondzotcoloc;charset=utf8', 'lebondzotcoloc', 'Satanus1234');
         $error = null;
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{

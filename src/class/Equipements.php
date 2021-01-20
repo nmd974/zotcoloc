@@ -4,7 +4,7 @@ class Equipements {
 
     public static function equipementAll()
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = new PDO('mysql:host=lebondzotcoloc.mysql.db;dbname=lebondzotcoloc;charset=utf8', 'lebondzotcoloc', 'Satanus1234');
         $error = null;
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
@@ -19,7 +19,7 @@ class Equipements {
 
     public static function equipementLogement($id_logement, $id_equipement)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = new PDO('mysql:host=lebondzotcoloc.mysql.db;dbname=lebondzotcoloc;charset=utf8', 'lebondzotcoloc', 'Satanus1234');
         $error = null;
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
@@ -33,7 +33,7 @@ class Equipements {
 
     public static function equipementChambre($id_chambre, $id_equipement)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = new PDO('mysql:host=lebondzotcoloc.mysql.db;dbname=lebondzotcoloc;charset=utf8', 'lebondzotcoloc', 'Satanus1234');
         $error = null;
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
@@ -47,7 +47,7 @@ class Equipements {
 
     public static function equipementsByIdLogement($id)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = new PDO('mysql:host=lebondzotcoloc.mysql.db;dbname=lebondzotcoloc;charset=utf8', 'lebondzotcoloc', 'Satanus1234');
         $error = null;
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
@@ -66,7 +66,7 @@ class Equipements {
 
     public static function equipementsByIdChambre($id)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = new PDO('mysql:host=lebondzotcoloc.mysql.db;dbname=lebondzotcoloc;charset=utf8', 'lebondzotcoloc', 'Satanus1234');
         $error = null;
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{

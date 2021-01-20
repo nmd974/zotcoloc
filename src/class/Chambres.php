@@ -4,7 +4,7 @@ class Chambres {
 
     public static function createChambre($id_chambre, $id_logement, $titre_chambre, $description_chambre, $surface_chambre, $type_chambre, $a_louer, $date_disponibilite, $duree_bail, $loyer, $charges, $caution, $frais_dossier)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = new PDO('mysql:host=lebondzotcoloc.mysql.db;dbname=lebondzotcoloc;charset=utf8', 'lebondzotcoloc', 'Satanus1234');
         $error = null;
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
@@ -34,7 +34,7 @@ class Chambres {
         
     public static function chambreById($id)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = new PDO('mysql:host=lebondzotcoloc.mysql.db;dbname=lebondzotcoloc;charset=utf8', 'lebondzotcoloc', 'Satanus1234');
         $error = null;
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
