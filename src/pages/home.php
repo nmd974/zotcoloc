@@ -176,7 +176,7 @@
                     <div class="image-three position-relative">
                     
                        
-                        <a href="category.html" class="text-white">
+                        <a href="roommateSearch.php?search-room=nord&btn-search=" class="text-white">
                             <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-1.jpg" alt="nord"
                                 class="img-fluid rounded" style="filter: grayscale(30%)">
                             
@@ -209,7 +209,7 @@
             <div class="col-md-3">
                     <div class="image-three position-relative">
                         
-                        <a href="category.html" class="text-white">
+                        <a href="roommateSearch.php?search-room=sud&btn-search=" class="text-white">
                             <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-2.jpg" alt="sud"
                                 class="img-fluid rounded" style="filter: grayscale(30%)">
                                
@@ -239,7 +239,7 @@
                     <div class="image-three position-relative">
                     
                        
-                        <a href="category.html" class="text-white">
+                        <a href="roommateSearch.php?search-room=est&btn-search=" class="text-white">
                             <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-1.jpg" alt="nord"
                                 class="img-fluid rounded" style="filter: grayscale(30%)">
                             
@@ -271,7 +271,7 @@
             <div class="col-md-3">
                     <div class="image-three position-relative">
                         
-                        <a href="category.html" class="text-white">
+                        <a href="roommateSearch.php?search-room=ouest&btn-search=" class="text-white">
                             <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-2.jpg" alt="sud"
                                 class="img-fluid rounded" style="filter: grayscale(30%)">
                                

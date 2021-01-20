@@ -305,10 +305,17 @@ public static function listVille()
     $error = null;
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     try{
-        $query = $pdo->query("SELECT libelle_ville 
-        FROM `villes`
-        
-        ");
+        $query = $pdo->query("SELECT libelle_zone
+            FROM logements 
+            INNER JOIN villes 
+            ON logements.id_ville = villes.id 
+            INNER JOIN communes 
+            ON villes.id_commune = communes.id 
+            INNER JOIN zone 
+            ON communes.id_zone = zone.id 
+            WHERE statut = 'Publiee' 
+            GROUP BY libelle_zone;
+            ");
         $data = $query->fetchAll(PDO::FETCH_OBJ);
         return array(true, $data);
     }catch(PDOException $e){
