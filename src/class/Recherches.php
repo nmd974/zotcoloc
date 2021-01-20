@@ -18,7 +18,7 @@ class Recherches {
             INNER JOIN `roles` ON utilisateurs.id_role = roles.id
             WHERE `statut` = 'Publiee'
             AND `a_louer` = 1 
-            AND `libelle_ville`LIKE '%$search%'
+            AND `libelle_ville`LIKE '$search%'
             ORDER BY `date_creation` DESC;
  
             ");

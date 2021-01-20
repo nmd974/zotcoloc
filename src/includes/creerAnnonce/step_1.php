@@ -25,7 +25,7 @@
         <!--Description-->
         <div class="col-md-12 mb-4">
             <div class="form-floating">
-                <textarea class="form-control" required placeholder="Une description précise vous donnera plus de change de trouver un colocataire" id="description_logement" style="height: 100px"><?php if(isset($_POST['description_logement'])){echo $_POST['description_logement'];}?></textarea>
+                <textarea class="form-control" name="description_logement" required placeholder="Une description précise vous donnera plus de change de trouver un colocataire" id="description_logement" style="height: 100px"><?php if(isset($_POST['description_logement'])){echo $_POST['description_logement'];}?></textarea>
                 <label for="description_logement">Desciption du logement <span class="text-danger">*</span></label>
             </div>
             <div class="d-flex align-items-center mt-1">

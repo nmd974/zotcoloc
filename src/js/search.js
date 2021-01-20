@@ -1,17 +1,12 @@
-$(document).ready(function(){
-    $("#result-search").keyup(function(){
-        var search = $(this).val();
-        var data = "ville=" + search;
-        if(search.length>1){
-            $.ajax({
-                type : "GET",
-                url : "roommateSearch.php",
-                data : data,
-                success : function(server_response){
-                    $("#result-search")
-                }
-            });
-
-        }
-    });
+var search = document.querySelector('#search');
+var results = document.querySelector('#datalistOptions');
+var templateContent = document.querySelector('#resultstemplate').content;
+search.addEventListener('keyup', function handler(event) {
+    while (results.children.length) results.removeChild(results.firstChild);
+    var inputVal = new RegExp(search.value.trim(), 'i');
+    var set = Array.prototype.reduce.call(templateContent.cloneNode(true).children, function searchFilter(frag, item, i) {
+        if (inputVal.test(item.textContent) && frag.children.length < 8) frag.appendChild(item);
+        return frag;
+    }, document.createDocumentFragment());
+    results.appendChild(set);
 });
