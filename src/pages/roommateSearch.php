@@ -16,7 +16,7 @@
                     <form method="get" class="form-group">
                         <div class="input-group">
                             <input type="text" name="search-room" class="form-control location-border2" placeholder="Lieux"
-                                aria-label="location" aria-describedby="button-addon1" id="search" list="datalistOptions" autocomplete="off" >
+                                aria-label="location" aria-describedby="button-addon1" id="search" list="datalistOptions" autocomplete="off">
                                 <datalist id="datalistOptions"> 
                                 
                                 <?php $liste_villes = Recherches::listVille()?>
@@ -395,7 +395,7 @@
                                     <?php endif; ?>
                             </div>
                             <!-- caroussel -->
-                            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                            <div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel">
                                 <ol class="carousel-indicators">
                                 
                                     <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active">
@@ -404,7 +404,7 @@
                                     <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
                                     <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
                                 </ol>
-                                <div class="carousel-inner">
+                                <div class="carousel-inner" >
 
                                <?php $images = Recherches::photo_annonce(htmlEntities($annonce->id_chambre))?>
                                 <?php if(!$images[0]):?>
@@ -412,7 +412,7 @@
                                 <?php else :?>
                                     <?php foreach($images[1] as $image):?>
                                     <div class="carousel-item active">
-                                        <img src="../images/<?= htmlEntities($image->libelle_photo) ?>" class="d-block w-100" alt="room">
+                                        <img src="../images/<?= htmlEntities($image->libelle_photo) ?>" class="d-block w-100 " alt="room" style="height:190px;">
                                     </div>
                                     <?php endforeach; ?>
                                     <?php endif; ?>
@@ -486,7 +486,7 @@
                                  <?php else :?>
                                      <?php foreach($images[1] as $image):?>
                                      <div class="carousel-item active">
-                                         <img src="../images/<?= htmlEntities($image->libelle_photo) ?>" class="d-block w-100" alt="room">
+                                         <img src="../images/<?= htmlEntities($image->libelle_photo) ?>" class="d-block w-100" alt="room" style="height:190px;">
                                      </div>
                                      <?php endforeach; ?>
                                      <?php endif; ?>
