@@ -374,6 +374,7 @@
                 <?php foreach($annonces[1] as $annonce):?>
                 
                     <div class="m-2 mb-4">
+                    <a href="roommateDetails.php?id=<?= htmlEntities($annonce->id_chambre) ?>" class="mode-link">
                         <div class="card card-relative shadow-lg border " style="width: 18rem;">
                             <!-- icon coeur en position absolute-->
                             <div>
@@ -421,7 +422,7 @@
                             </div>
                             <!-- descriptif de l'annonce -->
                             <div class="card-body">
-                            <a href="roommateDetails.php?id=<?= htmlEntities($annonce->id_chambre) ?>" class="mode-link">
+                            
                             <!-- role -->
                                 <span class="badge bg-primary mb-1 letter-space"><?= htmlEntities($annonce->libelle_role) ?></span>
                                 <!-- titre de l'annonce -->
@@ -430,7 +431,7 @@
                                 <!-- <p class="card-text">Chambre: 1</p> -->
                                 <p class="card-text"><?= htmlEntities($annonce->date_disponibilite) ?></p>
                                 <p class="card-text"><span class="fw-bold h4"><?= htmlEntities($annonce->loyer) ?> €</span> par mois</p>
-                                <input type="text" name="room" value="" hidden>
+                                
                                 </a>
                             </div>
                         </div>
@@ -448,6 +449,7 @@
                  <?php foreach($annonces[1] as $annonce):?>
                  
                      <div class="m-2 mb-4">
+                     <a href="roommateDetails.php?id=<?= htmlEntities($annonce->id_chambre) ?>" class="mode-link">
                          <div class="card card-relative shadow-lg border " style="width: 18rem;">
                              <!-- icon coeur en position absolute-->
                              <div>
@@ -495,7 +497,7 @@
                              </div>
                              <!-- descriptif de l'annonce -->
                              <div class="card-body">
-                             <a href="roommateDetails.php?id=<?= htmlEntities($annonce->id_chambre) ?>" class="mode-link">
+                             
                              <!-- role -->
                                  <span class="badge bg-primary mb-1 letter-space"><?= htmlEntities($annonce->libelle_role) ?></span>
                                  <!-- titre de l'annonce -->
@@ -504,7 +506,7 @@
                                  <!-- <p class="card-text">Chambre: 1</p> -->
                                  <p class="card-text"><?= htmlEntities($annonce->date_disponibilite) ?></p>
                                  <p class="card-text"><span class="fw-bold h4"><?= htmlEntities($annonce->loyer) ?> €</span> par mois</p>
-                                 <input type="text" name="room" value="" hidden>
+                                
                                  </a>
                              </div>
                          </div>
