@@ -10,13 +10,13 @@
 
 <section class="container-fluid margin-search">
         <div class="row">
-            <div class="col-lg-6 col-md-12">
+            <div class="col-lg-8 col-md-12">
                 <!-- barre de recherche -->
                 <div class="input-border bg-light mb-3 input-filter">
                     <form method="get" class="form-group">
                         <div class="input-group">
                             <input type="text" name="search-room" class="form-control location-border2" placeholder="Lieux"
-                                aria-label="location" aria-describedby="button-addon1" id="search" list="datalistOptions" autocomplete="off" 
+                                aria-label="location" aria-describedby="button-addon1" id="search" list="datalistOptions" autocomplete="off" >
                                 <datalist id="datalistOptions"> 
                                 
                                 <?php $liste_villes = Recherches::listVille()?>
@@ -38,10 +38,10 @@
                     </form>
                 </div>
             </div>
-            <div class="col-md-12 col-lg-6  p-0 mt-1 d-flex flex-wrap text-start">
+            <div class="col-md-12 col-lg-4  p-0 mt-1 d-flex flex-wrap text-start">
                 <!-- bouton filtre du loyer -->
                 <!-- barre de recherche -->
-                <div class="dropdown ms-1 me-1">
+                <!-- <div class="dropdown ms-1 me-1">
                     <button class="btn btn-light btn-hidden" type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         Loyer
@@ -62,9 +62,9 @@
                             </div>
                         </form>
                     </div>
-                </div>
+                </div> -->
                 <!-- bouton filtre type -->
-                <div class="dropdown ms-1 me-1">
+                <!-- <div class="dropdown ms-1 me-1">
                     <button class="btn btn-light btn-hidden" type="button" id="dropdownMenu3" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         Type
@@ -85,10 +85,10 @@
                                 <input class="btn btn-success" type="submit" value="Appliquer">
                             </div>
                         </form>
-                    </div>
-                </div>
+                    </div> -->
+                <!-- </div> -->
                 <!-- bouton filtre disponibilité -->
-                <div class="dropdown ms-1 me-1">
+                <!-- <div class="dropdown ms-1 me-1">
                     <button class="btn btn-light btn-hidden" type="button" id="dropdownMenu4" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         Disponibilité
@@ -113,10 +113,10 @@
                             </div>
                         </form>
                     </div>
-                </div>
+                </div> -->
                 <!-- bouton plus de filtre -->
-                <div class="dropdown ms-1 me-1">
-                    <button class="btn btn-light btn-hidden" type="button" id="dropdownMenu5" data-bs-toggle="dropdown"
+                 <!-- <div class="dropdown ms-1 me-1"> -->
+                    <!-- <button class="btn btn-light btn-hidden" type="button" id="dropdownMenu5" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         Plus de filtres
                     </button>
@@ -124,19 +124,19 @@
                         <form action="" method="get">
 
                             <p class="h5 mb-3">Equipement</p>
-                            <div class="d-flex flex-wrap">
+                            <div class="d-flex flex-wrap"> -->
 
                             <!-- items -->
-                           <div class="text-center ms-2 me-2">
+                           <!-- <div class="text-center ms-2 me-2">
                             <div>
                             <input type="checkbox" class="btn-check" id="btn-check1" autocomplete="off">
                             <label class="btn btn-outline-success rounded-circle shadow  bouton-check border-light d-flex align-items-center justify-content-center" for="btn-check1"><div><img src="../images/icones/png/9e23c86.png" alt="icon" class="btn-icon"></div></label>
                             </div> 
                             <p>salon</p>
-                            </div>
+                            </div> -->
 
                             <!-- items -->
-                            <div class="text-center ms-2 me-2">
+                            <!-- <div class="text-center ms-2 me-2">
                             <div>
                             <input type="checkbox" class="btn-check" id="btn-check2" autocomplete="off">
                             <label class="btn btn-outline-success rounded-circle shadow  bouton-check border-light d-flex align-items-center justify-content-center" for="btn-check2"><div><img src="../images/icones/png/9e23c86.png" alt="icon" class="btn-icon"></div></label>
@@ -149,19 +149,19 @@
                             <hr class="dropdown-divider">
                             <p class="h5 mb-3">Règles</p>
 
-                            <div class="d-flex flex-wrap">
+                            <div class="d-flex flex-wrap"> -->
 
                             <!-- items -->
-                            <div class="text-center ms-2 me-2">
+                            <!-- <div class="text-center ms-2 me-2">
                             <div>
                             <input type="checkbox" class="btn-check" id="btn-check3" autocomplete="off">
                             <label class="btn btn-outline-success rounded-circle shadow  bouton-check border-light d-flex align-items-center justify-content-center" for="btn-check3"><div><img src="../images/icones/png/9e23c86.png" alt="icon" class="btn-icon"></div></label>
                             </div> 
                             <p>salon</p>
-                            </div>
+                            </div> -->
 
                             <!-- items -->
-                            <div class="text-center ms-2 me-2">
+                            <!-- <div class="text-center ms-2 me-2">
                             <div>
                             <input type="checkbox" class="btn-check" id="btn-check4" autocomplete="off">
                             <label class="btn btn-outline-success rounded-circle shadow  bouton-check border-light d-flex align-items-center justify-content-center" for="btn-check4"><div><img src="../images/icones/png/9e23c86.png" alt="icon" class="btn-icon"></div></label>
@@ -183,17 +183,17 @@
                             </div>
                         </form>
                     </div>
-                </div>
+                </div>  -->
                 
                     <!-- bouton modal loyer  version mobile -->
                 <!-- Button trigger modal -->
-                <button class="btn btn-light modal-btn ms-1 me-1" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <!-- <button class="btn btn-light modal-btn ms-1 me-1" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Loyer
-                </button>
+                </button> -->
                 <!-- bouton modal plus de filtre  version mobile -->
-                <button class="btn btn-light  modal-btn ms-1 me-1" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                <!-- <button class="btn btn-light  modal-btn ms-1 me-1" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal2">
                     Plus de filtres
-                </button>
+                </button> -->
                 
                 
                 <!-- Modal -->
