@@ -35,7 +35,20 @@
                                     id="search"
                                     aria-label="location" 
                                     aria-describedby="button-addon1"
+                                    list="datalistOptions" 
+                                    autocomplete="off"
                                 >
+                                <datalist id="datalistOptions"> 
+                                
+                                <?php $liste_villes = Recherches::listVille()?>
+                                <?php if(!$liste_villes[0]):?>
+                                <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
+                                <?php else :?>
+                                    <?php foreach($liste_villes[1] as $liste_ville):?>
+                                        <option value="<?=$liste_ville->libelle_ville?>">
+                                <?php endforeach; ?>
+                                <?php endif; ?>
+                                </datalist>
                                 <!-- <input type="text" class="form-control w-25 price-border" placeholder="Prix" id="price"
                                     aria-label="price" aria-describedby="button-addon2">
                                 <select class="form-select w-25 category-border" aria-label="Default select example">
