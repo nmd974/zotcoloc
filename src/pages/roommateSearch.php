@@ -16,7 +16,7 @@
                     <form method="get" class="form-group">
                         <div class="input-group">
                             <input type="text" name="search-room" class="form-control location-border2" placeholder="Lieux"
-                                aria-label="location" aria-describedby="button-addon1" id="search" list="datalistOptions" autocomplete="off">
+                                aria-label="location" aria-describedby="button-addon1" id="search" list="datalistOptions" autocomplete="off" pattern="['a-zA-ZôéèîïÉÈÎÏ]+">
                                 <datalist id="datalistOptions"> 
                                 
                                 <?php $liste_villes = Recherches::listVille()?>
