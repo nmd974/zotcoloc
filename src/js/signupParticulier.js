@@ -30,7 +30,7 @@ let titleStep = document.getElementById('title_step');
 //Declaration des pattern pour la securite et validation formulaire
 const pattern_mail = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 const pattern_number = new RegExp("[0-9]{10}");
-const pattern_general = new RegExp(/[^<->]/);
+const pattern_general = new RegExp(/<(.*)>/);
 const pattern_name = new RegExp("\\w");
 
 
@@ -41,6 +41,7 @@ btnStepEl2.addEventListener("click", (e)=>{
 
     //Verification des champs de formulaire
     let validationFormulaire = true;
+    // if(document.getElementById())
 
     //Si on rencontre un probleme alors on passe en false et on n'accède pas à la suite
     if(validationFormulaire){

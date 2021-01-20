@@ -256,12 +256,7 @@
                     </div>
 
                 </div>
-                <hr>
-                <h4 class="text-green h4 mb-4 mt-3">Quartier</h4>
-                <!-- map -->
-                <div id="mapdetails">
-                </div>
-                <hr>
+
                 <h4 class="text-green h4 mb-4 mt-3">Explorer ce logement</h4>
                 <div class="img-wrapper mb-4">
                     <div class="img-one"><img src="../images/bright-hotel-room-bed.jpg" alt="image" class="img-fluid">
