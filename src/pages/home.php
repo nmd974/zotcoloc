@@ -37,7 +37,7 @@
                                     aria-describedby="button-addon1"
                                     list="datalistOptions" 
                                     autocomplete="off"
-                                    pattern="['a-zA-ZôéèîïÉÈÎÏ]+"
+                                    
                                 >
                                 <datalist id="datalistOptions"> 
                                 
