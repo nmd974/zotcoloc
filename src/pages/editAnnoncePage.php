@@ -27,7 +27,7 @@
                         <?php else :?>
                         <?php foreach($images[1] as $image):?>
                         <div class="carousel-item active">
-                            <img src="../images/<?= $image->libelle_photo ?>" class="d-block w-100" alt="room">
+                            <img src="../images/<?= $image->libelle_photo ?>" class="d-block w-100" alt="room" style="height:190px;">
                         </div>
                         <?php endforeach; ?>
                         <?php endif; ?>
