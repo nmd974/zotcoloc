@@ -354,11 +354,6 @@ backStep4.addEventListener("click", (e)=>{
 
     e.preventDefault();
 
-    //Verification des champs de formulaire
-    let validationFormulaire = true;
-
-    //Si on rencontre un probleme alors on passe en false et on n'accède pas à la suite
-    if(validationFormulaire){
         //On gère l'affichage du bouton
         let dot = document.getElementById('dot_4');
         dot.innerHTML = `<i class="fa fa-pencil text-white" aria-hidden="true"></i>`;
@@ -375,7 +370,6 @@ backStep4.addEventListener("click", (e)=>{
         titleStep.innerHTML = `Etape 4/5:<span class="text-green"> Profils idéal et chambre</span>`;
         timeLineEl.style.width = `75%`;
         window.scrollTo(0,0);
-    }
     
 })
 

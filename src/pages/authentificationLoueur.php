@@ -20,7 +20,7 @@
             $_SESSION['role'] = 'proprietaire';
             $_SESSION['id_utilisateur'] = $_POST['id_utilisateur'];
             header_remove('Location');
-            header('Location: ./creationAnnonce.php');
+            header('Location: ./creationAnnoncePage.php');
         }
 
     }

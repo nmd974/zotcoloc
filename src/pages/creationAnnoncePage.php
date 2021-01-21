@@ -26,7 +26,7 @@
         // print_r($validationCreation);
         if($validationCreation[0]){
             header_remove('Location');
-            header('Location: ./home.php');
+            header('Location: ./compteProprietaire.php');
         }
     }
 ?>
