@@ -1,7 +1,5 @@
 ﻿# zotcoloc
 
-- Interface de message interne ==> MODAL + PAGE
-- Interface DASH 
-<div align="center">
-	<img src="https://github.com/sindresorhus/sindresorhus/raw/master/main.gif">
-</div>
+Lien du backlog => [link][link-id];
+
+[link-id]: https://docs.google.com/spreadsheets/d/14tPe0MTbctCp882RL4f6YqTeoEYqpn8_bRR_xzyjwCc/edit?usp=sharing; 
