@@ -23,7 +23,7 @@
         $validationCreation = creationAnnonce($_POST, $_FILES, $_SESSION['id_utilisateur']);
         // print_r($_POST);
         // print_r($_FILES);
-        // print_r($validationCreation);
+        print_r($validationCreation);
         if($validationCreation[0]){
             header_remove('Location');
             header('Location: ./compteProprietaire.php');

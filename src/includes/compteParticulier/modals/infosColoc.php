@@ -5,6 +5,10 @@
         <h5 class="modal-title" id="editInfosColocLabel">Modifier mes informations de colocataire</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <?php if(isset($_POST['save_edit_info_coloc'])){
+        echo 'coucou';
+      }
+      ?>
       <form method="post" enctype="multipart/form-data">
         <div class="modal-body">
             <div class="col-md-12">
