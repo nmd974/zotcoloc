@@ -14,16 +14,16 @@
 <div class="form-modal">
 <a href="./authentificationLoueur.php">Je n'ai pas de compte</a>
     <div id="login-form">
-        <form>
+        <form action="../controllers/login.php" method="POST">
             <!-- <input type="text" placeholder="Enter email or username"/> -->
-            <input type="text" name="Email" class="form-control" aria-describedby="emailHelp" required
+            <input type="text" name="emailUser" class="form-control" aria-describedby="emailHelp" required
             pattern=" [a-z0-9 ._% + -] + @ [a- z0-9 .-] + \. [az] {2,} $ " 
             placeholder="entrer adresse email"
             value="<?php if(isset($_POST['emailUser'])){echo $_POST['emailUser'];}?>">
 
 
             <!-- <input type="password" placeholder="Enter password"/> -->
-            <input type="password" class="form-control" id="Password" onkeyup="check()" required
+            <input type="password" class="form-control" id="PasswordUser" onkeyup="check()" required
             pattern=" ^ (? =. * [az] ) (? =. * [AZ]) (? =. * \ D) (? =. * [@ $!% *? &]) [A-Za-z \ d @ $!% *? &] { 8,} $"
             placeholder="entrer votre mot passe" 
             value="<?php if(isset($_POST['PasswordUser'])){echo $_POST['PasswordUser'];}?>">
