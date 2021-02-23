@@ -63,3 +63,4 @@
             <button type="button" class="btn w-25 bg-green text-white mr-5" id="step_2">Suivant</button>
         </div>
 </div>
+<?php require_once(dirname(__DIR__).'/pages/modificationlogement.php');?>
