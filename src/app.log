@@ -131,3 +131,8 @@
 [2021-02-23T11:39:36.884641+01:00] application-generale.INFO: Suppression d'un proprietaire -- TABLE PHOTO SUCCESS [] []
 [2021-02-23T11:39:36.885451+01:00] application-generale.INFO: Suppression d'un proprietaire -- RECUP LISTE LOGEMENTS [] []
 [2021-02-23T11:39:36.929327+01:00] application-generale.INFO: Suppression d'un proprietaire -- SUCCESS [] []
+[2021-02-23T11:55:27.577890+01:00] application-generale.INFO: Création d'un nouvel utilisateur -- VERIF SERVEUR OK [] []
+[2021-02-23T11:55:27.650636+01:00] application-generale.INFO: Création d'un nouvel utilisateur -- SANITIZE OK [] []
+[2021-02-23T11:55:27.663142+01:00] application-generale.INFO: Création d'un nouvel utilisateur -- TABLE UTILISATEUR OK [] []
+[2021-02-23T11:55:27.663967+01:00] application-generale.INFO: Création d'un nouvel utilisateur -- TABLE PROPRIETAIRE OK [] []
+[2021-02-23T11:55:27.727321+01:00] application-generale.INFO: Création d'un nouvel utilisateur -- Role proprietaire [] []
