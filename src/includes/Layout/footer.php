@@ -29,7 +29,4 @@
             <p class="copyright">&copy; 2021 <span class="text-green">ZotColoc.</span> All Rights Reserved.</p>
         </div>
     </footer>
-    </div>
-    <!-- /#page-content-wrapper -->
-</div>
-<!-- /#wrapper -->
+

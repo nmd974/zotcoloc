@@ -6,7 +6,8 @@
 
 <?php
     if(!$_SESSION['isLoggedIn']){
-        header('Location: ./home.php');
+        header_remove('Location');
+        header('Location: http://127.0.0.1:8000/src/pages/home.php');
     }else{
         //Chargement des données correspondantes à l'id lors de l'arrivée sur page
         $mon_compte = Utilisateurs::moncompteProprietaire($_SESSION['id_utilisateur']);
@@ -48,6 +49,7 @@
 <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/infosColoc.php');?>
 <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/infosPerso.php');?>
 <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/interets.php');?>
+<?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/deleteUser.php');?>
 <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/sidebar.php');?>
 
 <div class="container-fluid" id="wrapper-content">
