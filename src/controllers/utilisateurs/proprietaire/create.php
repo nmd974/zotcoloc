@@ -9,13 +9,13 @@ use \Waavi\Sanitizer\Sanitizer;
 $error = null;
 
 //Validation des données cote serveur + securite specialchars
-$inputRequired = ['email', 'password', 'nom_particulier', 'prenom_particulier', 'date_naissance', 'date_naissance', 'date_disponibilite'];
+$inputRequired = ['email', 'password', 'nom_proprietaire', 'prenom_proprietaire', 'telephone'];
 foreach($inputRequired as $value){
     if($_POST["$value"] == ""){
         $error = true;
         $logger->info("Création d'un nouvel utilisateur -- VERIF SERVEUR NOK");
         $_SESSION['flash'] = array('Error', "Echec lors de la création de compte");
-        header('Location: http://127.0.0.1:8000/src/pages/signupParticulier.php');
+        header('Location: http://127.0.0.1:8000/src/pages/authentificationLoueur.php');
         return '<div class="alert alert-danger" id="error_msg">Erreur dans le formulaire </br> Veuillez vérifier les champs</div>';
     }
 }
@@ -25,10 +25,9 @@ if($error == null) {
     $data = [
         'email' => $_POST['email'],
         'password' => $_POST['password'],
-        'nom_particulier' => $_POST['nom_particulier'],
-        'prenom_particulier' => $_POST['prenom_particulier'],
-        'date_naissance' => $_POST['date_naissance'],
-        'date_disponibilite' => $_POST['date_disponibilite']
+        'nom_proprietaire' => $_POST['nom_proprietaire'],
+        'prenom_proprietaire' => $_POST['prenom_proprietaire'],
+        'telephone' => $_POST['telephone']
     ];
     
     $customFilter = [
@@ -43,10 +42,9 @@ if($error == null) {
     $filters = [
         'email' => 'trim|escape|lowercase|htmlspecialchars',
         'password' => 'hash',
-        'nom_particulier' => 'trim|escape|capitalize|htmlspecialchars',
-        'prenom_particulier' => 'trim|escape|capitalize|htmlspecialchars',
-        'date_naissance' => 'format_date:Y-m-d, Y-m-d|htmlspecialchars',
-        'date_disponibilite' => 'trim|format_date:Y-m-d, Y-m-d|htmlspecialchars',
+        'nom_proprietaire' => 'trim|escape|capitalize|htmlspecialchars',
+        'prenom_proprietaire' => 'trim|escape|capitalize|htmlspecialchars',
+        'telephone' => 'digit|htmlspecialchars'
     ];
     
     $sanitizer = new Sanitizer($data, $filters,  $customFilter);
@@ -72,15 +70,15 @@ if($error == null) {
             ));
             $logger->info("Création d'un nouvel utilisateur -- TABLE UTILISATEUR OK");
             //AJOUT TABLE PARTICULIER
-            $query = 'INSERT INTO `particulier`(`id`, `id_utilisateur`, `nom`, `prenom`, `pseudo`, `date_naissance`, `date_disponibilite`)
+            $query = 'INSERT INTO `proprietaire`(`id`, `id_utilisateur`, `nom`, `prenom`, `pseudo`, `date_naissance`, `date_disponibilite`)
             VALUES (:id, :id_utilisateur, :nom, :prenom, :pseudo, :date_naissance, :date_disponibilite)';
             $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
             $sth->execute(array(
                 ':id' => $id,
                 ':id_utilisateur' => $id_utilisateur,
-                ':nom' => $_POST['nom_particulier'],
-                ':prenom' => $_POST['prenom_particulier'],
-                ':pseudo' => $_POST['prenom_particulier'].$_POST['nom_particulier'],
+                ':nom' => $_POST['nom_proprietaire'],
+                ':prenom' => $_POST['prenom_proprietaire'],
+                ':pseudo' => $_POST['prenom_proprietaire'].$_POST['nom_proprietaire'],
                 ':date_naissance' => $_POST['date_naissance'],
                 ':date_disponibilite' => $_POST['date_disponibilite']
             ));

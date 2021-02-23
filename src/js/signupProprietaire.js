@@ -2,7 +2,7 @@ document.getElementById('ajouter_proprietaire').addEventListener("click", (e)=>{
     
     e.preventDefault();
     //Verification si email en doublon
-    
+    validator_signup_proprietaire();
     if($('#proprietaire_inscription').valid()){
         var email = document.getElementById('email').value;
         var xmlhttp = new XMLHttpRequest();

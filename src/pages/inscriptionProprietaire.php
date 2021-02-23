@@ -9,22 +9,22 @@
 <!-- Gestion de l'inscription -->
 <?php
     //On défini les id pour le traitement
-    $_POST['id_utilisateur'] = md5(uniqid(rand(), true));
-    $_POST['id_proprietaire'] = md5(uniqid(rand(), true));
-    //On declare le declenchement du traitement
-    if(isset($_POST['ajout_proprietaire'])){
-        //On lance la fonction associée
-        $inscriptionValide = ajoutProprietaire($_POST);
-        if($inscriptionValide[0]){
-            //Donc on se logged et retour vers creer annonce
-            $_SESSION['isLoggedIn'] = true;
-            $_SESSION['role'] = 'proprietaire';
-            $_SESSION['id_utilisateur'] = $_POST['id_utilisateur'];
-            header_remove('Location');
-            header('Location: ./creationAnnonce.php');
-        }
+    // $_POST['id_utilisateur'] = md5(uniqid(rand(), true));
+    // $_POST['id_proprietaire'] = md5(uniqid(rand(), true));
+    // //On declare le declenchement du traitement
+    // if(isset($_POST['ajout_proprietaire'])){
+    //     //On lance la fonction associée
+    //     $inscriptionValide = ajoutProprietaire($_POST);
+    //     if($inscriptionValide[0]){
+    //         //Donc on se logged et retour vers creer annonce
+    //         $_SESSION['isLoggedIn'] = true;
+    //         $_SESSION['role'] = 'proprietaire';
+    //         $_SESSION['id_utilisateur'] = $_POST['id_utilisateur'];
+    //         header_remove('Location');
+    //         header('Location: ./creationAnnonce.php');
+    //     }
 
-    }
+    // }
 ?>
 <div class="container">
     <div class="mb-5 subtitle">
@@ -51,6 +51,7 @@
         <input type="text" name="nom_proprietaire" class="form-control" id="nom_proprietaire" value="<?php if(isset($_POST['nom_proprietaire'])){
             echo $_POST['nom_proprietaire'];
         }?>">
+        
     </div>
     <!--Prenom-->
     <div class="col-md-12">
@@ -72,6 +73,7 @@
         <input type="email" class="form-control" id="email" name="email" value="<?php if(isset($_POST['email'])){
             echo $_POST['email'];
         }?>">
+        <em id="valid_email"></em>
     </div>
     <!--mot passe-->
     <div class="col-md-12">
