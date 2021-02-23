@@ -59,7 +59,7 @@
         </div> -->
 
         <div class="contact_zotcoloc">
-        <a role="button" class="list-group-item list-group-item-action sidebar_item" data-bs-toggle="modal" data-bs-target="#deleteUser" id="infosNav">
+        <a role="button" class="list-group-item list-group-item-action sidebar_item" data-bs-toggle="modal" data-bs-target="#deleteUserProprietaire" id="infosNav">
 
             <i class="fa fa-trash icone_sidebar" aria-hidden="true"></i>
             Supprimer mon compte

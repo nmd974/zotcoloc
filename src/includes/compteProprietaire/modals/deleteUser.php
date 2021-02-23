@@ -1,4 +1,4 @@
-<div class="modal fade" id="deleteUser" tabindex="-1">
+<div class="modal fade" id="deleteUserProprietaire" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header bg-danger">

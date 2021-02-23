@@ -1,6 +1,6 @@
 <?php
-
-require_once(dirname(dirname(dirname(__DIR__))).'/libs/session/session.php');
+require_once(dirname(dirname(dirname(__DIR__))).'/includes/Layout/header.php');
+// require_once(dirname(dirname(dirname(__DIR__))).'/libs/session/session.php');
 require_once(__ROOT__ . '/src/class/Connection.php');
 require_once(__ROOT__ . '/src/libs/gestionLogs.php');
 
@@ -36,7 +36,7 @@ if(isset($_POST['id']) && isset($_POST['id_proprietaire'])){
             $logger->info("Suppression d'un proprietaire -- RECUP PHOTO UTILISATEUR");
 
             
-            if(count($data) > 0){
+            if(count($photo_utilisateur) > 0){
                 $oldFilename = __ROOT__."/src/images/" . $photo_utilisateur[0]->libelle_photo;
                 unlink($oldFilename);
                 $logger->info("Suppression d'un proprietaire -- PHOTO UNLINK OK");
@@ -205,3 +205,6 @@ if(isset($_POST['id']) && isset($_POST['id_proprietaire'])){
     $_SESSION['flash'] = array('Error', "Echec lors de la suppression de compte");
     header('Location: http://127.0.0.1:8000/src/pages/compteProprietaire.php');
 }
+
+require_once(dirname(__DIR__).'/includes/Layout/scriptsSrc.php');
+require_once(dirname(__DIR__).'/includes/Layout/finbalise.php');
