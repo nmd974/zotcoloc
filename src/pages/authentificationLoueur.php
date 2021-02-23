@@ -40,11 +40,11 @@
 <div class="form-modal">
 <div id="signup-form" class="mb-5">
 <a href="./seconnecter.php" class="mt-4 mx-3">J'ai déjà un compte</a>
-<?php if(isset($inscriptionValide) && !$inscriptionValide[0]):?>
-    <div class="alert alert-danger mb-2"><?=  $inscriptionValide[1] ?></div>
+<?php if(isset($_SESSION['flash'])):?>
+    <div class="alert alert-danger mb-2"><?=  $_SESSION['flash'][1] ?></div>
 <?php endif;?>
 
-<form method="POST" enctype="multipart/form-data" id="proprietaire_inscription">
+<form method="POST" enctype="multipart/form-data" id="proprietaire_inscription" action="http://127.0.0.1:8000/src/controllers/utilisateurs/proprietaire/create.php">
     <!--Nom-->
     <div class="col-md-12 mb-3">
         <label for="nom_proprietaire" class="form-label">Nom*</label><br>
