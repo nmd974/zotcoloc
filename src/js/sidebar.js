@@ -87,16 +87,16 @@ if(window.innerWidth <= 426){
           precedentEl = e.target.id;
         }
           break;
-        case "infosNav":
-        title_haut.innerHTML = "informations"
-        title_bas.innerHTML = `Zotcoloc-<span class="text-green">informations</span>`
-        if(precedentEl !== e.target.id){
-          document.getElementById(`${e.target.id}_content`).classList.remove("unshow_step");
-          document.getElementById(`${precedentEl}_content`).classList.add("unshow_step");
+        // case "infosNav":
+        // title_haut.innerHTML = "suppression de compte"
+        // title_bas.innerHTML = `Zotcoloc-<span class="text-green">informations</span>`
+        // if(precedentEl !== e.target.id){
+        //   document.getElementById(`${e.target.id}_content`).classList.remove("unshow_step");
+        //   document.getElementById(`${precedentEl}_content`).classList.add("unshow_step");
           
-          precedentEl = e.target.id;
-        }
-          break;
+        //   precedentEl = e.target.id;
+        // }
+        //   break;
       
         default:
           title_haut.innerHTML = "mon profil"

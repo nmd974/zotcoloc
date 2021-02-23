@@ -57,12 +57,14 @@
             
         </div> -->
         <div class="contact_zotcoloc">
-        <a role="button" class="list-group-item list-group-item-action sidebar_item" href="../controllers/delete.php?id=<?= $_SESSION['id_utilisateur'] ?>" id="infosNav">
+        <a role="button" class="list-group-item list-group-item-action sidebar_item" data-bs-toggle="modal" data-bs-target="#deleteUser" id="infosNav">
+
             <i class="fa fa-trash icone_sidebar" aria-hidden="true"></i>
             Supprimer mon compte
+
         </a>
             
-        </div>
+        </div>            
         
         <div class="footer_sidebar text-center">
             <p>&copy; 2021 <span class="text-green">ZotColoc.</span> All Rights Reserved.</p>
