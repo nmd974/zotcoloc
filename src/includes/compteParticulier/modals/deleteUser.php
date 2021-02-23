@@ -7,7 +7,7 @@
       </div>
       <form method="post" enctype="multipart/form-data" action="http://127.0.0.1:8000/src/controllers/utilisateurs/particulier/delete.php">
         <div class="modal-body text-center">
-            <div>Etes vous sûr de vouloir supprimer ce contrat ?</div>
+            <div>Etes vous sûr de vouloir supprimer votre compte ?</div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>

@@ -14,7 +14,7 @@
 <div class="form-modal">
 <a href="./authentificationLoueur.php">Je n'ai pas de compte</a>
     <div id="login-form">
-        <form>
+        <form action="">
             <!-- <input type="text" placeholder="Enter email or username"/> -->
             <input type="text" name="email" class="form-control" aria-describedby="emailHelp" required
             pattern=" [a-z0-9 ._% + -] + @ [a- z0-9 .-] + \. [az] {2,} $ " 
