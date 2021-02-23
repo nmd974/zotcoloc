@@ -33,9 +33,3 @@
     <!-- /#page-content-wrapper -->
 </div>
 <!-- /#wrapper -->
-
-
-
-<!-- <script src="../js/media.js"></script> -->
-<!-- <script src="../js/signupParticulier.js"></script> -->
-<!-- <script src="../js/sidebar.js"></script> -->
