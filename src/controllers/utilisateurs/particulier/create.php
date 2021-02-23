@@ -50,7 +50,7 @@ if($error == null) {
     ];
     
     $sanitizer = new Sanitizer($data, $filters,  $customFilter);
-    $sanitizer->sanitize();
+    $data_sanitized = $sanitizer->sanitize();
     $logger->info("Création d'un nouvel utilisateur -- SANITIZE OK");
     //Connexion à la BDD
     $db = Connection::getPDO();
@@ -67,8 +67,8 @@ if($error == null) {
             $sth->execute(array(
                 ':id' => $id_utilisateur,
                 ':id_role' => 4,
-                ':email' => $_POST['email'],
-                ':password_user' => $_POST['password']
+                ':email' => $data_sanitized['email'],
+                ':password_user' => $data_sanitized['password']
             ));
             $logger->info("Création d'un nouvel utilisateur -- TABLE UTILISATEUR OK");
             //AJOUT TABLE PARTICULIER
@@ -78,11 +78,11 @@ if($error == null) {
             $sth->execute(array(
                 ':id' => $id,
                 ':id_utilisateur' => $id_utilisateur,
-                ':nom' => $_POST['nom_particulier'],
-                ':prenom' => $_POST['prenom_particulier'],
-                ':pseudo' => $_POST['prenom_particulier'].$_POST['nom_particulier'],
-                ':date_naissance' => $_POST['date_naissance'],
-                ':date_disponibilite' => $_POST['date_disponibilite']
+                ':nom' => $data_sanitized['nom_particulier'],
+                ':prenom' => $data_sanitized['prenom_particulier'],
+                ':pseudo' => $data_sanitized['prenom_particulier'].$data_sanitized['nom_particulier'],
+                ':date_naissance' => $data_sanitized['date_naissance'],
+                ':date_disponibilite' => $data_sanitized['date_disponibilite']
             ));
             $logger->info("Création d'un nouvel utilisateur -- TABLE PARTICULIER OK");
             //AJOUT DES INTERETS

@@ -75,7 +75,7 @@ const validator_signup_proprietaire = () => {
                 required: true,
                 equalTo: '#password'
             },
-            prenom_proprietaire:{
+            nom_proprietaire:{
                 required: true
             },
             prenom_proprietaire:{

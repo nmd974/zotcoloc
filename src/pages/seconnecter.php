@@ -16,22 +16,22 @@
     <div id="login-form">
         <form >
             <!-- <input type="text" placeholder="Enter email or username"/> -->
-            <input type="text" name="Email" class="form-control" aria-describedby="emailHelp" required
+            <input type="text" name="email" class="form-control" aria-describedby="emailHelp" required
             pattern=" [a-z0-9 ._% + -] + @ [a- z0-9 .-] + \. [az] {2,} $ " 
             placeholder="entrer adresse email"
-            value="<?php if(isset($_POST['emailUser'])){echo $_POST['emailUser'];}?>">
+            value="<?php if(isset($_POST['email'])){echo $_POST['email'];}?>">
 
 
             <!-- <input type="password" placeholder="Enter password"/> -->
-            <input type="password" class="form-control" id="Password" onkeyup="check()" required
+            <input type="password" name="password" class="form-control" id="Password" onkeyup="check()" required
             pattern=" ^ (? =. * [az] ) (? =. * [AZ]) (? =. * \ D) (? =. * [@ $!% *? &]) [A-Za-z \ d @ $!% *? &] { 8,} $"
             placeholder="entrer votre mot passe" 
-            value="<?php if(isset($_POST['PasswordUser'])){echo $_POST['PasswordUser'];}?>">
+            value="<?php if(isset($_POST['password'])){echo $_POST['password'];}?>">
 
 
 
 
-            <button type="button" class="btn login">Je me connecte</button>
+            <button type="submit" class="btn login">Je me connecte</button>
             <!-- <p><a href="javascript:void(0)">Forgot password</a> </p>
           <p><a href="javascript:void(0)" onclick="toggleSignup()">Register Account</a> </p> -->
           
