@@ -10,13 +10,11 @@
             { 
                 $error = true;
                 return array($error, '<div class="alert alert-danger">Le fichier n\'est pas une image !!</div>');
-                exit();
             }
         if($image_upload['error'][$indiceArray] > 0)//On verifie dans la variable $_FILES s'il n'y a pas d'erreur interne
             {
                 $error = true;
                 return array($error, '<div class="alert alert-danger">Erreur survenue lors du transfert de l\'image</div>'); //Si oui alors on arrete la fonction et on affiche qu'il y a eu une erreur lors du transfert
-                exit();
             }
         $maxSize = 10485760; //On spécifie ici la taille maximale de l'image en bytes ici equivalent à 10mo 10485760
         $fileSize = $image_upload['size'][$indiceArray];//On recupere via la $_FILES la taille de l'image ajoutée dans l'input
@@ -24,7 +22,6 @@
             {
                 $error = true;
                 return array($error, '<div class="alert alert-danger"> Le fichier est trop lourd !!</div>'); //Si trop lourd alors on envoie le message que le fichier est trop lourd
-                exit();
             }
         if(!$error){
             //Arrive ici cela veut dire que nos vérifications on été validées alors on peut procéder à l'envoie de l'image dans son bon dossier
@@ -50,13 +47,11 @@
             { 
                 $error = true;
                 return array($error, '<div class="alert alert-danger">Le fichier n\'est pas une image !!</div>');
-                exit();
             }
         if($image_upload['error'] > 0)//On verifie dans la variable $_FILES s'il n'y a pas d'erreur interne
             {
                 $error = true;
                 return array($error, '<div class="alert alert-danger">Erreur survenue lors du transfert de l\'image</div>'); //Si oui alors on arrete la fonction et on affiche qu'il y a eu une erreur lors du transfert
-                exit();
             }
         $maxSize = 10485760; //On spécifie ici la taille maximale de l'image en bytes ici equivalent à 10mo 10485760
         $fileSize = $image_upload['size'];//On recupere via la $_FILES la taille de l'image ajoutée dans l'input
@@ -64,7 +59,6 @@
             {
                 $error = true;
                 return array($error, '<div class="alert alert-danger"> Le fichier est trop lourd !!</div>'); //Si trop lourd alors on envoie le message que le fichier est trop lourd
-                exit();
             }
         if(!$error){
             //Arrive ici cela veut dire que nos vérifications on été validées alors on peut procéder à l'envoie de l'image dans son bon dossier

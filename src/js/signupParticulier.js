@@ -343,35 +343,35 @@ btnStepEl3.addEventListener("click", (e)=>{
     })
 
     /***GESTION DU CLIC SUR JE M'INSCRIS */
-    document.getElementById('inscription_btn').addEventListener('click', (e) => {
-        e.preventDefault();
-        console.log(e);
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            console.log(this);
-            if (this.readyState == 4 && this.status == 202) {
-                document.getElementById("valid_email").innerHTML = this.responseText;
-                document.getElementById("valid_email").style.color = 'red';
-                document.getElementById('email').classList.add('is-invalid');             
-            }
-        };
-        var villes = document.querySelectorAll(`input[name="villes"]:checked`);
-        var villeList = [1, 2];
-        villes.forEach(ville => {
+    // document.getElementById('inscription_btn').addEventListener('click', (e) => {
+    //     e.preventDefault();
+    //     console.log(e);
+    //     var xmlhttp = new XMLHttpRequest();
+    //     xmlhttp.onreadystatechange = function() {
+    //         console.log(this);
+    //         if (this.readyState == 4 && this.status == 202) {
+    //             document.getElementById("valid_email").innerHTML = this.responseText;
+    //             document.getElementById("valid_email").style.color = 'red';
+    //             document.getElementById('email').classList.add('is-invalid');             
+    //         }
+    //     };
+    //     var villes = document.querySelectorAll(`input[name="villes"]:checked`);
+    //     var villeList = [1, 2];
+    //     villes.forEach(ville => {
 
-        })
-        var data = {
-            // email: document.getElementById('email').value,
-            // password : document.getElementById('password').value,
-            // nom_particulier : document.getElementById('nom_particulier').value,
-            // prenom_particulier : document.getElementById('prenom_particulier').value,
-            // date_naissance : document.getElementById('date_naissance').value,
-            // date_disponibilite : document.getElementById('date_disponibilite').value,
-            ville : villeList
-        };
-        xmlhttp.open("POST", "http://127.0.0.1:8000/src/controllers/utilisateurs/particulier/create.php?ville=[1 ,2]", true);
-        xmlhttp.send(data);
-    })
+    //     })
+    //     var data = {
+    //         // email: document.getElementById('email').value,
+    //         // password : document.getElementById('password').value,
+    //         // nom_particulier : document.getElementById('nom_particulier').value,
+    //         // prenom_particulier : document.getElementById('prenom_particulier').value,
+    //         // date_naissance : document.getElementById('date_naissance').value,
+    //         // date_disponibilite : document.getElementById('date_disponibilite').value,
+    //         ville : villeList
+    //     };
+    //     xmlhttp.open("POST", "http://127.0.0.1:8000/src/controllers/utilisateurs/particulier/create.php?ville=[1 ,2]", true);
+    //     xmlhttp.send(data);
+    // })
     // Gestion de l'enregistrement des interets
     // let btn1 = document.querySelectorAll('div.interets_ajax label');
     // btn1.forEach(element => {

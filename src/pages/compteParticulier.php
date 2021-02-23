@@ -21,6 +21,7 @@
         $mes_annonces = Utilisateurs::annoncesParticulier($_SESSION['id_utilisateur']);
     }
 ?>
+
 <?php if(isset($_POST['save_photo_user'])):?>
   <?php if(empty($ma_photo[1])):?>
       <?php $ajout_photo = photoUtilisateur($_FILES['image_upload'], $_SESSION['id_utilisateur'], '');?>
@@ -61,6 +62,7 @@
 <?php require_once(dirname(__DIR__).'/includes/compteParticulier/modals/infosColoc.php');?>
 <?php require_once(dirname(__DIR__).'/includes/compteParticulier/modals/infosPerso.php');?>
 <?php require_once(dirname(__DIR__).'/includes/compteParticulier/modals/interets.php');?>
+<?php require_once(dirname(__DIR__).'/includes/compteParticulier/modals/deleteUser.php');?>
 <?php require_once(dirname(__DIR__).'/includes/compteParticulier/sidebar.php');?>
 
 <div class="container-fluid" id="wrapper-content">

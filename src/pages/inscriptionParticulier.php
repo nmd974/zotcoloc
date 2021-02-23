@@ -46,7 +46,7 @@
     <!--Verification si erreur-->
 
     <!--On fait afficher la page selon l'id des step de chaque bloc en jqurey-->
-    <form method="POST" enctype="multipart/form-data" id="formulaire_inscription">
+    <form method="POST" enctype="multipart/form-data" id="formulaire_inscription" action="../controllers/utilisateurs/particulier/create.php">
         <?php require_once(dirname(__DIR__).'/includes/signupFormParticulier/step_1.php');?>
         <?php require_once(dirname(__DIR__).'/includes/signupFormParticulier/step_2.php');?>
         <?php require_once(dirname(__DIR__).'/includes/signupFormParticulier/step_3.php');?>
