@@ -1,26 +1,5 @@
-<?php
-    session_start();
-    define('__ROOT__', dirname(dirname(dirname(__DIR__))));
-    // header_remove('Location');
-    //Pour la prod particulier
-    // $_SESSION['isLoggedIn'] = true;
-    // $_SESSION['role'] = 'particulier';
-    // $_SESSION['id_utilisateur'] = '80b571b5a9e3a9d0324f930fd9a7c7f0';
-        //Pour la prod proprietaire
-    // $_SESSION['isLoggedIn'] = true;
-    // $_SESSION['role'] = 'proprietaire';
-    // $_SESSION['id_utilisateur'] = '33a0eb73790689cf911e4560a2cb46c6';
-    // Ici on détermine les superglobales pour la gestion de la session log ou pas
-    if(!isset($_SESSION['isLoggedIn'])){
-        $_SESSION['isLoggedIn'] = false;
-    }
-    if(!isset($_SESSION['role'])){
-        $_SESSION['role'] = false;
-    }
-    if(!isset($_SESSION['id_utilisateur'])){
-        $_SESSION['id_utilisateur'] = false;
-    }
-?>
+<?php require_once(dirname(dirname(__DIR__)).'/libs/session/session.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,7 +26,23 @@
     
   <div class="d-flex" id="wrapper">
 
-    
+<!--LOADER-->
+  <div class="h-100 w-100 bg-light position-absolute d-flex justify-content-center align-items-center" id="loader_wrapper"  style="z-index: 10001">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+
+<div class="position-fixed bottom-0 start-50 translate-middle-x" style="z-index: 10002">
+  <div class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" id="liveToast" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        TEST
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
 <!-- Page Content -->
 <div id="page-content-wrapper">
     <header>

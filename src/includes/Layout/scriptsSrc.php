@@ -5,3 +5,11 @@
     crossorigin="anonymous"></script>
 <!-- script jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+
+<!--FIN LOADER-->
+<script>document.getElementById('loader_wrapper').remove();</script>
+<script>    
+    var toast = new bootstrap.Toast(document.getElementById('liveToast'))
+    toast.show();
+</script>
