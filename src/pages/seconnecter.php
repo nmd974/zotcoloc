@@ -1,4 +1,5 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
+<?php require_once(dirname(__DIR__).'/controllers/login.php');?>
 <div class="container">
     <div class="mb-5 subtitle">
         <div class="border-one ps-1">
@@ -14,7 +15,7 @@
 <div class="form-modal">
 <a href="./authentificationLoueur.php">Je n'ai pas de compte</a>
     <div id="login-form">
-        <form action="../controllers/login.php" method="POST">
+        <form action="" method="POST">
             <!-- <input type="text" placeholder="Enter email or username"/> -->
             <input type="text" name="emailUser" class="form-control" aria-describedby="emailHelp" required
             pattern=" [a-z0-9 ._% + -] + @ [a- z0-9 .-] + \. [az] {2,} $ " 
