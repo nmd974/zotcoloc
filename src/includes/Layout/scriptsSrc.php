@@ -9,7 +9,10 @@
 
 <!--FIN LOADER-->
 <script>document.getElementById('loader_wrapper').remove();</script>
+<?php if(isset($_SESSION['flash'])):?>
 <script>    
     var toast = new bootstrap.Toast(document.getElementById('liveToast'))
     toast.show();
+    <?php unset($_SESSION['flash']);?>
 </script>
+<?php endif; ?>

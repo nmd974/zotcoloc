@@ -49,10 +49,17 @@
                 <span class="badge bg-danger"><?= count($mes_annonces[1])?></span>
             </a>
         </div>
-        <div class="contact_zotcoloc">
+        <!-- <div class="contact_zotcoloc">
         <a role="button" class="list-group-item list-group-item-action sidebar_item" id="infosNav">
             <i class="fa fa-info-circle icone_sidebar" aria-hidden="true"></i>
             Informations zotcoloc
+        </a>
+            
+        </div> -->
+        <div class="contact_zotcoloc">
+        <a role="button" class="list-group-item list-group-item-action sidebar_item" href="../controllers/delete.php?id=<?= $_SESSION['id_utilisateur'] ?>" id="infosNav">
+            <i class="fa fa-trash icone_sidebar" aria-hidden="true"></i>
+            Supprimer mon compte
         </a>
             
         </div>

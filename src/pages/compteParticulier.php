@@ -21,6 +21,7 @@
         $mes_annonces = Utilisateurs::annoncesParticulier($_SESSION['id_utilisateur']);
     }
 ?>
+
 <?php if(isset($_POST['save_photo_user'])):?>
   <?php if(empty($ma_photo[1])):?>
       <?php $ajout_photo = photoUtilisateur($_FILES['image_upload'], $_SESSION['id_utilisateur'], '');?>
