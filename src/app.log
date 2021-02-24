@@ -230,3 +230,8 @@
 [2021-02-24T11:11:26.005047+01:00] application-generale.INFO: Creation d'une annonce -- TABLE PHOTOS OK [] []
 [2021-02-24T11:11:26.006693+01:00] application-generale.INFO: Creation d'une annonce -- TABLE PHOTO CHAMBRE OK [] []
 [2021-02-24T11:11:26.042043+01:00] application-generale.INFO: Creation d'une annonce -- FIN DES REQ [] []
+[2021-02-24T10:33:43.613059+00:00] application-generale.INFO: Création d'un nouvel utilisateur -- VERIF SERVEUR OK [] []
+[2021-02-24T10:33:43.681795+00:00] application-generale.INFO: Création d'un nouvel utilisateur -- SANITIZE OK [] []
+[2021-02-24T10:33:43.684012+00:00] application-generale.INFO: Création d'un nouvel utilisateur -- TABLE UTILISATEUR OK [] []
+[2021-02-24T10:33:43.684438+00:00] application-generale.INFO: Création d'un nouvel utilisateur -- TABLE PROPRIETAIRE OK [] []
+[2021-02-24T10:33:43.685748+00:00] application-generale.INFO: Création d'un nouvel utilisateur -- Role proprietaire [] []
