@@ -2,7 +2,7 @@
 
 class Annonces {
 
- 
+ //A MODIFIER POUR RAJOUTER ACTIVER
 
     public static function annonce_total()
     {
