@@ -16,7 +16,6 @@ foreach($inputRequired as $value){
         $logger->info("Champs vides de connexion -- VERIF SERVEUR NOK"); //NOK= non OK
         $_SESSION['flash'] = array('Error', "Echec lors de la connexion au compte","Erreur dans le formulaire </br> Veuillez vérifier votre email ou votre mot de passe");
         header('Location: http://127.0.0.1:8000/src/pages/seconnecter.php');
-      
         exit();
     }
 }
@@ -27,7 +26,7 @@ if($error == null) {
         'email' => $_POST['email'],
         'password' => $_POST['password']   
     ];
-    
+    //filtre personnalisé
     $customFilter = [
         'htmlspecialchars' => function($value, $options = []){
             return htmlspecialchars($value, ENT_QUOTES);
@@ -39,30 +38,29 @@ if($error == null) {
         'password' => 'htmlspecialchars'
     ];
     
-    $sanitizer = new Sanitizer($data, $filters,  $customFilter);
-    $data_sanitized = $sanitizer->sanitize();
+    $sanitizer = new Sanitizer($data, $filters, $customFilter);
+    $data_sanitized = $sanitizer->sanitize(); //stock des valeurs des inputs nettoyer (désinfecter, antiCOVID)
     
-    $logger->info("Connexion d'un nouvel utilisateur -- SANITIZE OK");
+    $logger->info("Valeurs des inputs nettoyer utilisateur -- SANITIZE OK");
     //Connexion à la BDD
     $db = Connection::getPDO();
     if($db){
 
         try{
-
             //COMPARAISON DE L'EMAIL AVEC LA TABLE UTILISATEURS
             $query = 'SELECT * FROM `utilisateurs` INNER JOIN `roles` ON utilisateurs.id_role = roles.id WHERE `email`=:email';
             $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
             $sth->execute(array(
                 ':email' => $data_sanitized['email']   
             ));
-            $resultat = $sth->fetchAll(PDO::FETCH_OBJ);
-            $logger->info("Comparaison de l'email avec la table utilisateur -- EMAIL / TABLE UTILISATEUR OK");
+            $resultat = $sth->fetchAll(PDO::FETCH_OBJ); //stock dans une variable les données de la bdd 
+            $logger->info("Recuperation des données Utilisateur -- EMAIL / TABLE UTILISATEUR OK");
 
             //COMPARAISON DU PASSWORD AVEC LA TABLE UTILISATEURS
-           
             if (!$resultat){
                 // echo 'Mauvais identifiant ou mot de passe!';
                 $_SESSION['flash'] = array('Error',"Echec lors de la connexion au compte", "Mauvais identifiant ou mot de passe!!");
+                $logger->info("Email inexistant Utilisateur -- EMAIL / TABLE UTILISATEUR NOK");
                 header('Location: http://127.0.0.1:8000/src/pages/seconnecter.php');
             } else {
                 $passwordCorrect = password_verify($data_sanitized['password'],$resultat[0]->password);
@@ -72,6 +70,7 @@ if($error == null) {
                     $_SESSION['isLoggedIn'] = true;
                     $_SESSION['role'] = $resultat[0]->libelle_role; //faire jointure
                     $_SESSION['id_utilisateur'] = $resultat[0]->id;
+                    $logger->info("Connexion Utilisateur -- CONNEXION UTILISATEUR OK");
                     header('Location: http://127.0.0.1:8000/src/pages/home.php');
                     
                 }else{
@@ -79,25 +78,13 @@ if($error == null) {
                     //var_dump($data_sanitized);
                     //var_dump($resultat[0]->password);
                     $_SESSION['flash'] = array('Error',"Echec lors de la connexion au compte", "Mauvais identifiant ou mot de passe!!!");
+                    $logger->info("Mot de passe incorrect Utilisateur -- MOT DE PASSE UTILISATEUR NOK");
                     header('Location: http://127.0.0.1:8000/src/pages/seconnecter.php');
                 }
             }
 
-
-            //$query = 'SELECT `password` FROM `utilisateurs` WHERE `email`=:email';
-            //$sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
-            //$sth->execute(array(
-            //  ':password' => $data_sanitized['password']            
-           // ));
-           // $password = $sth->fetchAll(PDO::FETCH_OBJ);
-           // $logger->info("Comparaison de password avec la table utilisateur -- password / TABLE UTILISATEUR OK");
-
-            // On complete les valeurs pour session
-           
-            
         }catch(PDOException $e){
             $error = $e->getMessage();
-          
             $logger->error("'Mauvais identifiant ou mot de passe!' -- $error");
             // http_response_code(400);
             $_SESSION['flash'] = array('Error',"Echec lors de laconnexion de compte", "Mauvais identifiant ou mot de passe!");
