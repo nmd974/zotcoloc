@@ -104,7 +104,7 @@
 
     <!--button validation inscription-->
     <div class="col-12 text-end my-4">
-        <button type="submit" class="btn w-25 bg-green text-white mr-5" name="ajouter" id="step_5">Je m'inscris</button>
+        <button type="submit" class="btn w-25 bg-green text-white mr-5" name="ajouter" id="inscription_btn">Je m'inscris</button>
     </div>
 
 </div>

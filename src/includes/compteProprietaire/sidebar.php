@@ -50,13 +50,23 @@
                 <span class="badge bg-danger"><?= count($mes_annonces[1])?></span>
             </a>
         </div>
-        <div class="contact_zotcoloc">
+        <!-- <div class="contact_zotcoloc">
         <a role="button" class="list-group-item list-group-item-action sidebar_item" id="infosNav">
             <i class="fa fa-info-circle icone_sidebar" aria-hidden="true"></i>
             Informations zotcoloc
         </a>
             
-        </div>
+        </div> -->
+
+        <div class="contact_zotcoloc">
+        <a role="button" class="list-group-item list-group-item-action sidebar_item" data-bs-toggle="modal" data-bs-target="#deleteUserProprietaire" id="infosNav">
+
+            <i class="fa fa-trash icone_sidebar" aria-hidden="true"></i>
+            Supprimer mon compte
+
+        </a>
+            
+        </div>  
         
         <div class="footer_sidebar text-center">
             <p>&copy; 2021 <span class="text-green">ZotColoc.</span> All Rights Reserved.</p>
