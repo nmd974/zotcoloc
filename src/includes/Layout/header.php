@@ -86,12 +86,14 @@
                             <li class="nav-item">
                                 <a href="./roommateSearch.php" class="nav-link active" aria-current="page">Recherche</a>
                             </li>
+                            <?php if(!$_SESSION['isLoggedIn']):?>
                             <li class="nav-item">
                                 <a href="./inscriptionParticulier.php" class="nav-link active" aria-current="page">Créer un compte</a>
                             </li>
                             <li class="nav-item">
                                 <a href="./deposerAnnonce.php" class="nav-link active" aria-current="page">Désposer une annonce</a>
                             </li>
+                            <?php endif; ?>
                             <?php if($_SESSION['isLoggedIn'] && $_SESSION['role'] == "proprietaire"):?>
                                 <li class="nav-item">
                                     <a href="./creationAnnoncePage.php" class="nav-link active" aria-current="page">Créer une Annonce</a>
