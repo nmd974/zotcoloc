@@ -92,23 +92,6 @@ if($error == null) {
     $data_sanitized = $sanitizer->sanitize();
 // TODO : Faille via les id en input mettre en sanitize
     $logger->info("Creation d'une annonce -- SANITIZE OK");
-    // foreach($_POST as $value){
-    //     $logger->info("POST : " . $value);
-    // }
-    // foreach($data_sanitized as $value){
-    //     $logger->info("sanitize : " . $value);
-    // }
-    // $logger->info($id_logement);
-    // $logger->info($_POST['profil']);
-    // $logger->info($data_sanitized['ville']);
-    // $logger->info($_SESSION['id_utilisateur']);
-    // $logger->info($data_sanitized['titre_logement']);
-    // $logger->info($data_sanitized['surface_logement']);
-    // $logger->info($_POST['meuble']);
-    // $logger->info($_POST['aides_logement']);
-    // $logger->info($data_sanitized['age_max']);
-
-    // $logger->info($data_sanitized['type_logement']);
 
     //Connexion à la BDD
     $db = Connection::getPDO();

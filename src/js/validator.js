@@ -135,6 +135,7 @@ const validator_create_annonce = () => {
                 rquired: true
             }
         }
+        //TODO : Faire lors de la creation d'une nouvelle chambre, l'ajout d'une rule pour ce form
         
     })
 }
