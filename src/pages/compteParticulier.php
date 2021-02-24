@@ -9,6 +9,7 @@
         header('Location: ./home.php');
     }else{
         //Chargement des données correspondantes à l'id lors de l'arrivée sur page
+        
         $mon_id_particulier = Utilisateurs::monCompteParticulier($_SESSION['id_utilisateur']);
         $ma_photo = Photos::photosByIdUser($_SESSION['id_utilisateur']);
         $mes_interets = Interets::interetsByParticulierId($mon_id_particulier[1][0]->id);
@@ -56,6 +57,7 @@
             array_push($mes_interet_list, $interet->id_interet);
         }
     }
+    var_dump($_SESSION['id_utilisateur']);
 ?>
 
 <?php require_once(dirname(__DIR__).'/includes/compteParticulier/modals/photoUser.php');?>
