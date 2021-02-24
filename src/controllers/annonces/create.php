@@ -139,7 +139,7 @@ if($error == null) {
                     'date_disponibilite' => $_POST['date_disponibilite'][$i],
                     'duree_bail' => $_POST['duree_bail'][$i],
                     'loyer' => $_POST['loyer'][$i],
-                    'charge' => $_POST['charge'][$i],
+                    'charges' => $_POST['charges'][$i],
                     'caution' => $_POST['caution'][$i],
                     'frais_dossier' => $_POST['frais_dossier'][$i],
                     'a_louer' => $_POST['a_louer_'.$indice]
@@ -154,7 +154,7 @@ if($error == null) {
                     'date_disponibilite' => 'trim|format_date:Y-m-d, Y-m-d|htmlspecialchars',
                     'duree_bail' => 'trim|escape|digit|htmlspecialchars',
                     'loyer' => 'trim|escape|digit|htmlspecialchars',
-                    'charge' => 'trim|escape|digit|htmlspecialchars',
+                    'charges' => 'trim|escape|digit|htmlspecialchars',
                     'caution' => 'trim|escape|digit|htmlspecialchars',
                     'frais_dossier' => 'trim|escape|digit|htmlspecialchars',
                     'a_louer' => 'trim|escape|digit|htmlspecialchars',

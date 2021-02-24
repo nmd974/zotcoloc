@@ -1,5 +1,6 @@
 <?php
 require_once(dirname(dirname(dirname(__DIR__))).'/libs/session/session.php');
+
 require_once(__ROOT__ . '/src/class/Connection.php');
 require_once(__ROOT__ . '/src/libs/gestionLogs.php');
 // TODO : Modifier la localisation du dossier imageControl dans le dossier libs

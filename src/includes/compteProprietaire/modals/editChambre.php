@@ -40,9 +40,7 @@
                         <!--Description de la chambre-->
                         <div class="col-md-12">
                             <label for="description_chambre" class="form-label">Desciption de la chambre</label>
-                            <textarea class="form-control" id="description_chambre" name="description_chambre" rows="3">
-                                <?= htmlentities($chambre_infos[1][0]->description_chambre, ENT_QUOTES) ?>
-                            </textarea>
+                            <textarea class="form-control" id="description_chambre" name="description_chambre" rows="3"><?= htmlentities($chambre_infos[1][0]->description_chambre, ENT_QUOTES) ?></textarea>
                         </div>
 
                         <!--Surface de la chambre-->
@@ -120,10 +118,11 @@
 
                         <!--charge-->
                         <div class="col-md-12 mt-3">
-                            <label for="charge" class="form-label">Charge</label>
-                            <input type="number" class="form-control" id="charge" name="charge" placeholder="en €"
-                            value="<?= htmlentities($chambre_infos[1][0]->charge, ENT_QUOTES) ?>">
+                            <label for="charge" class="form-label">Charges</label>
+                            <input type="number" class="form-control" id="charge" name="charges" placeholder="en €"
+                            value="<?= htmlentities($chambre_infos[1][0]->charges, ENT_QUOTES) ?>">
                         </div>
+                        <?php var_dump($chambre_infos[1][0]);?>
 
                         <!--caution-->
                         <div class="col-md-12 mt-3">
