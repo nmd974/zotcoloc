@@ -16,32 +16,36 @@
 
     <?php require_once(dirname(__DIR__).'/includes/creerAnnonce/timeline.php')?>
     <?php
-    if(isset($_POST['enregistrer_annonce'])){
-        if(!isset($_POST['id_logement'])){
-            $_POST['id_logement'] = substr(md5(uniqid(rand(), true)),0,32);
-        }
-        $validationCreation = creationAnnonce($_POST, $_FILES, $_SESSION['id_utilisateur']);
-        // print_r($_POST);
-        // print_r($_FILES);
-        print_r($validationCreation);
-        if($validationCreation[0]){
-            header_remove('Location');
-            header('Location: ./compteProprietaire.php');
-        }
-    }
+    // if(isset($_POST['enregistrer_annonce'])){
+    //     if(!isset($_POST['id_logement'])){
+    //         $_POST['id_logement'] = substr(md5(uniqid(rand(), true)),0,32);
+    //     }
+    //     $validationCreation = creationAnnonce($_POST, $_FILES, $_SESSION['id_utilisateur']);
+    //     // print_r($_POST);
+    //     // print_r($_FILES);
+    //     print_r($validationCreation);
+    //     if($validationCreation[0]){
+    //         header_remove('Location');
+    //         header('Location: ./compteProprietaire.php');
+    //     }
+    // }
 ?>
 <pre>
     <?php         
-    //     print_r($_POST);
-    //     print_r($_FILES);
-    //     if(isset($validationCreation))
-    //     {
-    //         print_r($validationCreation);
-    //     };
+        print_r($_POST);
+        print_r($_FILES);
     // ?>
 </pre>
+<?php if(isset($_SESSION['flash'])):?>
+<?php if($_SESSION['flash'][0] == "Success"):?>
+<div class="alert alert-success"><?= $_SESSION['flash'][2] ?></div>
+
+<?php else:?>
+    <div class="alert alert-danger"><?= $_SESSION['flash'][2] ?></div>
+<?php endif;?>
+<?php endif;?>
     <!--On fait afficher la page selon l'id des step de chaque bloc en jqurey-->
-    <form method="POST" enctype="multipart/form-data" id="formulaire_inscription">
+    <form method="POST" enctype="multipart/form-data" id="create_annonce" action="http://127.0.0.1:8000/src/controllers/annonces/create.php">
         <?php require_once(dirname(__DIR__).'/includes/creerAnnonce/step_1.php');?>
         <?php require_once(dirname(__DIR__).'/includes/creerAnnonce/step_2.php');?>
         <?php require_once(dirname(__DIR__).'/includes/creerAnnonce/step_3.php');?>
@@ -56,6 +60,7 @@
 <!-- ON MET ICI DES SCRIPTS ASSOCIES A LA PAGE -->
 <script src="../js/createAnnonce.js"></script>
 <script src="../js/validationFormLogement.js"></script>
+<script src="../js/validator.js"></script>
 <script>
 //Ici on gere l'ajout d'une nouvelle chambre sur le formulaire de creation d'une annonce
 let cptChambre = 2;

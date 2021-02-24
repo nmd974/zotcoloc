@@ -84,7 +84,7 @@
                                     class="btn-check" 
                                     id="<?= 'ville_'.$ville->id ?>" 
                                     value="<?= $ville->id ?>"
-                                    <?php if(htmlentities($logement_infos[1][0]->surface_logement, ENT_QUOTES) == $ville->id){echo 'checked';}?>
+                                    <?php if(htmlentities($logement_infos[1][0]->id_ville, ENT_QUOTES) == $ville->id){echo 'checked';}?>
                                 >
                                 <label class="btn btn-outline-success me-2 mb-2" for="<?= 'ville_'.$ville->id ?>">
                                     <i class="fa fa-plus-circle" aria-hidden="true"></i>

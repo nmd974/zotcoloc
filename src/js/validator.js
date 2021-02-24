@@ -89,45 +89,57 @@ const validator_signup_proprietaire = () => {
         
     })
 }
+const validator_create_annonce = () => {
+    validator = $("#create_annonce").validate({
+        errorElement: "em",
+        errorPlacement: function ( error, element ) {
+            element.addClass( "is-invalid" );
+            if ( element.prop( "type" ) === "checkbox" ) {
+                error.insertAfter( element.parent( "label" ) );
+            } else {
+                error.insertAfter( element );
+            }
+        },
+        highlight: function ( element ) {
+            $( element ).addClass( "is-invalid" ).removeClass( "is-valid" );
+        },
+        unhighlight: function ( element ) {
+            $( element ).addClass( "is-valid" ).removeClass( "is-invalid" );
+        },
+        rules: {
+            titre_logement:{
+                required: true
+            },
+            description_logement:{
+                required: true
+            },
+            type_logement:{
+                required: true
+            },
+            ville:{
+                required: true
+            },
+            surface_logement:{
+                digits: true
+            },
+            age_max:{
+                digits: true
+            },
+            age_min:{
+                digits: true
+            },
+            'titre_chambre[]':{
+                rquired: true
+            },
+            "description_chambre[]":{
+                rquired: true
+            }
+        }
+        //TODO : Faire lors de la creation d'une nouvelle chambre, l'ajout d'une rule pour ce form
+        
+    })
+}
 
-// const step_2_validator = () => {
-//     validator = $("#formulaire_inscription").validate({
-//         settings:{
-//             ignore: ":disabled,:hidden"
-//         },
-//         errorElement: "em",
-//         errorPlacement: function ( error, element ) {
-//             element.addClass( "is-invalid" );
-//             if ( element.prop( "type" ) === "checkbox" ) {
-//                 error.insertAfter( element.parent( "label" ) );
-//             } else {
-//                 error.insertAfter( element );
-//             }
-//         },
-//         highlight: function ( element ) {
-//             $( element ).addClass( "is-invalid" ).removeClass( "is-valid" );
-//         },
-//         unhighlight: function ( element ) {
-//             $( element ).addClass( "is-valid" ).removeClass( "is-invalid" );
-//         },
-//         rules: {
-//             nom_particulier:{
-//                 required: true
-//             },
-//             prenom_particulier:{
-//                 required: true
-//             },
-//             date_naissance:{
-//                 required: true,
-//                 dateISO: true
-//             },
-//             date_disponibilite:{
-//                 required: true,
-//                 dateISO: true
-//             }
-//         }
-//     })
-// }
 //LISTE DES NAMES
 /*
  email

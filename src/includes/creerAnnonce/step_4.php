@@ -1,7 +1,7 @@
 <!--STEP 4-->
 <?php require_once(__ROOT__.'/src/class/Equipements.php');?>
 <div id="bloc_step_4" class="unshow_step">
-<div class="arrow_return d-flex align-items-center mb-5" id="back_step4">
+<div class="arrow_return d-flex align-items-center mb-5" id="back_step3">
         <i class="fa fa-arrow-left fa-2x text-dark" aria-hidden="true"></i>
         <p class="text-secondary m-0 poppins h5 ms-4">Précédent</p>
     </div>
