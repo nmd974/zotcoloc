@@ -1,3 +1,4 @@
+<?php require_once(dirname(__DIR__) .'/includes/creerAnnonce/modificationlogement.php');?>
 <!--STEP 1-->
 <!-- Charger les infos du profil (photos, favoris, candidature, publications)-->
 <div id="bloc_step_1" class="show_step">
@@ -63,4 +64,4 @@
             <button type="button" class="btn w-25 bg-green text-white mr-5" id="step_2">Suivant</button>
         </div>
 </div>
-<?php require_once(dirname(__DIR__).'/pages/modificationlogement.php');?>
+ 
