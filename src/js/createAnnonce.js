@@ -217,7 +217,7 @@ btnStepEl4.addEventListener("click", (e)=>{
         titleStep.innerHTML = `Etape 4/5:<span class="text-green"> Profils idéal et chambre</span>`;
         timeLineEl.style.width = `75%`;
         window.scrollTo(0,0);
-        document.getElementById('create_annonce').onsubmit();
+        document.getElementById('create_annonce').submit();
         }
     
 })

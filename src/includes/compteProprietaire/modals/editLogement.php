@@ -93,19 +93,6 @@
                             <?php endforeach; ?>
                         <?php endif;?>
                     </div>
-
-                    <!--Photo-->
-                    <h4 class="mt-4">Photo des parties communes :</h4> <br>
-                    <!--Mettre les photos ajoutées en miniatures-->
-                    <!--Requetes des photos et pour chaque photos on fait l'image et un bouton supprimer et en dessous on peut ajouter 1 photo-->
-                    <i class="fa fa-plus-square" aria-hidden="true" id="addPhoto"></i>
-                    <div class="col-md-12 mt-3 mt-2">
-                        <label>Ajoutez au moins une photo des parties communes</label>
-                        <!-- <input type="file" name="photos_logement[]" class="form-control-file" id="photo_logement"> -->
-                        <div class="mb-3" id="zone_photo_logement">
-                            <input class="form-control" type="file" name="photos_logement[]">
-                        </div>
-                    </div>
     
                     <h4 class="mt-3">Dites-nous en plus sur le logement :</h4>
 
