@@ -215,3 +215,6 @@
 [2021-02-24T08:37:33.234176+00:00] application-generale.INFO: Connexion d'un utilisateur -- VERIF SERVEUR OK [] []
 [2021-02-24T08:37:33.239312+00:00] application-generale.INFO: Connexion d'un nouvel utilisateur -- SANITIZE OK [] []
 [2021-02-24T08:37:33.241780+00:00] application-generale.INFO: Comparaison de l'email avec la table utilisateur -- EMAIL / TABLE UTILISATEUR OK [] []
+[2021-02-24T10:29:28.863686+00:00] application-generale.INFO: Création d'un nouvel utilisateur -- VERIF SERVEUR OK [] []
+[2021-02-24T10:29:28.941210+00:00] application-generale.INFO: Création d'un nouvel utilisateur -- SANITIZE OK [] []
+[2021-02-24T10:29:28.951594+00:00] application-generale.ERROR: Echec de la créationd d'un nouvel utilisateur (colocataire) -- SQLSTATE[42S22]: Column not found: 1054 Unknown column 'password' in 'field list' [] []

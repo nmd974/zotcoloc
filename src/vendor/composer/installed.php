@@ -1,25 +1,16 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => 'dev-main',
-    'version' => 'dev-main',
+    'pretty_version' => '1.0.0+no-version-set',
+    'version' => '1.0.0.0',
     'aliases' => 
     array (
     ),
-    'reference' => 'e851babd8c4a618f84a5c072d9f5e5977fb8614d',
-    'name' => '__root__',
+    'reference' => NULL,
+    'name' => 'lain/test',
   ),
   'versions' => 
   array (
-    '__root__' => 
-    array (
-      'pretty_version' => 'dev-main',
-      'version' => 'dev-main',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'e851babd8c4a618f84a5c072d9f5e5977fb8614d',
-    ),
     'doctrine/inflector' => 
     array (
       'pretty_version' => '2.0.3',
@@ -100,6 +91,15 @@
       array (
       ),
       'reference' => 'ef77d7d509e1f3d98279045bd7ed397bccf0d1fc',
+    ),
+    'lain/test' => 
+    array (
+      'pretty_version' => '1.0.0+no-version-set',
+      'version' => '1.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => NULL,
     ),
     'monolog/monolog' => 
     array (
