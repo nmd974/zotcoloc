@@ -31,7 +31,7 @@
             $image_upload[$indiceArray] = $idName . "." . $fileExt; //On attribue dans la superglobale $_POST le nom de l'image qui ira dans le tableau
             $resultat = move_uploaded_file($tmpName, $fileDir);
             if($resultat){
-                return array(false, $image_upload[$indiceArray]);//On retourne le nom de l'image pour enregistrement
+                return array($error, $image_upload[$indiceArray]);//On retourne le nom de l'image pour enregistrement
             }
         }
             

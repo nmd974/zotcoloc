@@ -31,7 +31,7 @@
                     class="btn-check" 
                     id="<?= 'ville_'.$ville->id ?>" 
                     value="<?= $ville->id ?>"
-                    <?php if(isset($_POST['villes'])){if(in_array($ville->id, $_POST['villes'])){echo 'checked';}}?>
+                    <?php if(isset($_POST['ville'])){if(in_array($ville->id, $_POST['ville'])){echo 'checked';}}?>
                 >
                 <label class="btn btn-outline-success me-2 mb-2" for="<?= 'ville_'.$ville->id ?>">
                     <i class="fa fa-plus-circle" aria-hidden="true"></i>
