@@ -164,7 +164,7 @@ jQuery.extend(jQuery.validator.messages, {
     email: "Veuillez saisir une adresse email valide (ex: xxx.yyy@zzz.com)",
     url: "votre message",
     date: "Veuillez saisir une date conforme",
-    dateISO: "votre message",
+    dateISO: "Veuillez saisir une date conforme (jour/mois/annee)",
     number: "votre message",
     digits: "Seuls les chiffres sont autorisés",
     creditcard: "votre message",

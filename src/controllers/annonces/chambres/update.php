@@ -7,37 +7,35 @@ require_once(__ROOT__.'/src/controllers/imageControl.php');
 use \Waavi\Sanitizer\Sanitizer;
 
 $error = null;
-if($_POST['id_logement']){
-    $id_logement = htmlspecialchars($_POST['id_logement'], ENT_QUOTES);
+if($_POST['id_chambre']){
     $id_chambre = htmlspecialchars($_POST['id_chambre'], ENT_QUOTES);
     //Validation des données cote serveur + securite specialchars
-    $inputRequired = ['titre_logement', 'description_logement', 'ville'];
+    $inputRequired = ['titre_chambre', 'description_chambre'];
     foreach($inputRequired as $value){
         if($_POST["$value"] == ""){
             $error = true;
-            $logger->info("Modification d'un logement -- VERIF INPUT NOK");
-            $_SESSION['flash'] = array('Error', "Echec de la modification du logement </br> Veuillez vérifier les champs");
+            $logger->info("Modification d'une chambre -- VERIF INPUT NOK");
+            $_SESSION['flash'] = array('Error', "Echec de la modification de la chambre </br> Veuillez vérifier les champs");
             header("Location: http://127.0.0.1:8000/src/pages/editAnnoncePage.php?id=$id_chambre");
         }
     }
-    
-    //On met à 0 de base si pas selectionne
-    if(!isset($_POST['aides_logement'])){
-        $_POST['aides_logement'] = 0;
-    };
-    
-    $logger->info("Modification d'un logement -- VERIF SERVEUR OK");
+        
+    $logger->info("Modification d'une chambre -- VERIF SERVEUR OK");
     if($error == null) {
         //Coup de sanytol sur les données des formulaires
         
         $data = [
-            'titre_logement' => $_POST['titre_logement'],
-            'description_logement' => $_POST['description_logement'],
-            'type_logement' => $_POST['type_logement'],
-            'ville' => $_POST['ville'],
-            'surface_logement' => $_POST['surface_logement'],
-            'age_max' => $_POST['age_max'],
-            'age_min' => $_POST['age_min'],
+            'titre_chambre' => $_POST['titre_chambre'],
+            'description_chambre' => $_POST['description_chambre'],
+            'surface_chambre' => $_POST['surface_chambre'],
+            'type_chambre' => $_POST['type_chambre'],
+            'a_louer' => $_POST['a_louer'],
+            'duree_bail' => $_POST['duree_bail'],
+            'loyer' => $_POST['loyer'],
+            'charges' => $_POST['charges'],
+            'caution' => $_POST['caution'],
+            'frais_dossier' => $_POST['frais_dossier'],
+            'date_disponibilite' => $_POST['date_disponibilite']
         ];
         
         $customFilter = [
@@ -47,13 +45,17 @@ if($_POST['id_logement']){
         ];
         
         $filters = [
-            'titre_logement' => 'trim|escape|capitalize|htmlspecialchars',
-            'description_logement' => 'trim|escape|capitalize|htmlspecialchars',
-            'type_logement' => 'trim|escape|capitalize|htmlspecialchars',
-            'ville' => 'trim|escape|capitalize|htmlspecialchars',
-            'surface_logement' => 'trim|escape|capitalize|htmlspecialchars|digit',
-            'age_max' => 'digit|htmlspecialchars',
-            'age_min' => 'digit|htmlspecialchars'
+            'titre_chambre' => 'trim|escape|capitalize|htmlspecialchars',
+            'description_chambre' => 'trim|escape|capitalize|htmlspecialchars',
+            'surface_chambre' => 'trim|escape|capitalize|htmlspecialchars',
+            'type_chambre' => 'trim|escape|capitalize|htmlspecialchars',
+            'a_louer' => 'trim|escape|htmlspecialchars|digit',
+            'duree_bail' => 'trim|digit|htmlspecialchars',
+            'loyer' => 'trim|digit|htmlspecialchars',
+            'charges' => 'trim|digit|htmlspecialchars',
+            'caution' => 'trim|digit|htmlspecialchars',
+            'frais_dossier' => 'trim|digit|htmlspecialchars',
+            'date_disponibilite' => 'trim|format_date:Y-m-d, Y-m-d'
         ];
         
         $sanitizer = new Sanitizer($data, $filters,  $customFilter);
@@ -65,7 +67,7 @@ if($_POST['id_logement']){
             $logger->info("POST $value");
         }
         // TODO : Faille via les id en input mettre en sanitize
-        $logger->info("Modification d'un logement -- SANITIZE OK");
+        $logger->info("Modification d'une chambre -- SANITIZE OK");
         
         //Connexion à la BDD
         $db = Connection::getPDO();
@@ -73,93 +75,74 @@ if($_POST['id_logement']){
             try{
                 $db->beginTransaction();
                 
-                //AJOUT TABLE LOGEMENTS
-                $query = 'UPDATE `logements` SET `id_profil` = :id_profil,
-                `id_ville` = :id_ville,
-                `titre_logement` = :titre_logement, 
-                `description_logement` = :description_logement, 
-                `surface_logement` = :surface_logement, 
-                `meuble` = :meuble, 
-                `eligible_aides` = :eligible_aides, 
-                `age_max` = :age_max, 
-                `age_min` = :age_min, 
-                `type_logement` = :type_logement 
-                WHERE `id_logement` = :id_logement';
+                //AJOUT TABLE chambreS
+                $query = 'UPDATE `chambres` SET `titre_chambre` = :titre_chambre,
+                `description_chambre` = :description_chambre,
+                `surface_chambre` = :surface_chambre, 
+                `type_chambre` = :type_chambre,
+                `a_louer` = :a_louer, 
+                `duree_bail` = :duree_bail, 
+                `loyer` = :loyer, 
+                `charges` = :charges, 
+                `caution` = :caution,
+                `frais_dossier` = :frais_dossier,
+                `date_disponibilite` = :date_disponibilite
+                WHERE `id_chambre` = :id_chambre';
                 $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
                 $sth->execute(array(
-                    ':id_logement' => $id_logement,
-                    ':id_profil' => $_POST['profil'],
-                    ':id_ville' => $data_sanitized['ville'],
-                    ':titre_logement' => $data_sanitized['titre_logement'],
-                    ':description_logement' => $data_sanitized['description_logement'],
-                    ':surface_logement' => $data_sanitized['surface_logement'],
-                    ':meuble' => $_POST['meuble'],
-                    ':eligible_aides' => $_POST['aides_logement'],
-                    ':age_max' => $data_sanitized['age_max'],
-                    ':age_min' => $data_sanitized['age_min'],
-                    ':type_logement' => $data_sanitized['type_logement'],
-                    
+                    ':id_chambre' => $id_chambre,
+                    ':titre_chambre' => $data_sanitized['titre_chambre'],
+                    ':description_chambre' => $data_sanitized['description_chambre'],
+                    ':type_chambre' => $data_sanitized['type_chambre'],
+                    ':surface_chambre' => $data_sanitized['surface_chambre'],
+                    ':a_louer' => $data_sanitized['a_louer'],
+                    ':duree_bail' => $data_sanitized['duree_bail'],
+                    ':loyer' => $data_sanitized['loyer'],
+                    ':charges' => $data_sanitized['charges'],
+                    ':caution' => $data_sanitized['caution'],
+                    ':frais_dossier' => $data_sanitized['frais_dossier'],
+                    ':date_disponibilite' => $data_sanitized['date_disponibilite']
                 ));
-                $logger->info("Modification d'un logement -- TABLE LOGEMENT OK");
-                
-                
-                //GESTION DES REGLES LOGEMENT
-                //On delete les ancienne regles puis on ajoute
-                $query = 'DELETE FROM `regle_logement` WHERE id_logement = :id_logement';
+                $logger->info("Modification d'une chambre -- TABLE chambre OK");
+                                
+                //GESTION DES EQUIPEMENTS chambre
+                $query = 'DELETE FROM `equipement_chambre` WHERE id_chambre = :id_chambre';
                 $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
                 $sth->execute(array(
-                    ':id_logement' => $id_logement,
+                    ':id_chambre' => $id_chambre,
                 ));
-                $logger->info("Modification d'un logement -- TABLE REGLES LOGEMENT OK");
-                foreach($_POST['regles'] as $regle){
-                    $query = 'INSERT INTO `regle_logement`(`id_logement`, `id_regle`)
-                    VALUES (:id_logement, :id_regle)';
+                $logger->info("Modification d'unee chambre -- TABLE REGLES chambre OK");
+                foreach($_POST['equipements_chambre'] as $equipement){
+                    $query = 'INSERT INTO `equipement_chambre`(`id_chambre`, `id_equipement`)
+                    VALUES (:id_chambre, :id_equipement)';
                     $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
                     $sth->execute(array(
-                        ':id_logement' => $id_logement,
-                        ':id_regle' => $regle
-                    ));
-                    $logger->info("Modification d'un logement -- TABLE REGLES LOGEMENT OK");
-                }
-                
-                //GESTION DES EQUIPEMENTS LOGEMENT
-                $query = 'DELETE FROM `equipement_logement` WHERE id_logement = :id_logement';
-                $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
-                $sth->execute(array(
-                    ':id_logement' => $id_logement,
-                ));
-                $logger->info("Modification d'un logement -- TABLE REGLES LOGEMENT OK");
-                foreach($_POST['equipements_logement'] as $equipement){
-                    $query = 'INSERT INTO `equipement_logement`(`id_logement`, `id_equipement`)
-                    VALUES (:id_logement, :id_equipement)';
-                    $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
-                    $sth->execute(array(
-                        ':id_logement' => $id_logement,
+                        ':id_chambre' => $id_chambre,
                         ':id_equipement' => $equipement
                     ));
-                    $logger->info("Modification d'un logement -- TABLE EQUIPEMENTS LOGEMENT OK");
+                    $logger->info("Modification d'une chambre -- TABLE EQUIPEMENTS chambre OK");
                 }
                 
                 $db->commit();
                 
-                $logger->info("Modification d'un logement -- FIN DES REQ");
+                $logger->info("Modification d'une chambre -- FIN DES REQ");
                 
                 // On complete les valeurs pour session
-                $_SESSION['flash'] = array('Success', "Logement modifié avec succès");
+                $_SESSION['flash'] = array('Success', "Chambre modifiée avec succès");
                 header('Location: http://127.0.0.1:8000/src/pages/compteProprietaire.php');
             }catch(PDOException $e){
                 $error = $e->getMessage();
                 $db->rollBack();
-                $logger->error("Echec de la modification du logement -- $error");
+                $logger->error("Echec de la modification de la chambre -- $error");
                 // http_response_code(400);
-                $_SESSION['flash'] = array('Error', "Echec de la modification du logement", "Erreur serveur");
+                $_SESSION['flash'] = array('Error', "Echec de la modification de la chambre", "Erreur serveur");
                 header("Location: http://127.0.0.1:8000/src/pages/editAnnoncePage.php?id=$id_chambre");
-                // echo "Echec de la modification du logement </br> $error";
+                // echo "Echec de la modification de la chambre </br> $error";
             }
         }else{
             $logger->alert("Echec lors de l\'inscription -- Impossible de se connecter à la base de données");
             // http_response_code(503);
-            $_SESSION['flash'] = array('Error', "Echec de la modification du logement", "Erreur serveur");
+            $_SESSION['flash'] = array('Error', "Echec de la modification de la chambre", "Erreur serveur");
             header("Location: http://127.0.0.1:8000/src/pages/editAnnoncePage.php?id=$id_chambre");
             echo '<div class="alert alert-danger" id="error_msg">Echec lors de l\'inscription </br> Impossible de se connecter à la base de données</div>';
         }

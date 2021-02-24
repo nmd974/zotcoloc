@@ -27,7 +27,7 @@
                 <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
             </div>
             <?php else:?>
-            <form method="post" enctype="multipart/form-data">
+            <form method="post" enctype="multipart/form-data" action="http://127.0.0.1:8000/src/controllers/annonces/chambres/update.php">
                 <div class="modal-body">
                     <!--description de la chambre-->
                     <div class="col-md-12" id="zoneChambre">
@@ -98,7 +98,7 @@
                         <div class="col-md-12 mt-3">
                             <label for="date_disponibilite" class="form-label">Date de idsponibilité</label><br>
                             <input type="date" name="date_disponibilite" class="form-control" id="date_disponibilite"
-                            value="<?= htmlentities($chambre_infos[1][0]->surface_chambre, ENT_QUOTES) ?>">
+                            value="<?= htmlentities($chambre_infos[1][0]->date_disponibilite, ENT_QUOTES) ?>">
                         </div>
 
                         <!--Durée du bail-->
@@ -122,8 +122,7 @@
                             <input type="number" class="form-control" id="charge" name="charges" placeholder="en €"
                             value="<?= htmlentities($chambre_infos[1][0]->charges, ENT_QUOTES) ?>">
                         </div>
-                        <?php var_dump($chambre_infos[1][0]);?>
-
+                        
                         <!--caution-->
                         <div class="col-md-12 mt-3">
                             <label for="caution" class="form-label">Caution</label>
@@ -162,11 +161,12 @@
                                 <?php endif;?>
                             </div>
                         </div>
+                        <input type="hidden" name="id_chambre" value="<?= $id_chambre?>">
             </form>
             <?php endif;?>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
-                <button type="button" id="save_edit_chambre" class="btn btn-success" name="save_edit_chambre">Save
+                <button type="submit" id="save_edit_chambre" class="btn btn-success" name="save_edit_chambre">Save
                     changes</button>
             </div>
         </div>
