@@ -5,7 +5,8 @@
 
 <?php 
     if(isset($_GET['id'])){
-        $logement_id = Logements::idLogementByIdChambre($_GET['id']);
+        $id_chambre = htmlspecialchars($_GET['id'], ENT_QUOTES);
+        $logement_id = Logements::idLogementByIdChambre($id_chambre);
         $logement_infos = Logements::logementByIdLogement($logement_id[1][0]->id_logement);
         $logement_regles = Regles::reglesByIdLogement($logement_id[1][0]->id_logement);
         $logement_regles_array = [];
@@ -31,20 +32,19 @@
                     <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                 </div>
             <?php else:?>
-            <form method="post" enctype="multipart/form-data">
+            <?php var_dump($logement_equipements);?>
+            <form method="post" enctype="multipart/form-data" action="http://127.0.0.1:8000/src/controllers/annonces/logements/update.php">
                 <div class="modal-body">
                     <!--Titre-->
                     <div class="col-md-12 mt-3">
                         <label for="titre_logement" class="form-label">Titre*</label>
-                        <input type="text" class="form-control" max="100" id="titre_logement" name="titre_logement" required
-                            value="<?= htmlentities($logement_infos[1][0]->titre_logement, ENT_QUOTES) ?>">
+                        <input type="text" class="form-control" max="100" id="titre_logement" name="titre_logement" required value="<?= htmlentities($logement_infos[1][0]->titre_logement, ENT_QUOTES) ?>">
                     </div>
 
                     <!--Description-->
                     <div class="col-md-12 mt-3">
                         <label for="description_logement" class="form-label">Desciption du logement*</label>
-                        <textarea class="form-control" id="description_logement" name="description_logement" rows="3" required>
-                            <?= trim(htmlentities($logement_infos[1][0]->description_logement), ENT_QUOTES) ?>">
+                        <textarea class="form-control" id="description_logement" name="description_logement" rows="3" required><?= trim(htmlentities($logement_infos[1][0]->description_logement), ENT_QUOTES) ?>
                         </textarea>
                     </div>
 
@@ -58,7 +58,6 @@
                             <option value="3">Maison</option>
                         </select>
                     </div>
-
                     <!--Surface-->
                     <div class="col-md-12 mt-3">
                         <label for="surface_logement" class="form-label">Surface Totale</label>
@@ -159,7 +158,6 @@
                             <?php endif;?>
                         <div>
                     </div>
-
                     <!--Equipement logement-->
                     <p>Equipements et services:</p>
                     <div class="d-flex flex-wrap interets_ajax" role="group" aria-label="Basic checkbox toggle button group" id="equipement_logement">
@@ -230,11 +228,13 @@
                     </div>
                     </div>
                 </div>
+                <input type="hidden" name="id_logement" value="<?= $logement_id[1][0]->id_logement?>">
+                <input type="hidden" name="id_chambre" value="<?= $id_chambre?>">
             </form>
             <?php endif;?>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
-                <button type="button" id="save_edit_logement" class="btn btn-success" name="save_edit_logement">Save changes</button>
+                <button type="submit" id="save_edit_logement" class="btn btn-success" name="save_edit_logement">Modifier</button>
             </div>
         </div>
     </div>

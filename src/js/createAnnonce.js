@@ -217,7 +217,7 @@ btnStepEl4.addEventListener("click", (e)=>{
         titleStep.innerHTML = `Etape 4/5:<span class="text-green"> Profils idéal et chambre</span>`;
         timeLineEl.style.width = `75%`;
         window.scrollTo(0,0);
-        document.getElementById('create_annonce').submit();
+
         }
     
 })
@@ -249,6 +249,7 @@ btnStepEl5.addEventListener("click", (e)=>{
     //Si on rencontre un probleme alors on passe en false et on n'accède pas à la suite
     if(validationFormulaire){
         //On gère l'affichage du bouton
+        document.getElementById('create_annonce').submit();
         let dot = document.getElementById('dot_4');
         dot.innerHTML = `<i class="fa fa-check" aria-hidden="true"></i>`;
         dot.classList.remove('unvalid_step');
@@ -264,6 +265,7 @@ btnStepEl5.addEventListener("click", (e)=>{
         titleStep.innerHTML = `Etape 5/5:<span class="text-green"> Récapitulatif</span>`;
         timeLineEl.style.width = `100%`;
         window.scrollTo(0,0);
+
     }
 }
     

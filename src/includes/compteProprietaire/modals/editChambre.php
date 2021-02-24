@@ -5,8 +5,9 @@
 
 <?php 
     if(isset($_GET['id'])){
-        $chambre_infos = Chambres::chambreById($_GET['id']);
-        $chambre_equipements = Equipements::equipementsByIdChambre($_GET['id']);
+        $id_chambre = htmlspecialchars($_GET['id'], ENT_QUOTES);
+        $chambre_infos = Chambres::chambreById($id_chambre);
+        $chambre_equipements = Equipements::equipementsByIdChambre($id_chambre);
         $chambre_equipements_array = [];
         foreach($chambre_equipements[1] as $equipement){
             array_push($chambre_equipements_array, $equipement->id);

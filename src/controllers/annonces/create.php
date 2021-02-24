@@ -76,14 +76,13 @@ if($error == null) {
             return htmlspecialchars($value, ENT_QUOTES);
         }
     ];
-    
+    // TODO : le digit en sanitize si string ca remplace par du vide
     $filters = [
         'titre_logement' => 'trim|escape|capitalize|htmlspecialchars',
         'description_logement' => 'trim|escape|capitalize|htmlspecialchars',
         'type_logement' => 'trim|escape|capitalize|htmlspecialchars',
-        'ville' => 'trim|escape|capitalize|htmlspecialchars',
+        'ville' => 'trim|escape|htmlspecialchars',
         'surface_logement' => 'trim|escape|capitalize|htmlspecialchars|digit',
-        'telephone' => 'digit|htmlspecialchars',
         'age_max' => 'digit|htmlspecialchars',
         'age_min' => 'digit|htmlspecialchars'
     ];
@@ -151,7 +150,7 @@ if($error == null) {
                     'titre_chambre' => 'trim|escape|capitalize|htmlspecialchars',
                     'description_chambre' => 'trim|escape|capitalize|htmlspecialchars',
                     'surface_chambre' => 'trim|escape|htmlspecialchars|digit',
-                    'type_chambre' => 'trim|escape|htmlspecialchars|digit',
+                    'type_chambre' => 'trim|escape|htmlspecialchars',
                     'date_disponibilite' => 'trim|format_date:Y-m-d, Y-m-d|htmlspecialchars',
                     'duree_bail' => 'trim|escape|digit|htmlspecialchars',
                     'loyer' => 'trim|escape|digit|htmlspecialchars',
@@ -163,7 +162,12 @@ if($error == null) {
 
                 $sanitizer = new Sanitizer($data, $filters,  $customFilter);
                 $data_sanitized = $sanitizer->sanitize();
-            
+                foreach($data_sanitized as $value){
+                    $logger->info($value);
+                }
+                foreach($_POST as $value){
+                    $logger->info($value);
+                }
                 //AJOUT TABLE PROPRIETAIRE
                 $query = 'INSERT INTO `chambres`(`id_chambre`, `id_logement`, `titre_chambre`, `description_chambre`, `surface_chambre`, `type_chambre`, `a_louer`, `date_disponibilite`, `duree_bail`, `loyer`, `charges`, `caution`, `frais_dossier`)
                 VALUES (:id_chambre, :id_logement, :titre_chambre, :description_chambre, :surface_chambre, :type_chambre, :a_louer, :date_disponibilite, :duree_bail, :loyer, :charges, :caution, :frais_dossier)';
@@ -219,9 +223,10 @@ if($error == null) {
             }
             //GESTION DES PHOTOS DES CHAMBRES
             $nb_chambre = count($_POST['titre_chambre']);
-            $indice = $i + 1;
+            // $indice = $i + 1;
             for ($i=0; $i < $nb_chambre; $i++) { 
                 $indice = $i + 1;
+                // TODO : faire un vardumpdu files pour verifier le bug des photos
                 $indice_nb_photo = count($_FILES['photos_chambre_'.$indice]['name']);
                 for ($i=0; $i < $indice_nb_photo; $i++) { 
                     $ajoutImage = controleImageArray($_FILES['photos_chambre_'.$indice], $i);
@@ -251,6 +256,46 @@ if($error == null) {
                         ));
                         $logger->info("Creation d'une annonce -- TABLE PHOTO CHAMBRE OK");
                     }
+                }
+            }
+
+            //GESTION DES REGLES LOGEMENT
+            foreach($_POST['regles'] as $regle){
+                $query = 'INSERT INTO `regle_logement`(`id_logement`, `id_regle`)
+                VALUES (:id_logement, :id_regle)';
+                $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+                $sth->execute(array(
+                    ':id_logement' => $id_logement,
+                    ':id_regle' => $regle
+                ));
+                $logger->info("Creation d'une annonce -- TABLE REGLES LOGEMENT OK");
+            }
+
+            //GESTION DES EQUIPEMENTS LOGEMENT
+            foreach($_POST['equipements_logement'] as $equipement){
+                $query = 'INSERT INTO `equipement_logement`(`id_logement`, `id_equipement`)
+                VALUES (:id_logement, :id_equipement)';
+                $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+                $sth->execute(array(
+                    ':id_logement' => $id_logement,
+                    ':id_equipement' => $equipement
+                ));
+                $logger->info("Creation d'une annonce -- TABLE EQUIPEMENTS LOGEMENT OK");
+            }
+
+            //GESTION DES EQUIPEMENTS DES CHAMBRES
+            for ($i=0; $i < $nb_chambre; $i++) { 
+                $indice = $i + 1;
+                // return $data['equipements_chambre_'.$indice];
+                foreach($data['equipements_chambre_'.$indice] as $eqtChambre){
+                    $query = 'INSERT INTO `equipement_chambre`(`id_chambre`, `id_equipement`)
+                    VALUES (:id_chambre, :id_equipement)';
+                    $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+                    $sth->execute(array(
+                        ':id_chambre' => $list_id_chambre[$i],
+                        ':id_equipement' => $eqtChambre
+                    ));
+                    $logger->info("Creation d'une annonce -- TABLE EQUIPEMENTS CHAMBRE OK");
                 }
             }
 
