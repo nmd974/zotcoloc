@@ -1,4 +1,5 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
+
 <div class="container">
     <div class="mb-5 subtitle">
         <div class="border-one ps-1">
@@ -13,6 +14,15 @@
 
 <div class="form-modal">
 <a href="./authentificationLoueur.php">Je n'ai pas de compte</a>
+
+<?php if(isset($_SESSION['flash'])):?>
+<?php if($_SESSION['flash'][0] == "Success"):?>
+<div class="alert alert-success"><?= $_SESSION['flash'][2] ?></div>
+<?php else:?>
+    <div class="alert alert-danger"><?= $_SESSION['flash'][2] ?></div>
+<?php endif;?>
+<?php endif;?>
+
     <div id="login-form">
         <form >
             <!-- <input type="text" placeholder="Enter email or username"/> -->
