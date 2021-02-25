@@ -19,7 +19,7 @@
                     </button>
                 <?php endif; ?>                
             <!-- <form> -->
-            <p class="nav_title_profil"><?= $mon_compte[1][0]->prenom ?></p>
+            <p class="nav_title_profil">Propriétaire</p>
         </div>
         <a role="button" class="list-group-item list-group-item-action sidebar_item" id="profilNav">
             <i class="fa fa-cogs icone_sidebar" aria-hidden="true"></i>
