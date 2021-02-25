@@ -47,7 +47,7 @@
 <?php endif;?>
 <?php endif;?>
     <!--On fait afficher la page selon l'id des step de chaque bloc en jqurey-->
-    <form method="POST" enctype="multipart/form-data" id="create_annonce" action="http://127.0.0.1:8000/src/controllers/annonces/create.php">
+    <form method="POST" enctype="multipart/form-data" id="create_annonce" action="http://127.0.0.1:8000/src/controllers/annonces/creation/create.php">
         <?php require_once(dirname(__DIR__).'/includes/annonces/creation/step_1.php');?>
         <?php require_once(dirname(__DIR__).'/includes/annonces/creation/step_2.php');?>
         <?php require_once(dirname(__DIR__).'/includes/annonces/creation/step_3.php');?>
