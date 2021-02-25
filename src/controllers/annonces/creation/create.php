@@ -31,7 +31,7 @@ a_louer_
  */
 
 
-require_once(dirname(dirname(__DIR__)).'/libs/session/session.php');
+require_once(dirname(dirname(dirname(__DIR__))).'/libs/session/session.php');
 require_once(__ROOT__ . '/src/class/Connection.php');
 require_once(__ROOT__ . '/src/libs/gestionLogs.php');
 // TODO : Modifier la localisation du dossier imageControl dans le dossier libs
@@ -231,9 +231,6 @@ if($error == null) {
                 for ($i=0; $i < $indice_nb_photo; $i++) { 
                     $ajoutImage = controleImageArray($_FILES['photos_chambre_'.$indice], $i);
                     if($ajoutImage[0]){ //La fonction retourne true si erreur
-                        // $message = "Erreur lors de l'ajout de la photo";
-                        // $validationFormulaire = false;
-                        // return array(false, $message);
                         $logger->alert("Creation d'une annonce -- Erreur lors de l'ajout de l'image chambre");
                     }else{
                         $id_photo = md5(uniqid(rand(), true));

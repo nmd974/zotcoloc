@@ -120,7 +120,8 @@ const validator_create_annonce = () => {
                 required: true
             },
             surface_logement:{
-                digits: true
+                digits: true,
+                min : 0
             },
             age_max:{
                 digits: true
@@ -129,10 +130,10 @@ const validator_create_annonce = () => {
                 digits: true
             },
             'titre_chambre[]':{
-                rquired: true
+                required: true
             },
             "description_chambre[]":{
-                rquired: true
+                required: true
             }
         }
         //TODO : Faire lors de la creation d'une nouvelle chambre, l'ajout d'une rule pour ce form
@@ -174,6 +175,6 @@ jQuery.extend(jQuery.validator.messages, {
     minlength: jQuery.validator.format("{0} caractères minimum."),
     rangelength: jQuery.validator.format("{0} caractères min </br> {1} caractères maximum."),
     range: jQuery.validator.format("votre message  entre {0} et {1}."),
-    max: jQuery.validator.format("votre message  inférieur ou égal à {0}."),
-    min: jQuery.validator.format("votre message  supérieur ou égal à {0}.")
+    max: jQuery.validator.format("Ce champ doit être inférieur ou égal à {0}."),
+    min: jQuery.validator.format("Ce champ doit être supérieur ou égal à {0}.")
 });

@@ -1,8 +1,6 @@
 <!--STEP 3-->
-<?php require_once(__ROOT__.'/src/class/Regles.php');?>
-<?php require_once(__ROOT__.'/src/class/Equipements.php');?>
 <div id="bloc_step_3" class="unshow_step">
-<div class="arrow_return d-flex align-items-center mb-5" id="back_step2">
+    <div class="arrow_return d-flex align-items-center mb-5" id="back_step2">
         <i class="fa fa-arrow-left fa-2x text-dark" aria-hidden="true"></i>
         <p class="text-secondary m-0 poppins h5 ms-4">Précédent</p>
     </div>
@@ -62,7 +60,7 @@
             <?php if(!$regles[0]):?>
                 <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
             <?php else :?>
-                <?php foreach($regles[1] as $regle):?>
+                <?php foreach($regles as $regle):?>
                     <input type="checkbox" name="regles[]" class="btn-check" value="<?= $regle->id?>" id="<?= 'regles_'.$regle->id ?>">
                     <label class="btn btn-outline-success me-2 mb-2" for="<?= 'regles_'.$regle->id ?>">
                         <i class="fa fa-plus-circle" aria-hidden="true"></i>
@@ -81,12 +79,11 @@
             </div>
         </div>
             <div class="d-flex flex-wrap interets_ajax" role="group" aria-label="Basic checkbox toggle button group" id="equipement_logement">
-                <?php $equipements = Equipements::equipementAll()?>
                 <?php if(!$equipements[0]):?>
                     <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                 <?php else :?>
-                    <?php foreach($equipements[1] as $equipement):?>
-                        <input type="checkbox" name="equipements_logement[]" class="btn-check" value="<?= $equipement->id?> "id="<?= 'equipement_'.$equipement->id ?>">
+                    <?php foreach($equipements as $equipement):?>
+                        <input type="checkbox" name="equipements_logement[]" class="btn-check" value="<?= $equipement->id?>" id="<?= 'equipement_'.$equipement->id ?>">
                         <label class="btn btn-outline-success me-2 mb-2" for="<?= 'equipement_'.$equipement->id ?>">
                             <i class="fa fa-plus-circle" aria-hidden="true"></i>
                             <?= $equipement->libelle_equipement ?>
