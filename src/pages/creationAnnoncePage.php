@@ -1,8 +1,5 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
-<?php require_once(dirname(__DIR__).'/controllers/createAnnonce.php');?>
-<?php var_dump(__DIR__);?>
 <?php require_once(dirname(__DIR__).'/controllers/annonces/creation/getData.php');?>
-
 
 <div class="container">
     <div class="mb-5 subtitle">
@@ -17,37 +14,17 @@
 <div class="container" id="wrapper_page_content">
 
     <?php require_once(dirname(__DIR__).'/includes/annonces/creation/timeline.php')?>
-    <?php
-    // if(isset($_POST['enregistrer_annonce'])){
-    //     if(!isset($_POST['id_logement'])){
-    //         $_POST['id_logement'] = substr(md5(uniqid(rand(), true)),0,32);
-    //     }
-    //     $validationCreation = creationAnnonce($_POST, $_FILES, $_SESSION['id_utilisateur']);
-    //     // print_r($_POST);
-    //     // print_r($_FILES);
-    //     print_r($validationCreation);
-    //     if($validationCreation[0]){
-    //         header_remove('Location');
-    //         header('Location: ./compteProprietaire.php');
-    //     }
-    // }
-?>
-<pre>
-    <?php         
-        print_r($_POST);
-        print_r($_FILES);
-    // ?>
-</pre>
+
 <?php if(isset($_SESSION['flash'])):?>
 <?php if($_SESSION['flash'][0] == "Success"):?>
-<div class="alert alert-success"><?= $_SESSION['flash'][2] ?></div>
+<div class="alert alert-success mt-3"><?= $_SESSION['flash'][2] ?></div>
 
 <?php else:?>
-    <div class="alert alert-danger"><?= $_SESSION['flash'][2] ?></div>
+    <div class="alert alert-danger mt-3"><?= $_SESSION['flash'][2] ?></div>
 <?php endif;?>
 <?php endif;?>
     <!--On fait afficher la page selon l'id des step de chaque bloc en jqurey-->
-    <form method="POST" enctype="multipart/form-data" id="create_annonce" action="http://127.0.0.1:8000/src/controllers/annonces/create.php">
+    <form method="POST" class="mt-3" enctype="multipart/form-data" id="create_annonce" action="../controllers/annonces/creation/create.php">
         <?php require_once(dirname(__DIR__).'/includes/annonces/creation/step_1.php');?>
         <?php require_once(dirname(__DIR__).'/includes/annonces/creation/step_2.php');?>
         <?php require_once(dirname(__DIR__).'/includes/annonces/creation/step_3.php');?>
@@ -61,7 +38,6 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/scriptsSrc.php');?>
 <!-- ON MET ICI DES SCRIPTS ASSOCIES A LA PAGE -->
 <script src="../js/createAnnonce.js"></script>
-<script src="../js/validationFormLogement.js"></script>
 <script src="../js/validator.js"></script>
 <script>
 //Ici on gere l'ajout d'une nouvelle chambre sur le formulaire de creation d'une annonce
@@ -153,7 +129,7 @@ $('#addChambre').on('click', () => {
         <!--charge-->
         <div class="col-md-12 mt-3">
             <label for="charge" class="form-label">Charge</label>
-            <input type="number" class="form-control" id="charge" name="charge[]" placeholder="en €" value="<?php if(isset($_POST['charge'])){echo $_POST['charge'];}?>">
+            <input type="number" class="form-control" id="charge" name="charges[]" placeholder="en €" value="<?php if(isset($_POST['charge'])){echo $_POST['charge'];}?>">
         </div>
 
         <!--caution-->
@@ -175,7 +151,7 @@ $('#addChambre').on('click', () => {
         <?php if(!$equipements[0]):?>
             <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
         <?php else :?>
-            <?php foreach($equipements[1] as $equipement):?>
+            <?php foreach($equipements as $equipement):?>
                 <input type="checkbox" name="equipements_chambre_${cptChambre}[]" class="btn-check" value="<?= $equipement->id ?>" id="chambre_${cptChambre}_<?= $equipement->id ?>">
                 <label class="btn btn-outline-success me-2 mb-2" for="chambre_${cptChambre}_<?= $equipement->id ?>">
                     <i class="fa fa-plus-circle" aria-hidden="true"></i>

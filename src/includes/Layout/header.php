@@ -18,8 +18,12 @@
     crossorigin="" />
     <link rel="stylesheet" href="../style/style.css">
     <!--Font awesome-->
-<script src="https://use.fontawesome.com/c18e5332f2.js"></script>
+    <script src="https://use.fontawesome.com/c18e5332f2.js"></script>
+    <!--AOS Animate on scroll library-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <title>ZotColoc</title>
+    
 </head>
 
 <body>

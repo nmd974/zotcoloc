@@ -11,7 +11,7 @@
 <!-- titre + barre de recherche -->
 <section class="main">
         <div class="row align-items-center h-100">
-            <div>
+            <div data-aos="zoom-in">
                 <div class="container">
                     <p class="text-white">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -99,7 +99,7 @@
         
     </section>
     <!-- top ville -->
-    <section class="container">
+    <section class="container" data-aos="zoom-in">
         <!-- titre -->
         <div class="mb-5 subtitle">
             <div class="border-one ps-1">
@@ -172,7 +172,7 @@
     </section>
 
     <!-- par région -->
-    <section class="container mt-5 mb-5">
+    <section class="container mt-5 mb-5" data-aos="zoom-in">
         <div class="mb-5 subtitle">
             <div class="border-one ps-1">
                 <div class="border-two ps-3">
@@ -311,7 +311,8 @@
                 </div>
     </section>
 
-    <section class="container mb-5">
+    <!--section information-->
+    <section class="container mb-5" data-aos="zoom-in">
         <div class="mb-5 subtitle">
             <div class="col border-one ps-1">
                 <div class="border-two ps-3">
