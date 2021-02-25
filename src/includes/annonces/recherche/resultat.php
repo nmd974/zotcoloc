@@ -4,6 +4,9 @@
                <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                <?php else :?>
                    <?php foreach($annonces as $annonce):?>
+                    <?php $idUtilisateur = htmlspecialchars($annonce->id_utilisateur);?>
+                    <?php $idChambre=htmlspecialchars($annonce->id_chambre); ?>
+                    <?php require_once(dirname(dirname(dirname(__DIR__))).'/controllers/annonces/recherches/getPhoto.php');?>
                    
                        <div class="m-2 mb-4">
                        <a href="roommateDetails.php?id=<?= htmlspecialchars($annonce->id_chambre) ?>" class="mode-link">
@@ -18,7 +21,7 @@
                                </div>
                                <!-- avatar en position absolute -->
                                <div class="avatar d-flex justify-content-center align-items-center bg-light shadow" style="width:60px; height: 60px; border-radius: 50%;">
-                               <?php $idUtilisateur = htmlspecialchars($annonce->id_utilisateur);?>
+                               <?php //$idUtilisateur = htmlspecialchars($annonce->id_utilisateur);?>
                                <?php // $utilisateurs = Recherches::photo_utilisateur(htmlspecialchars($annonce->id_utilisateur))?>
                                    <?php if(!$utilisateurs[0]):?>
                                    <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
@@ -39,7 +42,7 @@
                                        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
                                    </ol>
                                    <div class="carousel-inner" >
-                                    <?php $idChambre=htmlspecialchars($annonce->id_chambre,ENT_QUOTES); ?>
+                                    <?php// $idChambre=htmlspecialchars($annonce->id_chambre,ENT_QUOTES); ?>
                                   <?php //$images = Recherches::photo_annonce(htmlspecialchars($annonce->id_chambre))?>
                                    <?php if(!$images[0]):?>
                                    <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>

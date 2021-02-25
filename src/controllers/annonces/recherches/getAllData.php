@@ -19,7 +19,7 @@ if($db){
             INNER JOIN `utilisateurs` ON logements.id_utilisateur = utilisateurs.id
             INNER JOIN `roles` ON utilisateurs.id_role = roles.role_id
             WHERE `statut` = 'Publiee'
-            ORDER BY `date_creation` DESC;
+            ORDER BY `date_creation` DESC; 
             ");
         $annonces = $query->fetchAll(PDO::FETCH_OBJ);
         $logger->info("Recuperation des données des villes -- SUCCESS");
@@ -40,25 +40,7 @@ if($db){
         ");
         $liste_villes = $query->fetchAll(PDO::FETCH_OBJ);
         $logger->info("Recuperation des données des regles -- SUCCESS");
-
-        //photo utilisateur ok
-        $query = $db->query("SELECT * 
-        FROM photo_utilisateur 
-        INNER JOIN photos ON photos.id = photo_utilisateur.id_photo
-        WHERE photo_utilisateur.id_utilisateur = '$idUtilisateur'");
-        $utilisateurs = $query->fetchAll(PDO::FETCH_OBJ);
-        $logger->info("Recuperation des données des regles -- SUCCESS");
-
-        //photo annonce ok
-        $query = $db->query("SELECT libelle_photo 
-        FROM photo_chambre
-        INNER JOIN photos ON photos.id = photo_chambre.id_photo
-        INNER JOIN chambres ON chambres.id_chambre = photo_chambre.id_chambre
-        WHERE photo_chambre.id_chambre = '$idChambre'");
-        $images = $query->fetchAll(PDO::FETCH_OBJ);
-        $logger->info("Recuperation des données des regles -- SUCCESS");
-
-         
+   
         
         $logger->info("Recuperation des données -- FIN DES REQ");
         
