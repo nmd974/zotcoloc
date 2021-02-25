@@ -19,7 +19,7 @@
                     </button>
                 <?php endif; ?>                
             <!-- <form> -->
-            <p class="nav_title_profil"><?= $mon_compte[1][0]->prenom ?></p>
+            <p class="nav_title_profil">Propriétaire</p>
         </div>
         <a role="button" class="list-group-item list-group-item-action sidebar_item" id="profilNav">
             <i class="fa fa-cogs icone_sidebar" aria-hidden="true"></i>
@@ -50,22 +50,11 @@
                 <span class="badge bg-danger"><?= count($mes_annonces[1])?></span>
             </a>
         </div>
-        <!-- <div class="contact_zotcoloc">
-        <a role="button" class="list-group-item list-group-item-action sidebar_item" id="infosNav">
-            <i class="fa fa-info-circle icone_sidebar" aria-hidden="true"></i>
-            Informations zotcoloc
-        </a>
-            
-        </div> -->
-
         <div class="contact_zotcoloc">
         <a role="button" class="list-group-item list-group-item-action sidebar_item" data-bs-toggle="modal" data-bs-target="#deleteUserProprietaire" id="infosNav">
-
             <i class="fa fa-trash icone_sidebar" aria-hidden="true"></i>
             Supprimer mon compte
-
         </a>
-            
         </div>  
         
         <div class="footer_sidebar text-center">
