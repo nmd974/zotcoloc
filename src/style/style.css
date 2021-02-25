@@ -419,7 +419,7 @@ em{
 .fa-trash{
     cursor: pointer;
 }
-.card-body{
+.card-rslt{
     min-height: 250px;
     max-height: 250px;
     padding: 2rem;

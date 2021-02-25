@@ -43,7 +43,7 @@
             <?php endif; ?>
             
             <!-- descriptif de l'annonce -->
-            <div class="card-body">
+            <div class="card-body card-rslt">
                 
                 <!-- role -->
                 <span class="badge bg-primary mb-1 letter-space"><?= htmlspecialchars($annonce->libelle_role) ?></span>
