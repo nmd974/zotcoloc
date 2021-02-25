@@ -1,8 +1,5 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
-<?php require_once(dirname(__DIR__).'/controllers/createAnnonce.php');?>
-<?php var_dump(__DIR__);?>
 <?php require_once(dirname(__DIR__).'/controllers/annonces/creation/getData.php');?>
-
 
 <div class="container">
     <div class="mb-5 subtitle">
@@ -17,21 +14,6 @@
 <div class="container" id="wrapper_page_content">
 
     <?php require_once(dirname(__DIR__).'/includes/annonces/creation/timeline.php')?>
-    <?php
-    // if(isset($_POST['enregistrer_annonce'])){
-    //     if(!isset($_POST['id_logement'])){
-    //         $_POST['id_logement'] = substr(md5(uniqid(rand(), true)),0,32);
-    //     }
-    //     $validationCreation = creationAnnonce($_POST, $_FILES, $_SESSION['id_utilisateur']);
-    //     // print_r($_POST);
-    //     // print_r($_FILES);
-    //     print_r($validationCreation);
-    //     if($validationCreation[0]){
-    //         header_remove('Location');
-    //         header('Location: ./compteProprietaire.php');
-    //     }
-    // }
-?>
 
 <?php if(isset($_SESSION['flash'])):?>
 <?php if($_SESSION['flash'][0] == "Success"):?>
@@ -56,7 +38,6 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/scriptsSrc.php');?>
 <!-- ON MET ICI DES SCRIPTS ASSOCIES A LA PAGE -->
 <script src="../js/createAnnonce.js"></script>
-<script src="../js/validationFormLogement.js"></script>
 <script src="../js/validator.js"></script>
 <script>
 //Ici on gere l'ajout d'une nouvelle chambre sur le formulaire de creation d'une annonce

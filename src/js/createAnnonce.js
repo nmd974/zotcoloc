@@ -5,7 +5,7 @@ let compteur_desc = document.getElementById('nb_caracteres_desc');
 let description_logement = document.getElementById('description_logement');
 
 titre_logement.addEventListener('keyup', (e) => {
-    compteur_titre.innerHTML = `${e.target.value.length} / 100`;
+    compteur_titre.innerHTML = `${e.target.value.length} / 100 caractères`;
     if(e.target.value.length === 100){
         compteur_titre.innerHTML = `${e.target.value.length} / 100 Limite atteinte`;
         titre_logement.classList.remove('is-invalid');
@@ -18,7 +18,7 @@ titre_logement.addEventListener('keyup', (e) => {
 })
 
 description_logement.addEventListener('keyup', (e) => {
-    compteur_desc.innerHTML = `${e.target.value.length} / 500`;
+    compteur_desc.innerHTML = `${e.target.value.length} / 500 caractères`;
     if(e.target.value.length === 100){
         compteur_desc.innerHTML = `${e.target.value.length} / 500 Limite atteinte`;
         description_logement.classList.remove('is-invalid');

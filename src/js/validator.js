@@ -108,10 +108,12 @@ const validator_create_annonce = () => {
         },
         rules: {
             titre_logement:{
-                required: true
+                required: true,
+                maxlength: 100
             },
             description_logement:{
-                required: true
+                required: true,
+                maxlength: 500
             },
             type_logement:{
                 required: true
@@ -134,7 +136,29 @@ const validator_create_annonce = () => {
             },
             "description_chambre[]":{
                 required: true
+            },
+            "frais_dossier[]":{
+                digits: true
+            },
+            "caution[]":{
+                digits: true
+            },
+            "charges[]":{
+                digits: true
+            },
+            "loyer[]":{
+                digits: true
+            },
+            "duree_bail[]":{
+                digits: true
+            },
+            "date_disponibilite[]":{
+                dateISO: true
+            },
+            "a_louer_1[]":{
+                digits: true
             }
+            
         }
         //TODO : Faire lors de la creation d'une nouvelle chambre, l'ajout d'une rule pour ce form
         
