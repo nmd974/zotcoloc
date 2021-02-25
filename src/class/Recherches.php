@@ -114,18 +114,6 @@ class Recherches {
             INNER JOIN `roles` ON utilisateurs.id_role = roles.role_id
             INNER JOIN `proprietaire` ON utilisateurs.id=proprietaire.id_utilisateur
             WHERE chambres.id_chambre = '$id'
-            -- SELECT * 
-            -- FROM `chambres` 
-            -- INNER JOIN `logements` ON logements.id_logement = chambres.id_logement
-            -- INNER JOIN `villes` ON logements.id_ville = villes.id 
-            -- INNER JOIN `communes` ON villes.id_commune = communes.id
-            -- INNER JOIN `proprietaire` ON utilisateurs.id=proprietaire.id_utilisateur
-            
-            -- INNER JOIN `utilisateurs` ON logements.id_utilisateur = utilisateurs.id
-            -- INNER JOIN `roles` ON utilisateurs.id_role = roles.role_id
-            -- WHERE chambres.id_chambre = '$id'
-            
-
             ");
             $data = $query->fetch(PDO::FETCH_OBJ);
             return array(true, $data);

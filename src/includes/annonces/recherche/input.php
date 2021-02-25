@@ -6,11 +6,11 @@
                                 aria-label="location" aria-describedby="button-addon1" id="search" list="datalistOptions" autocomplete="off">
                                 <datalist id="datalistOptions"> 
                                 
-                                <?php $liste_villes = Recherches::listVille()?>
+                                <?php //$liste_villes = Recherches::listVille()?>
                                 <?php if(!$liste_villes[0]):?>
                                 <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                                 <?php else :?>
-                                    <?php foreach($liste_villes[1] as $liste_ville):?>
+                                    <?php foreach($liste_villes as $liste_ville):?>
                                         <option value="<?=$liste_ville->libelle_ville?>">
                                 <?php endforeach; ?>
                                 <?php endif; ?>
