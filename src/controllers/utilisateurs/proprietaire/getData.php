@@ -1,5 +1,4 @@
 <?php
-
 require_once(__ROOT__ . '/src/class/Connection.php');
 require_once(__ROOT__ . '/src/libs/gestionLogs.php');
 
@@ -19,9 +18,27 @@ if($db){
         $ma_photo = $query->fetchAll(PDO::FETCH_OBJ);
         $logger->info("Recuperation des photos de l'utilisateur -- SUCCESS");
 
-        $query = $db->query("SELECT * FROM `logements` INNER JOIN `chambres` ON chambres.id_logement = logements.id_logement WHERE `id_utilisateur` = '$id_utilisateur'");
+        $query = $db->query("SELECT * FROM `logements` 
+        INNER JOIN `chambres` ON chambres.id_logement = logements.id_logement 
+        INNER JOIN `villes` ON villes.id = logements.id_ville
+        WHERE `id_utilisateur` = '$id_utilisateur' 
+        AND `statut` != 'Suprimee'
+        ");
         $mes_annonces = $query->fetchAll(PDO::FETCH_OBJ);
         $logger->info("Recuperation des données des annonces de l'utilisateur -- SUCCESS");
+
+        // $query = $db->query("SELECT * FROM `logements` INNER JOIN `chambres` ON chambres.id_logement = logements.id_logement WHERE `id_utilisateur` = '$id_utilisateur' AND `statut`");
+        // $mes_annonces_en_attente_validation = $query->fetchAll(PDO::FETCH_OBJ);
+        // $logger->info("Recuperation des données des annonces de l'utilisateur -- SUCCESS");
+
+        // $mes_candidatures = [];
+        // foreach($mes_annonces as $annonce){
+        //     $id_chambre = $annonce->id_chambre;
+        //     $query = $db->query("SELECT * FROM `candidater_chambre` WHERE `id_chambre` = '$id_chambre'");
+        //     array_push($mes_candidatures, $query->fetch());
+        //     $logger->info("Recuperation des données des candidatures aux annonces de l'utilisateur -- SUCCESS");
+        // }
+
 
         // $id_proprietaire = $mon_compte[0]->id;
         // $query = $pdo->query("SELECT * FROM `candidater_chambre` WHERE `id_particulier` = '$id_proprietaire'");
