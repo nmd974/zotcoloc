@@ -13,8 +13,17 @@
 
 <div class="form-modal">
 <a href="./authentificationLoueur.php">Je n'ai pas de compte</a>
+
+<?php if(isset($_SESSION['flash'])):?>
+<?php if($_SESSION['flash'][0] == "Success"):?>
+<div class="alert alert-success"><?= $_SESSION['flash'][2] ?></div>
+<?php else:?>
+    <div class="alert alert-danger"><?= $_SESSION['flash'][2] ?></div>
+<?php endif;?>
+<?php endif;?>
+
     <div id="login-form">
-        <form action="">
+        <form action="../controllers/utilisateurs/login.php" method="POST">
             <!-- <input type="text" placeholder="Enter email or username"/> -->
             <input type="text" name="email" class="form-control" aria-describedby="emailHelp" required
             pattern=" [a-z0-9 ._% + -] + @ [a- z0-9 .-] + \. [az] {2,} $ " 
