@@ -28,9 +28,12 @@
                 <textarea class="form-control" name="description_logement" required placeholder="Une description précise vous donnera plus de change de trouver un colocataire" id="description_logement" style="height: 100px"><?php if(isset($_POST['description_logement'])){echo $_POST['description_logement'];}?></textarea>
                 <label for="description_logement">Desciption du logement <span class="text-danger">*</span></label>
             </div>
-            <div class="d-flex align-items-center mt-1">
-                <i class="fa fa-info-circle icone_sidebar" aria-hidden="true"></i>
-                <div class="text-dark me-3"><small>C'est le moment de mettre en avant tous les points forts et spécificités de votre logement : locataires actuels, ambiance, vie de quartier, transports en commun et accès</small></div>
+            <div class="d-flex flex-column mt-1">
+                <div class="d-flex">
+                    <i class="fa fa-info-circle icone_sidebar" aria-hidden="true"></i>
+                    <div class="text-dark me-3"><small>C'est le moment de mettre en avant tous les points forts et spécificités de votre logement : locataires actuels, ambiance, vie de quartier, transports en commun et accès</small></div>
+                </div>
+                <div class="text-dark" id="nb_caracteres_desc"><small>0/500 caractères</small></div>
             </div>
         </div>
 
@@ -38,8 +41,9 @@
         <!-- Amelioration : Faire un chargement de requete des types en cas de changement par admin pour avoir les dernieres nouveautes-->
         <div class="col-md-12 mb-4">
             <div class="form-floating">
-                <select class="form-select" id="type_logement" name="type_logement" value="<?php if(isset($_POST['type_logement'])){echo $_POST['type_logement'];}?>">
-                    <option value="Appartement" selected>Appartement</option>
+            <?php //if(isset($_POST['type_logement'] && )){echo "selected";}?>
+                <select class="form-select" id="type_logement" name="type_logement">
+                    <option value="Appartement">Appartement</option>
                     <option value="Villa">Villa</option>
                     <option value="Maison">Maison</option>
                 </select>
@@ -50,7 +54,7 @@
         <!--Surface-->
         <div class="col-md-12">
             <div class="form-floating">
-                <input type="number" placeholder="Surface de votre logement en m2" class="form-control" min="0" id="surface_logement" name="surface_logement" required value="<?php if(isset($_POST['surface_logement'])){echo $_POST['surface_logement'];}?>">
+                <input type="number" placeholder="Surface de votre logement en m2" class="form-control" id="surface_logement" name="surface_logement" required value="<?php if(isset($_POST['surface_logement'])){echo $_POST['surface_logement'];}?>">
                 <label for="surface_logement" class="form-label">Surface du logement en m2</label>
             </div>
         </div>

@@ -1,8 +1,11 @@
  <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?> 
- <?php require_once(dirname(__DIR__).'/class/Recherches.php');?>
+ <?php// require_once(dirname(__DIR__).'/class/Recherches.php');?>
+ <?php require_once(dirname(__DIR__).'/controllers/annonces/recherches/getAllData.php');?>
  <?php if(isset($_GET["btn-search"])){
-    $annonces = Recherches::recherche_annonce(htmlEntities($_GET["search-room"]));
-    $nombres = Recherches::nombre_annonce(htmlEntities($_GET["search-room"]));
+     $search=htmlspecialchars($_GET["search-room"], ENT_QUOTES);
+      require_once(dirname(__DIR__).'/controllers/annonces/recherches/getDataSearch.php');
+   // $annonces = Recherches::recherche_annonce(htmlEntities($_GET["search-room"]));
+   // $nombres = Recherches::nombre_annonce(htmlEntities($_GET["search-room"]));
  } 
   ?>
 

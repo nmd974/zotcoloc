@@ -1,12 +1,12 @@
 <?php if(!isset($_GET["btn-search"])):?>  
-                <?php $annonces = Recherches::all_annonce(); ?>
+                <?php //$annonces = Recherches::all_annonce(); ?>
              <?php if(!$annonces[0]):?>
              <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
              <?php else :?>
-                 <?php foreach($annonces[1] as $annonce):?>
+                 <?php foreach($annonces as $annonce):?>
                  
                      <div class="m-2 mb-4">
-                     <a href="roommateDetails.php?id=<?= htmlEntities($annonce->id_chambre) ?>" class="mode-link">
+                     <a href="roommateDetails.php?id=<?= htmlspecialchars($annonce->id_chambre) ?>" class="mode-link">
                          <div class="card card-relative shadow-lg border " style="width: 18rem;">
                              <!-- icon coeur en position absolute-->
                              <div>
@@ -18,12 +18,13 @@
                              </div>
                              <!-- avatar en position absolute -->
                              <div class="avatar d-flex justify-content-center align-items-center bg-light shadow" style="width:60px; height: 60px; border-radius: 50%;">
-                             <?php $utilisateurs = Recherches::photo_utilisateur(htmlEntities($annonce->id_utilisateur))?>
+                             <?php $idUtilisateur = htmlspecialchars($annonce->id_utilisateur);?>
+                             <?php // $utilisateurs = Recherches::photo_utilisateur(htmlspecialchars($annonce->id_utilisateur))?>
                                  <?php if(!$utilisateurs[0]):?>
                                  <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                                  <?php else :?>
-                                     <?php foreach($utilisateurs[1] as $utilisateur):?>
-                                 <img src="../images/<?= htmlEntities($utilisateur->libelle_photo) ?>" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px; height: 60px; border-radius: 50%;">
+                                     <?php foreach($utilisateurs as $utilisateur):?>
+                                 <img src="../images/<?= htmlspecialchars($utilisateur->libelle_photo) ?>" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px; height: 60px; border-radius: 50%;">
                                  <?php endforeach; ?>
                                      <?php endif; ?>
                              </div>
@@ -38,14 +39,14 @@
                                      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
                                  </ol>
                                  <div class="carousel-inner">
- 
-                                <?php $images = Recherches::photo_annonce(htmlEntities($annonce->id_chambre))?>
+                                 <?php $idChambre=htmlspecialchars($annonce->id_chambre,ENT_QUOTES); ?>
+                                <?php //$images = Recherches::photo_annonce(htmlspecialchars($annonce->id_chambre))?>
                                  <?php if(!$images[0]):?>
                                  <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                                  <?php else :?>
-                                     <?php foreach($images[1] as $image):?>
+                                     <?php foreach($images as $image):?>
                                      <div class="carousel-item active">
-                                         <img src="../images/<?= htmlEntities($image->libelle_photo) ?>" class="d-block w-100" alt="room" style="height:190px;">
+                                         <img src="../images/<?= htmlspecialchars($image->libelle_photo) ?>" class="d-block w-100" alt="room" style="height:190px;">
                                      </div>
                                      <?php endforeach; ?>
                                      <?php endif; ?>
@@ -56,13 +57,13 @@
                              <div class="card-body">
                              
                              <!-- role -->
-                                 <span class="badge bg-primary mb-1 letter-space"><?= htmlEntities($annonce->libelle_role) ?></span>
+                                 <span class="badge bg-primary mb-1 letter-space"><?= htmlspecialchars($annonce->libelle_role) ?></span>
                                  <!-- titre de l'annonce -->
-                                 <h5 class="card-title"><?= htmlEntities($annonce->titre_chambre) ?></h5>
-                                 <p class="card-text"><?= htmlEntities($annonce->libelle_ville) ?></p>
+                                 <h5 class="card-title"><?= htmlspecialchars($annonce->titre_chambre) ?></h5>
+                                 <p class="card-text"><?= htmlspecialchars($annonce->libelle_ville) ?></p>
                                  <!-- <p class="card-text">Chambre: 1</p> -->
-                                 <p class="card-text"><?= htmlEntities($annonce->date_disponibilite) ?></p>
-                                 <p class="card-text"><span class="fw-bold h4"><?= htmlEntities($annonce->loyer) ?> €</span> par mois</p>
+                                 <p class="card-text"><?= htmlspecialchars($annonce->date_disponibilite) ?></p>
+                                 <p class="card-text"><span class="fw-bold h4"><?= htmlspecialchars($annonce->loyer) ?> €</span> par mois</p>
                                 
                                  </a>
                              </div>
