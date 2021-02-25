@@ -59,7 +59,6 @@
         <!--Régle de vie-->
         <div class="col-md-12">
             <div class="d-flex flex-wrap interets_ajax" role="group" aria-label="Basic checkbox toggle button group" id="regle_vie">
-            <?php $regles = Regles::reglesAll()?>
             <?php if(!$regles[0]):?>
                 <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
             <?php else :?>

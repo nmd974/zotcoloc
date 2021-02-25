@@ -1,5 +1,4 @@
 <!--STEP_2-->
-<?php require_once(dirname(dirname(__DIR__)).'/class/Villes.php');?>
 <div id="bloc_step_2" class="unshow_step">
 <!--Retour button-->
 <div class="arrow_return d-flex align-items-center mb-5" id="back_step1">
@@ -20,7 +19,6 @@
     <!-- Amelioration : Faire avec ajax une generation des adresses selon ce qui saisie en lien avec api region reunion https://data.regionreunion.com/explore/dataset/ban-lareunion/api/-->
 
     <div class="d-flex flex-wrap ville_ajax align-items-stretch" role="group" aria-label="Basic checkbox toggle button group">
-        <?php $villes = Villes::villesAll()?>
         <?php if(!$villes[0]):?>
             <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
         <?php else :?>

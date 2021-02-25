@@ -1,5 +1,7 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
 <?php require_once(dirname(__DIR__).'/controllers/createAnnonce.php');?>
+<?php var_dump(__DIR__);?>
+<?php require_once(dirname(__DIR__).'/controllers/annonces/creation/getData.php');?>
 
 
 <div class="container">
@@ -14,7 +16,7 @@
 </div>
 <div class="container" id="wrapper_page_content">
 
-    <?php require_once(dirname(__DIR__).'/includes/creerAnnonce/timeline.php')?>
+    <?php require_once(dirname(__DIR__).'/includes/annonces/creation/timeline.php')?>
     <?php
     // if(isset($_POST['enregistrer_annonce'])){
     //     if(!isset($_POST['id_logement'])){
@@ -46,11 +48,11 @@
 <?php endif;?>
     <!--On fait afficher la page selon l'id des step de chaque bloc en jqurey-->
     <form method="POST" enctype="multipart/form-data" id="create_annonce" action="http://127.0.0.1:8000/src/controllers/annonces/create.php">
-        <?php require_once(dirname(__DIR__).'/includes/creerAnnonce/step_1.php');?>
-        <?php require_once(dirname(__DIR__).'/includes/creerAnnonce/step_2.php');?>
-        <?php require_once(dirname(__DIR__).'/includes/creerAnnonce/step_3.php');?>
-        <?php require_once(dirname(__DIR__).'/includes/creerAnnonce/step_4.php');?>
-        <?php require_once(dirname(__DIR__).'/includes/creerAnnonce/step_5.php');?>
+        <?php require_once(dirname(__DIR__).'/includes/annonces/creation/step_1.php');?>
+        <?php require_once(dirname(__DIR__).'/includes/annonces/creation/step_2.php');?>
+        <?php require_once(dirname(__DIR__).'/includes/annonces/creation/step_3.php');?>
+        <?php require_once(dirname(__DIR__).'/includes/annonces/creation/step_4.php');?>
+        <?php require_once(dirname(__DIR__).'/includes/annonces/creation/step_5.php');?>
     </form>
 
 </div>
@@ -170,7 +172,6 @@ $('#addChambre').on('click', () => {
         <div class="col-md-12 mt-3">
             <p>Equipements privés:</p>
             <div class="d-flex flex-wrap interets_ajax" role="group" aria-label="Basic checkbox toggle button group" id="equipement_prive">
-        <?php $equipements = Equipements::equipementAll()?>
         <?php if(!$equipements[0]):?>
             <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
         <?php else :?>
