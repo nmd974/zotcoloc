@@ -12,7 +12,6 @@ if($db){
         $query = $db->query("SELECT * FROM `utilisateurs` INNER JOIN `proprietaire` ON proprietaire.id_utilisateur = utilisateurs.id WHERE utilisateurs.id = '$id_utilisateur'");
         $mon_compte = $query->fetchAll(PDO::FETCH_OBJ);
         $logger->info("Recuperation des données du compte utilisateur -- SUCCESS");
-        $logger->info($mon_compte);
 
         $query = $db->query("SELECT * FROM `photo_utilisateur` INNER JOIN `photos` ON photos.id = photo_utilisateur.id_photo WHERE photo_utilisateur.id_utilisateur = '$id_utilisateur'");
         $ma_photo = $query->fetchAll(PDO::FETCH_OBJ);
@@ -22,7 +21,8 @@ if($db){
         INNER JOIN `chambres` ON chambres.id_logement = logements.id_logement 
         INNER JOIN `villes` ON villes.id = logements.id_ville
         WHERE `id_utilisateur` = '$id_utilisateur' 
-        AND `statut` != 'Suprimee'
+        AND `statut` != 'Supprimee'
+        AND `statut_chambre` != 'Supprimee'
         ");
         $mes_annonces = $query->fetchAll(PDO::FETCH_OBJ);
         $logger->info("Recuperation des données des annonces de l'utilisateur -- SUCCESS");

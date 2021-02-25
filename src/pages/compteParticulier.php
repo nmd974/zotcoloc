@@ -1,13 +1,16 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
+<?php
+    if(!$_SESSION['isLoggedIn']){
+        header_remove('Location');
+        header('Location: home.php');
+    }
+?>
 <?php require_once(dirname(__DIR__).'/class/Interets.php');?>
 <?php require_once(dirname(__DIR__).'/class/Utilisateurs.php');?>
 <?php require_once(dirname(__DIR__).'/class/Photos.php');?>
 <?php require_once(dirname(__DIR__).'/controllers/editProfilParticulier.php');?>
 
 <?php
-    if(!$_SESSION['isLoggedIn']){
-        header('Location: ./home.php');
-    }else{
         //Chargement des données correspondantes à l'id lors de l'arrivée sur page
         
         $mon_id_particulier = Utilisateurs::monCompteParticulier($_SESSION['id_utilisateur']);

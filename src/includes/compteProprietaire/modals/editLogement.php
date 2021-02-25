@@ -32,7 +32,6 @@
                     <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                 </div>
             <?php else:?>
-            <?php var_dump($logement_equipements);?>
             <form method="post" enctype="multipart/form-data" action="http://127.0.0.1:8000/src/controllers/annonces/logements/update.php">
                 <div class="modal-body">
                     <!--Titre-->

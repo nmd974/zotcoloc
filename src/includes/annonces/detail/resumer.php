@@ -35,21 +35,21 @@
                     <!-- Button trigger modal -->
                     <?php if($annonces[1]->id_utilisateur == $_SESSION['id_utilisateur']):?>
                         <div class="d-flex justify-content-center mt-4">
-                                <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                                    data-bs-target="#editLogement">
-                                    Modifier le logement <i class="fa fa-pencil mx-2" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                            <div class="d-flex justify-content-center mt-4">
-                                <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                                    data-bs-target="#editChambre">
-                                    Modifier la chambre <i class="fa fa-pencil mx-2" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                            <?php else:?>
-                    <button type="button" class="btn bg-green text-light fw-bold letter-space mt-5" data-bs-toggle="modal" data-bs-target="#modal-contact">
-                    LOUER CETTE CHAMBRE
-                    </button>
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                        data-bs-target="#editLogement">
+                        Modifier le logement <i class="fa fa-pencil mx-2" aria-hidden="true"></i>
+                        </button>
+                        </div>
+                        <div class="d-flex justify-content-center mt-4">
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                        data-bs-target="#editChambre">
+                        Modifier la chambre <i class="fa fa-pencil mx-2" aria-hidden="true"></i>
+                        </button>
+                        </div>
+                    <?php else:?>
+                        <button type="button" class="btn bg-green text-light fw-bold letter-space mt-5" data-bs-toggle="modal" data-bs-target="#modal-contact">
+                        LOUER CETTE CHAMBRE
+                        </button>
                     <?php endif;?>
                     <!-- <a href="#" class="btn bg-green text-light fw-bold letter-space mt-5">LOUER CETTE CHAMBRE</a> -->
                 </div>
