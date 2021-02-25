@@ -21,3 +21,9 @@
     <?php unset($_SESSION['flash']);?>
 </script>
 <?php endif; ?>
+
+<!--Script AOS-->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
