@@ -419,6 +419,16 @@ em{
 .fa-trash{
     cursor: pointer;
 }
+.card-body{
+    min-height: 250px;
+    max-height: 250px;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-direction: column;
+
+}
 /*---------------------------------------------*/
 /*MEDIAQUERIES*/
 /*---------------------------------------------*/
@@ -502,9 +512,9 @@ em{
      .map-order{
         order: 2!important;
      }
-     .card-order{
+     /* .card-order{
          order: 1!important;
-     }
+     } */
     /*---------------------------------------------*/
 }
 /*---------------------------------------------*/
