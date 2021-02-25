@@ -5,6 +5,16 @@
                             <p class="text-secondary m-0 poppins h5">DETAILS</p>
                             <h2 class="vidaloka m-0 h1">Détails<span class="text-green"> du logement</span></h2>
                         </div>
+                        <?php if($annonces[1]->id_utilisateur == $_SESSION['id_utilisateur']):?>
+                        <div class="d-flex justify-content-end mt-4">
+                            <button type="button" class="btn btn-success me-4" data-bs-toggle="modal" data-bs-target="#editLogement">
+                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                            </button>
+                            <button type="button" class="btn btn-success" name="save_photo_user" data-bs-toggle="modal" data-bs-target="#editPhotoLogement">
+                                <i class="fa fa-camera" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <?php endif;?>
                     </div>
                 </div>
 

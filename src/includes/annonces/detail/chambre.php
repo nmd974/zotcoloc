@@ -5,7 +5,17 @@
             <p class="text-secondary m-0 poppins h5">DETAILS</p>
             <h2 class="vidaloka m-0 h1">Détails<span class="text-green"> de la chambre</span></h2>
         </div>
-    </div>
+        <?php if($annonces[1]->id_utilisateur == $_SESSION['id_utilisateur']):?>
+            <div class="d-flex mt-4">
+                <button type="button" class="btn btn-success me-4" data-bs-toggle="modal" data-bs-target="#editChambre">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="btn btn-success" name="save_photo_user" data-bs-toggle="modal" data-bs-target="#editPhotoChambre">
+                    <i class="fa fa-camera" aria-hidden="true"></i>
+                </button>
+                </div>
+            </div>
+        <?php endif;?>
 </div>
 
 <p class="h3"><?= htmlEntities($annonces[1]->titre_chambre) ?></p>
@@ -57,27 +67,4 @@
                     <?php endforeach; ?>
                     </div>
                     <?php endif;?>
-                <!-- <div class="d-flex">
-               
-                <div class="equipment-room border-secondary border shadow mb-2 d-flex align-items-center justify-content-center m-1">
-                    <div class="d-flex">
-                        <div class="d-flex align-items-center">
-                        <i class="fa fa-file-image-o fa-3x text-dark ms-3" aria-hidden="true"></i> 
-                        </div>
-                        <div class="d-flex align-items-center ms-2">
-                            <p class="mb-0">Equipement du logement</p>
-                        </div>
-                    </div>
-                </div>
-               
-                <div class="equipment-room border-secondary border shadow mb-2 d-flex align-items-center justify-content-center m-1">
-                    <div class="d-flex">
-                        <div class="d-flex align-items-center">
-                        <i class="fa fa-file-image-o fa-3x text-dark ms-3" aria-hidden="true"></i> 
-                        </div>
-                        <div class="d-flex align-items-center ms-2">
-                            <p class="mb-0">Equipement du logement</p>
-                        </div>
-                    </div>
-                </div>
-                </div> -->
+
