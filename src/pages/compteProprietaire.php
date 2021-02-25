@@ -65,7 +65,7 @@
         </div>
     </div>
     <!--METTRE LE CONTENU ICI-->
-    <div class="container">
+    <div class="container profil_view">
     <?php if(isset($update)){
         var_dump($update);
     }
