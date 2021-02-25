@@ -12,11 +12,11 @@
                     <div class="photo_profil" style="background-image: url(../images/<?= $ma_photo[1][0]->libelle_photo ?>);"></div>       
                     <button class="btn d-flex align-items-center justify-content-center mt-2 w-100" name="save_photo_user" data-bs-toggle="modal" data-bs-target="#editPhoto">
                         <i class="fa fa-camera text-dark me-2" aria-hidden="true"></i>
-                        <p class="icone_photo text-white">Modifier ma photo</p>
+                        <p class="icone_photo text-black">Modifier ma photo</p>
                     </button>
                 <?php endif; ?>                
             <!-- <form> -->
-            <p class="nav_title_profil"><?= $mon_compte[1][0]->prenom ?></p>
+            <p class="nav_title_profil">@<?= $mon_compte[1][0]->prenom ?> - Propriétaire</p>
             
         </div>
 
