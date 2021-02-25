@@ -220,6 +220,7 @@ class Recherches {
             INNER JOIN `utilisateurs` ON logements.id_utilisateur = utilisateurs.id
             INNER JOIN `roles` ON utilisateurs.id_role = roles.role_id
             WHERE logements.id_utilisateur = '$id'
+            AND `statut` = 'Attente validation'
             ORDER BY `date_creation` DESC;
             ");
             $data = $query->fetchAll(PDO::FETCH_OBJ);

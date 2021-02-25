@@ -1,8 +1,8 @@
 <div class="d-flex flex-column justify-content-center align-items-center unshow_step" id="annonceNav_content">
 <?php require_once(dirname(dirname(__DIR__)).'/class/Recherches.php');?>
 <?php $annonces = Recherches::annonceByUserId($_SESSION['id_utilisateur']); ?>
-
-<?php if(!$annonces[0] && count($annonces[1][0]) == 0):?>
+<?php var_dump($annonces);?>
+<?php if(!$annonces[0] || count($annonces[1][0]) == 0):?>
 
         <img src="../images/no-annonce.png" class="img_moncompte">
         <button class="btn btn-success mt-4 w-25">Ajouter une annonce</button>
@@ -12,9 +12,10 @@
                     <!-- ////////////////////////carte d'une annonce///////////////////// -->
             <?php if(!$annonces[0]):?>
             <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
+            <?php var_dump($annonces);?>
             <?php else :?>
                 <?php foreach($annonces[1] as $annonce):?>
-                
+                   
                     <div class="m-2 mb-4">
                         <div class="card card-relative shadow-lg border " style="width: 18rem;">
                             <!-- icon coeur en position absolute-->
