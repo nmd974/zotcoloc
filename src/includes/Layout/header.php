@@ -85,7 +85,7 @@
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
-                                <a href="./home.php" class="nav-link active fw-bold" aria-current="page">Accueil</a>
+                                <a href="./home.php" class="nav-link active" aria-current="page">Accueil</a>
                             </li>
                             <li class="nav-item">
                                 <a href="./roommateSearch.php" class="nav-link active" aria-current="page">Recherche</a>
