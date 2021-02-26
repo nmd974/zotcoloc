@@ -11,7 +11,7 @@
 
             <div class="text-center text-white mt-5">
                 <h3>Nous avons la solution pour votre logement partagé</h3>
-                <p>Pour déposer votre annonce, dîtes-nous qui vous êtes :</p>
+                
             </div>
 
             <div class="d-flex justify-content-evenly mt-5">
