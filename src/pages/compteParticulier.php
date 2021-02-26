@@ -23,7 +23,7 @@
         $mes_favoris = Utilisateurs::favorisParticulier($mon_id_particulier[1][0]->id);
         $mes_candidatures = Utilisateurs::candidaturesParticulier($mon_id_particulier[1][0]->id);
         $mes_annonces = Utilisateurs::annoncesParticulier($_SESSION['id_utilisateur']);
-    }
+    
 ?>
 
 <?php if(isset($_POST['save_photo_user'])):?>
