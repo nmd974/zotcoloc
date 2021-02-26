@@ -9,9 +9,9 @@
         </div>
     </div>
 </div>
-<div class="container h-100" id="wrapper_page_content">
+<div class="container" id="wrapper_page_content" style="height: 61vh;">
 
-<div class="form-modal">
+<div class="form-modal" >
 <a href="./authentificationLoueur.php">Je n'ai pas de compte</a>
 
 <?php if(isset($_SESSION['flash'])):?>
