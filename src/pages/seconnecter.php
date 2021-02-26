@@ -9,7 +9,7 @@
         </div>
     </div>
 </div>
-<div class="container" id="wrapper_page_content">
+<div class="container" id="wrapper_page_content" style="margin-bottom: 103px;">
 
 <div class="form-modal" >
 <a href="./authentificationLoueur.php">Je n'ai pas de compte</a>

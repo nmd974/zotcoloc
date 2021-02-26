@@ -2,3 +2,4 @@
 app.log
 *.log
 src/app.log
+/class/Connection.php
