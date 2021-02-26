@@ -77,7 +77,7 @@
                   </div>
                 </div>
 
-                <div class="col" data-aos="fade-up-left">
+                <div class="col" data-aos="flip-up">
                   <div class="card h-100 border border-3">
 
                     <div class="d-flex justify-content-center">
