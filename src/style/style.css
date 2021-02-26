@@ -419,6 +419,16 @@ em{
 .fa-trash{
     cursor: pointer;
 }
+.card-rslt{
+    min-height: 250px;
+    max-height: 250px;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-direction: column;
+
+}
 /*---------------------------------------------*/
 /*MEDIAQUERIES*/
 /*---------------------------------------------*/
@@ -464,6 +474,13 @@ em{
         margin-left: -15rem;
         z-index: 99;
     }
+    .img_moncompte{
+        width: 300px;
+        height: auto;
+    }
+    .profil_view{
+        margin-bottom: 150px;
+    }
     #photo_profil_pc{
         display: none !important;
     }
@@ -502,9 +519,9 @@ em{
      .map-order{
         order: 2!important;
      }
-     .card-order{
+     /* .card-order{
          order: 1!important;
-     }
+     } */
     /*---------------------------------------------*/
 }
 /*---------------------------------------------*/
