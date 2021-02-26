@@ -288,7 +288,7 @@ class Recherches {
 
 public static function listVille()
 {
-    $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+    $pdo = Connection::getPDO();
     $error = null;
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     try{
