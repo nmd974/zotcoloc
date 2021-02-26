@@ -1,5 +1,5 @@
 <?php
-include './Connection.php';
+include __DIR__ . '/Connection.php';
 class Utilisateurs {
 
     public static function monCompteParticulier($id)

@@ -1,5 +1,5 @@
 <?php
-
+include __DIR__ . '/Connection.php';
 class Statistiques {
 
  

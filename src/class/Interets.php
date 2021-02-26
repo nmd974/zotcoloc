@@ -1,6 +1,5 @@
 <?php
-include './Connection.php';
-require_once(__DIR__ . '/Connection.php');
+include __DIR__ . '/Connection.php';
 class Interets {
 
     public static $liste_interets =[];

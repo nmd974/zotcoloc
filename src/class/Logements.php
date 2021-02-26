@@ -1,5 +1,5 @@
 <?php
-include './Connection.php';
+include __DIR__ . '/Connection.php';
 class Logements {
 
     public static function idLogementByIdChambre($id)

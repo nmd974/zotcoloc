@@ -1,5 +1,5 @@
 <?php
-include './Connection.php';
+include __DIR__ . '/Connection.php';
 class Photos {
 
     public static function photoLogement($id_photo, $id_logement)
