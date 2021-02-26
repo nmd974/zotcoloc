@@ -53,6 +53,7 @@
                 <p class="card-text">Disponible le : <?= (new DateTime(htmlspecialchars($annonce->date_disponibilite).'00:00:00'))->format('d/m/Y') ?></p>
                 <p class="card-text"><span class="fw-bold h4"><?= htmlspecialchars($annonce->loyer) ?> €</span> par mois</p>
             </div>
+            
         </div>
     </a>
 </div>
