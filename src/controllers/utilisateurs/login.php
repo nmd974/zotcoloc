@@ -48,7 +48,7 @@ if($error == null) {
 
         try{
             //COMPARAISON DE L'EMAIL AVEC LA TABLE UTILISATEURS
-            $query = 'SELECT * FROM `utilisateurs` INNER JOIN `roles` ON utilisateurs.id_role = roles.id WHERE `email`=:email';
+            $query = 'SELECT * FROM `utilisateurs` INNER JOIN `roles` ON utilisateurs.id_role = roles.role_id WHERE `email`=:email';
             $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
             $sth->execute(array(
                 ':email' => $data_sanitized['email']   

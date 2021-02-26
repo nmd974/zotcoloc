@@ -56,7 +56,7 @@ class Statistiques {
                 INNER JOIN `villes` 
                 WHERE logements.id_ville = villes.id AND statut = 'Publiee'  
                 GROUP BY `libelle_ville` 
-                ORDER BY COUNT(*) DESC LIMIT 3
+                ORDER BY COUNT(*), `date_creation` DESC LIMIT 3
             ");
             $data = $query->fetchAll(PDO::FETCH_OBJ);
             return array(true, $data);

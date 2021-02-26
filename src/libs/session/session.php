@@ -12,4 +12,4 @@ if(!isset($_SESSION['role'])){
 if(!isset($_SESSION['id_utilisateur'])){
     $_SESSION['id_utilisateur'] = false;
 }
-$_SESSION['domaine'] = "http://127.0.0.1:8000";
+$_ENV['url_app'] = "http://127.0.0.1:8000";

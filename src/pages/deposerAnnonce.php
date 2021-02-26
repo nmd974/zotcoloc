@@ -3,7 +3,7 @@
 
 <section section style="background: url('https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/hero-bg.jpg') no-repeat; height: 55vh;" class="hero d-flex align-items-center justify-content-center">
         
-        <div class="mt-1">
+        <div class="mt-5">
             <div>
                 <h1 class="display-3 text-white vidaloka">Zot<span class="text-green">Coloc</span> Réunion</h1>
                 <p class="text-white">Publiez votre logement sur la plateforme spécialiste du logement partagé. Recevez et gérez vos candidatures en quelques clics.</p>
@@ -11,16 +11,16 @@
 
             <div class="text-center text-white mt-5">
                 <h3>Nous avons la solution pour votre logement partagé</h3>
-                <p>Pour déposer votre annonce, dîtes-nous qui vous êtes :</p>
+                
             </div>
 
             <div class="d-flex justify-content-evenly mt-5">
                 
                 <a href="./authentificationLoueur.php">
-                  <button type="button" class="btn btn-success btn-lg rounded-pill">Colocataire</button>
+                  <button type="button" class="btn btn-success btn-lg rounded-pill">Déposer une annonce</button>
                 </a>
                 
-                <a href="./authentificationLoueur.php">
+                <!-- <a href="./authentificationLoueur.php">
                   <button type="button" class="btn btn-success btn-lg rounded-pill">Résidence</button>
                 </a>
                 
@@ -30,7 +30,7 @@
 
                 <a href="./authentificationLoueur.php">
                   <button type="button" class="btn btn-success btn-lg rounded-pill">Agence</button>
-                </a>
+                </a> -->
 
             </div>
         </div>

@@ -1,5 +1,4 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
-
 <div class="container">
     <div class="mb-5 subtitle">
         <div class="border-one ps-1">
