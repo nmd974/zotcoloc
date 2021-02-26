@@ -26,7 +26,7 @@
     
 </head>
 
-<body>
+<body class="d-flex align-items-end >
     
   <div class="d-flex" id="wrapper">
 

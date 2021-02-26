@@ -1,7 +1,7 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
 
 
-<section section style="background: url('https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/hero-bg.jpg') no-repeat; height: 55vh;" class="hero d-flex align-items-center justify-content-center">
+<section section style="background: url('https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/hero-bg.jpg'); height: 55vh;" class="hero d-flex align-items-center justify-content-center">
         
         <div class="mt-5">
             <div>
