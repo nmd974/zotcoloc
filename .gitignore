@@ -1,3 +1,4 @@
 /src/vendor/
 app.log
 *.log
+src/app.log
