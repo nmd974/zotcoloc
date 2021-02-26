@@ -38,8 +38,8 @@ const pattern_name = new RegExp("\\w");
 btnStepEl2.addEventListener("click", (e)=>{
     
     e.preventDefault();
-    // step_1_validator();
-    // if($('#formulaire_inscription').valid()){
+    step_1_validator();
+    if($('#formulaire_inscription').valid()){
 
         //Verification si email en doublon
         var email = document.getElementById('email').value;
@@ -86,7 +86,7 @@ btnStepEl2.addEventListener("click", (e)=>{
         xmlhttp.open("POST", "http://127.0.0.1:8000/src/controllers/utilisateurs/getEmail.php?email=" + email, true);
         xmlhttp.send();
         
-    // }
+    }
 })
 
 //Gestion du clic vers step 3
@@ -96,7 +96,7 @@ btnStepEl3.addEventListener("click", (e)=>{
     
     //Verification des champs de formulaire
     // step_2_validator();
-    // if($('#formulaire_inscription').valid()){
+    if($('#formulaire_inscription').valid()){
         //Si on rencontre un probleme alors on passe en false et on n'accède pas à la suite
             //On gère l'affichage du bouton
             let dot = document.getElementById('dot_2');
@@ -128,7 +128,7 @@ btnStepEl3.addEventListener("click", (e)=>{
                 recapEl.append(content);
             })
             
-    // }
+    }
     })
     
     //Gestion du clic vers step 4
@@ -140,7 +140,7 @@ btnStepEl3.addEventListener("click", (e)=>{
         let validationFormulaire = true;
         
         //Si on rencontre un probleme alors on passe en false et on n'accède pas à la suite
-        if(validationFormulaire){
+        if($('#formulaire_inscription').valid()){
             //On gère l'affichage du bouton
             let dot = document.getElementById('dot_3');
             dot.innerHTML = `<i class="fa fa-check text-white" aria-hidden="true"></i>`;
@@ -187,7 +187,7 @@ btnStepEl3.addEventListener("click", (e)=>{
         let validationFormulaire = true;
         
         //Si on rencontre un probleme alors on passe en false et on n'accède pas à la suite
-        if(validationFormulaire){
+        if($('#formulaire_inscription').valid()){
             //On gère l'affichage du bouton
             let dot = document.getElementById('dot_4');
             dot.innerHTML = `<i class="fa fa-check text-white" aria-hidden="true"></i>`;
@@ -217,7 +217,7 @@ btnStepEl3.addEventListener("click", (e)=>{
                 content.innerHTML = `${checkbox.labels[0].textContent}`;
                 recapEl.append(content);
             })
-        }
+        };
         
     })
     
