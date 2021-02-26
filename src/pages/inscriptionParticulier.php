@@ -19,7 +19,7 @@
     </div>
 </div>
 
-<div class="container" id="wrapper_page_content">
+<div class="container" id="wrapper_page_content" style="margin-bottom: 117px;">
 
     <?php require_once(dirname(__DIR__).'/includes/signupFormParticulier/timeline.php')?>
 

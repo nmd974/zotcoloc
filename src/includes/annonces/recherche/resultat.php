@@ -7,7 +7,7 @@
 
 <?php include __ROOT__.'/src/controllers/annonces/recherches/getPhotos.php'?>
 
-<div class="m-2 mb-4">
+<div class="m-2 my-5">
     <a href="roommateDetails.php?id=<?= htmlspecialchars($annonce->id_chambre) ?>" class="mode-link">
         <div class="card card-relative shadow-lg border " style="width: 18rem;">
             <!-- icon coeur en position absolute-->
