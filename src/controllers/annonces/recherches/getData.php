@@ -20,7 +20,8 @@ if($db){
             INNER JOIN `utilisateurs` ON logements.id_utilisateur = utilisateurs.id
             INNER JOIN `roles` ON utilisateurs.id_role = roles.role_id
             WHERE `statut` = 'Publiee'
-            AND `a_louer` = 1 
+            AND `a_louer` = 1
+            AND `statut_chambre` = 'Active'
             ORDER BY `date_creation` DESC;
             ");
             $annonces = $query->fetchAll(PDO::FETCH_OBJ);
@@ -33,6 +34,7 @@ if($db){
             INNER JOIN `utilisateurs` ON logements.id_utilisateur = utilisateurs.id         
             WHERE `statut` = 'Publiee'
             AND `a_louer` = 1 
+            AND `statut_chambre` = 'Active'
             ");
             $count = $query->fetch();
             $logger->info("Recuperation des données des regles -- SUCCESS");
@@ -63,6 +65,7 @@ if($db){
             INNER JOIN `roles` ON utilisateurs.id_role = roles.role_id
             WHERE `statut` = 'Publiee'
             AND `a_louer` = 1 
+            AND `statut_chambre` = 'Active'
             AND `libelle_ville`LIKE '$search%'
             ORDER BY `date_creation` DESC;
             ");
@@ -79,6 +82,7 @@ if($db){
             INNER JOIN `roles` ON utilisateurs.id_role = roles.role_id
             WHERE `statut` = 'Publiee'
             AND `a_louer` = 1 
+            AND `statut_chambre` = 'Active'
             AND `libelle_ville`LIKE '%$search%'
             ");
             $count = $query->fetch();

@@ -1,11 +1,22 @@
 <!-- titre -->
 <div class="mb-5 mt-4">
-    <div class="border-one ps-1">
+    <div class="border-one ps-1 d-flex justify-content-between">
         <div class="border-two ps-3">
             <p class="text-secondary m-0 poppins h5">DETAILS</p>
             <h2 class="vidaloka m-0 h1">Détails<span class="text-green"> de la chambre</span></h2>
         </div>
-    </div>
+        <?php if($annonces[1]->id_utilisateur == $_SESSION['id_utilisateur']):?>
+        <div class="d-flex mt-4">
+            <button type="button" class="btn btn-success me-4" data-bs-toggle="modal" data-bs-target="#editChambre">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+            </button>
+            <button type="button" class="btn btn-success" name="save_photo_user" data-bs-toggle="modal" data-bs-target="#editPhotoChambre">
+                <i class="fa fa-camera" aria-hidden="true"></i>
+            </button>
+            </div>
+            <?php endif;?>
+        </div>
+
 </div>
 
 <p class="h3"><?= htmlEntities($annonces[1]->titre_chambre) ?></p>
@@ -30,8 +41,8 @@
             
 </div>
 <div class="ms-3">
-<p class="fw-bold mb-0"><?= htmlEntities($annonces[1]->prenom) ?></p>
-<p class="mb-0"><?= htmlEntities($annonces[1]->libelle_role) ?></p>
+<p class="fw-bold mb-0"><?= ucfirst(htmlEntities($annonces[1]->prenom)) ?></p>
+<p class="mb-0"><?= ucfirst(htmlEntities($annonces[1]->libelle_role)) ?></p>
 </div>
 </div>
 

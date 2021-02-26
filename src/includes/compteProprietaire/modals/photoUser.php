@@ -2,7 +2,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="editPhotoLabel">Ajouter ou modifier une photo</h5>
+        <h5 class="modal-title" id="editPhotoLabel">Ajouter ou modifier ma photo de profil</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <form method="post" enctype="multipart/form-data">
@@ -10,8 +10,8 @@
               <input type="file" name="image_upload" id="image_upload" >
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" id="save_photo_user" class="btn btn-primary" name="save_photo_user">Save changes</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
+          <button type="submit" id="save_photo_user" class="btn btn-success" name="save_photo_user">Ajouter ma photo</button>
         </div>
       </form>
     </div>
