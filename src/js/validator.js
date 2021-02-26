@@ -129,7 +129,8 @@ const validator_create_annonce = () => {
                 digits: true
             },
             age_min:{
-                digits: true
+                digits: true,
+                min: 18
             },
             'titre_chambre[]':{
                 required: true
