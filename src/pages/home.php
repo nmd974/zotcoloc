@@ -76,20 +76,20 @@
         <div class="container">
             <div class="row text-center">
                 <div class=" d-flex justify-content-around align-items-center flex-wrap mt-3 mb-3">
-                    <p class="h6"><span class="stat text-green fw-bold vidaloka">
+                    <p class="h6"><span class="stat text-green fw-bold vidaloka" id="compteurA">0
                     <?php $nbrAnnonces = Statistiques::annonce_total()?>
                     <?php if(!$nbrAnnonces[0]):?>
                      <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                     <?php else :?>
-                    <?php echo $nbrAnnonces[1][0]["COUNT(*)"];?>
+                    <script> var numberA = <?php echo $nbrAnnonces[1][0]["COUNT(*)"];?>; console.log(numberA); </script>
                     <?php endif; ?>
                     </span><br>nbr Annonces </p>
-                    <p class="h6"><span class="stat text-green fw-bold vidaloka">
+                    <p class="h6"><span class="stat text-green fw-bold vidaloka" id="compteurI">0
                     <?php $nbrInscription = Statistiques::inscription_total()?>
                     <?php if(!$nbrInscription[0]):?>
                      <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                     <?php else :?>
-                    <?php echo $nbrInscription[1][0]["COUNT(*)"];?>
+                    <script> var numberI = <?php echo $nbrInscription[1][0]["COUNT(*)"];?>; console.log(numberI);</script>
                     <?php endif; ?></span><br>nbr inscrit</p>
                     <!-- <p class="h6"><span class="stat text-green fw-bold vidaloka">403</span><br>nbr de LOREM</p>
                     <p class="h6"><span class="stat text-green fw-bold vidaloka">1241</span><br>nbr LOREM</p> -->
@@ -382,4 +382,5 @@
 
 <?php require_once(dirname(__DIR__).'/includes/Layout/footer.php');?>
 <?php require_once(dirname(__DIR__).'/includes/Layout/scriptsSrc.php');?>
+<script src="../js/animation.js"></script>
 <?php require_once(dirname(__DIR__).'/includes/Layout/finbalise.php');?>
