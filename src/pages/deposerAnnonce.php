@@ -3,7 +3,9 @@
 
 <section section style="background: url('https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/hero-bg.jpg') no-repeat; height: 55vh;" class="hero d-flex align-items-center justify-content-center">
         
-        <div class="mt-5">
+        <div class="mt-5" data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000" >
             <div>
                 <h1 class="display-3 text-white vidaloka">Zot<span class="text-green">Coloc</span> Réunion</h1>
                 <p class="text-white">Publiez votre logement sur la plateforme spécialiste du logement partagé. Recevez et gérez vos candidatures en quelques clics.</p>
@@ -15,9 +17,9 @@
             </div>
 
             <div class="d-flex justify-content-evenly mt-5">
-                
+            
                 <a href="./authentificationLoueur.php">
-                  <button type="button" class="btn btn-success btn-lg rounded-pill">Déposer une annonce</button>
+                  <button type="button" class="btn btn-success btn-lg rounded-pill" data-aos="flip-left">Déposer une annonce  </button>
                 </a>
                 
                 <!-- <a href="./authentificationLoueur.php">
@@ -47,21 +49,21 @@
 
             <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
 
-                <div class="col">
+                <div class="col" data-aos="fade-down-right">
                   <div class="card h-100 border border-3">
 
                     <div class="d-flex justify-content-center">
                     <i class="fa fa-thumbs-up text-dark fa-3x m-3" aria-hidden="true"></i>
                     </div>
                     
-                    <div class="card-body">
+                    <div class="card-body" >
                       <h5 class="card-title">Simplicité</h5>
                       <p class="card-text">Grâce à notre processus de dépôt d'annonce clair et intuitif, sublimez votre logement en quelques clics, votre annonce est vérifiée sous 48h !</p>
                     </div>
                   </div>
                 </div>
 
-                <div class="col">
+                <div class="col" data-aos="flip-up">
                   <div class="card h-100 border border-3">
                     
                     <div class="d-flex justify-content-center">
@@ -75,7 +77,7 @@
                   </div>
                 </div>
 
-                <div class="col">
+                <div class="col"  data-aos="fade-up-left">
                   <div class="card h-100 border border-3">
 
                     <div class="d-flex justify-content-center">
@@ -97,3 +99,4 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/scriptsSrc.php');?>
 <!-- ON MET ICI DES SCRIPTS ASSOCIES A LA PAGE -->
 <?php require_once(dirname(__DIR__).'/includes/Layout/finbalise.php');?>
+
