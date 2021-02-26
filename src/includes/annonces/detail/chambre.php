@@ -41,8 +41,8 @@
             
 </div>
 <div class="ms-3">
-<p class="fw-bold mb-0"><?= htmlEntities($annonces[1]->prenom) ?></p>
-<p class="mb-0"><?= htmlEntities($annonces[1]->libelle_role) ?></p>
+<p class="fw-bold mb-0"><?= ucfirst(htmlEntities($annonces[1]->prenom)) ?></p>
+<p class="mb-0"><?= ucfirst(htmlEntities($annonces[1]->libelle_role)) ?></p>
 </div>
 </div>
 
