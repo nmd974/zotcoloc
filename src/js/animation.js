@@ -6,16 +6,11 @@ var deltaI = Math.ceil((duree * 1000) / numberI); // On calcule l'intervalle de 
 var nodeA =  document.getElementById("compteurA"); // On récupère notre noeud où sera rafraîchi la valeur du compteur
 var nodeI =  document.getElementById("compteurI"); // On récupère notre noeud où sera rafraîchi la valeur du compteur
  
-function countdown() {
-  
+function countdown() { 
   if( cptA < numberA ) { // Si on est pas arrivé à la valeur finale, on relance notre compteur une nouvelle fois
     nodeA.innerHTML = ++cptA;
      setTimeout(countdown, deltaA);
-     console.log(cptA);
-     console.log(deltaA);
-
-  }
-  
+  } 
   if( cptI < numberI ) { // Si on est pas arrivé à la valeur finale, on relance notre compteur une nouvelle fois
     nodeI.innerHTML = ++cptI;
      setTimeout(countdown, deltaI);
