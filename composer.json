@@ -1,6 +1,6 @@
 {
     "name": "lain/test",
-    "description": "teste composer",
+    "description": "Plateforme de mise en relation de colocation",
     "require": {
         "monolog/monolog": "^2.2",
         "waavi/sanitizer": "~1.0"
