@@ -1,5 +1,4 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
-<?php require_once(dirname(__DIR__).'/controllers/signupProprietaire.php');?>
 <!-- Gestion de l'inscription -->
 <?php
 
