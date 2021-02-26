@@ -77,14 +77,14 @@
                     <?php else :?>
                     <?php echo $nbrAnnonces[1][0]["COUNT(*)"];?>
                     <?php endif; ?>
-                    </span><br>nbr Annonces </p>
+                    </span><br>nombre Annonces </p>
                     <p class="h6"><span class="stat text-green fw-bold vidaloka">
                     <?php $nbrInscription = Statistiques::inscription_total()?>
                     <?php if(!$nbrInscription[0]):?>
                      <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                     <?php else :?>
                     <?php echo $nbrInscription[1][0]["COUNT(*)"];?>
-                    <?php endif; ?></span><br>nbr inscrit</p>
+                    <?php endif; ?></span><br>nombre inscrit</p>
                     
                 </div>
             </div>
