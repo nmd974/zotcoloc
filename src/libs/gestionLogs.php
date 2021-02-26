@@ -1,6 +1,6 @@
 <?php
 
-require_once(__ROOT__ . '/src/vendor/autoload.php');
+require_once(__ROOT__ . '/vendor/autoload.php');
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\FirePHPHandler;
