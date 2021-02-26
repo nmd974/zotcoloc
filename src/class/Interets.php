@@ -1,5 +1,5 @@
 <?php
-
+include './Connection.php';
 require_once(__DIR__ . '/Connection.php');
 class Interets {
 
@@ -9,7 +9,6 @@ class Interets {
     {
         $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT * 
                 FROM `interets` 
@@ -29,7 +28,6 @@ class Interets {
     {
         $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT * 
                 FROM `interets` 
@@ -49,7 +47,6 @@ class Interets {
     {
         $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT * 
                 FROM `interets` 
@@ -69,7 +66,6 @@ class Interets {
     {
         $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT * 
                 FROM `interets` 
@@ -89,7 +85,6 @@ class Interets {
     {
         $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT `id_interet` FROM `interet_particulier` 
             WHERE id_particulier = '$id'
@@ -106,7 +101,6 @@ class Interets {
     {
         $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("DELETE FROM `interet_particulier` WHERE `id_particulier` = '$id_particulier' AND `id_interet` = $id_interet
             ");

@@ -12,4 +12,5 @@ if(!isset($_SESSION['role'])){
 if(!isset($_SESSION['id_utilisateur'])){
     $_SESSION['id_utilisateur'] = false;
 }
-$_ENV['url_app'] = "http://127.0.0.1:8000";
+$_ENV['URL_APP'] = "https://zotcoloc.herokuapp.com"; //ou en ligne = https://zotcoloc.herokuapp.com 
+//ou http://127.0.0.1:8000

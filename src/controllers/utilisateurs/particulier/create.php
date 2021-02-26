@@ -15,7 +15,7 @@ foreach($inputRequired as $value){
         $error = true;
         $logger->info("Création d'un nouvel utilisateur -- VERIF SERVEUR NOK");
         $_SESSION['flash'] = array('Error', "Echec lors de la création de compte");
-        header('Location: http://127.0.0.1:8000/src/pages/inscriptionProprietaire.php');
+        header("Location:" . getenv("URL_APP") . "/src/pages/inscriptionProprietaire.php");
         return '<div class="alert alert-danger" id="error_msg">Erreur dans le formulaire </br> Veuillez vérifier les champs</div>';
     }
 }
@@ -119,21 +119,21 @@ if($error == null) {
             $_SESSION['isLoggedIn'] = true;
             $_SESSION['role'] = "particulier";
             $_SESSION['id_utilisateur'] = $id_utilisateur;
-            header('Location: http://127.0.0.1:8000/src/pages/home.php');
+            header("Location:" . getenv("URL_APP") . "/src/pages/home.php");
         }catch(PDOException $e){
             $error = $e->getMessage();
             $db->rollBack();
             $logger->error("Echec de la créationd d'un nouvel utilisateur (colocataire) -- $error");
             // http_response_code(400);
             $_SESSION['flash'] = array('Error', "Echec lors de la création de compte");
-            header('Location: http://127.0.0.1:8000/src/pages/inscriptionParticulier.php');
+            header("Location:" . getenv("URL_APP") . "/src/pages/inscriptionParticulier.php");
             echo "Echec lors de la création de compte </br> $error";
         }
     }else{
         $logger->alert("Echec lors de l\'inscription -- Impossible de se connecter à la base de données");
         // http_response_code(503);
         $_SESSION['flash'] = array('Error', "Echec lors de la création de compte");
-        header('Location: http://127.0.0.1:8000/src/pages/inscriptionProprietaire.php');
+        header("Location:" . getenv("URL_APP") . "/src/pages/inscriptionProprietaire.php");
         echo '<div class="alert alert-danger" id="error_msg">Echec lors de l\'inscription </br> Impossible de se connecter à la base de données</div>';
     }
 }

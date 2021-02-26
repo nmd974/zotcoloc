@@ -1,14 +1,15 @@
 <?php
 
+include './Connection.php';
+
 class Annonces {
 
  //A MODIFIER POUR RAJOUTER ACTIVER
 
     public static function annonce_total()
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("
                SELECT COUNT(*)

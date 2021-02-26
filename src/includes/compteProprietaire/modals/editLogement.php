@@ -32,7 +32,7 @@
                     <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                 </div>
             <?php else:?>
-            <form method="post" enctype="multipart/form-data" action="http://127.0.0.1:8000/src/controllers/annonces/logements/update.php">
+            <form method="post" enctype="multipart/form-data" action="<?php getenv("URL_APP")?>/src/controllers/annonces/logements/update.php">
                 <div class="modal-body">
                     <!--Titre-->
                     <div class="col-md-12 mt-3">

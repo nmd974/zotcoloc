@@ -43,7 +43,7 @@
     <div class="alert alert-danger mb-2"><?=  $_SESSION['flash'][1] ?></div>
 <?php endif;?>
 
-<form method="POST" enctype="multipart/form-data" id="proprietaire_inscription" action="http://127.0.0.1:8000/src/controllers/utilisateurs/proprietaire/create.php">
+<form method="POST" enctype="multipart/form-data" id="proprietaire_inscription" action="<?php getenv("URL_APP")?>/src/controllers/utilisateurs/proprietaire/create.php">
     <!--Nom-->
     <div class="col-md-12 mb-3">
         <label for="nom_proprietaire" class="form-label">Nom*</label><br>

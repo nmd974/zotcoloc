@@ -83,7 +83,7 @@ btnStepEl2.addEventListener("click", (e)=>{
                 // validator.destroy();
             }
         };
-        xmlhttp.open("POST", "http://127.0.0.1:8000/src/controllers/utilisateurs/getEmail.php?email=" + email, true);
+        xmlhttp.open("POST", `${location.origin}/src/controllers/utilisateurs/getEmail.php?email=` + email, true);
         xmlhttp.send();
         
     }
@@ -369,7 +369,7 @@ btnStepEl3.addEventListener("click", (e)=>{
     //         // date_disponibilite : document.getElementById('date_disponibilite').value,
     //         ville : villeList
     //     };
-    //     xmlhttp.open("POST", "http://127.0.0.1:8000/src/controllers/utilisateurs/particulier/create.php?ville=[1 ,2]", true);
+    //     xmlhttp.open("POST", "${location.origin}/src/controllers/utilisateurs/particulier/create.php?ville=[1 ,2]", true);
     //     xmlhttp.send(data);
     // })
     // Gestion de l'enregistrement des interets

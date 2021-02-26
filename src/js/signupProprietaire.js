@@ -17,7 +17,7 @@ document.getElementById('ajouter_proprietaire').addEventListener("click", (e)=>{
                 document.getElementById('proprietaire_inscription').submit();
             }
         };
-        xmlhttp.open("POST", "http://127.0.0.1:8000/src/controllers/utilisateurs/getEmail.php?email=" + email, true);
+        xmlhttp.open("POST", `${location.origin}/src/controllers/utilisateurs/getEmail.php?email=` + email, true);
         xmlhttp.send();
     };
 });

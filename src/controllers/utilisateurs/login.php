@@ -15,7 +15,7 @@ foreach($inputRequired as $value){
         $error = true;
         $logger->info("Champs vides de connexion -- VERIF SERVEUR NOK"); //NOK= non OK
         $_SESSION['flash'] = array('Error', "Echec lors de la connexion au compte","Erreur dans le formulaire </br> Veuillez vérifier votre email ou votre mot de passe");
-        header('Location: http://127.0.0.1:8000/src/pages/seconnecter.php');
+        header("Location:" . getenv("URL_APP") . "/src/pages/seconnecter.php");
         exit();
     }
 }
@@ -61,7 +61,7 @@ if($error == null) {
                 // echo 'Mauvais identifiant ou mot de passe!';
                 $_SESSION['flash'] = array('Error',"Echec lors de la connexion au compte", "Mauvais identifiant ou mot de passe!!");
                 $logger->info("Email inexistant Utilisateur -- EMAIL / TABLE UTILISATEUR NOK");
-                header('Location: http://127.0.0.1:8000/src/pages/seconnecter.php');
+                header("Location:" . getenv("URL_APP") . "/src/pages/seconnecter.php");
             } else {
                 $passwordCorrect = password_verify($data_sanitized['password'],$resultat[0]->password);
                 if ($passwordCorrect){
@@ -71,7 +71,7 @@ if($error == null) {
                     $_SESSION['role'] = $resultat[0]->libelle_role; //faire jointure
                     $_SESSION['id_utilisateur'] = $resultat[0]->id;
                     $logger->info("Connexion Utilisateur -- CONNEXION UTILISATEUR OK");
-                    header('Location: http://127.0.0.1:8000/src/pages/home.php');
+                    header("Location:" . getenv("URL_APP") . "/src/pages/home.php");
                     
                 }else{
                     echo 'Mauvais identifiant ou mot de passe !';
@@ -79,7 +79,7 @@ if($error == null) {
                     //var_dump($resultat[0]->password);
                     $_SESSION['flash'] = array('Error',"Echec lors de la connexion au compte", "Mauvais identifiant ou mot de passe!!!");
                     $logger->info("Mot de passe incorrect Utilisateur -- MOT DE PASSE UTILISATEUR NOK");
-                    header('Location: http://127.0.0.1:8000/src/pages/seconnecter.php');
+                    header("Location:" . getenv("URL_APP") . "/src/pages/seconnecter.php");
                 }
             }
 
@@ -88,14 +88,14 @@ if($error == null) {
             $logger->error("'Mauvais identifiant ou mot de passe!' -- $error");
             // http_response_code(400);
             $_SESSION['flash'] = array('Error',"Echec lors de laconnexion de compte", "Mauvais identifiant ou mot de passe!");
-            header('Location: http://127.0.0.1:8000/src/pages/seconnecter.php');
+            header("Location:" . getenv("URL_APP") . "/src/pages/seconnecter.php");
             
         }
     }else{
         $logger->alert("Echec de la connexion -- Impossible de se connecter à la base de données");
         // http_response_code(503);
         $_SESSION['flash'] = array('Error', "Echec de la connexion","Echec lors de la connexion </br> Impossible de se connecter à la base de données");
-        header('Location: http://127.0.0.1:8000/src/pages/seconnecter.php');
+        header("Location:" . getenv("URL_APP") . "/src/pages/seconnecter.php");
         
     }
 }
