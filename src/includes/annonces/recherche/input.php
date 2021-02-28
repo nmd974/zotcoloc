@@ -1,5 +1,5 @@
 <!-- barre de recherche -->
-<div class="input-border bg-light mb-3 input-filter">
+<div class="input-border bg-light my-5 input-filter">
     <form method="GET" class="form-group">
         <div class="input-group">
             <input type="text" name="search-room" class="form-control location-border2" placeholder="Lieux"

@@ -4,8 +4,8 @@
 
 <div id="wrapper_page_content">
 
-    <section class="container-fluid margin-search mb-5">
-            <div class="row">
+    <section class="container-fluid margin-search pb-5 my-5">
+            <div class="row pb-5">
                 <div class="col-lg-8 col-md-12">
                     <?php require_once(dirname(__DIR__).'/includes/annonces/recherche/input.php');?> 
                 </div>                           
