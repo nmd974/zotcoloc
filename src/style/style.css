@@ -623,9 +623,9 @@ em{
     padding-bottom:1em;
 }
 
-#signup-form{
+/* #signup-form{
     display: none;
-}
+} */
 
 
 #login-form button , #signup-form button{
