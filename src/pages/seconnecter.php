@@ -23,7 +23,7 @@
 <?php endif;?>
 
     <div id="login-form">
-        <form action="../controllers/utilisateurs/login.php" method="POST">
+        <form action="../controllers/utilisateurs/login.php" method="POST" id="loginPage">
             <!-- <input type="text" placeholder="Enter email or username"/> -->
             <input type="text" name="email" class="form-control" required
             pattern=" [a-z0-9 ._% + -] + @ [a- z0-9 .-] + \. [az] {2,} $ " 
@@ -255,4 +255,5 @@ function toggleLogin(){
 <?php require_once(dirname(__DIR__).'/includes/Layout/footer.php');?>
 <?php require_once(dirname(__DIR__).'/includes/Layout/scriptsSrc.php');?>
 <!-- ON MET ICI DES SCRIPTS ASSOCIES A LA PAGE -->
+<script src="../js/validator.js"></script>
 <?php require_once(dirname(__DIR__).'/includes/Layout/finbalise.php');?>

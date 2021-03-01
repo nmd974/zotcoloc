@@ -37,7 +37,6 @@
                                     aria-describedby="button-addon2"
                                     list="datalistOptions" 
                                     autocomplete="off"
-                                    
                                 >
                                 <datalist id="datalistOptions"> 
                                 

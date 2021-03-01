@@ -226,6 +226,38 @@ const searchAll = () => {
         
     })
 }
+
+/* Variable pour la page login */
+const loginPage = () => {
+    validator = $("#loginPage").validate({
+        errorElement: "em",
+        errorPlacement: function ( error, element ) {
+            element.addClass( "is-invalid" );
+            if ( element.prop( "type" ) === "checkbox" ) {
+                error.insertAfter( element.parent( "label" ) );
+            } else {
+                error.insertAfter( element );
+            }
+        },
+        highlight: function ( element ) {
+            $( element ).addClass( "is-invalid" ).removeClass( "is-valid" );
+        },
+        unhighlight: function ( element ) {
+            $( element ).addClass( "is-valid" ).removeClass( "is-invalid" );
+        },
+        rules: {
+            email:{
+                required: true,
+                email: true
+            },
+            password:{
+                required: true
+            }
+        }
+        
+    })
+}
+
 //LISTE DES NAMES
 /*
  email
@@ -256,6 +288,8 @@ jQuery.extend(jQuery.validator.messages, {
     creditcard: "votre message",
     equalTo: "Les mots de passe sont différents",
     accept: "votre message",
+    password: "mot passe incorrecte",
+    search_room: "entrer une ville dans la liste",
     maxlength: jQuery.validator.format("Ce champ doit contenir au moins {0} caractères."),
     minlength: jQuery.validator.format("{0} caractères minimum."),
     rangelength: jQuery.validator.format("{0} caractères min </br> {1} caractères maximum."),
