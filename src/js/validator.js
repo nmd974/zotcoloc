@@ -301,6 +301,6 @@ jQuery.extend(jQuery.validator.messages, {
 document.getElementById('searchHome').addEventListener('click', (e) => {
     e.preventDefault();
     if($('#searchHome').valid()){
-        document.getElementById('seacrHome').submit();
+        document.getElementById('searchHome').submit();
     }
 });
