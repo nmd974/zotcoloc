@@ -10,7 +10,7 @@ jQuery.validator.addMethod(
      },"erreur expression reguliere"
   );
 
-const step_1_validator = () => {
+const signup_particulier_validator = () => {
     validator = $("#formulaire_inscription").validate({
         errorElement: "em",
         errorPlacement: function ( error, element ) {
