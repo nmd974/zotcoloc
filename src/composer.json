@@ -3,8 +3,7 @@
     "description": "teste composer",
     "require": {
         "monolog/monolog": "^2.2",
-        "waavi/sanitizer": "~1.0",
-        "phpunit/phpunit": "^9.5"
+        "waavi/sanitizer": "~1.0"
 
     }
 }

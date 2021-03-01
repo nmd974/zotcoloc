@@ -26,7 +26,7 @@
                     <p class="text-white h5 mb-5">Service de colocation entre particulier, Agence et propriétaire</p>
                     <!-- barre de recherche -->
                     <div class="input-border bg-light" id="input-border">
-                        <form action="roommateSearch.php" method="get" class="form-group">
+                        <form action="roommateSearch.php" method="get" class="form-group" id="searchHome">
                             <div class="input-group" id="input-group">
                                 <input 
                                     type="text" 
