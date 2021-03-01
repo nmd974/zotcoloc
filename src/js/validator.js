@@ -1,4 +1,15 @@
 let validator;
+jQuery.validator.addMethod(
+    "regex",
+     function(value, element, regexp) {
+         if (regexp.constructor != RegExp)
+            regexp = new RegExp(regexp);
+         else if (regexp.global)
+            regexp.lastIndex = 0;
+            return this.optional(element) || regexp.test(value);
+     },"erreur expression reguliere"
+  );
+
 const step_1_validator = () => {
     validator = $("#formulaire_inscription").validate({
         errorElement: "em",
@@ -165,7 +176,56 @@ const validator_create_annonce = () => {
         
     })
 }
-
+const searchHome = () => {
+    validator = $("#input-border").validate({
+        errorElement: "em",
+        errorPlacement: function ( error, element ) {
+            element.addClass( "is-invalid" );
+            if ( element.prop( "type" ) === "checkbox" ) {
+                error.insertAfter( element.parent( "label" ) );
+            } else {
+                error.insertAfter( element );
+            }
+        },
+        highlight: function ( element ) {
+            $( element ).addClass( "is-invalid" ).removeClass( "is-valid" );
+        },
+        unhighlight: function ( element ) {
+            $( element ).addClass( "is-valid" ).removeClass( "is-invalid" );
+        },
+        rules: {
+            search_room:{
+                "regex": /[a-zA-Z0-9 ]+/
+            }
+        }
+        
+    })
+}
+const searchAll = () => {
+    validator = $("#search").validate({
+        errorElement: "em",
+        errorPlacement: function ( error, element ) {
+            element.addClass( "is-invalid" );
+            if ( element.prop( "type" ) === "checkbox" ) {
+                error.insertAfter( element.parent( "label" ) );
+            } else {
+                error.insertAfter( element );
+            }
+        },
+        highlight: function ( element ) {
+            $( element ).addClass( "is-invalid" ).removeClass( "is-valid" );
+        },
+        unhighlight: function ( element ) {
+            $( element ).addClass( "is-valid" ).removeClass( "is-invalid" );
+        },
+        rules: {
+            search_room:{
+                "regex": /[a-zA-Z0-9 ]+/
+            }
+        }
+        
+    })
+}
 //LISTE DES NAMES
 /*
  email

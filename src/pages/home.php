@@ -30,7 +30,7 @@
                             <div class="input-group" id="input-group">
                                 <input 
                                     type="text" 
-                                    class="form-control w-25 location-border border-end-0" name="search-room" 
+                                    class="form-control w-25 location-border border-end-0" name="search_room" 
                                     placeholder="Ville recherchée" 
                                     id="search"
                                     aria-label="location" 
@@ -75,7 +75,7 @@
                     <?php if(!$nbrAnnonces[0]):?>
                      <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                     <?php else :?>
-                    <script> var numberA = <?php echo $nbrAnnonces[1][0]["COUNT(*)"];?>; console.log(numberA); </script>
+                    <script> var numberA = <?php echo $nbrAnnonces[1][0]["COUNT(*)"];?>;</script>
                     <?php endif; ?>
                     </span><br>Annonces</p>
                     <p class="h6"><span class="stat text-green fw-bold vidaloka" id="compteurI">0
@@ -83,7 +83,7 @@
                     <?php if(!$nbrInscription[0]):?>
                      <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                     <?php else :?>
-                    <script> var numberI = <?php echo $nbrInscription[1][0]["COUNT(*)"];?>; console.log(numberI);</script>
+                    <script> var numberI = <?php echo $nbrInscription[1][0]["COUNT(*)"];?>;</script>
                     <?php endif; ?></span><br>Inscrits</p>
                     <!-- <p class="h6"><span class="stat text-green fw-bold vidaloka">403</span><br>nbr de LOREM</p>
                     <p class="h6"><span class="stat text-green fw-bold vidaloka">1241</span><br>nbr LOREM</p> -->
