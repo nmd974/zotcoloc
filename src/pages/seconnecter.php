@@ -12,11 +12,7 @@
 <div class="container" id="wrapper_page_content">
 
 <div class="form-modal">
-    <div class="text-center">
-        Vous n'avez pas de compte ? 
-        <a href="./authentificationLoueur.php">Déposer une annonce</a>
-        <a href="./inscriptionParticulier.php">Chercher une colocation</a>
-    </div>
+
 
 
 <?php if(isset($_SESSION['flash'])):?>
@@ -27,7 +23,7 @@
 <?php endif;?>
 <?php endif;?>
 
-    <div id="login-form">
+    <div id="login-form mb-5">
         <form action="../controllers/utilisateurs/login.php" method="POST">
             <input type="text" name="email" class="form-control" required
             pattern=" [a-z0-9 ._% + -] + @ [a- z0-9 .-] + \. [az] {2,} $ " 
@@ -39,6 +35,11 @@
             value="<?php if(isset($_POST['password'])){echo $_POST['password'];}?>">
             <button type="submit" class="btn login">SE CONNECTER</button>
         </form>
+    </div>
+    <div class="text-center d-flex flex-column justify-content-center align-items-center">
+        Vous n'avez pas de compte ? 
+        <a href="./authentificationLoueur.php">Déposer une annonce</a>
+        <a href="./inscriptionParticulier.php">Chercher une colocation</a>
     </div>
 </div>
 <style>

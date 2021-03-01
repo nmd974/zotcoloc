@@ -71,7 +71,10 @@
 </form>
 
 </div>
-
+<div class="text-center d-flex flex-column justify-content-center align-items-center">
+        Vous avez déjà un compte ? 
+        <a href="./seconnecter.php">Se connecter</a>
+    </div>
 </div>
 <style>
 .form-modal{
