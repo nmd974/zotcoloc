@@ -15,7 +15,7 @@
 
 <div class="form-modal">
 <div id="signup-form" class="mb-5 mt-5">
-<a href="./seconnecter.php" class="mt-4 mx-3">J'ai déjà un compte</a>
+
 <?php if(isset($_SESSION['flash'])):?>
     <div class="alert alert-danger mb-2"><?=  $_SESSION['flash'][1] ?></div>
 <?php endif;?>
@@ -71,7 +71,7 @@
 </form>
 
 </div>
-<div class="text-center d-flex flex-column justify-content-center align-items-center">
+<div class="text-center d-flex flex-column justify-content-center align-items-center mb-5">
         Vous avez déjà un compte ? 
         <a href="./seconnecter.php">Se connecter</a>
     </div>
