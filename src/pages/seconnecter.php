@@ -11,9 +11,8 @@
 </div>
 <div class="container" id="wrapper_page_content">
 
-<div class="form-modal">
-
-
+<div class="form-modal" >
+<a href="./authentificationLoueur.php">Je n'ai pas de compte</a>
 
 <?php if(isset($_SESSION['flash'])):?>
 <?php if($_SESSION['flash'][0] == "Success"):?>
@@ -25,22 +24,31 @@
 
     <div id="login-form">
         <form action="../controllers/utilisateurs/login.php" method="POST">
+            <!-- <input type="text" placeholder="Enter email or username"/> -->
             <input type="text" name="email" class="form-control" required
             pattern=" [a-z0-9 ._% + -] + @ [a- z0-9 .-] + \. [az] {2,} $ " 
             placeholder="entrer votre adresse mail"
             value="<?php if(isset($_POST['email'])){echo $_POST['email'];}?>">
+
+
+            <!-- <input type="password" placeholder="Enter password"/> -->
             <input type="password" name="password" class="form-control" id="Password" onkeyup="check()" required
             pattern=" ^ (? =. * [az] ) (? =. * [AZ]) (? =. * \ D) (? =. * [@ $!% *? &]) [A-Za-z \ d @ $!% *? &] { 8,} $"
             placeholder="entrer votre votre mot passe" 
             value="<?php if(isset($_POST['password'])){echo $_POST['password'];}?>">
+
+
+
+
             <button type="submit" class="btn login">SE CONNECTER</button>
+            <!-- <p><a href="javascript:void(0)">Forgot password</a> </p>
+          <p><a href="javascript:void(0)" onclick="toggleSignup()">Register Account</a> </p> -->
+          
         </form>
     </div>
-    <div class="text-center d-flex flex-column justify-content-center align-items-center">
-        Vous n'avez pas de compte ? 
-        <a href="./authentificationLoueur.php">Déposer une annonce</a>
-        <a href="./inscriptionParticulier.php">Chercher une colocation</a>
-    </div>
+
+    
+
 </div>
 <style>
 /*-------------*/
@@ -137,6 +145,7 @@
     padding-bottom:1em;
     padding-top: 1em;
 }
+
 #login-form button , #signup-form button{
     width:100%;
     margin-top:0.5em;
