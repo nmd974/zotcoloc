@@ -6,7 +6,6 @@ class Utilisateurs {
     {
         $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT * FROM `utilisateurs` 
             INNER JOIN `particulier` ON particulier.id_utilisateur = utilisateurs.id
@@ -24,7 +23,6 @@ class Utilisateurs {
     {
         $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT * FROM `utilisateurs` 
             INNER JOIN `proprietaire` ON proprietaire.id_utilisateur = utilisateurs.id
@@ -42,7 +40,6 @@ class Utilisateurs {
     {
         $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT * FROM `utilisateurs` 
             INNER JOIN `particulier` ON particulier.id_utilisateur = utilisateurs.id
@@ -60,7 +57,6 @@ class Utilisateurs {
     {
         $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("UPDATE `particulier` 
             SET `description`='$description',`pseudo`='$pseudo',`ecole`='$ecole',`date_naissance`='$date_naissance',`date_disponibilite`='$date_disponibilite' 
@@ -78,7 +74,6 @@ class Utilisateurs {
     {
         $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("UPDATE `particulier` 
             SET `nom`='$nom',`prenom`='$prenom',`telephone`='$telephone',`genre`='$genre'
@@ -95,7 +90,6 @@ class Utilisateurs {
     {
         $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT * FROM `favoriser_logement` WHERE `id_particulier` = '$id_particulier'
             ");
@@ -111,7 +105,6 @@ class Utilisateurs {
     {
         $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT * FROM `candidater_chambre` WHERE `id_particulier` = '$id_particulier'
             ");
@@ -128,7 +121,6 @@ class Utilisateurs {
     {
         $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT * FROM `logements` 
             INNER JOIN `chambres` ON chambres.id_logement = logements.id_logement
@@ -147,7 +139,6 @@ class Utilisateurs {
     {
         $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("UPDATE `proprietaire` 
             SET `site_web`='$site_web',`description`='$description'
@@ -165,7 +156,6 @@ class Utilisateurs {
     {
         $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("UPDATE `proprietaire` 
             SET `nom`='$nom',`prenom`='$prenom',`telephone`='$telephone'

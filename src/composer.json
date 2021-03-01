@@ -1,8 +1,0 @@
-{
-    "name": "lain/test",
-    "description": "teste composer",
-    "require": {
-        "monolog/monolog": "^2.2",
-        "waavi/sanitizer": "~1.0"
-    }
-}

@@ -187,23 +187,23 @@ if(isset($_POST['id']) && isset($_POST['id_proprietaire'])){
             unset($_SESSION['isLoggedIn']);
             unset($_SESSION['role']);
             unset($_SESSION['id_utilisateur']);
-            header('Location: http://127.0.0.1:8000/src/pages/home.php');
+            header("Location:" . getenv("URL_APP") . "/src/pages/home.php");
         }catch(PDOException $e){
             $error = $e->getMessage();
             $db->rollBack();
             $logger->error("Echec lors de la suppression de compte proprietaire -- $error");
             $_SESSION['flash'] = array('Error', "Echec lors de la suppression de compte");
-            header('Location: http://127.0.0.1:8000/src/pages/compteProprietaire.php');
+            header("Location:" . getenv("URL_APP") . "/src/pages/compteProprietaire.php");
         }
     }else{
         $logger->alert("Echec lors de la suppression de compte -- Impossible de se connecter à la bdd");
         $_SESSION['flash'] = array('Error', "Echec lors de la suppression de compte");
-        header('Location: http://127.0.0.1:8000/src/pages/compteProprietaire.php');
+        header("Location:" . getenv("URL_APP") . "/src/pages/compteProprietaire.php");
     }
 }else{
     $logger->alert("Echec lors de la suppression de compte -- Paramètres incorrects");
     $_SESSION['flash'] = array('Error', "Echec lors de la suppression de compte");
-    header('Location: http://127.0.0.1:8000/src/pages/compteProprietaire.php');
+    header("Location:" . getenv("URL_APP") . "/src/pages/compteProprietaire.php");
 }
 
 require_once(dirname(__DIR__).'/includes/Layout/scriptsSrc.php');

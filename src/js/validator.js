@@ -1,4 +1,15 @@
 let validator;
+jQuery.validator.addMethod(
+    "regex",
+     function(value, element, regexp) {
+         if (regexp.constructor != RegExp)
+            regexp = new RegExp(regexp);
+         else if (regexp.global)
+            regexp.lastIndex = 0;
+            return this.optional(element) || regexp.test(value);
+     },"erreur expression reguliere"
+  );
+
 const step_1_validator = () => {
     validator = $("#formulaire_inscription").validate({
         errorElement: "em",
@@ -165,6 +176,87 @@ const validator_create_annonce = () => {
         
     })
 }
+const searchHome = () => {
+    validator = $("#searchHome").validate({
+        errorElement: "em",
+        errorPlacement: function ( error, element ) {
+            element.addClass( "is-invalid" );
+            if ( element.prop( "type" ) === "checkbox" ) {
+                error.insertAfter( element.parent( "label" ) );
+            } else {
+                error.insertAfter( element );
+            }
+        },
+        highlight: function ( element ) {
+            $( element ).addClass( "is-invalid" ).removeClass( "is-valid" );
+        },
+        unhighlight: function ( element ) {
+            $( element ).addClass( "is-valid" ).removeClass( "is-invalid" );
+        },
+        rules: {
+            search_room:{
+                "regex": /[a-zA-Z0-9 ]+/
+            }
+        }
+        
+    })
+}
+const searchAll = () => {
+    validator = $("#searchAll").validate({
+        errorElement: "em",
+        errorPlacement: function ( error, element ) {
+            element.addClass( "is-invalid" );
+            if ( element.prop( "type" ) === "checkbox" ) {
+                error.insertAfter( element.parent( "label" ) );
+            } else {
+                error.insertAfter( element );
+            }
+        },
+        highlight: function ( element ) {
+            $( element ).addClass( "is-invalid" ).removeClass( "is-valid" );
+        },
+        unhighlight: function ( element ) {
+            $( element ).addClass( "is-valid" ).removeClass( "is-invalid" );
+        },
+        rules: {
+            search_room:{
+                "regex": /[a-zA-Z0-9 ]+/
+            }
+        }
+        
+    })
+}
+
+/* Variable pour la page login */
+const loginPage = () => {
+    validator = $("#loginPage").validate({
+        errorElement: "em",
+        errorPlacement: function ( error, element ) {
+            element.addClass( "is-invalid" );
+            if ( element.prop( "type" ) === "checkbox" ) {
+                error.insertAfter( element.parent( "label" ) );
+            } else {
+                error.insertAfter( element );
+            }
+        },
+        highlight: function ( element ) {
+            $( element ).addClass( "is-invalid" ).removeClass( "is-valid" );
+        },
+        unhighlight: function ( element ) {
+            $( element ).addClass( "is-valid" ).removeClass( "is-invalid" );
+        },
+        rules: {
+            email:{
+                required: true,
+                email: true
+            },
+            password:{
+                required: true
+            }
+        }
+        
+    })
+}
 
 //LISTE DES NAMES
 /*
@@ -196,6 +288,7 @@ jQuery.extend(jQuery.validator.messages, {
     creditcard: "votre message",
     equalTo: "Les mots de passe sont différents",
     accept: "votre message",
+    password: "mot passe incorrecte",
     maxlength: jQuery.validator.format("Ce champ doit contenir au moins {0} caractères."),
     minlength: jQuery.validator.format("{0} caractères minimum."),
     rangelength: jQuery.validator.format("{0} caractères min </br> {1} caractères maximum."),
@@ -203,3 +296,4 @@ jQuery.extend(jQuery.validator.messages, {
     max: jQuery.validator.format("Ce champ doit être inférieur ou égal à {0}."),
     min: jQuery.validator.format("Ce champ doit être supérieur ou égal à {0}.")
 });
+

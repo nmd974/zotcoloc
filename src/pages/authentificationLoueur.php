@@ -1,29 +1,6 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
 <!-- Gestion de l'inscription -->
-<?php
 
-    //On declare le declenchement du traitement
-    // if(isset($_POST['ajouter_proprietaire'])){
-        
-    //     //On défini les id pour le traitement
-    //     if(!isset($_POST['id_utilisateur']) && !isset($_POST['id_proprietaire'])){
-    //         $_POST['id_utilisateur'] = md5(uniqid(rand(), true));
-    //         $_POST['id_proprietaire'] = md5(uniqid(rand(), true));
-    //     }
-
-    //     //On lance la fonction associée
-    //     $inscriptionValide = ajoutProprietaire($_POST);
-    //     if($inscriptionValide[0]){
-    //         //Donc on se logged et retour vers creer annonce
-    //         $_SESSION['isLoggedIn'] = true;
-    //         $_SESSION['role'] = 'proprietaire';
-    //         $_SESSION['id_utilisateur'] = $_POST['id_utilisateur'];
-    //         header_remove('Location');
-    //         header('Location: ./creationAnnoncePage.php');
-    //     }
-
-    // }
-?>
 <div class="container">
     <div class="mb-5 subtitle">
         <div class="border-one ps-1">
@@ -43,7 +20,7 @@
     <div class="alert alert-danger mb-2"><?=  $_SESSION['flash'][1] ?></div>
 <?php endif;?>
 
-<form method="POST" enctype="multipart/form-data" id="proprietaire_inscription" action="http://127.0.0.1:8000/src/controllers/utilisateurs/proprietaire/create.php">
+<form method="POST" enctype="multipart/form-data" id="proprietaire_inscription" action="<?php getenv("URL_APP")?>/src/controllers/utilisateurs/proprietaire/create.php">
     <!--Nom-->
     <div class="col-md-12 mb-3">
         <label for="nom_proprietaire" class="form-label">Nom*</label><br>

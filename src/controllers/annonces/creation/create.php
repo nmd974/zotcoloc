@@ -47,7 +47,7 @@ foreach($inputRequired as $value){
         $error = true;
         $logger->info("Creation d'une annonce -- VERIF INPUT NOK");
         $_SESSION['flash'] = array('Error', "Echec lors de la creation de l'annonce </br> Veuillez vérifier les champs");
-        header('Location: http://127.0.0.1:8000/src/pages/creationAnnoncePage.php');
+        header("Location:" . getenv("URL_APP") . "/src/pages/creationAnnoncePage.php");
         // return '<div class="alert alert-danger" id="error_msg">Erreur dans le formulaire </br> Veuillez vérifier les champs</div>';
     }
 }
@@ -302,21 +302,21 @@ if($error == null) {
 
             // On complete les valeurs pour session
             $_SESSION['flash'] = array('Success', "Annonce créée avec succès </br> Pensez à activer votre annonce");
-            header('Location: http://127.0.0.1:8000/src/pages/compteProprietaire.php');
+            header("Location:" . getenv("URL_APP") . "/src/pages/compteProprietaire.php");
         }catch(PDOException $e){
             $error = $e->getMessage();
             $db->rollBack();
             $logger->error("Echec de la Creation d'une annonce (proprietaire) -- $error");
             // http_response_code(400);
             $_SESSION['flash'] = array('Error', "Echec lors de la creation de l'annonce", "Erreur serveur");
-            header('Location: http://127.0.0.1:8000/src/pages/creationAnnoncePage.php');
+            header("Location:" . getenv("URL_APP") . "/src/pages/creationAnnoncePage.php");
             // echo "Echec lors de la creation de l'annonce </br> $error";
         }
     }else{
         $logger->alert("Echec lors de l\'inscription -- Impossible de se connecter à la base de données");
         // http_response_code(503);
         $_SESSION['flash'] = array('Error', "Echec lors de la creation de l'annonce", "Erreur serveur");
-        header('Location: http://127.0.0.1:8000/src/pages/creationAnnoncePage.php');
+        header("Location:" . getenv("URL_APP") . "/src/pages/creationAnnoncePage.php");
         echo '<div class="alert alert-danger" id="error_msg">Echec lors de l\'inscription </br> Impossible de se connecter à la base de données</div>';
     }
 }

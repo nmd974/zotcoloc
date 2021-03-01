@@ -27,7 +27,7 @@
                 <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
             </div>
             <?php else:?>
-            <form method="post" enctype="multipart/form-data" action="http://127.0.0.1:8000/src/controllers/annonces/chambres/update.php">
+            <form method="post" enctype="multipart/form-data" action="<?php getenv("URL_APP")?>/src/controllers/annonces/chambres/update.php">
                 <div class="modal-body">
                     <!--description de la chambre-->
                     <div class="col-md-12" id="zoneChambre">

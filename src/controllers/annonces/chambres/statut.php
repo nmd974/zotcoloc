@@ -51,22 +51,22 @@ if($_GET['id']){
                 $logger->info("Modification d'un logement -- FIN DES REQ");
                 
                 // On complete les valeurs pour session
-                header("Location: http://127.0.0.1:8000/src/pages/compte$role.php");
+                header("Location:" . getenv("URL_APP") . "/src/pages/compte$role.php");
             }catch(PDOException $e){
                 $error = $e->getMessage();
                 $db->rollBack();
                 $logger->error("Echec du statut du logement -- $error");
                 $_SESSION['flash'] = array('Error', "Echec du statut du logement", "Erreur serveur");
-                header("Location: http://127.0.0.1:8000/src/pages/compte$role.php");
+                header("Location:" . getenv("URL_APP") . "/src/pages/compte$role.php");
             }
         }else{
             $logger->alert("Echec lors de la modification de l\'annonce -- Impossible de se connecter à la base de données");
             $_SESSION['flash'] = array('Error', "Echec du statut du logement", "Erreur serveur");
-            header("Location: http://127.0.0.1:8000/src/pages/compte$role.php");
+            header("Location:" . getenv("URL_APP") . "/src/pages/compte$role.php");
         }
     }else{
         $logger->alert("Echec lors de la modification de l\'annonce -- Paramètres incorrects");
         $_SESSION['flash'] = array('Error', "Echec du statut du logement", "Paramètres incorrects");
-        header("Location: http://127.0.0.1:8000/src/pages/compte$role.php");
+        header("Location:" . getenv("URL_APP") . "/src/pages/compte$role.php");
     }
 }

@@ -32,5 +32,6 @@
 
 <?php require_once(dirname(__DIR__).'/includes/Layout/footer.php');?>
 <?php require_once(dirname(__DIR__).'/includes/Layout/scriptsSrc.php');?>
+<script src="../js/validator.js"></script>
 <!-- ON MET ICI DES SCRIPTS ASSOCIES A LA PAGE -->
 <?php require_once(dirname(__DIR__).'/includes/Layout/finbalise.php');?>
