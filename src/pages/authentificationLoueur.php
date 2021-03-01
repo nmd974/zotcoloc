@@ -14,7 +14,7 @@
 <div class="container d-flex" id="wrapper_page_content">
 
 <div class="form-modal">
-<div id="signup-form" class="mb-5">
+<div id="signup-form" class="mb-5 mt-5">
 <a href="./seconnecter.php" class="mt-4 mx-3">J'ai déjà un compte</a>
 <?php if(isset($_SESSION['flash'])):?>
     <div class="alert alert-danger mb-2"><?=  $_SESSION['flash'][1] ?></div>
