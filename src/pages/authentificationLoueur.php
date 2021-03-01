@@ -11,7 +11,7 @@
         </div>
     </div>
 </div>
-<div class="container d-flex" id="wrapper_page_content">
+<div class="container d-flex mb-5" id="wrapper_page_content">
 
 <div class="form-modal">
 <div id="signup-form" class="mb-5 mt-5">
@@ -20,7 +20,7 @@
     <div class="alert alert-danger mb-2"><?=  $_SESSION['flash'][1] ?></div>
 <?php endif;?>
 
-<form method="POST" enctype="multipart/form-data" id="proprietaire_inscription" action="<?php getenv("URL_APP")?>/src/controllers/utilisateurs/proprietaire/create.php">
+<form method="POST" enctype="multipart/form-data" class="mt-5" id="proprietaire_inscription" action="<?php getenv("URL_APP")?>/src/controllers/utilisateurs/proprietaire/create.php">
     <!--Nom-->
     <div class="col-md-12 mb-3">
         <label for="nom_proprietaire" class="form-label">Nom*</label><br>
