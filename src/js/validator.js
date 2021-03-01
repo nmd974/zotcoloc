@@ -297,10 +297,3 @@ jQuery.extend(jQuery.validator.messages, {
     min: jQuery.validator.format("Ce champ doit être supérieur ou égal à {0}.")
 });
 
-//Gestion de l'envoie de la recherche sur la home
-document.getElementById('button-addon2').addEventListener('click', (e) => {
-    e.preventDefault();
-    if($('#searchHome').valid()){
-        document.getElementById('searchHome').submit();
-    }
-});
