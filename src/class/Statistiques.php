@@ -1,14 +1,13 @@
 <?php
-
+require_once(__DIR__ . '/Connection.php');
 class Statistiques {
 
  
     /* function pour rechercher les anonnces totales de aplly*/
     public static function annonce_total()
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("
                SELECT COUNT(*)
@@ -26,9 +25,8 @@ class Statistiques {
     /*function pour rechercher les ainscriptions totales de aplly  */
     public static function inscription_total()
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("
                SELECT COUNT(*)
@@ -47,9 +45,8 @@ class Statistiques {
 
     public static function top_ville()
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT `libelle_ville`, COUNT(*)
                 FROM `logements` 
@@ -71,9 +68,8 @@ class Statistiques {
 
     public static function stat_region()
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT `libelle_zone`, COUNT(*) AS 'nb'
             FROM `logements` 

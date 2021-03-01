@@ -1,8 +1,34 @@
-//Mettre une variable globale pour savoir si refresh sans validation = perte de données
-let formulaireEnvoye = false;
-// window.onbeforeunload = () => {
-//     alert("Souhaitez-vous continuer?");
-// }
+//GEstion dynamique du nombre de caractères saisis
+let titre_logement = document.getElementById('titre_logement');
+let compteur_titre = document.getElementById('nb_caracteres');
+let compteur_desc = document.getElementById('nb_caracteres_desc');
+let description_logement = document.getElementById('description_logement');
+
+titre_logement.addEventListener('keyup', (e) => {
+    compteur_titre.innerHTML = `${e.target.value.length} / 100 caractères`;
+    if(e.target.value.length === 100){
+        compteur_titre.innerHTML = `${e.target.value.length} / 100 Limite atteinte`;
+        titre_logement.classList.remove('is-invalid');
+        titre_logement.classList.add('is-valid');
+    }
+    if(e.target.value.length > 0){
+        titre_logement.classList.remove('is-invalid');
+        titre_logement.classList.add('is-valid');
+    }
+})
+
+description_logement.addEventListener('keyup', (e) => {
+    compteur_desc.innerHTML = `${e.target.value.length} / 500 caractères`;
+    if(e.target.value.length === 100){
+        compteur_desc.innerHTML = `${e.target.value.length} / 500 Limite atteinte`;
+        description_logement.classList.remove('is-invalid');
+        description_logement.classList.add('is-valid');
+    }
+    if(e.target.value.length > 0){
+        description_logement.classList.remove('is-invalid');
+        description_logement.classList.add('is-valid');
+    }
+})
 
 //Gestion de la timeline
 let timeLineEl = document.getElementById('line_time_progress2');
@@ -35,59 +61,60 @@ const pattern_general = new RegExp(/<(.*)>/);
 
 //Gestion du clic vers step 2
 btnStepEl2.addEventListener("click", (e)=>{
-
-    e.preventDefault();
-
-    //Verification des champs de formulaire
-    let validationFormulaire = true;
-    let input_text_list = ['titre_logement', 'description_logement'];
-    let input_list = ['titre_logement', 'description_logement', 'type_logement', 'surface_logement'];
-    let input_number_list = ['surface_logement'];
-
-    //Par défaut les input type number seront = 0 si rien
-    input_number_list.forEach(element => {
-        if(document.getElementById(`${element}`).value === ""){
-            document.getElementById(`${element}`).value = 0;
-            document.getElementById(`${element}`).classList.remove('is-invalid');
-            document.getElementById(`${element}`).classList.add('is-valid');
-        }
-    })
-    input_text_list.forEach(element => {
-        if(document.getElementById(`${element}`).value === ""){
-            document.getElementById(`${element}`).classList.remove('is-valid');
-            document.getElementById(`${element}`).classList.add('is-invalid');
-        }
-    })
-    input_number_list.forEach(element => {
-        if(document.getElementById(`${element}`).value === "" && (document.getElementById(`${element}`).value < 0 || document.getElementById(`${element}`).value > 10000)){
-            console.log(document.getElementById(`${element}`).value);
-            document.getElementById(`${element}`).classList.remove('is-valid');
-            document.getElementById(`${element}`).classList.add('is-invalid');
-        }
-    })
-    //On empeche l'injection de code js
-    input_list.forEach(element => {
-        if(pattern_general.test(document.getElementById(`${element}`).value)){
-            document.getElementById(`${element}`).classList.remove('is-valid');
-            document.getElementById(`${element}`).classList.add('is-invalid');
-        }
-    })
-    //On verifie ceux qui ne sont pas identifié en invalid
-    input_list.forEach(element => {
-        let changeClass = true;
-        document.getElementById(`${element}`).classList.forEach(classeEl => {
-            if(classeEl === "is-invalid"){
-                changeClass = false;
-                validationFormulaire = false;
-            }
-        })
-        if(changeClass){
-          document.getElementById(`${element}`).classList.add('is-valid');  
-        }
-    })
     
-    //Si on rencontre un probleme alors on passe en false et on n'accède pas à la suite
-    if(validationFormulaire){
+    e.preventDefault();
+    
+    //Verification des champs de formulaire
+    // let validationFormulaire = true;
+    // let input_text_list = ['titre_logement', 'description_logement'];
+    // let input_list = ['titre_logement', 'description_logement', 'type_logement', 'surface_logement'];
+    // let input_number_list = ['surface_logement'];
+    
+    // //Par défaut les input type number seront = 0 si rien
+    // input_number_list.forEach(element => {
+    //     if(document.getElementById(`${element}`).value === ""){
+    //         document.getElementById(`${element}`).value = 0;
+    //         document.getElementById(`${element}`).classList.remove('is-invalid');
+    //         document.getElementById(`${element}`).classList.add('is-valid');
+    //     }
+    // })
+    // input_text_list.forEach(element => {
+    //     if(document.getElementById(`${element}`).value === ""){
+    //         document.getElementById(`${element}`).classList.remove('is-valid');
+    //         document.getElementById(`${element}`).classList.add('is-invalid');
+    //     }
+    // })
+    // input_number_list.forEach(element => {
+    //     if(document.getElementById(`${element}`).value === "" && (document.getElementById(`${element}`).value < 0 || document.getElementById(`${element}`).value > 10000)){
+    //         console.log(document.getElementById(`${element}`).value);
+    //         document.getElementById(`${element}`).classList.remove('is-valid');
+    //         document.getElementById(`${element}`).classList.add('is-invalid');
+    //     }
+    // })
+    // //On empeche l'injection de code js
+    // input_list.forEach(element => {
+    //     if(pattern_general.test(document.getElementById(`${element}`).value)){
+    //         document.getElementById(`${element}`).classList.remove('is-valid');
+    //         document.getElementById(`${element}`).classList.add('is-invalid');
+    //     }
+    // })
+    // //On verifie ceux qui ne sont pas identifié en invalid
+    // input_list.forEach(element => {
+    //     let changeClass = true;
+    //     document.getElementById(`${element}`).classList.forEach(classeEl => {
+    //         if(classeEl === "is-invalid"){
+    //             changeClass = false;
+    //             validationFormulaire = false;
+    //         }
+    //     })
+    //     if(changeClass){
+    //       document.getElementById(`${element}`).classList.add('is-valid');  
+    //     }
+    // })
+    validator_create_annonce();
+    if($('#create_annonce').valid()){
+        //Si on rencontre un probleme alors on passe en false et on n'accède pas à la suite
+        // if(validationFormulaire){
         //On gère l'affichage du bouton
         let dot = document.getElementById('dot_1');
         dot.innerHTML = `<i class="fa fa-check" aria-hidden="true"></i>`;
@@ -98,10 +125,10 @@ btnStepEl2.addEventListener("click", (e)=>{
         blockStepEl1.classList.add('unshow_step');
         blockStepEl2.classList.remove('unshow_step');
         blockStepEl2.classList.add('show_step');
-        //On gere ici l'ajout dans le recap
-        input_list.forEach(element => {
-            $(`#${element}_recap`).append(`<p id="${element}_recap_content">${document.getElementById(`${element}`).value}</p>`);
-        })
+        // //On gere ici l'ajout dans le recap
+        // input_list.forEach(element => {
+        //     $(`#${element}_recap`).append(`<p id="${element}_recap_content">${document.getElementById(`${element}`).value}</p>`);
+        // })
         
         //On redefini le dot vers le point suivant
         let dotNext = document.getElementById('dot_2');
@@ -109,18 +136,20 @@ btnStepEl2.addEventListener("click", (e)=>{
         titleStep.innerHTML = `Etape 2/5:<span class="text-green">Localisation et photos</span>`;
         timeLineEl.style.width = `25%`;
         window.scrollTo(0,0);
+        // }
     }
+    
     
 })
 
 //Gestion du clic vers step 3
 btnStepEl3.addEventListener("click", (e)=>{
-
+    
     e.preventDefault();
-
-        //Verification des champs de formulaire
+    
+    //Verification des champs de formulaire
     let validationFormulaire = true;
-
+    
     let ville = document.getElementsByName('ville');
     let labels = document.querySelectorAll('#bloc_step_2 .btn-outline-success');
     
@@ -137,7 +166,7 @@ btnStepEl3.addEventListener("click", (e)=>{
     //         element.classList.add('btn-outline-danger');
     //     })
     // }
-
+    
     // let photos = document.querySelectorAll('#zone_photo_logement input[type=file]');
     // photos.forEach(element => {
     //     validationFormulaire = false;
@@ -146,7 +175,7 @@ btnStepEl3.addEventListener("click", (e)=>{
     //         element.classList.add('is-valid');
     //     }
     // })
-
+    
     // if(!validationFormulaire){
     //     photos.forEach(element => {
     //         element.classList.remove('is-valid');
@@ -154,7 +183,8 @@ btnStepEl3.addEventListener("click", (e)=>{
     //     })
     // }
     //Si on rencontre un probleme alors on passe en false et on n'accède pas à la suite
-    if(validationFormulaire){
+    // if(validationFormulaire){
+    if($('#create_annonce').valid()){
         //On gère l'affichage du bouton
         let dot = document.getElementById('dot_2');
         dot.innerHTML = `<i class="fa fa-check" aria-hidden="true"></i>`;
@@ -183,9 +213,9 @@ btnStepEl3.addEventListener("click", (e)=>{
 
 //Gestion du clic vers step 4
 btnStepEl4.addEventListener("click", (e)=>{
-
+    
     e.preventDefault();
-
+    if($('#create_annonce').valid()){
         //On gère l'affichage du bouton
         let dot = document.getElementById('dot_3');
         dot.innerHTML = `<i class="fa fa-check" aria-hidden="true"></i>`;
@@ -197,12 +227,12 @@ btnStepEl4.addEventListener("click", (e)=>{
         blockStepEl4.classList.remove('unshow_step');
         blockStepEl4.classList.add('show_step');
         //On ajoute dans le recap
-        let input_list = ['meuble', 'aides_logement'];
-        let input_list_array = ['equipements_logement', 'regles'];
+        // let input_list = ['meuble', 'aides_logement'];
+        // let input_list_array = ['equipements_logement', 'regles'];
         
-        input_list.forEach(element =>{
-            $(`#${element}_recap`).append(`<p id="${element}recap_content">${document.getElementById(`${element}`).value}</p>`);
-        })
+        // input_list.forEach(element =>{
+        //     $(`#${element}_recap`).append(`<p id="${element}recap_content">${document.getElementById(`${element}`).value}</p>`);
+        // })
         // input_list_array.forEach(element => {
         //     let regles = document.querySelectorAll(`input[name="regles"]:checked`);
         //     // $(`#${element}`)
@@ -210,17 +240,19 @@ btnStepEl4.addEventListener("click", (e)=>{
         //On redefini le dot vers le point suivant
         let dotNext = document.getElementById('dot_4');
         dotNext.innerHTML = `<i class="fa fa-hourglass-start" aria-hidden="true"></i>`;
-        titleStep.innerHTML = `Etape 4/5:<span class="text-green"> Profils idéal et chambre</span>`;
+        titleStep.innerHTML = `Etape 4/5:<span class="text-green"> Profil idéal</span>`;
         timeLineEl.style.width = `75%`;
         window.scrollTo(0,0);
+        
+    }
     
 })
 
 //Gestion du clic vers step 4
 btnStepEl5.addEventListener("click", (e)=>{
-
+    
     e.preventDefault();
-
+    
     //Verification des champs de formulaire
     let validationFormulaire = true;
     let inputs = document.querySelectorAll('#bloc_step_4 input[class="form-control"]');
@@ -232,6 +264,7 @@ btnStepEl5.addEventListener("click", (e)=>{
             validationFormulaire = false;
         }
     })
+    //On met à 0 les champs number non saisis
     input_number.forEach(element => {
         if(element.value === ""){
             element.value = 0;
@@ -239,94 +272,105 @@ btnStepEl5.addEventListener("click", (e)=>{
             element.classList.add('is-valid');
         }
     })
-    //Si on rencontre un probleme alors on passe en false et on n'accède pas à la suite
-    if(validationFormulaire){
-        //On gère l'affichage du bouton
-        let dot = document.getElementById('dot_4');
-        dot.innerHTML = `<i class="fa fa-check" aria-hidden="true"></i>`;
-        dot.classList.remove('unvalid_step');
-        dot.classList.add('valid_step');
-        //On gère l'affichage du bloc de step avec les classes
-        blockStepEl4.classList.remove('show_step');
-        blockStepEl4.classList.add('unshow_step');
-        blockStepEl5.classList.remove('unshow_step');
-        blockStepEl5.classList.add('show_step');
-        //On redefini le dot vers le point suivant
-        let dotNext = document.getElementById('dot_5');
-        dotNext.innerHTML = `<i class="fa fa-hourglass-start" aria-hidden="true"></i>`;
-        titleStep.innerHTML = `Etape 5/5:<span class="text-green"> Récapitulatif</span>`;
-        timeLineEl.style.width = `100%`;
-        window.scrollTo(0,0);
+    if($('#create_annonce').valid()){
+        //Si on rencontre un probleme alors on passe en false et on n'accède pas à la suite
+        if(validationFormulaire){
+            //On gère l'affichage du bouton
+            let dot = document.getElementById('dot_4');
+            dot.innerHTML = `<i class="fa fa-check" aria-hidden="true"></i>`;
+            dot.classList.remove('unvalid_step');
+            dot.classList.add('valid_step');
+            //On gère l'affichage du bloc de step avec les classes
+            blockStepEl4.classList.remove('show_step');
+            blockStepEl4.classList.add('unshow_step');
+            blockStepEl5.classList.remove('unshow_step');
+            blockStepEl5.classList.add('show_step');
+            //On redefini le dot vers le point suivant
+            let dotNext = document.getElementById('dot_5');
+            dotNext.innerHTML = `<i class="fa fa-hourglass-start" aria-hidden="true"></i>`;
+            titleStep.innerHTML = `Etape 5/5:<span class="text-green">Ajout de(s) chambre(s)</span>`;
+            timeLineEl.style.width = `100%`;
+            window.scrollTo(0,0);
+            
+        }
     }
     
+})
+
+//Gestion de l'envoie du formulaire
+document.getElementById('enregistrer_annonce').addEventListener('click', (e) => {
+    e.preventDefault();
+    if($('#create_annonce').valid()){
+        document.getElementById('create_annonce').submit();
+    }
 })
 
 
 // //Gestion des retour en arriere
 // //Retour vers step 1
 backStep1.addEventListener("click", (e)=>{
-
+    
     e.preventDefault();
     let input_list = ['titre_logement', 'description_logement', 'type_logement', 'surface_logement'];
-        //On gère l'affichage du bouton
-        let dot = document.getElementById('dot_1');
-        dot.innerHTML = `<i class="fa fa-pencil text-white" aria-hidden="true"></i>`;
-        dot.classList.remove('valid_step');
-        dot.classList.add('unvalid_step');
-        //On gère l'affichage du bloc de step avec les classes
-        blockStepEl2.classList.remove('show_step');
-        blockStepEl2.classList.add('unshow_step');
-        blockStepEl1.classList.remove('unshow_step');
-        blockStepEl1.classList.add('show_step');
-        //Gestion du recap on va enlever le contenu
-        input_list.forEach(element => {
-            $(`#${element}_recap_content`).remove();
-        })
-        //On redefini le dot vers le point suivant
-        let dotNext = document.getElementById('dot_1');
-        dotNext.innerHTML = `<i class="fa fa-pencil text-white" aria-hidden="true"></i>`;
-        titleStep.innerHTML = `Etape 1/4:<span class="text-green"> Description</span>`;
-        timeLineEl.style.width = `0%`;
-        window.scrollTo(0,0);
+    //On gère l'affichage du bouton
+    let dot = document.getElementById('dot_1');
+    dot.innerHTML = `<i class="fa fa-pencil text-white" aria-hidden="true"></i>`;
+    dot.classList.remove('valid_step');
+    dot.classList.add('unvalid_step');
+    //On gère l'affichage du bloc de step avec les classes
+    blockStepEl2.classList.remove('show_step');
+    blockStepEl2.classList.add('unshow_step');
+    blockStepEl1.classList.remove('unshow_step');
+    blockStepEl1.classList.add('show_step');
+    //Gestion du recap on va enlever le contenu
+    input_list.forEach(element => {
+        $(`#${element}_recap_content`).remove();
+    })
+    //On redefini le dot vers le point suivant
+    let dotNext = document.getElementById('dot_1');
+    dotNext.innerHTML = `<i class="fa fa-pencil text-white" aria-hidden="true"></i>`;
+    titleStep.innerHTML = `Etape 1/4:<span class="text-green"> Description</span>`;
+    timeLineEl.style.width = `0%`;
+    window.scrollTo(0,0);
     
 })
 
 // //Retour vers step 2
 backStep2.addEventListener("click", (e)=>{
-
+    
     e.preventDefault();
-
+    
     //Verification des champs de formulaire
-
-        //On gère l'affichage du bouton
-        let dot = document.getElementById('dot_2');
-        dot.innerHTML = `<i class="fa fa-pencil text-white" aria-hidden="true"></i>`;
-        dot.classList.remove('valid_step');
-        dot.classList.add('unvalid_step');
-        //On gère l'affichage du bloc de step avec les classes
-        blockStepEl3.classList.remove('show_step');
-        blockStepEl3.classList.add('unshow_step');
-        blockStepEl2.classList.remove('unshow_step');
-        blockStepEl2.classList.add('show_step');
-        //Suppression de l'ancien ajout
-        $('#ville_recap_content').remove();
-        //On redefini le dot vers le point suivant
-        let dotNext = document.getElementById('dot_2');
-        dotNext.innerHTML = `<i class="fa fa-pencil text-white" aria-hidden="true"></i>`;
-        titleStep.innerHTML = `Etape 2/5:<span class="text-green">Localisation et photos</span>`;
-        timeLineEl.style.width = `25%`;
-        window.scrollTo(0,0);
+    
+    //On gère l'affichage du bouton
+    let dot = document.getElementById('dot_2');
+    dot.innerHTML = `<i class="fa fa-pencil text-white" aria-hidden="true"></i>`;
+    dot.classList.remove('valid_step');
+    dot.classList.add('unvalid_step');
+    //On gère l'affichage du bloc de step avec les classes
+    blockStepEl3.classList.remove('show_step');
+    blockStepEl3.classList.add('unshow_step');
+    blockStepEl2.classList.remove('unshow_step');
+    blockStepEl2.classList.add('show_step');
+    //Suppression de l'ancien ajout
+    $('#ville_recap_content').remove();
+    //On redefini le dot vers le point suivant
+    let dotNext = document.getElementById('dot_2');
+    dotNext.innerHTML = `<i class="fa fa-pencil text-white" aria-hidden="true"></i>`;
+    titleStep.innerHTML = `Etape 2/5:<span class="text-green">Localisation et photos</span>`;
+    timeLineEl.style.width = `25%`;
+    window.scrollTo(0,0);
     
 })
 
 // //Retour vers step 3
 backStep3.addEventListener("click", (e)=>{
-
+    
     e.preventDefault();
-
+    
     //Verification des champs de formulaire
     let validationFormulaire = true;
-
+    
     //Si on rencontre un probleme alors on passe en false et on n'accède pas à la suite
     if(validationFormulaire){
         //On gère l'affichage du bouton
@@ -351,25 +395,25 @@ backStep3.addEventListener("click", (e)=>{
 
 // //Retour vers step 4
 backStep4.addEventListener("click", (e)=>{
-
+    
     e.preventDefault();
-
-        //On gère l'affichage du bouton
-        let dot = document.getElementById('dot_4');
-        dot.innerHTML = `<i class="fa fa-pencil text-white" aria-hidden="true"></i>`;
-        dot.classList.remove('valid_step');
-        dot.classList.add('unvalid_step');
-        //On gère l'affichage du bloc de step avec les classes
-        blockStepEl5.classList.remove('show_step');
-        blockStepEl5.classList.add('unshow_step');
-        blockStepEl4.classList.remove('unshow_step');
-        blockStepEl4.classList.add('show_step');
-        //On redefini le dot vers le point suivant
-        let dotNext = document.getElementById('dot_4');
-        dotNext.innerHTML = `<i class="fa fa-pencil text-white" aria-hidden="true"></i>`;
-        titleStep.innerHTML = `Etape 4/5:<span class="text-green"> Profils idéal et chambre</span>`;
-        timeLineEl.style.width = `75%`;
-        window.scrollTo(0,0);
+    
+    //On gère l'affichage du bouton
+    let dot = document.getElementById('dot_4');
+    dot.innerHTML = `<i class="fa fa-pencil text-white" aria-hidden="true"></i>`;
+    dot.classList.remove('valid_step');
+    dot.classList.add('unvalid_step');
+    //On gère l'affichage du bloc de step avec les classes
+    blockStepEl5.classList.remove('show_step');
+    blockStepEl5.classList.add('unshow_step');
+    blockStepEl4.classList.remove('unshow_step');
+    blockStepEl4.classList.add('show_step');
+    //On redefini le dot vers le point suivant
+    let dotNext = document.getElementById('dot_4');
+    dotNext.innerHTML = `<i class="fa fa-pencil text-white" aria-hidden="true"></i>`;
+    titleStep.innerHTML = `Etape 4/5:<span class="text-green"> Profils idéal et chambre</span>`;
+    timeLineEl.style.width = `75%`;
+    window.scrollTo(0,0);
     
 })
 

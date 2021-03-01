@@ -1,13 +1,12 @@
 <?php
-
+require_once(__DIR__ . '/Connection.php');
 class Recherches {
 
 
     public static function recherche_annonce($search)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT * 
             FROM `logements` 
@@ -15,7 +14,7 @@ class Recherches {
             INNER JOIN `communes` ON villes.id_commune = communes.id
             INNER JOIN `chambres` ON logements.id_logement = chambres.id_logement
             INNER JOIN `utilisateurs` ON logements.id_utilisateur = utilisateurs.id
-            INNER JOIN `roles` ON utilisateurs.id_role = roles.id
+            INNER JOIN `roles` ON utilisateurs.id_role = roles.role_id
             WHERE `statut` = 'Publiee'
             AND `a_louer` = 1 
             AND `libelle_ville`LIKE '$search%'
@@ -32,9 +31,8 @@ class Recherches {
 
     public static function all_annonce()
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT * 
             FROM `logements` 
@@ -42,7 +40,7 @@ class Recherches {
             INNER JOIN `communes` ON villes.id_commune = communes.id
             INNER JOIN `chambres` ON logements.id_logement = chambres.id_logement
             INNER JOIN `utilisateurs` ON logements.id_utilisateur = utilisateurs.id
-            INNER JOIN `roles` ON utilisateurs.id_role = roles.id
+            INNER JOIN `roles` ON utilisateurs.id_role = roles.role_id
             WHERE `statut` = 'Publiee'
             ORDER BY `date_creation` DESC;
  
@@ -57,9 +55,8 @@ class Recherches {
 
     public static function count_annonce()
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT COUNT(*)
             FROM `logements` 
@@ -82,9 +79,8 @@ class Recherches {
 
     public static function image_room()
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT * 
             FROM 
@@ -100,9 +96,8 @@ class Recherches {
      
     public static function annonce_details($id)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT * 
             FROM `chambres` 
@@ -111,21 +106,9 @@ class Recherches {
             INNER JOIN `communes` ON villes.id_commune = communes.id
 
             INNER JOIN `utilisateurs` ON logements.id_utilisateur = utilisateurs.id
-            INNER JOIN `roles` ON utilisateurs.id_role = roles.id
+            INNER JOIN `roles` ON utilisateurs.id_role = roles.role_id
             INNER JOIN `proprietaire` ON utilisateurs.id=proprietaire.id_utilisateur
             WHERE chambres.id_chambre = '$id'
-            -- SELECT * 
-            -- FROM `chambres` 
-            -- INNER JOIN `logements` ON logements.id_logement = chambres.id_logement
-            -- INNER JOIN `villes` ON logements.id_ville = villes.id 
-            -- INNER JOIN `communes` ON villes.id_commune = communes.id
-            -- INNER JOIN `proprietaire` ON utilisateurs.id=proprietaire.id_utilisateur
-            
-            -- INNER JOIN `utilisateurs` ON logements.id_utilisateur = utilisateurs.id
-            -- INNER JOIN `roles` ON utilisateurs.id_role = roles.id
-            -- WHERE chambres.id_chambre = '$id'
-            
-
             ");
             $data = $query->fetch(PDO::FETCH_OBJ);
             return array(true, $data);
@@ -137,9 +120,8 @@ class Recherches {
 
     public static function nombre_annonce($search)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT COUNT(*)
             FROM `logements` 
@@ -147,7 +129,7 @@ class Recherches {
             INNER JOIN `communes` ON villes.id_commune = communes.id
             INNER JOIN `chambres` ON logements.id_logement = chambres.id_logement
             INNER JOIN `utilisateurs` ON logements.id_utilisateur = utilisateurs.id
-            INNER JOIN `roles` ON utilisateurs.id_role = roles.id
+            INNER JOIN `roles` ON utilisateurs.id_role = roles.role_id
             WHERE `statut` = 'Publiee'
             AND `a_louer` = 1 
             AND `libelle_ville`LIKE '%$search%'
@@ -164,9 +146,8 @@ class Recherches {
 
     public static function photo_annonce($idChambre)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT libelle_photo 
             FROM photo_chambre
@@ -186,9 +167,8 @@ class Recherches {
 
     public static function photo_utilisateur($id)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT * 
             FROM photo_utilisateur 
@@ -208,9 +188,8 @@ class Recherches {
 
     public static function annonceByUserId($id)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT * 
             FROM `logements` 
@@ -218,8 +197,9 @@ class Recherches {
             INNER JOIN `communes` ON villes.id_commune = communes.id
             INNER JOIN `chambres` ON logements.id_logement = chambres.id_logement
             INNER JOIN `utilisateurs` ON logements.id_utilisateur = utilisateurs.id
-            INNER JOIN `roles` ON utilisateurs.id_role = roles.id
+            INNER JOIN `roles` ON utilisateurs.id_role = roles.role_id
             WHERE logements.id_utilisateur = '$id'
+            AND `statut` = 'Attente validation'
             ORDER BY `date_creation` DESC;
             ");
             $data = $query->fetchAll(PDO::FETCH_OBJ);
@@ -232,9 +212,8 @@ class Recherches {
 
     public static function regleByRoomId($id)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT libelle_regle 
             FROM regles
@@ -252,9 +231,8 @@ class Recherches {
 
     public static function equipementLogement($id)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT libelle_equipement 
             FROM equipements
@@ -272,9 +250,8 @@ class Recherches {
 
     public static function equipementChambre($id)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT libelle_equipement 
             FROM equipements
@@ -292,9 +269,8 @@ class Recherches {
 
     public static function photoLogementById($id)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT libelle_photo 
             FROM photos
@@ -312,7 +288,7 @@ class Recherches {
 
 public static function listVille()
 {
-    $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+    $pdo = Connection::getPDO();
     $error = null;
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     try{

@@ -5,7 +5,8 @@
 
 <?php 
     if(isset($_GET['id'])){
-        $logement_id = Logements::idLogementByIdChambre($_GET['id']);
+        $id_chambre = htmlspecialchars($_GET['id'], ENT_QUOTES);
+        $logement_id = Logements::idLogementByIdChambre($id_chambre);
         $logement_infos = Logements::logementByIdLogement($logement_id[1][0]->id_logement);
         $logement_regles = Regles::reglesByIdLogement($logement_id[1][0]->id_logement);
         $logement_regles_array = [];
@@ -31,20 +32,18 @@
                     <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                 </div>
             <?php else:?>
-            <form method="post" enctype="multipart/form-data">
+            <form method="post" enctype="multipart/form-data" action="<?php getenv("URL_APP")?>/src/controllers/annonces/logements/update.php">
                 <div class="modal-body">
                     <!--Titre-->
                     <div class="col-md-12 mt-3">
                         <label for="titre_logement" class="form-label">Titre*</label>
-                        <input type="text" class="form-control" max="100" id="titre_logement" name="titre_logement" required
-                            value="<?= htmlentities($logement_infos[1][0]->titre_logement, ENT_QUOTES) ?>">
+                        <input type="text" class="form-control" max="100" id="titre_logement" name="titre_logement" required value="<?= htmlentities($logement_infos[1][0]->titre_logement, ENT_QUOTES) ?>">
                     </div>
 
                     <!--Description-->
                     <div class="col-md-12 mt-3">
                         <label for="description_logement" class="form-label">Desciption du logement*</label>
-                        <textarea class="form-control" id="description_logement" name="description_logement" rows="3" required>
-                            <?= trim(htmlentities($logement_infos[1][0]->description_logement), ENT_QUOTES) ?>">
+                        <textarea class="form-control" id="description_logement" name="description_logement" rows="3" required><?= trim(htmlentities($logement_infos[1][0]->description_logement), ENT_QUOTES) ?>
                         </textarea>
                     </div>
 
@@ -58,7 +57,6 @@
                             <option value="3">Maison</option>
                         </select>
                     </div>
-
                     <!--Surface-->
                     <div class="col-md-12 mt-3">
                         <label for="surface_logement" class="form-label">Surface Totale</label>
@@ -84,7 +82,7 @@
                                     class="btn-check" 
                                     id="<?= 'ville_'.$ville->id ?>" 
                                     value="<?= $ville->id ?>"
-                                    <?php if(htmlentities($logement_infos[1][0]->surface_logement, ENT_QUOTES) == $ville->id){echo 'checked';}?>
+                                    <?php if(htmlentities($logement_infos[1][0]->id_ville, ENT_QUOTES) == $ville->id){echo 'checked';}?>
                                 >
                                 <label class="btn btn-outline-success me-2 mb-2" for="<?= 'ville_'.$ville->id ?>">
                                     <i class="fa fa-plus-circle" aria-hidden="true"></i>
@@ -92,19 +90,6 @@
                                 </label>
                             <?php endforeach; ?>
                         <?php endif;?>
-                    </div>
-
-                    <!--Photo-->
-                    <h4 class="mt-4">Photo des parties communes :</h4> <br>
-                    <!--Mettre les photos ajoutées en miniatures-->
-                    <!--Requetes des photos et pour chaque photos on fait l'image et un bouton supprimer et en dessous on peut ajouter 1 photo-->
-                    <i class="fa fa-plus-square" aria-hidden="true" id="addPhoto"></i>
-                    <div class="col-md-12 mt-3 mt-2">
-                        <label>Ajoutez au moins une photo des parties communes</label>
-                        <!-- <input type="file" name="photos_logement[]" class="form-control-file" id="photo_logement"> -->
-                        <div class="mb-3" id="zone_photo_logement">
-                            <input class="form-control" type="file" name="photos_logement[]">
-                        </div>
                     </div>
     
                     <h4 class="mt-3">Dites-nous en plus sur le logement :</h4>
@@ -172,7 +157,6 @@
                             <?php endif;?>
                         <div>
                     </div>
-
                     <!--Equipement logement-->
                     <p>Equipements et services:</p>
                     <div class="d-flex flex-wrap interets_ajax" role="group" aria-label="Basic checkbox toggle button group" id="equipement_logement">
@@ -243,11 +227,13 @@
                     </div>
                     </div>
                 </div>
+                <input type="hidden" name="id_logement" value="<?= $logement_id[1][0]->id_logement?>">
+                <input type="hidden" name="id_chambre" value="<?= $id_chambre?>">
             </form>
             <?php endif;?>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
-                <button type="button" id="save_edit_logement" class="btn btn-success" name="save_edit_logement">Save changes</button>
+                <button type="submit" id="save_edit_logement" class="btn btn-success" name="save_edit_logement">Modifier</button>
             </div>
         </div>
     </div>

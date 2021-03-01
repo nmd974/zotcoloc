@@ -1,14 +1,13 @@
 <?php
-
+require_once(__DIR__ . '/Connection.php');
 class Interets {
 
     public static $liste_interets =[];
 
     public static function habitudes_alimentaires()
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT * 
                 FROM `interets` 
@@ -26,9 +25,8 @@ class Interets {
 
     public static function centres_interets()
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT * 
                 FROM `interets` 
@@ -46,9 +44,8 @@ class Interets {
 
     public static function personnalite()
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT * 
                 FROM `interets` 
@@ -66,9 +63,8 @@ class Interets {
 
     public static function style_vie()
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT * 
                 FROM `interets` 
@@ -83,30 +79,11 @@ class Interets {
             return array(false, $error);
         }
     }
-
-    public static function ajoutInteretsParticulier($id_particulier, $id_interet)
-    {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
-        $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        try{
-            $query = $pdo->query("INSERT INTO `interet_particulier`(`id_particulier`, `id_interet`) 
-                VALUES ('$id_particulier','$id_interet')
-            ");
-            // $data = $query->fetchAll(PDO::FETCH_OBJ);
-            return array(true, '');
-        }catch(PDOException $e){
-            $error = $e->getMessage();
-            return array(false, $error);
-        }
-    }
-
     
     public static function interetsByParticulierId($id)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT `id_interet` FROM `interet_particulier` 
             WHERE id_particulier = '$id'
@@ -121,9 +98,8 @@ class Interets {
 
     public static function deleteInterets($id_particulier, $id_interet)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("DELETE FROM `interet_particulier` WHERE `id_particulier` = '$id_particulier' AND `id_interet` = $id_interet
             ");

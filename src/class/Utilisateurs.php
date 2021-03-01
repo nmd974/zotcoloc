@@ -1,12 +1,11 @@
 <?php
-
+require_once(__DIR__ . '/Connection.php');
 class Utilisateurs {
 
     public static function monCompteParticulier($id)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT * FROM `utilisateurs` 
             INNER JOIN `particulier` ON particulier.id_utilisateur = utilisateurs.id
@@ -22,9 +21,8 @@ class Utilisateurs {
 
     public static function monCompteProprietaire($id)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT * FROM `utilisateurs` 
             INNER JOIN `proprietaire` ON proprietaire.id_utilisateur = utilisateurs.id
@@ -40,9 +38,8 @@ class Utilisateurs {
 
     public static function mesFavoris($id)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT * FROM `utilisateurs` 
             INNER JOIN `particulier` ON particulier.id_utilisateur = utilisateurs.id
@@ -58,9 +55,8 @@ class Utilisateurs {
 
     public static function updateColocParticulier($id, $pseudo, $description, $ecole, $date_naissance, $date_disponibilite)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("UPDATE `particulier` 
             SET `description`='$description',`pseudo`='$pseudo',`ecole`='$ecole',`date_naissance`='$date_naissance',`date_disponibilite`='$date_disponibilite' 
@@ -76,9 +72,8 @@ class Utilisateurs {
     
     public static function updatePersoParticulier($id, $nom, $prenom, $telephone, $genre)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("UPDATE `particulier` 
             SET `nom`='$nom',`prenom`='$prenom',`telephone`='$telephone',`genre`='$genre'
@@ -93,9 +88,8 @@ class Utilisateurs {
 
     public static function favorisParticulier($id_particulier)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT * FROM `favoriser_logement` WHERE `id_particulier` = '$id_particulier'
             ");
@@ -109,9 +103,8 @@ class Utilisateurs {
 
     public static function candidaturesParticulier($id_particulier)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT * FROM `candidater_chambre` WHERE `id_particulier` = '$id_particulier'
             ");
@@ -126,9 +119,8 @@ class Utilisateurs {
     
     public static function annoncesParticulier($id_utilisateur)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("SELECT * FROM `logements` 
             INNER JOIN `chambres` ON chambres.id_logement = logements.id_logement
@@ -145,9 +137,8 @@ class Utilisateurs {
 
     public static function updateInfosPro($id_proprietaire, $site_web, $description)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("UPDATE `proprietaire` 
             SET `site_web`='$site_web',`description`='$description'
@@ -163,9 +154,8 @@ class Utilisateurs {
 
     public static function updatePersoProprio($id, $nom, $prenom, $telephone)
     {
-        $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
+        $pdo = Connection::getPDO();
         $error = null;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
             $query = $pdo->query("UPDATE `proprietaire` 
             SET `nom`='$nom',`prenom`='$prenom',`telephone`='$telephone'

@@ -1,13 +1,8 @@
 {
-    "name": "jhapa/zotcoloc",
-    "description": "Application de gestion de colocation",
+    "name": "lain/test",
+    "description": "Plateforme de mise en relation de colocation",
     "require": {
-        "php": "^7.4"
-    },
-    "authors": [
-        {
-            "name": "nmd974",
-            "email": "jha.payet@gmail.com"
-        }
-    ]
+        "monolog/monolog": "^2.2",
+        "waavi/sanitizer": "~1.0"
+    }
 }

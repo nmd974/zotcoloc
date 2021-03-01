@@ -11,7 +11,7 @@
         <div class="alert alert-danger mb-2"><?=  $validationInscription[1] ?></div>
     <?php endif;?>
 
-    <div class="col-md-12">
+    <div class="col-md-12 mb-3">
         <label for="email" class="form-label">Email*</label>
         <input 
             type="email" 
@@ -22,14 +22,15 @@
                 echo $_POST['email'];
             }?>"
         >
+        <em id="valid_email"></em>
     </div>
-    <div class="col-md-12">
+    <div class="col-md-12 mb-3">
         <label for="password" class="form-label">Mot de passe*</label>
         <input type="password" class="form-control" id="password" name="password" 
             value="<?php if(isset($_POST['password'])){echo $_POST['password'];}?>"
         >
     </div>
-    <div class="col-md-12">
+    <div class="col-md-12 mb-3">
         <label for="confirm_password" class="form-label">Confirmer mot de passe*</label>
         <input type="password" class="form-control" id="confirm_password" name="confirm_password">
     </div>
