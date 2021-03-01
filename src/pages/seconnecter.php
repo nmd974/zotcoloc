@@ -12,6 +12,7 @@
 <div class="container" id="wrapper_page_content">
 
 <div class="form-modal" >
+<a href="./authentificationLoueur.php">Je n'ai pas de compte</a>
 
 <?php if(isset($_SESSION['flash'])):?>
 <?php if($_SESSION['flash'][0] == "Success"):?>
