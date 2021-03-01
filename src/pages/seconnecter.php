@@ -1,6 +1,6 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
 <div class="container">
-    <div class="mb-5 subtitle">
+    <div class="subtitle">
         <div class="border-one ps-1">
             <div class="border-two ps-3">
                 <p class="text-secondary m-0 poppins h5">Authentification</p>
@@ -23,7 +23,7 @@
 <?php endif;?>
 <?php endif;?>
 
-    <div id="login-form mb-5">
+    <div id="login-form">
         <form action="../controllers/utilisateurs/login.php" method="POST">
             <input type="text" name="email" class="form-control" required
             pattern=" [a-z0-9 ._% + -] + @ [a- z0-9 .-] + \. [az] {2,} $ " 
@@ -135,6 +135,7 @@
     width:100%;
     height:auto;
     padding-bottom:1em;
+    padding-top: 1em;
 }
 #login-form button , #signup-form button{
     width:100%;
