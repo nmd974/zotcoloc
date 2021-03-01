@@ -23,7 +23,7 @@
 <?php endif;?>
 <?php endif;?>
 
-    <div id="login-form mb-5 mt-5">
+    <div id="login-form" class="mb-5 mt-5">
         <form action="../controllers/utilisateurs/login.php" method="POST">
             <input type="text" name="email" class="form-control" required
             pattern=" [a-z0-9 ._% + -] + @ [a- z0-9 .-] + \. [az] {2,} $ " 
