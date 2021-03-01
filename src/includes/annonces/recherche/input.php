@@ -5,7 +5,7 @@
             <input type="text" name="search-room" class="form-control location-border2" placeholder="Lieux"
             aria-label="location" aria-describedby="button-addon1" id="search" list="datalistOptions" autocomplete="off"
             <?php if(isset($_GET['search_room'])):?>
-                value="<?= htmlspecialchars($_GET['search_room'], ENT_QUOTES)?>"
+                value="<?= strip_tags($_GET['search_room'], ENT_QUOTES)?>"
             <?php endif;?>
             >
             <datalist id="datalistOptions"> 
