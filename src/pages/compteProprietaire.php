@@ -61,10 +61,6 @@
     </div>
     <!--METTRE LE CONTENU ICI-->
     <div class="container profil_view">
-    <?php if(isset($update)){
-        var_dump($update);
-    }
-    ?>
         <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/gererProfil.php');?>
         <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/annonces.php');?>
         <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/dashboard.php');?>
