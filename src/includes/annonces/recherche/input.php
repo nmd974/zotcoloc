@@ -1,6 +1,6 @@
 <!-- barre de recherche -->
 <div class="input-border bg-light mb-3 input-filter">
-    <form method="GET" class="form-group">
+    <form method="GET" class="form-group" id="searchAll">
         <div class="input-group">
             <input type="text" name="search-room" class="form-control location-border2" placeholder="Lieux"
             aria-label="location" aria-describedby="button-addon1" id="search" list="datalistOptions" autocomplete="off"

@@ -177,7 +177,7 @@ const validator_create_annonce = () => {
     })
 }
 const searchHome = () => {
-    validator = $("#input-border").validate({
+    validator = $("#searchHome").validate({
         errorElement: "em",
         errorPlacement: function ( error, element ) {
             element.addClass( "is-invalid" );
@@ -202,7 +202,7 @@ const searchHome = () => {
     })
 }
 const searchAll = () => {
-    validator = $("#search").validate({
+    validator = $("#searchAll").validate({
         errorElement: "em",
         errorPlacement: function ( error, element ) {
             element.addClass( "is-invalid" );
