@@ -21,18 +21,6 @@
                 <a href="./authentificationLoueur.php">
                   <button type="button" class="btn btn-success btn-lg rounded-pill">Déposer une annonce</button>
                 </a>
-                
-                <!-- <a href="./authentificationLoueur.php">
-                  <button type="button" class="btn btn-success btn-lg rounded-pill">Résidence</button>
-                </a>
-                
-                <a href="./authentificationLoueur.php">
-                  <button type="button" class="btn btn-success btn-lg rounded-pill">Propriétaire</button>
-                </a>
-
-                <a href="./authentificationLoueur.php">
-                  <button type="button" class="btn btn-success btn-lg rounded-pill">Agence</button>
-                </a> -->
 
             </div>
         </div>
