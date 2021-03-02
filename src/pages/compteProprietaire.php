@@ -43,7 +43,6 @@
 <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/photoUser.php');?>
 <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/infosColoc.php');?>
 <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/infosPerso.php');?>
-<?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/interets.php');?>
 <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/deleteUser.php');?>
 <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/sidebar.php');?>
 
