@@ -8,7 +8,7 @@
         $id_chambre = htmlspecialchars($_GET['id'], ENT_QUOTES);
         var_dump("OK file");
         $logement_id = Logements::idLogementByIdChambre($id_chambre);
-        var_dump($logement_id);
+        var_dump($logement_id[1][0]->id_logement);
         $logement_infos = Logements::logementByIdLogement($logement_id[1][0]->id_logement);
         var_dump("OK file");
         $logement_regles = Regles::reglesByIdLogement($logement_id[1][0]->id_logement);
