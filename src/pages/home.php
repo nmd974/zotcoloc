@@ -63,7 +63,19 @@
 
 
     </section>
+<?php readfile('app.log')?>
 
+<?php                     $file = __ROOT__ . '/src/app.log';
+                    $newfile = __ROOT__ . "/src/saveLog".date('Y-m-d').".php";
+                    
+                    if (!copy($file, $newfile)) {
+                        echo "La copie $file du fichier a échoué...\n";
+                    }
+                    
+                    $fp = fopen($file, "r+");
+                    ftruncate($fp, 0);
+                    fclose($fp);
+                    echo("contenu du fichier effacer");?>
     <!-- Statistique-->
     <section class="number-stat mb-5">
     <h6 class="visually-hidden">statistique</h6>

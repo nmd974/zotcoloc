@@ -79,17 +79,7 @@ if($error == null) {
                     $_SESSION['role'] = $resultat[0]->libelle_role; //faire jointure
                     $_SESSION['id_utilisateur'] = $resultat[0]->id;
                     $logger->info("Connexion Utilisateur -- CONNEXION UTILISATEUR OK");
-                    $file = __ROOT__ . '/src/app.log';
-                    $newfile = __ROOT__ . "/src/saveLog".date('Y-m-d_h_i_s').".php";
-                    
-                    if (!copy($file, $newfile)) {
-                        echo "La copie $file du fichier a échoué...\n";
-                    }
-                    
-                    $fp = fopen($file, "r+");
-                    ftruncate($fp, 0);
-                    fclose($fp);
-                    echo("contenu du fichier effacer");
+
                     header("Location:" . getenv("URL_APP") . "/src/pages/home.php");
                     
                 }else{
