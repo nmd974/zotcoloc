@@ -65,7 +65,7 @@ if($error == null) {
             $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
             $sth->execute(array(
                 ':id' => $id_utilisateur,
-                ':id_role' => 4,
+                ':id_role' => 3,
                 ':email' => $data_sanitized['email'],
                 ':password_user' => $data_sanitized['password']
             ));
