@@ -1875,3 +1875,7 @@
 [2021-02-25T16:20:56.216762+00:00] application-generale.INFO: Recuperation des données des regles -- SUCCESS [] []
 [2021-02-25T16:20:56.217291+00:00] application-generale.INFO: Recuperation des données des villes -- SUCCESS [] []
 [2021-02-25T16:20:56.217368+00:00] application-generale.INFO: Recuperation des données -- FIN DES REQ [] []
+[2021-03-02T09:34:14.553254+01:00] application-generale.INFO: Champs de connexion rempli -- VERIF SERVEUR OK [] []
+[2021-03-02T09:34:14.613533+01:00] application-generale.INFO: Valeurs des inputs nettoyer utilisateur -- SANITIZE OK [] []
+[2021-03-02T09:34:14.663738+01:00] application-generale.INFO: Recuperation des données Utilisateur -- EMAIL / TABLE UTILISATEUR OK [] []
+[2021-03-02T09:34:14.740404+01:00] application-generale.INFO: Connexion Utilisateur -- CONNEXION UTILISATEUR OK [] []
