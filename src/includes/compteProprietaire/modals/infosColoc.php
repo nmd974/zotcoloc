@@ -16,7 +16,7 @@
             <div class="col-md-12">
                 <label for="description" class="form-label">Description</label><br>
                 <textarea name="description" class="form-control" id="description">
-                    <?= htmlentities($mon_compte[1][0]->description, ENT_QUOTES)?>
+                    <?= htmlentities($mon_compte[0]->description, ENT_QUOTES)?>
                 </textarea>
             </div>
             
