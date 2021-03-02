@@ -47,7 +47,7 @@
                 <!-- role -->
                 <span class="badge bg-primary mb-1 letter-space"><?= ucfirst(htmlspecialchars($annonce->libelle_role, ENT_QUOTES)) ?></span>
                 <!-- titre de l'annonce -->
-                <h5 class="card-title"><?= htmlspecialchars(substr($annonce->titre_chambre, 0 , 10)) ?>...</h5>
+                <h5 class="card-title"><?= htmlspecialchars(substr($annonce->titre_chambre, 0 , 20)) ?>...</h5>
                 <p class="card-text fw-bold"><?= htmlspecialchars($annonce->libelle_ville) ?></p>
                 <!-- <p class="card-text">Chambre: 1</p> -->
                 <p class="card-text">Disponible le : <?= (new DateTime(htmlspecialchars($annonce->date_disponibilite).'00:00:00'))->format('d/m/Y') ?></p>

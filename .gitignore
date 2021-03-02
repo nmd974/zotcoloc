@@ -1,4 +1,5 @@
 /src/vendor/
+/src/images/
 app.log
 *.log
 src/app.log
