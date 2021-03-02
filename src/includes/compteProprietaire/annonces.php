@@ -6,7 +6,7 @@
     <a href="../pages/creationAnnoncePage.php"><button class="btn btn-success mt-4 w-lg-25 w-md-100">Ajouter une annonce</button></a>
 <?php else:?>
 <div class="table-responsive">
-
+<?php var_dump($mon_compte);?>
 
     <table class="table table-striped text-center">
     <thead>
