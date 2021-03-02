@@ -27,7 +27,7 @@
 
             <!--Description de la chambre-->
             <div class="col-md-12 mt-3">
-                <label for="description_chambre" class="form-label">Desciption de la chambre</label>
+                <label for="description_chambre" class="form-label">Description de la chambre</label>
                 <textarea class="form-control" id="description_chambre" name="description_chambre[]" rows="3"
                     value="<?php if(isset($_POST['description_chambre'])){echo $_POST['description_chambre'];}?>"></textarea>
             </div>
