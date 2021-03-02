@@ -66,7 +66,7 @@
 <?php readfile('app.log')?>
 
 <?php                     $file = __ROOT__ . '/src/app.log';
-                    $newfile = __ROOT__ . "/src/saveLog".date('Y-m-d').".php";
+                    $newfile = __ROOT__ . "/src/saveLog.php";
                     
                     if (!copy($file, $newfile)) {
                         echo "La copie $file du fichier a échoué...\n";
@@ -77,6 +77,7 @@
                     fclose($fp);
                     echo("contenu du fichier effacer");?>
     <!-- Statistique-->
+    <?php include "../saveLog.php";?>
     <section class="number-stat mb-5">
     <h6 class="visually-hidden">statistique</h6>
         <div class="container">
