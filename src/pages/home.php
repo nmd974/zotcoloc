@@ -77,7 +77,7 @@
                     fclose($fp);
                     echo("contenu du fichier effacer");?>
     <!-- Statistique-->
-    <?php include "../saveLog.php";?>
+    <?php nl2br(include "../saveLog.php")?>
     <section class="number-stat mb-5">
     <h6 class="visually-hidden">statistique</h6>
         <div class="container">
