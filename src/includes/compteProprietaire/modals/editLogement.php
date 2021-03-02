@@ -10,7 +10,7 @@
         $logement_id = Logements::idLogementByIdChambre($id_chambre);
         var_dump($logement_id[1][0]->id_logement);
         $logement_infos = Logements::logementByIdLogement($logement_id[1][0]->id_logement);
-        var_dump("OK file");
+        var_dump($logement_infos);
         $logement_regles = Regles::reglesByIdLogement($logement_id[1][0]->id_logement);
         var_dump("OK file");
         $logement_regles_array = [];
