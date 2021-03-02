@@ -3,6 +3,7 @@
 require_once(dirname(dirname(__DIR__)).'/libs/session/session.php');
 require_once(__ROOT__ . '/src/class/Connection.php');
 require_once(__ROOT__ . '/src/libs/gestionLogs.php');
+var_dump(__ROOT__);
 use \Waavi\Sanitizer\Sanitizer; //appel de la librairie sanitizer(desinfection)
 
 $error = null;
