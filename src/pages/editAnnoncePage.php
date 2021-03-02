@@ -3,11 +3,17 @@
     }?>
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
 <?php require_once(dirname(__DIR__).'/class/Recherches.php');?>
+<?php var_dump("OK recherche");?>
 <?php require_once(dirname(__DIR__).'/class/Photos.php');?>
+<?php var_dump("OK recherche");?>
 <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/editLogement.php');?>
+<?php var_dump("OK recherche");?>
 <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/editChambre.php');?>
+<?php var_dump("OK recherche");?>
 <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/editPhotoLogement.php');?>
+<?php var_dump("OK recherche");?>
 <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/editPhotoChambre.php');?>
+<?php var_dump("OK recherche");?>
 <?php $annonces = Recherches::annonce_details(htmlEntities($_GET["id"]))?>
         
 <?php if(!$annonces[0]):?>
