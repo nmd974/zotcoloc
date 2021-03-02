@@ -6,24 +6,15 @@
 <?php 
     if(isset($_GET['id'])){
         $id_chambre = htmlspecialchars($_GET['id'], ENT_QUOTES);
-        var_dump("OK file");
         $logement_id = Logements::idLogementByIdChambre($id_chambre);
-        //var_dump(Logements::logementByIdLogement($logement_id[1][0]->id_logement));
-        // $logement_infos = Logements::logementByIdLogement($logement_id[1][0]->id_logement);
-        // $id = $logement_id[1][0]->id_logement;
-        // $query = $pdo->query("SELECT * FROM `logements` 
-        //     WHERE logements.id_logement = '$id'
-        //     ");
-        //     $logement_infos = $query->fetchAll(PDO::FETCH_OBJ);
-        var_dump("OK file");
+        $logement_infos = Logements::logementByIdLogement($logement_id[1][0]->id_logement);
         $logement_regles = Regles::reglesByIdLogement($logement_id[1][0]->id_logement);
-        var_dump("OK file");
         $logement_regles_array = [];
         foreach($logement_regles[1] as $regle){
             array_push($logement_regles_array, $regle->id);
         }
         $logement_equipements = Equipements::equipementsByIdLogement($logement_id[1][0]->id_logement);
-        var_dump("OK file");
+
         $logement_equipements_array = [];
         foreach($logement_equipements[1] as $equipement){
             array_push($logement_equipements_array, $equipement->id);

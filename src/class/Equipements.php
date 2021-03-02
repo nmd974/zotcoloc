@@ -36,6 +36,7 @@ class Equipements {
 
     public static function equipementsByIdChambre($id)
     {
+        $pdo = Connection::getPDO();
         $error = null;
         try{
             $query = $pdo->query("SELECT id
