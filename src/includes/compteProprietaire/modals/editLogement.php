@@ -10,6 +10,7 @@
         $logement_id = Logements::idLogementByIdChambre($id_chambre);
         //var_dump(Logements::logementByIdLogement($logement_id[1][0]->id_logement));
         // $logement_infos = Logements::logementByIdLogement($logement_id[1][0]->id_logement);
+        $id = $logement_id[1][0]->id_logement;
         $query = $pdo->query("SELECT * FROM `logements` 
             WHERE logements.id_logement = '$id'
             ");
