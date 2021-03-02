@@ -1,6 +1,3 @@
-<?php if(empty($_GET["id"])){
-    header('Location: home.php');
-    }?>
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
 
 
@@ -8,8 +5,10 @@
     <pre>
         <?php 
             $file = __ROOT__ . '/src/app.log';
-            file_get_contents($file);
+            $logs = file_get_contents($file);
+            echo $logs;
         ?>
+
     </pre>
 </div>
 
