@@ -98,6 +98,7 @@
             <div class="border-one ps-1">
                 <div class="border-two ps-3">
                     <p class="text-secondary m-0 poppins h5">TOP VILLE</p>
+                    <?php var_dump($_SESSION['role']);?>
                     <h2 class="vidaloka m-0 h1">Retrouver<span class="text-green"> nos meilleurs Colocation</span> de
                         la Réunion</h2>
                 </div>
