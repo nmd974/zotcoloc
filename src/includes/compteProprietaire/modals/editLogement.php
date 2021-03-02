@@ -8,9 +8,13 @@
         $id_chambre = htmlspecialchars($_GET['id'], ENT_QUOTES);
         var_dump("OK file");
         $logement_id = Logements::idLogementByIdChambre($id_chambre);
-        var_dump(Logements::logementByIdLogement($logement_id[1][0]->id_logement));
-        $logement_infos = Logements::logementByIdLogement($logement_id[1][0]->id_logement);
-        var_dump($logement_infos);
+        //var_dump(Logements::logementByIdLogement($logement_id[1][0]->id_logement));
+        // $logement_infos = Logements::logementByIdLogement($logement_id[1][0]->id_logement);
+        $query = $pdo->query("SELECT * FROM `logements` 
+            WHERE logements.id_logement = '$id'
+            ");
+            $logement_infos = $query->fetchAll(PDO::FETCH_OBJ);
+        var_dump("OK file");
         $logement_regles = Regles::reglesByIdLogement($logement_id[1][0]->id_logement);
         var_dump("OK file");
         $logement_regles_array = [];
