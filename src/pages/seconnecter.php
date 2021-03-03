@@ -33,11 +33,8 @@
             </form>
             <div class="mt-3 d-flex flex-column align-items-center justify-content-center">
                 <p>Vous n'avez pas de compte ?<p>
-                    <div class="d-flex flex-column align-items-center justify-content-center">
-                        <p>Nous rejoindre en tant que</p>
-                        <a href="./inscriptionParticulier.php">colocataire</a> ou <a href="./authentificationLoueur.php">propriétaire</a>
-                    </div>
-                
+                <p>Nous rejoindre en tant que</p>
+                <a href="./inscriptionParticulier.php">colocataire</a> ou <a href="./authentificationLoueur.php">propriétaire</a>
             </div>
         </div>
     </div>
