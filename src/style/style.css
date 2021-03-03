@@ -451,7 +451,6 @@ em{
 .form-modal button{
     cursor: pointer;
     position: relative;
-    text-transform: capitalize;
     font-size:1em;
     z-index: 2;
     outline: none;

@@ -58,8 +58,8 @@
                 </div>
             </form>
             <div class="mt-5 d-flex flex-column align-items-center justify-content-center">
-                <p>J'ai déjà mon compte !<p>
-                <a href="./seconnecter.php" class="mt-4 mx-3">Je me connecte</a>
+                <p>J'ai déjà mon compte !</p>
+                <p><a href="./seconnecter.php" class="mt-4 mx-3">Je me connecte</a></p>
             </div>
         </div>
     </div>
