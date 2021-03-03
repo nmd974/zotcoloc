@@ -19,6 +19,7 @@ if($_POST['id_logement']){
             $logger->info("Modification d'un logement -- VERIF INPUT NOK");
             $_SESSION['flash'] = array('Error', "Echec de la modification du logement </br> Veuillez vérifier les champs");
             header("Location:" . getenv("URL_APP") . "/src/pages/editAnnoncePage.php?id=$id_chambre");
+            exit();
         }
     }
     
@@ -152,17 +153,15 @@ if($_POST['id_logement']){
                 $error = $e->getMessage();
                 $db->rollBack();
                 $logger->error("Echec de la modification du logement -- $error");
-                // http_response_code(400);
                 $_SESSION['flash'] = array('Error', "Echec de la modification du logement", "Erreur serveur");
                 header("Location:" . getenv("URL_APP") . "/src/pages/editAnnoncePage.php?id=$id_chambre");
-                // echo "Echec de la modification du logement </br> $error";
+                exit();
             }
         }else{
             $logger->alert("Echec lors de l\'inscription -- Impossible de se connecter à la base de données");
-            // http_response_code(503);
             $_SESSION['flash'] = array('Error', "Echec de la modification du logement", "Erreur serveur");
             header("Location:" . getenv("URL_APP") . "/src/pages/editAnnoncePage.php?id=$id_chambre");
-            echo '<div class="alert alert-danger" id="error_msg">Echec lors de l\'inscription </br> Impossible de se connecter à la base de données</div>';
+            exit();
         }
     }
 }

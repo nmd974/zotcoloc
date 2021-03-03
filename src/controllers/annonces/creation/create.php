@@ -48,7 +48,7 @@ foreach($inputRequired as $value){
         $logger->info("Creation d'une annonce -- VERIF INPUT NOK");
         $_SESSION['flash'] = array('Error', "Echec lors de la creation de l'annonce </br> Veuillez vérifier les champs");
         header("Location:" . getenv("URL_APP") . "/src/pages/creationAnnoncePage.php");
-        // return '<div class="alert alert-danger" id="error_msg">Erreur dans le formulaire </br> Veuillez vérifier les champs</div>';
+        exit();
     }
 }
 
@@ -303,20 +303,19 @@ if($error == null) {
             // On complete les valeurs pour session
             $_SESSION['flash'] = array('Success', "Annonce créée avec succès </br> Pensez à activer votre annonce");
             header("Location:" . getenv("URL_APP") . "/src/pages/compteProprietaire.php");
+            exit();
         }catch(PDOException $e){
             $error = $e->getMessage();
             $db->rollBack();
             $logger->error("Echec de la Creation d'une annonce (proprietaire) -- $error");
-            // http_response_code(400);
             $_SESSION['flash'] = array('Error', "Echec lors de la creation de l'annonce", "Erreur serveur");
             header("Location:" . getenv("URL_APP") . "/src/pages/creationAnnoncePage.php");
-            // echo "Echec lors de la creation de l'annonce </br> $error";
+            exit();
         }
     }else{
         $logger->alert("Echec lors de l\'inscription -- Impossible de se connecter à la base de données");
-        // http_response_code(503);
         $_SESSION['flash'] = array('Error', "Echec lors de la creation de l'annonce", "Erreur serveur");
         header("Location:" . getenv("URL_APP") . "/src/pages/creationAnnoncePage.php");
-        echo '<div class="alert alert-danger" id="error_msg">Echec lors de l\'inscription </br> Impossible de se connecter à la base de données</div>';
+        exit();
     }
 }

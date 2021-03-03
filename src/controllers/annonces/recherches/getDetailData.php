@@ -9,8 +9,6 @@ $error = null;
 $db = Connection::getPDO();
 if($db){
     try{
-       
-
         //annonce details
         $query = $db->query("SELECT * 
         FROM `chambres` 
