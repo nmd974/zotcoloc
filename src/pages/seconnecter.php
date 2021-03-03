@@ -32,9 +32,8 @@
                 <button type="submit" class="btn login">Je me connecte</button>          
             </form>
             <div class="mt-3 d-flex flex-column align-items-center justify-content-center">
-                <p>Vous n'avez pas de compte ?<p>
-                <p>Nous rejoindre en tant que</p>
-                <a href="./inscriptionParticulier.php">colocataire</a> ou <a href="./authentificationLoueur.php">propriétaire</a>
+                <p>Vous n'avez pas de compte ? Rejoignez nous en tant que<p>
+                <a href="./inscriptionParticulier.php">colocataire</a> <p>ou</p> <a href="./authentificationLoueur.php">propriétaire</a>
             </div>
         </div>
     </div>
