@@ -1,5 +1,4 @@
 <?php require_once(dirname(dirname(__DIR__)).'/libs/session/session.php'); ?>
-<?php var_dump($_SESSION);?>
 <!DOCTYPE html>
 <html lang="en">
 
