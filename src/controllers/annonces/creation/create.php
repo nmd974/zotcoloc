@@ -30,7 +30,7 @@ a_louer_
 
  */
 
-
+// TODO: faire une requete de recuperation du nombre de regles et equipements et villes pour donner la limite
 require_once(dirname(dirname(dirname(__DIR__))).'/libs/session/session.php');
 require_once(__ROOT__ . '/src/class/Connection.php');
 require_once(__ROOT__ . '/src/libs/gestionLogs.php');
@@ -54,6 +54,9 @@ foreach($inputRequired as $value){
 
 //On met à 0 de base si pas selectionne
 if(!isset($_POST['aides_logement'])){
+    $_POST['aides_logement'] = 0;
+};
+if($_POST['ville']){
     $_POST['aides_logement'] = 0;
 };
 
@@ -89,6 +92,9 @@ if($error == null) {
     
     $sanitizer = new Sanitizer($data, $filters,  $customFilter);
     $data_sanitized = $sanitizer->sanitize();
+    if($data_sanitized['ville'] == 0){
+        $data_sanitized['ville'] = 1; //Si 0 alors tentative de modification de la value on met alors 
+    }
 // TODO : Faille via les id en input mettre en sanitize
     $logger->info("Creation d'une annonce -- SANITIZE OK");
 
@@ -195,9 +201,6 @@ if($error == null) {
             for ($i=0; $i < $indice_nb_photo; $i++) { 
                 $ajoutImage = controleImageArray($_FILES['photos_logement'], $i);
                 if($ajoutImage[0]){ //La fonction retourne true si erreur
-                    // $message = "Erreur lors de l'ajout de la photo";
-                    // $validationFormulaire = false;
-                    // return array(false, $message);
                     $logger->alert("Creation d'une annonce -- Erreur lors de l'ajout de l'image logement");
                 }else{
                     $id_photo = md5(uniqid(rand(), true));
