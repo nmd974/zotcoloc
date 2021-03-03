@@ -32,10 +32,10 @@
                 <button type="submit" class="btn login">Je me connecte</button>          
             </form>
             <div class="mt-3 d-flex flex-column align-items-center justify-content-center">
-                <p>Vous n'avez pas de compte ? Rejoignez nous en tant que</p>
-                <p><a href="./inscriptionParticulier.php">colocataire</a></p> 
+                <p>Vous n'avez pas de compte ?</p>
+                <p><a href="./inscriptionParticulier.php">Rejoignez nous en tant que colocataire</a></p> 
                 <p>ou</p> 
-                <p><a href="./authentificationLoueur.php">propriétaire</a></p>
+                <p><a href="./authentificationLoueur.php">Rejoignez nous en tant que propriétaire</a></p>
             </div>
         </div>
     </div>
