@@ -68,27 +68,4 @@
                     <?php endforeach; ?>
                     </div>
                     <?php endif;?>
-                <!-- <div class="d-flex">
-               
-                <div class="equipment-room border-secondary border shadow mb-2 d-flex align-items-center justify-content-center m-1">
-                    <div class="d-flex">
-                        <div class="d-flex align-items-center">
-                        <i class="fa fa-file-image-o fa-3x text-dark ms-3" aria-hidden="true"></i> 
-                        </div>
-                        <div class="d-flex align-items-center ms-2">
-                            <p class="mb-0">Equipement du logement</p>
-                        </div>
-                    </div>
-                </div>
-               
-                <div class="equipment-room border-secondary border shadow mb-2 d-flex align-items-center justify-content-center m-1">
-                    <div class="d-flex">
-                        <div class="d-flex align-items-center">
-                        <i class="fa fa-file-image-o fa-3x text-dark ms-3" aria-hidden="true"></i> 
-                        </div>
-                        <div class="d-flex align-items-center ms-2">
-                            <p class="mb-0">Equipement du logement</p>
-                        </div>
-                    </div>
-                </div>
-                </div> -->
+

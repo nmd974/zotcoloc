@@ -3,7 +3,7 @@
 
 <?php 
     if(isset($_GET['id'])){
-        $logement_id = Logements::idLogementByIdChambre($_GET['id']);
+        $logement_id = Logements::idLogementByIdChambre(htmlspecialchars($_GET['id']));
         $logement_photos = Photos::photosByIdLogement($logement_id[1][0]->id_logement);
     }
 ?>

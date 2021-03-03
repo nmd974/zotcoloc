@@ -1,5 +1,5 @@
 <?php if(!$annonces):?>
-<img src="../images/no-logement.png" alt="pas de resultats" class="img-fluid">
+<img src="../img_default/no-logement.png" alt="pas de resultats" class="img-fluid">
 <?php else :?>
 <?php foreach($annonces as $annonce):?>
 <?php $idChambre = htmlspecialchars($annonce->id_chambre,ENT_QUOTES); ?>
@@ -23,9 +23,9 @@
                 
                 <?php if(!$utilisateurs):?>
                     <?php if($annonce->libelle_role == "proprietaire"):?>
-                        <img src="../images/no-picture-particulier.png" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px; height: 60px; border-radius: 50%;">
+                        <img src="../img_default/no-picture-particulier.png" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px; height: 60px; border-radius: 50%;">
                     <?php else:?>
-                        <img src="../images/no-picture-particulier.png" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px; height: 60px; border-radius: 50%;">
+                        <img src="../img_default/no-picture-particulier.png" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px; height: 60px; border-radius: 50%;">
                     <?php endif;?>
                 <?php else :?>
                 <?php foreach($utilisateurs as $utilisateur):?>
@@ -35,7 +35,7 @@
             </div>
             
             <?php if(!$images):?>
-                <img src="../images/no-photo.png" class="d-block w-100" alt="room" style="height:190px;">
+                <img src="../img_default/no-photo.png" class="d-block w-100" alt="room" style="height:190px;">
             <?php else :?>
                 <?php foreach($images as $image):?>
                     <img src="../images/<?= htmlspecialchars($image->libelle_photo) ?>" class="d-block w-100" alt="room" style="height:190px;">
