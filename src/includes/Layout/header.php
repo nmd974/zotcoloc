@@ -113,6 +113,11 @@
                                 <a href="./compteProprietaire.php" class="nav-link active" aria-current="page">Mon compte</a>
                             </li>
                             <?php endif; ?>
+                            <?php if($_SESSION['isLoggedIn'] && $_SESSION['role'] == "administrateur"):?>
+                            <li class="nav-item">
+                                <a href="./compteProprietaire.php" class="nav-link active" aria-current="page">Mon compte</a>
+                            </li>
+                            <?php endif; ?>
                             <?php if(!$_SESSION['isLoggedIn']):?>
                             <li class="nav-item">
                                 <a href="./seconnecter.php" class="nav-link active" aria-current="page">Se connecter</a>

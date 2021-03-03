@@ -73,19 +73,14 @@ if($error == null) {
             } else {
                 $passwordCorrect = password_verify($data_sanitized['password'],$resultat[0]->password);
                 if ($passwordCorrect){
-
                     $_SESSION['flash'] = array('Success', "Connexion avec succès");
                     $_SESSION['isLoggedIn'] = true;
                     $_SESSION['role'] = $resultat[0]->libelle_role; //faire jointure
                     $_SESSION['id_utilisateur'] = $resultat[0]->id;
                     $logger->info("Connexion Utilisateur -- CONNEXION UTILISATEUR OK");
-
                     header("Location:" . getenv("URL_APP") . "/src/pages/home.php");
-                    
                 }else{
                     echo 'Mauvais identifiant ou mot de passe !';
-                    //var_dump($data_sanitized);
-                    //var_dump($resultat[0]->password);
                     $_SESSION['flash'] = array('Error',"Echec lors de la connexion au compte", "Mauvais identifiant ou mot de passe!!!");
                     $logger->info("Mot de passe incorrect Utilisateur -- MOT DE PASSE UTILISATEUR NOK");
                     header("Location:" . getenv("URL_APP") . "/src/pages/seconnecter.php");
@@ -96,14 +91,12 @@ if($error == null) {
         }catch(PDOException $e){
             $error = $e->getMessage();
             $logger->error("'Mauvais identifiant ou mot de passe!' -- $error");
-            // http_response_code(400);
             $_SESSION['flash'] = array('Error',"Echec lors de laconnexion de compte", "Mauvais identifiant ou mot de passe!");
             header("Location:" . getenv("URL_APP") . "/src/pages/seconnecter.php");
             
         }
     }else{
         $logger->alert("Echec de la connexion -- Impossible de se connecter à la base de données");
-        // http_response_code(503);
         $_SESSION['flash'] = array('Error', "Echec de la connexion","Echec lors de la connexion </br> Impossible de se connecter à la base de données");
         header("Location:" . getenv("URL_APP") . "/src/pages/seconnecter.php");
         

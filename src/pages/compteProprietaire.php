@@ -1,6 +1,6 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
 <?php
-    if(!$_SESSION['isLoggedIn']){
+    if(!$_SESSION['isLoggedIn'] || $_SESSION['role'] != "proprietaire"){
         header_remove('Location');
         header('Location: home.php');
     }
