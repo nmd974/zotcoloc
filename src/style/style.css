@@ -387,6 +387,7 @@ ul{
 #wrapper_page_content{
     min-height: 52vh;
     margin-top: 50px;
+    margin-bottom: 50px;
 }
 #formulaire_inscription{
     margin-top: 50px;
