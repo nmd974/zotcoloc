@@ -58,7 +58,6 @@
             array_push($mes_interet_list, $interet->id_interet);
         }
     }
-    var_dump($_SESSION['id_utilisateur']);
 ?>
 
 <?php require_once(dirname(__DIR__).'/includes/compteParticulier/modals/photoUser.php');?>
@@ -82,10 +81,6 @@
     </div>
     <!--METTRE LE CONTENU ICI-->
     <div class="container">
-    <?php if(isset($update)){
-        var_dump($update);
-    }
-    ?>
         <?php require_once(dirname(__DIR__).'/includes/compteParticulier/gererProfil.php');?>
         <?php require_once(dirname(__DIR__).'/includes/compteParticulier/annonces.php');?>
         <?php require_once(dirname(__DIR__).'/includes/compteParticulier/candidatures.php');?>

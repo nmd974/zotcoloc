@@ -10,25 +10,25 @@
             <div class="col-md-12">
                 <label for="nom" class="form-label">Nom</label><br>
                 <input type="text" name="nom" class="form-control" id="nom"
-                    value="<?= htmlentities($mon_compte[1][0]->nom, ENT_QUOTES)?>"
+                    value="<?= htmlentities($mon_compte[0]->nom, ENT_QUOTES)?>"
                 >
             </div>
             <div class="col-md-12">
                 <label for="prenom" class="form-label">Prenom</label><br>
                 <input type="text" name="prenom" class="form-control" id="prenom"
-                    value="<?= htmlentities($mon_compte[1][0]->prenom, ENT_QUOTES)?>"
+                    value="<?= htmlentities($mon_compte[0]->prenom, ENT_QUOTES)?>"
                 >
             </div>
             <div class="col-md-12">
                 <label for="telephone" class="form-label">Telephone</label><br>
                 <input type="number" name="telephone" class="form-control" id="telephone"
-                    value="<?= htmlentities($mon_compte[1][0]->telephone, ENT_QUOTES)?>"
+                    value="<?= htmlentities($mon_compte[0]->telephone, ENT_QUOTES)?>"
                 >
             </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" id="save_edit_info_perso" class="btn btn-success" name="save_edit_info_perso">Save changes</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+          <button type="submit" id="save_edit_info_perso" class="btn btn-success" name="save_edit_info_perso">Modifier</button>
         </div>
       </form>
     </div>

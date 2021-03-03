@@ -63,7 +63,6 @@
 
 
     </section>
-    <!-- Statistique-->
     <section class="number-stat mb-5">
     <h6 class="visually-hidden">statistique</h6>
         <div class="container">

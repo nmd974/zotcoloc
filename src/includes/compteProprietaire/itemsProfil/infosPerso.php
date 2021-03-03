@@ -20,7 +20,7 @@
                     Nom
                 </div>
                 <div class="border-bottom-0 border-dark bg-light">
-                    <?= $mon_compte[1][0]->nom?>
+                    <?= $mon_compte[0]->nom?>
                 </div>
             </div>
             <!--prenom-->
@@ -29,7 +29,7 @@
                     Prenom
                 </div>
                 <div class="border-bottom-0 border-dark bg-light">
-                    <?= $mon_compte[1][0]->prenom?>
+                    <?= $mon_compte[0]->prenom?>
                 </div>
             </div>
             <!--telephone-->
@@ -38,10 +38,10 @@
                     Telephone
                 </div>
                 <div class="border-bottom-0 border-dark bg-light">
-                    <?php if($mon_compte[1][0]->telephone == ''):?>
+                    <?php if($mon_compte[0]->telephone == ''):?>
                     Non renseigné
                     <?php else:?>
-                    <?= $mon_compte[1][0]->telephone?>
+                    <?= $mon_compte[0]->telephone?>
                     <?php endif;?>
                 </div>
             </div>

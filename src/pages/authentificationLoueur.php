@@ -85,7 +85,7 @@ position: relative;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    box-shadow:0 3px 20px 0px rgba(0, 0, 0, 0.1)
+    box-shadow:0 3px 20px 0px rgba(0, 0, 0, 25%)
 }
 
 .form-modal button{

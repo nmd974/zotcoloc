@@ -7,7 +7,6 @@
 <?php else:?>
 <div class="table-responsive">
 
-
     <table class="table table-striped text-center">
     <thead>
     <tr>

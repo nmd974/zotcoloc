@@ -14,6 +14,7 @@
             array_push($logement_regles_array, $regle->id);
         }
         $logement_equipements = Equipements::equipementsByIdLogement($logement_id[1][0]->id_logement);
+
         $logement_equipements_array = [];
         foreach($logement_equipements[1] as $equipement){
             array_push($logement_equipements_array, $equipement->id);

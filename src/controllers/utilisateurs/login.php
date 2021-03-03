@@ -2,7 +2,15 @@
 
 require_once(dirname(dirname(__DIR__)).'/libs/session/session.php');
 require_once(__ROOT__ . '/src/class/Connection.php');
-require_once(__ROOT__ . '/src/libs/gestionLogs.php');
+require_once(__ROOT__ . '/vendor/autoload.php');
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+use Monolog\Handler\FirePHPHandler;
+
+$log_file = __ROOT__ . '/src/app.log';
+$logger = new Logger('application-generale');
+$logger->pushHandler(new StreamHandler($log_file, Logger::DEBUG));
+
 use \Waavi\Sanitizer\Sanitizer; //appel de la librairie sanitizer(desinfection)
 
 $error = null;
@@ -71,6 +79,7 @@ if($error == null) {
                     $_SESSION['role'] = $resultat[0]->libelle_role; //faire jointure
                     $_SESSION['id_utilisateur'] = $resultat[0]->id;
                     $logger->info("Connexion Utilisateur -- CONNEXION UTILISATEUR OK");
+
                     header("Location:" . getenv("URL_APP") . "/src/pages/home.php");
                     
                 }else{
@@ -82,6 +91,7 @@ if($error == null) {
                     header("Location:" . getenv("URL_APP") . "/src/pages/seconnecter.php");
                 }
             }
+
 
         }catch(PDOException $e){
             $error = $e->getMessage();

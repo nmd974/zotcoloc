@@ -10,7 +10,7 @@ jQuery.validator.addMethod(
      },"erreur expression reguliere"
   );
 
-const step_1_validator = () => {
+const signup_particulier_validator = () => {
     validator = $("#formulaire_inscription").validate({
         errorElement: "em",
         errorPlacement: function ( error, element ) {
@@ -289,7 +289,6 @@ jQuery.extend(jQuery.validator.messages, {
     equalTo: "Les mots de passe sont différents",
     accept: "votre message",
     password: "mot passe incorrecte",
-    search_room: "entrer une ville dans la liste",
     maxlength: jQuery.validator.format("Ce champ doit contenir au moins {0} caractères."),
     minlength: jQuery.validator.format("{0} caractères minimum."),
     rangelength: jQuery.validator.format("{0} caractères min </br> {1} caractères maximum."),
@@ -298,10 +297,3 @@ jQuery.extend(jQuery.validator.messages, {
     min: jQuery.validator.format("Ce champ doit être supérieur ou égal à {0}.")
 });
 
-//Gestion de l'envoie de la recherche sur la home
-document.getElementById('searchHome').addEventListener('click', (e) => {
-    e.preventDefault();
-    if($('#searchHome').valid()){
-        document.getElementById('seacrHome').submit();
-    }
-});

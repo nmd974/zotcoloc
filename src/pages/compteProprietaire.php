@@ -43,7 +43,6 @@
 <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/photoUser.php');?>
 <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/infosColoc.php');?>
 <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/infosPerso.php');?>
-<?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/interets.php');?>
 <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/deleteUser.php');?>
 <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/sidebar.php');?>
 
@@ -61,10 +60,6 @@
     </div>
     <!--METTRE LE CONTENU ICI-->
     <div class="container profil_view">
-    <?php if(isset($update)){
-        var_dump($update);
-    }
-    ?>
         <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/gererProfil.php');?>
         <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/annonces.php');?>
         <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/dashboard.php');?>

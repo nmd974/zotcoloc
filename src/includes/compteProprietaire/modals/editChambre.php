@@ -166,8 +166,7 @@
             <?php endif;?>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
-                <button type="submit" id="save_edit_chambre" class="btn btn-success" name="save_edit_chambre">Save
-                    changes</button>
+                <button type="submit" id="save_edit_chambre" class="btn btn-success" name="save_edit_chambre">Modifier</button>
             </div>
         </div>
     </div>

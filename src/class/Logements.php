@@ -20,6 +20,7 @@ class Logements {
     
     public static function logementByIdLogement($id)
     {
+        $pdo = Connection::getPDO();
         $error = null;
         try{
             $query = $pdo->query("SELECT * FROM `logements` 
