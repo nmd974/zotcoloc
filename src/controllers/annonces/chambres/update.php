@@ -17,6 +17,7 @@ if($_POST['id_chambre']){
             $logger->info("Modification d'une chambre -- VERIF INPUT NOK");
             $_SESSION['flash'] = array('Error', "Echec de la modification de la chambre </br> Veuillez vérifier les champs");
             header("Location:" . getenv("URL_APP") . "/src/pages/editAnnoncePage.php?id=$id_chambre");
+            exit();
         }
     }
         
@@ -70,12 +71,10 @@ if($_POST['id_chambre']){
         $logger->info("Modification d'une chambre -- SANITIZE OK");
         
         //Connexion à la BDD
-                // $db = Connection::getPDO();
-        $db = Connection::getPDOheroku();
+        $db = Connection::getPDO();
         if($db){
             try{
                 $db->beginTransaction();
-                
                 //AJOUT TABLE chambreS
                 $query = 'UPDATE `chambres` SET `titre_chambre` = :titre_chambre,
                 `description_chambre` = :description_chambre,
@@ -125,27 +124,25 @@ if($_POST['id_chambre']){
                 }
                 
                 $db->commit();
-                
                 $logger->info("Modification d'une chambre -- FIN DES REQ");
                 
                 // On complete les valeurs pour session
                 $_SESSION['flash'] = array('Success', "Chambre modifiée avec succès");
-                header('Location:" . getenv("URL_APP") . "/src/pages/compteProprietaire.php');
+                header("Location:" . getenv("URL_APP") . "/src/pages/compteProprietaire.php");
+                exit();
             }catch(PDOException $e){
                 $error = $e->getMessage();
                 $db->rollBack();
                 $logger->error("Echec de la modification de la chambre -- $error");
-                // http_response_code(400);
                 $_SESSION['flash'] = array('Error', "Echec de la modification de la chambre", "Erreur serveur");
                 header("Location:" . getenv("URL_APP") . "/src/pages/editAnnoncePage.php?id=$id_chambre");
-                // echo "Echec de la modification de la chambre </br> $error";
+                exit();
             }
         }else{
             $logger->alert("Echec lors de l\'inscription -- Impossible de se connecter à la base de données");
-            // http_response_code(503);
             $_SESSION['flash'] = array('Error', "Echec de la modification de la chambre", "Erreur serveur");
             header("Location:" . getenv("URL_APP") . "/src/pages/editAnnoncePage.php?id=$id_chambre");
-            echo '<div class="alert alert-danger" id="error_msg">Echec lors de l\'inscription </br> Impossible de se connecter à la base de données</div>';
+            exit();
         }
     }
 }

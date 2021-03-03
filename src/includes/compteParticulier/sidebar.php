@@ -6,7 +6,7 @@
         <div class="d-flex flex-column justify-content-center align-items-center" id="photo_profil_pc">
             <!-- <form method="post" id="zone_photo_to_edit" class="d-flex flex-column justify-content-center align-items-center">  -->
                 <?php if(empty($ma_photo[1])):?>
-                    <div class="photo_profil" style="background-image: url(../images/no-image.png);"></div>
+                    <div class="photo_profil" style="background-image: url(../img_default/no-picture-particulier.png);"></div>
                     <button class="btn d-flex align-items-center justify-content-center mt-2 w-100" name="save_photo_user" data-bs-toggle="modal" data-bs-target="#editPhoto">
                         <i class="fa fa-camera text-dark me-2" aria-hidden="true"></i>
                         <p class="icone_photo text-white">Ajouter une photo</p>
@@ -28,34 +28,18 @@
         </a>
 
         <div class="dashboard_items">
-            <a role="button" class="list-group-item list-group-item-action sidebar_item" id="dashboardNav">
-                <i class="fa fa-tachometer icone_sidebar" aria-hidden="true"></i>
-                Mon tableau de bord
-            </a>
             <a role="button" class="list-group-item list-group-item-action sidebar_item" id="favorisNav">
                 <i class="fa fa-heart icone_sidebar" aria-hidden="true"></i>
                 Mes favoris
                 <span class="badge bg-danger"><?= count($mes_favoris[1])?></span>
             </a>
-            
-            <a role="button" class="list-group-item list-group-item-action sidebar_item" id="candidatureNav">
-                <i class="fa fa-id-badge icone_sidebar" aria-hidden="true"></i>    
-                Mes candidatures
-                <span class="badge bg-danger"><?= count($mes_candidatures[1])?></span>
-            </a>
+
             <a role="button" class="list-group-item list-group-item-action sidebar_item" id="annonceNav">
                 <i class="fa fa-plus-circle icone_sidebar" aria-hidden="true"></i>
                 Mes annonces
                 <span class="badge bg-danger"><?= count($mes_annonces[1])?></span>
             </a>
         </div>
-        <!-- <div class="contact_zotcoloc">
-        <a role="button" class="list-group-item list-group-item-action sidebar_item" id="infosNav">
-            <i class="fa fa-info-circle icone_sidebar" aria-hidden="true"></i>
-            Informations zotcoloc
-        </a>
-            
-        </div> -->
         <div class="contact_zotcoloc">
         <a role="button" class="list-group-item list-group-item-action sidebar_item" data-bs-toggle="modal" data-bs-target="#deleteUser" id="infosNav">
 

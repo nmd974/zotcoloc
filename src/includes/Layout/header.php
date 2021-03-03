@@ -1,5 +1,4 @@
 <?php require_once(dirname(dirname(__DIR__)).'/libs/session/session.php'); ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -109,6 +108,11 @@
                             </li>
                             <?php endif; ?>
                             <?php if($_SESSION['isLoggedIn'] && $_SESSION['role'] == "proprietaire"):?>
+                            <li class="nav-item">
+                                <a href="./compteProprietaire.php" class="nav-link active" aria-current="page">Mon compte</a>
+                            </li>
+                            <?php endif; ?>
+                            <?php if($_SESSION['isLoggedIn'] && $_SESSION['role'] == "administrateur"):?>
                             <li class="nav-item">
                                 <a href="./compteProprietaire.php" class="nav-link active" aria-current="page">Mon compte</a>
                             </li>
