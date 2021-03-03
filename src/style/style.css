@@ -451,7 +451,6 @@ em{
 .form-modal button{
     cursor: pointer;
     position: relative;
-    text-transform: capitalize;
     font-size:1em;
     z-index: 2;
     outline: none;
@@ -471,7 +470,7 @@ em{
     margin-top:0.5em;
 }
 .form-modal .login , .form-modal .signup{
-    background:#57b846;
+    background:#4dcb44;
     color:#fff;
 }
 .form-modal .login:hover , .form-modal .signup:hover{
@@ -505,7 +504,7 @@ em{
 }
 
 #login-toggle{
-    background:#57b846;
+    background:#4dcb44;
     color:#ffff;
 }
 
@@ -557,7 +556,7 @@ em{
 }
 
 .form-modal p a{
-    color:#57b846;
+    color:#4dcb44;
     text-decoration: none;
     transition:0.2s;
 }

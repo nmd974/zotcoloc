@@ -22,20 +22,20 @@
             <form action="../controllers/utilisateurs/login.php" method="POST" id="loginPage">
                 <input type="text" name="email" class="form-control" required
                 pattern=" [a-z0-9 ._% + -] + @ [a- z0-9 .-] + \. [az] {2,} $ " 
-                placeholder="entrer votre adresse mail"
+                placeholder="Entrez votre adresse email"
                 value="<?php if(isset($_POST['email'])){echo htmlspecialchars($_POST['email'], ENT_QUOTES);}?>">
                 
                 <input type="password" name="password" class="form-control" id="Password" required
                 pattern=" ^ (? =. * [az] ) (? =. * [AZ]) (? =. * \ D) (? =. * [@ $!% *? &]) [A-Za-z \ d @ $!% *? &] { 8,} $"
-                placeholder="entrer votre votre mot passe" 
+                placeholder="Entrez votre mot de passe" 
                 >
-                <button type="submit" class="btn login">SE CONNECTER</button>          
+                <button type="submit" class="btn login">Je me connecte</button>          
             </form>
-            <div class="mt-5 d-flex flex-column align-items-center justify-content-center">
-                <p>Pas encore inscrits ?<p>
-                <div><a href="./inscriptionParticulier.php">Créer mon compte colocataire</a></div>
-                <p>ou</p>
-                <div><a href="./authentificationLoueur.php">Créer mon compte propriétaire</a></div>
+            <div class="mt-3 d-flex flex-column align-items-center justify-content-center">
+                <p>Vous n'avez pas de compte ? Rejoignez nous en tant que</p>
+                <p><a href="./inscriptionParticulier.php">colocataire</a></p> 
+                <p>ou</p> 
+                <p><a href="./authentificationLoueur.php">propriétaire</a></p>
             </div>
         </div>
     </div>
