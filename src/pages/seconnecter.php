@@ -33,8 +33,10 @@
             </form>
             <div class="mt-5 d-flex flex-column align-items-center justify-content-center">
                 <p>Pas encore inscrits ?<p>
-                <a href="./inscriptionParticulier.php">Créer mon compte colocataire</a>
-                <a href="./authentificationLoueur.php">Créer mon compte propriétaire</a>
+                    <div><a href="./inscriptionParticulier.php">Créer mon compte colocataire</a></div>
+                
+                <div><a href="./authentificationLoueur.php">Créer mon compte propriétaire</a></div>
+                <?php var_dump($_SERVER);?>
             </div>
         </div>
     </div>
