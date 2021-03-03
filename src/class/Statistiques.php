@@ -13,6 +13,7 @@ class Statistiques {
                SELECT COUNT(*)
                 FROM chambres
                 WHERE a_louer = 1
+                AND statut_chambre = 'Active'
             ");
             $data = $query->fetchAll(PDO::FETCH_ASSOC);
             return array(true, $data);
