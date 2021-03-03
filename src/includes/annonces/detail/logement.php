@@ -78,7 +78,7 @@
                                     <?php foreach($photo_logements[1] as $photo_logement):?>
                                     <div class="d-flex justify-content-center">
                                     
-                                <img src="../images/<?= htmlEntities($photo_logement->libelle_photo) ?>" class="img-fluid">
+                                <img src="../images/<?= htmlEntities($photo_logement->libelle_photo) ?>" class="img-fluid" alt="image du logement">
                                 </div>
                                 <?php endforeach; ?>
                                 <?php endif; ?>
