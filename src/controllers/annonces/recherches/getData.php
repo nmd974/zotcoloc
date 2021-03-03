@@ -101,20 +101,12 @@ if($db){
             
         }catch(PDOException $e){
             $error = $e->getMessage();
-<<<<<<< HEAD
-            $logger->error("Echec de la Affichage annonce (proprietaire) -- $error");
-=======
-            $logger->error("Echec de la Creation d'une annonce (proprietaire) -- $error");
+            $logger->error("Echec de l'Affichage des annonces (proprietaire) -- $error");
             exit();
->>>>>>> 175227aeb02855652053bcef90dc67ae3fadf01f
         }
     }
     
 }else{
-<<<<<<< HEAD
-    $logger->alert("Echec lors de la Recherche -- Impossible de se connecter à la base de données");
-=======
-    $logger->alert("Echec lors de l\'inscription -- Impossible de se connecter à la base de données");
+    $logger->alert("Echec lors l'Affichage des annonces -- Impossible de se connecter à la base de données");
     exit();
->>>>>>> 175227aeb02855652053bcef90dc67ae3fadf01f
 }
