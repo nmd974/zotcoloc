@@ -69,7 +69,7 @@
     <i class="fa fa-user fa-2x" id="menu-toggle" aria-hidden="true"></i>
 </div>
 
-<?php //require_once(dirname(__DIR__).'/includes/Layout/footer.php');?>
+<?php require_once(dirname(__DIR__).'/includes/Layout/footer.php');?>
 <?php require_once(dirname(__DIR__).'/includes/Layout/scriptsSrc.php');?>
 <script src="../js/sidebar_proprio.js"></script>
 <script src="../js/modals.js"></script>
