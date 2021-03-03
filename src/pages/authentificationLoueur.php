@@ -13,13 +13,13 @@
 </div>
 <div class="container d-flex" id="wrapper_page_content">
     <div class="form-modal">
-        <div id="signup-form" class="mb-5">
+        <div id="signup-form" class="mb-5 mt-5">
             <?php if(isset($_SESSION['flash'])):?>
             <div class="alert alert-danger mb-2"><?=  $_SESSION['flash'][1] ?></div>
             <?php endif;?>
             <form method="POST" enctype="multipart/form-data" id="proprietaire_inscription" action="<?php getenv("URL_APP")?>/src/controllers/utilisateurs/proprietaire/create.php">
                 <!--Nom-->
-                <div class="col-md-12 mb-3">
+                <div class="col-md-12 mb-3 mt-5">
                     <label for="nom_proprietaire" class="form-label">Nom*</label><br>
                     <input type="text" name="nom_proprietaire" class="form-control" id="nom_proprietaire" value="<?= $_POST['nom_proprietaire']?: htmlspecialchars($_POST['nom_proprietaire'], ENT_QUOTES);?>">
                 </div>
@@ -57,10 +57,9 @@
                     <button type="submit" class="btn w-55 bg-green text-white mr-5" id="ajouter_proprietaire" name="ajouter_proprietaire">Je m'inscris</button>
                 </div>
             </form>
-            <div class="mt-5">
-                <p>J'ai déjà mon compte<p>
-                    <a href="./seconnecter.php" class="mt-4 mx-3">Je me connecte</a>
-                </div>
+            <div class="mt-5 d-flex flex-column align-items-center justify-content-center">
+                <p>J'ai déjà mon compte !<p>
+                <a href="./seconnecter.php" class="mt-4 mx-3">Je me connecte</a>
             </div>
         </div>
     </div>
