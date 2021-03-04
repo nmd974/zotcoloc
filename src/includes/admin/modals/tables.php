@@ -138,7 +138,7 @@
                 <h5 class="modal-title" id="edit_regles_<?= $regle->id?>Label">Modifier une règle</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/controllers/tables/regles/update.php'?>">
+            <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/src/controllers/tables/regles/update.php'?>">
                 <div class="modal-body">
                     <div class="form-floating">
                         <input type="text" class="form-control" name="libelle_regle" value="<?= $regle->libelle_regle?>" required>
@@ -162,7 +162,7 @@
                 <h5 class="modal-title" id="delete_regle_<?= $regle->id?>Label">Supprimer une règle</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/controllers/tables/regles/delete.php'?>">
+            <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/src/controllers/tables/regles/delete.php'?>">
                 <div class="modal-body">
                     <p>Confirmez vous la suppression de la règle : "<?= $regle->libelle_regle ?>"</p> 
                     <input type="hidden" name="id_regle" value="<?= $regle->id?>">
@@ -188,7 +188,7 @@
                 <h5 class="modal-title" id="edit_ville<?= $ville->id?>Label">Modifier une ville</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/controllers/tables/villes/update.php'?>">
+            <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/src/controllers/tables/villes/update.php'?>">
                 <div class="modal-body">
                     <div class="form-floating">
                         <input type="text" class="form-control" name="libelle_ville" value="<?= $ville->libelle_ville?>" required>
@@ -212,7 +212,7 @@
                 <h5 class="modal-title" id="delete_ville_<?= $ville->id?>Label">Supprimer une ville</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/controllers/tables/villes/delete.php'?>">
+            <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/src/controllers/tables/villes/delete.php'?>">
                 <div class="modal-body">
                     <p>Confirmez vous la suppression de la ville : "<?= $ville->libelle_ville ?>"</p> 
                     <input type="hidden" name="id_regle" value="<?= $ville->id?>">

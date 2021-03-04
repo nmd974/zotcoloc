@@ -8,7 +8,7 @@
                 <h5 class="modal-title" id="delete_proprietaire_<?= $proprietaire->id_proprietaire?>Label">Supprimer un proprietaire</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/controllers/utilisateurs/proprietaire/delete.php'?>">
+            <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/src/controllers/utilisateurs/proprietaire/delete.php'?>">
                 <div class="modal-body">
                     <p>Confirmez vous la suppression de l'utilisateur : "<?= ucfirst($proprietaire->nom) . '' . ucfirst($proprietaire->prenom) ?>"</p> 
                     <input type="hidden" name="id_proprietaire" value="<?= $proprietaire->id_proprietaire?>">
@@ -34,7 +34,7 @@
                 <h5 class="modal-title" id="delete_particulier_<?= $particulier->id_particulier?>Label">Supprimer un particulier</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/controllers/utilisateurs/particulier/delete.php'?>">
+            <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/src/controllers/utilisateurs/particulier/delete.php'?>">
                 <div class="modal-body">
                     <p>Confirmez vous la suppression de l'utilisateur : "<?= ucfirst($particulier->nom) . '' . ucfirst($particulier->prenom) ?>"</p> 
                     <input type="hidden" name="id_particulier" value="<?= $particulier->id_particulier?>">
