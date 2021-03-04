@@ -47,9 +47,13 @@
                         </button>
                         </div>
                     <?php else:?>
-                        <button type="button" class="btn bg-green text-light fw-bold letter-space mt-5" data-bs-toggle="modal" data-bs-target="#modal-contact">
-                        LOUER CETTE CHAMBRE
-                        </button>
+                        <?php if($_SESSION['isLoggedIn']):?>
+                            <button type="button" class="btn bg-green text-light fw-bold letter-space mt-5" data-bs-toggle="modal" data-bs-target="#modal-contact">
+                            LOUER CETTE CHAMBRE
+                            </button>
+                        <?php else:?>
+                            <p>Connecter vous pour contacter le propriétaire</p>
+                        <?php endif;?> 
                     <?php endif;?>
                     <!-- <a href="#" class="btn bg-green text-light fw-bold letter-space mt-5">LOUER CETTE CHAMBRE</a> -->
                 </div>
