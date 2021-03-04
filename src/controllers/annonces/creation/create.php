@@ -159,7 +159,7 @@ if($error == null) {
                     'frais_dossier' => $_POST['frais_dossier'][$i],
                     'a_louer' => $_POST['a_louer_'.$indice]
                 ];
-                $logger->info($_POST['a_louer_'.$indice]);
+                // $logger->info($_POST['a_louer_'.$indice]);
                 $filters = [
                     'titre_chambre' => 'trim|escape|capitalize|htmlspecialchars',
                     'description_chambre' => 'trim|escape|capitalize|htmlspecialchars',
@@ -176,12 +176,12 @@ if($error == null) {
 
                 $sanitizer = new Sanitizer($data, $filters,  $customFilter);
                 $data_sanitized = $sanitizer->sanitize();
-                foreach($data_sanitized as $value){
-                    $logger->info($value);
-                }
-                foreach($_POST as $value){
-                    $logger->info($value);
-                }
+                // foreach($data_sanitized as $value){
+                //     $logger->info($value);
+                // }
+                // foreach($_POST as $value){
+                //     $logger->info($value);
+                // }
                 //AJOUT TABLE CHAMBRE
                 $query = 'INSERT INTO `chambres`(`id_chambre`, `id_logement`, `titre_chambre`, `description_chambre`, `surface_chambre`, `type_chambre`, `a_louer`, `date_disponibilite`, `duree_bail`, `loyer`, `charges`, `caution`, `frais_dossier`)
                 VALUES (:id_chambre, :id_logement, :titre_chambre, :description_chambre, :surface_chambre, :type_chambre, :a_louer, :date_disponibilite, :duree_bail, :loyer, :charges, :caution, :frais_dossier)';
@@ -236,12 +236,12 @@ if($error == null) {
             // TODO : lorsde l'ajout d'une nouvelle chambre on ajoute les regles associees et si pas rempli alors l'utilisateur devra supprimer le bloc ainsi que pour les photos
             $nb_chambre = count($_POST['titre_chambre']);
             // $indice = $i + 1;
-            for ($i=0; $i <= $nb_chambre; $i++) { 
-                $indice = $i + 1;
+            for ($i=1; $i <= $nb_chambre; $i++) { 
+                // $indice = $i + 1;
                 // TODO : faire un vardumpdu files pour verifier le bug des photos
-                $indice_nb_photo = count($_FILES['photos_chambre_'.$indice]['name']);
+                $indice_nb_photo = count($_FILES['photos_chambre_'.$i]['name']);
                 for ($i2=0; $i2 <= $indice_nb_photo; $i2++) { 
-                    $ajoutImage = controleImageArray($_FILES['photos_chambre_'.$indice], $i2);
+                    $ajoutImage = controleImageArray($_FILES['photos_chambre_'.$i], $i2);
                     if($ajoutImage[0]){ //La fonction retourne true si erreur
                         $logger->alert("Creation d'une annonce -- Erreur lors de l'ajout de l'image chambre");
                     }else{
@@ -260,7 +260,7 @@ if($error == null) {
                         VALUES (:id_chambre, :id_photo)';
                         $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
                         $sth->execute(array(
-                            ':id_chambre' => $list_id_chambre[$i],
+                            ':id_chambre' => $list_id_chambre[$i-1],
                             ':id_photo' => $id_photo
                         ));
                         $logger->info("Creation d'une annonce -- TABLE PHOTO CHAMBRE OK");
