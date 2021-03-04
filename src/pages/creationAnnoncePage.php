@@ -263,9 +263,9 @@ $('#addChambre').on('click', () => {
 })
 
 var btn_delete_chambre = document.querySelectorAll('#bloc_step_5 .delete_chambre');
-btn_delete_chambre.forEach(zone => (e) {
-    console?log(e);
-})
+btn_delete_chambre.forEach(zone => {
+    console.log(e);
+};
 
 </script>
 <?php require_once(dirname(__DIR__).'/includes/Layout/finbalise.php');?>

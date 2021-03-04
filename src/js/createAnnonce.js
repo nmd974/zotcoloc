@@ -151,45 +151,24 @@ btnStepEl5.addEventListener("click", (e)=>{
     
     e.preventDefault();
     
-    //Verification des champs de formulaire
-    let validationFormulaire = true;
-    let inputs = document.querySelectorAll('#bloc_step_4 input[class="form-control"]');
-    let input_number = document.querySelectorAll('#bloc_step_4 input[type="number"]');
-    inputs.forEach(element => {
-        if(pattern_general.test(element.value)){
-            element.classList.remove('is-valid');
-            element.classList.add('is-invalid');
-            validationFormulaire = false;
-        }
-    })
-    //On met à 0 les champs number non saisis
-    input_number.forEach(element => {
-        if(element.value === ""){
-            element.value = 0;
-            element.classList.remove('is-invalid');
-            element.classList.add('is-valid');
-        }
-    })
     if($('#create_annonce').valid()){
         //Si on rencontre un probleme alors on passe en false et on n'accède pas à la suite
-        if(validationFormulaire){
-            //On gère l'affichage du bouton
-            let dot = document.getElementById('dot_4');
-            dot.innerHTML = `<i class="fa fa-check" aria-hidden="true"></i>`;
-            dot.classList.remove('unvalid_step');
-            dot.classList.add('valid_step');
-            //On gère l'affichage du bloc de step avec les classes
-            blockStepEl4.classList.remove('show_step');
-            blockStepEl4.classList.add('unshow_step');
-            blockStepEl5.classList.remove('unshow_step');
-            blockStepEl5.classList.add('show_step');
-            //On redefini le dot vers le point suivant
-            let dotNext = document.getElementById('dot_5');
-            dotNext.innerHTML = `<i class="fa fa-hourglass-start" aria-hidden="true"></i>`;
-            titleStep.innerHTML = `Etape 5/5:<span class="text-green">Ajout de(s) chambre(s)</span>`;
-            timeLineEl.style.width = `100%`;
-            window.scrollTo(0,0);
-        }
+        //On gère l'affichage du bouton
+        let dot = document.getElementById('dot_4');
+        dot.innerHTML = `<i class="fa fa-check" aria-hidden="true"></i>`;
+        dot.classList.remove('unvalid_step');
+        dot.classList.add('valid_step');
+        //On gère l'affichage du bloc de step avec les classes
+        blockStepEl4.classList.remove('show_step');
+        blockStepEl4.classList.add('unshow_step');
+        blockStepEl5.classList.remove('unshow_step');
+        blockStepEl5.classList.add('show_step');
+        //On redefini le dot vers le point suivant
+        let dotNext = document.getElementById('dot_5');
+        dotNext.innerHTML = `<i class="fa fa-hourglass-start" aria-hidden="true"></i>`;
+        titleStep.innerHTML = `Etape 5/5:<span class="text-green">Ajout de(s) chambre(s)</span>`;
+        timeLineEl.style.width = `100%`;
+        window.scrollTo(0,0);
     }
     
 })
