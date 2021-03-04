@@ -1,6 +1,6 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
 <?php
-    if(!$_SESSION['isLoggedIn']){
+    if(!$_SESSION['isLoggedIn'] || $_SESSION['role'] != "proprietaire"){
         header_remove('Location');
         header('Location: home.php');
     }
@@ -43,7 +43,6 @@
 <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/photoUser.php');?>
 <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/infosColoc.php');?>
 <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/infosPerso.php');?>
-<?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/interets.php');?>
 <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/deleteUser.php');?>
 <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/sidebar.php');?>
 
@@ -61,10 +60,6 @@
     </div>
     <!--METTRE LE CONTENU ICI-->
     <div class="container profil_view">
-    <?php if(isset($update)){
-        var_dump($update);
-    }
-    ?>
         <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/gererProfil.php');?>
         <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/annonces.php');?>
         <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/dashboard.php');?>
@@ -77,5 +72,4 @@
 <?php //require_once(dirname(__DIR__).'/includes/Layout/footer.php');?>
 <?php require_once(dirname(__DIR__).'/includes/Layout/scriptsSrc.php');?>
 <script src="../js/sidebar_proprio.js"></script>
-<script src="../js/modals.js"></script>
 <?php require_once(dirname(__DIR__).'/includes/Layout/finbalise.php');?>

@@ -18,6 +18,7 @@ class Regles {
 
     public static function reglesByIdLogement($id)
     {
+        $pdo = Connection::getPDO();
         $error = null;
         try{
             $query = $pdo->query("SELECT id 

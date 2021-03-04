@@ -1,0 +1,5 @@
+<Files app.log>
+    Order deny,allow
+    Deny from all
+</Files>
+

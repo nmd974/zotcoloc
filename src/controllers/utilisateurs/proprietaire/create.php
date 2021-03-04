@@ -15,7 +15,8 @@ foreach($inputRequired as $value){
         $error = true;
         $logger->info("Création d'un nouvel utilisateur -- VERIF SERVEUR NOK");
         $_SESSION['flash'] = array('Error', "Echec lors de la création de compte </br> Veuillez vérifier les champs");
-        header("Location:" . getenv("URL_APP") . "/src/pages/authentificationLoueur.php");
+        $url = getenv("URL_APP") . "/src/pages/authentificationLoueur.php";
+        header("Location:" . $url);
         // return '<div class="alert alert-danger" id="error_msg">Erreur dans le formulaire </br> Veuillez vérifier les champs</div>';
     }
 }
@@ -65,7 +66,7 @@ if($error == null) {
             $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
             $sth->execute(array(
                 ':id' => $id_utilisateur,
-                ':id_role' => 4,
+                ':id_role' => 3,
                 ':email' => $data_sanitized['email'],
                 ':password_user' => $data_sanitized['password']
             ));

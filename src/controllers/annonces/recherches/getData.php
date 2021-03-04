@@ -25,7 +25,7 @@ if($db){
             ORDER BY `date_creation` DESC;
             ");
             $annonces = $query->fetchAll(PDO::FETCH_OBJ);
-            $logger->info("Recuperation des données des villes -- SUCCESS");
+            $logger->info("Recuperation des données de toutes les annonces -- SUCCESS");
             
             //count annonce ok
             $query = $db->query("SELECT COUNT(*) as nb_rslt
@@ -37,7 +37,7 @@ if($db){
             AND `statut_chambre` = 'Active'
             ");
             $count = $query->fetch();
-            $logger->info("Recuperation des données des regles -- SUCCESS");
+            $logger->info("Recuperation des données du nombre d'annonces -- SUCCESS");
             
             //list ville ok
             $query = $db->query("SELECT libelle_ville
@@ -50,7 +50,8 @@ if($db){
             
         }catch(PDOException $e){
             $error = $e->getMessage();
-            $logger->error("Echec de la Creation d'une annonce (proprietaire) -- $error");
+            $logger->error("Echec de l'Affichage des annonces (proprietaire) -- $error");
+            exit();
         }
     }else{
         try{
@@ -70,7 +71,7 @@ if($db){
             ORDER BY `date_creation` DESC;
             ");
             $annonces = $query->fetchAll(PDO::FETCH_OBJ);
-            $logger->info("Recuperation des données des equipements -- SUCCESS");
+            $logger->info("Recuperation des données des annonces rechercher -- SUCCESS");
             
             //nombre annonce
             $query = $db->query("SELECT COUNT(*) as nb_rslt
@@ -86,7 +87,7 @@ if($db){
             AND `libelle_ville`LIKE '%$search%'
             ");
             $count = $query->fetch();
-            $logger->info("Recuperation des données des regles -- SUCCESS");
+            $logger->info("Recuperation des données du nombre d'annonces rechercher -- SUCCESS");
             
                         
             //list ville ok
@@ -96,14 +97,16 @@ if($db){
             $liste_villes = $query->fetchAll(PDO::FETCH_OBJ);
             $logger->info("Recuperation des données des villes -- SUCCESS");
             
-            $logger->info("Recuperation des données -- FIN DES REQ");
+            $logger->info("Recuperation des données de la recherche-- FIN DES REQ");
             
         }catch(PDOException $e){
             $error = $e->getMessage();
-            $logger->error("Echec de la Creation d'une annonce (proprietaire) -- $error");
+            $logger->error("Echec de l'Affichage des annonces (proprietaire) -- $error");
+            exit();
         }
     }
     
 }else{
-    $logger->alert("Echec lors de l\'inscription -- Impossible de se connecter à la base de données");
+    $logger->alert("Echec lors l'Affichage des annonces -- Impossible de se connecter à la base de données");
+    exit();
 }

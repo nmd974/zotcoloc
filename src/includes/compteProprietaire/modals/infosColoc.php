@@ -16,14 +16,14 @@
             <div class="col-md-12">
                 <label for="description" class="form-label">Description</label><br>
                 <textarea name="description" class="form-control" id="description">
-                    <?= htmlentities($mon_compte[1][0]->description, ENT_QUOTES)?>
+                    <?= htmlentities($mon_compte[0]->description, ENT_QUOTES)?>
                 </textarea>
             </div>
             
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" id="save_edit_info_coloc" class="btn btn-success" name="save_edit_info_coloc">Save changes</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+          <button type="submit" id="save_edit_info_coloc" class="btn btn-success" name="save_edit_info_coloc">Modifier</button>
         </div>
       </form>
     </div>

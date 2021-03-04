@@ -21,7 +21,7 @@ foreach($inputRequired as $value){
 }
 $logger->info("Création d'un nouvel utilisateur -- VERIF SERVEUR OK");
 if($error == null) {
-    //Coup de sanytol sur les données des formulaires
+    //On déclare les valeurs à sanitizer
     $data = [
         'email' => $_POST['email'],
         'password' => $_POST['password'],

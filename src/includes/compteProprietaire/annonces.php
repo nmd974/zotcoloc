@@ -2,11 +2,10 @@
 
 
 <?php if(count($mes_annonces) == 0):?>
-    <img src="../images/no-annonce.png" class="img_moncompte">
+    <img src="../img_default/no-annonce.png" class="img_moncompte">
     <a href="../pages/creationAnnoncePage.php"><button class="btn btn-success mt-4 w-lg-25 w-md-100">Ajouter une annonce</button></a>
 <?php else:?>
 <div class="table-responsive">
-
 
     <table class="table table-striped text-center">
     <thead>
