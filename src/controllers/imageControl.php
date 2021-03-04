@@ -5,7 +5,7 @@
         require(dirname(__DIR__) . '/libs/gestionLogs.php');
         $error = false;
         $fileName = $image_upload['name'][$indiceArray]; //On met dans une variable le nom de l'image pour vérifier si l'utilisateur a ajouté une
-        $validExt = array('.jpg', '.jpeg', '.gif', '.png'); //On spécifie les extensions que l'on souhaite prendre
+        $validExt = array('.jpg', '.jpeg', '.png'); //On spécifie les extensions que l'on souhaite prendre
         $fileExt = strtolower(substr(strrchr($fileName, '.'), 1)); //On met en minuscule tout le nom du fichier puis à partir du . on récupère tout ce qu'il y a à la suite soit l'extension et on enregistre dans une nouvelle variable
         if(!in_array("." . $fileExt, $validExt))//On recherche dans le tableau des extensions valides si l'extension du fichier ajouté correspond
             { 
@@ -47,7 +47,7 @@
         require(dirname(__DIR__) . '/libs/gestionLogs.php');
         $error = false;
         $fileName = $image_upload['name']; //On met dans une variable le nom de l'image pour vérifier si l'utilisateur a ajouté une
-        $validExt = array('.jpg', '.jpeg', '.gif', '.png'); //On spécifie les extensions que l'on souhaite prendre
+        $validExt = array('.jpg', '.jpeg', '.png'); //On spécifie les extensions que l'on souhaite prendre
         $fileExt = strtolower(substr(strrchr($fileName, '.'), 1)); //On met en minuscule tout le nom du fichier puis à partir du . on récupère tout ce qu'il y a à la suite soit l'extension et on enregistre dans une nouvelle variable
         if(!in_array("." . $fileExt, $validExt))//On recherche dans le tableau des extensions valides si l'extension du fichier ajouté correspond
             { 

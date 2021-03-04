@@ -48,10 +48,11 @@
     </div>
     
     <!--Mettre les photos ajoutées en miniatures-->
-    <div class="d-flex align-items-center">
+    <!-- <div class="d-flex align-items-center">
         <i class="fa fa-plus-square me-3" aria-hidden="true" id="addPhoto"></i>
         <div>Ajouter une nouvelle photo</div>
-    </div>
+    </div> -->
+
     
     <div class="col-md-12 mt-2">
         <div class="mb-3" id="zone_photo_logement">
@@ -59,6 +60,9 @@
             <div class="invalid-feedback">Veuillez sélectionner au moins 1 photo du logement</div>
         </div>
     </div>
+    <button type="button" class="btn btn-success me-4 mt-5" id="addPhoto">
+            <i class="fa fa-plus" aria-hidden="true"></i> Ajouter une nouvelle photo
+    </button>
     
     <div class="col-md-12 mt-5">
         *Champs obligatoires

@@ -50,7 +50,13 @@ foreach($inputRequired as $value){
         exit();
     }
 }
-
+if(empty($_FILES)){
+    $error = true;
+    $logger->info("Creation d'une annonce -- VERIF INPUT Photos manquantes");
+    $_SESSION['flash'] = array('Error', "Echec lors de la creation de l'annonce </br> Veuillez vérifier les champs", "Photos manquantes");
+    header("Location:" . getenv("URL_APP") . "/src/pages/creationAnnoncePage.php");
+    exit();
+}
 //On met à 0 de base si pas selectionne
 if(!isset($_POST['aides_logement'])){
     $_POST['aides_logement'] = 0;
@@ -160,7 +166,7 @@ if($error == null) {
 
                 //Filtre sur les valeurs non obligatoire
                 if($_POST['type_chambre_'.$indice] != "Chambre principale" || $_POST['type_chambre_'.$indice] != "Chambre secondaire"){
-                    $_POST['type_chambre_'.$indice] = "Non renseigné";
+                    $_POST['type_chambre_'.$indice] = "Chambre principale";
                 }
                 if($_POST['a_louer_'.$indice] != "0" || $_POST['a_louer_'.$indice] != "1"){
                     $_POST['a_louer_'.$indice] = "0";

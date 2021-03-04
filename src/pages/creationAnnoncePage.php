@@ -41,10 +41,9 @@
 <script src="../js/validator.js"></script>
 <script>
 //Ici on gere l'ajout d'une nouvelle chambre sur le formulaire de creation d'une annonce
-let cptChambre = 2;
-let cptPhotos = 1;
-// let newArray = '[]';
+
 $('#addChambre').on('click', () => {
+    cptChambre++;
     $('#zoneChambre').append(`
     <h4 class="mb-2">Chambre #${cptChambre}</h4>
         <i class="fa fa-plus-square" aria-hidden="true" id="addChambre"></i>
@@ -86,11 +85,15 @@ $('#addChambre').on('click', () => {
         </div>
 
         <!--Photo de la chambre-->
-        <div class="col-md-12 mt-3 d-flex flex-column">
-            <label for="photo_chambre_${cptChambre}_${cptPhotos}">Ajoutez au moins une photo de la chambre</label>
-            <input type="file" id="photo_chambre_${cptChambre}_${cptPhotos}" class="form-control-file" name="photos_chambre_${cptChambre}[]">
-        </div>
 
+        <div class="col-md-12 mt-3">
+                <div class="mb-3" id="zone_photo_chambre_${cptChambre}">
+                    <input type="file" class="form-control" name="photos_chambre_${cptChambre}[]" multiple required>
+                </div>
+            </div>
+            <button type="button" class="btn btn-success me-4 mt-5" id="addPhotoChambre_${cptChambre}">
+                    <i class="fa fa-plus" aria-hidden="true"></i> Ajouter une nouvelle photo
+            </button>
         <div class="col-md-12">
         <div class="d-flex align-items-center"> 
             <p>Disponible à la location ?</p>
@@ -166,7 +169,6 @@ $('#addChambre').on('click', () => {
     `)
     cptChambre++;
     cptPhotos++;
-    // newArray = newArray + '[]';
 })
 </script>
 <?php require_once(dirname(__DIR__).'/includes/Layout/finbalise.php');?>

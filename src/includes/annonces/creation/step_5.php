@@ -61,11 +61,18 @@
             </div>
 
             <!--Photo de la chambre-->
-            <div class="col-md-12 mt-3 d-flex flex-column">
+            <!-- <div class="col-md-12 mt-3 d-flex flex-column">
                 <label for="photos_chambre_1_1">Ajoutez au moins une photo de la chambre</label>
                 <input type="file" id="photos_chambre_1_1" class="form-control-file" name="photos_chambre_1[]">
+            </div> -->
+            <div class="col-md-12 mt-3">
+                <div class="mb-3" id="zone_photo_chambre_1">
+                    <input type="file" class="form-control" name="photos_chambre_1[]" multiple required>
+                </div>
             </div>
-
+            <button type="button" class="btn btn-success me-4 mt-5" id="addPhotoChambre_1">
+                    <i class="fa fa-plus" aria-hidden="true"></i> Ajouter une nouvelle photo
+            </button>
 
             <!--a louer ??-->
             <div class="col-md-12 mt-3">
@@ -145,10 +152,10 @@
                     <?php endif;?>
                 </div>
             </div>
-
-
         </div>
-
+        <button type="button" class="btn btn-success me-4 mt-5" id="addChambre">
+            <i class="fa fa-plus" aria-hidden="true"></i> Ajouter une chambre supplémentaire
+        </button>
         <!--button validation inscription-->
         <div class="col-12 text-end my-4">
             <button type="submit" class="btn w-25 bg-green text-white mr-5" id="enregistrer_annonce" name="enregistrer_annonce">J'enregistre mon annonce</button>
