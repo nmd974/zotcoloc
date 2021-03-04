@@ -65,3 +65,4 @@ if($error == null) {
         $_SESSION['flash'] = array('Error', "Echec lors de la creation d'un equipement");
         header("Location:" . getenv("URL_APP") . "/src/pages/admin.php");
     }
+}

@@ -1,4 +1,4 @@
-<div class="d-flex flex-column justify-content-center align-lg-items-center unshow_step" id="utilisateurs_tab_content">
+<div class="d-flex flex-column justify-content-center align-lg-items-center unshow_step shadow" id="utilisateurs_tab_content">
     <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
             <button class="nav-link active" id="nav-eqt-tab" data-bs-toggle="tab" data-bs-target="#nav-eqt" type="button" role="tab" aria-controls="nav-eqt" aria-selected="true">Equipements</button>
@@ -8,7 +8,7 @@
     </nav>
     <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active" id="nav-eqt" role="tabpanel" aria-labelledby="nav-eqt-tab">
-            <button type="button" class="btn btn-success me-4" data-bs-toggle="modal" data-bs-target="#create_eqt">
+            <button type="button" class="btn btn-success me-4 mt-5" data-bs-toggle="modal" data-bs-target="#create_eqt">
                 <i class="fa fa-plus" aria-hidden="true"></i> Ajouter un équipement
             </button>
             <div class="table-responsive">
@@ -44,7 +44,7 @@
             </div>
         </div>
         <div class="tab-pane fade" id="nav-regles" role="tabpanel" aria-labelledby="nav-regles-tab">
-            <button type="button" class="btn btn-success me-4" data-bs-toggle="modal" data-bs-target="#create_regle">
+            <button type="button" class="btn btn-success me-4 mt-5" data-bs-toggle="modal" data-bs-target="#create_regle">
                 <i class="fa fa-plus" aria-hidden="true"></i> Ajouter une règle
             </button>
             <div class="table-responsive">
@@ -80,7 +80,7 @@
             </div>
         </div>
         <div class="tab-pane fade" id="nav-villes" role="tabpanel" aria-labelledby="nav-villes-tab">
-            <button type="button" class="btn btn-success me-4" data-bs-toggle="modal" data-bs-target="#create_ville">
+            <button type="button" class="btn btn-success me-4 mt-5" data-bs-toggle="modal" data-bs-target="#create_ville">
                 <i class="fa fa-plus" aria-hidden="true"></i> Ajouter une ville
             </button>
             <div class="table-responsive">

@@ -19,19 +19,19 @@
             <p class="nav_title_profil">@Admin</p>
         </div>
         <a role="button" class="list-group-item list-group-item-action sidebar_item" id="tables_tab">
-            <i class="fa fa-database" aria-hidden="true"></i>
+            <i class="fa fa-database icone_sidebar" aria-hidden="true"></i>
             Gérer les tables
         </a>
         <a role="button" class="list-group-item list-group-item-action sidebar_item" id="utilisateurs_tab">
-            <i class="fa fa-users" aria-hidden="true"></i>
+            <i class="fa fa-users icone_sidebar" aria-hidden="true"></i>
             Gérer les utilisateurs
         </a>
         <a role="button" class="list-group-item list-group-item-action sidebar_item" id="annonces_tab">
-            <i class="fa fa-file" aria-hidden="true"></i>
+            <i class="fa fa-file icone_sidebar" aria-hidden="true"></i>
             Gérer les annonces
         </a>
         <a role="button" class="list-group-item list-group-item-action sidebar_item" id="logs_tab">
-            <i class="fa fa-server" aria-hidden="true"></i>
+            <i class="fa fa-server icone_sidebar" aria-hidden="true"></i>
             Voir les logs internes
         </a>
         

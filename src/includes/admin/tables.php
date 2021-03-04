@@ -1,4 +1,4 @@
-<div class="d-flex flex-column justify-content-center align-lg-items-center unshow_step" id="tables_tab_content">
+<div class="d-flex flex-column justify-content-center align-lg-items-center unshow_step shadow" id="tables_tab_content">
     <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
             <button class="nav-link active" id="nav-eqt-tab" data-bs-toggle="tab" data-bs-target="#nav-eqt" type="button" role="tab" aria-controls="nav-eqt" aria-selected="true">Equipements</button>
@@ -114,7 +114,6 @@
                     </tbody>
                 </table>
             </div>
-        </div>
         </div>
     </div>
 </div>
