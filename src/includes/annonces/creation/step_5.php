@@ -15,7 +15,6 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-12">
             <!--description de la chambre-->
             <div class="mt-4 mb-4 bg-light">
                 <div class="col border-one ps-1">
@@ -218,8 +217,6 @@
                 <?php endforeach; ?>
                 <?php endif;?>
             </div>
-            
-        </div>
     </div>
     <button type="button" class="btn btn-success me-4 mt-4 mb-4" id="addChambre">
         <i class="fa fa-plus" aria-hidden="true"></i> Ajouter une chambre supplémentaire

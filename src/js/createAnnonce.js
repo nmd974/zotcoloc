@@ -60,11 +60,20 @@ let titleStep = document.getElementById('title_step');
 const pattern_general = new RegExp(/<(.*)>/);
 
 //Gestion du clic vers step 2
-btnStepEl2.addEventListener("click", (e)=>{
-    
-    e.preventDefault();
-    
+btnStepEl2.addEventListener("click", ()=>{
+
     //Verification des champs de formulaire
+    let input_number = document.querySelectorAll('#bloc_step_1 input[type="number"]');
+    //On met à 0 les champs number non saisis
+    input_number.forEach(element => {
+        if(element.value === ""){
+            element.value = 0;
+            element.classList.remove('is-invalid');
+            element.classList.add('is-valid');
+        }
+    })
+    
+    //Lancement jquery_validate
     validator_create_annonce();
     if($('#create_annonce').valid()){
         //Si on rencontre un probleme alors on passe en false et on n'accède pas à la suite
@@ -91,9 +100,18 @@ btnStepEl2.addEventListener("click", (e)=>{
 })
 
 //Gestion du clic vers step 3
-btnStepEl3.addEventListener("click", (e)=>{
+btnStepEl3.addEventListener("click", ()=>{
     
-    e.preventDefault();
+    //Verification des champs de formulaire
+    let input_number = document.querySelectorAll('#bloc_step_2 input[type="number"]');
+    //On met à 0 les champs number non saisis
+    input_number.forEach(element => {
+        if(element.value === ""){
+            element.value = 0;
+            element.classList.remove('is-invalid');
+            element.classList.add('is-valid');
+        }
+    })
     if($('#create_annonce input[name="photos_logement[]"]')[0].files.length <= 6 || $('#create_annonce input[name="photos_logement[]"]')[0].files.length === 0){
         $('#photos_logement').addClass("is-valid");
         //Verification des champs de formulaire
@@ -122,9 +140,18 @@ btnStepEl3.addEventListener("click", (e)=>{
 })
 
 //Gestion du clic vers step 4
-btnStepEl4.addEventListener("click", (e)=>{
-    
-    e.preventDefault();
+btnStepEl4.addEventListener("click", ()=>{
+    //Verification des champs de formulaire
+    let input_number = document.querySelectorAll('#bloc_step_3 input[type="number"]');
+    //On met à 0 les champs number non saisis
+    input_number.forEach(element => {
+        if(element.value === ""){
+            element.value = 0;
+            element.classList.remove('is-invalid');
+            element.classList.add('is-valid');
+        }
+    })
+
     if($('#create_annonce').valid()){
         //On gère l'affichage du bouton
         let dot = document.getElementById('dot_3');
@@ -147,10 +174,8 @@ btnStepEl4.addEventListener("click", (e)=>{
 })
 
 //Gestion du clic vers step 5
-btnStepEl5.addEventListener("click", (e)=>{
-    
-    e.preventDefault();
-    
+btnStepEl5.addEventListener("click", ()=>{
+
     //Verification des champs de formulaire
     let input_number = document.querySelectorAll('#bloc_step_4 input[type="number"]');
     //On met à 0 les champs number non saisis
@@ -213,9 +238,8 @@ $("#create_annonce").keypress(function(e) {
 
 // //Gestion des retour en arriere
 // //Retour vers step 1
-backStep1.addEventListener("click", (e)=>{
-    
-    e.preventDefault();
+backStep1.addEventListener("click", ()=>{
+
     //On gère l'affichage du bouton
     let dot = document.getElementById('dot_1');
     dot.innerHTML = `<i class="fa fa-pencil text-white" aria-hidden="true"></i>`;
@@ -236,10 +260,8 @@ backStep1.addEventListener("click", (e)=>{
 })
 
 // //Retour vers step 2
-backStep2.addEventListener("click", (e)=>{
-    
-    e.preventDefault();
-    
+backStep2.addEventListener("click", ()=>{
+
     //Verification des champs de formulaire
     
     //On gère l'affichage du bouton
@@ -262,10 +284,8 @@ backStep2.addEventListener("click", (e)=>{
 })
 
 // //Retour vers step 3
-backStep3.addEventListener("click", (e)=>{
-    
-    e.preventDefault();
-    
+backStep3.addEventListener("click", ()=>{
+
     //On gère l'affichage du bouton
     let dot = document.getElementById('dot_3');
     dot.innerHTML = `<i class="fa fa-pencil text-white" aria-hidden="true"></i>`;
@@ -286,8 +306,8 @@ backStep3.addEventListener("click", (e)=>{
 })
 
 // //Retour vers step 4
-backStep4.addEventListener("click", (e)=>{
-    e.preventDefault();
+backStep4.addEventListener("click", ()=>{
+
     //On gère l'affichage du bouton
     let dot = document.getElementById('dot_4');
     dot.innerHTML = `<i class="fa fa-pencil text-white" aria-hidden="true"></i>`;
