@@ -31,12 +31,12 @@ if($db){
 
         
         //RECUPERATION DE LA LISTE DES PARTICULIERS
-        $query = $db->query("SELECT utilisateurs.id AS id_user, id, nom, prenom FROM `utilisateurs` INNER JOIN particulier ON particulier.id_utilisateur = utilisateurs.id ORDER BY nom ASC");
+        $query = $db->query("SELECT utilisateurs.id AS id_user, particulier.id AS id_particulier, nom, prenom FROM `utilisateurs` INNER JOIN particulier ON particulier.id_utilisateur = utilisateurs.id ORDER BY nom ASC");
         $particuliers = $query->fetchAll(PDO::FETCH_OBJ);
         $logger->info("Recuperation des donnees admin -- TABLE PARTICULIER OK");
 
         //RECUPERATION DE LA LISTE DES PROPRIETAIRES
-        $query = $db->query("SELECT utilisateurs.id AS id_user, id, nom, prenom FROM `utilisateurs` INNER JOIN proprietaire ON proprietaire.id_utilisateur = utilisateurs.id ORDER BY nom ASC");
+        $query = $db->query("SELECT utilisateurs.id AS id_user, proprietaire.id AS id_proprietaire, nom, prenom FROM `utilisateurs` INNER JOIN proprietaire ON proprietaire.id_utilisateur = utilisateurs.id ORDER BY nom ASC");
         $proprietaires = $query->fetchAll(PDO::FETCH_OBJ);
         $logger->info("Recuperation des donnees admin -- TABLE PROPRIETAIRE OK");
 

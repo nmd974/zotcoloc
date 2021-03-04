@@ -23,7 +23,7 @@
                             <td class="align-middle"><?= ucfirst($particulier->nom) ?></td>
                             <td class="align-middle"><?= ucfirst($particulier->prenom) ?></td>
                             <td class="align-middle">
-                                <button type="button" class="btn btn-danger me-4" data-bs-toggle="modal" data-bs-target="#<?= "delete_particulier_" . $particulier->id?>">
+                                <button type="button" class="btn btn-danger me-4" data-bs-toggle="modal" data-bs-target="#<?= "delete_particulier_" . $particulier->id_particulier?>">
                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                 </button>
                             </td>
@@ -54,7 +54,7 @@
                             <td class="align-middle"><?= ucfirst($proprietaire->nom) ?></td>
                             <td class="align-middle"><?= ucfirst($proprietaire->prenom) ?></td>
                             <td class="align-middle">
-                                <button type="button" class="btn btn-danger me-4" data-bs-toggle="modal" data-bs-target="#<?= "delete_proprietaire_" . $proprietaire->id?>">
+                                <button type="button" class="btn btn-danger me-4" data-bs-toggle="modal" data-bs-target="#<?= "delete_proprietaire_" . $proprietaire->id_proprietaire?>">
                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                 </button>
                             </td>
