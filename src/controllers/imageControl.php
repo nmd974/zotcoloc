@@ -1,5 +1,5 @@
 <?php
-require_once(dirname(__DIR__) . '/libs/gestionLogs.php');
+
     function controleImageArray($image_upload, $indiceArray)//On renvoie dans un tableau l'erreur et le message d'erreur ou l'erreur et le nom de l'image
     {
         $error = false;
