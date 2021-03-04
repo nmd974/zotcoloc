@@ -6,10 +6,10 @@ if(!$_SESSION['isLoggedIn'] || $_SESSION['role'] != "administrateur"){
 ?>
 <?php require_once(__ROOT__.'/src/controllers/utilisateurs/admin/getData.php');?>
 <?php require_once(dirname(__DIR__).'/includes/admin/modals/tables.php');?>
+<?php require_once(dirname(__DIR__).'/includes/admin/modals/utilisateurs.php');?>
 <?php require_once(dirname(__DIR__).'/includes/admin/modals/photoUser.php');?>
 <?php require_once(dirname(__DIR__).'/includes/admin/sidebar.php');?>
 
-<?php var_dump($ma_photo);?>
 <?php if(isset($_POST['save_photo_user'])):?>
   <?php if(empty($ma_photo)):?>
       <?php $ajout_photo = photoUtilisateur($_FILES['image_upload'], $_SESSION['id_utilisateur'], '');?>
