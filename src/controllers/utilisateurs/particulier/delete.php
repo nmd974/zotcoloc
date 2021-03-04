@@ -55,25 +55,46 @@ if(isset($_POST['id']) && isset($_POST['id_particulier'])){
             
             $logger->info("Suppression d'un utilisateur -- Role colocataire");
             // On complete les valeurs pour session
-            $_SESSION['flash'] = array('Success', "Compte supprimé avec succès");
-            unset($_SESSION['isLoggedIn']);
-            unset($_SESSION['role']);
-            unset($_SESSION['id_utilisateur']);
-            header("Location:" . getenv("URL_APP") . "/src/pages/home.php");
+            if($_SESSION['role'] != "administrateur"){
+                $_SESSION['flash'] = array('Success', "Compte supprimé avec succès");
+                unset($_SESSION['isLoggedIn']);
+                unset($_SESSION['role']);
+                unset($_SESSION['id_utilisateur']);
+                header("Location:" . getenv("URL_APP") . "/src/pages/home.php");
+            }else{
+                $_SESSION['flash'] = array('Success', "Compte supprimé avec succès");
+                header("Location:" . getenv("URL_APP") . "/src/pages/admin.php");
+            }
+
         }catch(PDOException $e){
             $error = $e->getMessage();
             $db->rollBack();
             $logger->error("Echec lors de la suppression de compte (colocataire) -- $error");
-            $_SESSION['flash'] = array('Error', "Echec lors de la suppression de compte");
-            header("Location:" . getenv("URL_APP") . "/src/pages/signupParticulier.php");
+            if($_SESSION['role'] != "administrateur"){
+                $_SESSION['flash'] = array('Error', "Echec lors de la suppression de compte");
+                header("Location:" . getenv("URL_APP") . "/src/pages/signupParticulier.php");
+            }else{
+                $_SESSION['flash'] = array('Error', "Echec lors de la suppression de compte");
+                header("Location:" . getenv("URL_APP") . "/src/pages/admin.php");
+            }
         }
     }else{
         $logger->alert("Echec lors de la suppression de compte -- Impossible de se connecter à la bdd");
-        $_SESSION['flash'] = array('Error', "Echec lors de la suppression de compte");
-        header("Location:" . getenv("URL_APP") . "/src/pages/compteParticulier.php");
+        if($_SESSION['role'] != "administrateur"){
+            $_SESSION['flash'] = array('Error', "Echec lors de la suppression de compte");
+            header("Location:" . getenv("URL_APP") . "/src/pages/compteParticulier.php");
+        }else{
+            $_SESSION['flash'] = array('Error', "Echec lors de la suppression de compte");
+            header("Location:" . getenv("URL_APP") . "/src/pages/admin.php");
+        }
     }
 }else{
     $logger->alert("Echec lors de la suppression de compte -- Paramètres incorrects");
-    $_SESSION['flash'] = array('Error', "Echec lors de la suppression de compte");
-    header("Location:" . getenv("URL_APP") . "/src/pages/compteParticulier.php");
+    if($_SESSION['role'] != "administrateur"){
+        $_SESSION['flash'] = array('Error', "Echec lors de la suppression de compte");
+        header("Location:" . getenv("URL_APP") . "/src/pages/compteParticulier.php");
+    }else{
+        $_SESSION['flash'] = array('Error', "Echec lors de la suppression de compte");
+        header("Location:" . getenv("URL_APP") . "/src/pages/admin.php");
+    }
 }
