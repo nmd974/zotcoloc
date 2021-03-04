@@ -179,6 +179,20 @@ if(isset($_POST['id']) && isset($_POST['id_proprietaire'])){
                 }
             }
 
+            //SUPPRESSION TABLE PROPRIETAIRE
+            $query = 'DELETE FROM `proprietaire` WHERE id = :id';
+            $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+            $sth->execute(array(
+                ':id' => $id_proprietaire,
+            ));
+            $logger->info("Suppression d'un utilisateur -- TABLE PROPRIETAIRE SUCCESS");
+            //SUPPRESSION TABLE UTILISATEUR
+            $query = 'DELETE FROM `utilisateurs` WHERE id = :id';
+            $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+            $sth->execute(array(
+                ':id' => $id,
+            ));
+            $logger->info("Suppression d'un utilisateur -- TABLE UTILISATEUR SUCCESS");
             $db->commit();
             
             $logger->info("Suppression d'un proprietaire -- SUCCESS");
