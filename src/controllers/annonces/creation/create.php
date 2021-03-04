@@ -236,11 +236,11 @@ if($error == null) {
             // TODO : lorsde l'ajout d'une nouvelle chambre on ajoute les regles associees et si pas rempli alors l'utilisateur devra supprimer le bloc ainsi que pour les photos
             $nb_chambre = count($_POST['titre_chambre']);
             // $indice = $i + 1;
-            for ($i=0; $i < $nb_chambre; $i++) { 
+            for ($i=0; $i <= $nb_chambre; $i++) { 
                 $indice = $i + 1;
                 // TODO : faire un vardumpdu files pour verifier le bug des photos
                 $indice_nb_photo = count($_FILES['photos_chambre_'.$indice]['name']);
-                for ($i=0; $i < $indice_nb_photo; $i++) { 
+                for ($i=0; $i <= $indice_nb_photo; $i++) { 
                     $ajoutImage = controleImageArray($_FILES['photos_chambre_'.$indice], $i);
                     if($ajoutImage[0]){ //La fonction retourne true si erreur
                         $logger->alert("Creation d'une annonce -- Erreur lors de l'ajout de l'image chambre");
@@ -293,7 +293,7 @@ if($error == null) {
             }
 
             //GESTION DES EQUIPEMENTS DES CHAMBRES
-            for ($i=0; $i < $nb_chambre; $i++) { 
+            for ($i=0; $i <= $nb_chambre; $i++) { 
                 $indice = $i + 1;
                 // return $data['equipements_chambre_'.$indice];
                 foreach($_POST['equipements_chambre_'.$indice] as $eqtChambre){
