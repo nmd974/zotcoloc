@@ -39,35 +39,34 @@
             </div>
         </div>
         <div class="tab-pane fade" id="nav-proprietaire" role="tabpanel" aria-labelledby="nav-proprietaire-tab">
-        <table class="table table-striped text-center">
-                    <thead>
-                        <tr>
-                            <th scope="col">Nom</th>
-                            <th scope="col">Prénom</th>
-                            <th scope="col">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php if(count($proprietaires) != 0):?>
-                        <?php foreach($proprietaires as $proprietaire):?>
-                        <tr>
-                            <td class="align-middle"><?= ucfirst($proprietaire->nom) ?></td>
-                            <td class="align-middle"><?= ucfirst($proprietaire->prenom) ?></td>
-                            <td class="align-middle">
-                                <button type="button" class="btn btn-danger me-4" data-bs-toggle="modal" data-bs-target="#<?= "delete_proprietaire_" . $proprietaire->id_proprietaire?>">
-                                    <i class="fa fa-trash" aria-hidden="true"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <?php endforeach;?>
-                        <?php else:?>
-                        <tr>
-                            <td class="align-middle" colspan="3">Vous n'avez pas d'utilisateurs sur le profil propriétaire</td>
-                        </tr>
-                        <?php endif;?>
-                    </tbody>
-                </table>
-            </div>
+            <table class="table table-striped text-center">
+                <thead>
+                    <tr>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Prénom</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php if(count($proprietaires) != 0):?>
+                    <?php foreach($proprietaires as $proprietaire):?>
+                    <tr>
+                        <td class="align-middle"><?= ucfirst($proprietaire->nom) ?></td>
+                        <td class="align-middle"><?= ucfirst($proprietaire->prenom) ?></td>
+                        <td class="align-middle">
+                            <button type="button" class="btn btn-danger me-4" data-bs-toggle="modal" data-bs-target="#<?= "delete_proprietaire_" . $proprietaire->id_proprietaire?>">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <?php endforeach;?>
+                    <?php else:?>
+                    <tr>
+                        <td class="align-middle" colspan="3">Vous n'avez pas d'utilisateurs sur le profil propriétaire</td>
+                    </tr>
+                    <?php endif;?>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
