@@ -94,7 +94,7 @@ btnStepEl2.addEventListener("click", (e)=>{
 btnStepEl3.addEventListener("click", (e)=>{
     
     e.preventDefault();
-    if($('#create_annonce input[name="photos_logement[]"]')[0].files.length <= 6){
+    if($('#create_annonce input[name="photos_logement[]"]')[0].files.length <= 6 || $('#create_annonce input[name="photos_logement[]"]')[0].files.length === 0){
         $('#photos_logement').addClass("is-valid");
         //Verification des champs de formulaire
         if($('#create_annonce').valid()){
@@ -146,11 +146,21 @@ btnStepEl4.addEventListener("click", (e)=>{
     
 })
 
-//Gestion du clic vers step 4
+//Gestion du clic vers step 5
 btnStepEl5.addEventListener("click", (e)=>{
     
     e.preventDefault();
     
+    //Verification des champs de formulaire
+    let input_number = document.querySelectorAll('#bloc_step_4 input[type="number"]');
+    //On met à 0 les champs number non saisis
+    input_number.forEach(element => {
+        if(element.value === ""){
+            element.value = 0;
+            element.classList.remove('is-invalid');
+            element.classList.add('is-valid');
+        }
+    })
     if($('#create_annonce').valid()){
         //Si on rencontre un probleme alors on passe en false et on n'accède pas à la suite
         //On gère l'affichage du bouton
@@ -176,6 +186,16 @@ btnStepEl5.addEventListener("click", (e)=>{
 //Gestion de l'envoie du formulaire
 document.getElementById('enregistrer_annonce').addEventListener('click', (e) => {
     e.preventDefault();
+    //Verification des champs de formulaire
+    let input_number = document.querySelectorAll('#bloc_step_5 input[type="number"]');
+    //On met à 0 les champs number non saisis
+    input_number.forEach(element => {
+        if(element.value === ""){
+            element.value = 0;
+            element.classList.remove('is-invalid');
+            element.classList.add('is-valid');
+        }
+    })
     if($('#create_annonce').valid()){
         validator.destroy();
         document.getElementById('create_annonce').submit();
