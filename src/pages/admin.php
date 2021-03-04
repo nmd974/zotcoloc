@@ -17,7 +17,7 @@ if(!$_SESSION['isLoggedIn'] || $_SESSION['role'] != "administrateur"){
       <?php $ajout_photo = photoUtilisateur($_FILES['image_upload'], $_SESSION['id_utilisateur'], '');?>
         <?php $ma_photo = Photos::photosByIdUser($_SESSION['id_utilisateur']);?>
       <?php else: ?>
-        <?php $ajout_photo = photoUtilisateur($_FILES['image_upload'], $_SESSION['id_utilisateur'], $ma_photo[1][0]->libelle_photo);?>
+        <?php $ajout_photo = photoUtilisateur($_FILES['image_upload'], $_SESSION['id_utilisateur'], $ma_photo[0]->libelle_photo);?>
         <?php $ma_photo = Photos::photosByIdUser($_SESSION['id_utilisateur']);?>
       <?php endif; ?>
 <?php endif; ?>

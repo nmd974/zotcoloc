@@ -62,8 +62,8 @@
 
             <!--Photo de la chambre-->
             <div class="col-md-12 mt-3 d-flex flex-column">
-                <label for="photo_chambre">Ajoutez au moins une photo de la chambre</label>
-                <input type="file" class="form-control-file" name="photos_chambre_1[]">
+                <label for="photos_chambre">Ajoutez au moins une photo de la chambre</label>
+                <input type="file" id="photos_chambre" class="form-control-file" name="photos_chambre_1[]">
             </div>
 
 
@@ -71,7 +71,7 @@
             <div class="col-md-12 mt-3">
                 <div class="d-flex align-items-center">
                     <p>Disponible à la location ?</p>
-                    <input type="radio" name="a_louer_1" class="btn-check" id="a_louer_oui" value="1">
+                    <input type="radio" name="a_louer_1" class="btn-check me-3" id="a_louer_oui" value="1">
                     <label class="btn btn-outline-success me-2 mb-2" for="a_louer_oui">
                         <i class="fa fa-check" aria-hidden="true"></i>
                         Oui

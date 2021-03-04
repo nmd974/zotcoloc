@@ -233,6 +233,7 @@ if($error == null) {
                 }
             }
             //GESTION DES PHOTOS DES CHAMBRES
+            // TODO : lorsde l'ajout d'une nouvelle chambre on ajoute les regles associees et si pas rempli alors l'utilisateur devra supprimer le bloc ainsi que pour les photos
             $nb_chambre = count($_POST['titre_chambre']);
             // $indice = $i + 1;
             for ($i=0; $i < $nb_chambre; $i++) { 
@@ -295,7 +296,8 @@ if($error == null) {
             for ($i=0; $i < $nb_chambre; $i++) { 
                 $indice = $i + 1;
                 // return $data['equipements_chambre_'.$indice];
-                foreach($data['equipements_chambre_'.$indice] as $eqtChambre){
+                foreach($_POST['equipements_chambre_'.$indice] as $eqtChambre){
+                    // TODO: mettre la verification si l'id de l'equipement existe sinon on n'ajoute pas
                     $query = 'INSERT INTO `equipement_chambre`(`id_chambre`, `id_equipement`)
                     VALUES (:id_chambre, :id_equipement)';
                     $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
