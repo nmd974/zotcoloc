@@ -5,24 +5,31 @@ require_once(__ROOT__.'/src/class/Connection.php');
 require_once(__ROOT__ . '/src/libs/gestionLogs.php');
 use \Waavi\Sanitizer\Sanitizer;
 
+if($_SESSION['role'] != "administrateur"){
+    $logger->alert("suppression d'un equipement -- Tentative d'accès sans être administrateur");
+    $_SESSION['flash'] = array('Error', "Veuillez vous connecter pour effectuer cette action");
+    header("Location:" . getenv("URL_APP") . "/src/pages/home.php");
+    exit();
+}
+
 $error = null;
 
 //Validation des données cote serveur + securite specialchars
-$inputRequired = ['libelle_equipement'];
+$inputRequired = ['id_equipement'];
 foreach($inputRequired as $value){
     if($_POST["$value"] == ""){
         $error = true;
-        $logger->info("Creation d'un equipement -- VERIF INPUT NOK");
-        $_SESSION['flash'] = array('Error', "Echec lors de la creation d'un nouvel equipement </br> Veuillez vérifier les champs");
+        $logger->info("Suppression d'un equipement -- VERIF INPUT NOK");
+        $_SESSION['flash'] = array('Error', "Echec lors de la suppression d'un nouvel equipement </br> Veuillez vérifier les champs");
         header("Location:" . getenv("URL_APP") . "/src/pages/admin.php");
         exit();
     }
 }
 
-$logger->info("Creation d'un equipement -- VERIF SERVEUR OK");
+$logger->info("suppression d'un equipement -- VERIF SERVEUR OK");
 if($error == null) {
     $data = [
-        'libelle_equipement' => $_POST['libelle_equipement']
+        'id_equipement' => $_POST['id_equipement']
     ];
     
     $customFilter = [
@@ -31,7 +38,7 @@ if($error == null) {
         }
     ];
     $filters = [
-        'libelle_equipement' => 'trim|escape|capitalize|htmlspecialchars'
+        'id_equipement' => 'trim|escape|capitalize|htmlspecialchars'
     ];
     
     $sanitizer = new Sanitizer($data, $filters,  $customFilter);
@@ -40,12 +47,10 @@ if($error == null) {
     $db = Connection::getPDO();
     if($db){
         try{
-            $id = md5(uniqid(rand(), true));
-            
             $query = 'DELETE FROM `equipements` WHERE id = :id';
             $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
             $sth->execute(array(
-                ':id' => $data_sanitized['id']
+                ':id' => $data_sanitized['id_equipement']
             ));
             $logger->info("Suppression d'un equipement -- TABLE EQUIPEMENTS OK");
             

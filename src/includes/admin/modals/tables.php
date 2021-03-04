@@ -82,18 +82,37 @@
                 <h5 class="modal-title" id="edit_eqt_<?= $equipement->id?>Label">Modifier un équipement</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/controllers/tables/equipements/update.php'?>">
+            <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/src/controllers/tables/equipements/update.php'?>">
                 <div class="modal-body">
                     <div class="form-floating">
                         <input type="text" name="libelle_equipement" value="<?= $equipement->libelle_equipement?>" required>
                         <label for="libelle_equipement">Nom de l'équipement <span class="text-danger">*</span></label>
                     </div>
                     <input type="hidden" name="id_equipement" value="<?= $equipement->id?>">
-                    <input type="hidden" name="role" value="<?=$_SESSION['role']?>">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
                     <button type="submit" class="btn btn-success" name="update">Modifier</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="edit_eqt_<?= $equipement->id?>" tabindex="-1" aria-labelledby="edit_eqt_<?= $equipement->id?>Label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="edit_eqt_<?= $equipement->id?>Label">Suppression d'un équipement</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/src/controllers/tables/equipements/delete.php'?>">
+                <div class="modal-body">
+                    <p>Confirmez vous la suppression de l'équipement : "<?= $equipement->libelle_equipement ?>"</p> 
+                    <input type="hidden" name="id_equipement" value="<?= $equipement->id?>">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
+                    <button type="submit" class="btn btn-success" name="update">Supprimer</button>
                 </div>
             </form>
         </div>

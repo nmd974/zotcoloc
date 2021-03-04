@@ -237,6 +237,8 @@ if($error == null) {
                         $logger->alert("Creation d'une annonce -- Erreur lors de l'ajout de l'image chambre");
                     }else{
                         $id_photo = md5(uniqid(rand(), true));
+                        $logger->info($id_photo);
+                        $logger->info($ajoutImage);
                         //AJOUT TABLE PHOTOS GENERALE
                         $query = 'INSERT INTO `photos`(`id`, `libelle_photo`)
                         VALUES (:id, :libelle_photo)';

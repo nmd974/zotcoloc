@@ -1,5 +1,5 @@
 <?php
-//array(1) { ["photos_logement"]=> array(5) { ["name"]=> array(2) { [0]=> string(36) "icons8-team-seDjj4dmC9s-unsplash.jpg" [1]=> string(48) "benjaminrobyn-jespersen-Ai9_QJaZfMc-unsplash.jpg" } ["type"]=> array(2) { [0]=> string(10) "image/jpeg" [1]=> string(10) "image/jpeg" } ["tmp_name"]=> array(2) { [0]=> string(45) "C:\Users\jhapa\AppData\Local\Temp\phpA4D5.tmp" [1]=> string(45) "C:\Users\jhapa\AppData\Local\Temp\phpA4D6.tmp" } ["error"]=> array(2) { [0]=> int(0) [1]=> int(0) } ["size"]=> array(2) { [0]=> int(32033) [1]=> int(1970394) } } }
+
     function controleImageArray($image_upload, $indiceArray)//On renvoie dans un tableau l'erreur et le message d'erreur ou l'erreur et le nom de l'image
     {
         $error = false;
