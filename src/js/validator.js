@@ -182,9 +182,7 @@ const validator_create_annonce = () => {
             "photos_chambre_1[]":{
                 required: true,
                 extension: "jpg|jpeg|png",
-                messages:{
-                    accept: "Seuls les formats jpg / jpeg / png sont autorisés"
-                }
+                minlength: 3,
             }
             
         }

@@ -70,9 +70,9 @@
                     <input type="file" class="form-control" name="photos_chambre_1[]" multiple required>
                 </div>
             </div>
-            <button type="button" class="btn btn-success me-4 mt-5" id="addPhotoChambre_1">
+            <!-- <button type="button" class="btn btn-success me-4 mt-5" id="addPhotoChambre_1">
                     <i class="fa fa-plus" aria-hidden="true"></i> Ajouter une nouvelle photo
-            </button>
+            </button> -->
 
             <!--a louer ??-->
             <div class="col-md-12 mt-3">

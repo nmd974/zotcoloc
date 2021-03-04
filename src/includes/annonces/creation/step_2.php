@@ -56,7 +56,7 @@
     
     <div class="col-md-12 mt-2">
         <div class="mb-3" id="zone_photo_logement">
-            <input type="file" class="form-control" name="photos_logement[]" required>
+            <input type="file" class="form-control" name="photos_logement[]" min="3" multiple required>
             <div class="invalid-feedback">Veuillez sélectionner au moins 1 photo du logement</div>
         </div>
     </div>

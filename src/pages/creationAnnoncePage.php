@@ -24,7 +24,7 @@
 <?php endif;?>
 <?php endif;?>
     <!--On fait afficher la page selon l'id des step de chaque bloc en jqurey-->
-    <form method="POST" class="mt-3 shadow" enctype="multipart/form-data" id="create_annonce" action="../controllers/annonces/creation/create.php">
+    <form method="POST" class="mt-3 shadow p-3" enctype="multipart/form-data" id="create_annonce" action="../controllers/annonces/creation/create.php">
         <?php require_once(dirname(__DIR__).'/includes/annonces/creation/step_1.php');?>
         <?php require_once(dirname(__DIR__).'/includes/annonces/creation/step_2.php');?>
         <?php require_once(dirname(__DIR__).'/includes/annonces/creation/step_3.php');?>
@@ -41,9 +41,9 @@
 <script src="../js/validator.js"></script>
 <script>
 //Ici on gere l'ajout d'une nouvelle chambre sur le formulaire de creation d'une annonce
-
+let cptChambre = 2;
+let cptPhotos = 1;
 $('#addChambre').on('click', () => {
-    cptChambre++;
     $('#zoneChambre').append(`
     <h4 class="mb-2">Chambre #${cptChambre}</h4>
         <i class="fa fa-plus-square" aria-hidden="true" id="addChambre"></i>
@@ -86,14 +86,12 @@ $('#addChambre').on('click', () => {
 
         <!--Photo de la chambre-->
 
-        <div class="col-md-12 mt-3">
+            <div class="col-md-12 mt-3">
                 <div class="mb-3" id="zone_photo_chambre_${cptChambre}">
                     <input type="file" class="form-control" name="photos_chambre_${cptChambre}[]" multiple required>
                 </div>
             </div>
-            <button type="button" class="btn btn-success me-4 mt-5" id="addPhotoChambre_${cptChambre}">
-                    <i class="fa fa-plus" aria-hidden="true"></i> Ajouter une nouvelle photo
-            </button>
+
         <div class="col-md-12">
         <div class="d-flex align-items-center"> 
             <p>Disponible à la location ?</p>

@@ -303,58 +303,58 @@ backStep4.addEventListener("click", (e)=>{
 
 
 
-//Gestion de l'ajout d'un nouveau bloc image logement
-let nb_blocs = 1;
-$('#addPhoto').on("click", () => {
+// //Gestion de l'ajout d'un nouveau bloc image logement
+// let nb_blocs = 1;
+// $('#addPhoto').on("click", () => {
 
-    $('#zone_photo_logement').append(`
-        <div class="d-flex" id="bloc_logement_${nb_blocs}">
-        <input type="file" class="form-control" name="photos_logement[]" required>
-        <button type="button" class="btn btn-danger me-4" id="del_bloc_logement_${nb_blocs}">
-        <i class="fa fa-trash" aria-hidden="true"></i>
-        </button>
-        </div>
-    `);
-    nb_blocs++;
-    $(`#del_bloc_logement_${nb_blocs}`).on('click', () => {
-        $(`#bloc_logement_${nb_blocs}`).remove();
-        nb_blocs--;
-    });
+//     $('#zone_photo_logement').append(`
+//         <div class="d-flex" id="bloc_logement_${nb_blocs}">
+//         <input type="file" class="form-control" name="photos_logement[]" required>
+//         <button type="button" class="btn btn-danger me-4" id="del_bloc_logement_${nb_blocs}">
+//         <i class="fa fa-trash" aria-hidden="true"></i>
+//         </button>
+//         </div>
+//     `);
+//     nb_blocs++;
+//     $(`#del_bloc_logement_${nb_blocs}`).on('click', () => {
+//         $(`#bloc_logement_${nb_blocs}`).remove();
+//         nb_blocs--;
+//     });
 
-    $(`input[name^="photos_logement]`).rules('add', {
-        required: true,
-        extension: "jpg|jpeg|png",
-        messages:{
-            accept: "Seuls les formats jpg / jpeg / png sont autorisés"
-        }
-    });
-});
-let cptChambre = 1;
-let cptPhotos = 1;
-//Gestion de l'ajout d'un nouveau bloc image chambre
-$(`#addPhotoChambre_${cptChambre}`).on("click", () => {
-    $(`#zone_photo_chambre_${cptChambre}`).append(`
-        <div class="d-flex" id="bloc_logement_${cptChambre}">
-        <input type="file" class="form-control" name="photos_chambre_${cptChambre}[]" required>
-        <button type="button" class="btn btn-danger me-4" id="del_bloc_logement_${cptChambre}_${cptPhotos}">
-        <i class="fa fa-trash" aria-hidden="true"></i>
-        </button>
-        </div>
-    `);
-    cptPhotos++;
-    $(`#del_bloc_logement_${cptChambre}_${cptPhotos}`).on('click', () => {
-        $(`#bloc_logement_${cptChambre}`).remove();
-        cptPhotos--;
-    });
+//     $(`input[name^="photos_logement]`).rules('add', {
+//         required: true,
+//         extension: "jpg|jpeg|png",
+//         messages:{
+//             accept: "Seuls les formats jpg / jpeg / png sont autorisés"
+//         }
+//     });
+// });
+// let cptChambre = 1;
+// let cptPhotos = 1;
+// //Gestion de l'ajout d'un nouveau bloc image chambre
+// $(`#addPhotoChambre_${cptChambre}`).on("click", () => {
+//     $(`#zone_photo_chambre_${cptChambre}`).append(`
+//         <div class="d-flex" id="bloc_logement_${cptChambre}">
+//         <input type="file" class="form-control" name="photos_chambre_${cptChambre}[]" required>
+//         <button type="button" class="btn btn-danger me-4" id="del_bloc_logement_${cptChambre}_${cptPhotos}">
+//         <i class="fa fa-trash" aria-hidden="true"></i>
+//         </button>
+//         </div>
+//     `);
+//     cptPhotos++;
+//     $(`#del_bloc_logement_${cptChambre}_${cptPhotos}`).on('click', () => {
+//         $(`#bloc_logement_${cptChambre}`).remove();
+//         cptPhotos--;
+//     });
 
-    $(`input[name^="photos_chambre_${cptChambre}]`).rules('add', {
-        required: true,
-        extension: "jpg|jpeg|png",
-        messages:{
-            accept: "Seuls les formats jpg / jpeg / png sont autorisés"
-        }
-    });
-});
+//     $(`input[name^="photos_chambre_${cptChambre}]`).rules('add', {
+//         required: true,
+//         extension: "jpg|jpeg|png",
+//         messages:{
+//             accept: "Seuls les formats jpg / jpeg / png sont autorisés"
+//         }
+//     });
+// });
 
 {/* <div class="col-md-12 mt-3 d-flex flex-column">
 <label for="photo_chambre_${cptChambre}_${cptPhotos}">Ajoutez au moins une photo de la chambre</label>
