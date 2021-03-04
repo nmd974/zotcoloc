@@ -5,7 +5,7 @@
 
     public static function getPDO (): PDO
     {
-        //Code a activer en local
+        // Code a activer en local
         // $pdo = new PDO('mysql:host=127.0.0.1;dbname=zotcoloc;charset=utf8', 'root', '');
         // $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
         // $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
