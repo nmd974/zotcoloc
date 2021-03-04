@@ -625,6 +625,7 @@ em{
     #sidebar-wrapper {
         margin-left: -15rem;
         z-index: 99;
+        overflow-y: scroll;
     }
     .img_moncompte{
         width: 300px;
