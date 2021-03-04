@@ -8,11 +8,10 @@
             </div>
             <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/controllers/tables/equipements/create.php'?>">
                 <div class="modal-body">
-                <div class="form-floating">
-                    <input type="text" class="form-control" name="libelle_equipement">
-                    <label for="libelle_equipement">Nom de l'équipement <span class="text-danger">*</span></label>
-                </div>
-                    <input type="hidden" name="role" value="<?=$_SESSION['role']?>">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" name="libelle_equipement">
+                        <label for="libelle_equipement">Nom de l'équipement <span class="text-danger">*</span></label>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
@@ -32,11 +31,10 @@
             </div>
             <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/controllers/tables/regles/create.php'?>">
                 <div class="modal-body">
-                <div class="form-floating">
-                    <input type="text" class="form-control" name="libelle_regle">
-                    <label for="libelle_regle">Nom de la règle <span class="text-danger">*</span></label>
-                </div>
-                    <input type="hidden" name="role" value="<?=$_SESSION['role']?>">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" name="libelle_regle">
+                        <label for="libelle_regle">Nom de la règle <span class="text-danger">*</span></label>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
@@ -56,15 +54,14 @@
             </div>
             <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/controllers/tables/villes/create.php'?>">
                 <div class="modal-body">
-                <div class="form-floating">
-                    <input type="text" class="form-control" name="libelle_ville" required>
-                    <label for="libelle_ville">Nom de la règle <span class="text-danger">*</span></label>
-                </div>
-                <div class="form-floating">
-                    <input type="number" class="form-control" name="code_postal" required>
-                    <label for="code_postal">Code postal <span class="text-danger">*</span></label>
-                </div>
-                    <input type="hidden" name="role" value="<?=$_SESSION['role']?>">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" name="libelle_ville" required>
+                        <label for="libelle_ville">Nom de la règle <span class="text-danger">*</span></label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="number" class="form-control" name="code_postal" required>
+                        <label for="code_postal">Code postal <span class="text-danger">*</span></label>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>

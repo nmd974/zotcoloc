@@ -5,9 +5,13 @@ if(!$_SESSION['isLoggedIn'] || $_SESSION['role'] != "administrateur"){
 }
 ?>
 <?php require_once(__ROOT__.'/src/controllers/utilisateurs/admin/getData.php');?>
+<?php var_dump("OK");?>
 <?php require_once(dirname(__DIR__).'/includes/admin/modals/tables.php');?>
+<?php var_dump("OK");?>
 <?php require_once(dirname(__DIR__).'/includes/admin/modals/photoUser.php');?>
+<?php var_dump("OK");?>
 <?php require_once(dirname(__DIR__).'/includes/admin/sidebar.php');?>
+<?php var_dump("OK");?>
 
 <?php if(isset($_POST['save_photo_user'])):?>
   <?php if(empty($ma_photo)):?>
