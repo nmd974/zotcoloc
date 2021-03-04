@@ -1,5 +1,6 @@
 <?php
 require_once(__ROOT__.'/src/class/Connection.php');
+require_once(__ROOT__ . '/src/libs/gestionLogs.php');
 
 $db = Connection::getPDO();
 if($db){

@@ -2,6 +2,7 @@
 
 require_once(dirname(dirname(dirname(__DIR__))).'/libs/session/session.php');
 require_once(__ROOT__.'/src/class/Connection.php');
+require_once(__ROOT__ . '/src/libs/gestionLogs.php');
 use \Waavi\Sanitizer\Sanitizer;
 
 $error = null;
