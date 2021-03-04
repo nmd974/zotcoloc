@@ -42,131 +42,230 @@
 <script>
 //Ici on gere l'ajout d'une nouvelle chambre sur le formulaire de creation d'une annonce
 let cptChambre = 2;
-let cptPhotos = 1;
 $('#addChambre').on('click', () => {
     $('#zoneChambre').append(`
-    <h4 class="mb-2">Chambre #${cptChambre}</h4>
-        <i class="fa fa-plus-square" aria-hidden="true" id="addChambre"></i>
-    <!--Titre de la chambre-->
-        <div class="col-md-12">
-            <label for="titre_chambre" class="form-label">Titre de la chambre</label>
-            <input type="text" class="form-control" id="titre_chambre" name="titre_chambre[]" value="<?php if(isset($_POST['titre_chambre'])){
-                echo $_POST['titre_chambre'];
-            }?>">
-        </div>
-
-        <!--Description de la chambre-->
-        <div class="col-md-12">
-            <label for="description_chambre" class="form-label">Desciption de la chambre</label>
-            <textarea class="form-control" id="description_chambre" name="description_chambre[]" rows="3"  value="<?php if(isset($_POST['description_chambre'])){echo $_POST['description_chambre'];}?>"></textarea>
-        </div>
-
-        <!--Surface de la chambre-->
-        <div class="col-md-12 input-group mt-3">
-            <label for="surface_chambre" class="input-group-text mb-1">Surface Totale</label>
-            <input type="number" class="form-control me-5 mb-1" id="surface_chambre" name="surface_chambre_${cptChambre}" value="0">
-
-            <!--Type de chambre-->
-            <div class="col-md-12">
-                <div class="d-flex align-items-center"> 
-                    <p>Type de chambre : </p>
-                    <input type="radio" name="type_chambre_${cptChambre}" class="btn-check" id="type_chambre_${cptChambre}_oui" value="Chambre principale">
-                            <label class="btn btn-outline-success me-2 mb-2" for="type_chambre_${cptChambre}_oui">
-                            <i class="fa fa-check" aria-hidden="true"></i>
-                            Chambre principale
-                        </label>
-                        <input type="radio" name="type_chambre_${cptChambre}" class="btn-check" id="type_chambre_${cptChambre}_non" value="Chambre secondaire">
-                            <label class="btn btn-outline-success me-2 mb-2" for="type_chambre_${cptChambre}_non">
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                            Chambre secondaire
-                        </label>
-                </div>  
-            </div>
-        </div>
-
-        <!--Photo de la chambre-->
-
-            <div class="col-md-12 mt-3">
-                <div class="mb-3" id="zone_photo_chambre_${cptChambre}">
-                    <input type="file" class="form-control" name="photos_chambre_${cptChambre}[]" multiple required>
+    <div class="col-md-12 zone_chambre" id="zoneChambre_${cptChambre}">
+        <div class="mt-4 mb-4 bg-light">
+            <div class="col border-one ps-1">
+                <div class="border-two ps-3">
+                    <p class="text-secondary m-0 poppins h5">Chambres à louer # ${cptChambre}</p>
+                    <div class="d-flex align-items-center mt-1">
+                        <i class="fa fa-info-circle icone_sidebar" aria-hidden="true"></i>
+                        <div class="text-dark me-3"><small>Supprimez ce bloc si vous souhaitez annuler l'ajout de cette chambre et enregistrer votre annonce</small></div>
+                    </div>
+                    <button type="button" class="btn btn-success me-4 mt-4 mb-4 delete_chambre" id="del_${cptChambre}">
+                        <i class="fa fa-trash" aria-hidden="true"></i> Supprimer la chambre
+                    </button>
                 </div>
             </div>
-
+        </div>
         <div class="col-md-12">
-        <div class="d-flex align-items-center"> 
-            <p>Disponible à la location ?</p>
-            <input type="radio" name="a_louer_${cptChambre}" class="btn-check" id="a_louer_oui_${cptChambre}" value="1">
+            <!--description de la chambre-->
+            <div class="mt-4 mb-4 bg-light">
+                <div class="col border-one ps-1">
+                    <div class="border-two ps-3">
+                        <p class="text-secondary m-0 poppins h5">Titre et description de la chambre # ${cptChambre}</p>
+                    </div>
+                </div>
+            </div>
+            <!--Titre de la chambre-->
+            <div class="col-md-12 mb-3">
+                <div class="form-floating">
+                    <input type="text" placeholder="Un titre accrocheur attirera l'oeil" class="form-control" maxlength="100" id="titre_chambre_${cptChambre}" name="titre_chambre[]" required>
+                    <label for="titre_chambre_${cptChambre}" class="form-label">Titre de la chambre<span class="text-danger">*</span></label>
+                </div>
+                <div class="d-flex align-items-center mt-1">
+                    <i class="fa fa-info-circle icone_sidebar" aria-hidden="true"></i>
+                    <div class="text-dark me-3"><small>Par exemple : Chambre de 20m2 vue mer</small></div>
+                </div>
+            </div>
+            
+            <!--Description de la chambre-->
+            <div class="col-md-12 mb-3">
+                <div class="form-floating">
+                    <textarea type="text" placeholder="Une description vaut mieux que de l'imagination" class="form-control" style="height: 100px" maxlength="500" id="description_chambre_${cptChambre}" name="description_chambre[]" required></textarea>
+                    <label for="description_chambre_${cptChambre}" class="form-label">Description de la chambre<span class="text-danger">*</span></label>
+                </div>
+                <div class="d-flex align-items-center mt-1">
+                    <i class="fa fa-info-circle icone_sidebar" aria-hidden="true"></i>
+                    <div class="text-dark me-3"><small>Par exemple : Chambre exposée plein sud, isolée du bruit</small></div>
+                </div>
+            </div>
+            
+            <!--Surface de la chambre-->
+            <div class="col-md-12 mb-3">
+                <div class="form-floating">
+                    <input type="number" placeholder="Surface de la chambre en m2" class="form-control" id="surface_chambre_${cptChambre}" name="surface_chambre[]" value="0">
+                    <label for="surface_chambre_${cptChambre}" class="form-label">Surface de la chambre (m2)</label>
+                </div>
+            </div>
+            <!--Type de chambre-->
+            <div class="mt-4 mb-3 bg-light">
+                <div class="col border-one ps-1">
+                    <div class="border-two ps-3">
+                        <p class="text-secondary m-0 poppins h5">Type de chambre</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 mb-4">
+                <div class="d-flex align-items-center">
+                    <input type="radio" name="type_chambre_${cptChambre}" class="btn-check" id="type_chambre_${cptChambre}_oui"
+                    value="Chambre principale">
+                    <label class="btn btn-outline-success me-2 mb-2" for="type_chambre_${cptChambre}_oui">
+                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                        Chambre principale
+                    </label>
+                    <input type="radio" name="type_chambre_${cptChambre}" class="btn-check" id="type_chambre_${cptChambre}_non"
+                    value="Chambre secondaire">
+                    <label class="btn btn-outline-success me-2 mb-2" for="type_chambre_${cptChambre}_non">
+                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                        Chambre secondaire
+                    </label>
+                </div>
+            </div>
+            
+            <!--Photo de la chambre-->
+            <div class="mt-4 mb-3 bg-light">
+                <div class="col border-one ps-1">
+                    <div class="border-two ps-3">
+                        <p class="text-secondary m-0 poppins h5">Photos de la chambre *</p>
+                        <div class="d-flex align-items-center mt-1">
+                            <i class="fa fa-info-circle icone_sidebar" aria-hidden="true"></i>
+                            <div class="text-dark me-3"><small>Une seule photo peut faire chavirer un coeur... Mettez toutes les chances de votre côté</small></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 mb-4">
+                <div class="mb-3" id="zone_photo_chambre_${cptChambre}">
+                    <input type="file" class="form-control" name="photos_chambre_${cptChambre}[]" id="photo_chambre_${cptChambre}" multiple required>
+                    <div class="invalid-feedback">Veuillez sélectionner au moins 1 photo de la chambre (6 photos maximum)</div>
+                </div>
+            </div>
+            
+            <!--a louer ??-->
+            <div class="mt-4 mb-3 bg-light">
+                <div class="col border-one ps-1">
+                    <div class="border-two ps-3">
+                        <p class="text-secondary m-0 poppins h5">Chambre disponible à la location ?</p>
+                        <div class="d-flex align-items-center mt-1">
+                            <i class="fa fa-info-circle icone_sidebar" aria-hidden="true"></i>
+                            <div class="text-dark me-3"><small>Que ce soit oui ou non, si vous activez votre annonce, la chambre sera disponible pour cette version de l'application</small></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 mb-3">
+                <div class="d-flex align-items-center">
+                    <input type="radio" name="a_louer_${cptChambre}" class="btn-check me-3" id="a_louer_oui_${cptChambre}" value="1">
                     <label class="btn btn-outline-success me-2 mb-2" for="a_louer_oui_${cptChambre}">
-                    <i class="fa fa-check" aria-hidden="true"></i>
+                        <i class="fa fa-check" aria-hidden="true"></i>
                         Oui
-                </label>
-                <input type="radio" name="a_louer_${cptChambre}" class="btn-check" id="a_louer_non_${cptChambre}" value="0">
+                    </label>
+                    <input type="radio" name="a_louer_${cptChambre}" class="btn-check" id="a_louer_non_${cptChambre}" value="0">
                     <label class="btn btn-outline-success me-2 mb-2" for="a_louer_non_${cptChambre}">
-                    <i class="fa fa-times" aria-hidden="true"></i>
+                        <i class="fa fa-times" aria-hidden="true"></i>
                         Non
-                </label>
-        </div>  
-    </div>
-
-        <!--Date disponibilité-->
-        <div class="col-md-12 mt-3">
-            <label for="date_disponibilite" class="form-label">Date de idsponibilité</label><br>
-            <input type="date" name="date_disponibilite[]" class="form-control" id="date_disponibilite"
-                value="<?php if(isset($_POST['date_disponibilite'])){echo $_POST['date_disponibilite'];}?>"
-            >
-        </div>
-
-        <!--Durée du bail-->
-        <div class="col-md-12 mt-3">
-            <label for="duree_bail" class="form-label">Durée du bail</label>
-            <input type="number" class="form-control" id="duree_bail" name="duree_bail[]" placeholder="en mois" value="<?php if(isset($_POST['duree_bail'])){echo $_POST['duree_bail'];}?>">
-        </div>
-
-        <!--loyer-->
-        <div class="col-md-12 mt-3">
-            <label for="loyer" class="form-label">Loyer</label>
-            <input type="number" class="form-control" id="loyer" name="loyer[]" placeholder="en €" value="<?php if(isset($_POST['loyer'])){echo $_POST['loyer'];}?>">
-        </div>
-
-        <!--charge-->
-        <div class="col-md-12 mt-3">
-            <label for="charge" class="form-label">Charge</label>
-            <input type="number" class="form-control" id="charge" name="charges[]" placeholder="en €" value="<?php if(isset($_POST['charge'])){echo $_POST['charge'];}?>">
-        </div>
-
-        <!--caution-->
-        <div class="col-md-12 mt-3">
-            <label for="caution" class="form-label">Caution</label>
-            <input type="number" class="form-control" id="caution" name="caution[]" placeholder="en €" value="<?php if(isset($_POST['caution'])){echo $_POST['caution'];}?>">
-        </div>
-
-        <!--frais dossier-->
-        <div class="col-md-12 mt-3">
-            <label for="frais_dossier" class="form-label">Frais dossier</label>
-            <input type="number" class="form-control" id="frais_dossier" name="frais_dossier[]" placeholder="en €" value="<?php if(isset($_POST['frais_dossier'])){echo $_POST['frais_dossier'];}?>">
-        </div>
-
-        <!--equipement chambre-->
-        <div class="col-md-12 mt-3">
-            <p>Equipements privés:</p>
-            <div class="d-flex flex-wrap interets_ajax" role="group" aria-label="Basic checkbox toggle button group" id="equipement_prive">
-        <?php if(!$equipements[0]):?>
-            <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
-        <?php else :?>
-            <?php foreach($equipements as $equipement):?>
-                <input type="checkbox" name="equipements_chambre_${cptChambre}[]" class="btn-check" value="<?= $equipement->id ?>" id="chambre_${cptChambre}_<?= $equipement->id ?>">
-                <label class="btn btn-outline-success me-2 mb-2" for="chambre_${cptChambre}_<?= $equipement->id ?>">
+                    </label>
+                </div>
+            </div>
+            
+            <!--Date disponibilité-->
+            <div class="col-md-12 mb-3">
+                <label for="date_disponibilite_${cptChambre}" class="form-label">Date de disponibilité</label><br>
+                <input type="date" name="date_disponibilite[]" class="form-control" id="date_disponibilite_${cptChambre}"
+                value="<?= (new DateTime())->format('Y-m-d') ?>">
+            </div>
+            
+            <!--Durée du bail-->
+            <div class="col-md-12 mb-4">
+                <div class="form-floating">
+                    <input type="number" placeholder="Durée du bail de location" class="form-control" id="duree_bail_${cptChambre}" name="duree_bail[]" value="0">
+                    <label for="duree_bail_${cptChambre}" class="form-label">Durée du bail (mois)</label>
+                </div>
+            </div>
+            
+            <div class="mt-4 mb-3 bg-light">
+                <div class="col border-one ps-1">
+                    <div class="border-two ps-3">
+                        <p class="text-secondary m-0 poppins h5">Partie financière</p>
+                        <div class="d-flex align-items-center mt-1">
+                            <i class="fa fa-info-circle icone_sidebar" aria-hidden="true"></i>
+                            <div class="text-dark me-3"><small>En renseignant correctement les données financières, vous aurez plus de chance de trouver un colocataire</small></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--loyer-->
+            <div class="col-md-12 mb-3">
+                <div class="form-floating">
+                    <input type="number" placeholder="Loyer à payer" class="form-control" id="loyer_${cptChambre}" name="loyer[]" value="0">
+                    <label for="loyer_${cptChambre}" class="form-label">Loyer (€)</label>
+                </div>
+            </div>
+            
+            <!--charge-->
+            <div class="col-md-12 mb-3">
+                <div class="form-floating">
+                    <input type="number" placeholder="Charges à payer" class="form-control" id="charge_${cptChambre}" name="charge[]" value="0">
+                    <label for="charge_${cptChambre}" class="form-label">Charges (€)</label>
+                </div>
+            </div>
+            
+            <!--caution-->
+            <div class="col-md-12 mb-3">
+                <div class="form-floating">
+                    <input type="number" placeholder="Loyer à payer" class="form-control" id="caution_${cptChambre}" name="caution[]" value="0">
+                    <label for="caution_${cptChambre}" class="form-label">Caution (€)</label>
+                </div>
+            </div>
+            <!--frais dossier-->
+            <div class="col-md-12 mb-4">
+                <div class="form-floating">
+                    <input type="number" placeholder="Loyer à payer" class="form-control" id="frais_dossier_${cptChambre}" name="frais_dossier[]" value="0">
+                    <label for="frais_dossier_${cptChambre}" class="form-label">Frais de dossier (€)</label>
+                </div>
+            </div>
+            
+            <div class="mt-4 mb-3 bg-light">
+                <div class="col border-one ps-1">
+                    <div class="border-two ps-3">
+                        <p class="text-secondary m-0 poppins h5">Equipements à l'intérieur de la chambre</p>
+                        <div class="d-flex align-items-center mt-1">
+                            <i class="fa fa-info-circle icone_sidebar" aria-hidden="true"></i>
+                            <div class="text-dark me-3"><small>Une climatisation dans la chambre ? C'est bon à savoir...</small></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--equipement chambre-->
+            <div class="col-md-12 mb-4">
+                <p>Equipements privés:</p>
+                <div class="d-flex flex-wrap interets_ajax" role="group" id="equipement_prive_${cptChambre}">
+                <?php if(!$equipements[0]):?>
+                <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
+                <?php else :?>
+                <?php foreach($equipements as $equipement):?>
+                <input type="checkbox" name="equipements_chambre_${cptChambre}[]" class="btn-check"
+                value="<?= $equipement->id ?>" id="<?= $equipement->id ?>">
+                <label class="btn btn-outline-success me-2 mb-2" for="<?= $equipement->id ?>">
                     <i class="fa fa-plus-circle" aria-hidden="true"></i>
                     <?= $equipement->libelle_equipement ?>
                 </label>
-            <?php endforeach; ?>
-        <?php endif;?>
-    </div>
+                <?php endforeach; ?>
+                <?php endif;?>
+            </div>
+            
         </div>
-        
+    </div>        
     `)
-    cptChambre++;
-    cptPhotos++;
+    cptChambre++;    
 })
+
+var btn_delete_chambre = document.querySelectorAll('#bloc_step_5 .delete_chambre');
+btn_delete_chambre.forEach(zone => (e) {
+    console?log(e);
+})
+
 </script>
 <?php require_once(dirname(__DIR__).'/includes/Layout/finbalise.php');?>

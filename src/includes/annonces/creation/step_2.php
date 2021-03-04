@@ -44,7 +44,6 @@
             <div class="border-two ps-3">
                 <p class="text-secondary m-0 poppins h5">Photos des parties communes <span class="text-danger">*</span></p>
             </div>
-
         </div>
     </div>
     

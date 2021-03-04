@@ -175,7 +175,7 @@ if($error == null) {
                 $data = [
                     'titre_chambre' => $_POST['titre_chambre'][$i],
                     'description_chambre' => $_POST['description_chambre'][$i],
-                    'surface_chambre' => $_POST['surface_chambre_'.$indice],
+                    'surface_chambre' => $_POST['surface_chambre'][$i],
                     'type_chambre' => $_POST['type_chambre_'.$indice],
                     'date_disponibilite' => $_POST['date_disponibilite'][$i],
                     'duree_bail' => $_POST['duree_bail'][$i],

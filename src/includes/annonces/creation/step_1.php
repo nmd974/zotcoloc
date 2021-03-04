@@ -1,7 +1,5 @@
 <!--STEP 1-->
-<!-- Charger les infos du profil (photos, favoris, candidature, publications)-->
 <div id="bloc_step_1" class="show_step">
-
         <!--Titre-->
         <div class="mt-4 mb-4 bg-light">
             <div class="col border-one ps-1">
@@ -38,10 +36,8 @@
         </div>
 
         <!--Type-->
-        <!-- Amelioration : Faire un chargement de requete des types en cas de changement par admin pour avoir les dernieres nouveautes-->
         <div class="col-md-12 mb-4">
             <div class="form-floating">
-            <?php //if(isset($_POST['type_logement'] && )){echo "selected";}?>
                 <select class="form-select" id="type_logement" name="type_logement">
                     <option value="Appartement">Appartement</option>
                     <option value="Villa">Villa</option>

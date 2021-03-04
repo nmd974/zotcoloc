@@ -198,6 +198,7 @@ btnStepEl5.addEventListener("click", (e)=>{
 document.getElementById('enregistrer_annonce').addEventListener('click', (e) => {
     e.preventDefault();
     if($('#create_annonce').valid()){
+        validator.destroy();
         document.getElementById('create_annonce').submit();
     }
 })
