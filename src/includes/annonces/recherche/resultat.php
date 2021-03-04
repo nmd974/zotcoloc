@@ -49,7 +49,6 @@
                 <!-- titre de l'annonce -->
                 <h5 class="card-title"><?= htmlspecialchars(substr($annonce->titre_chambre, 0 , 20)) ?>...</h5>
                 <p class="card-text fw-bold"><?= htmlspecialchars($annonce->libelle_ville) ?></p>
-                <!-- <p class="card-text">Chambre: 1</p> -->
                 <p class="card-text">Disponible le : <?= (new DateTime(htmlspecialchars($annonce->date_disponibilite).'00:00:00'))->format('d/m/Y') ?></p>
                 <p class="card-text"><span class="fw-bold h4"><?= htmlspecialchars($annonce->loyer) ?> €</span> par mois</p>
             </div>
