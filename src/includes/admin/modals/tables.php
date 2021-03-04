@@ -1,5 +1,5 @@
 <!-- TABLE CREATE EQUIPEMENT -->
-<div class="modal fade" id="create_eqtLabel" tabindex="-1" aria-labelledby="create_eqtLabel" aria-hidden="true">
+<div class="modal fade" id="create_eqt" tabindex="-1" aria-labelledby="create_eqtLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
