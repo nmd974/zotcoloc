@@ -42,8 +42,9 @@
     <div class="mt-4 mb-4 bg-light">
         <div class="col border-one ps-1">
             <div class="border-two ps-3">
-                <p class="text-secondary m-0 poppins h5">Photo des parties communes <span class="text-danger">*</span></p>
+                <p class="text-secondary m-0 poppins h5">Photos des parties communes <span class="text-danger">*</span></p>
             </div>
+
         </div>
     </div>
     
@@ -52,17 +53,17 @@
         <i class="fa fa-plus-square me-3" aria-hidden="true" id="addPhoto"></i>
         <div>Ajouter une nouvelle photo</div>
     </div> -->
-
+<!-- 
     
     <div class="col-md-12 mt-2">
-        <div class="mb-3" id="zone_photo_logement">
-            <input type="file" class="form-control" name="photos_logement[]" min="3" multiple required>
-            <div class="invalid-feedback">Veuillez sélectionner au moins 1 photo du logement</div>
-        </div>
-    </div>
-    <button type="button" class="btn btn-success me-4 mt-5" id="addPhoto">
+        <div class="mb-3" id="zone_photo_logement"> -->
+            <input type="file" class="form-control" name="photos_logement[]" id="photos_logement" multiple required>
+            <div class="invalid-feedback">Veuillez sélectionner au moins 1 photo du logement (6 photos maximum)</div>
+        <!-- </div>
+    </div> -->
+    <!-- <button type="button" class="btn btn-success me-4 mt-5" id="addPhoto">
             <i class="fa fa-plus" aria-hidden="true"></i> Ajouter une nouvelle photo
-    </button>
+    </button> -->
     
     <div class="col-md-12 mt-5">
         *Champs obligatoires

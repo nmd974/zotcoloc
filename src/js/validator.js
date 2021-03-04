@@ -129,6 +129,12 @@ const validator_create_annonce = () => {
             type_logement:{
                 required: true
             },
+            meuble:{
+                required: true
+            },
+            aides_logement:{
+                required: true
+            },
             ville:{
                 required: true
             },
@@ -138,12 +144,12 @@ const validator_create_annonce = () => {
             },
             age_max:{
                 digits: true,
-                min: 18,
+                min: 0,
                 max: 120
             },
             age_min:{
                 digits: true,
-                min: 18,
+                min: 0,
                 max: 120
             },
             "photos_logement[]":{
@@ -157,16 +163,20 @@ const validator_create_annonce = () => {
                 required: true
             },
             "frais_dossier[]":{
-                digits: true
+                digits: true,
+                min: 0
             },
             "caution[]":{
-                digits: true
+                digits: true,
+                min: 0
             },
             "charges[]":{
-                digits: true
+                digits: true,
+                min: 0
             },
             "loyer[]":{
-                digits: true
+                digits: true,
+                min: 0
             },
             "duree_bail[]":{
                 digits: true,
@@ -181,8 +191,7 @@ const validator_create_annonce = () => {
             },
             "photos_chambre_1[]":{
                 required: true,
-                extension: "jpg|jpeg|png",
-                minlength: 3,
+                extension: "jpg|jpeg|png"
             }
             
         }

@@ -94,26 +94,31 @@ btnStepEl2.addEventListener("click", (e)=>{
 btnStepEl3.addEventListener("click", (e)=>{
     
     e.preventDefault();
-    
-    //Verification des champs de formulaire
-    if($('#create_annonce').valid()){
-        //On gère l'affichage du bouton
-        let dot = document.getElementById('dot_2');
-        dot.innerHTML = `<i class="fa fa-check" aria-hidden="true"></i>`;
-        dot.classList.remove('unvalid_step');
-        dot.classList.add('valid_step');
-        //On gère l'affichage du bloc de step avec les classes
-        blockStepEl2.classList.remove('show_step');
-        blockStepEl2.classList.add('unshow_step');
-        blockStepEl3.classList.remove('unshow_step');
-        blockStepEl3.classList.add('show_step');
-        //On redefini le dot vers le point suivant
-        let dotNext = document.getElementById('dot_3');
-        dotNext.innerHTML = `<i class="fa fa-hourglass-start" aria-hidden="true"></i>`;
-        titleStep.innerHTML = `Etape 3/5:<span class="text-green"> Information générales</span>`;
-        timeLineEl.style.width = `50%`;
-        window.scrollTo(0,0);
+    if($('#create_annonce input[name="photos_logement[]"]')[0].files.length <= 6){
+        $('#photos_logement').addClass("is-valid");
+        //Verification des champs de formulaire
+        if($('#create_annonce').valid()){
+            //On gère l'affichage du bouton
+            let dot = document.getElementById('dot_2');
+            dot.innerHTML = `<i class="fa fa-check" aria-hidden="true"></i>`;
+            dot.classList.remove('unvalid_step');
+            dot.classList.add('valid_step');
+            //On gère l'affichage du bloc de step avec les classes
+            blockStepEl2.classList.remove('show_step');
+            blockStepEl2.classList.add('unshow_step');
+            blockStepEl3.classList.remove('unshow_step');
+            blockStepEl3.classList.add('show_step');
+            //On redefini le dot vers le point suivant
+            let dotNext = document.getElementById('dot_3');
+            dotNext.innerHTML = `<i class="fa fa-hourglass-start" aria-hidden="true"></i>`;
+            titleStep.innerHTML = `Etape 3/5:<span class="text-green"> Information générales</span>`;
+            timeLineEl.style.width = `50%`;
+            window.scrollTo(0,0);
+        }
+    }else{
+        $('#photos_logement').addClass("is-invalid");
     }
+    
 })
 
 //Gestion du clic vers step 4
@@ -201,7 +206,7 @@ document.getElementById('enregistrer_annonce').addEventListener('click', (e) => 
 $("#create_annonce").keypress(function(e) {
     //Enter key
     if (e.which == 13) {
-      return false;
+        return false;
     }
 });
 

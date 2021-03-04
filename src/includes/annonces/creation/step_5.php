@@ -16,7 +16,6 @@
         <div class="col-md-12" id="zoneChambre">
 
             <h4 class="mb-2">Ajoutez au moins 1 chambre</h4>
-            <i class="fa fa-plus-square" aria-hidden="true" id="addChambre"></i>
             
             <!--Titre de la chambre-->
             <div class="col-md-12 mt-3">
