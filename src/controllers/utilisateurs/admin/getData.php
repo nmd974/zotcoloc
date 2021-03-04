@@ -1,4 +1,5 @@
 <?php
+var_dump(__ROOT__);
 require_once(__ROOT__.'/src/class/Connection.php');
 require_once(__ROOT__ . '/src/libs/gestionLogs.php');
 
