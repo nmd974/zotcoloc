@@ -28,7 +28,7 @@ frais_dossier
 a_louer_
 
 
- */
+*/
 
 require_once(dirname(dirname(dirname(__DIR__))).'/libs/session/session.php');
 require_once(__ROOT__ . '/src/class/Connection.php');
@@ -57,16 +57,17 @@ if(empty($_FILES)){
     header("Location:" . getenv("URL_APP") . "/src/pages/creationAnnoncePage.php");
     exit();
 }
-//On met à 0 de base si pas selectionne
-if(!isset($_POST['aides_logement'])){
-    $_POST['aides_logement'] = 0;
-};
-if(!isset($_POST['meuble'])){
-    $_POST['meuble'] = 0;
-};
+
 
 $logger->info("Creation d'une annonce -- VERIF SERVEUR OK");
 if($error == null) {
+    //On met à 0 de base si pas selectionne
+    if(!isset($_POST['aides_logement'])){
+        $_POST['aides_logement'] = 0;
+    };
+    if(!isset($_POST['meuble'])){
+        $_POST['meuble'] = 0;
+    };
     //Verification de la saisie du type de logement
     if($_POST['type_logement'] != "Appartement" || $_POST['type_logement'] != "Villa" || $_POST['type_logement'] != "Maison"){
         $_POST['type_logement'] != "Maison";
@@ -76,7 +77,7 @@ if($error == null) {
         $_POST['profil'] != "eccbc87e4b5ce2fe28308fd9f2a7baf3";
     }
     //Coup de sanytol sur les données des formulaires
-
+    
     $data = [
         'titre_logement' => $_POST['titre_logement'],
         'description_logement' => $_POST['description_logement'],
@@ -104,15 +105,15 @@ if($error == null) {
         'age_max' => 'trim|digit|htmlspecialchars',
         'age_min' => 'trim|digit|htmlspecialchars'
     ];
-
-
+    
+    
     $sanitizer = new Sanitizer($data, $filters,  $customFilter);
     $data_sanitized = $sanitizer->sanitize();
     if($data_sanitized['ville'] == 0){
         $data_sanitized['ville'] = 4; //Si 0 alors tentative de modification de la value on met alors St denis
     }
     $logger->info("Creation d'une annonce -- SANITIZE OK");
-
+    
     //Connexion à la BDD
     $db = Connection::getPDO();
     if($db){
@@ -133,7 +134,7 @@ if($error == null) {
                 $data_sanitized['ville'] = 4;
                 $logger->alert("Creation d'une annonce -- ID VILLE NON TROUVE");
             }
-
+            
             //AJOUT TABLE LOGEMENTS
             $query = 'INSERT INTO `logements`(`id_logement`, `id_profil`, `id_ville`, `id_utilisateur`, `titre_logement`, `description_logement`, `surface_logement`, `meuble`, `eligible_aides`, `age_max`, `age_min`, `type_logement`)
             VALUES (:id_logement, :id_profil, :id_ville, :id_utilisateur, :titre_logement, :description_logement, :surface_logement, :meuble, :eligible_aides, :age_max, :age_min, :type_logement)';
@@ -153,17 +154,17 @@ if($error == null) {
                 ':type_logement' => $data_sanitized['type_logement']
             ));
             $logger->info("Creation d'une annonce -- TABLE LOGEMENT OK");
-
+            
             //AJOUT TABLE CHAMBRES
             $nb_chambre = count($_POST['titre_chambre']);
             $list_id_chambre =[];
             for ($i=0; $i < $nb_chambre; $i++) {
                 $indice = $i + 1;
-
+                
                 //On stock les id afin de les traiter pour les photos et les equipements
                 $id_chambre = md5(uniqid(rand(), true));
                 array_push($list_id_chambre, $id_chambre);
-
+                
                 //Filtre sur les valeurs non obligatoire
                 if($_POST['type_chambre_'.$indice] != "Chambre principale" || $_POST['type_chambre_'.$indice] != "Chambre secondaire"){
                     $_POST['type_chambre_'.$indice] = "Chambre principale";
@@ -198,10 +199,10 @@ if($error == null) {
                     'frais_dossier' => 'trim|escape|digit|htmlspecialchars',
                     'a_louer' => 'trim|escape|digit|htmlspecialchars',
                 ];
-
+                
                 $sanitizer = new Sanitizer($data, $filters,  $customFilter);
                 $data_sanitized = $sanitizer->sanitize();
-
+                
                 //AJOUT TABLE CHAMBRE
                 $query = 'INSERT INTO `chambres`(`id_chambre`, `id_logement`, `titre_chambre`, `description_chambre`, `surface_chambre`, `type_chambre`, `a_louer`, `date_disponibilite`, `duree_bail`, `loyer`, `charges`, `caution`, `frais_dossier`)
                 VALUES (:id_chambre, :id_logement, :titre_chambre, :description_chambre, :surface_chambre, :type_chambre, :a_louer, :date_disponibilite, :duree_bail, :loyer, :charges, :caution, :frais_dossier)';
@@ -223,7 +224,7 @@ if($error == null) {
                 ));
                 $logger->info("Creation d'une annonce -- TABLE CHAMBRE OK");
             }
-           
+            
             //GESTION DES PHOTOS DU LOGEMENT
             $indice_nb_photo = count($_FILES['photos_logement']['name']);
             for ($i=0; $i < $indice_nb_photo; $i++) { 
@@ -284,7 +285,7 @@ if($error == null) {
                     }
                 }
             }
-
+            
             //GESTION DES REGLES LOGEMENT
             //On recupere la liste des regles afin de verifier si un malin n'a pas modifié les valeurs
             //Si oui alors on n'ajoute pas la regle
@@ -307,7 +308,7 @@ if($error == null) {
                     $logger->alert("Creation d'une annonce -- TABLE REGLES LOGEMENT -- aucun id ne correspond");
                 }
             }
-
+            
             //GESTION DES EQUIPEMENTS LOGEMENT
             //On recupere la liste des equipements afin de verifier si un malin n'a pas modifié les valeurs
             //Si oui alors on n'ajoute pas l'equipement
@@ -316,7 +317,7 @@ if($error == null) {
             foreach($data_equipements as $data_equipement){
                 $list_equipements[] = $data_equipement->id;
             }
-
+            
             foreach($_POST['equipements_logement'] as $equipement){
                 if(in_array($equipement, $list_equipements)){
                     $query = 'INSERT INTO `equipement_logement`(`id_logement`, `id_equipement`)
@@ -330,9 +331,9 @@ if($error == null) {
                 }else{
                     $logger->alert("Creation d'une annonce -- TABLE EQUIPEMENTS LOGEMENT -- aucun id ne correspond");
                 }
-
+                
             }
-
+            
             //GESTION DES EQUIPEMENTS DES CHAMBRES
             for ($i=0; $i <= $nb_chambre; $i++) { 
                 $indice = $i + 1;
@@ -351,11 +352,11 @@ if($error == null) {
                     }
                 }
             }
-
+            
             $db->commit();
-
+            
             $logger->info("Creation d'une annonce -- FIN DES REQ");
-
+            
             // On complete les valeurs pour session
             $_SESSION['flash'] = array('Success', "Annonce créée avec succès </br> Pensez à activer votre annonce");
             header("Location:" . getenv("URL_APP") . "/src/pages/compteProprietaire.php");
