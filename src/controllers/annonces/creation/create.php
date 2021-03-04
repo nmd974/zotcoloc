@@ -30,8 +30,7 @@ a_louer_
 
  */
 
-// TODO: faire une requete de recuperation du nombre de regles et equipements et villes pour donner la limite
-require_once(dirname(dirname(dirname(__DIR__))).'/libs/session/session.php');
+require_once(dirname(dirname(dirname(__DIR__))).'/includes/Layout/header.php');
 require_once(__ROOT__ . '/src/class/Connection.php');
 require(__ROOT__ . '/src/libs/gestionLogs.php');
 // TODO : Modifier la localisation du dossier imageControl dans le dossier libs
@@ -56,12 +55,20 @@ foreach($inputRequired as $value){
 if(!isset($_POST['aides_logement'])){
     $_POST['aides_logement'] = 0;
 };
-if($_POST['ville']){
-    $_POST['aides_logement'] = 0;
+if(!isset($_POST['meuble'])){
+    $_POST['meuble'] = 0;
 };
 
 $logger->info("Creation d'une annonce -- VERIF SERVEUR OK");
 if($error == null) {
+    //Verification de la saisie du type de logement
+    if($_POST['type_logement'] != "Appartement" || $_POST['type_logement'] != "Villa" || $_POST['type_logement'] != "Maison"){
+        $_POST['type_logement'] != "Maison";
+    }
+    //Verification de la saisie du type de PROFIL
+    if($_POST['profil'] != "eccbc87e4b5ce2fe28308fd9f2a7baf3" || $_POST['profil'] != "c81e728d9d4c2f636f067f89cc14862c" || $_POST['profil'] != "c4ca4238a0b923820dcc509a6f75849b"){
+        $_POST['profil'] != "eccbc87e4b5ce2fe28308fd9f2a7baf3";
+    }
     //Coup de sanytol sur les données des formulaires
 
     $data = [
@@ -80,7 +87,7 @@ if($error == null) {
             return htmlspecialchars($value, ENT_QUOTES);
         }
     ];
-    // TODO : le digit en sanitize si string ca remplace par du vide
+    //le digit en sanitize si string ca remplace par du vide
     $filters = [
         'titre_logement' => 'trim|escape|capitalize|htmlspecialchars',
         'description_logement' => 'trim|escape|capitalize|htmlspecialchars',
@@ -91,13 +98,13 @@ if($error == null) {
         'age_max' => 'trim|digit|htmlspecialchars',
         'age_min' => 'trim|digit|htmlspecialchars'
     ];
-    
+
+
     $sanitizer = new Sanitizer($data, $filters,  $customFilter);
     $data_sanitized = $sanitizer->sanitize();
     if($data_sanitized['ville'] == 0){
-        $data_sanitized['ville'] = 1; //Si 0 alors tentative de modification de la value on met alors 
+        $data_sanitized['ville'] = 4; //Si 0 alors tentative de modification de la value on met alors St denis
     }
-// TODO : Faille via les id en input mettre en sanitize
     $logger->info("Creation d'une annonce -- SANITIZE OK");
 
     //Connexion à la BDD
@@ -108,6 +115,19 @@ if($error == null) {
         try{
             $db->beginTransaction();
             
+            //Verification des villes
+            $query = $db->query("SELECT * FROM `villes`");
+            $data_villes = $query->fetchAll(PDO::FETCH_OBJ);
+            foreach($data_villes as $data_ville){
+                $list_villes[] = $data_ville->id;
+            }
+            if(in_array($data_sanitized['ville'], $list_villes)){
+                $logger->info("Creation d'une annonce -- VERIFICATION VILLE OK");
+            }else{
+                $data_sanitized['ville'] = 4;
+                $logger->alert("Creation d'une annonce -- ID VILLE NON TROUVE");
+            }
+
             //AJOUT TABLE LOGEMENTS
             $query = 'INSERT INTO `logements`(`id_logement`, `id_profil`, `id_ville`, `id_utilisateur`, `titre_logement`, `description_logement`, `surface_logement`, `meuble`, `eligible_aides`, `age_max`, `age_min`, `type_logement`)
             VALUES (:id_logement, :id_profil, :id_ville, :id_utilisateur, :titre_logement, :description_logement, :surface_logement, :meuble, :eligible_aides, :age_max, :age_min, :type_logement)';
@@ -159,7 +179,6 @@ if($error == null) {
                     'frais_dossier' => $_POST['frais_dossier'][$i],
                     'a_louer' => $_POST['a_louer_'.$indice]
                 ];
-                // $logger->info($_POST['a_louer_'.$indice]);
                 $filters = [
                     'titre_chambre' => 'trim|escape|capitalize|htmlspecialchars',
                     'description_chambre' => 'trim|escape|capitalize|htmlspecialchars',
@@ -176,12 +195,7 @@ if($error == null) {
 
                 $sanitizer = new Sanitizer($data, $filters,  $customFilter);
                 $data_sanitized = $sanitizer->sanitize();
-                // foreach($data_sanitized as $value){
-                //     $logger->info($value);
-                // }
-                // foreach($_POST as $value){
-                //     $logger->info($value);
-                // }
+
                 //AJOUT TABLE CHAMBRE
                 $query = 'INSERT INTO `chambres`(`id_chambre`, `id_logement`, `titre_chambre`, `description_chambre`, `surface_chambre`, `type_chambre`, `a_louer`, `date_disponibilite`, `duree_bail`, `loyer`, `charges`, `caution`, `frais_dossier`)
                 VALUES (:id_chambre, :id_logement, :titre_chambre, :description_chambre, :surface_chambre, :type_chambre, :a_louer, :date_disponibilite, :duree_bail, :loyer, :charges, :caution, :frais_dossier)';
@@ -235,10 +249,7 @@ if($error == null) {
             //GESTION DES PHOTOS DES CHAMBRES
             // TODO : lorsde l'ajout d'une nouvelle chambre on ajoute les regles associees et si pas rempli alors l'utilisateur devra supprimer le bloc ainsi que pour les photos
             $nb_chambre = count($_POST['titre_chambre']);
-            // $indice = $i + 1;
             for ($i=1; $i <= $nb_chambre; $i++) { 
-                // $indice = $i + 1;
-                // TODO : faire un vardumpdu files pour verifier le bug des photos
                 $indice_nb_photo = count($_FILES['photos_chambre_'.$i]['name']);
                 for ($i2=0; $i2 <= $indice_nb_photo; $i2++) { 
                     $ajoutImage = controleImageArray($_FILES['photos_chambre_'.$i], $i2);
@@ -269,44 +280,69 @@ if($error == null) {
             }
 
             //GESTION DES REGLES LOGEMENT
+            //On recupere la liste des regles afin de verifier si un malin n'a pas modifié les valeurs
+            //Si oui alors on n'ajoute pas la regle
+            $query = $db->query("SELECT * FROM `regles`");
+            $data_regles = $query->fetchAll(PDO::FETCH_OBJ);
+            foreach($data_regles as $data_regle){
+                $list_regles[] = $data_regle->id;
+            }
             foreach($_POST['regles'] as $regle){
-                $query = 'INSERT INTO `regle_logement`(`id_logement`, `id_regle`)
-                VALUES (:id_logement, :id_regle)';
-                $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
-                $sth->execute(array(
-                    ':id_logement' => $id_logement,
-                    ':id_regle' => $regle
-                ));
-                $logger->info("Creation d'une annonce -- TABLE REGLES LOGEMENT OK");
+                if(in_array($regle, $list_regles)){
+                    $query = 'INSERT INTO `regle_logement`(`id_logement`, `id_regle`)
+                    VALUES (:id_logement, :id_regle)';
+                    $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+                    $sth->execute(array(
+                        ':id_logement' => $id_logement,
+                        ':id_regle' => $regle
+                    ));
+                    $logger->info("Creation d'une annonce -- TABLE REGLES LOGEMENT OK");
+                }else{
+                    $logger->alert("Creation d'une annonce -- TABLE REGLES LOGEMENT -- aucun id ne correspond");
+                }
             }
 
             //GESTION DES EQUIPEMENTS LOGEMENT
+            //On recupere la liste des equipements afin de verifier si un malin n'a pas modifié les valeurs
+            //Si oui alors on n'ajoute pas l'equipement
+            $query = $db->query("SELECT * FROM `equipements`");
+            $data_equipements = $query->fetchAll(PDO::FETCH_OBJ);
+            foreach($data_equipements as $data_equipement){
+                $list_equipements[] = $data_equipement->id;
+            }
+
             foreach($_POST['equipements_logement'] as $equipement){
-                $query = 'INSERT INTO `equipement_logement`(`id_logement`, `id_equipement`)
-                VALUES (:id_logement, :id_equipement)';
-                $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
-                $sth->execute(array(
-                    ':id_logement' => $id_logement,
-                    ':id_equipement' => $equipement
-                ));
-                $logger->info("Creation d'une annonce -- TABLE EQUIPEMENTS LOGEMENT OK");
+                if(in_array($equipement, $list_equipements)){
+                    $query = 'INSERT INTO `equipement_logement`(`id_logement`, `id_equipement`)
+                    VALUES (:id_logement, :id_equipement)';
+                    $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+                    $sth->execute(array(
+                        ':id_logement' => $id_logement,
+                        ':id_equipement' => $equipement
+                    ));
+                    $logger->info("Creation d'une annonce -- TABLE EQUIPEMENTS LOGEMENT OK");
+                }else{
+                    $logger->alert("Creation d'une annonce -- TABLE EQUIPEMENTS LOGEMENT -- aucun id ne correspond");
+                }
+
             }
 
             //GESTION DES EQUIPEMENTS DES CHAMBRES
             for ($i=0; $i <= $nb_chambre; $i++) { 
                 $indice = $i + 1;
-                // return $data['equipements_chambre_'.$indice];
                 foreach($_POST['equipements_chambre_'.$indice] as $eqtChambre){
-                    // TODO: mettre la verification si l'id de l'equipement existe sinon on n'ajoute pas
-                    //TODO : Verifier la date si elle existe et
-                    $query = 'INSERT INTO `equipement_chambre`(`id_chambre`, `id_equipement`)
-                    VALUES (:id_chambre, :id_equipement)';
-                    $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
-                    $sth->execute(array(
-                        ':id_chambre' => $list_id_chambre[$i],
-                        ':id_equipement' => $eqtChambre
-                    ));
-                    $logger->info("Creation d'une annonce -- TABLE EQUIPEMENTS CHAMBRE OK");
+                    if(in_array($eqtChambre, $list_equipements)){
+                        $query = 'INSERT INTO `equipement_chambre`(`id_chambre`, `id_equipement`)
+                        VALUES (:id_chambre, :id_equipement)';
+                        $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+                        $sth->execute(array(
+                            ':id_chambre' => $list_id_chambre[$i],
+                            ':id_equipement' => $eqtChambre
+                        ));
+                        $logger->info("Creation d'une annonce -- TABLE EQUIPEMENTS CHAMBRE OK");
+                    }else{
+                        $logger->alert("Creation d'une annonce -- TABLE EQUIPEMENTS CHAMBRE -- aucun id ne correspond");
+                    }
                 }
             }
 

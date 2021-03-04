@@ -197,6 +197,14 @@ document.getElementById('enregistrer_annonce').addEventListener('click', (e) => 
     }
 })
 
+//Blocage de l'appuie sur la touche entrée
+$("#create_annonce").keypress(function(e) {
+    //Enter key
+    if (e.which == 13) {
+      return false;
+    }
+});
+
 
 // //Gestion des retour en arriere
 // //Retour vers step 1
