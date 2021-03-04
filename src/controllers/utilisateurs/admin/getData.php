@@ -21,7 +21,7 @@ if($db){
         INNER JOIN `photos` ON photos.id = photo_utilisateur.id_photo
         WHERE photo_utilisateur.id_utilisateur = '$id'
         ");
-        $regles = $query->fetchAll(PDO::FETCH_OBJ);
+        $ma_photo = $query->fetchAll(PDO::FETCH_OBJ);
         $logger->info("Recuperation des donnees admin -- TABLE PHOTOS OK");
 
         //RECUPERATION DE LA LISTE DES VILLES

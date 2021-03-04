@@ -582,9 +582,7 @@ em{
     .form-modal{
         width:100%;
     }
-    i{
-        display: none!important;
-    }
+
     #footer-center{
         justify-content: center;
     }
