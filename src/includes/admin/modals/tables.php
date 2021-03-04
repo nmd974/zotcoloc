@@ -6,7 +6,7 @@
                 <h5 class="modal-title" id="create_eqtLabel">Ajouter un équipement</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/controllers/tables/equipements/create.php'?>">
+            <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/src/controllers/tables/equipements/create.php'?>">
                 <div class="modal-body">
                     <div class="form-floating">
                         <input type="text" class="form-control" name="libelle_equipement">
@@ -29,7 +29,7 @@
                 <h5 class="modal-title" id="create_relgeLabel">Ajouter un équipement</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/controllers/tables/regles/create.php'?>">
+            <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/src/controllers/tables/regles/create.php'?>">
                 <div class="modal-body">
                     <div class="form-floating">
                         <input type="text" class="form-control" name="libelle_regle">
@@ -52,7 +52,7 @@
                 <h5 class="modal-title" id="create_villeLabel">Ajouter une ville</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/controllers/tables/villes/create.php'?>">
+            <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/src/controllers/tables/villes/create.php'?>">
                 <div class="modal-body">
                     <div class="form-floating">
                         <input type="text" class="form-control" name="libelle_ville" required>
