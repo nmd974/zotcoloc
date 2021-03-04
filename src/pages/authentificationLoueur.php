@@ -21,22 +21,22 @@
                 <!--Nom-->
                 <div class="col-md-12 mb-3 mt-5">
                     <label for="nom_proprietaire" class="form-label">Nom*</label><br>
-                    <input type="text" name="nom_proprietaire" class="form-control" id="nom_proprietaire" value="<?= $_POST['nom_proprietaire']?: htmlspecialchars($_POST['nom_proprietaire'], ENT_QUOTES);?>">
+                    <input type="text" name="nom_proprietaire" class="form-control" id="nom_proprietaire" value="<?= isset($_POST['nom_proprietaire']) ?: htmlspecialchars($_POST['nom_proprietaire'], ENT_QUOTES);?>">
                 </div>
                 <!--Prenom-->
                 <div class="col-md-12 mb-3">
                     <label for="prenom_proprietaire" class="form-label">Prénom*</label><br>
-                    <input type="text" name="prenom_proprietaire" class="form-control" id="prenom_proprietaire" value="<?= $_POST['prenom_proprietaire']?: htmlspecialchars($_POST['prenom_proprietaire'], ENT_QUOTES);?>">
+                    <input type="text" name="prenom_proprietaire" class="form-control" id="prenom_proprietaire" value="<?= isset($_POST['prenom_proprietaire']) ?: htmlspecialchars($_POST['prenom_proprietaire'], ENT_QUOTES);?>">
                 </div>
                 <!--téléphone-->
                 <div class="col-md-12 mb-3">
                     <label for="telephone" class="form-label">Téléphone*</label>
-                    <input type="tel" class="form-control" id="telephone" name="telephone" value="<?= $_POST['telephone']?: htmlspecialchars($_POST['telephone'], ENT_QUOTES);?>">
+                    <input type="tel" class="form-control" id="telephone" name="telephone" value="<?= isset($_POST['telephone']) ?: htmlspecialchars($_POST['telephone'], ENT_QUOTES);?>">
                 </div>
                 <!--Email-->
                 <div class="col-md-12 mb-3">
                     <label for="email" class="form-label">Email*</label>
-                    <input type="email" class="form-control" id="email" name="email" value="<?= $_POST['email']?: htmlspecialchars($_POST['email'], ENT_QUOTES);?>">
+                    <input type="email" class="form-control" id="email" name="email" value="<?= isset($_POST['email']) ?: htmlspecialchars($_POST['email'], ENT_QUOTES);?>">
                     <em id="valid_email"></em>
                 </div>
                 <!--mot passe-->
