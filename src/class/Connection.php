@@ -1,5 +1,6 @@
 <?php 
 //connexion bdd
+
  class Connection{
 
     public static function getPDO (): PDO

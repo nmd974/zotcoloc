@@ -37,58 +37,50 @@ if(window.innerWidth <= 426){
 const sidebarBtn = document.querySelectorAll('.sidebar_item');
 const title_haut = document.getElementById('title_haut');
 const title_bas = document.getElementById('title_bas');
-let precedentEl = "profilNav";
-document.getElementById('profilNav_content').classList.remove("unshow_step");
+let precedentEl = "tables_tab";
+document.getElementById('tables_tab_content').classList.remove("unshow_step");
 sidebarBtn.forEach(element => {
   element.addEventListener("click", (e) => {
     switch (e.target.id) {
-      case "profilNav":
-      title_haut.innerHTML = "mon profil"
-      title_bas.innerHTML = `Gérer mon:<span class="text-green"> profil</span>`
+      case "tables_tab":
+      title_haut.innerHTML = "Administration du site"
+      title_bas.innerHTML = `Gestion des<span class="text-green"> tables</span>`
       if(precedentEl !== e.target.id){
         document.getElementById(`${e.target.id}_content`).classList.remove("unshow_step");
         document.getElementById(`${precedentEl}_content`).classList.add("unshow_step");
         precedentEl = e.target.id;
       }
       break;
-      case "dashboardNav":
-      title_haut.innerHTML = "mon tableau de bord"
-      title_bas.innerHTML = `Informations<span class="text-green"> générales</span>`
+      case "utilisateurs_tab":
+      title_haut.innerHTML = "Administration du site"
+      title_bas.innerHTML = `Gestion des<span class="text-green"> utilisateurs</span>`
       if(precedentEl !== e.target.id){
         document.getElementById(`${e.target.id}_content`).classList.remove("unshow_step");
         document.getElementById(`${precedentEl}_content`).classList.add("unshow_step");
         precedentEl = e.target.id;
       }
       break;
-      case "favorisNav":
-      title_haut.innerHTML = "mon tableau de bord"
-      title_bas.innerHTML = `Mes annonces en attente de<span class="text-green"> validation</span>`
+      case "annonces_tab":
+      title_haut.innerHTML = "Administration du site"
+      title_bas.innerHTML = `Gestion des<span class="text-green"> annonces</span>`
       if(precedentEl !== e.target.id){
         document.getElementById(`${e.target.id}_content`).classList.remove("unshow_step");
         document.getElementById(`${precedentEl}_content`).classList.add("unshow_step");
         precedentEl = e.target.id;
       }
       break;
-      case "candidatureNav":
-      title_haut.innerHTML = "mon tableau de bord"
-      title_bas.innerHTML = `Les<span class="text-green"> candidatures</span> a mes annonces`
+      case "logs_tab":
+      title_haut.innerHTML = "Administration du site"
+      title_bas.innerHTML = `Affichage des<span class="text-green"> logs internes</span>`
       if(precedentEl !== e.target.id){
         document.getElementById(`${e.target.id}_content`).classList.remove("unshow_step");
         document.getElementById(`${precedentEl}_content`).classList.add("unshow_step");
         precedentEl = e.target.id;
       }
       break;
-      case "annonceNav":
-      title_haut.innerHTML = "mon tableau de bord"
-      title_bas.innerHTML = `Mes<span class="text-green"> annonces</span>`
-      if(precedentEl !== e.target.id){
-        document.getElementById(`${e.target.id}_content`).classList.remove("unshow_step");
-        document.getElementById(`${precedentEl}_content`).classList.add("unshow_step");
-        precedentEl = e.target.id;
-      }
-      break;
+
       default:
-      title_haut.innerHTML = "mon profil"
+      title_haut.innerHTML = "Administration du site"
       title_bas.innerHTML = `Gérer mon:<span class="text-green"> profil</span>`
       if(precedentEl !== e.target.id){
         document.getElementById(`${e.target.id}_content`).classList.remove("unshow_step");
