@@ -91,7 +91,7 @@
             <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/src/controllers/tables/equipements/update.php'?>">
                 <div class="modal-body">
                     <div class="form-floating">
-                        <input type="text" name="libelle_equipement" value="<?= $equipement->libelle_equipement?>" required>
+                        <input type="text" class="form-control" name="libelle_equipement" value="<?= $equipement->libelle_equipement?>" required>
                         <label for="libelle_equipement">Nom de l'équipement <span class="text-danger">*</span></label>
                     </div>
                     <input type="hidden" name="id_equipement" value="<?= $equipement->id?>">
@@ -141,7 +141,7 @@
             <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/controllers/tables/regles/update.php'?>">
                 <div class="modal-body">
                     <div class="form-floating">
-                        <input type="text" name="libelle_regle" value="<?= $regle->libelle_regle?>" required>
+                        <input type="text" class="form-control" name="libelle_regle" value="<?= $regle->libelle_regle?>" required>
                         <label for="libelle_regle">Nom de la règle <span class="text-danger">*</span></label>
                     </div>
                     <input type="hidden" name="id_regle" value="<?= $regle->id?>">
@@ -191,7 +191,7 @@
             <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/controllers/tables/villes/update.php'?>">
                 <div class="modal-body">
                     <div class="form-floating">
-                        <input type="text" name="libelle_ville" value="<?= $ville->libelle_ville?>" required>
+                        <input type="text" class="form-control" name="libelle_ville" value="<?= $ville->libelle_ville?>" required>
                         <label for="libelle_ville">Nom de la ville <span class="text-danger">*</span></label>
                     </div>
                     <input type="hidden" name="id_ville" value="<?= $ville->id?>">
