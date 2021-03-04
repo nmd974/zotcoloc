@@ -16,6 +16,15 @@ if($db){
         $regles = $query->fetchAll(PDO::FETCH_OBJ);
         $logger->info("Recuperation des donnees admin -- TABLE REGLES OK");
 
+        //RECUPERATION DE LA LISTE DES PHOTOS
+        $id = $_SESSION["id_utilisateur"];
+        $query = $db->query("SELECT * FROM `photo_utilisateur` 
+        INNER JOIN `photos` ON photos.id = photo_utilisateur.id_photo
+        WHERE photo_utilisateur.id_utilisateur = '$id'
+        ");
+        $regles = $query->fetchAll(PDO::FETCH_OBJ);
+        $logger->info("Recuperation des donnees admin -- TABLE PHOTOS OK");
+
         //RECUPERATION DE LA LISTE DES VILLES
         $query = $db->query("SELECT * FROM `villes`");
         $villes = $query->fetchAll(PDO::FETCH_OBJ);

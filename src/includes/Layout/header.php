@@ -1,5 +1,6 @@
 <?php require_once(dirname(dirname(__DIR__)).'/libs/session/session.php'); ?>
 <?php var_dump($_SESSION['role'] == "administrateur");?>
+<?php var_dump($_SESSION['isLoggedIn']);?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -115,7 +116,7 @@
                             <?php endif; ?>
                             <?php if($_SESSION['isLoggedIn'] && $_SESSION['role'] == "administrateur"):?>
                             <li class="nav-item">
-                                <a href="./compteProprietaire.php" class="nav-link active" aria-current="page">Mon compte</a>
+                                <a href="./admin.php" class="nav-link active" aria-current="page">Mon compte</a>
                             </li>
                             <?php endif; ?>
                             <?php if(!$_SESSION['isLoggedIn']):?>

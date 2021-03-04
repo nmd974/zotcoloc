@@ -10,7 +10,7 @@ if(!$_SESSION['isLoggedIn'] || $_SESSION['role'] != "administrateur"){
 <?php require_once(dirname(__DIR__).'/includes/admin/sidebar.php');?>
 
 <?php if(isset($_POST['save_photo_user'])):?>
-  <?php if(empty($ma_photo[1])):?>
+  <?php if(empty($ma_photo)):?>
       <?php $ajout_photo = photoUtilisateur($_FILES['image_upload'], $_SESSION['id_utilisateur'], '');?>
         <?php $ma_photo = Photos::photosByIdUser($_SESSION['id_utilisateur']);?>
       <?php else: ?>
