@@ -33,7 +33,7 @@ a_louer_
 // TODO: faire une requete de recuperation du nombre de regles et equipements et villes pour donner la limite
 require_once(dirname(dirname(dirname(__DIR__))).'/libs/session/session.php');
 require_once(__ROOT__ . '/src/class/Connection.php');
-require_once(__ROOT__ . '/src/libs/gestionLogs.php');
+require(__ROOT__ . '/src/libs/gestionLogs.php');
 // TODO : Modifier la localisation du dossier imageControl dans le dossier libs
 require_once(__ROOT__.'/src/controllers/imageControl.php');
 use \Waavi\Sanitizer\Sanitizer;
@@ -204,8 +204,6 @@ if($error == null) {
                     $logger->alert("Creation d'une annonce -- Erreur lors de l'ajout de l'image logement");
                 }else{
                     $id_photo = md5(uniqid(rand(), true));
-                    $logger->info($ajoutImage[0]);
-                    $logger->info($ajoutImage[1]);
                     //AJOUT TABLE PHOTOS GENERALE
                     $query = 'INSERT INTO `photos`(`id`, `libelle_photo`)
                     VALUES (:id, :libelle_photo)';
@@ -239,8 +237,6 @@ if($error == null) {
                         $logger->alert("Creation d'une annonce -- Erreur lors de l'ajout de l'image chambre");
                     }else{
                         $id_photo = md5(uniqid(rand(), true));
-                        $logger->info($id_photo);
-                        $logger->info($ajoutImage);
                         //AJOUT TABLE PHOTOS GENERALE
                         $query = 'INSERT INTO `photos`(`id`, `libelle_photo`)
                         VALUES (:id, :libelle_photo)';

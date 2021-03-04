@@ -2,6 +2,7 @@
 
     function controleImageArray($image_upload, $indiceArray)//On renvoie dans un tableau l'erreur et le message d'erreur ou l'erreur et le nom de l'image
     {
+        require(dirname(__DIR__) . '/libs/gestionLogs.php');
         $error = false;
         $fileName = $image_upload['name'][$indiceArray]; //On met dans une variable le nom de l'image pour vérifier si l'utilisateur a ajouté une
         $validExt = array('.jpg', '.jpeg', '.gif', '.png'); //On spécifie les extensions que l'on souhaite prendre
