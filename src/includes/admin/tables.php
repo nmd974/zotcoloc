@@ -44,7 +44,7 @@
             </div>
         </div>
         <div class="tab-pane fade" id="nav-regles" role="tabpanel" aria-labelledby="nav-regles-tab">
-            <button type="button" class="btn btn-success me-4" data-bs-toggle="modal" data-bs-target="#create_regle">
+            <button type="button" class="btn btn-success me-4 mt-5" data-bs-toggle="modal" data-bs-target="#create_regle">
                 <i class="fa fa-plus" aria-hidden="true"></i> Ajouter une règle
             </button>
             <div class="table-responsive">
@@ -80,7 +80,7 @@
             </div>
         </div>
         <div class="tab-pane fade" id="nav-villes" role="tabpanel" aria-labelledby="nav-villes-tab">
-            <button type="button" class="btn btn-success me-4" data-bs-toggle="modal" data-bs-target="#create_ville">
+            <button type="button" class="btn btn-success me-4 mt-5" data-bs-toggle="modal" data-bs-target="#create_ville">
                 <i class="fa fa-plus" aria-hidden="true"></i> Ajouter une ville
             </button>
             <div class="table-responsive">
