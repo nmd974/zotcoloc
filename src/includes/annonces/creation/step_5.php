@@ -62,8 +62,8 @@
 
             <!--Photo de la chambre-->
             <div class="col-md-12 mt-3 d-flex flex-column">
-                <label for="photos_chambre">Ajoutez au moins une photo de la chambre</label>
-                <input type="file" id="photos_chambre" class="form-control-file" name="photos_chambre_1[]">
+                <label for="photos_chambre_1_1">Ajoutez au moins une photo de la chambre</label>
+                <input type="file" id="photos_chambre_1_1" class="form-control-file" name="photos_chambre_1[]">
             </div>
 
 
