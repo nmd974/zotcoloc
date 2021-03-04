@@ -1,4 +1,5 @@
 <?php require_once(dirname(dirname(__DIR__)).'/libs/session/session.php'); ?>
+<?php var_dump($_SESSION['role'] == "administrateur");?>
 <!DOCTYPE html>
 <html lang="en">
 
