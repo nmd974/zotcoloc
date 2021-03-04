@@ -174,7 +174,7 @@ if($error == null) {
                 foreach($_POST as $value){
                     $logger->info($value);
                 }
-                //AJOUT TABLE PROPRIETAIRE
+                //AJOUT TABLE CHAMBRE
                 $query = 'INSERT INTO `chambres`(`id_chambre`, `id_logement`, `titre_chambre`, `description_chambre`, `surface_chambre`, `type_chambre`, `a_louer`, `date_disponibilite`, `duree_bail`, `loyer`, `charges`, `caution`, `frais_dossier`)
                 VALUES (:id_chambre, :id_logement, :titre_chambre, :description_chambre, :surface_chambre, :type_chambre, :a_louer, :date_disponibilite, :duree_bail, :loyer, :charges, :caution, :frais_dossier)';
                 $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
