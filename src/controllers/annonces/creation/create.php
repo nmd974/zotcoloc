@@ -70,6 +70,7 @@ if($error == null) {
         'type_logement' => $_POST['type_logement'],
         'ville' => $_POST['ville'],
         'surface_logement' => $_POST['surface_logement'],
+        'aides_logement' => $_POST['aides_logement'],
         'age_max' => $_POST['age_max'],
         'age_min' => $_POST['age_min']
     ];
@@ -85,9 +86,10 @@ if($error == null) {
         'description_logement' => 'trim|escape|capitalize|htmlspecialchars',
         'type_logement' => 'trim|escape|capitalize|htmlspecialchars',
         'ville' => 'trim|escape|htmlspecialchars',
-        'surface_logement' => 'trim|escape|capitalize|htmlspecialchars|digit',
-        'age_max' => 'digit|htmlspecialchars',
-        'age_min' => 'digit|htmlspecialchars'
+        'surface_logement' => 'trim|escape|htmlspecialchars|digit',
+        'aides_logement' => 'trim|escape|htmlspecialchars|digit',
+        'age_max' => 'trim|digit|htmlspecialchars',
+        'age_min' => 'trim|digit|htmlspecialchars'
     ];
     
     $sanitizer = new Sanitizer($data, $filters,  $customFilter);
