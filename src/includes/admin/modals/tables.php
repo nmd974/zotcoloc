@@ -98,11 +98,11 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="edit_eqt_<?= $equipement->id?>" tabindex="-1" aria-labelledby="edit_eqt_<?= $equipement->id?>Label" aria-hidden="true">
+<div class="modal fade" id="delete_eqt_<?= $equipement->id?>" tabindex="-1" aria-labelledby="delete_eqt_<?= $equipement->id?>Label" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="edit_eqt_<?= $equipement->id?>Label">Suppression d'un équipement</h5>
+                <h5 class="modal-title" id="delete_eqt_<?= $equipement->id?>Label">Suppression d'un équipement</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/src/controllers/tables/equipements/delete.php'?>">
