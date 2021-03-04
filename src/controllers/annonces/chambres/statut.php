@@ -28,17 +28,17 @@ if($_GET['id']){
                 
                 //MODIFICATON TABLE LOGEMENTS
                 if($action == 1){
-                    $query = "UPDATE `chambres` SET `statut_chambre` = 'Active'
+                    $query = "UPDATE `chambres` SET `statut_chambre` = 'Active', `a_louer` = 1
                     WHERE `id_chambre` = :id";
                     $_SESSION['flash'] = array('Success', "Chambre activée avec succès");
                 }
                 if($action == 0){
-                    $query = "UPDATE `chambres` SET `statut_chambre` = 'Inactive'
+                    $query = "UPDATE `chambres` SET `statut_chambre` = 'Inactive', `a_louer` = 0
                     WHERE `id_chambre` = :id";
                     $_SESSION['flash'] = array('Success', "Chambre desactivée avec succès");
                 }
                 if($action == 2){
-                    $query = "UPDATE `chambres` SET `statut_chambre` = 'Supprimee'
+                    $query = "UPDATE `chambres` SET `statut_chambre` = 'Supprimee', `a_louer` = 0
                     WHERE `id_chambre` = :id";
                     $_SESSION['flash'] = array('Success', "Chambre supprimée avec succès");
                 }
@@ -52,25 +52,21 @@ if($_GET['id']){
                 
                 // On complete les valeurs pour session
                 header("Location:" . getenv("URL_APP") . "/src/pages/compte$role.php");
-                exit();
             }catch(PDOException $e){
                 $error = $e->getMessage();
                 $db->rollBack();
                 $logger->error("Echec du statut du logement -- $error");
                 $_SESSION['flash'] = array('Error', "Echec du statut du logement", "Erreur serveur");
                 header("Location:" . getenv("URL_APP") . "/src/pages/compte$role.php");
-                exit();
             }
         }else{
             $logger->alert("Echec lors de la modification de l\'annonce -- Impossible de se connecter à la base de données");
             $_SESSION['flash'] = array('Error', "Echec du statut du logement", "Erreur serveur");
             header("Location:" . getenv("URL_APP") . "/src/pages/compte$role.php");
-            exit();
         }
     }else{
         $logger->alert("Echec lors de la modification de l\'annonce -- Paramètres incorrects");
         $_SESSION['flash'] = array('Error', "Echec du statut du logement", "Paramètres incorrects");
         header("Location:" . getenv("URL_APP") . "/src/pages/compte$role.php");
-        exit();
     }
 }

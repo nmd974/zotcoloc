@@ -105,7 +105,7 @@ if(isset($_POST['id']) && isset($_POST['id_proprietaire'])){
                     if(count($chambres) > 0){
                         foreach($chambres as $chambre){
                             //RECUPERATION DES PHOTOS DE LA CHAMBRE
-                            $query = 'SELECT * FROM photo_chambre INNER JOIN `photos` ON photos.id = photo_logement.id_photo WHERE id_chambre = :id';
+                            $query = 'SELECT * FROM photo_chambre INNER JOIN `photos` ON photos.id = photo_chambre.id_photo WHERE id_chambre = :id';
                             $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
                             $sth->execute(array(
                                 ':id' => $chambre->id_chambre,
@@ -179,31 +179,62 @@ if(isset($_POST['id']) && isset($_POST['id_proprietaire'])){
                 }
             }
 
+            //SUPPRESSION TABLE PROPRIETAIRE
+            $query = 'DELETE FROM `proprietaire` WHERE id = :id';
+            $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+            $sth->execute(array(
+                ':id' => $id_proprietaire,
+            ));
+            $logger->info("Suppression d'un utilisateur -- TABLE PROPRIETAIRE SUCCESS");
+            //SUPPRESSION TABLE UTILISATEUR
+            $query = 'DELETE FROM `utilisateurs` WHERE id = :id';
+            $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+            $sth->execute(array(
+                ':id' => $id,
+            ));
+            $logger->info("Suppression d'un utilisateur -- TABLE UTILISATEUR SUCCESS");
             $db->commit();
             
             $logger->info("Suppression d'un proprietaire -- SUCCESS");
             // On complete les valeurs pour session
-            $_SESSION['flash'] = array('Success', "Compte supprimé avec succès");
-            unset($_SESSION['isLoggedIn']);
-            unset($_SESSION['role']);
-            unset($_SESSION['id_utilisateur']);
-            header("Location:" . getenv("URL_APP") . "/src/pages/home.php");
+            if($_SESSION['role'] != "administrateur"){
+                $_SESSION['flash'] = array('Success', "Compte supprimé avec succès");
+                unset($_SESSION['isLoggedIn']);
+                unset($_SESSION['role']);
+                unset($_SESSION['id_utilisateur']);
+                header("Location:" . getenv("URL_APP") . "/src/pages/home.php");
+            }else{
+                $_SESSION['flash'] = array('Success', "Compte supprimé avec succès");
+                header("Location:" . getenv("URL_APP") . "/src/pages/admin.php");
+            }
         }catch(PDOException $e){
             $error = $e->getMessage();
             $db->rollBack();
             $logger->error("Echec lors de la suppression de compte proprietaire -- $error");
             $_SESSION['flash'] = array('Error', "Echec lors de la suppression de compte");
-            header("Location:" . getenv("URL_APP") . "/src/pages/compteProprietaire.php");
+            if($_SESSION['role'] != "administrateur"){
+                header("Location:" . getenv("URL_APP") . "/src/pages/compteProprietaire.php");
+            }else{
+                header("Location:" . getenv("URL_APP") . "/src/pages/admin.php");
+            }
         }
     }else{
         $logger->alert("Echec lors de la suppression de compte -- Impossible de se connecter à la bdd");
         $_SESSION['flash'] = array('Error', "Echec lors de la suppression de compte");
-        header("Location:" . getenv("URL_APP") . "/src/pages/compteProprietaire.php");
+        if($_SESSION['role'] != "administrateur"){
+            header("Location:" . getenv("URL_APP") . "/src/pages/compteProprietaire.php");
+        }else{
+            header("Location:" . getenv("URL_APP") . "/src/pages/admin.php");
+        }
     }
 }else{
     $logger->alert("Echec lors de la suppression de compte -- Paramètres incorrects");
     $_SESSION['flash'] = array('Error', "Echec lors de la suppression de compte");
-    header("Location:" . getenv("URL_APP") . "/src/pages/compteProprietaire.php");
+    if($_SESSION['role'] != "administrateur"){
+        header("Location:" . getenv("URL_APP") . "/src/pages/compteProprietaire.php");
+    }else{
+        header("Location:" . getenv("URL_APP") . "/src/pages/admin.php");
+    }
 }
 
 require_once(dirname(__DIR__).'/includes/Layout/scriptsSrc.php');

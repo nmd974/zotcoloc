@@ -70,6 +70,7 @@ if($error == null) {
         'type_logement' => $_POST['type_logement'],
         'ville' => $_POST['ville'],
         'surface_logement' => $_POST['surface_logement'],
+        'aides_logement' => $_POST['aides_logement'],
         'age_max' => $_POST['age_max'],
         'age_min' => $_POST['age_min']
     ];
@@ -85,9 +86,10 @@ if($error == null) {
         'description_logement' => 'trim|escape|capitalize|htmlspecialchars',
         'type_logement' => 'trim|escape|capitalize|htmlspecialchars',
         'ville' => 'trim|escape|htmlspecialchars',
-        'surface_logement' => 'trim|escape|capitalize|htmlspecialchars|digit',
-        'age_max' => 'digit|htmlspecialchars',
-        'age_min' => 'digit|htmlspecialchars'
+        'surface_logement' => 'trim|escape|htmlspecialchars|digit',
+        'aides_logement' => 'trim|escape|htmlspecialchars|digit',
+        'age_max' => 'trim|digit|htmlspecialchars',
+        'age_min' => 'trim|digit|htmlspecialchars'
     ];
     
     $sanitizer = new Sanitizer($data, $filters,  $customFilter);
@@ -136,6 +138,13 @@ if($error == null) {
                 $id_chambre = md5(uniqid(rand(), true));
                 array_push($list_id_chambre, $id_chambre);
 
+                //Filtre sur les valeurs non obligatoire
+                if($_POST['type_chambre_'.$indice] != "Chambre principale" || $_POST['type_chambre_'.$indice] != "Chambre secondaire"){
+                    $_POST['type_chambre_'.$indice] = "Non renseigné";
+                }
+                if($_POST['a_louer_'.$indice] != "0" || $_POST['a_louer_'.$indice] != "1"){
+                    $_POST['a_louer_'.$indice] = "0";
+                }
                 //On sanytol les données
                 $data = [
                     'titre_chambre' => $_POST['titre_chambre'][$i],
@@ -149,7 +158,6 @@ if($error == null) {
                     'caution' => $_POST['caution'][$i],
                     'frais_dossier' => $_POST['frais_dossier'][$i],
                     'a_louer' => $_POST['a_louer_'.$indice]
-
                 ];
                 $logger->info($_POST['a_louer_'.$indice]);
                 $filters = [
