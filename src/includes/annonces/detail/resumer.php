@@ -52,7 +52,7 @@
                             LOUER CETTE CHAMBRE
                             </button>
                         <?php else:?>
-                            <p>Connecter vous pour contacter le propriétaire</p>
+                            <p class="mt-5"><a href="../../pages/seconnecter.php">Connectez vous</a> <br> pour contacter le propriétaire</p>
                         <?php endif;?> 
                     <?php endif;?>
                     <!-- <a href="#" class="btn bg-green text-light fw-bold letter-space mt-5">LOUER CETTE CHAMBRE</a> -->
