@@ -123,7 +123,7 @@
                             </li>
                             <?php else:?>
                             <li class="nav-item">
-                                <a href="../controllers/logout.php" class="nav-link active" aria-current="page"><i class="fa fa-power-off" aria-hidden="true"></i></a>
+                                <a href="../controllers/utilisateurs/logout.php" class="nav-link active" aria-current="page"><i class="fa fa-power-off" aria-hidden="true"></i></a>
                             </li>
                             <?php endif;?>
                         </ul>
