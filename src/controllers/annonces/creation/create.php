@@ -33,7 +33,7 @@ a_louer_
 // TODO: faire une requete de recuperation du nombre de regles et equipements et villes pour donner la limite
 require_once(dirname(dirname(dirname(__DIR__))).'/libs/session/session.php');
 require_once(__ROOT__ . '/src/class/Connection.php');
-require_once(__ROOT__ . '/src/libs/gestionLogs.php');
+require(__ROOT__ . '/src/libs/gestionLogs.php');
 // TODO : Modifier la localisation du dossier imageControl dans le dossier libs
 require_once(__ROOT__.'/src/controllers/imageControl.php');
 use \Waavi\Sanitizer\Sanitizer;
@@ -174,7 +174,7 @@ if($error == null) {
                 foreach($_POST as $value){
                     $logger->info($value);
                 }
-                //AJOUT TABLE PROPRIETAIRE
+                //AJOUT TABLE CHAMBRE
                 $query = 'INSERT INTO `chambres`(`id_chambre`, `id_logement`, `titre_chambre`, `description_chambre`, `surface_chambre`, `type_chambre`, `a_louer`, `date_disponibilite`, `duree_bail`, `loyer`, `charges`, `caution`, `frais_dossier`)
                 VALUES (:id_chambre, :id_logement, :titre_chambre, :description_chambre, :surface_chambre, :type_chambre, :a_louer, :date_disponibilite, :duree_bail, :loyer, :charges, :caution, :frais_dossier)';
                 $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));

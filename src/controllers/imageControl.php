@@ -1,7 +1,8 @@
 <?php
-//array(1) { ["photos_logement"]=> array(5) { ["name"]=> array(2) { [0]=> string(36) "icons8-team-seDjj4dmC9s-unsplash.jpg" [1]=> string(48) "benjaminrobyn-jespersen-Ai9_QJaZfMc-unsplash.jpg" } ["type"]=> array(2) { [0]=> string(10) "image/jpeg" [1]=> string(10) "image/jpeg" } ["tmp_name"]=> array(2) { [0]=> string(45) "C:\Users\jhapa\AppData\Local\Temp\phpA4D5.tmp" [1]=> string(45) "C:\Users\jhapa\AppData\Local\Temp\phpA4D6.tmp" } ["error"]=> array(2) { [0]=> int(0) [1]=> int(0) } ["size"]=> array(2) { [0]=> int(32033) [1]=> int(1970394) } } }
+
     function controleImageArray($image_upload, $indiceArray)//On renvoie dans un tableau l'erreur et le message d'erreur ou l'erreur et le nom de l'image
     {
+        require(dirname(__DIR__) . '/libs/gestionLogs.php');
         $error = false;
         $fileName = $image_upload['name'][$indiceArray]; //On met dans une variable le nom de l'image pour vérifier si l'utilisateur a ajouté une
         $validExt = array('.jpg', '.jpeg', '.gif', '.png'); //On spécifie les extensions que l'on souhaite prendre
@@ -9,11 +10,13 @@
         if(!in_array("." . $fileExt, $validExt))//On recherche dans le tableau des extensions valides si l'extension du fichier ajouté correspond
             { 
                 $error = true;
+                $logger->alert("Fonction ajout photo -- ERREUR 1");
                 return array($error, '<div class="alert alert-danger">Le fichier n\'est pas une image !!</div>');
             }
         if($image_upload['error'][$indiceArray] > 0)//On verifie dans la variable $_FILES s'il n'y a pas d'erreur interne
             {
                 $error = true;
+                $logger->alert("Fonction ajout photo -- ERREUR 2");
                 return array($error, '<div class="alert alert-danger">Erreur survenue lors du transfert de l\'image</div>'); //Si oui alors on arrete la fonction et on affiche qu'il y a eu une erreur lors du transfert
             }
         $maxSize = 10485760; //On spécifie ici la taille maximale de l'image en bytes ici equivalent à 10mo 10485760
@@ -21,6 +24,7 @@
         if($fileSize > $maxSize) //Taille de l'image doit être < à $maxSize
             {
                 $error = true;
+                $logger->alert("Fonction ajout photo -- ERREUR 3");
                 return array($error, '<div class="alert alert-danger"> Le fichier est trop lourd !!</div>'); //Si trop lourd alors on envoie le message que le fichier est trop lourd
             }
         if(!$error){
@@ -31,6 +35,7 @@
             $image_upload[$indiceArray] = $idName . "." . $fileExt; //On attribue dans la superglobale $_POST le nom de l'image qui ira dans le tableau
             $resultat = move_uploaded_file($tmpName, $fileDir);
             if($resultat){
+                $logger->alert("Fonction ajout photo -- Pas d'erreur");
                 return array($error, $image_upload[$indiceArray]);//On retourne le nom de l'image pour enregistrement
             }
         }

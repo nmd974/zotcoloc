@@ -5,6 +5,13 @@ require_once(__ROOT__.'/src/class/Connection.php');
 require_once(__ROOT__ . '/src/libs/gestionLogs.php');
 use \Waavi\Sanitizer\Sanitizer;
 
+if($_SESSION['role'] != "administrateur"){
+    $logger->alert("Creation d'un equipement -- Tentative d'accès sans être administrateur");
+    $_SESSION['flash'] = array('Error', "Veuillez vous connecter pour effectuer cette action");
+    header("Location:" . getenv("URL_APP") . "/src/pages/home.php");
+    exit();
+}
+
 $error = null;
 
 //Validation des données cote serveur + securite specialchars
