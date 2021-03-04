@@ -1,3 +1,5 @@
+<!-- ZONE CREATION -->
+<!-- *******************************************************************************************************************************-->
 <!-- TABLE CREATE EQUIPEMENT -->
 <div class="modal fade" id="create_eqt" tabindex="-1" aria-labelledby="create_eqtLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -71,8 +73,12 @@
         </div>
     </div>
 </div>
+<!-- *******************************************************************************************************************************-->
 
+<!-- *******************************************************************************************************************************-->
+<!-- ZONE UPDATE AND DELETE -->
 <!-- TABLE EQUIPEMENT -->
+<!-- *******************************************************************************************************************************-->
 <?php if(count($equipements) != 0):?>
 <?php foreach($equipements as $equipement):?>
 <div class="modal fade" id="edit_eqt_<?= $equipement->id?>" tabindex="-1" aria-labelledby="edit_eqt_<?= $equipement->id?>Label" aria-hidden="true">
@@ -98,6 +104,7 @@
         </div>
     </div>
 </div>
+<!-- *******************************************************************************************************************************-->
 <div class="modal fade" id="delete_eqt_<?= $equipement->id?>" tabindex="-1" aria-labelledby="delete_eqt_<?= $equipement->id?>Label" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -128,7 +135,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="edit_regles_<?= $regle->id?>Label">Modifier un équipement</h5>
+                <h5 class="modal-title" id="edit_regles_<?= $regle->id?>Label">Modifier une règle</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/controllers/tables/regles/update.php'?>">
@@ -138,7 +145,6 @@
                         <label for="libelle_regle">Nom de la règle <span class="text-danger">*</span></label>
                     </div>
                     <input type="hidden" name="id_regle" value="<?= $regle->id?>">
-                    <input type="hidden" name="role" value="<?=$_SESSION['role']?>">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
@@ -148,13 +154,34 @@
         </div>
     </div>
 </div>
+<!-- *******************************************************************************************************************************-->
+<div class="modal fade" id="delete_regle_<?= $regle->id?>" tabindex="-1" aria-labelledby="delete_regle_<?= $regle->id?>Label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="delete_regle_<?= $regle->id?>Label">Supprimer une règle</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/controllers/tables/regles/delete.php'?>">
+                <div class="modal-body">
+                    <p>Confirmez vous la suppression de la règle : "<?= $regle->libelle_regle ?>"</p> 
+                    <input type="hidden" name="id_regle" value="<?= $regle->id?>">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
+                    <button type="submit" class="btn btn-success" name="update">Supprimer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 <?php endforeach;?>
 <?php endif;?>
 
-<!-- TABLE REGLES -->
+<!-- TABLE VILLES -->
 <?php if(count($villes) != 0):?>
 <?php foreach($villes as $ville):?>
-<div class="modal fade" id="edit_ville<?= $ville->id?>" tabindex="-1" aria-labelledby="edit_ville<?= $ville->id?>Label" aria-hidden="true">
+<div class="modal fade" id="edit_ville_<?= $ville->id?>" tabindex="-1" aria-labelledby="edit_ville<?= $ville->id?>Label" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -168,7 +195,6 @@
                         <label for="libelle_ville">Nom de la ville <span class="text-danger">*</span></label>
                     </div>
                     <input type="hidden" name="id_ville" value="<?= $ville->id?>">
-                    <input type="hidden" name="role" value="<?=$_SESSION['role']?>">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
@@ -178,5 +204,27 @@
         </div>
     </div>
 </div>
+<!-- *******************************************************************************************************************************-->
+<div class="modal fade" id="delete_ville_<?= $ville->id?>" tabindex="-1" aria-labelledby="delete_ville_<?= $ville->id?>Label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="delete_ville_<?= $ville->id?>Label">Supprimer une ville</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/controllers/tables/villes/delete.php'?>">
+                <div class="modal-body">
+                    <p>Confirmez vous la suppression de la ville : "<?= $ville->libelle_ville ?>"</p> 
+                    <input type="hidden" name="id_regle" value="<?= $ville->id?>">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
+                    <button type="submit" class="btn btn-success" name="update">Supprimer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 <?php endforeach;?>
 <?php endif;?>
+<!-- *******************************************************************************************************************************-->

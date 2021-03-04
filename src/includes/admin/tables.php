@@ -61,10 +61,10 @@
                         <tr>
                             <td class="align-middle"><?= ucfirst($regle->libelle_regle) ?></td>
                             <td class="align-middle">
-                                <button type="button" class="btn btn-success me-4" data-bs-toggle="modal" data-bs-target="#<?= "edit_regle" . $regle->id?>">
+                                <button type="button" class="btn btn-success me-4" data-bs-toggle="modal" data-bs-target="#<?= "edit_regle_" . $regle->id?>">
                                     <i class="fa fa-pencil" aria-hidden="true"></i>
                                 </button>
-                                <button type="button" class="btn btn-danger me-4" data-bs-toggle="modal" data-bs-target="#<?= "delete_regle" . $regle->id?>">
+                                <button type="button" class="btn btn-danger me-4" data-bs-toggle="modal" data-bs-target="#<?= "delete_regle_" . $regle->id?>">
                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                 </button>
                             </td>
@@ -97,10 +97,10 @@
                         <tr>
                             <td class="align-middle"><?= ucfirst($ville->libelle_ville) ?></td>
                             <td class="align-middle">
-                                <button type="button" class="btn btn-success me-4" data-bs-toggle="modal" data-bs-target="#<?= "edit_ville" . $ville->id?>">
+                                <button type="button" class="btn btn-success me-4" data-bs-toggle="modal" data-bs-target="#<?= "edit_ville_" . $ville->id?>">
                                     <i class="fa fa-pencil" aria-hidden="true"></i>
                                 </button>
-                                <button type="button" class="btn btn-danger me-4" data-bs-toggle="modal" data-bs-target="#<?= "delete_ville" . $ville->id?>">
+                                <button type="button" class="btn btn-danger me-4" data-bs-toggle="modal" data-bs-target="#<?= "delete_ville_" . $ville->id?>">
                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                 </button>
                             </td>
