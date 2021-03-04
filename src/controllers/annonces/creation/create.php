@@ -240,8 +240,8 @@ if($error == null) {
                 $indice = $i + 1;
                 // TODO : faire un vardumpdu files pour verifier le bug des photos
                 $indice_nb_photo = count($_FILES['photos_chambre_'.$indice]['name']);
-                for ($i=0; $i <= $indice_nb_photo; $i++) { 
-                    $ajoutImage = controleImageArray($_FILES['photos_chambre_'.$indice], $i);
+                for ($i2=0; $i2 <= $indice_nb_photo; $i2++) { 
+                    $ajoutImage = controleImageArray($_FILES['photos_chambre_'.$indice], $i2);
                     if($ajoutImage[0]){ //La fonction retourne true si erreur
                         $logger->alert("Creation d'une annonce -- Erreur lors de l'ajout de l'image chambre");
                     }else{
@@ -298,6 +298,7 @@ if($error == null) {
                 // return $data['equipements_chambre_'.$indice];
                 foreach($_POST['equipements_chambre_'.$indice] as $eqtChambre){
                     // TODO: mettre la verification si l'id de l'equipement existe sinon on n'ajoute pas
+                    //TODO : Verifier la date si elle existe et
                     $query = 'INSERT INTO `equipement_chambre`(`id_chambre`, `id_equipement`)
                     VALUES (:id_chambre, :id_equipement)';
                     $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));

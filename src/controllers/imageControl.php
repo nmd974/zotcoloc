@@ -5,18 +5,19 @@
         require(dirname(__DIR__) . '/libs/gestionLogs.php');
         $error = false;
         $fileName = $image_upload['name'][$indiceArray]; //On met dans une variable le nom de l'image pour vérifier si l'utilisateur a ajouté une
+        $logger->alert($image_upload['name'][$indiceArray]);
         $validExt = array('.jpg', '.jpeg', '.gif', '.png'); //On spécifie les extensions que l'on souhaite prendre
         $fileExt = strtolower(substr(strrchr($fileName, '.'), 1)); //On met en minuscule tout le nom du fichier puis à partir du . on récupère tout ce qu'il y a à la suite soit l'extension et on enregistre dans une nouvelle variable
         if(!in_array("." . $fileExt, $validExt))//On recherche dans le tableau des extensions valides si l'extension du fichier ajouté correspond
             { 
                 $error = true;
-                $logger->alert("Fonction ajout photo -- ERREUR 1");
+                $logger->alert("Fonction ajout photo -- ERREUR 1 Le fichier n'est pas une image");
                 return array($error, '<div class="alert alert-danger">Le fichier n\'est pas une image !!</div>');
             }
         if($image_upload['error'][$indiceArray] > 0)//On verifie dans la variable $_FILES s'il n'y a pas d'erreur interne
             {
                 $error = true;
-                $logger->alert("Fonction ajout photo -- ERREUR 2");
+                $logger->alert("Fonction ajout photo -- ERREUR 2 erreur dans le transfert");
                 return array($error, '<div class="alert alert-danger">Erreur survenue lors du transfert de l\'image</div>'); //Si oui alors on arrete la fonction et on affiche qu'il y a eu une erreur lors du transfert
             }
         $maxSize = 10485760; //On spécifie ici la taille maximale de l'image en bytes ici equivalent à 10mo 10485760
@@ -24,7 +25,7 @@
         if($fileSize > $maxSize) //Taille de l'image doit être < à $maxSize
             {
                 $error = true;
-                $logger->alert("Fonction ajout photo -- ERREUR 3");
+                $logger->alert("Fonction ajout photo -- ERREUR 3 fichier trop lourd");
                 return array($error, '<div class="alert alert-danger"> Le fichier est trop lourd !!</div>'); //Si trop lourd alors on envoie le message que le fichier est trop lourd
             }
         if(!$error){
@@ -44,6 +45,7 @@
 
     function controleImage($image_upload)//On renvoie dans un tableau l'erreur et le message d'erreur ou l'erreur et le nom de l'image
     {
+        require(dirname(__DIR__) . '/libs/gestionLogs.php');
         $error = false;
         $fileName = $image_upload['name']; //On met dans une variable le nom de l'image pour vérifier si l'utilisateur a ajouté une
         $validExt = array('.jpg', '.jpeg', '.gif', '.png'); //On spécifie les extensions que l'on souhaite prendre
@@ -51,11 +53,13 @@
         if(!in_array("." . $fileExt, $validExt))//On recherche dans le tableau des extensions valides si l'extension du fichier ajouté correspond
             { 
                 $error = true;
+                $logger->alert("Fonction ajout photo -- ERREUR 1 Le fichier n'est pas une image");
                 return array($error, '<div class="alert alert-danger">Le fichier n\'est pas une image !!</div>');
             }
         if($image_upload['error'] > 0)//On verifie dans la variable $_FILES s'il n'y a pas d'erreur interne
             {
                 $error = true;
+                $logger->alert("Fonction ajout photo -- ERREUR 2 erreur dans le transfert");
                 return array($error, '<div class="alert alert-danger">Erreur survenue lors du transfert de l\'image</div>'); //Si oui alors on arrete la fonction et on affiche qu'il y a eu une erreur lors du transfert
             }
         $maxSize = 10485760; //On spécifie ici la taille maximale de l'image en bytes ici equivalent à 10mo 10485760
@@ -63,6 +67,7 @@
         if($fileSize > $maxSize) //Taille de l'image doit être < à $maxSize
             {
                 $error = true;
+                $logger->alert("Fonction ajout photo -- ERREUR 3 fichier trop lourd");
                 return array($error, '<div class="alert alert-danger"> Le fichier est trop lourd !!</div>'); //Si trop lourd alors on envoie le message que le fichier est trop lourd
             }
         if(!$error){
@@ -73,6 +78,7 @@
             $image_upload = $idName . "." . $fileExt; //On attribue dans la superglobale $_POST le nom de l'image qui ira dans le tableau
             $resultat = move_uploaded_file($tmpName, $fileDir);
             if($resultat){
+                $logger->alert("Fonction ajout photo -- Pas d'erreur");
                 return array(false, $image_upload);//On retourne le nom de l'image pour enregistrement
             }
         }

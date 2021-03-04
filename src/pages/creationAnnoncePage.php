@@ -42,7 +42,8 @@
 <script>
 //Ici on gere l'ajout d'une nouvelle chambre sur le formulaire de creation d'une annonce
 let cptChambre = 2;
-let newArray = '[]';
+let cptPhotos = 1;
+// let newArray = '[]';
 $('#addChambre').on('click', () => {
     $('#zoneChambre').append(`
     <h4 class="mb-2">Chambre #${cptChambre}</h4>
@@ -85,9 +86,9 @@ $('#addChambre').on('click', () => {
         </div>
 
         <!--Photo de la chambre-->
-        <div class="col-md-12 mt-3">
-            <label for="photo_chambre">ajoutez au moins une photo de la chambre</label>
-            <input type="file" class="form-control-file" name="photos_chambre_${cptChambre}[]">
+        <div class="col-md-12 mt-3 d-flex flex-column">
+            <label for="photo_chambre_${cptChambre}_${cptPhotos}">Ajoutez au moins une photo de la chambre</label>
+            <input type="file" id="photo_chambre_${cptChambre}_${cptPhotos}" class="form-control-file" name="photos_chambre_${cptChambre}[]">
         </div>
 
         <div class="col-md-12">
@@ -164,7 +165,8 @@ $('#addChambre').on('click', () => {
         
     `)
     cptChambre++;
-    newArray = newArray + '[]';
+    cptPhotos++;
+    // newArray = newArray + '[]';
 })
 </script>
 <?php require_once(dirname(__DIR__).'/includes/Layout/finbalise.php');?>
