@@ -24,7 +24,7 @@
 <?php endif;?>
 <?php endif;?>
     <!--On fait afficher la page selon l'id des step de chaque bloc en jqurey-->
-    <form method="POST" class="mt-3 shadow p-3" enctype="multipart/form-data" id="create_annonce" action="../controllers/annonces/creation/create.php">
+    <form method="POST" class="mt-3 shadow p-3 mb-5" enctype="multipart/form-data" id="create_annonce" action="../controllers/annonces/creation/create.php">
         <?php require_once(dirname(__DIR__).'/includes/annonces/creation/step_1.php');?>
         <?php require_once(dirname(__DIR__).'/includes/annonces/creation/step_2.php');?>
         <?php require_once(dirname(__DIR__).'/includes/annonces/creation/step_3.php');?>
@@ -267,7 +267,6 @@ var btn_delete_chambre = document.querySelectorAll('#bloc_step_5 .delete_chambre
 btn_delete_chambre.forEach(zone => {
     console.log(e);
 });
-
+//TODO : Faire la securisation client des modaux + ajout suppression photo logement et chambre 
 </script>
 <?php require_once(dirname(__DIR__).'/includes/Layout/finbalise.php');?>
-//TODO : Faire la securisation client des modaux + ajout suppression photo logement et chambre 
