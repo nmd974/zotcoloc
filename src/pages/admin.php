@@ -1,9 +1,9 @@
+<?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
 <?php
 if(!$_SESSION['isLoggedIn'] || $_SESSION['role'] != "administrateur"){
     header('Location: home.php');
 }
 ?>
-<?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
 <?php require_once(__ROOT__.'/src/controllers/utilisateurs/admin/getData.php');?>
 <?php require_once(dirname(__DIR__).'/includes/admin/modals/tables.php');?>
 <?php require_once(dirname(__DIR__).'/includes/admin/modals/photoUser.php');?>
