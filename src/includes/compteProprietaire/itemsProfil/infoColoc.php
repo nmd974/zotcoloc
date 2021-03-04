@@ -20,10 +20,10 @@
                     Site web
                 </div>
                 <div class="border-bottom-0 border-dark bg-light">
-                    <?php if($mon_compte[1][0]->site_web == ''):?>
+                    <?php if($mon_compte[0]->site_web == ''):?>
                     Non renseigné
                     <?php else:?>
-                    <?= htmlentities($mon_compte[1][0]->site_web, ENT_QUOTES)?>
+                    <?= htmlentities($mon_compte[0]->site_web, ENT_QUOTES)?>
                     <?php endif;?>
                 </div>
             </div>
@@ -33,10 +33,10 @@
                     Description
                 </div>
                 <div class="border-bottom-0 border-dark bg-light">
-                    <?php if($mon_compte[1][0]->description == ''):?>
+                    <?php if($mon_compte[0]->description == ''):?>
                     Non renseigné
                     <?php else:?>
-                    <?= htmlentities($mon_compte[1][0]->description, ENT_QUOTES)?>
+                    <?= htmlentities($mon_compte[0]->description, ENT_QUOTES)?>
                     <?php endif;?>
                 </div>
             </div>
