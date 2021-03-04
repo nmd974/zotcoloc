@@ -5,6 +5,8 @@ if(!$_SESSION['isLoggedIn'] || $_SESSION['role'] != "administrateur"){
 }
 ?>
 <?php require_once(__ROOT__.'/src/controllers/utilisateurs/admin/getData.php');?>
+<?php require_once(__ROOT__.'/src/controllers/editProfilParticulier.php');?>
+<?php require_once(__ROOT__.'/src/class/Photos.php');?>
 <?php require_once(dirname(__DIR__).'/includes/admin/modals/tables.php');?>
 <?php require_once(dirname(__DIR__).'/includes/admin/modals/utilisateurs.php');?>
 <?php require_once(dirname(__DIR__).'/includes/admin/modals/photoUser.php');?>

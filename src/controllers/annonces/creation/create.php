@@ -136,6 +136,13 @@ if($error == null) {
                 $id_chambre = md5(uniqid(rand(), true));
                 array_push($list_id_chambre, $id_chambre);
 
+                //Filtre sur les valeurs non obligatoire
+                if($_POST['type_chambre_'.$indice] != "Chambre principale" || $_POST['type_chambre_'.$indice] != "Chambre secondaire"){
+                    $_POST['type_chambre_'.$indice] = "Non renseigné";
+                }
+                if($_POST['a_louer_'.$indice] != "0" || $_POST['a_louer_'.$indice] != "1"){
+                    $_POST['a_louer_'.$indice] = "0";
+                }
                 //On sanytol les données
                 $data = [
                     'titre_chambre' => $_POST['titre_chambre'][$i],
@@ -149,7 +156,6 @@ if($error == null) {
                     'caution' => $_POST['caution'][$i],
                     'frais_dossier' => $_POST['frais_dossier'][$i],
                     'a_louer' => $_POST['a_louer_'.$indice]
-
                 ];
                 $logger->info($_POST['a_louer_'.$indice]);
                 $filters = [
