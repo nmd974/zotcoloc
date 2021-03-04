@@ -204,6 +204,8 @@ if($error == null) {
                     $logger->alert("Creation d'une annonce -- Erreur lors de l'ajout de l'image logement");
                 }else{
                     $id_photo = md5(uniqid(rand(), true));
+                    $logger->info($ajoutImage[0]);
+                    $logger->info($ajoutImage[1]);
                     //AJOUT TABLE PHOTOS GENERALE
                     $query = 'INSERT INTO `photos`(`id`, `libelle_photo`)
                     VALUES (:id, :libelle_photo)';
