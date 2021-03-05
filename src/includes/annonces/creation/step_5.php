@@ -38,7 +38,7 @@
         <!--Description de la chambre-->
         <div class="col-md-12 mb-3">
             <div class="form-floating">
-                <textarea type="text" placeholder="Une description vaut mieux que de l'imagination" class="form-control" style="height: 100px" maxlength="500" id="description_chambre" name="description_chambre[]" required> <?php if(isset($_SESSION['tmp-content']['description_chambre'])){echo htmlspecialchars($_SESSION['tmp-content']['description_chambre']);}?></textarea>
+                <textarea placeholder="Une description vaut mieux que de l'imagination" class="form-control" style="height: 100px" maxlength="500" id="description_chambre" name="description_chambre[]" required> <?php if(isset($_SESSION['tmp-content']['description_chambre'])){echo htmlspecialchars($_SESSION['tmp-content']['description_chambre']);}?></textarea>
                 <label for="description_chambre" class="form-label">Description de la chambre<span class="text-danger">*</span></label>
             </div>
             <div class="d-flex align-items-center mt-1">

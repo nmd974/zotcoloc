@@ -1,4 +1,4 @@
 <div class="d-flex flex-column justify-content-center align-items-center unshow_step" id="favorisNav_content">
-    <img src="../img_default/no-favoris.png" class="img_moncompte">
+    <img src="../img_default/no-favoris.png" class="img_moncompte" alt="Pas d'annonces favorites">
     <button class="btn btn-success mt-4 w-25">Découvrir les annonces</button>
 </div>

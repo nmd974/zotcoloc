@@ -83,7 +83,7 @@ $('#addChambre').on('click', () => {
             <!--Description de la chambre-->
             <div class="col-md-12 mb-3">
                 <div class="form-floating">
-                    <textarea type="text" placeholder="Une description vaut mieux que de l'imagination" class="form-control" style="height: 100px" maxlength="500" id="description_chambre_${cptChambre}" name="description_chambre[]" required></textarea>
+                    <textarea placeholder="Une description vaut mieux que de l'imagination" class="form-control" style="height: 100px" maxlength="500" id="description_chambre_${cptChambre}" name="description_chambre[]" required></textarea>
                     <label for="description_chambre_${cptChambre}" class="form-label">Description de la chambre<span class="text-danger">*</span></label>
                 </div>
                 <div class="d-flex align-items-center mt-1">

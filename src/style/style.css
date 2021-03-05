@@ -306,11 +306,6 @@ footer{
     cursor: pointer;
     border-radius: 100%;
 }
-/* .profile-img{
-    width: 150px;
-    height: 150px;
-    border-radius: 100%;
-} */
 .photo_profil{
     background-position: center;
     background-size: cover;
@@ -326,14 +321,6 @@ footer{
     bottom: 0;
     font-size: 12px;
     width: 100%;
-}
-.icone_photo{
-    /* position: absolute;
-    top: 25%;
-    left: 65%;
-    z-index: 98; */
-    margin: 0;
-    text-decoration: none !important;
 }
 .img_moncompte{
     width: 450px;

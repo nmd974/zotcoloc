@@ -1,6 +1,6 @@
 <?php require(dirname(dirname(__DIR__)).'/libs/session/session.php'); ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">

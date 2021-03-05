@@ -92,7 +92,7 @@
                 <div class="modal-body">
                     <div class="form-floating">
                         <input type="text" class="form-control" name="libelle_equipement" value="<?= $equipement->libelle_equipement?>" required>
-                        <label for="libelle_equipement">Nom de l'équipement <span class="text-danger">*</span></label>
+                        <label>Nom de l'équipement <span class="text-danger">*</span></label>
                     </div>
                     <input type="hidden" name="id_equipement" value="<?= $equipement->id?>">
                 </div>
@@ -141,8 +141,8 @@
             <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/src/controllers/tables/regles/update.php'?>">
                 <div class="modal-body">
                     <div class="form-floating">
-                        <input type="text" class="form-control" name="libelle_regle" value="<?= $regle->libelle_regle?>" required>
-                        <label for="libelle_regle">Nom de la règle <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" name="libelle_regle" required value="<?= $regle->libelle_regle?>">
+                        <label>Nom de la règle <span class="text-danger">*</span></label>
                     </div>
                     <input type="hidden" name="id_regle" value="<?= $regle->id?>">
                 </div>
@@ -192,7 +192,7 @@
                 <div class="modal-body">
                     <div class="form-floating">
                         <input type="text" class="form-control" name="libelle_ville" value="<?= $ville->libelle_ville?>" required>
-                        <label for="libelle_ville">Nom de la ville <span class="text-danger">*</span></label>
+                        <label>Nom de la ville <span class="text-danger">*</span></label>
                     </div>
                     <input type="hidden" name="id_ville" value="<?= $ville->id?>">
                 </div>
