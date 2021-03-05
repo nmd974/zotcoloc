@@ -26,7 +26,7 @@ if(isset($_GET['id'])){
                     
                     <?php if(count($chambre_photos[1]) !== 0):?>
                         <?php foreach($chambre_photos[1] as $photo):?>
-                            <div class="border-bottom d-flex justify-content-between align-items-center mb-4">
+                            <div class="border-bottom d-flex justify-content-between align-items-center mb-4" id="zone_photo_<?= $photo->id_photo ?>">
                                 <div id="cadre_photo" class="mb-2" style="background-image: url(../images/<?= $photo->libelle_photo ?>);"></div>
                                 <i class="fa fa-trash text-danger fa-3x delete_photo" aria-hidden="true" id="<?= $photo->id_photo ?>"></i>
                             </div>
@@ -50,17 +50,13 @@ if(isset($_GET['id'])){
     <script>
         var btn_delete_photo_chambre = document.querySelectorAll('#zone_photo_chambre .delete_photo');
         btn_delete_photo_chambre.forEach(btn => {
-            console.log(btn);
             btn.addEventListener('click', (e) => {
-                console.log(e);
                 var id = e.path[0].id;
-                //Verification si email en doublon
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function() {
-                    console.log(this);
                     if(this.readyState == 4 && this.status == 200){
                         $('#zone_photo_chambre').prepend(this.responseText);
-                        document.getElementById(`${id}`).remove();
+                        document.getElementById(`zone_photo_${id}`).remove();
                     }else{
                         $('#zone_photo_chambre').prepend(this.responseText);
                     }

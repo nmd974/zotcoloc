@@ -25,7 +25,7 @@ if(isset($_GET['id'])){
                     
                     <?php if(count($logement_photos[1]) !== 0):?>
                     <?php foreach($logement_photos[1] as $photo):?>
-                    <div class="border-bottom d-flex justify-content-around align-items-center mb-4">
+                    <div class="border-bottom d-flex justify-content-around align-items-center mb-4" id="zone_photo_<?= $photo->id_photo ?>">
                         <div id="cadre_photo" style="background-image: url(../images/<?= $photo->libelle_photo ?>);"></div>
                         <i class="fa fa-trash text-danger fa-3x delete_photo" aria-hidden="true" id="<?= $photo->id_photo ?>"></i>
                     </div>
@@ -56,7 +56,7 @@ if(isset($_GET['id'])){
                 xmlhttp.onreadystatechange = function() {
                     if(this.readyState == 4 && this.status == 200){
                         $('#zone_photo').prepend(this.responseText);
-                        document.getElementById(`${id}`).remove();
+                        document.getElementById(`zone_photo_${id}`).remove();
                     }else{
                         $('#zone_photo').prepend(this.responseText);
                     }
