@@ -51,8 +51,11 @@ class Statistiques {
         try{
             $query = $pdo->query("SELECT `libelle_ville`, COUNT(*)
                 FROM `logements` 
-                INNER JOIN `villes` 
-                WHERE logements.id_ville = villes.id AND statut = 'Publiee'  
+                INNER JOIN `villes` ON logements.id_ville = villes.id
+                INNER JOIN `chambres` ON chambres.id_logement = logements.id_logement
+                WHERE statut = 'Publiee' 
+                AND statut_chambre = 'Active' 
+                AND a_louer = 1
                 GROUP BY `libelle_ville` 
                 ORDER BY COUNT(*) DESC LIMIT 3
             ");

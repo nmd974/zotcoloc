@@ -1,11 +1,6 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
 <?php require_once(__ROOT__.'/src/class/Statistiques.php');?>
 <?php require_once(dirname(__DIR__).'/class/Recherches.php');?>
-<?php if(isset($_GET["btn-search"])){
-    $annonces = Recherches::recherche_annonce($_GET["search-room"]);
-   
- } 
-  ?>
 
 
 <!-- titre + barre de recherche -->
@@ -115,7 +110,7 @@
                 <?php foreach($topVilles[1] as $topVille):?>
 
             <div class="image-three position-relative">
-                <a href="roommateSearch.php?search-room=<?= urldecode($topVille->libelle_ville) ?>&btn-search=" class="text-dark">
+                <a href="roommateSearch.php?search-room=<?= urlencode($topVille->libelle_ville) ?>" class="text-dark">
                 <img src="https://www.cartedelareunion.fr/wp-content/uploads/2019/05/Terre-Sainte-plage-lagon-La-Reunion.jpg"
                     alt="top-city" class="img-fluid rounded" style="filter: grayscale(30%);">
                 <p class="vidaloka h2 position-absolute top-50 start-50 translate-middle text-center"><?= $topVille->libelle_ville ?></p>
