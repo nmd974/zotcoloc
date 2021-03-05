@@ -20,8 +20,8 @@
                     <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                 </div>
             <?php else:?>
-            <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/src/controllers/annonces/logements/photos/create.php'?>">
                 <div class="modal-body" id="zone_photo">
+                <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/src/controllers/annonces/logements/photos/create.php'?>">
                     <?php if(count($logement_photos[1]) !== 0):?>
                         <?php foreach($logement_photos[1] as $photo):?>
                             <div class="border-bottom d-flex justify-content-around align-items-center mb-4">

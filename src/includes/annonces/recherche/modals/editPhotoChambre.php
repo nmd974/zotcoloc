@@ -21,8 +21,9 @@
                     <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                 </div>
             <?php else:?>
-            <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/src/controllers/annonces/chambres/photos/create.php'?>">
+
                 <div class="modal-body" id="zone_photo_chambre">
+                <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/src/controllers/annonces/chambres/photos/create.php'?>">
                     <?php if(count($chambre_photos[1]) !== 0):?>
                         <?php foreach($chambre_photos[1] as $photo):?>
                             <div class="border-bottom d-flex justify-content-between align-items-center mb-4">
@@ -35,8 +36,9 @@
                     <input type="hidden" name="id_utilisateur" value="<?= $utilisateur[1][0]->id_utilisateur ?>">
                     <input type="hidden" name="id_chambre" value="<?= htmlspecialchars($_GET['id']) ?>">
                     <input type="hidden" name="count_actuel" value="<?= count($chambre_photos[1]) ?>">
+                    </form>
                 </div>
-            </form>
+
             <?php endif;?>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
