@@ -3,11 +3,11 @@
 <?php require_once(__ROOT__.'/src/class/Logements.php');?>
 
 <?php 
-    if(isset($_GET['id'])){
-        $chambre_photos = Photos::photosByIdChambre(htmlspecialchars($_GET['id']));
-        $logement_id = Logements::idLogementByIdChambre(htmlspecialchars($_GET['id']));
-        $utilisateur = Logements::logementByIdLogement($logement_id[1][0]->id_logement);
-    }
+if(isset($_GET['id'])){
+    $chambre_photos = Photos::photosByIdChambre(htmlspecialchars($_GET['id']));
+    $logement_id = Logements::idLogementByIdChambre(htmlspecialchars($_GET['id']));
+    $utilisateur = Logements::logementByIdLogement($logement_id[1][0]->id_logement);
+}
 ?>
 <div class="modal fade" id="editPhotoChambre" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="editPhotoChambreLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -17,33 +17,34 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <?php if(!$chambre_photos[0]):?>
-                <div class="modal-body">
-                    <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
-                </div>
+            <div class="modal-body">
+                <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
+            </div>
             <?php else:?>
-
+            <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/src/controllers/annonces/chambres/photos/create.php'?>">
                 <div class="modal-body" id="zone_photo_chambre">
-                <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/src/controllers/annonces/chambres/photos/create.php'?>">
+                    
                     <?php if(count($chambre_photos[1]) !== 0):?>
-                        <?php foreach($chambre_photos[1] as $photo):?>
-                            <div class="border-bottom d-flex justify-content-between align-items-center mb-4">
-                                <div id="cadre_photo" class="mb-2" style="background-image: url(../images/<?= $photo->libelle_photo ?>);"></div>
-                                <i class="fa fa-trash text-danger fa-3x delete_photo" aria-hidden="true" id="<?= $photo->id_photo ?>"></i>
-                            </div>
-                        <?php endforeach; ?>
+                    <?php foreach($chambre_photos[1] as $photo):?>
+                    <div class="border-bottom d-flex justify-content-between align-items-center mb-4">
+                        <div id="cadre_photo" class="mb-2" style="background-image: url(../images/<?= $photo->libelle_photo ?>);"></div>
+                        <i class="fa fa-trash text-danger fa-3x delete_photo" aria-hidden="true" id="<?= $photo->id_photo ?>"></i>
+                    </div>
+                    <?php endforeach; ?>
                     <?php endif;?>
                     <input type="file" name="photos_logement[]" multiple>
                     <input type="hidden" name="id_utilisateur" value="<?= $utilisateur[1][0]->id_utilisateur ?>">
                     <input type="hidden" name="id_chambre" value="<?= htmlspecialchars($_GET['id']) ?>">
                     <input type="hidden" name="count_actuel" value="<?= count($chambre_photos[1]) ?>">
-                    </form>
+                    
                 </div>
-
-            <?php endif;?>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
-                <button type="submit" id="save_edit_logement" class="btn btn-success" name="save_edit_logement">Ajouter</button>
-            </div>
+                
+                <?php endif;?>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
+                    <button type="submit" class="btn btn-success">Ajouter</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -64,6 +65,6 @@
             };
             xmlhttp.open("POST", `${location.origin}/src/controllers/annonces/chambres/photos/delete.php?id_photo=${id}&user=${<?= $utilisateur[1][0]->id_utilisateur ?>}`, true);
             xmlhttp.send();
-            })
+        })
     });
 </script>

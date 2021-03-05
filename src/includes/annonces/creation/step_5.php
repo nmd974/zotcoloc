@@ -50,7 +50,7 @@
         <!--Surface de la chambre-->
         <div class="col-md-12 mb-3">
             <div class="form-floating">
-                <input type="number" placeholder="Surface de la chambre en m2" class="form-control" id="surface_chambre_1" name="surface_chambre[]" value="<?= isset($_SESSION['tmp-content']['titre_logement']) ? htmlspecialchars($_SESSION['tmp-content']['titre_logement']) : 0 ?>">
+                <input type="number" placeholder="Surface de la chambre en m2" class="form-control" id="surface_chambre_1" name="surface_chambre[]" value="<?= isset($_SESSION['tmp-content']['titre_logement']) ? htmlspecialchars($_SESSION['tmp-content']['titre_logement']) : '' ?>">
                 <label for="surface_chambre_1" class="form-label">Surface de la chambre (m2)</label>
             </div>
         </div>
@@ -142,7 +142,7 @@
         <!--Durée du bail-->
         <div class="col-md-12 mb-4">
             <div class="form-floating">
-                <input type="number" placeholder="Durée du bail de location" class="form-control" id="duree_bail" name="duree_bail[]" value="<?= isset($_SESSION['tmp-content']['duree_bail']) ? htmlspecialchars($_SESSION['tmp-content']['duree_bail']) : 0 ?>">
+                <input type="number" placeholder="Durée du bail de location" class="form-control" id="duree_bail" name="duree_bail[]" value="<?= isset($_SESSION['tmp-content']['duree_bail']) ? htmlspecialchars($_SESSION['tmp-content']['duree_bail']) : '' ?>">
                 <label for="duree_bail" class="form-label">Durée du bail (mois)</label>
             </div>
         </div>
@@ -161,7 +161,7 @@
         <!--loyer-->
         <div class="col-md-12 mb-3">
             <div class="form-floating">
-                <input type="number" placeholder="Loyer à payer" class="form-control" id="loyer_1" name="loyer[]" value="<?= isset($_SESSION['tmp-content']['loyer']) ? htmlspecialchars($_SESSION['tmp-content']['loyer']) : 0 ?>">
+                <input type="number" placeholder="Loyer à payer" class="form-control" id="loyer_1" name="loyer[]" value="<?= isset($_SESSION['tmp-content']['loyer']) ? htmlspecialchars($_SESSION['tmp-content']['loyer']) : '' ?>">
                 <label for="loyer_1" class="form-label">Loyer (€)</label>
             </div>
         </div>
@@ -169,7 +169,7 @@
         <!--charge-->
         <div class="col-md-12 mb-3">
             <div class="form-floating">
-                <input type="number" placeholder="Charges à payer" class="form-control" id="charge_1" name="charge[]" value="<?= isset($_SESSION['tmp-content']['charge']) ? htmlspecialchars($_SESSION['tmp-content']['charge']) : 0 ?>">
+                <input type="number" placeholder="Charges à payer" class="form-control" id="charge_1" name="charge[]" value="<?= isset($_SESSION['tmp-content']['charge']) ? htmlspecialchars($_SESSION['tmp-content']['charge']) : '' ?>">
                 <label for="charge_1" class="form-label">Charges (€)</label>
             </div>
         </div>
@@ -177,14 +177,14 @@
         <!--caution-->
         <div class="col-md-12 mb-3">
             <div class="form-floating">
-                <input type="number" placeholder="Loyer à payer" class="form-control" id="caution_1" name="caution[]" value="<?= isset($_SESSION['tmp-content']['caution']) ? htmlspecialchars($_SESSION['tmp-content']['caution']) : 0 ?>">
+                <input type="number" placeholder="Loyer à payer" class="form-control" id="caution_1" name="caution[]" value="<?= isset($_SESSION['tmp-content']['caution']) ? htmlspecialchars($_SESSION['tmp-content']['caution']) : '' ?>">
                 <label for="caution_1" class="form-label">Caution (€)</label>
             </div>
         </div>
         <!--frais dossier-->
         <div class="col-md-12 mb-4">
             <div class="form-floating">
-                <input type="number" placeholder="Loyer à payer" class="form-control" id="frais_dossier_1" name="frais_dossier[]" value="<?= isset($_SESSION['tmp-content']['frais_dossier']) ? htmlspecialchars($_SESSION['tmp-content']['frais_dossier']) : 0 ?>">
+                <input type="number" placeholder="Loyer à payer" class="form-control" id="frais_dossier_1" name="frais_dossier[]" value="<?= isset($_SESSION['tmp-content']['frais_dossier']) ? htmlspecialchars($_SESSION['tmp-content']['frais_dossier']) : '' ?>">
                 <label for="frais_dossier_1" class="form-label">Frais de dossier (€)</label>
             </div>
         </div>
@@ -219,9 +219,11 @@
             </div>
         </div>
     </div>
+    <div class="col-12 text-end my-4">
         <button type="button" class="btn btn-success me-4 mt-4 mb-4" id="addChambre">
             <i class="fa fa-plus" aria-hidden="true"></i> Ajouter une chambre supplémentaire
         </button>
+    </div>
         <!--button validation inscription-->
         <div class="col-12 text-end my-4">
             <button type="submit" class="btn w-25 bg-green text-white mr-5" id="enregistrer_annonce" name="enregistrer_annonce">J'enregistre mon annonce</button>
