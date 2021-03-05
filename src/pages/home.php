@@ -40,7 +40,7 @@
                                 <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                                 <?php else :?>
                                     <?php foreach($liste_villes[1] as $liste_ville):?>
-                                        <option value="<?=$liste_ville->libelle_ville?>">
+                                        <option value="<?= ucwords($liste_ville->libelle_ville) ?>">
                                 <?php endforeach; ?>
                                 <?php endif; ?>
                                 </datalist>
@@ -113,7 +113,7 @@
                 <a href="roommateSearch.php?search-room=<?= urlencode($topVille->libelle_ville) ?>" class="text-dark">
                 <img src="https://www.cartedelareunion.fr/wp-content/uploads/2019/05/Terre-Sainte-plage-lagon-La-Reunion.jpg"
                     alt="top-city" class="img-fluid rounded" style="filter: grayscale(30%);">
-                <p class="vidaloka h2 position-absolute top-50 start-50 translate-middle text-center"><?= $topVille->libelle_ville ?></p>
+                <p class="vidaloka h2 position-absolute top-50 start-50 translate-middle text-center"><?= strtoupper($topVille->libelle_ville) ?></p>
                 </a>
             </div>
             

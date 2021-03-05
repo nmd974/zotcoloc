@@ -67,7 +67,7 @@ if($db){
             WHERE `statut` = 'Publiee'
             AND `a_louer` = 1 
             AND `statut_chambre` = 'Active'
-            AND `libelle_ville`LIKE '$search%'
+            AND `libelle_ville`LIKE '%$search%'
             ORDER BY `date_creation` DESC;
             ");
             $annonces = $query->fetchAll(PDO::FETCH_OBJ);
@@ -84,7 +84,7 @@ if($db){
             WHERE `statut` = 'Publiee'
             AND `a_louer` = 1 
             AND `statut_chambre` = 'Active'
-            AND `libelle_ville`LIKE '$search%'
+            AND `libelle_ville`LIKE '%$search%'
             ");
             $count = $query->fetch();
             $logger->info("Recuperation des données du nombre d'annonces rechercher -- SUCCESS");

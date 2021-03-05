@@ -13,7 +13,7 @@
                     <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                 <?php else :?>
                     <?php foreach($liste_villes as $liste_ville):?>
-                        <option value="<?=$liste_ville->libelle_ville?>">
+                        <option value="<?= ucwords($liste_ville->libelle_ville)?>">
                     <?php endforeach; ?>
                 <?php endif; ?>
             </datalist>
