@@ -202,16 +202,10 @@ const validator_create_annonce = () => {
                 extension: "jpg|jpeg|png"
             }
             
-        },
+        }
 
         
     })
-    $('input[name^=titre_chambre]').each(function(e) {
-        jQuery(this).rules('add', {
-            minlength: 2,
-            required: true
-        });
-    });
 }
 const searchHome = () => {
     validator = $("#searchHome").validate({

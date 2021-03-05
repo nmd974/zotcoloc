@@ -221,6 +221,12 @@ document.getElementById('enregistrer_annonce').addEventListener('click', (e) => 
             element.classList.add('is-valid');
         }
     })
+    $('input[name^=titre_chambre]').each(function(e) {
+        jQuery(this).rules('add', {
+            minlength: 2,
+            required: true
+        });
+    });
     if($('#create_annonce').valid()){
         validator.destroy();
         document.getElementById('create_annonce').submit();
