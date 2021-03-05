@@ -26,9 +26,7 @@ if($db){
     }catch(PDOException $e){
         $error = $e->getMessage();
         $logger->error("Echec de la Creation d'une annonce (proprietaire) -- $error");
-        exit();
     }
 }else{
     $logger->alert("Echec lors de l\'inscription -- Impossible de se connecter à la base de données");
-    exit();
 }
