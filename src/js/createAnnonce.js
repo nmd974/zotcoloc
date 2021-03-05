@@ -213,6 +213,7 @@ document.getElementById('enregistrer_annonce').addEventListener('click', (e) => 
     e.preventDefault();
     //Verification des champs de formulaire
     let input_number = document.querySelectorAll('#bloc_step_5 input[type="number"]');
+    let validation_formulaire = true;
     //On met à 0 les champs number non saisis
     input_number.forEach(element => {
         if(element.value === ""){
@@ -222,15 +223,16 @@ document.getElementById('enregistrer_annonce').addEventListener('click', (e) => 
         }
     })
     $('input[name^=titre_chambre]').each(function(e) {
-        jQuery(this).rules('add', {
-            minlength: 2,
-            required: true
-        });
+        console.log(e);
+
     });
-    if($('#create_annonce').valid()){
-        validator.destroy();
-        document.getElementById('create_annonce').submit();
+    if(validation_formulaire){
+        if($('#create_annonce').valid()){
+            validator.destroy();
+            document.getElementById('create_annonce').submit();
+        }
     }
+
 })
 
 //Blocage de l'appuie sur la touche entrée

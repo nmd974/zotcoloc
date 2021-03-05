@@ -50,6 +50,7 @@ if(isset($_GET['id'])){
     <script>
         var btn_delete_photo_chambre = document.querySelectorAll('#zone_photo_chambre .delete_photo');
         btn_delete_photo_chambre.forEach(btn => {
+            console.log(btn);
             btn.addEventListener('click', (e) => {
                 console.log(e);
                 var id = e.path[0].id;
