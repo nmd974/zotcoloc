@@ -26,10 +26,10 @@
             <td class="align-middle"><?= ucfirst($annonce->titre_chambre) ?></td>
             <td class="align-middle"><?= ucfirst($annonce->libelle_ville) ?></td>
             <td class="align-middle d-flex justify-content-between flex-column flex-lg-row">
-                <a href="../pages/editAnnoncePage.php?id=<?=$annonce->id_chambre?>"><button class="btn btn-success mb-2 mb-lg-0">Voir l'annonce</button></a> 
+                <a href="../pages/editAnnoncePage.php?id=<?=$annonce->id_chambre?>"><button class="btn btn-success mb-2 mb-lg-0">Voir</button></a> 
 
-                <a href="../controllers/annonces/chambres/statut.php?id=<?=$annonce->id_chambre?>&action=0"><button class="btn btn-danger mb-2 mb-lg-0">Désactiver l'annonce</button></a>  
-                <a href="../controllers/annonces/chambres/statut.php?id=<?=$annonce->id_chambre?>&action=2"><button class="btn btn-danger mb-2 mb-lg-0">Supprimer l'annonce</button></a> 
+                <a href="../controllers/annonces/chambres/statut.php?id=<?=$annonce->id_chambre?>&action=0"><button class="btn btn-danger mb-2 mb-lg-0">Désactiver</button></a>  
+                <a href="../controllers/annonces/chambres/statut.php?id=<?=$annonce->id_chambre?>&action=2"><button class="btn btn-danger mb-2 mb-lg-0">Supprimer</button></a> 
             </td>
         <?php else:?>
             <th class="bg-danger text-white align-middle">
@@ -39,9 +39,9 @@
             <td class="align-middle"><?= ucfirst($annonce->titre_chambre) ?></td>
             <td class="align-middle"><?= ucfirst($annonce->libelle_ville) ?></td>
             <td class="align-middle d-flex justify-content-between flex-column flex-lg-row">
-            <a href="../pages/editAnnoncePage.php?id=<?=$annonce->id_chambre?>"><button class="btn btn-success mb-2 mb-lg-0">Voir l'annonce</button></a> 
-                <a href="../controllers/annonces/chambres/statut.php?id=<?=$annonce->id_chambre?>&action=1"><button class="btn btn-success mb-2 mb-lg-0">Activer l'annonce</button></a>  
-                <a href="../controllers/annonces/chambres/statut.php?id=<?=$annonce->id_chambre?>&action=2"><button class="btn btn-danger mb-2 mb-lg-0">Supprimer l'annonce</button></a> 
+            <a href="../pages/editAnnoncePage.php?id=<?=$annonce->id_chambre?>"><button class="btn btn-success mb-2 mb-lg-0">Voir</button></a> 
+                <a href="../controllers/annonces/chambres/statut.php?id=<?=$annonce->id_chambre?>&action=1"><button class="btn btn-success mb-2 mb-lg-0">Activer</button></a>  
+                <a href="../controllers/annonces/chambres/statut.php?id=<?=$annonce->id_chambre?>&action=2"><button class="btn btn-danger mb-2 mb-lg-0">Supprimer</button></a> 
 
             </td>
         <?php endif;?>

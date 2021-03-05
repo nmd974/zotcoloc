@@ -35,6 +35,7 @@ if(isset($_GET['id'])){
                     <input type="hidden" name="id_utilisateur" value="<?= $utilisateur[1][0]->id_utilisateur ?>">
                     <input type="hidden" name="id_logement" value="<?= $logement_id[1][0]->id_logement ?>">
                     <input type="hidden" name="id_chambre" value="<?= htmlspecialchars($_GET['id']) ?>">
+                    <input type="hidden" name="count_actuel" value="<?= count($logement_photos[1]) ?>">
                 </div>
                 
                 <?php endif;?>

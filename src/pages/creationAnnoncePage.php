@@ -261,13 +261,14 @@ $('#addChambre').on('click', () => {
     `)
     cptChambre++;    
     validator.destroy();
+    console.log(validator);
     validator_create_annonce();
     console.log(validator);
-    
+
     var btn_delete_chambre = document.querySelectorAll('#bloc_step_5 .delete_chambre');
     btn_delete_chambre.forEach(btn => {
         btn.addEventListener('click', (e) => {
-            console.log(e);
+            cptChambre--;
             var id = e.path[0].id.slice(4);
             document.getElementById(`zoneChambre_${id}`).remove();
         })
