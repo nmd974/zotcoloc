@@ -6,7 +6,7 @@
             <button class="nav-link" id="nav-villes-tab" data-bs-toggle="tab" data-bs-target="#nav-villes" type="button" role="tab" aria-controls="nav-villes" aria-selected="false">Villes</button>
         </div>
     </nav>
-    <div class="tab-content" id="nav-tabContent">
+    <div class="tab-content">
         <div class="tab-pane fade show active" id="nav-eqt" role="tabpanel" aria-labelledby="nav-eqt-tab">
             <button type="button" class="btn btn-success me-4 mt-5" data-bs-toggle="modal" data-bs-target="#create_eqt">
                 <i class="fa fa-plus" aria-hidden="true"></i> Ajouter un équipement

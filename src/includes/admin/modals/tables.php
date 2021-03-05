@@ -12,7 +12,7 @@
                 <div class="modal-body">
                     <div class="form-floating">
                         <input type="text" class="form-control" name="libelle_equipement">
-                        <label for="libelle_equipement">Nom de l'équipement <span class="text-danger">*</span></label>
+                        <label>Nom de l'équipement <span class="text-danger">*</span></label>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -35,7 +35,7 @@
                 <div class="modal-body">
                     <div class="form-floating">
                         <input type="text" class="form-control" name="libelle_regle">
-                        <label for="libelle_regle">Nom de la règle <span class="text-danger">*</span></label>
+                        <label>Nom de la règle <span class="text-danger">*</span></label>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -58,11 +58,11 @@
                 <div class="modal-body">
                     <div class="form-floating">
                         <input type="text" class="form-control" name="libelle_ville" required>
-                        <label for="libelle_ville">Nom de la règle <span class="text-danger">*</span></label>
+                        <label>Nom de la règle <span class="text-danger">*</span></label>
                     </div>
                     <div class="form-floating">
                         <input type="number" class="form-control" name="code_postal" required>
-                        <label for="code_postal">Code postal <span class="text-danger">*</span></label>
+                        <label>Code postal <span class="text-danger">*</span></label>
                     </div>
                 </div>
                 <div class="modal-footer">

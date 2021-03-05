@@ -7,15 +7,15 @@
             <!-- <form method="post" id="zone_photo_to_edit" class="d-flex flex-column justify-content-center align-items-center">  -->
                 <?php if(empty($ma_photo)):?>
                     <div class="photo_profil" style="background-image: url(../img_default/no-picture-proprietaire.png);"></div>
-                    <button class="btn d-flex align-items-center justify-content-center mt-2 w-100" name="save_photo_user" data-bs-toggle="modal" data-bs-target="#editPhoto">
+                    <button class="btn d-flex align-items-center justify-content-center mt-2 w-100 text-white" name="save_photo_user" data-bs-toggle="modal" data-bs-target="#editPhoto">
                         <i class="fa fa-camera text-dark me-2" aria-hidden="true"></i>
-                        <p class="icone_photo text-white">Ajouter une photo</p>
+                        Ajouter une photo
                     </button>
                 <?php else:?>
                     <div class="photo_profil" style="background-image: url(../images/<?= $ma_photo[0]->libelle_photo ?>);"></div>       
-                    <button class="btn d-flex align-items-center justify-content-center mt-2 w-100" name="save_photo_user" data-bs-toggle="modal" data-bs-target="#editPhoto">
+                    <button class="btn d-flex align-items-center justify-content-center mt-2 w-100 text-white" name="save_photo_user" data-bs-toggle="modal" data-bs-target="#editPhoto">
                         <i class="fa fa-camera text-dark me-2" aria-hidden="true"></i>
-                        <p class="icone_photo text-white">Modifier ma photo</p>
+                        Modifier ma photo
                     </button>
                 <?php endif; ?>                
             <!-- <form> -->

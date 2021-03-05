@@ -5,7 +5,7 @@
             <button class="nav-link" id="nav-proprietaire-tab" data-bs-toggle="tab" data-bs-target="#nav-proprietaire" type="button" role="tab" aria-controls="nav-proprietaire" aria-selected="false">Propriétaires</button>
         </div>
     </nav>
-    <div class="tab-content" id="nav-tabContent">
+    <div class="tab-content">
         <div class="tab-pane fade show active" id="nav-particulier" role="tabpanel" aria-labelledby="nav-particulier-tab">
             <div class="table-responsive">
                 <table class="table table-striped text-center">
