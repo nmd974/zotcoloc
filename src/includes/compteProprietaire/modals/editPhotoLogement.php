@@ -29,7 +29,7 @@
                             </div>
                         <?php endforeach; ?>
                     <?php endif;?>
-                    <input type="file" name="image_upload" id="image_upload" >
+                    <input type="file" name="image_upload[]" id="image_upload" multiple>
                 </div>
             </form>
             <?php endif;?>

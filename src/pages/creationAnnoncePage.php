@@ -247,8 +247,8 @@ $('#addChambre').on('click', () => {
                 <?php else :?>
                 <?php foreach($equipements as $equipement):?>
                 <input type="checkbox" name="equipements_chambre_${cptChambre}[]" class="btn-check"
-                value="<?= $equipement->id ?>" id="<?= $equipement->id ?>">
-                <label class="btn btn-outline-success me-2 mb-2" for="<?= $equipement->id ?>">
+                value="<?= $equipement->id ?>" id="chambre_equipement_${cptChambre}_<?= $equipement->id ?>">
+                <label class="btn btn-outline-success me-2 mb-2" for="chambre_equipement_${cptChambre}_<?= $equipement->id ?>">
                     <i class="fa fa-plus-circle" aria-hidden="true"></i>
                     <?= $equipement->libelle_equipement ?>
                 </label>
@@ -263,8 +263,11 @@ $('#addChambre').on('click', () => {
 })
 
 var btn_delete_chambre = document.querySelectorAll('#bloc_step_5 .delete_chambre');
-btn_delete_chambre.forEach(zone => {
-    console.log(e);
+btn_delete_chambre.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        var id = e.path[0].id.slice(4);
+        document.getElementById(`zoneChambre_${id}`).remove();
+    })
 });
 //TODO : Faire la securisation client des modaux + ajout suppression photo logement et chambre 
 </script>
