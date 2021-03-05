@@ -56,6 +56,7 @@ if(isset($_GET['id'])){
             //Verification si email en doublon
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
+                console.log(this);
                 if(this.readyState == 4 && this.status == 200){
                     $('#zone_photo_chambre').prepend(this.responseText);
                     document.getElementById(`${id}`).remove();
