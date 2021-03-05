@@ -32,6 +32,7 @@ class Statistiques {
             $query = $pdo->query("
                SELECT COUNT(*)
                 FROM utilisateurs 
+                WHERE id_role != 5
             ");
             $data = $query->fetchAll(PDO::FETCH_ASSOC);
             return array(true, $data);
