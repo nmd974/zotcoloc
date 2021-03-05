@@ -15,7 +15,7 @@ if($_SESSION['id_utilisateur'] != htmlspecialchars($_POST['id_utilisateur'])){
 }
 $id_chambre = htmlspecialchars($_POST['id_chambre']);
 //Verification du nombre de photos
-if(count($_FILES['photos_logement']['name']) <= 6 && (count($_FILES['photos_logement']['name']) + htmlspecialchars($_POST['count_actuel'])) <= 6){
+if(count($_FILES['photos_logement']['name']) <= 6){
     $logger->info("Ajout d'une nouvelle photo logement -- VERIF INPUT NOK");
     $_SESSION['flash'] = array('Error', "Echec lors de l'ajout des photos </br> Nombre maximum de photos atteint");
     header("Location:" . getenv("URL_APP") . "/src/pages/editAnnoncePage.php?id=$id_chambre");
