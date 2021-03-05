@@ -2,7 +2,7 @@
 <div class="input-border bg-light mb-3 input-filter">
     <form method="GET" class="form-group" id="searchAll">
         <div class="input-group">
-            <input type="text" name="search-room" class="form-control location-border2" placeholder="Lieux"
+            <input type="text" name="search_room" class="form-control location-border2" placeholder="Lieux"
             aria-label="location" aria-describedby="button-addon1" id="search" list="datalistOptions" autocomplete="off"
             <?php if(isset($_GET['search_room'])):?>
                 value="<?= strip_tags($_GET['search_room'], ENT_QUOTES)?>"
