@@ -262,16 +262,19 @@ $('#addChambre').on('click', () => {
     cptChambre++;    
     validator.destroy();
     validator_create_annonce();
+    console.log(validator);
+    
+    var btn_delete_chambre = document.querySelectorAll('#bloc_step_5 .delete_chambre');
+    btn_delete_chambre.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            console.log(e);
+            var id = e.path[0].id.slice(4);
+            document.getElementById(`zoneChambre_${id}`).remove();
+        })
+    });
 })
 
-var btn_delete_chambre = document.querySelectorAll('#bloc_step_5 .delete_chambre');
-btn_delete_chambre.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        console.log(e);
-        var id = e.path[0].id.slice(4);
-        document.getElementById(`zoneChambre_${id}`).remove();
-    })
-});
+
 //TODO : Faire la securisation client des modaux + ajout suppression photo logement et chambre 
 </script>
 <?php require_once(dirname(__DIR__).'/includes/Layout/finbalise.php');?>

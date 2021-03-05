@@ -219,7 +219,7 @@
             </div>
         </div>
     </div>
-    <div class="col-12 text-end my-4">
+    <div class="col-12 text-start my-4">
         <button type="button" class="btn btn-success me-4 mt-4 mb-4" id="addChambre">
             <i class="fa fa-plus" aria-hidden="true"></i> Ajouter une chambre supplémentaire
         </button>

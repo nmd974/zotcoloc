@@ -25,18 +25,16 @@ if(isset($_GET['id'])){
                 <div class="modal-body" id="zone_photo_chambre">
                     
                     <?php if(count($chambre_photos[1]) !== 0):?>
-                    <?php foreach($chambre_photos[1] as $photo):?>
-                    <div class="border-bottom d-flex justify-content-between align-items-center mb-4">
-                        <div id="cadre_photo" class="mb-2" style="background-image: url(../images/<?= $photo->libelle_photo ?>);"></div>
-                        <i class="fa fa-trash text-danger fa-3x delete_photo" aria-hidden="true" id="<?= $photo->id_photo ?>"></i>
-                    </div>
-                    <?php endforeach; ?>
+                        <?php foreach($chambre_photos[1] as $photo):?>
+                            <div class="border-bottom d-flex justify-content-between align-items-center mb-4">
+                                <div id="cadre_photo" class="mb-2" style="background-image: url(../images/<?= $photo->libelle_photo ?>);"></div>
+                                <i class="fa fa-trash text-danger fa-3x delete_photo" aria-hidden="true" id="<?= $photo->id_photo ?>"></i>
+                            </div>
+                        <?php endforeach; ?>
                     <?php endif;?>
                     <input type="file" name="photos_logement[]" multiple>
                     <input type="hidden" name="id_utilisateur" value="<?= $utilisateur[1][0]->id_utilisateur ?>">
-                    <input type="hidden" name="id_chambre" value="<?= htmlspecialchars($_GET['id']) ?>">
-                    <input type="hidden" name="count_actuel" value="<?= count($chambre_photos[1]) ?>">
-                    
+                    <input type="hidden" name="id_chambre" value="<?= htmlspecialchars($_GET['id']) ?>">                    
                 </div>
                 
                 <?php endif;?>
