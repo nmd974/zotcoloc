@@ -10,7 +10,7 @@ use \Waavi\Sanitizer\Sanitizer;
 if($_SESSION['id_utilisateur'] != htmlspecialchars($_POST['user'])){
     $logger->alert("Suppression d'une photo chambre -- Tentative d'accès sans être proprietaire du chambre");
     $_SESSION['flash'] = array('Error', "Echec de la suppression");
-    header("Location:" . getenv("URL_APP") . "/src/pages/home.php");
+    echo "<div class='alert alert-danger'>Echec lors de la suppression de la photo</div>";
     exit();
 }
 
