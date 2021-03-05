@@ -222,10 +222,20 @@ document.getElementById('enregistrer_annonce').addEventListener('click', (e) => 
             element.classList.add('is-valid');
         }
     })
-    $('input[name^=titre_chambre]').each(function(e) {
-        console.log(e);
-
-    });
+    document.querySelectorAll('input[name^=titre_chambre]').forEach(input => {
+        if(input.value === ""){
+            input.classList.remove('is-invalid');
+            input.classList.add('is-valid');
+            validation_formulaire = false;
+        }
+    })
+    document.querySelectorAll('input[name^=description_chambre]').forEach(input => {
+        if(input.value === ""){
+            input.classList.remove('is-invalid');
+            input.classList.add('is-valid');
+            validation_formulaire = false;
+        }
+    })
     if(validation_formulaire){
         if($('#create_annonce').valid()){
             validator.destroy();

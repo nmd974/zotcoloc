@@ -1,7 +1,9 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
 <?php
-if(!$_SESSION['isLoggedIn'] || $_SESSION['role'] != "administrateur"){
+if(!$_SESSION['isLoggedIn'] && $_SESSION['role'] != "administrateur"){
+    header_remove('Location');
     header('Location: home.php');
+    exit();
 }
 ?>
 <?php require_once(__ROOT__.'/src/controllers/utilisateurs/admin/getData.php');?>

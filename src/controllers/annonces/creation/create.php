@@ -73,8 +73,8 @@ if($error == null) {
         $_POST['type_logement'] != "Maison";
     }
     //Verification de la saisie du type de PROFIL
-    if($_POST['profil'] != "eccbc87e4b5ce2fe28308fd9f2a7baf3" || $_POST['profil'] != "c81e728d9d4c2f636f067f89cc14862c" || $_POST['profil'] != "c4ca4238a0b923820dcc509a6f75849b"){
-        $_POST['profil'] != "eccbc87e4b5ce2fe28308fd9f2a7baf3";
+    if($_POST['profil'] != "eccbc87e4b5ce2fe28308fd9f2a7baf3" || $_POST['profil'] != "c81e728d9d4c2f636f067f89cc14862c" || $_POST['profil'] != "c4ca4238a0b923820dcc509a6f75849b" || $_POST['profil'] == ""){
+        $_POST['profil'] = "eccbc87e4b5ce2fe28308fd9f2a7baf3";
     }
     //Coup de sanytol sur les données des formulaires
     

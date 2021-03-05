@@ -32,7 +32,7 @@
                 >
                 <label class="btn btn-outline-success border-0" for="femme">
                 <i class="fa fa-female text-dark" aria-hidden="true"></i>Femme</label>
-                <input type="radio" name="profil" value="eccbc87e4b5ce2fe28308fd9f2a7baf3" id="indifferent" 
+                <input type="radio" name="profil" value="eccbc87e4b5ce2fe28308fd9f2a7baf3" checked id="indifferent" 
                 class="btn-check" <?php if(isset($_POST['profil']) && $_POST['profil'] == "eccbc87e4b5ce2fe28308fd9f2a7baf3"){echo 'checked';}?>
                 >
                 <label class="btn btn-outline-success border-0" for="indifferent">

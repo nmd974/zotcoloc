@@ -80,10 +80,6 @@
         </div>
         
         <!--Photo de la chambre-->
-        <!-- <div class="col-md-12 mt-3 d-flex flex-column">
-            <label for="photos_chambre_1_1">Ajoutez au moins une photo de la chambre</label>
-            <input type="file" id="photos_chambre_1_1" class="form-control-file" name="photos_chambre_1[]">
-        </div> -->
         <div class="mt-4 mb-3 bg-light">
             <div class="col border-one ps-1">
                 <div class="border-two ps-3">
@@ -101,9 +97,6 @@
                 <div class="invalid-feedback">Veuillez sélectionner au moins 1 photo de la chambre (6 photos maximum)</div>
             </div>
         </div>
-        <!-- <button type="button" class="btn btn-success me-4 mt-5" id="addPhotoChambre_1">
-            <i class="fa fa-plus" aria-hidden="true"></i> Ajouter une nouvelle photo
-        </button> -->
         
         <!--a louer ??-->
         <div class="mt-4 mb-3 bg-light">
