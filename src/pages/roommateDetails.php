@@ -3,6 +3,10 @@
     }?>
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
 <?php require_once(dirname(__DIR__).'/class/Recherches.php');?>
+<?php require_once(dirname(__DIR__).'/includes/annonces/recherche/modals/editLogement.php');?>
+<?php require_once(dirname(__DIR__).'/includes/annonces/recherche/modals/editChambre.php');?>
+<?php require_once(dirname(__DIR__).'/includes/annonces/recherche/modals/editPhotoLogement.php');?>
+<?php require_once(dirname(__DIR__).'/includes/annonces/recherche/modals/editPhotoChambre.php');?>
 
 <?php $annonces = Recherches::annonce_details(htmlEntities($_GET["id"]))?>
         

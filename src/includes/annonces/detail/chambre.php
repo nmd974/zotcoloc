@@ -32,15 +32,15 @@
     <div class="bg-light shadow" style="width:60px; height: 60px; border-radius: 50%;">
         <?php $utilisateurs = Recherches::photo_utilisateur(htmlEntities($annonces[1]->id_utilisateur))?>
         <?php if(!$utilisateurs[0]):?>
-        <?php if($annonces[1]->libelle_role == "proprietaire"):?>
-        <img src="../img_default/no-picture-particulier.png" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px; height: 60px; border-radius: 50%;">
-        <?php else:?>
-        <img src="../img_default/no-picture-particulier.png" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px; height: 60px; border-radius: 50%;">
-        <?php endif;?>
+            <?php if($annonces[1]->libelle_role == "proprietaire"):?>
+            <img src="../img_default/no-picture-proprietaire.png" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px; height: 60px; border-radius: 50%;">
+            <?php else:?>
+            <img src="../img_default/no-picture-particulier.png" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px; height: 60px; border-radius: 50%;">
+            <?php endif;?>
         <?php else :?>
-        <?php foreach($utilisateurs[1] as $utilisateur):?>
-        <img src="../images/<?= htmlEntities($utilisateur->libelle_photo) ?>" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px; height: 60px; border-radius: 50%;">
-        <?php endforeach; ?>
+            <?php foreach($utilisateurs[1] as $utilisateur):?>
+            <img src="../images/<?= htmlEntities($utilisateur->libelle_photo) ?>" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px; height: 60px; border-radius: 50%;">
+            <?php endforeach; ?>
         <?php endif; ?>
         
     </div>

@@ -40,7 +40,7 @@
             <?php endif;?>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
-                <button type="submit" id="save_edit_logement" class="btn btn-success" name="save_edit_logement">Ajouter</button>
+                <button type="submit" class="btn btn-success">Ajouter</button>
             </div>
         </div>
     </div>
