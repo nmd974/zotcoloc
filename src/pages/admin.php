@@ -2,7 +2,7 @@
 <?php
 if(!$_SESSION['isLoggedIn'] && $_SESSION['role'] != "administrateur"){
     header_remove('Location');
-    header('Location: home.php');
+    header("Location:" . getenv("URL_APP") . "/src/pages/home.php");
     exit();
 }
 ?>

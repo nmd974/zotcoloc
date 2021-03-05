@@ -1,7 +1,9 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
 <?php
-    if(!$_SESSION['isLoggedIn'] || $_SESSION['role'] != "proprietaire"){
-        header('Location: home.php');
+    if(!$_SESSION['isLoggedIn'] && $_SESSION['role'] != "proprietaire"){
+        header_remove("Location");
+        header("Location:" . getenv("URL_APP") . "/src/pages/home.php");
+        exit();
     }
 ?>
 <?php require_once(dirname(__DIR__).'/class/Interets.php');?>
