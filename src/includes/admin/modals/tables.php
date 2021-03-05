@@ -131,11 +131,11 @@
 <!-- TABLE REGLES -->
 <?php if(count($regles) != 0):?>
 <?php foreach($regles as $regle):?>
-<div class="modal fade" id="edit_regles_<?= $regle->id?>" tabindex="-1" aria-labelledby="edit_regles_<?= $regle->id?>Label" aria-hidden="true">
+<div class="modal fade" id="edit_regle_<?= $regle->id?>" tabindex="-1" aria-labelledby="edit_regle_<?= $regle->id?>Label" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="edit_regles_<?= $regle->id?>Label">Modifier une règle</h5>
+                <h5 class="modal-title" id="edit_regle_<?= $regle->id?>Label">Modifier une règle</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/src/controllers/tables/regles/update.php'?>">
