@@ -1,6 +1,12 @@
 <?php
 
 require_once(dirname(dirname(dirname(__DIR__))).'/libs/session/session.php');
+if(!$_SESSION['isLoggedIn'] && $_SESSION['id_utilisateur'] != $_POST['id_particulier']){
+    $_SESSION['flash'] = array('Error', "Echec de l'opération");
+    header("Location:" . getenv("URL_APP") . "/src/pages/home.php");
+    $logger->alert("Suppression d'un proprietaire -- PAS CONNECTE ET PAS BON ID");
+    exit();
+}
 require_once(__ROOT__ . '/src/class/Connection.php');
 require_once(__ROOT__ . '/src/libs/gestionLogs.php');
 
