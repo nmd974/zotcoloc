@@ -24,11 +24,11 @@
     </div>
 </div>
 <!-- TABLE CREATE REGLE -->
-<div class="modal fade" id="create_relge" tabindex="-1" aria-labelledby="create_relgeLabel" aria-hidden="true">
+<div class="modal fade" id="create_regle" tabindex="-1" aria-labelledby="create_regleLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="create_relgeLabel">Ajouter un équipement</h5>
+                <h5 class="modal-title" id="create_regleLabel">Ajouter un équipement</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/src/controllers/tables/regles/create.php'?>">
