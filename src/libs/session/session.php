@@ -1,6 +1,8 @@
 <?php
+if(session_status() != "PHP_SESSION_ACTIVE"){
+    session_start();
+}
 
-session_start();
 define('__ROOT__', dirname(dirname(dirname(__DIR__))));
 
 if(!isset($_SESSION['isLoggedIn'])){

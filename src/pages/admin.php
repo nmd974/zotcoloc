@@ -1,11 +1,11 @@
-<?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
 <?php
-if(!$_SESSION['isLoggedIn'] && $_SESSION['role'] != "administrateur"){
-    header_remove('Location');
-    header("Location:" . getenv("URL_APP") . "/src/pages/home.php");
-    exit();
-}
+    require(dirname(__DIR__).'/libs/session/session.php');
+    if(!$_SESSION['isLoggedIn'] && $_SESSION['role'] != "administrateur"){
+        header("Location:" . getenv("URL_APP") . "/src/pages/home.php");
+        exit();
+    }
 ?>
+<?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
 <?php require_once(__ROOT__.'/src/controllers/utilisateurs/admin/getData.php');?>
 <?php require_once(__ROOT__.'/src/controllers/editProfilParticulier.php');?>
 <?php require_once(__ROOT__.'/src/class/Photos.php');?>

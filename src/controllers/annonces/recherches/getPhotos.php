@@ -13,7 +13,7 @@ if($db){
         $query = $db->query("SELECT * 
         FROM photo_utilisateur 
         INNER JOIN photos ON photos.id = photo_utilisateur.id_photo
-        WHERE photo_utilisateur.id_utilisateur = '$idUtilisateur'");
+        WHERE photo_utilisateur.id_utilisateur = '$idUtilisateur' LIMIT 1");
         $utilisateurs = $query->fetchAll(PDO::FETCH_OBJ);
         $logger->info("Recuperation des données des regles -- SUCCESS");
 
@@ -22,7 +22,7 @@ if($db){
         FROM photo_chambre
         INNER JOIN photos ON photos.id = photo_chambre.id_photo
         INNER JOIN chambres ON chambres.id_chambre = photo_chambre.id_chambre
-        WHERE photo_chambre.id_chambre = '$idChambre'");
+        WHERE photo_chambre.id_chambre = '$idChambre' LIMIT 1");
         $images = $query->fetchAll(PDO::FETCH_OBJ);
         $logger->info("Recuperation des données des regles -- SUCCESS");
 

@@ -260,11 +260,6 @@ $('#addChambre').on('click', () => {
     </div>        
     `)
     cptChambre++;    
-    validator.destroy();
-    console.log(validator);
-    validator_create_annonce();
-    console.log(validator);
-
     var btn_delete_chambre = document.querySelectorAll('#bloc_step_5 .delete_chambre');
     btn_delete_chambre.forEach(btn => {
         btn.addEventListener('click', (e) => {

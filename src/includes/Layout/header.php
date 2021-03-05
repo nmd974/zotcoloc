@@ -1,4 +1,4 @@
-<?php require_once(dirname(dirname(__DIR__)).'/libs/session/session.php'); ?>
+<?php require(dirname(dirname(__DIR__)).'/libs/session/session.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 

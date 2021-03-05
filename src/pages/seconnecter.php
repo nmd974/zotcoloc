@@ -20,13 +20,11 @@
         <?php endif;?>
         <div id="login-form">
             <form action="../controllers/utilisateurs/login.php" method="POST" id="loginPage">
-                <input type="text" name="email" class="form-control" required
-                pattern=" [a-z0-9 ._% + -] + @ [a- z0-9 .-] + \. [az] {2,} $ " 
+                <input type="text" name="email" class="form-control" required 
                 placeholder="Entrez votre adresse email"
                 value="<?php if(isset($_POST['email'])){echo htmlspecialchars($_POST['email'], ENT_QUOTES);}?>">
                 
                 <input type="password" name="password" class="form-control" id="Password" required
-                pattern=" ^ (? =. * [az] ) (? =. * [AZ]) (? =. * \ D) (? =. * [@ $!% *? &]) [A-Za-z \ d @ $!% *? &] { 8,} $"
                 placeholder="Entrez votre mot de passe" 
                 >
                 <button type="submit" class="btn login">Je me connecte</button>          

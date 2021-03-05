@@ -55,7 +55,7 @@ if($db){
         }
     }else{
         try{
-            $search=htmlspecialchars($_GET["search_room"], ENT_QUOTES);
+            $search = htmlspecialchars($_GET["search_room"], ENT_QUOTES);
             //recherche annonces
             $query = $db->query("SELECT * 
             FROM `logements` 
@@ -67,7 +67,7 @@ if($db){
             WHERE `statut` = 'Publiee'
             AND `a_louer` = 1 
             AND `statut_chambre` = 'Active'
-            AND `libelle_ville`LIKE '$search%'
+            AND `libelle_ville`LIKE '%$search%'
             ORDER BY `date_creation` DESC;
             ");
             $annonces = $query->fetchAll(PDO::FETCH_OBJ);

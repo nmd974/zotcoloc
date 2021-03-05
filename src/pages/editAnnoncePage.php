@@ -1,6 +1,16 @@
-<?php if(empty($_GET["id"])){
-    header('Location: home.php');
-    }?>
+<?php 
+    if(empty($_GET["id"])){
+        header("Location:" . getenv("URL_APP") . "/src/pages/home.php");
+        exit();
+    }
+?>
+<?php
+    require(dirname(__DIR__).'/libs/session/session.php');
+    if(!$_SESSION['isLoggedIn']){
+        header("Location:" . getenv("URL_APP") . "/src/pages/home.php");
+        exit();
+    }
+?>
 <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
 <?php require_once(dirname(__DIR__).'/class/Recherches.php');?>
 <?php require_once(dirname(__DIR__).'/class/Photos.php');?>
