@@ -47,25 +47,25 @@ if(isset($_GET['id'])){
             </form>
         </div>
     </div>
+    <script>
+        var btn_delete_photo = document.querySelectorAll('#zone_photo_chambre .delete_photo');
+        btn_delete_photo.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                var id = e.path[0].id;
+                //Verification si email en doublon
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    console.log(this);
+                    if(this.readyState == 4 && this.status == 200){
+                        $('#zone_photo_chambre').prepend(this.responseText);
+                        document.getElementById(`${id}`).remove();
+                    }else{
+                        $('#zone_photo_chambre').prepend(this.responseText);
+                    }
+                };
+                xmlhttp.open("POST", `${location.origin}/src/controllers/annonces/chambres/photos/delete.php?id_photo=${id}&user=${<?= $utilisateur[1][0]->id_utilisateur ?>}`, true);
+                xmlhttp.send();
+            })
+        });
+    </script>
 </div>
-<script>
-    var btn_delete_photo = document.querySelectorAll('#zone_photo_chambre .delete_photo');
-    btn_delete_photo.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            var id = e.path[0].id;
-            //Verification si email en doublon
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function() {
-                console.log(this);
-                if(this.readyState == 4 && this.status == 200){
-                    $('#zone_photo_chambre').prepend(this.responseText);
-                    document.getElementById(`${id}`).remove();
-                }else{
-                    $('#zone_photo_chambre').prepend(this.responseText);
-                }
-            };
-            xmlhttp.open("POST", `${location.origin}/src/controllers/annonces/chambres/photos/delete.php?id_photo=${id}&user=${<?= $utilisateur[1][0]->id_utilisateur ?>}`, true);
-            xmlhttp.send();
-        })
-    });
-</script>

@@ -206,7 +206,7 @@ const validator_create_annonce = () => {
 
         
     })
-    $('input[name^=titre_logement]').each(function(e) {
+    $('input[name^=titre_chambre]').each(function(e) {
         jQuery(this).rules('add', {
             minlength: 2,
             required: true
