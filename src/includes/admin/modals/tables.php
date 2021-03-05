@@ -215,7 +215,7 @@
             <form method="post" enctype="multipart/form-data" action="<?= getenv("URL_APP") . '/src/controllers/tables/villes/delete.php'?>">
                 <div class="modal-body">
                     <p>Confirmez vous la suppression de la ville : "<?= $ville->libelle_ville ?>"</p> 
-                    <input type="hidden" name="id_regle" value="<?= $ville->id?>">
+                    <input type="hidden" name="id_ville" value="<?= $ville->id?>">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
