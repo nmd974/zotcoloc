@@ -12,8 +12,8 @@
     </div>
 </div>
 <div class="container d-flex" id="wrapper_page_content">
-    <div class="form-modal">
-        <div id="signup-form" class="mb-5 mt-5 mb-5">
+    <div class="form-modal mb-5">
+        <div id="signup-form" class="mb-5 mt-5">
             <?php if(isset($_SESSION['flash'])):?>
             <div class="alert alert-danger mb-2"><?=  $_SESSION['flash'][1] ?></div>
             <?php endif;?>
