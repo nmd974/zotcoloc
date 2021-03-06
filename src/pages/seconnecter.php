@@ -10,7 +10,7 @@
     </div>
 </div>
 <div class="container" id="wrapper_page_content">
-    <div class="form-modal" >
+    <div class="form-modal mb-5" >
         <?php if(isset($_SESSION['flash'])):?>
         <?php if($_SESSION['flash'][0] == "Success"):?>
         <div class="alert alert-success"><?= $_SESSION['flash'][2] ?></div>
