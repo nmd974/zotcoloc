@@ -18,7 +18,10 @@
 <?php require_once(dirname(__DIR__).'/includes/annonces/recherche/modals/editChambre.php');?>
 <?php require_once(dirname(__DIR__).'/includes/annonces/recherche/modals/editPhotoLogement.php');?>
 <?php require_once(dirname(__DIR__).'/includes/annonces/recherche/modals/editPhotoChambre.php');?>
-<?php $annonces = Recherches::annonce_details(htmlEntities($_GET["id"]))?>
+<?php 
+    $id = htmlspecialchars($_GET['id'], ENT_QUOTES);
+    $annonces = Recherches::annonce_details($id);
+?>
         
 <?php if(!$annonces[0]):?>
 <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>

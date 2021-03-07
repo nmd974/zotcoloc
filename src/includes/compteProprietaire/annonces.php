@@ -23,8 +23,8 @@
             <th class="bg-success text-white align-middle">
                 <?php //if($annonce->a_louer == 1){echo "Libre";}else{echo "Occuppé";}?>
             </th>
-            <td class="align-middle"><?= ucfirst($annonce->titre_chambre) ?></td>
-            <td class="align-middle"><?= ucfirst($annonce->libelle_ville) ?></td>
+            <td class="align-middle"><?= htmlspecialchars(ucfirst($annonce->titre_chambre), ENT_QUOTES) ?></td>
+            <td class="align-middle"><?= htmlspecialchars(ucfirst($annonce->libelle_ville), ENT_QUOTES) ?></td>
             <td class="align-middle d-flex justify-content-between flex-column flex-lg-row">
                 <a href="../pages/editAnnoncePage.php?id=<?=$annonce->id_chambre?>"><button class="btn btn-success mb-2 mb-lg-0">Voir</button></a> 
 
@@ -36,8 +36,8 @@
                     <?php //if($annonce->a_louer == 1){echo "Libre";}else{echo "Occuppé";}?>
                 </th>
         
-            <td class="align-middle"><?= ucfirst($annonce->titre_chambre) ?></td>
-            <td class="align-middle"><?= ucfirst($annonce->libelle_ville) ?></td>
+            <td class="align-middle"><?= htmlspecialchars(ucfirst($annonce->titre_chambre), ENT_QUOTES) ?></td>
+            <td class="align-middle"><?= htmlspecialchars(ucfirst($annonce->libelle_ville), ENT_QUOTES) ?></td>
             <td class="align-middle d-flex justify-content-between flex-column flex-lg-row">
             <a href="../pages/editAnnoncePage.php?id=<?=$annonce->id_chambre?>"><button class="btn btn-success mb-2 mb-lg-0">Voir</button></a> 
                 <a href="../controllers/annonces/chambres/statut.php?id=<?=$annonce->id_chambre?>&action=1"><button class="btn btn-success mb-2 mb-lg-0">Activer</button></a>  
