@@ -48,8 +48,8 @@
             <!-- role -->
             <span class="badge bg-primary mb-1 letter-space"><?= ucfirst(htmlspecialchars($annonce->libelle_role, ENT_QUOTES)) ?></span>
             <!-- titre de l'annonce -->
-            <h5 class="card-title"><?= htmlspecialchars(substr($annonce->titre_chambre, 0 , 20)) ?>...</h5>
-            <p class="card-text fw-bold"><?= htmlspecialchars($annonce->libelle_ville) ?></p>
+            <h5 class="card-title"><?= htmlspecialchars(substr($annonce->titre_chambre, 0 , 20), ENT_QUOTES) ?>...</h5>
+            <p class="card-text fw-bold"><?= htmlspecialchars($annonce->libelle_ville, ENT_QUOTES) ?></p>
             <p class="card-text">Disponible le : <?= (new DateTime(htmlspecialchars($annonce->date_disponibilite).'00:00:00'))->format('d/m/Y') ?></p>
             <p class="card-text"><span class="fw-bold h4"><?= htmlspecialchars($annonce->loyer) ?> €</span> par mois</p>
         </div>
