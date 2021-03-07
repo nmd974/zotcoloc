@@ -21,22 +21,20 @@
             <!-- <form> -->
             <p class="nav_title_profil">@<?= $mon_compte[0]->prenom ?> - Propriétaire</p>
         </div>
-        <a role="button" class="list-group-item list-group-item-action sidebar_item" id="profilNav">
+            <a role="button" class="list-group-item list-group-item-action sidebar_item" id="profilNav">
             <i class="fa fa-cogs icone_sidebar" aria-hidden="true"></i>
             Gérer mon profil
-        </a>
-        <div class="dashboard_items">
+            </a>
             <a role="button" class="list-group-item list-group-item-action sidebar_item" id="dashboardNav">
-                <i class="fa fa-tachometer icone_sidebar" aria-hidden="true"></i>
-                Mon tableau de bord
+            <i class="fa fa-tachometer icone_sidebar" aria-hidden="true"></i>
+            Mon tableau de bord
             </a>
-
+            
             <a role="button" class="list-group-item list-group-item-action sidebar_item" id="annonceNav">
-                <i class="fa fa-plus-circle icone_sidebar" aria-hidden="true"></i>
-                Mes annonces
-                <span class="badge bg-danger"><?= count($mes_annonces)?></span>
+            <i class="fa fa-plus-circle icone_sidebar" aria-hidden="true"></i>
+            Mes annonces
+            <span class="badge bg-danger"><?= count($mes_annonces)?></span>
             </a>
-        </div>
         <div class="contact_zotcoloc">
         <a role="button" class="list-group-item list-group-item-action sidebar_item" data-bs-toggle="modal" data-bs-target="#deleteUserProprietaire" id="infosNav">
             <i class="fa fa-trash icone_sidebar" aria-hidden="true"></i>

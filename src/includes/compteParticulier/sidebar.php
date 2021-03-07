@@ -21,32 +21,30 @@
             <!-- <form> -->
             <p class="nav_title_profil"><?= $mon_id_particulier[1][0]->prenom ?></p>
             <p class="arobase_pseudo">@<?= $mon_id_particulier[1][0]->pseudo ?></p>
-        </div>
-        <a role="button" class="list-group-item list-group-item-action sidebar_item" id="profilNav">
+            </div>
+            <a role="button" class="list-group-item list-group-item-action sidebar_item" id="profilNav">
             <i class="fa fa-cogs icone_sidebar" aria-hidden="true"></i>
             Gérer mon profil
-        </a>
-
-        <div class="dashboard_items">
+            </a>
+            
             <a role="button" class="list-group-item list-group-item-action sidebar_item" id="favorisNav">
-                <i class="fa fa-heart icone_sidebar" aria-hidden="true"></i>
-                Mes favoris
-                <span class="badge bg-danger"><?= count($mes_favoris[1])?></span>
+            <i class="fa fa-heart icone_sidebar" aria-hidden="true"></i>
+            Mes favoris
+            <span class="badge bg-danger"><?= count($mes_favoris[1])?></span>
             </a>
-
+            
             <a role="button" class="list-group-item list-group-item-action sidebar_item" id="annonceNav">
-                <i class="fa fa-plus-circle icone_sidebar" aria-hidden="true"></i>
-                Mes annonces
-                <span class="badge bg-danger"><?= count($mes_annonces[1])?></span>
+            <i class="fa fa-plus-circle icone_sidebar" aria-hidden="true"></i>
+            Mes annonces
+            <span class="badge bg-danger"><?= count($mes_annonces[1])?></span>
             </a>
-        </div>
-        <div class="contact_zotcoloc">
-        <a role="button" class="list-group-item list-group-item-action sidebar_item" data-bs-toggle="modal" data-bs-target="#deleteUser" id="infosNav">
-
+            <div class="contact_zotcoloc">
+            <a role="button" class="list-group-item list-group-item-action sidebar_item" data-bs-toggle="modal" data-bs-target="#deleteUser" id="infosNav">
+            
             <i class="fa fa-trash icone_sidebar" aria-hidden="true"></i>
             Supprimer mon compte
-
-        </a>
+            
+            </a>
             
         </div>            
         
