@@ -75,7 +75,7 @@ if($error == null) {
                 if ($passwordCorrect){
                     $_SESSION['flash'] = array('Success', "Connexion avec succès");
                     $_SESSION['isLoggedIn'] = true;
-                    $_SESSION['role'] = $resultat[0]->libelle_role; //faire jointure
+                    $_SESSION['role'] = $resultat[0]->libelle_role; 
                     $_SESSION['id_utilisateur'] = $resultat[0]->id;
                     $logger->info("Connexion Utilisateur -- CONNEXION UTILISATEUR OK");
                     header("Location:" . getenv("URL_APP") . "/src/pages/home.php");
