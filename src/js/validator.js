@@ -301,6 +301,7 @@ jQuery.extend(jQuery.validator.messages, {
     digits: "Seuls les chiffres sont autorisés",
     equalTo: "Les mots de passe sont différents",
     password: "mot passe incorrecte",
+    search_room: "La ville entrer est inconnu",
     maxlength: jQuery.validator.format("Ce champ doit contenir au moins {0} caractères."),
     minlength: jQuery.validator.format("{0} caractères minimum."),
     max: jQuery.validator.format("Ce champ doit être inférieur ou égal à {0}."),

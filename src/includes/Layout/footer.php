@@ -15,10 +15,10 @@
                         </p>
                 </div>
                 <div class="text-light footer-center">
-                    <h3 class="vidaloka mt-5">Contact us</h3>
+                    <h3 class="vidaloka mt-5">Contacter nous</h3>
                     <div>
                         <p>John DOE</p>
-                        <p>Phone: (020) 123 456 789</p>
+                        <p>Téléphone: (020) 123 456 789</p>
                         <p>Email: <a class="text-green" href="mailto:zotcoloc@company.com">zotcoloc@Company.com</a>
                         </p>
                     </div>

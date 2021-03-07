@@ -16,7 +16,10 @@
                         <div class="border-one ps-1">
                             <div class="border-two ps-3">
                                 <p class="text-secondary m-0 poppins h5">ANNONCES</p>
-                                <h2 class="vidaloka m-0 h2"><?php echo htmlspecialchars($count['nb_rslt']);?><span class="text-green"> annonces</span> actuellement
+                                <h2 class="vidaloka m-0 h2"><?php echo htmlspecialchars($count['nb_rslt']);?><span class="text-green"> <?php if($count['nb_rslt'] == 0){ echo("annonce");
+                                }else{
+                                    echo("annonces");
+                                }?></span> actuellement
                                 </h2>
                             </div>
                         </div>
