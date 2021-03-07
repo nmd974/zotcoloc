@@ -376,3 +376,30 @@ if($error == null) {
         exit();
     }
 }
+
+
+/*
+//Recuperation de la liste des informations de l'utilisateur
+//Sans la methode de préparation de requete
+//URL: https://zotcoloc.herokuapp.com/user?id=1
+$query = $db->query("SELECT 'nom' FROM `utilisateurs` WHERE id = 1");
+$data = $query->fetch();
+
+//Attaque injection SQL code
+//URL: https://zotcoloc.herokuapp.com/user?id=1;DROP TABLE 'utilisateurs';
+$id = $_GET['id'];
+$query = $db->query("SELECT 'nom' FROM `utilisateurs` WHERE id = $id");
+//====> 
+$query = $db->query("SELECT 'nom' FROM `utilisateurs` WHERE id = 1;DROP TABLE 'utilisateurs';");
+
+
+$query = ("SELECT 'nom' FROM `utilisateurs` WHERE id = :id");
+$sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+$sth->execute(array(
+    ':id' => $id
+));
+
+$sth->execute(array(
+    ':id' => "1;DROP TABLE 'utilisateurs';"
+));
+*/

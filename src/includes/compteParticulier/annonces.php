@@ -1,7 +1,7 @@
 <div class="d-flex flex-column justify-content-center align-lg-items-center unshow_step" id="annonceNav_content">
 
 
-<?php if(empty($mes_annonces)):?>
+<?php if(count($mes_annonces[0]) == 0):?>
     <img src="../img_default/no-annonce.png" class="img_moncompte" alt="pas d'annonces">
     <a href="../pages/creationAnnoncePage.php"><button class="btn btn-success mt-4 w-lg-25 w-md-100">Ajouter une annonce</button></a>
 <?php else:?>
@@ -19,7 +19,6 @@
     </thead>
     <tbody>
     <?php foreach($mes_annonces as $annonce):?>
-    <?php var_dump($mes_annonces);?>
     <tr>
         <?php if($annonce->statut_chambre == "Active"):?>
             <th class="bg-success text-white align-middle">
