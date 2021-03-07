@@ -4,6 +4,7 @@ if(session_status() != "PHP_SESSION_ACTIVE"){
     define('__ROOT__', dirname(dirname(dirname(__DIR__))));
 }
 
+var_dump(session_status());
 
 if(!isset($_SESSION['isLoggedIn'])){
     $_SESSION['isLoggedIn'] = false;

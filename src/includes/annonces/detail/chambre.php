@@ -31,7 +31,7 @@
 <div class="d-flex align-items-center mt-3 mb-4">
     <div class="bg-light shadow" style="width:60px; height: 60px; border-radius: 50%;">
         <?php $utilisateurs = Recherches::photo_utilisateur(htmlEntities($annonces[1]->id_utilisateur))?>
-        <?php if(!$utilisateurs[0]):?>
+        <?php if(empty($utilisateurs[0])):?>
             <?php if($annonces[1]->libelle_role == "proprietaire"):?>
             <img src="../img_default/no-picture-proprietaire.png" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px; height: 60px; border-radius: 50%;">
             <?php else:?>
