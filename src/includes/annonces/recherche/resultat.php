@@ -8,18 +8,19 @@
         $page_actuelle = intval($_GET['page']);
         $pagination = new Pagination(
             $annonces,
-            10, //Ici c'est le nombre d'ateliers par pages
+            9, //Ici c'est le nombre d'ateliers par pages
             intval($_GET['page'])
         );
             
         if(intval($_GET['page']) > 1){
-            $compteur= ($_GET['page'] * 10) - 2; //On calcule à partir d'où il faut afficher
+            $compteur= ($_GET['page'] * 9) - 2; //On calcule à partir d'où il faut afficher
         }else{
             $compteur=1;
     }
     }
 ?>
-<?php foreach($annonces as $annonce):?>
+<?php foreach($annonces as $key => $annonce):?>
+    <?php if($key + 1 == $compteur):?>
 <?php $idChambre = htmlspecialchars($annonce->id_chambre,ENT_QUOTES); ?>
 <?php $idUtilisateur = htmlspecialchars($annonce->id_utilisateur);?>
 
@@ -80,7 +81,7 @@
 </a>
 </div>
 <?php endif;?>
-
+<?php endif;?>
 <?php endforeach; ?>
 
 <?php endif; ?>
