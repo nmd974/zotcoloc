@@ -3,6 +3,6 @@ document.getElementById('loginConnect').addEventListener("click", (e)=>{
     //Verification du login
     loginPage();
     if ($('#loginPage').valid()){ 
-        document.getElementById('loginConnect').submit();
+        document.getElementById('loginPage').submit();
     };   
 });
