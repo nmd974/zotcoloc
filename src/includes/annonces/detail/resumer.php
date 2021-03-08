@@ -9,7 +9,7 @@
                     <hr>
                     <div class="d-flex justify-content-between align-items-center">
                     <p class="">Disponibilité</p>
-                    <p class="fw-bold"><?= (new DateTime(htmlspecialchars($annonces[1]->date_disponibilite).'00:00:00'))->format('d/m/Y') ?><?= htmlEntities($annonces[1]->date_disponibilite) ?></p>
+                    <p class="fw-bold"><?= (new DateTime(htmlspecialchars($annonces[1]->date_disponibilite).'00:00:00'))->format('d/m/Y') ?></p>
                     </div>
                     <div class="d-flex justify-content-between align-items-center">
                     <p class="m-0">Durée</p>
