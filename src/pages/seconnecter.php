@@ -43,11 +43,6 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/scriptsSrc.php');?>
 <!-- ON MET ICI DES SCRIPTS ASSOCIES A LA PAGE -->
 <script src="../js/validator.js"></script>
-<script>document.getElementById('loginConnect').addEventListener("click", (e)=>{
-    
-    e.preventDefault();
-    //Verification du login
-    loginPage();
-});
+<script src="../js/validationLogin.js">
 </script>
 <?php require_once(dirname(__DIR__).'/includes/Layout/finbalise.php');?>
