@@ -1,10 +1,7 @@
 <?php if(!$annonces):?>
 <img src="../img_default/no-logement.png" alt="pas de resultats" class="img-fluid">
 <?php else :?>
-<?php foreach($annonces as $annonce):?>
-<?php $idChambre = htmlspecialchars($annonce->id_chambre,ENT_QUOTES); ?>
-<?php $idUtilisateur = htmlspecialchars($annonce->id_utilisateur);?>
-<?php
+    <?php
     //Gestion de la pagination
     //On récupère d'abord la page où l'on est
     if(isset($_GET['page'])){
@@ -22,6 +19,10 @@
     }
     }
 ?>
+<?php foreach($annonces as $annonce):?>
+<?php $idChambre = htmlspecialchars($annonce->id_chambre,ENT_QUOTES); ?>
+<?php $idUtilisateur = htmlspecialchars($annonce->id_utilisateur);?>
+
 <!--Ici on gère là où on doit prendre les données selon la page actuelle-->
 <?php if($compteur > $pagination->intervalleMin() && $compteur <= $pagination->intervalleMax()):?>
     <?php $compteur++;?>

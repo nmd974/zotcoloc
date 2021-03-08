@@ -86,7 +86,7 @@
                                 <a href="./home.php" class="nav-link active" aria-current="page">Accueil</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./roommateSearch.php" class="nav-link active" aria-current="page">Recherche</a>
+                                <a href="./roommateSearch.php?page=1" class="nav-link active" aria-current="page">Recherche</a>
                             </li>
                             <?php if(!$_SESSION['isLoggedIn']):?>
                             <li class="nav-item">
