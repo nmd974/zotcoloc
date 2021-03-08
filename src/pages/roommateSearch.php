@@ -11,7 +11,7 @@
     if(isset($_GET['page'])){
         $page_actuelle = intval($_GET['page']);
         $pagination = new Pagination(
-            $ateliers,
+            $annonces,
             10, //Ici c'est le nombre d'ateliers par pages
             intval($_GET['page'])
         );
