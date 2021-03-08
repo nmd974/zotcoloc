@@ -14,7 +14,7 @@
           <button type="submit" class="btn btn-success">Supprimer mon compte</button>
         </div>
         <input type="hidden" name="id" value="<?= $_SESSION['id_utilisateur'] ?>">
-        <input type="hidden" name="id_proprietaire" value="<?= $mon_compte[1][0]->id ?>">
+        <input type="hidden" name="id_proprietaire" value="<?= $mon_compte[0]->id ?>">
       </form>
     </div>
   </div>
