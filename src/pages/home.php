@@ -111,7 +111,7 @@
                 <?php foreach($topVilles[1] as $topVille):?>
 
             <div class="image-three position-relative">
-                <a href="roommateSearch.php?page=1&search-room=<?= urlencode($topVille->libelle_ville) ?>" class="text-dark">
+                <a href="roommateSearch.php?page=1&search_room=<?= urlencode($topVille->libelle_ville) ?>" class="text-dark">
                 <img src="https://www.cartedelareunion.fr/wp-content/uploads/2019/05/Terre-Sainte-plage-lagon-La-Reunion.jpg"
                     alt="top-city" class="img-fluid rounded" style="filter: grayscale(30%);">
                 <p class="vidaloka h2 position-absolute top-50 start-50 translate-middle text-center"><?= strtoupper($topVille->libelle_ville) ?></p>
@@ -142,7 +142,7 @@
             <!--item-->
             <div class="col-md-3">
                 <div class="image-three position-relative">
-                    <a href="roommateSearch.php?page=1&search-room=nord" class="text-white">
+                    <a href="roommateSearch.php?page=1&search_room=nord" class="text-white">
                         <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-1.jpg" alt="nord"
                                 class="img-fluid rounded" style="filter: grayscale(30%)">
                             
@@ -172,7 +172,7 @@
             <div class="col-md-3">
                     <div class="image-three position-relative">
                         
-                        <a href="roommateSearch.php?search-room=sud&page=1" class="text-white">
+                        <a href="roommateSearch.php?search_room=sud&page=1" class="text-white">
                             <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-2.jpg" alt="sud"
                                 class="img-fluid rounded" style="filter: grayscale(30%)">
                                
@@ -202,7 +202,7 @@
                     <div class="image-three position-relative">
                     
                        
-                        <a href="roommateSearch.php?search-room=est&page=1" class="text-white">
+                        <a href="roommateSearch.php?search_room=est&page=1" class="text-white">
                             <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-1.jpg" alt="nord"
                                 class="img-fluid rounded" style="filter: grayscale(30%)">
                             
@@ -234,7 +234,7 @@
             <div class="col-md-3">
                     <div class="image-three position-relative">
                         
-                        <a href="roommateSearch.php?page=1&search-room=ouest" class="text-white">
+                        <a href="roommateSearch.php?page=1&search_room=ouest" class="text-white">
                             <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-2.jpg" alt="sud"
                                 class="img-fluid rounded" style="filter: grayscale(30%)">
                                
