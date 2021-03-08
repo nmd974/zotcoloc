@@ -11,26 +11,33 @@
                 <div class="col-lg-8 col-md-12">
                     <?php require_once(dirname(__DIR__).'/includes/annonces/recherche/input.php');?> 
                 </div>                           
-            <div class="row bg-height">
-                <div class="col-lg-12 col-md-12 card-order mt-3">
-                    <div class="mb-5">
-                        <div class="border-one ps-1">
-                            <div class="border-two ps-3">
-                                <p class="text-secondary m-0 poppins h5">ANNONCES</p>
-                                <h2 class="vidaloka m-0 h2"><?php echo htmlspecialchars($count['nb_rslt']);?><span class="text-green"> <?php if($count['nb_rslt'] == 0){ echo("annonce");
-                                }else{
-                                    echo("annonces");
-                                }?></span> actuellement
-                                </h2>
+                <div class="row bg-height">
+                    <div class="col-lg-12 col-md-12 card-order mt-3">
+                        <div class="mb-5">
+                            <div class="border-one ps-1">
+                                <div class="border-two ps-3">
+                                    <p class="text-secondary m-0 poppins h5">ANNONCES</p>
+                                    <h2 class="vidaloka m-0 h2"><?php echo htmlspecialchars($count['nb_rslt']);?><span class="text-green"> <?php if($count['nb_rslt'] == 0){ echo("annonce");
+                                    }else{
+                                        echo("annonces");
+                                    }?></span> actuellement
+                                    </h2>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="offset-2 col-8 d-flex justify-content-center flex-wrap view-details">
+                        <?php require_once(dirname(__DIR__).'/includes/annonces/recherche/resultat.php');?>
+                    </div>
                 </div>
-                <div class="offset-2 col-8 d-flex justify-content-center flex-wrap view-details">
-                    <?php require_once(dirname(__DIR__).'/includes/annonces/recherche/resultat.php');?>
+                <div class="col-12 d-flex justify-content-center">  
+                    <?= $pagination->toHTMLPrevious();?>
+                    <?php for($i = 1; $i < $pagination->nombrePages + 1; $i++):?>
+                    <?= $pagination->toHTMLPages($i);?>
+                    <?php endfor?>
+                    <?= $pagination->toHTMLNext();?>
                 </div>
             </div>
-        </div>
     </section>
 
 

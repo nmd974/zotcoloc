@@ -82,11 +82,7 @@
 <?php endif;?>
 
 <?php endforeach; ?>
-<?= $pagination->toHTMLPrevious();?>
-      <?php for($i = 1; $i < $pagination->nombrePages + 1; $i++):?>
-        <?= $pagination->toHTMLPages($i);?>
-      <?php endfor?>
-        <?= $pagination->toHTMLNext();?>
+
 <?php endif; ?>
 
 <!-- fin d'une carte -->
