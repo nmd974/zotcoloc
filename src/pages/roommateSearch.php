@@ -5,28 +5,7 @@
 
 
 <div id="wrapper_page_content">
-<?php
-    //Gestion de la pagination
-    //On récupère d'abord la page où l'on est
-    if(isset($_GET['page'])){
-        $page_actuelle = intval($_GET['page']);
-        $pagination = new Pagination(
-            $annonces,
-            10, //Ici c'est le nombre d'ateliers par pages
-            intval($_GET['page'])
-        );
-            
-        if(intval($_GET['page']) > 1){
-            $compteur= ($_GET['page'] * 10) - 2; //On calcule à partir d'où il faut afficher
-        }else{
-            $compteur=1;
-    }
-    }
-?>
-<!--Ici on gère là où on doit prendre les données selon la page actuelle-->
-<?php if($compteur > $pagination->intervalleMin() && $compteur <= $pagination->intervalleMax()):?>
-    <?php $compteur++;?>
-    <?php $pagination->nombreAfficheActuel();?>
+
     <section class="container-fluid margin-search">
             <div class="row">
                 <div class="col-lg-8 col-md-12">
@@ -53,12 +32,7 @@
             </div>
         </div>
     </section>
-   <?php endif;?>
-    <?= $pagination->toHTMLPrevious();?>
-      <?php for($i = 1; $i < $pagination->nombrePages + 1; $i++):?>
-        <?= $pagination->toHTMLPages($i);?>
-      <?php endfor?>
-        <?= $pagination->toHTMLNext();?>
+
 
 <?php require_once(dirname(__DIR__).'/includes/Layout/footer.php');?>
 <?php require_once(dirname(__DIR__).'/includes/Layout/scriptsSrc.php');?>

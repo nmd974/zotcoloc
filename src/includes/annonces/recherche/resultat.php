@@ -4,7 +4,28 @@
 <?php foreach($annonces as $annonce):?>
 <?php $idChambre = htmlspecialchars($annonce->id_chambre,ENT_QUOTES); ?>
 <?php $idUtilisateur = htmlspecialchars($annonce->id_utilisateur);?>
-
+<?php
+    //Gestion de la pagination
+    //On récupère d'abord la page où l'on est
+    if(isset($_GET['page'])){
+        $page_actuelle = intval($_GET['page']);
+        $pagination = new Pagination(
+            $annonces,
+            10, //Ici c'est le nombre d'ateliers par pages
+            intval($_GET['page'])
+        );
+            
+        if(intval($_GET['page']) > 1){
+            $compteur= ($_GET['page'] * 10) - 2; //On calcule à partir d'où il faut afficher
+        }else{
+            $compteur=1;
+    }
+    }
+?>
+<!--Ici on gère là où on doit prendre les données selon la page actuelle-->
+<?php if($compteur > $pagination->intervalleMin() && $compteur <= $pagination->intervalleMax()):?>
+    <?php $compteur++;?>
+    <?php $pagination->nombreAfficheActuel();?>
 <?php include __ROOT__.'/src/controllers/annonces/recherches/getPhotos.php'?>
 
 <div class="m-2 mb-4">
@@ -57,6 +78,12 @@
     </div>
 </a>
 </div>
+<?php endif;?>
+    <?= $pagination->toHTMLPrevious();?>
+      <?php for($i = 1; $i < $pagination->nombrePages + 1; $i++):?>
+        <?= $pagination->toHTMLPages($i);?>
+      <?php endfor?>
+        <?= $pagination->toHTMLNext();?>
 <?php endforeach; ?>
 <?php endif; ?>
 
