@@ -18,14 +18,14 @@
                     </div>
                 </div>
 
-                <p class="h3 mb-3"><?= htmlEntities($annonces[1]->titre_logement) ?></p>
+                <p class="h3 mb-3"><?= htmlspecialchars($annonces[1]->titre_logement) ?></p>
                 <div class="d-flex ">
                 <!-- <p class="h6"> <span class="fw-bold text-danger">5</span>- colocataires</p> -->
-                <p class="h6 me-5"> Logement - <span class="fw-bold"><?= htmlEntities($annonces[1]->surface_logement)?>m<sup>2</sup></span></p>
+                <p class="h6 me-5"> Logement - <span class="fw-bold"><?= htmlspecialchars($annonces[1]->surface_logement)?>m<sup>2</sup></span></p>
                 
-                <p class="h6 "> Catégorie - <span class="fw-bold"><?= htmlEntities($annonces[1]->type_logement)?></span></p>
+                <p class="h6 "> Catégorie - <span class="fw-bold"><?= htmlspecialchars($annonces[1]->type_logement)?></span></p>
                 </div>
-                <p class="h6 mt-3"><?= htmlEntities($annonces[1]->description_logement) ?></p>
+                <p class="h6 mt-3"><?= htmlspecialchars($annonces[1]->description_logement) ?></p>
 
                 <!-- titre -->
                 <div class="mb-5 mt-4">
@@ -38,14 +38,14 @@
                 </div>
                 <h4 class="text-green h4 mb-4 mt-3">Règles</h4>
                 
-                <?php $regles = Recherches::regleByRoomId(htmlEntities($annonces[1]->id_logement))?>
+                <?php $regles = Recherches::regleByRoomId(htmlspecialchars($annonces[1]->id_logement))?>
                                 <?php if(!$regles[0]):?>
                                 <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                                 <?php else :?>
                                     <div class="d-flex flex-wrap">
                                     <?php foreach($regles[1] as $regle):?>
                                     
-                                      <p class="me-2"><span class="text-green">#</span><?= htmlEntities($regle->libelle_regle)?></p>
+                                      <p class="me-2"><span class="text-green">#</span><?= htmlspecialchars($regle->libelle_regle)?></p>
                                     
                                     <?php endforeach; ?>
                                     </div>
@@ -54,14 +54,14 @@
                 <hr>
                 <!-- ------------------------------------------------------- -->
                 <h4 class="text-green h4 mb-4 mt-3">Logement</h4>
-                <?php $equipements = Recherches::equipementLogement(htmlEntities($annonces[1]->id_logement))?>
+                <?php $equipements = Recherches::equipementLogement(htmlspecialchars($annonces[1]->id_logement))?>
                                 <?php if(!$equipements[0]):?>
                                 <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
                                 <?php else :?>
                                     <div class="d-flex flex-wrap">
                                     <?php foreach($equipements[1] as $equipement):?>
                                     
-                                      <p class="me-2"><span class="text-green">#</span><?= htmlEntities($equipement->libelle_equipement)?></p>
+                                      <p class="me-2"><span class="text-green">#</span><?= htmlspecialchars($equipement->libelle_equipement)?></p>
                                     
                                     <?php endforeach; ?>
                                     </div>
@@ -70,7 +70,7 @@
 
                 <!-- -------------------------------------------------------------- -->
                 <h4 class="text-green h4 mb-4 mt-3">Photo du logement</h4>
-                <?php $photo_logements = Recherches::photoLogementById(htmlEntities($annonces[1]->id_logement))?>
+                <?php $photo_logements = Recherches::photoLogementById(htmlspecialchars($annonces[1]->id_logement))?>
                 
                                 <?php if(!$photo_logements[0]):?>
                                 <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
@@ -78,7 +78,7 @@
                                     <?php foreach($photo_logements[1] as $photo_logement):?>
                                     <div class="d-flex justify-content-center">
                                     
-                                <img src="../images/<?= htmlEntities($photo_logement->libelle_photo) ?>" class="img-fluid" alt="image du logement">
+                                <img src="../images/<?= htmlspecialchars($photo_logement->libelle_photo) ?>" class="img-fluid" alt="image du logement">
                                 </div>
                                 <?php endforeach; ?>
                                 <?php endif; ?>
