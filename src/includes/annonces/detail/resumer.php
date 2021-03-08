@@ -2,14 +2,14 @@
 <div class="pt-5 sticky-md-top mb-4">
                 <div class="card text-center mt-4  mb-4 shadow">
                     <div class="card-header">
-                    <p class="m-0">Dispo. <span class="fw-bold">immédiatement</span></p>  
+                    <p class="m-0"><span class="fw-bold">Informations</span></p>  
                     </div>
                     <div class="card-body p-5">
                     <p class="fw-bold text-start">Chambre <?= htmlEntities($annonces[1]->surface_chambre) ?>m<sup>2</sup></p>
                     <hr>
                     <div class="d-flex justify-content-between align-items-center">
                     <p class="">Disponibilité</p>
-                    <p class="fw-bold"><?= htmlEntities($annonces[1]->date_disponibilite) ?></p>
+                    <p class="fw-bold"><?= (new DateTime(htmlspecialchars($annonces[1]->date_disponibilite).'00:00:00'))->format('d/m/Y') ?></p>
                     </div>
                     <div class="d-flex justify-content-between align-items-center">
                     <p class="m-0">Durée</p>
