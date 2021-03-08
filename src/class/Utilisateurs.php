@@ -123,9 +123,11 @@ class Utilisateurs {
         $error = null;
         try{
             $query = $pdo->query("SELECT * FROM `logements` 
-            INNER JOIN `chambres` ON chambres.id_logement = logements.id_logement
-            WHERE `id_utilisateur` = '$id_utilisateur'
-            AND chambres.a_louer = 1
+            INNER JOIN `chambres` ON chambres.id_logement = logements.id_logement 
+            INNER JOIN `villes` ON villes.id = logements.id_ville
+            WHERE `id_utilisateur` = '$id_utilisateur' 
+            AND `statut` != 'Supprimee'
+            AND `statut_chambre` != 'Supprimee'
             ");
             $data = $query->fetchAll(PDO::FETCH_OBJ);
             return array(true, $data);
