@@ -1,9 +1,4 @@
 <?php unset($_POST['btn-search']);?>
-<?php 
-//Petite modification temporaire afin de gérer la pagination
-    $_POST['search-room'] = htmlspecialchars($_GET['search-room']);
-    unset($_GET['search-room']); 
-?>
  <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?> 
  <?php require_once(dirname(__DIR__).'/controllers/annonces/recherches/getData.php');?>
  <?php require_once(dirname(__DIR__).'/class/Pagination.php');?>

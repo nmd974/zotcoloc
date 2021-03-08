@@ -8,7 +8,7 @@ $error = null;
 //Connexion à la BDD
 $db = Connection::getPDO();
 if($db){
-    if(!isset($_POST["search_room"])){
+    if(!isset($_GET["search_room"])){
         try{
             
             //all annonce ok
@@ -55,7 +55,7 @@ if($db){
         }
     }else{
         try{
-            $search = htmlspecialchars($_POST["search_room"], ENT_QUOTES);
+            $search = htmlspecialchars($_GET["search_room"], ENT_QUOTES);
             //recherche annonces
             $query = $db->query("SELECT * 
             FROM `logements` 

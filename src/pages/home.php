@@ -21,7 +21,7 @@
                     <p class="text-white h5 mb-5">Service de colocation entre particulier, Agence et propriétaire</p>
                     <!-- barre de recherche -->
                     <div class="input-border bg-light" id="input-border">
-                        <form action="roommateSearch.php?page=1" method="post" class="form-group" id="searchHome">
+                        <form action="roommateSearch.php" method="get" class="form-group" id="searchHome">
                             <div class="input-group" id="input-group">
                                 <input 
                                     type="text" 
@@ -33,6 +33,7 @@
                                     list="datalistOptions" 
                                     autocomplete="off"
                                 >
+                                <input type="hidden" value="1" name="page">
                                 <datalist id="datalistOptions"> 
                                 
                                 <?php $liste_villes = Recherches::listVille()?>
@@ -141,7 +142,7 @@
             <!--item-->
             <div class="col-md-3">
                 <div class="image-three position-relative">
-                    <a href="roommateSearch.php?search-room=nord&btn-search=" class="text-white">
+                    <a href="roommateSearch.php?page=1&search-room=nord" class="text-white">
                         <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-1.jpg" alt="nord"
                                 class="img-fluid rounded" style="filter: grayscale(30%)">
                             
@@ -171,7 +172,7 @@
             <div class="col-md-3">
                     <div class="image-three position-relative">
                         
-                        <a href="roommateSearch.php?search-room=sud&btn-search=" class="text-white">
+                        <a href="roommateSearch.php?search-room=sud&page=1" class="text-white">
                             <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-2.jpg" alt="sud"
                                 class="img-fluid rounded" style="filter: grayscale(30%)">
                                
@@ -201,7 +202,7 @@
                     <div class="image-three position-relative">
                     
                        
-                        <a href="roommateSearch.php?search-room=est&btn-search=" class="text-white">
+                        <a href="roommateSearch.php?search-room=est&page=1" class="text-white">
                             <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-1.jpg" alt="nord"
                                 class="img-fluid rounded" style="filter: grayscale(30%)">
                             
@@ -233,7 +234,7 @@
             <div class="col-md-3">
                     <div class="image-three position-relative">
                         
-                        <a href="roommateSearch.php?search-room=ouest&btn-search=" class="text-white">
+                        <a href="roommateSearch.php?page=1&search-room=ouest" class="text-white">
                             <img src="https://d19m59y37dris4.cloudfront.net/places/1-1-2/img/photo-top-2.jpg" alt="sud"
                                 class="img-fluid rounded" style="filter: grayscale(30%)">
                                
