@@ -202,6 +202,11 @@ footer{
     color: #fff;
     background-color: #454545;
 }
+.page-link:hover{
+    color: #fff;
+    background-color: #4dcb44;
+    border-color: #4dcb44;
+}
 .page-item.active .page-link{
     color: #fff;
     background-color: #4dcb44;
