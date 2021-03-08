@@ -1,6 +1,7 @@
 <div class="carousel-style">
     <div id="carouselExampleIndicators" class="carousel mt-1 slide" data-bs-ride="carousel">
         <?php $images = Recherches::photo_annonce(htmlspecialchars($annonces[1]->id_chambre))?>
+        <?php var_dump($images);?>
         <?php if(!$images[0]):?>
             <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
         <?php else :?>
