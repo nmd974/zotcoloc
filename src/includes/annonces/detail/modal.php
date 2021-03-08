@@ -15,7 +15,7 @@
                             </svg>
                         </div>
                         <div>
-                            <a href="tel:<?= htmlEntities($annonces[1]->telephone) ?> "class="ms-3">Téléphone</a>
+                            <a href="tel:<?= htmlspecialchars($annonces[1]->telephone) ?> "class="ms-3">Téléphone</a>
                         </div>
                         </div> 
                         <div class="d-flex justify-content-start align-items-center mb-3 mt-3">
@@ -25,7 +25,7 @@
                             </svg>
                         </div>
                         <div>
-                            <a href="mailto:<?= htmlEntities($annonces[1]->email) ?>" class="ms-3">Email</a>
+                            <a href="mailto:<?= htmlspecialchars($annonces[1]->email) ?>" class="ms-3">Email</a>
                         </div>
                         </div> 
                         </div>

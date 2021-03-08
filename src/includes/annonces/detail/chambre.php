@@ -19,18 +19,18 @@
     
 </div>
 
-<p class="h3"><?= htmlEntities($annonces[1]->titre_chambre) ?></p>
+<p class="h3"><?= htmlspecialchars($annonces[1]->titre_chambre) ?></p>
 <div class="d-flex">
     
-    <p class="h6 mt-3"> Chambre - <span class="fw-bold"><?= htmlEntities($annonces[1]->surface_chambre) ?>m<sup>2</sup></span></p>
+    <p class="h6 mt-3"> Chambre - <span class="fw-bold"><?= htmlspecialchars($annonces[1]->surface_chambre) ?>m<sup>2</sup></span></p>
     
 </div>
-<p class="h6 mt-3"><?= htmlEntities($annonces[1]->description_chambre) ?>
+<p class="h6 mt-3"><?= htmlspecialchars($annonces[1]->description_chambre) ?>
 </p>
 <!-- avatar -->
 <div class="d-flex align-items-center mt-3 mb-4">
     <div class="bg-light shadow" style="width:60px; height: 60px; border-radius: 50%;">
-        <?php $utilisateurs = Recherches::photo_utilisateur(htmlEntities($annonces[1]->id_utilisateur))?>
+        <?php $utilisateurs = Recherches::photo_utilisateur(htmlspecialchars($annonces[1]->id_utilisateur))?>
         <?php if(empty($utilisateurs[0])):?>
             <?php if($annonces[1]->libelle_role == "proprietaire"):?>
             <img src="../img_default/no-picture-proprietaire.png" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px; height: 60px; border-radius: 50%;">
@@ -39,14 +39,14 @@
             <?php endif;?>
         <?php else :?>
             <?php foreach($utilisateurs[1] as $utilisateur):?>
-            <img src="../images/<?= htmlEntities($utilisateur->libelle_photo) ?>" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px; height: 60px; border-radius: 50%;">
+            <img src="../images/<?= htmlspecialchars($utilisateur->libelle_photo) ?>" class="rounded-circle shadow-sm p-1" alt="avatar" style="width:60px; height: 60px; border-radius: 50%;">
             <?php endforeach; ?>
         <?php endif; ?>
         
     </div>
     <div class="ms-3">
-        <p class="fw-bold mb-0"><?= ucfirst(htmlEntities($annonces[1]->prenom)) ?></p>
-        <p class="mb-0"><?= ucfirst(htmlEntities($annonces[1]->libelle_role)) ?></p>
+        <p class="fw-bold mb-0"><?= ucfirst(htmlspecialchars($annonces[1]->prenom)) ?></p>
+        <p class="mb-0"><?= ucfirst(htmlspecialchars($annonces[1]->libelle_role)) ?></p>
     </div>
 </div>
 
@@ -60,14 +60,14 @@
     </div>
 </div>
 <h4 class="text-green h4 mb-4">Chambre</h4>
-<?php $equipements = Recherches::equipementChambre(htmlEntities($annonces[1]->id_chambre))?>
+<?php $equipements = Recherches::equipementChambre(htmlspecialchars($annonces[1]->id_chambre))?>
 <?php if(!$equipements[0]):?>
 <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
 <?php else :?>
 <div class="d-flex flex-wrap">
     <?php foreach($equipements[1] as $equipement):?>
     
-    <p class="me-2"><span class="text-green">#</span><?= htmlEntities($equipement->libelle_equipement)?></p>
+    <p class="me-2"><span class="text-green">#</span><?= htmlspecialchars($equipement->libelle_equipement)?></p>
     
     <?php endforeach; ?>
 </div>
