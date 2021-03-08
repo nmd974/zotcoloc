@@ -27,7 +27,7 @@
                 <input type="password" name="password" class="form-control" id="Password" required
                 placeholder="Entrez votre mot de passe" 
                 >
-                <button type="submit" class="btn login">Je me connecte</button>          
+                <button type="submit" class="btn login" id="loginConnect">Je me connecte</button>          
             </form>
             <div class="mt-3 d-flex flex-column align-items-center justify-content-center">
                 <p>Vous n'avez pas de compte ?</p>
@@ -43,4 +43,11 @@
 <?php require_once(dirname(__DIR__).'/includes/Layout/scriptsSrc.php');?>
 <!-- ON MET ICI DES SCRIPTS ASSOCIES A LA PAGE -->
 <script src="../js/validator.js"></script>
+<script>document.getElementById('loginConnect').addEventListener("click", (e)=>{
+    
+    e.preventDefault();
+    //Verification du login
+    loginPage();
+});
+</script>
 <?php require_once(dirname(__DIR__).'/includes/Layout/finbalise.php');?>
