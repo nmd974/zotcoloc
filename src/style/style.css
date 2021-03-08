@@ -197,7 +197,11 @@ footer{
 /*---------------------------------------------*/
 /*Page de détail d'une colocation*/
 /*swiper*/
-
+/*Pagination*/
+.page-link{
+    color: #fff;
+    background-color: #4dcb44;
+}
 /*//////////*/
 .carousel-style{
     width: 100%!important;

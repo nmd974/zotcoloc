@@ -30,7 +30,7 @@
                         <?php require_once(dirname(__DIR__).'/includes/annonces/recherche/resultat.php');?>
                     </div>
                 </div>
-                <div class="col-12 d-flex justify-content-center">  
+                <div class="col-12 d-flex justify-content-center mb-5">  
                     <?= $pagination->toHTMLPrevious();?>
                     <?php for($i = 1; $i < $pagination->nombrePages + 1; $i++):?>
                     <?= $pagination->toHTMLPages($i);?>

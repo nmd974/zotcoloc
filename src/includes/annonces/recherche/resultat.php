@@ -13,7 +13,7 @@
         );
             
         if(intval($_GET['page']) > 1){
-            $compteur= ($_GET['page'] * 9) - 2; //On calcule à partir d'où il faut afficher
+            $compteur= ($_GET['page'] * 9) - 8; //On calcule à partir d'où il faut afficher (nb par page - 1)
         }else{
             $compteur=1;
     }
