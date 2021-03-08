@@ -10,13 +10,13 @@
             <div class="col-md-12">
                 <label for="site_web" class="form-label">Site web</label><br>
                 <input type="text" name="site_web" class="form-control" id="site_web"
-                    value="<?= htmlentities($mon_compte[1][0]->site_web, ENT_QUOTES)?>"
+                    value="<?= htmlspecialchars($mon_compte[0]->site_web, ENT_QUOTES)?>"
                 >
             </div>
             <div class="col-md-12">
                 <label for="description" class="form-label">Description</label><br>
                 <textarea name="description" class="form-control" id="description">
-                    <?= htmlentities($mon_compte[0]->description, ENT_QUOTES)?>
+                    <?= htmlspecialchars($mon_compte[0]->description, ENT_QUOTES)?>
                 </textarea>
             </div>
             

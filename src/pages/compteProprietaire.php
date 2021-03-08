@@ -11,22 +11,21 @@
 <?php require_once(dirname(__DIR__).'/class/Utilisateurs.php');?>
 <?php require_once(dirname(__DIR__).'/class/Photos.php');?>
 <?php require_once(dirname(__DIR__).'/controllers/editProfilProprietaire.php');?>
-<?php require_once(dirname(__DIR__).'/controllers/utilisateurs/proprietaire/getData.php');?>
 
-
+<!--Gestion du changement du profil (photo, infos)-->
 <?php if(isset($_POST['save_photo_user'])):?>
-  <?php if(empty($ma_photo[1])):?>
+  <?php if(empty($ma_photo)):?>
       <?php $ajout_photo = photoUtilisateur($_FILES['image_upload'], $_SESSION['id_utilisateur'], '');?>
         <?php $ma_photo = Photos::photosByIdUser($_SESSION['id_utilisateur']);?>
       <?php else: ?>
-        <?php $ajout_photo = photoUtilisateur($_FILES['image_upload'], $_SESSION['id_utilisateur'], $ma_photo[1][0]->libelle_photo);?>
+        <?php $ajout_photo = photoUtilisateur($_FILES['image_upload'], $_SESSION['id_utilisateur'], $ma_photo[0]->libelle_photo);?>
         <?php $ma_photo = Photos::photosByIdUser($_SESSION['id_utilisateur']);?>
       <?php endif; ?>
 <?php endif; ?>
 
 <?php 
     if(isset($_POST['save_edit_info_coloc'])){
-        $update = editInfosColoc($_POST, $mon_compte[1][0]->id);
+        $update = editInfosColoc($_POST, $mon_compte[0]->id);
         unset($_POST);
         $mon_compte = Utilisateurs::moncompteProprietaire($_SESSION['id_utilisateur']);
     }
@@ -35,13 +34,13 @@
 <?php 
     if(isset($_POST['save_edit_info_perso'])){
         var_dump($_POST);
-        $update = editInfosPerso($_POST, $mon_compte[1][0]->id);
+        $update = editInfosPerso($_POST, $mon_compte[0]->id);
         // unset($_POST);
         $mon_compte = Utilisateurs::moncompteProprietaire($_SESSION['id_utilisateur']);
     }
 ?>
 
-
+<?php require_once(dirname(__DIR__).'/controllers/utilisateurs/proprietaire/getData.php');?>
 <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/photoUser.php');?>
 <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/infosColoc.php');?>
 <?php require_once(dirname(__DIR__).'/includes/compteProprietaire/modals/infosPerso.php');?>
