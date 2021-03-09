@@ -8,12 +8,12 @@
         $page_actuelle = intval($_GET['page']);
         $pagination = new Pagination(
             $annonces,
-            9, //Ici c'est le nombre d'ateliers par pages
+            18, //Ici c'est le nombre d'ateliers par pages
             intval($_GET['page'])
         );
             
         if(intval($_GET['page']) > 1){
-            $compteur= ($_GET['page'] * 9) - 8; //On calcule à partir d'où il faut afficher (nb par page - 1)
+            $compteur= ($_GET['page'] * 18) - 17; //On calcule à partir d'où il faut afficher (nb par page - 1)
         }else{
             $compteur=1;
     }

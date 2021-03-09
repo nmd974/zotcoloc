@@ -92,7 +92,7 @@ class Pagination {
             <nav>
                 <ul class="pagination">
                     <li class="{$class}">
-                        <a class="page-link" href="./roommateSearch.php?page={$lien}" tabindex="-1" aria-disabled="true">Précédent</a>
+                        <a class="page-link" href="./roommateSearch.php?page={$lien}" tabindex="-1" aria-disabled="true"><<</a>
                     </li>
 HTML;
     }
@@ -128,7 +128,7 @@ HTML;
   
         return <<<HTML
                     <li class="{$class}">
-                        <a class="page-link" href="./roommateSearch.php?page={$lien}" tabindex="-1" aria-disabled="true">Suivant</a>
+                        <a class="page-link" href="./roommateSearch.php?page={$lien}" tabindex="-1" aria-disabled="true">>></a>
                     </li>
                 </ul>
 
