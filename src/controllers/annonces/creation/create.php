@@ -195,7 +195,7 @@ if($error == null) {
                     ':duree_bail' => $data_sanitized['duree_bail'],
                     ':loyer' => $data_sanitized['loyer'],
                     ':charges' => $data_sanitized['charges'],
-                    ':caution' => $data_sanitized['surface_chambre'],
+                    ':caution' => $data_sanitized['caution'],
                     ':frais_dossier' => $data_sanitized['frais_dossier']
                 ));
                 $logger->info("Creation d'une annonce -- TABLE CHAMBRE OK");
