@@ -15,13 +15,13 @@
 
     <?php require_once(dirname(__DIR__).'/includes/annonces/creation/timeline.php')?>
 
-<?php if(isset($_SESSION['flash'])):?>
-<?php if($_SESSION['flash'][0] == "Success"):?>
-<div class="alert alert-success mt-3"><?= $_SESSION['flash'][2] ?></div>
-
-<?php else:?>
-    <div class="alert alert-danger mt-3"><?= $_SESSION['flash'][2] ?></div>
-<?php endif;?>
+<?php if(isset($_SESSION['flash'][2])):?>
+    <?php if($_SESSION['flash'][0] == "Success" && $_SESSION['flash'][2] != ''):?>
+        <div class="alert alert-success mt-3"><?= $_SESSION['flash'][2] ?></div>
+    <?php endif;?>
+    <?php if($_SESSION['flash'][0] == "Error" && $_SESSION['flash'][2] != ''):?>
+        <div class="alert alert-danger mt-3"><?= $_SESSION['flash'][2] ?></div>
+    <?php endif;?>
 <?php endif;?>
     <!--On fait afficher la page selon l'id des step de chaque bloc en jqurey-->
     <form method="POST" class="mt-3 shadow p-3 mb-5" enctype="multipart/form-data" id="create_annonce" action="../controllers/annonces/creation/create.php">
