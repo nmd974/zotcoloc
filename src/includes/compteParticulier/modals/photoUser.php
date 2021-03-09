@@ -10,8 +10,8 @@
               <input type="file" name="image_upload" id="image_upload" >
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" id="save_photo_user" class="btn btn-primary" name="save_photo_user">Save changes</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
+          <button type="submit" id="save_photo_user" class="btn btn-success" name="save_photo_user">Sauvegarder</button>
         </div>
       </form>
     </div>
