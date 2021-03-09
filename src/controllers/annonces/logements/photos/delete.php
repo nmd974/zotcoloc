@@ -7,7 +7,7 @@ use \Waavi\Sanitizer\Sanitizer;
 
 
 //Verification de l'identité de celui qui modifie la photo
-if($_SESSION['id_utilisateur'] != htmlspecialchars($_POST['user'])){
+if($_SESSION['id_utilisateur'] != htmlspecialchars($_GET['user'])){
     $logger->alert("Suppression d'une photo logement -- Tentative d'accès sans être proprietaire du logement");
     $_SESSION['flash'] = array('Error', "Echec de la suppression");
     header("Location:" . getenv("URL_APP") . "/src/pages/home.php");
@@ -17,7 +17,7 @@ if($_SESSION['id_utilisateur'] != htmlspecialchars($_POST['user'])){
 $logger->info("suppression d'une photo -- VERIF SERVEUR OK");
 
 $data = [
-    'id_photo' => $_POST['id_photo']
+    'id_photo' => $_GET['id_photo']
 ];
 
 $customFilter = [

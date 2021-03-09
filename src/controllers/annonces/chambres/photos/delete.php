@@ -7,7 +7,7 @@ use \Waavi\Sanitizer\Sanitizer;
 
 
 //Verification de l'identité de celui qui modifie la photo
-if($_SESSION['id_utilisateur'] != htmlspecialchars($_POST['user'])){
+if($_SESSION['id_utilisateur'] != htmlspecialchars($_GET['user'])){
     $logger->alert("Suppression d'une photo chambre -- Tentative d'accès sans être proprietaire de la chambre");
     $_SESSION['flash'] = array('Error', "Echec de la suppression");
     echo "<div class='alert alert-danger'>Echec lors de la suppression de la photo</div>";
@@ -17,7 +17,7 @@ if($_SESSION['id_utilisateur'] != htmlspecialchars($_POST['user'])){
 $logger->info("suppression d'une photo chambre -- VERIF SERVEUR OK");
 
 $data = [
-    'id_photo' => $_POST['id_photo']
+    'id_photo' => $_GET['id_photo']
 ];
 
 $customFilter = [
