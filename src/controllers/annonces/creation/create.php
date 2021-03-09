@@ -1,35 +1,5 @@
 <?php
 
-/*
-LOGEMENT :
-
-titre_logement
-description_logement
-type_logement
-ville
-surface_logement
-age_max
-age_min
-aides_logement
-profil
-meuble
-
-CHAMBRE :
-titre_chambre
-description_chambre
-surface_chambre_
-type_chambre_
-date_disponibilite
-duree_bail
-loyer
-charge
-caution
-frais_dossier
-a_louer_
-
-
-*/
-
 require_once(dirname(dirname(dirname(__DIR__))).'/libs/session/session.php');
 require_once(__ROOT__ . '/src/class/Connection.php');
 require(__ROOT__ . '/src/libs/gestionLogs.php');
@@ -38,6 +8,12 @@ require_once(__ROOT__.'/src/controllers/imageControl.php');
 use \Waavi\Sanitizer\Sanitizer;
 
 $error = null;
+if(!$_SESSION['isLoggedIn']){
+    $_SESSION['flash'] = array('Error', "Echec de l'opération");
+    header("Location:" . getenv("URL_APP") . "/src/pages/home.php");
+    $logger->alert("Echec lors de la creation de l'annonce -- PAS CONNECTE");
+    exit();
+}
 
 //Validation des données cote serveur + securite specialchars
 $inputRequired = ['titre_logement', 'description_logement', 'ville', 'titre_chambre', 'description_chambre'];
@@ -359,7 +335,7 @@ if($error == null) {
             
             // On complete les valeurs pour session
             $_SESSION['flash'] = array('Success', "Annonce créée avec succès </br> Pensez à activer votre annonce");
-            header("Location:" . getenv("URL_APP") . "/src/pages/compteProprietaire.php");
+            header("Location:" . getenv("URL_APP") . "/src/pages/compte" . ucfirst($_SESSION['role']) . ".php");
             exit();
         }catch(PDOException $e){
             $error = $e->getMessage();
