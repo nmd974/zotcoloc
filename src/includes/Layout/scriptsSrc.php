@@ -28,3 +28,39 @@
   <script>
     AOS.init();
   </script>
+
+  <?php if($_SESSION['isLoggedIn']):?>
+  <script>
+  //Verification si email en doublon
+  var favBtn = document.querySelectorAll('svg');
+  favBtn.addEventListener('click' (e) => {
+    var id_chambre = e.path[0].id.slice(8);
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      console.log(this);
+      if(this.readyState == 4 && this.status == 200){
+        if(this.responsetext === " Success"){
+          $('#wrapper').prepend(`
+          <div class="position-fixed bottom-0 start-50 translate-middle-x" style="z-index: 10002">
+          <div class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" id="toastJS" aria-atomic="true">
+            <div class="d-flex">
+              <div class="toast-body">
+                Annonce ajoutée aux favoris !
+              </div>
+              <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+          </div>
+        </div>
+        `)
+        var toast = new bootstrap.Toast(document.getElementById('toastJS'))
+        toast.show();
+        }
+      }
+    };
+    xmlhttp.open("POST", `${location.origin}/src/controllers/annonces/favoris.php?id_chambre=${id_chambre}`, true);
+    xmlhttp.send();
+  })
+
+        
+  </script>
+  <?php endif;?>
