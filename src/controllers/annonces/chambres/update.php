@@ -128,7 +128,7 @@ if($_POST['id_chambre']){
                 
                 // On complete les valeurs pour session
                 $_SESSION['flash'] = array('Success', "Chambre modifiée avec succès");
-                header("Location:" . getenv("URL_APP") . "/src/pages/compteProprietaire.php");
+                header("Location:" . getenv("URL_APP") . "/src/pages/editAnnoncePage.php?id=$id_chambre");
                 exit();
             }catch(PDOException $e){
                 $error = $e->getMessage();
