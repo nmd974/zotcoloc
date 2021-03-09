@@ -61,7 +61,7 @@ if(isset($_GET['id'])){
                         $('#zone_photo_chambre').prepend(this.responseText);
                     }
                 };
-                xmlhttp.open("GET", `${location.origin}/src/controllers/annonces/chambres/photos/delete.php?id_photo=${id}&user=<?= $utilisateur[1][0]->id_utilisateur ?>`, true);
+                xmlhttp.open("POST", `${location.origin}/src/controllers/annonces/chambres/photos/delete.php?id_photo=${id}&user=<?= $utilisateur[1][0]->id_utilisateur ?>`, true);
                 xmlhttp.send();
             })
         });
