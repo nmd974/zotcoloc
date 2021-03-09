@@ -5,8 +5,8 @@
 
     function photoUtilisateur($image, $id_utilisateur, $old_photo){
         if($old_photo !== ''){
-            $oldFilename = __ROOT__."/src/images/" . $old_photo;
-            unlink($oldFilename);
+            // $oldFilename = __ROOT__."/src/images/" . $old_photo;
+            // unlink($oldFilename);
             Photos::deletePhotosByIdUser($id_utilisateur);
             Photos::deletePhotosByLibelle($old_photo);
         }

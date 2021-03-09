@@ -40,8 +40,8 @@ if($db){
         $libelle_photo = $query->fetchAll(PDO::FETCH_OBJ);
         $logger->info("Suppression d'une photo -- TABLE PHOTOS LOGEMENT OK");
 
-        $oldFilename = __ROOT__."/src/images/" . $libelle_photo[0]->libelle_photo;
-        unlink($oldFilename);
+        // $oldFilename = __ROOT__."/src/images/" . $libelle_photo[0]->libelle_photo;
+        // unlink($oldFilename);
         $logger->info("Suppression d'une photo -- DOSSIER IMAGES OK");
 
         $query = 'DELETE FROM `photo_logement` WHERE id_photo = :id';
