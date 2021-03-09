@@ -71,7 +71,7 @@ if($error == null) {
                 $logger->info("Email inexistant Utilisateur -- EMAIL / TABLE UTILISATEUR NOK");
                 header("Location:" . getenv("URL_APP") . "/src/pages/seconnecter.php");
             } else {
-                $passwordCorrect = password_verify($data_sanitized['password'],$resultat[0]->password);
+                $passwordCorrect = password_verify($data_sanitized['password'],htmlspecialchars($resultat[0]->password));
                 if ($passwordCorrect){
                     $_SESSION['flash'] = array('Success', "Connexion avec succès");
                     $_SESSION['isLoggedIn'] = true;

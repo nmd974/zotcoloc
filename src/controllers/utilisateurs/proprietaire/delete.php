@@ -1,5 +1,5 @@
 <?php
-// require_once(dirname(dirname(dirname(__DIR__))).'/includes/Layout/header.php');
+
 require_once(dirname(dirname(dirname(__DIR__))).'/libs/session/session.php');
 if(!$_SESSION['isLoggedIn'] && $_SESSION['id_utilisateur'] != $_POST['id_proprietaire']){
     $_SESSION['flash'] = array('Error', "Echec de l'opération");
@@ -11,18 +11,7 @@ require_once(__ROOT__ . '/src/class/Connection.php');
 require_once(__ROOT__ . '/src/libs/gestionLogs.php');
 
 $error = null;
-/*
-photo_utilisateur
-regle_logement
-photo_logement
-photo_chambre
-photos
-favoriser_logement
-equipement_logement
-equipement_chambre
-chambres
-logements
-*/
+
 if(isset($_POST['id']) && isset($_POST['id_proprietaire'])){
     $db = Connection::getPDO();
     $id = htmlspecialchars($_POST['id'], ENT_QUOTES);

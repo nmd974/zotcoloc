@@ -49,8 +49,8 @@
             </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" id="save_edit_info_perso" class="btn btn-success" name="save_edit_info_perso">Save changes</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
+          <button type="submit" id="save_edit_info_perso" class="btn btn-success" name="save_edit_info_perso">Modifier</button>
         </div>
       </form>
     </div>

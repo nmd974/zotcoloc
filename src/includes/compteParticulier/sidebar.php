@@ -26,18 +26,18 @@
             <i class="fa fa-cogs icone_sidebar" aria-hidden="true"></i>
             Gérer mon profil
             </a>
-            
+<!--             
             <a role="button" class="list-group-item list-group-item-action sidebar_item" id="favorisNav">
             <i class="fa fa-heart icone_sidebar" aria-hidden="true"></i>
             Mes favoris
-            <span class="badge bg-danger"><?= count($mes_favoris[1])?></span>
-            </a>
+            <span class="badge bg-danger"></span>
+            </a> -->
             
-            <a role="button" class="list-group-item list-group-item-action sidebar_item" id="annonceNav">
+            <!-- <a role="button" class="list-group-item list-group-item-action sidebar_item" id="annonceNav">
             <i class="fa fa-plus-circle icone_sidebar" aria-hidden="true"></i>
             Mes annonces
-            <span class="badge bg-danger"><?= count($mes_annonces[1])?></span>
-            </a>
+            <span class="badge bg-danger"></span>
+            </a> -->
             <div class="contact_zotcoloc">
             <a role="button" class="list-group-item list-group-item-action sidebar_item" data-bs-toggle="modal" data-bs-target="#deleteUser" id="infosNav">
             

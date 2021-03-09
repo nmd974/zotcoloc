@@ -162,7 +162,7 @@
         <!--charge-->
         <div class="col-md-12 mb-3">
             <div class="form-floating">
-                <input type="number" placeholder="Charges à payer" class="form-control" id="charge_1" name="charge[]" value="<?= isset($_SESSION['tmp-content']['charge']) ? htmlspecialchars($_SESSION['tmp-content']['charge']) : '' ?>">
+                <input type="number" placeholder="Charges à payer" class="form-control" id="charge_1" name="charges[]" value="<?= isset($_SESSION['tmp-content']['charge']) ? htmlspecialchars($_SESSION['tmp-content']['charge']) : '' ?>">
                 <label for="charge_1" class="form-label">Charges (€)</label>
             </div>
         </div>

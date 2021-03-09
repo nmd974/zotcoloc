@@ -21,19 +21,19 @@
     }
 
     function editInfosColoc($data, $id_particulier){
-        $pseudo = htmlentities($data['pseudo'], ENT_QUOTES);
-        $description = htmlentities($data['description'], ENT_QUOTES);
-        $ecole = htmlentities($data['ecole'], ENT_QUOTES);
-        $date_naissance = htmlentities($data['date_naissance'], ENT_QUOTES);
-        $date_disponibilite = htmlentities($data['date_disponibilite'], ENT_QUOTES);
+        $pseudo = htmlspecialchars($data['pseudo'], ENT_QUOTES);
+        $description = htmlspecialchars($data['description'], ENT_QUOTES);
+        $ecole = htmlspecialchars($data['ecole'], ENT_QUOTES);
+        $date_naissance = htmlspecialchars($data['date_naissance'], ENT_QUOTES);
+        $date_disponibilite = htmlspecialchars($data['date_disponibilite'], ENT_QUOTES);
         $update = Utilisateurs::updateColocParticulier($id_particulier, $pseudo, $description, $ecole, $date_naissance, $date_disponibilite);
     }
 
     function editInfosPerso($data, $id_particulier){
-        $nom = htmlentities($data['nom'], ENT_QUOTES);
-        $prenom = htmlentities($data['prenom'], ENT_QUOTES);
-        $telephone = htmlentities($data['telephone'], ENT_QUOTES);
-        $genre = htmlentities($data['genre'], ENT_QUOTES);
+        $nom = htmlspecialchars($data['nom'], ENT_QUOTES);
+        $prenom = htmlspecialchars($data['prenom'], ENT_QUOTES);
+        $telephone = htmlspecialchars($data['telephone'], ENT_QUOTES);
+        $genre = htmlspecialchars($data['genre'], ENT_QUOTES);
         $update = Utilisateurs::updatePersoParticulier($id_particulier, $nom, $prenom, $telephone, $genre);
         // return $update;
     }

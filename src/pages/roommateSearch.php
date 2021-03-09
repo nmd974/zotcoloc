@@ -1,4 +1,4 @@
-<?php unset($_POST['btn-search']);?>
+<?php unset($_GET['btn-search']);?>
  <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?> 
  <?php require_once(dirname(__DIR__).'/controllers/annonces/recherches/getData.php');?>
  <?php require_once(dirname(__DIR__).'/class/Pagination.php');?>
@@ -30,12 +30,14 @@
                         <?php require_once(dirname(__DIR__).'/includes/annonces/recherche/resultat.php');?>
                     </div>
                 </div>
-                <div class="col-12 d-flex justify-content-center mb-5">  
+                <div class="col-12 d-flex justify-content-center mb-5"> 
+                <?php if($pagination):?> 
                     <?= $pagination->toHTMLPrevious();?>
                     <?php for($i = 1; $i < $pagination->nombrePages + 1; $i++):?>
                     <?= $pagination->toHTMLPages($i);?>
                     <?php endfor?>
                     <?= $pagination->toHTMLNext();?>
+                <?php endif;?>
                 </div>
             </div>
     </section>
