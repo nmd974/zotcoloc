@@ -5,7 +5,6 @@
         exit();
     }
 ?>
-<?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
 <?php require_once(dirname(__DIR__).'/class/Interets.php');?>
 <?php require_once(dirname(__DIR__).'/class/Utilisateurs.php');?>
 <?php require_once(dirname(__DIR__).'/class/Photos.php');?>
@@ -13,7 +12,6 @@
 
 <?php
         //Chargement des données correspondantes à l'id lors de l'arrivée sur page
-        
         $mon_id_particulier = Utilisateurs::monCompteParticulier($_SESSION['id_utilisateur']);
         $ma_photo = Photos::photosByIdUser($_SESSION['id_utilisateur']);
         $mes_interets = Interets::interetsByParticulierId($mon_id_particulier[1][0]->id);
@@ -34,6 +32,7 @@
         <?php $ajout_photo = photoUtilisateur($_FILES['image_upload'], $_SESSION['id_utilisateur'], $ma_photo[1][0]->libelle_photo);?>
         <?php $ma_photo = Photos::photosByIdUser($_SESSION['id_utilisateur']);?>
       <?php endif; ?>
+      <?php $_SESSION['flash'] = array('Success', "Photo ajoutée avec succès");?>
 <?php endif; ?>
 
 <?php 
@@ -41,6 +40,7 @@
         $update = editInfosColoc($_POST, $mon_id_particulier[1][0]->id);
         unset($_POST);
         $mon_id_particulier = Utilisateurs::monCompteParticulier($_SESSION['id_utilisateur']);
+        $_SESSION['flash'] = array('Success', "Informations colocataire modifiées avec succès");
     }
 ?>
 
@@ -48,6 +48,7 @@
     if(isset($_POST['save_edit_info_perso'])){
         $update = editInfosPerso($_POST, $mon_id_particulier[1][0]->id);
         $mon_id_particulier = Utilisateurs::monCompteParticulier($_SESSION['id_utilisateur']);
+        $_SESSION['flash'] = array('Success', "Informations personnelles modifiées avec succès");
     }
 ?>
 
@@ -59,9 +60,11 @@
         foreach($mes_interets[1] as $interet){
             array_push($mes_interet_list, $interet->id_interet);
         }
+        $_SESSION['flash'] = array('Success', "Intérêts modifiés avec succès");
     }
 ?>
 
+<?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?>
 <?php require_once(dirname(__DIR__).'/includes/compteParticulier/modals/photoUser.php');?>
 <?php require_once(dirname(__DIR__).'/includes/compteParticulier/modals/infosColoc.php');?>
 <?php require_once(dirname(__DIR__).'/includes/compteParticulier/modals/infosPerso.php');?>

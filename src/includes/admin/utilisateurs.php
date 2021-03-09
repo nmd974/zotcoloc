@@ -11,6 +11,7 @@
                 <table class="table table-striped text-center">
                     <thead>
                         <tr>
+                            <th scope="col">Email</th>
                             <th scope="col">Nom</th>
                             <th scope="col">Prénom</th>
                             <th scope="col">Actions</th>
@@ -20,6 +21,7 @@
                         <?php if(count($particuliers) != 0):?>
                         <?php foreach($particuliers as $particulier):?>
                         <tr>
+                            <td class="align-middle"><?= ucfirst($particulier->email) ?></td>
                             <td class="align-middle"><?= ucfirst($particulier->nom) ?></td>
                             <td class="align-middle"><?= ucfirst($particulier->prenom) ?></td>
                             <td class="align-middle">
@@ -42,6 +44,7 @@
             <table class="table table-striped text-center">
                 <thead>
                     <tr>
+                        <th scope="col">Email</th>
                         <th scope="col">Nom</th>
                         <th scope="col">Prénom</th>
                         <th scope="col">Actions</th>
@@ -51,6 +54,7 @@
                     <?php if(count($proprietaires) != 0):?>
                     <?php foreach($proprietaires as $proprietaire):?>
                     <tr>
+                        <td class="align-middle"><?= ucfirst($proprietaire->email) ?></td>
                         <td class="align-middle"><?= ucfirst($proprietaire->nom) ?></td>
                         <td class="align-middle"><?= ucfirst($proprietaire->prenom) ?></td>
                         <td class="align-middle">
