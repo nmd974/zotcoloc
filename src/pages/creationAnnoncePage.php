@@ -207,7 +207,7 @@ $('#addChambre').on('click', () => {
             <!--charge-->
             <div class="col-md-12 mb-3">
                 <div class="form-floating">
-                    <input type="number" placeholder="Charges à payer" class="form-control" id="charge_${cptChambre}" name="charge[]" value="0">
+                    <input type="number" placeholder="Charges à payer" class="form-control" id="charge_${cptChambre}" name="charges[]" value="0">
                     <label for="charge_${cptChambre}" class="form-label">Charges (€)</label>
                 </div>
             </div>
