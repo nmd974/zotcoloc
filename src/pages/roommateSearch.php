@@ -1,4 +1,4 @@
-<?php unset($_POST['btn-search']);?>
+<?php unset($_GET['btn-search']);?>
  <?php require_once(dirname(__DIR__).'/includes/Layout/header.php');?> 
  <?php require_once(dirname(__DIR__).'/controllers/annonces/recherches/getData.php');?>
  <?php require_once(dirname(__DIR__).'/class/Pagination.php');?>
