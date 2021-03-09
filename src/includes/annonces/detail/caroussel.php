@@ -5,7 +5,7 @@
             <div class="alert alert-danger">Erreur serveur : Impossible de charger le contenu !</div>
         <?php else :?>
             <ol class="carousel-indicators">
-                <?php for ($i=0; $i <= count($images[1]); $i++):?>
+                <?php for ($i=0; $i < count($images[1]); $i++):?>
                     <?php if($i == 0):?>
                         <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
                     <?php else:?>
@@ -14,7 +14,7 @@
                 <?php endfor;?>
             </ol>
             <div class="carousel-inner">
-                <?php for ($i=0; $i <= count($images[1]); $i++):?>
+                <?php for ($i=0; $i < count($images[1]); $i++):?>
                     <?php if($i == 0):?>
                         <div class="carousel-item active">
                             <img src="../images/<?= htmlspecialchars($images[1][$i]->libelle_photo) ?>" class="d-block w-100" alt="photo chambre">
