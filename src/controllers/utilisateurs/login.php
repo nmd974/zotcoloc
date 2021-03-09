@@ -47,7 +47,7 @@ if($error == null) {
     ];
     
     $sanitizer = new Sanitizer($data, $filters, $customFilter);
-    $data_sanitized = $sanitizer->sanitize(); //stock des valeurs des inputs nettoyer (désinfecter, antiCOVID)
+    $data_sanitized = $sanitizer->sanitize(); //stock des valeurs des inputs nettoyer 
     
     $logger->info("Valeurs des inputs nettoyer utilisateur -- SANITIZE OK");
     //Connexion à la BDD
